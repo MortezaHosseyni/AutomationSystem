@@ -186,7 +186,6 @@
             this.btn_Reminder.ImageFixedSize = new System.Drawing.Size(64, 64);
             this.btn_Reminder.Name = "btn_Reminder";
             this.btn_Reminder.SubItemsExpandWidth = 14;
-            this.btn_Reminder.Click += new System.EventHandler(this.btn_Reminder_Click);
             // 
             // rib_Messenger
             // 

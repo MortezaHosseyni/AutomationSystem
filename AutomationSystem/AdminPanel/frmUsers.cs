@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace AutomationSystem.AdminPanel
 {
-    public partial class frmAdmin : Form
+    public partial class frmUsers : Form
     {
-        public frmAdmin()
+        public frmUsers()
         {
             InitializeComponent();
         }
-
-        private void frmAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 }
