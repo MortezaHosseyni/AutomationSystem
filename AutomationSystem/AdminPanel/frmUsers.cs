@@ -21,12 +21,12 @@ namespace AutomationSystem.AdminPanel
 
         private void frmUsers_Load(object sender, EventArgs e)
         {
-            ShowUsers();
+            ShowUsers(CreateSearchString());
         }
 
-        private void ShowUsers()
+        private void ShowUsers(string searchStatemant)
         {
-            var query = db.Database.SqlQuery<Vw_Users>("SELECT * FROM Vw_Users");
+            var query = db.Database.SqlQuery<Vw_Users>("SELECT * FROM Vw_Users WHERE 1=1" + searchStatemant);
             var result = query.ToList();
 
             if (result.Count != 0)
@@ -49,14 +49,51 @@ namespace AutomationSystem.AdminPanel
             }
             else
             {
-                MessageBox.Show("DB Error");
                 dgv_Users.Rows.Clear();
             }
         }
 
+        private string CreateSearchString()
+        {
+            string searchString = "";
+            if (txt_Name.Text != "")
+            {
+                searchString += " AND UserFirstName LIKE '%" + txt_Name.Text.Trim() + "%'";
+            }
+            if (txt_LastName.Text != "")
+            {
+                searchString += " AND UserLastName LIKE '%" + txt_LastName.Text.Trim() + "%'";
+            }
+
+            if (rbt_ActiveStatus.Checked)
+            {
+                searchString += " AND UserActivity = 'فعال'";
+            }
+            if (rbt_DeActiveStatus.Checked)
+            {
+                searchString += " AND UserActivity = 'غيرفعال'";
+            }
+
+            if (rbt_ManGender.Checked)
+            {
+                searchString += " AND UserGender = 'مرد'";
+            }
+            if (rbt_WomanGender.Checked)
+            {
+                searchString += " AND UserGender = 'زن'";
+            }
+
+            return searchString;
+        } 
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            ShowUsers(CreateSearchString());
         }
     }
 }
