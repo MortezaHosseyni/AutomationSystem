@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Users = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -291,7 +293,7 @@
             // rbt_AllStatus
             // 
             this.rbt_AllStatus.AutoSize = true;
-            this.rbt_AllStatus.Location = new System.Drawing.Point(32, 16);
+            this.rbt_AllStatus.Location = new System.Drawing.Point(33, 16);
             this.rbt_AllStatus.Name = "rbt_AllStatus";
             this.rbt_AllStatus.Size = new System.Drawing.Size(52, 30);
             this.rbt_AllStatus.TabIndex = 0;
@@ -302,7 +304,7 @@
             // rbt_ActiveStatus
             // 
             this.rbt_ActiveStatus.AutoSize = true;
-            this.rbt_ActiveStatus.Location = new System.Drawing.Point(29, 47);
+            this.rbt_ActiveStatus.Location = new System.Drawing.Point(30, 52);
             this.rbt_ActiveStatus.Name = "rbt_ActiveStatus";
             this.rbt_ActiveStatus.Size = new System.Drawing.Size(55, 30);
             this.rbt_ActiveStatus.TabIndex = 1;
@@ -313,7 +315,7 @@
             // rbt_DeActiveStatus
             // 
             this.rbt_DeActiveStatus.AutoSize = true;
-            this.rbt_DeActiveStatus.Location = new System.Drawing.Point(9, 83);
+            this.rbt_DeActiveStatus.Location = new System.Drawing.Point(10, 88);
             this.rbt_DeActiveStatus.Name = "rbt_DeActiveStatus";
             this.rbt_DeActiveStatus.Size = new System.Drawing.Size(75, 30);
             this.rbt_DeActiveStatus.TabIndex = 2;
@@ -334,7 +336,7 @@
             // rbt_WomanGender
             // 
             this.rbt_WomanGender.AutoSize = true;
-            this.rbt_WomanGender.Location = new System.Drawing.Point(9, 83);
+            this.rbt_WomanGender.Location = new System.Drawing.Point(19, 88);
             this.rbt_WomanGender.Name = "rbt_WomanGender";
             this.rbt_WomanGender.Size = new System.Drawing.Size(46, 30);
             this.rbt_WomanGender.TabIndex = 2;
@@ -345,7 +347,7 @@
             // rbt_ManGender
             // 
             this.rbt_ManGender.AutoSize = true;
-            this.rbt_ManGender.Location = new System.Drawing.Point(5, 47);
+            this.rbt_ManGender.Location = new System.Drawing.Point(15, 52);
             this.rbt_ManGender.Name = "rbt_ManGender";
             this.rbt_ManGender.Size = new System.Drawing.Size(50, 30);
             this.rbt_ManGender.TabIndex = 1;
@@ -356,7 +358,7 @@
             // rbt_AllGender
             // 
             this.rbt_AllGender.AutoSize = true;
-            this.rbt_AllGender.Location = new System.Drawing.Point(3, 16);
+            this.rbt_AllGender.Location = new System.Drawing.Point(13, 16);
             this.rbt_AllGender.Name = "rbt_AllGender";
             this.rbt_AllGender.Size = new System.Drawing.Size(52, 30);
             this.rbt_AllGender.TabIndex = 0;
@@ -472,11 +474,20 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 3;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // dgv_Users
             // 
             this.dgv_Users.AllowUserToAddRows = false;
             this.dgv_Users.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_UserFristName,
@@ -489,17 +500,26 @@
             this.col_UserBrithDay,
             this.col_UserRegisteredDate,
             this.col_UserID});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Users.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Users.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_Users.EnableHeadersVisualStyles = false;
             this.dgv_Users.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_Users.Location = new System.Drawing.Point(3, 3);
             this.dgv_Users.Name = "dgv_Users";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Users.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_Users.Size = new System.Drawing.Size(963, 353);
             this.dgv_Users.TabIndex = 1;
             // 
@@ -568,6 +588,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsers";
+            this.Load += new System.EventHandler(this.frmUsers_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Users.ResumeLayout(false);
             this.pnl_Search.ResumeLayout(false);

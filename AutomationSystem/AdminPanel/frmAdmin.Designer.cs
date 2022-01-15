@@ -386,6 +386,7 @@
             this.btn_Users.ImageFixedSize = new System.Drawing.Size(64, 64);
             this.btn_Users.Name = "btn_Users";
             this.btn_Users.SubItemsExpandWidth = 14;
+            this.btn_Users.Click += new System.EventHandler(this.btn_Users_Click);
             // 
             // ribbonPanel2
             // 

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Office_Automation_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserPersonalID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="100" />
+          <Property Name="UserGender" Type="tinyint" Nullable="false" />
+          <Property Name="UserActivity" Type="tinyint" Nullable="false" />
+          <Property Name="UserTel" Type="varchar" MaxLength="11" />
+          <Property Name="UserBrithDate" Type="varchar" MaxLength="30" />
+          <Property Name="UserImage" Type="image" />
+          <Property Name="UserSignature" Type="image" />
+          <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserPassword" />
+            <PropertyRef Name="UserPersonalID" />
+            <PropertyRef Name="UserRegisteredDate" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserPersonalID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="100" />
+          <Property Name="UserGender" Type="varchar" MaxLength="3" />
+          <Property Name="UserActivity" Type="varchar" MaxLength="7" />
+          <Property Name="UserTel" Type="varchar" MaxLength="11" />
+          <Property Name="UserBrithDate" Type="varchar" MaxLength="30" />
+          <Property Name="UserImage" Type="image" />
+          <Property Name="UserSignature" Type="image" />
+          <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Users].[UserID] AS [UserID], 
+    [Vw_Users].[UserFirstName] AS [UserFirstName], 
+    [Vw_Users].[UserLastName] AS [UserLastName], 
+    [Vw_Users].[UserName] AS [UserName], 
+    [Vw_Users].[UserPassword] AS [UserPassword], 
+    [Vw_Users].[UserPersonalID] AS [UserPersonalID], 
+    [Vw_Users].[UserEmail] AS [UserEmail], 
+    [Vw_Users].[UserGender] AS [UserGender], 
+    [Vw_Users].[UserActivity] AS [UserActivity], 
+    [Vw_Users].[UserTel] AS [UserTel], 
+    [Vw_Users].[UserBrithDate] AS [UserBrithDate], 
+    [Vw_Users].[UserImage] AS [UserImage], 
+    [Vw_Users].[UserSignature] AS [UserSignature], 
+    [Vw_Users].[UserRegisteredDate] AS [UserRegisteredDate]
+    FROM [dbo].[Vw_Users] AS [Vw_Users]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Office_Automation_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserLastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserPersonalID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserGender" Type="Byte" Nullable="false" />
+          <Property Name="UserActivity" Type="Byte" Nullable="false" />
+          <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="UserBrithDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserRegisteredDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vw_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserPassword" />
+            <PropertyRef Name="UserPersonalID" />
+            <PropertyRef Name="UserRegisteredDate" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserLastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserPersonalID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserGender" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="UserActivity" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="UserBrithDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserRegisteredDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Office_Automation_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Office_Automation_DatabaseModelStoreContainer" CdmEntityContainer="Office_Automation_DatabaseEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserPersonalID" ColumnName="UserPersonalID" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+                <ScalarProperty Name="UserActivity" ColumnName="UserActivity" />
+                <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+                <ScalarProperty Name="UserBrithDate" ColumnName="UserBrithDate" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="UserSignature" ColumnName="UserSignature" />
+                <ScalarProperty Name="UserRegisteredDate" ColumnName="UserRegisteredDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Users">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Users">
+              <MappingFragment StoreEntitySet="Vw_Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserPersonalID" ColumnName="UserPersonalID" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+                <ScalarProperty Name="UserActivity" ColumnName="UserActivity" />
+                <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+                <ScalarProperty Name="UserBrithDate" ColumnName="UserBrithDate" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="UserSignature" ColumnName="UserSignature" />
+                <ScalarProperty Name="UserRegisteredDate" ColumnName="UserRegisteredDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -21,6 +21,11 @@ namespace AutomationSystem.AdminPanel
         {
 
         }
-        
+
+        private void btn_Users_Click(object sender, EventArgs e)
+        {
+            frmUsers usersForm = new frmUsers();
+            usersForm.Show();
+        }
     }
 }
