@@ -16,5 +16,15 @@ namespace AutomationSystem.AdminPanel
         {
             InitializeComponent();
         }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Reminder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

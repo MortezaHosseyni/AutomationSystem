@@ -25,6 +25,10 @@ namespace AutomationSystem
                 this.Hide();
                 adminForm.Show();
             }
+            else
+            {
+                MessageBox.Show("اطلاعات وارد شده اشتباه است");
+            }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
