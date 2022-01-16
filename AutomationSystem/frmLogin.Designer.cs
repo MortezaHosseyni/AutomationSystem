@@ -217,6 +217,7 @@
             // rdb_Admin
             // 
             this.rdb_Admin.AutoSize = true;
+            this.rdb_Admin.Checked = true;
             this.rdb_Admin.Location = new System.Drawing.Point(470, 235);
             this.rdb_Admin.Name = "rdb_Admin";
             this.rdb_Admin.Size = new System.Drawing.Size(104, 32);
@@ -232,7 +233,6 @@
             this.rdb_User.Name = "rdb_User";
             this.rdb_User.Size = new System.Drawing.Size(57, 32);
             this.rdb_User.TabIndex = 5;
-            this.rdb_User.TabStop = true;
             this.rdb_User.Text = "كاربر";
             this.rdb_User.UseVisualStyleBackColor = true;
             // 

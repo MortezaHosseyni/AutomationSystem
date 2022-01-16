@@ -16,6 +16,29 @@ namespace AutomationSystem.AdminPanel
         {
             InitializeComponent();
         }
-        
+
+        private void pic_UserPic_Click(object sender, EventArgs e)
+        {
+            openFileDLG.Filter = "Image Files (*.PNG;*.JPG;*.BMP) | *.png;*.jpg;*.bmp";
+            openFileDLG.Title = "عكس پرسنلي كاربر";
+            openFileDLG.FileName = "PersonalPicture.jpg";
+
+            if (openFileDLG.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pic_UserPic.Image = new Bitmap(openFileDLG.FileName);
+            }
+        }
+
+        private void pic_UserSignature_Click(object sender, EventArgs e)
+        {
+            openFileDLG.Filter = "Image Files (*.JPG;*.BMP) | *.jpg;*.bmp";
+            openFileDLG.Title = "نمونه امضاء كاربر";
+            openFileDLG.FileName = "Signuter.jpg";
+
+            if (openFileDLG.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pic_UserSignature.Image = new Bitmap(openFileDLG.FileName);
+            }
+        }
     }
 }

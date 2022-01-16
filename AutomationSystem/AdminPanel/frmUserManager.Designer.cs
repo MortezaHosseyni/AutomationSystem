@@ -62,6 +62,7 @@
             this.txt_BrithDate = new FreeControls.PersianDateTimePicker();
             this.btn_Save = new DevComponents.DotNetBar.ButtonX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.openFileDLG = new System.Windows.Forms.OpenFileDialog();
             this.pnl_Main.SuspendLayout();
             this.pnl_UserInformation.SuspendLayout();
             this.pnl_UserPic.SuspendLayout();
@@ -566,6 +567,7 @@
             // 
             // pic_UserSignature
             // 
+            this.pic_UserSignature.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_UserSignature.Image = global::AutomationSystem.Properties.Resources._08_UserSignature;
             this.pic_UserSignature.Location = new System.Drawing.Point(3, 3);
             this.pic_UserSignature.Name = "pic_UserSignature";
@@ -573,9 +575,11 @@
             this.pic_UserSignature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_UserSignature.TabIndex = 1;
             this.pic_UserSignature.TabStop = false;
+            this.pic_UserSignature.Click += new System.EventHandler(this.pic_UserSignature_Click);
             // 
             // pic_UserPic
             // 
+            this.pic_UserPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_UserPic.Image = global::AutomationSystem.Properties.Resources._07_UserPicture;
             this.pic_UserPic.Location = new System.Drawing.Point(3, 3);
             this.pic_UserPic.Name = "pic_UserPic";
@@ -583,6 +587,7 @@
             this.pic_UserPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_UserPic.TabIndex = 0;
             this.pic_UserPic.TabStop = false;
+            this.pic_UserPic.Click += new System.EventHandler(this.pic_UserPic_Click);
             // 
             // txt_BrithDate
             // 
@@ -621,6 +626,10 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 11;
             this.btn_Exit.Text = "خروج";
+            // 
+            // openFileDLG
+            // 
+            this.openFileDLG.FileName = "openFileDialog1";
             // 
             // frmUserManager
             // 
@@ -680,5 +689,6 @@
         private FreeControls.PersianDateTimePicker txt_BrithDate;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ButtonX btn_Save;
+        private System.Windows.Forms.OpenFileDialog openFileDLG;
     }
 }
