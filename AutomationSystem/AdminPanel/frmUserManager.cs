@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataModelLayer.Models;
 
 namespace AutomationSystem.AdminPanel
 {
     public partial class frmUserManager : Form
     {
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        string userPictureName = "";
+        string userSignatureName = "";
+
         public frmUserManager()
         {
             InitializeComponent();
@@ -26,7 +32,8 @@ namespace AutomationSystem.AdminPanel
 
             if (openFileDLG.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                pic_UserPic.Image = new Bitmap(openFileDLG.FileName);
+                userPictureName = openFileDLG.FileName;
+                pic_UserPic.Image = new Bitmap(userPictureName);
             }
         }
 
@@ -38,7 +45,8 @@ namespace AutomationSystem.AdminPanel
 
             if (openFileDLG.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                pic_UserSignature.Image = new Bitmap(openFileDLG.FileName);
+                userSignatureName = openFileDLG.FileName;
+                pic_UserSignature.Image = new Bitmap(userSignatureName);
             }
         }
 
@@ -53,11 +61,21 @@ namespace AutomationSystem.AdminPanel
 
                 B1 = UTF8Encoding.UTF8.GetBytes(txt_Password.Text.Trim());
                 B2 = SHA256.ComputeHash(B1);
-
-                //Image Array
-
-
                 string hashedPass = BitConverter.ToString(B2);
+
+
+
+                //User Picture Array
+                FileStream fileStreamUserPic = new FileStream(userPictureName,FileMode.Open,FileAccess.Read);
+                byte[] userPicArr = new byte[fileStreamUserPic.Length];
+                fileStreamUserPic.Read(userPicArr, 0, Convert.ToInt32(fileStreamUserPic.Length));
+                fileStreamUserPic.Close();
+
+                //User Signature Array
+                FileStream fileStreamUserSignature = new FileStream(userSignatureName, FileMode.Open, FileAccess.Read);
+                byte[] userSignArr = new byte[fileStreamUserSignature.Length];
+                fileStreamUserSignature.Read(userSignArr, 0, Convert.ToInt32(fileStreamUserSignature.Length));
+                fileStreamUserSignature.Close();
             }
             catch (Exception)
             {
