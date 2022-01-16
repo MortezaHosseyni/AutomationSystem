@@ -104,7 +104,7 @@
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
             this.pnl_Main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(1000, 749);
+            this.pnl_Main.Size = new System.Drawing.Size(1000, 663);
             this.pnl_Main.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnl_Main.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnl_Main.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -124,7 +124,7 @@
             this.pnl_Buttons.Controls.Add(this.btn_NewUser);
             this.pnl_Buttons.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Buttons.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.pnl_Buttons.Location = new System.Drawing.Point(13, 641);
+            this.pnl_Buttons.Location = new System.Drawing.Point(12, 557);
             this.pnl_Buttons.Name = "pnl_Buttons";
             this.pnl_Buttons.Size = new System.Drawing.Size(975, 100);
             // 
@@ -212,6 +212,7 @@
             this.btn_NewUser.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btn_NewUser.TabIndex = 0;
             this.btn_NewUser.Text = "كاربر جديد";
+            this.btn_NewUser.Click += new System.EventHandler(this.btn_NewUser_Click);
             // 
             // pnl_Search
             // 
@@ -228,7 +229,7 @@
             this.pnl_Search.Controls.Add(this.lbl_Name);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Search.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.pnl_Search.Location = new System.Drawing.Point(13, 452);
+            this.pnl_Search.Location = new System.Drawing.Point(12, 368);
             this.pnl_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_Search.Name = "pnl_Search";
             this.pnl_Search.Size = new System.Drawing.Size(975, 182);
@@ -446,7 +447,7 @@
             this.pnl_Users.Location = new System.Drawing.Point(13, 79);
             this.pnl_Users.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_Users.Name = "pnl_Users";
-            this.pnl_Users.Size = new System.Drawing.Size(975, 365);
+            this.pnl_Users.Size = new System.Drawing.Size(975, 281);
             // 
             // 
             // 
@@ -506,7 +507,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Users.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Users.EnableHeadersVisualStyles = false;
@@ -521,7 +522,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Users.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_Users.Size = new System.Drawing.Size(963, 353);
+            this.dgv_Users.Size = new System.Drawing.Size(963, 269);
             this.dgv_Users.TabIndex = 1;
             // 
             // col_UserFristName
@@ -580,7 +581,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 749);
+            this.ClientSize = new System.Drawing.Size(1000, 663);
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

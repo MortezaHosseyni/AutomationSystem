@@ -117,29 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="05-SendMessage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\05-SendMessage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="txt_BrithDate.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEJQZXJzaWFuRGF0ZSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJl
+        PW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAABhGcmVlQ29udHJvbHMuUGVyc2lhbkRhdGUJ
+        AAAACXdlZWtBcnJheQttb250aHNBcnJheQR5ZWFyBW1vbnRoA2RheQRob3VyBm1pbnV0ZQZzZWNvbmQJ
+        ZGF5T2ZXZWVrBgYAAAAAAAADCAgICAgIEFN5c3RlbS5EYXlPZldlZWsCAAAACQMAAAAJBAAAAAEAAAAB
+        AAAAAQAAAAAAAAAAAAAAAAAAAAT7////EFN5c3RlbS5EYXlPZldlZWsBAAAAB3ZhbHVlX18ACAUAAAAR
+        AwAAAAcAAAAGBgAAAAjYtNmG2KjZhwYHAAAADNuM2qnYtNmG2KjZhwYIAAAADNiv2YjYtNmG2KjZhwYJ
+        AAAADdiz2Ycg2LTZhtio2YcGCgAAABDahtmH2KfYsdi02YbYqNmHBgsAAAAO2b7Zhtis2LTZhtio2YcG
+        DAAAAAjYrNmF2LnZhxEEAAAADAAAAAYNAAAADtmB2LHZiNix2K/bjNmGBg4AAAAQ2KfYsdiv24zYqNmH
+        2LTYqgYPAAAACtiu2LHYr9in2K8GEAAAAAbYqtuM2LEGEQAAAArZhdix2K/Yp9ivBhIAAAAM2LTZh9ix
+        24zZiNixBhMAAAAG2YXZh9ixBhQAAAAI2KLYqNin2YYGFQAAAAbYotiw2LEGFgAAAATYr9uMBhcAAAAI
+        2KjZh9mF2YYGGAAAAArYp9iz2YHZhtivCw==
+</value>
   </data>
-  <data name="03-JobsManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\03-JobsManager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="07-UserPicture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\07-UserPicture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="01-Users" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\01-Users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="04-AssignmentJob" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\04-AssignmentJob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="02-Jobs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\02-Jobs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="06-AddReminder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\06-AddReminder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="08-UserSignature" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\08-UserSignature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="styleManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>45</value>
+  </metadata>
 </root>

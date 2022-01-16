@@ -33,21 +33,14 @@
             this.rbc_UpMenu = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.rib_Reminder = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Reminder = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Messenger = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Messenger = new DevComponents.DotNetBar.ButtonItem();
             this.rib_AssignmentJob = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_AssignmentJob = new DevComponents.DotNetBar.ButtonItem();
             this.rib_JobsManager = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_JobsManager = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Jobs = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Jobs = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Users = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Users = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.rti_ManagmentSection = new DevComponents.DotNetBar.RibbonTabItem();
             this.rti_Reports = new DevComponents.DotNetBar.RibbonTabItem();
-            this.btn_MenuBar = new DevComponents.DotNetBar.ApplicationButton();
             this.btn_Title = new DevComponents.DotNetBar.ButtonItem();
             this.styleManager = new DevComponents.DotNetBar.StyleManager(this.components);
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
@@ -71,6 +64,13 @@
             this.lbl_CurrentUser = new DevComponents.DotNetBar.LabelX();
             this.lbl_Dashboard = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
+            this.btn_Reminder = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_Messenger = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_AssignmentJob = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_JobsManager = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_Jobs = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_Users = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_MenuBar = new DevComponents.DotNetBar.ApplicationButton();
             this.rbc_UpMenu.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -180,13 +180,6 @@
             this.rib_Reminder.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Reminder.TitleVisible = false;
             // 
-            // btn_Reminder
-            // 
-            this.btn_Reminder.Image = global::AutomationSystem.Properties.Resources._06_AddReminder;
-            this.btn_Reminder.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Reminder.Name = "btn_Reminder";
-            this.btn_Reminder.SubItemsExpandWidth = 14;
-            // 
             // rib_Messenger
             // 
             this.rib_Messenger.AutoOverflowEnabled = true;
@@ -219,13 +212,6 @@
             // 
             this.rib_Messenger.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Messenger.TitleVisible = false;
-            // 
-            // btn_Messenger
-            // 
-            this.btn_Messenger.Image = global::AutomationSystem.Properties.Resources._05_SendMessage;
-            this.btn_Messenger.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Messenger.Name = "btn_Messenger";
-            this.btn_Messenger.SubItemsExpandWidth = 14;
             // 
             // rib_AssignmentJob
             // 
@@ -260,13 +246,6 @@
             this.rib_AssignmentJob.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_AssignmentJob.TitleVisible = false;
             // 
-            // btn_AssignmentJob
-            // 
-            this.btn_AssignmentJob.Image = global::AutomationSystem.Properties.Resources._04_AssignmentJob;
-            this.btn_AssignmentJob.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_AssignmentJob.Name = "btn_AssignmentJob";
-            this.btn_AssignmentJob.SubItemsExpandWidth = 14;
-            // 
             // rib_JobsManager
             // 
             this.rib_JobsManager.AutoOverflowEnabled = true;
@@ -299,13 +278,6 @@
             // 
             this.rib_JobsManager.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_JobsManager.TitleVisible = false;
-            // 
-            // btn_JobsManager
-            // 
-            this.btn_JobsManager.Image = global::AutomationSystem.Properties.Resources._03_JobsManager;
-            this.btn_JobsManager.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_JobsManager.Name = "btn_JobsManager";
-            this.btn_JobsManager.SubItemsExpandWidth = 14;
             // 
             // rib_Jobs
             // 
@@ -340,13 +312,6 @@
             this.rib_Jobs.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Jobs.TitleVisible = false;
             // 
-            // btn_Jobs
-            // 
-            this.btn_Jobs.Image = global::AutomationSystem.Properties.Resources._02_Jobs;
-            this.btn_Jobs.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Jobs.Name = "btn_Jobs";
-            this.btn_Jobs.SubItemsExpandWidth = 14;
-            // 
             // rib_Users
             // 
             this.rib_Users.AutoOverflowEnabled = true;
@@ -379,14 +344,6 @@
             // 
             this.rib_Users.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Users.TitleVisible = false;
-            // 
-            // btn_Users
-            // 
-            this.btn_Users.Image = global::AutomationSystem.Properties.Resources._01_Users;
-            this.btn_Users.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Users.Name = "btn_Users";
-            this.btn_Users.SubItemsExpandWidth = 14;
-            this.btn_Users.Click += new System.EventHandler(this.btn_Users_Click);
             // 
             // ribbonPanel2
             // 
@@ -429,18 +386,6 @@
             this.rti_Reports.Symbol = "57931";
             this.rti_Reports.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.rti_Reports.Text = "گزارشات و آمار";
-            // 
-            // btn_MenuBar
-            // 
-            this.btn_MenuBar.AutoExpandOnClick = true;
-            this.btn_MenuBar.CanCustomize = false;
-            this.btn_MenuBar.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.Image;
-            this.btn_MenuBar.Image = ((System.Drawing.Image)(resources.GetObject("btn_MenuBar.Image")));
-            this.btn_MenuBar.ImagePaddingHorizontal = 2;
-            this.btn_MenuBar.ImagePaddingVertical = 2;
-            this.btn_MenuBar.Name = "btn_MenuBar";
-            this.btn_MenuBar.ShowSubItems = false;
-            this.btn_MenuBar.Text = "&File";
             // 
             // btn_Title
             // 
@@ -800,6 +745,61 @@
             // superTooltip
             // 
             this.superTooltip.DefaultTooltipSettings = new DevComponents.DotNetBar.SuperTooltipInfo("", "", "", null, null, DevComponents.DotNetBar.eTooltipColor.Gray);
+            // 
+            // btn_Reminder
+            // 
+            this.btn_Reminder.Image = global::AutomationSystem.Properties.Resources._06_AddReminder;
+            this.btn_Reminder.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Reminder.Name = "btn_Reminder";
+            this.btn_Reminder.SubItemsExpandWidth = 14;
+            // 
+            // btn_Messenger
+            // 
+            this.btn_Messenger.Image = global::AutomationSystem.Properties.Resources._05_SendMessage;
+            this.btn_Messenger.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Messenger.Name = "btn_Messenger";
+            this.btn_Messenger.SubItemsExpandWidth = 14;
+            // 
+            // btn_AssignmentJob
+            // 
+            this.btn_AssignmentJob.Image = global::AutomationSystem.Properties.Resources._04_AssignmentJob;
+            this.btn_AssignmentJob.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_AssignmentJob.Name = "btn_AssignmentJob";
+            this.btn_AssignmentJob.SubItemsExpandWidth = 14;
+            // 
+            // btn_JobsManager
+            // 
+            this.btn_JobsManager.Image = global::AutomationSystem.Properties.Resources._03_JobsManager;
+            this.btn_JobsManager.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_JobsManager.Name = "btn_JobsManager";
+            this.btn_JobsManager.SubItemsExpandWidth = 14;
+            // 
+            // btn_Jobs
+            // 
+            this.btn_Jobs.Image = global::AutomationSystem.Properties.Resources._02_Jobs;
+            this.btn_Jobs.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Jobs.Name = "btn_Jobs";
+            this.btn_Jobs.SubItemsExpandWidth = 14;
+            // 
+            // btn_Users
+            // 
+            this.btn_Users.Image = global::AutomationSystem.Properties.Resources._01_Users;
+            this.btn_Users.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Users.Name = "btn_Users";
+            this.btn_Users.SubItemsExpandWidth = 14;
+            this.btn_Users.Click += new System.EventHandler(this.btn_Users_Click);
+            // 
+            // btn_MenuBar
+            // 
+            this.btn_MenuBar.AutoExpandOnClick = true;
+            this.btn_MenuBar.CanCustomize = false;
+            this.btn_MenuBar.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.Image;
+            this.btn_MenuBar.Image = ((System.Drawing.Image)(resources.GetObject("btn_MenuBar.Image")));
+            this.btn_MenuBar.ImagePaddingHorizontal = 2;
+            this.btn_MenuBar.ImagePaddingVertical = 2;
+            this.btn_MenuBar.Name = "btn_MenuBar";
+            this.btn_MenuBar.ShowSubItems = false;
+            this.btn_MenuBar.Text = "&File";
             // 
             // frmAdmin
             // 

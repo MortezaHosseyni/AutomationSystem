@@ -95,5 +95,11 @@ namespace AutomationSystem.AdminPanel
         {
             ShowUsers(CreateSearchString());
         }
+
+        private void btn_NewUser_Click(object sender, EventArgs e)
+        {
+            frmUserManager userManagerForm = new frmUserManager();
+            userManagerForm.Show();
+        }
     }
 }

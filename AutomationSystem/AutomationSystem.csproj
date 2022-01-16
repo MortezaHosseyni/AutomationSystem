@@ -52,6 +52,9 @@
     <Reference Include="Nevron.Nov.Schedule, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
     <Reference Include="Nevron.Nov.Text, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
     <Reference Include="Nevron.Nov.WinFormControls, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="PersianDate">
+      <HintPath>D:\Downloads\Refrences\PDate\1\PersianDate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,6 +74,12 @@
     <Compile Include="AdminPanel\frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmUserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmUserManager.Designer.cs">
+      <DependentUpon>frmUserManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminPanel\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmUserManager.resx">
+      <DependentUpon>frmUserManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
@@ -124,6 +136,8 @@
     <Content Include="Images\04-AssignmentJob.png" />
     <Content Include="Images\05-SendMessage.png" />
     <Content Include="Images\06-AddReminder.png" />
+    <Content Include="Images\07-UserPicture.png" />
+    <Content Include="Images\08-UserSignature.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserPanel\" />
