@@ -371,7 +371,7 @@
             this.lbl_RegisterDateValue.SingleLineColor = System.Drawing.SystemColors.Control;
             this.lbl_RegisterDateValue.Size = new System.Drawing.Size(209, 31);
             this.lbl_RegisterDateValue.TabIndex = 20;
-            this.lbl_RegisterDateValue.Text = "1400/10/26";
+            this.lbl_RegisterDateValue.Text = "...";
             this.lbl_RegisterDateValue.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // lbl_RegisterDate
@@ -400,6 +400,7 @@
             // rbt_Man
             // 
             this.rbt_Man.AutoSize = true;
+            this.rbt_Man.Checked = true;
             this.rbt_Man.Location = new System.Drawing.Point(520, 147);
             this.rbt_Man.Name = "rbt_Man";
             this.rbt_Man.Size = new System.Drawing.Size(50, 30);

@@ -100,6 +100,7 @@ namespace AutomationSystem.AdminPanel
         {
             frmUserManager userManagerForm = new frmUserManager();
             userManagerForm.Show();
+            ShowUsers(CreateSearchString());
         }
     }
 }

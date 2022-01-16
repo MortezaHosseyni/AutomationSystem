@@ -53,6 +53,11 @@ namespace AutomationSystem.AdminPanel
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            if (!checkNullableValues())
+            {
+                return;
+            }
+
             try
             {
                 //Hashing Password
@@ -108,7 +113,51 @@ namespace AutomationSystem.AdminPanel
                 throw;
             }
         }
-
+        private bool checkNullableValues()
+        {
+            if (txt_Name.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا نام كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_LastName.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا نام خانوادگي كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_UserName.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا نام كاربري را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_Password.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا گذرواژه كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_Tel.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا شماره تماس كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_PersonalCode.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا كد پرسنلي كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (userPictureName == "" || userSignatureName == "")
+            {
+                MessageBox.Show("عكس ويا نمونه امضاء كاربر نمي‌تواند خالي باشد");
+                return false;
+            }
+            return true;
+        }
         private void frmUserManager_Load(object sender, EventArgs e)
         {
             lbl_RegisterDateValue.Text = PublicVariable.todayDate;
