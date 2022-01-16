@@ -76,6 +76,24 @@ namespace AutomationSystem.AdminPanel
                 byte[] userSignArr = new byte[fileStreamUserSignature.Length];
                 fileStreamUserSignature.Read(userSignArr, 0, Convert.ToInt32(fileStreamUserSignature.Length));
                 fileStreamUserSignature.Close();
+
+
+
+                //User Gender Checking
+                byte checkGender = 0;
+                if (rbt_Man.Checked)
+                {
+                    checkGender = 1;
+                }
+                else if (rbt_Woman.Checked)
+                {
+                    checkGender = 2;
+                }
+
+
+
+                //User Brithdate
+                string userBrithDate = String.Format("{0:yyyy/MM/dd}", Convert.ToDateTime(txt_BrithDate.Value.Year.ToString() + "/" + txt_BrithDate.Value.Month.ToString() + "/" + txt_BrithDate.Value.Day.ToString()));
             }
             catch (Exception)
             {
