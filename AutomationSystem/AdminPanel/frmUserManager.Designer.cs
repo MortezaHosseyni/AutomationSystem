@@ -175,7 +175,7 @@
             // 
             // txt_Email
             // 
-            this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             // 
             // 
             // 
@@ -429,7 +429,7 @@
             // 
             // lbl_RegisterDateValue
             // 
-            this.lbl_RegisterDateValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl_RegisterDateValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             // 
             // 
             // 
@@ -613,6 +613,7 @@
             this.btn_Save.Symbol = "";
             this.btn_Save.TabIndex = 10;
             this.btn_Save.Text = "ثبت اطلاعات";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Exit
             // 

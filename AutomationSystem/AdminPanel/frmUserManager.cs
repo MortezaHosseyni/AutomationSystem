@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,6 +39,30 @@ namespace AutomationSystem.AdminPanel
             if (openFileDLG.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 pic_UserSignature.Image = new Bitmap(openFileDLG.FileName);
+            }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Hashing Password
+                SHA256CryptoServiceProvider SHA256 = new SHA256CryptoServiceProvider();
+                Byte[] B1;
+                Byte[] B2;
+
+                B1 = UTF8Encoding.UTF8.GetBytes(txt_Password.Text.Trim());
+                B2 = SHA256.ComputeHash(B1);
+
+                //Image Array
+
+
+                string hashedPass = BitConverter.ToString(B2);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("در ثبت اطلاعات خطايي رخ داد لطفا دوباره امتحان كنيد");
+                throw;
             }
         }
     }
