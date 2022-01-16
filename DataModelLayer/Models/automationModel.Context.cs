@@ -12,6 +12,8 @@ namespace DataModelLayer.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Office_Automation_DatabaseEntities : DbContext
     {
@@ -27,5 +29,62 @@ namespace DataModelLayer.Models
     
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Vw_Users> Vw_Users { get; set; }
+    
+        public virtual int Sp_InsterUsers(string userFirstName, string userLastName, string userName, string userPassword, string userPersonalID, string userEmail, Nullable<byte> userGender, Nullable<byte> userActivity, string userTel, string userBrithDate, byte[] userImage, byte[] userSignature, string userRegisteredDate)
+        {
+            var userFirstNameParameter = userFirstName != null ?
+                new ObjectParameter("UserFirstName", userFirstName) :
+                new ObjectParameter("UserFirstName", typeof(string));
+    
+            var userLastNameParameter = userLastName != null ?
+                new ObjectParameter("UserLastName", userLastName) :
+                new ObjectParameter("UserLastName", typeof(string));
+    
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var userPasswordParameter = userPassword != null ?
+                new ObjectParameter("UserPassword", userPassword) :
+                new ObjectParameter("UserPassword", typeof(string));
+    
+            var userPersonalIDParameter = userPersonalID != null ?
+                new ObjectParameter("UserPersonalID", userPersonalID) :
+                new ObjectParameter("UserPersonalID", typeof(string));
+    
+            var userEmailParameter = userEmail != null ?
+                new ObjectParameter("UserEmail", userEmail) :
+                new ObjectParameter("UserEmail", typeof(string));
+    
+            var userGenderParameter = userGender.HasValue ?
+                new ObjectParameter("UserGender", userGender) :
+                new ObjectParameter("UserGender", typeof(byte));
+    
+            var userActivityParameter = userActivity.HasValue ?
+                new ObjectParameter("UserActivity", userActivity) :
+                new ObjectParameter("UserActivity", typeof(byte));
+    
+            var userTelParameter = userTel != null ?
+                new ObjectParameter("UserTel", userTel) :
+                new ObjectParameter("UserTel", typeof(string));
+    
+            var userBrithDateParameter = userBrithDate != null ?
+                new ObjectParameter("UserBrithDate", userBrithDate) :
+                new ObjectParameter("UserBrithDate", typeof(string));
+    
+            var userImageParameter = userImage != null ?
+                new ObjectParameter("UserImage", userImage) :
+                new ObjectParameter("UserImage", typeof(byte[]));
+    
+            var userSignatureParameter = userSignature != null ?
+                new ObjectParameter("UserSignature", userSignature) :
+                new ObjectParameter("UserSignature", typeof(byte[]));
+    
+            var userRegisteredDateParameter = userRegisteredDate != null ?
+                new ObjectParameter("UserRegisteredDate", userRegisteredDate) :
+                new ObjectParameter("UserRegisteredDate", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_InsterUsers", userFirstNameParameter, userLastNameParameter, userNameParameter, userPasswordParameter, userPersonalIDParameter, userEmailParameter, userGenderParameter, userActivityParameter, userTelParameter, userBrithDateParameter, userImageParameter, userSignatureParameter, userRegisteredDateParameter);
+        }
     }
 }

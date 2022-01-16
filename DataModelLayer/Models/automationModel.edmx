@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Office_Automation_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Office_Automation_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
@@ -51,6 +51,21 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserSignature" Type="image" />
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <Function Name="Sp_InsterUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserFirstName" Type="varchar" Mode="In" />
+          <Parameter Name="UserLastName" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="UserPassword" Type="varchar" Mode="In" />
+          <Parameter Name="UserPersonalID" Type="varchar" Mode="In" />
+          <Parameter Name="UserEmail" Type="varchar" Mode="In" />
+          <Parameter Name="UserGender" Type="tinyint" Mode="In" />
+          <Parameter Name="UserActivity" Type="tinyint" Mode="In" />
+          <Parameter Name="UserTel" Type="varchar" Mode="In" />
+          <Parameter Name="UserBrithDate" Type="varchar" Mode="In" />
+          <Parameter Name="UserImage" Type="image" Mode="In" />
+          <Parameter Name="UserSignature" Type="image" Mode="In" />
+          <Parameter Name="UserRegisteredDate" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" store:Type="Views" store:Schema="dbo">
@@ -72,8 +87,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     FROM [dbo].[Vw_Users] AS [Vw_Users]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Office_Automation_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -124,6 +138,21 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
         <EntityContainer Name="Office_Automation_DatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" />
+          <FunctionImport Name="Sp_InsterUsers">
+            <Parameter Name="UserFirstName" Mode="In" Type="String" />
+            <Parameter Name="UserLastName" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="UserPassword" Mode="In" Type="String" />
+            <Parameter Name="UserPersonalID" Mode="In" Type="String" />
+            <Parameter Name="UserEmail" Mode="In" Type="String" />
+            <Parameter Name="UserGender" Mode="In" Type="Byte" />
+            <Parameter Name="UserActivity" Mode="In" Type="Byte" />
+            <Parameter Name="UserTel" Mode="In" Type="String" />
+            <Parameter Name="UserBrithDate" Mode="In" Type="String" />
+            <Parameter Name="UserImage" Mode="In" Type="Binary" />
+            <Parameter Name="UserSignature" Mode="In" Type="Binary" />
+            <Parameter Name="UserRegisteredDate" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -171,6 +200,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_InsterUsers" FunctionName="Office_Automation_DatabaseModel.Store.Sp_InsterUsers" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
