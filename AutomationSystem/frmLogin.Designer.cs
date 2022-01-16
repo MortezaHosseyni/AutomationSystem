@@ -44,6 +44,16 @@
             this.txt_Username = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_Password = new DevComponents.DotNetBar.LabelX();
             this.styleManager = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.stb_StatusBar = new DevComponents.DotNetBar.Metro.MetroStatusBar();
+            this.lbl_Date = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_DateValue = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_DoubleLine1 = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_Time = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_TimeValue = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_DoubleLine2 = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_YourIP = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_YourIPValue = new DevComponents.DotNetBar.LabelItem();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnl_MainPanel.SuspendLayout();
             this.pnl_Info.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +78,7 @@
             // 
             // 
             this.lbl_Username.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Username.Location = new System.Drawing.Point(652, 142);
+            this.lbl_Username.Location = new System.Drawing.Point(650, 142);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(65, 37);
             this.lbl_Username.TabIndex = 1;
@@ -271,7 +281,7 @@
             // 
             // 
             this.lbl_Password.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Password.Location = new System.Drawing.Point(652, 184);
+            this.lbl_Password.Location = new System.Drawing.Point(650, 184);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(53, 37);
             this.lbl_Password.TabIndex = 2;
@@ -283,11 +293,89 @@
             this.styleManager.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007VistaGlass;
             this.styleManager.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
+            // stb_StatusBar
+            // 
+            // 
+            // 
+            // 
+            this.stb_StatusBar.BackgroundStyle.BackColor = System.Drawing.Color.Blue;
+            this.stb_StatusBar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.stb_StatusBar.ContainerControlProcessDialogKey = true;
+            this.stb_StatusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stb_StatusBar.DragDropSupport = true;
+            this.stb_StatusBar.Font = new System.Drawing.Font("B Nazanin", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.stb_StatusBar.ForeColor = System.Drawing.Color.White;
+            this.stb_StatusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbl_Date,
+            this.lbl_DateValue,
+            this.lbl_DoubleLine1,
+            this.lbl_Time,
+            this.lbl_TimeValue,
+            this.lbl_DoubleLine2,
+            this.lbl_YourIP,
+            this.lbl_YourIPValue});
+            this.stb_StatusBar.Location = new System.Drawing.Point(0, 409);
+            this.stb_StatusBar.Name = "stb_StatusBar";
+            this.stb_StatusBar.Size = new System.Drawing.Size(742, 22);
+            this.stb_StatusBar.TabIndex = 6;
+            this.stb_StatusBar.Text = "--";
+            // 
+            // lbl_Date
+            // 
+            this.lbl_Date.ForeColor = System.Drawing.Color.White;
+            this.lbl_Date.Name = "lbl_Date";
+            this.lbl_Date.Text = "تاريخ:";
+            // 
+            // lbl_DateValue
+            // 
+            this.lbl_DateValue.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_DateValue.Name = "lbl_DateValue";
+            this.lbl_DateValue.Text = "1400/10/26";
+            // 
+            // lbl_DoubleLine1
+            // 
+            this.lbl_DoubleLine1.Name = "lbl_DoubleLine1";
+            this.lbl_DoubleLine1.Text = "--";
+            // 
+            // lbl_Time
+            // 
+            this.lbl_Time.ForeColor = System.Drawing.Color.White;
+            this.lbl_Time.Name = "lbl_Time";
+            this.lbl_Time.Text = "ساعت:";
+            // 
+            // lbl_TimeValue
+            // 
+            this.lbl_TimeValue.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_TimeValue.Name = "lbl_TimeValue";
+            this.lbl_TimeValue.Text = "22:44:13";
+            // 
+            // lbl_DoubleLine2
+            // 
+            this.lbl_DoubleLine2.Name = "lbl_DoubleLine2";
+            this.lbl_DoubleLine2.Text = "--";
+            // 
+            // lbl_YourIP
+            // 
+            this.lbl_YourIP.ForeColor = System.Drawing.Color.White;
+            this.lbl_YourIP.Name = "lbl_YourIP";
+            this.lbl_YourIP.Text = "آي‌پي شما:";
+            // 
+            // lbl_YourIPValue
+            // 
+            this.lbl_YourIPValue.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_YourIPValue.Name = "lbl_YourIPValue";
+            this.lbl_YourIPValue.Text = "192.168.202.517";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 431);
+            this.Controls.Add(this.stb_StatusBar);
             this.Controls.Add(this.pnl_MainPanel);
             this.Font = new System.Drawing.Font("B Nazanin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -296,6 +384,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnl_MainPanel.ResumeLayout(false);
             this.pnl_MainPanel.PerformLayout();
             this.pnl_Info.ResumeLayout(false);
@@ -320,5 +409,15 @@
         private DevComponents.DotNetBar.LabelX lbl_InfoOne;
         private DevComponents.DotNetBar.LabelX lbl_InfoTwo;
         private DevComponents.DotNetBar.StyleManager styleManager;
+        private DevComponents.DotNetBar.Metro.MetroStatusBar stb_StatusBar;
+        private DevComponents.DotNetBar.LabelItem lbl_Date;
+        private DevComponents.DotNetBar.LabelItem lbl_DateValue;
+        private DevComponents.DotNetBar.LabelItem lbl_DoubleLine1;
+        private DevComponents.DotNetBar.LabelItem lbl_Time;
+        private DevComponents.DotNetBar.LabelItem lbl_TimeValue;
+        private DevComponents.DotNetBar.LabelItem lbl_DoubleLine2;
+        private DevComponents.DotNetBar.LabelItem lbl_YourIP;
+        private DevComponents.DotNetBar.LabelItem lbl_YourIPValue;
+        private System.Windows.Forms.Timer timer;
     }
 }

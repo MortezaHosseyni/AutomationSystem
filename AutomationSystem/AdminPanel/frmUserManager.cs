@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -94,12 +95,23 @@ namespace AutomationSystem.AdminPanel
 
                 //User Brithdate
                 string userBrithDate = String.Format("{0:yyyy/MM/dd}", Convert.ToDateTime(txt_BrithDate.Value.Year.ToString() + "/" + txt_BrithDate.Value.Month.ToString() + "/" + txt_BrithDate.Value.Day.ToString()));
+
+                //Insert Data
+                db.Sp_InsterUsers(txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_UserName.Text.Trim(), hashedPass, txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, 1, txt_Tel.Text.Trim(), userBrithDate, userPicArr, userSignArr, lbl_RegisterDateValue.Text.Trim());
+                db.SaveChanges();
+                MessageBox.Show("كاربر با موفقيت ثبت شد");
+                this.Close();
             }
             catch (Exception)
             {
                 MessageBox.Show("در ثبت اطلاعات خطايي رخ داد لطفا دوباره امتحان كنيد");
                 throw;
             }
+        }
+
+        private void frmUserManager_Load(object sender, EventArgs e)
+        {
+            lbl_RegisterDateValue.Text = PublicVariable.todayDate;
         }
     }
 }
