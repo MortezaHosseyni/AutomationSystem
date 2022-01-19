@@ -14,6 +14,12 @@ namespace DataModelLayer.Models
     
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.Reminders = new HashSet<Reminder>();
+        }
+    
         public int UserID { get; set; }
         public string UserFirstName { get; set; }
         public string UserLastName { get; set; }
@@ -28,5 +34,8 @@ namespace DataModelLayer.Models
         public byte[] UserImage { get; set; }
         public byte[] UserSignature { get; set; }
         public string UserRegisteredDate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reminder> Reminders { get; set; }
     }
 }

@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Office_Automation_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Reminder">
+          <Key>
+            <PropertyRef Name="RemindID" />
+          </Key>
+          <Property Name="RemindID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RemindSubject" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RemindCaption" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="RemindCreatedDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="RemindRememberDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="RemindIsRead" Type="tinyint" Nullable="false" />
+          <Property Name="RemindUserID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
@@ -51,6 +63,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserSignature" Type="image" />
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Reminder_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Reminder">
+              <PropertyRef Name="RemindUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="Sp_InsterUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserFirstName" Type="varchar" Mode="In" />
           <Parameter Name="UserLastName" Type="varchar" Mode="In" />
@@ -67,6 +91,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="UserRegisteredDate" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
+          <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -86,6 +111,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Users].[UserRegisteredDate] AS [UserRegisteredDate]
     FROM [dbo].[Vw_Users] AS [Vw_Users]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_Reminder_Users" Association="Self.FK_Reminder_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reminder" EntitySet="Reminder" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -109,6 +138,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserRegisteredDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Reminders" Relationship="Office_Automation_DatabaseModel.FK_Reminder_Users" FromRole="User" ToRole="Reminder" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -153,7 +183,37 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <Parameter Name="UserSignature" Mode="In" Type="Binary" />
             <Parameter Name="UserRegisteredDate" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="Reminders" EntityType="Office_Automation_DatabaseModel.Reminder" />
+          <AssociationSet Name="FK_Reminder_Users" Association="Office_Automation_DatabaseModel.FK_Reminder_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Reminder" EntitySet="Reminders" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Reminder">
+          <Key>
+            <PropertyRef Name="RemindID" />
+          </Key>
+          <Property Name="RemindID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RemindSubject" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RemindCaption" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="RemindCreatedDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RemindRememberDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RemindIsRead" Type="Byte" Nullable="false" />
+          <Property Name="RemindUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_Reminder_Users" FromRole="Reminder" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Reminder_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.Reminder" Role="Reminder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Reminder">
+              <PropertyRef Name="RemindUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -201,6 +261,19 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Sp_InsterUsers" FunctionName="Office_Automation_DatabaseModel.Store.Sp_InsterUsers" />
+          <EntitySetMapping Name="Reminders">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Reminder">
+              <MappingFragment StoreEntitySet="Reminder">
+                <ScalarProperty Name="RemindUserID" ColumnName="RemindUserID" />
+                <ScalarProperty Name="RemindIsRead" ColumnName="RemindIsRead" />
+                <ScalarProperty Name="RemindRememberDate" ColumnName="RemindRememberDate" />
+                <ScalarProperty Name="RemindCreatedDate" ColumnName="RemindCreatedDate" />
+                <ScalarProperty Name="RemindCaption" ColumnName="RemindCaption" />
+                <ScalarProperty Name="RemindSubject" ColumnName="RemindSubject" />
+                <ScalarProperty Name="RemindID" ColumnName="RemindID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
