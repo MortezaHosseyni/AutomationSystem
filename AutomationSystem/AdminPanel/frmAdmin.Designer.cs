@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbc_UpMenu = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.rib_Reminder = new DevComponents.DotNetBar.RibbonBar();
@@ -73,6 +75,13 @@
             this.lbl_Dashboard = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
             this.dgv_Reminder = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.lbl_RemindSubject = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbl_RemindDateIn = new DevComponents.DotNetBar.LabelX();
+            this.txt_RemindDateIn = new FreeControls.PersianDateTimePicker();
+            this.lbl_RemindDateTo = new DevComponents.DotNetBar.LabelX();
+            this.txt_RemindDateTo = new FreeControls.PersianDateTimePicker();
+            this.btn_RemindSearch = new DevComponents.DotNetBar.ButtonX();
             this.rbc_UpMenu.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -102,7 +111,7 @@
             this.rbc_UpMenu.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btn_MenuBar,
             this.btn_Title});
-            this.rbc_UpMenu.Size = new System.Drawing.Size(862, 169);
+            this.rbc_UpMenu.Size = new System.Drawing.Size(934, 169);
             this.rbc_UpMenu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.rbc_UpMenu.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
             this.rbc_UpMenu.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
@@ -136,7 +145,7 @@
             this.ribbonPanel1.Location = new System.Drawing.Point(0, 64);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(862, 102);
+            this.ribbonPanel1.Size = new System.Drawing.Size(934, 102);
             // 
             // 
             // 
@@ -470,7 +479,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 169);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(862, 531);
+            this.panelEx1.Size = new System.Drawing.Size(934, 531);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -502,7 +511,7 @@
             this.pnl_SystemStatus.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.pnl_SystemStatus.Location = new System.Drawing.Point(12, 306);
             this.pnl_SystemStatus.Name = "pnl_SystemStatus";
-            this.pnl_SystemStatus.Size = new System.Drawing.Size(838, 200);
+            this.pnl_SystemStatus.Size = new System.Drawing.Size(910, 200);
             // 
             // 
             // 
@@ -542,7 +551,7 @@
             this.lbl_LastLoginValue.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_LastLoginValue.Font = new System.Drawing.Font("B Nazanin", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_LastLoginValue.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_LastLoginValue.Location = new System.Drawing.Point(3, 107);
+            this.lbl_LastLoginValue.Location = new System.Drawing.Point(48, 107);
             this.lbl_LastLoginValue.Name = "lbl_LastLoginValue";
             this.lbl_LastLoginValue.Size = new System.Drawing.Size(204, 30);
             this.lbl_LastLoginValue.TabIndex = 13;
@@ -554,7 +563,7 @@
             // 
             // 
             this.lbl_LastLogin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_LastLogin.Location = new System.Drawing.Point(213, 112);
+            this.lbl_LastLogin.Location = new System.Drawing.Point(258, 112);
             this.lbl_LastLogin.Name = "lbl_LastLogin";
             this.lbl_LastLogin.Size = new System.Drawing.Size(75, 23);
             this.lbl_LastLogin.TabIndex = 12;
@@ -568,7 +577,7 @@
             this.lbl_YourIPValue.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_YourIPValue.Font = new System.Drawing.Font("B Nazanin", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_YourIPValue.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_YourIPValue.Location = new System.Drawing.Point(312, 109);
+            this.lbl_YourIPValue.Location = new System.Drawing.Point(357, 109);
             this.lbl_YourIPValue.Name = "lbl_YourIPValue";
             this.lbl_YourIPValue.Size = new System.Drawing.Size(155, 30);
             this.lbl_YourIPValue.TabIndex = 11;
@@ -580,7 +589,7 @@
             // 
             // 
             this.lbl_YourIP.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_YourIP.Location = new System.Drawing.Point(473, 114);
+            this.lbl_YourIP.Location = new System.Drawing.Point(518, 114);
             this.lbl_YourIP.Name = "lbl_YourIP";
             this.lbl_YourIP.Size = new System.Drawing.Size(125, 23);
             this.lbl_YourIP.TabIndex = 10;
@@ -594,7 +603,7 @@
             this.lbl_ForSupportValue.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_ForSupportValue.Font = new System.Drawing.Font("B Nazanin", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_ForSupportValue.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_ForSupportValue.Location = new System.Drawing.Point(616, 110);
+            this.lbl_ForSupportValue.Location = new System.Drawing.Point(661, 110);
             this.lbl_ForSupportValue.Name = "lbl_ForSupportValue";
             this.lbl_ForSupportValue.Size = new System.Drawing.Size(67, 30);
             this.lbl_ForSupportValue.TabIndex = 9;
@@ -606,7 +615,7 @@
             // 
             // 
             this.lbl_ForSupport.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_ForSupport.Location = new System.Drawing.Point(689, 115);
+            this.lbl_ForSupport.Location = new System.Drawing.Point(734, 115);
             this.lbl_ForSupport.Name = "lbl_ForSupport";
             this.lbl_ForSupport.Size = new System.Drawing.Size(89, 23);
             this.lbl_ForSupport.TabIndex = 8;
@@ -620,7 +629,7 @@
             this.lbl_AllActiveUsersValue.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_AllActiveUsersValue.Font = new System.Drawing.Font("B Nazanin", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_AllActiveUsersValue.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_AllActiveUsersValue.Location = new System.Drawing.Point(25, 19);
+            this.lbl_AllActiveUsersValue.Location = new System.Drawing.Point(70, 19);
             this.lbl_AllActiveUsersValue.Name = "lbl_AllActiveUsersValue";
             this.lbl_AllActiveUsersValue.Size = new System.Drawing.Size(79, 30);
             this.lbl_AllActiveUsersValue.TabIndex = 7;
@@ -632,7 +641,7 @@
             // 
             // 
             this.lbl_AllActiveUsers.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_AllActiveUsers.Location = new System.Drawing.Point(110, 24);
+            this.lbl_AllActiveUsers.Location = new System.Drawing.Point(155, 24);
             this.lbl_AllActiveUsers.Name = "lbl_AllActiveUsers";
             this.lbl_AllActiveUsers.Size = new System.Drawing.Size(133, 23);
             this.lbl_AllActiveUsers.TabIndex = 6;
@@ -646,7 +655,7 @@
             this.lbl_OnlineUsersValue.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_OnlineUsersValue.Font = new System.Drawing.Font("B Nazanin", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_OnlineUsersValue.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_OnlineUsersValue.Location = new System.Drawing.Point(249, 19);
+            this.lbl_OnlineUsersValue.Location = new System.Drawing.Point(294, 19);
             this.lbl_OnlineUsersValue.Name = "lbl_OnlineUsersValue";
             this.lbl_OnlineUsersValue.Size = new System.Drawing.Size(77, 30);
             this.lbl_OnlineUsersValue.TabIndex = 5;
@@ -658,7 +667,7 @@
             // 
             // 
             this.lbl_OnlineUsers.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_OnlineUsers.Location = new System.Drawing.Point(332, 24);
+            this.lbl_OnlineUsers.Location = new System.Drawing.Point(377, 24);
             this.lbl_OnlineUsers.Name = "lbl_OnlineUsers";
             this.lbl_OnlineUsers.Size = new System.Drawing.Size(88, 23);
             this.lbl_OnlineUsers.TabIndex = 4;
@@ -672,7 +681,7 @@
             this.lbl_TimeValue.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_TimeValue.Font = new System.Drawing.Font("B Nazanin", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_TimeValue.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_TimeValue.Location = new System.Drawing.Point(439, 19);
+            this.lbl_TimeValue.Location = new System.Drawing.Point(484, 19);
             this.lbl_TimeValue.Name = "lbl_TimeValue";
             this.lbl_TimeValue.Size = new System.Drawing.Size(106, 30);
             this.lbl_TimeValue.TabIndex = 3;
@@ -684,7 +693,7 @@
             // 
             // 
             this.lbl_Time.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Time.Location = new System.Drawing.Point(551, 24);
+            this.lbl_Time.Location = new System.Drawing.Point(596, 24);
             this.lbl_Time.Name = "lbl_Time";
             this.lbl_Time.Size = new System.Drawing.Size(45, 23);
             this.lbl_Time.TabIndex = 2;
@@ -698,7 +707,7 @@
             this.lbl_DateValue.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_DateValue.Font = new System.Drawing.Font("B Nazanin", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_DateValue.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_DateValue.Location = new System.Drawing.Point(616, 19);
+            this.lbl_DateValue.Location = new System.Drawing.Point(661, 19);
             this.lbl_DateValue.Name = "lbl_DateValue";
             this.lbl_DateValue.Size = new System.Drawing.Size(111, 30);
             this.lbl_DateValue.TabIndex = 1;
@@ -710,7 +719,7 @@
             // 
             // 
             this.lbl_Date.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Date.Location = new System.Drawing.Point(733, 24);
+            this.lbl_Date.Location = new System.Drawing.Point(778, 24);
             this.lbl_Date.Name = "lbl_Date";
             this.lbl_Date.Size = new System.Drawing.Size(45, 23);
             this.lbl_Date.TabIndex = 0;
@@ -720,11 +729,19 @@
             // 
             this.pnl_Reminder.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Reminder.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Reminder.Controls.Add(this.btn_RemindSearch);
+            this.pnl_Reminder.Controls.Add(this.txt_RemindDateTo);
+            this.pnl_Reminder.Controls.Add(this.lbl_RemindDateTo);
+            this.pnl_Reminder.Controls.Add(this.txt_RemindDateIn);
+            this.pnl_Reminder.Controls.Add(this.lbl_RemindDateIn);
+            this.pnl_Reminder.Controls.Add(this.textBoxX1);
+            this.pnl_Reminder.Controls.Add(this.lbl_RemindSubject);
             this.pnl_Reminder.Controls.Add(this.dgv_Reminder);
             this.pnl_Reminder.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_Reminder.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.pnl_Reminder.Location = new System.Drawing.Point(12, 67);
             this.pnl_Reminder.Name = "pnl_Reminder";
-            this.pnl_Reminder.Size = new System.Drawing.Size(838, 233);
+            this.pnl_Reminder.Size = new System.Drawing.Size(910, 233);
             // 
             // 
             // 
@@ -794,7 +811,7 @@
             this.lbl_Dashboard.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Dashboard.Font = new System.Drawing.Font("B Nazanin", 16F, System.Drawing.FontStyle.Bold);
             this.lbl_Dashboard.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_Dashboard.Location = new System.Drawing.Point(738, 16);
+            this.lbl_Dashboard.Location = new System.Drawing.Point(793, 16);
             this.lbl_Dashboard.Name = "lbl_Dashboard";
             this.lbl_Dashboard.Size = new System.Drawing.Size(100, 45);
             this.lbl_Dashboard.Symbol = "57391";
@@ -808,26 +825,127 @@
             // 
             // dgv_Reminder
             // 
-            this.dgv_Reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Reminder.EnableHeadersVisualStyles = false;
             this.dgv_Reminder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_Reminder.Location = new System.Drawing.Point(3, 3);
             this.dgv_Reminder.Name = "dgv_Reminder";
-            this.dgv_Reminder.Size = new System.Drawing.Size(826, 119);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Reminder.Size = new System.Drawing.Size(898, 127);
             this.dgv_Reminder.TabIndex = 0;
+            // 
+            // lbl_RemindSubject
+            // 
+            // 
+            // 
+            // 
+            this.lbl_RemindSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_RemindSubject.Location = new System.Drawing.Point(792, 154);
+            this.lbl_RemindSubject.Name = "lbl_RemindSubject";
+            this.lbl_RemindSubject.Size = new System.Drawing.Size(93, 23);
+            this.lbl_RemindSubject.TabIndex = 1;
+            this.lbl_RemindSubject.Text = "موضوع يادآوري:";
+            // 
+            // textBoxX1
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.Location = new System.Drawing.Point(628, 152);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(165, 33);
+            this.textBoxX1.TabIndex = 2;
+            // 
+            // lbl_RemindDateIn
+            // 
+            // 
+            // 
+            // 
+            this.lbl_RemindDateIn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_RemindDateIn.Location = new System.Drawing.Point(503, 154);
+            this.lbl_RemindDateIn.Name = "lbl_RemindDateIn";
+            this.lbl_RemindDateIn.Size = new System.Drawing.Size(99, 23);
+            this.lbl_RemindDateIn.TabIndex = 3;
+            this.lbl_RemindDateIn.Text = "تاريخ يادآوري از:";
+            // 
+            // txt_RemindDateIn
+            // 
+            this.txt_RemindDateIn.BackColor = System.Drawing.Color.White;
+            this.txt_RemindDateIn.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_RemindDateIn.Location = new System.Drawing.Point(332, 154);
+            this.txt_RemindDateIn.Name = "txt_RemindDateIn";
+            this.txt_RemindDateIn.ShowTime = false;
+            this.txt_RemindDateIn.Size = new System.Drawing.Size(165, 31);
+            this.txt_RemindDateIn.TabIndex = 4;
+            this.txt_RemindDateIn.Text = "persianDateTimePicker1";
+            this.txt_RemindDateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateIn.Value")));
+            // 
+            // lbl_RemindDateTo
+            // 
+            // 
+            // 
+            // 
+            this.lbl_RemindDateTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_RemindDateTo.Location = new System.Drawing.Point(315, 154);
+            this.lbl_RemindDateTo.Name = "lbl_RemindDateTo";
+            this.lbl_RemindDateTo.Size = new System.Drawing.Size(11, 23);
+            this.lbl_RemindDateTo.TabIndex = 5;
+            this.lbl_RemindDateTo.Text = "تا";
+            // 
+            // txt_RemindDateTo
+            // 
+            this.txt_RemindDateTo.BackColor = System.Drawing.Color.White;
+            this.txt_RemindDateTo.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_RemindDateTo.Location = new System.Drawing.Point(144, 154);
+            this.txt_RemindDateTo.Name = "txt_RemindDateTo";
+            this.txt_RemindDateTo.ShowTime = false;
+            this.txt_RemindDateTo.Size = new System.Drawing.Size(165, 31);
+            this.txt_RemindDateTo.TabIndex = 6;
+            this.txt_RemindDateTo.Text = "persianDateTimePicker2";
+            this.txt_RemindDateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateTo.Value")));
+            // 
+            // btn_RemindSearch
+            // 
+            this.btn_RemindSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_RemindSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_RemindSearch.Location = new System.Drawing.Point(43, 147);
+            this.btn_RemindSearch.Name = "btn_RemindSearch";
+            this.btn_RemindSearch.Size = new System.Drawing.Size(45, 44);
+            this.btn_RemindSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_RemindSearch.Symbol = "";
+            this.btn_RemindSearch.TabIndex = 7;
             // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 700);
+            this.ClientSize = new System.Drawing.Size(934, 700);
             this.Controls.Add(this.panelEx1);
             this.Controls.Add(this.rbc_UpMenu);
             this.Font = new System.Drawing.Font("B Nazanin", 12F);
@@ -893,5 +1011,12 @@
         private DevComponents.DotNetBar.LabelX lbl_LastLogin;
         private DevComponents.DotNetBar.SuperTooltip superTooltip;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_Reminder;
+        private FreeControls.PersianDateTimePicker txt_RemindDateIn;
+        private DevComponents.DotNetBar.LabelX lbl_RemindDateIn;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.LabelX lbl_RemindSubject;
+        private FreeControls.PersianDateTimePicker txt_RemindDateTo;
+        private DevComponents.DotNetBar.LabelX lbl_RemindDateTo;
+        private DevComponents.DotNetBar.ButtonX btn_RemindSearch;
     }
 }
