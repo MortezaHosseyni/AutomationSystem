@@ -82,6 +82,12 @@
             this.lbl_RemindDateTo = new DevComponents.DotNetBar.LabelX();
             this.txt_RemindDateTo = new FreeControls.PersianDateTimePicker();
             this.btn_RemindSearch = new DevComponents.DotNetBar.ButtonX();
+            this.col_RemindSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_RemindCaption = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_RemindCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_RemindRememberDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_RemindRead = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_RemindID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbc_UpMenu.SuspendLayout();
             this.rbp_UpMenu.SuspendLayout();
             this.pnl_MainPanel.SuspendLayout();
@@ -825,6 +831,8 @@
             // 
             // dgv_Reminder
             // 
+            this.dgv_Reminder.AllowUserToAddRows = false;
+            this.dgv_Reminder.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -834,6 +842,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Reminder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_RemindSubject,
+            this.col_RemindCaption,
+            this.col_RemindCreatedDate,
+            this.col_RemindRememberDate,
+            this.col_RemindRead,
+            this.col_RemindID});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -941,6 +956,41 @@
             this.btn_RemindSearch.Symbol = "";
             this.btn_RemindSearch.TabIndex = 7;
             // 
+            // col_RemindSubject
+            // 
+            this.col_RemindSubject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindSubject.HeaderText = "موضوع";
+            this.col_RemindSubject.Name = "col_RemindSubject";
+            // 
+            // col_RemindCaption
+            // 
+            this.col_RemindCaption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindCaption.HeaderText = "توضيحات";
+            this.col_RemindCaption.Name = "col_RemindCaption";
+            // 
+            // col_RemindCreatedDate
+            // 
+            this.col_RemindCreatedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindCreatedDate.HeaderText = "تاريخ ثبت";
+            this.col_RemindCreatedDate.Name = "col_RemindCreatedDate";
+            // 
+            // col_RemindRememberDate
+            // 
+            this.col_RemindRememberDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindRememberDate.HeaderText = "تاريخ يادآوري";
+            this.col_RemindRememberDate.Name = "col_RemindRememberDate";
+            // 
+            // col_RemindRead
+            // 
+            this.col_RemindRead.HeaderText = "وضعيت";
+            this.col_RemindRead.Name = "col_RemindRead";
+            // 
+            // col_RemindID
+            // 
+            this.col_RemindID.HeaderText = "RemindID";
+            this.col_RemindID.Name = "col_RemindID";
+            this.col_RemindID.Visible = false;
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -1018,5 +1068,11 @@
         private FreeControls.PersianDateTimePicker txt_RemindDateTo;
         private DevComponents.DotNetBar.LabelX lbl_RemindDateTo;
         private DevComponents.DotNetBar.ButtonX btn_RemindSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_RemindSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_RemindCaption;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_RemindCreatedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_RemindRememberDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_RemindRead;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_RemindID;
     }
 }
