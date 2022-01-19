@@ -964,9 +964,10 @@
             // 
             // col_RemindCaption
             // 
-            this.col_RemindCaption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindCaption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.col_RemindCaption.HeaderText = "توضيحات";
             this.col_RemindCaption.Name = "col_RemindCaption";
+            this.col_RemindCaption.Width = 300;
             // 
             // col_RemindCreatedDate
             // 
