@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbc_UpMenu = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.rbp_UpMenu = new DevComponents.DotNetBar.RibbonPanel();
             this.rib_Reminder = new DevComponents.DotNetBar.RibbonBar();
             this.btn_Reminder = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Messenger = new DevComponents.DotNetBar.RibbonBar();
@@ -53,7 +53,7 @@
             this.btn_MenuBar = new DevComponents.DotNetBar.ApplicationButton();
             this.btn_Title = new DevComponents.DotNetBar.ButtonItem();
             this.styleManager = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.pnl_MainPanel = new DevComponents.DotNetBar.PanelEx();
             this.pnl_SystemStatus = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_LastLoginValue = new DevComponents.DotNetBar.LabelX();
             this.lbl_LastLogin = new DevComponents.DotNetBar.LabelX();
@@ -83,8 +83,8 @@
             this.txt_RemindDateTo = new FreeControls.PersianDateTimePicker();
             this.btn_RemindSearch = new DevComponents.DotNetBar.ButtonX();
             this.rbc_UpMenu.SuspendLayout();
-            this.ribbonPanel1.SuspendLayout();
-            this.panelEx1.SuspendLayout();
+            this.rbp_UpMenu.SuspendLayout();
+            this.pnl_MainPanel.SuspendLayout();
             this.pnl_SystemStatus.SuspendLayout();
             this.pnl_Reminder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Reminder)).BeginInit();
@@ -98,7 +98,7 @@
             this.rbc_UpMenu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rbc_UpMenu.CanCustomize = false;
             this.rbc_UpMenu.CaptionVisible = true;
-            this.rbc_UpMenu.Controls.Add(this.ribbonPanel1);
+            this.rbc_UpMenu.Controls.Add(this.rbp_UpMenu);
             this.rbc_UpMenu.Controls.Add(this.ribbonPanel2);
             this.rbc_UpMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbc_UpMenu.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -132,33 +132,33 @@
             this.rbc_UpMenu.TabIndex = 0;
             this.rbc_UpMenu.Text = "سيستم اتوماسيون اداري";
             // 
-            // ribbonPanel1
+            // rbp_UpMenu
             // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel1.Controls.Add(this.rib_Reminder);
-            this.ribbonPanel1.Controls.Add(this.rib_Messenger);
-            this.ribbonPanel1.Controls.Add(this.rib_AssignmentJob);
-            this.ribbonPanel1.Controls.Add(this.rib_JobsManager);
-            this.ribbonPanel1.Controls.Add(this.rib_Jobs);
-            this.ribbonPanel1.Controls.Add(this.rib_Users);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 64);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(934, 102);
-            // 
-            // 
-            // 
-            this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbp_UpMenu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.rbp_UpMenu.Controls.Add(this.rib_Reminder);
+            this.rbp_UpMenu.Controls.Add(this.rib_Messenger);
+            this.rbp_UpMenu.Controls.Add(this.rib_AssignmentJob);
+            this.rbp_UpMenu.Controls.Add(this.rib_JobsManager);
+            this.rbp_UpMenu.Controls.Add(this.rib_Jobs);
+            this.rbp_UpMenu.Controls.Add(this.rib_Users);
+            this.rbp_UpMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbp_UpMenu.Location = new System.Drawing.Point(0, 64);
+            this.rbp_UpMenu.Name = "rbp_UpMenu";
+            this.rbp_UpMenu.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.rbp_UpMenu.Size = new System.Drawing.Size(934, 102);
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbp_UpMenu.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel1.TabIndex = 1;
+            this.rbp_UpMenu.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbp_UpMenu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbp_UpMenu.TabIndex = 1;
             // 
             // rib_Reminder
             // 
@@ -408,7 +408,7 @@
             this.ribbonPanel2.Location = new System.Drawing.Point(0, 64);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(862, 102);
+            this.ribbonPanel2.Size = new System.Drawing.Size(934, 102);
             // 
             // 
             // 
@@ -429,7 +429,7 @@
             this.rti_ManagmentSection.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
             this.rti_ManagmentSection.Checked = true;
             this.rti_ManagmentSection.Name = "rti_ManagmentSection";
-            this.rti_ManagmentSection.Panel = this.ribbonPanel1;
+            this.rti_ManagmentSection.Panel = this.rbp_UpMenu;
             this.rti_ManagmentSection.Symbol = "57530";
             this.rti_ManagmentSection.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.rti_ManagmentSection.Text = "بخش مديريت";
@@ -466,28 +466,28 @@
             this.styleManager.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007VistaGlass;
             this.styleManager.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
-            // panelEx1
+            // pnl_MainPanel
             // 
-            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx1.Controls.Add(this.pnl_SystemStatus);
-            this.panelEx1.Controls.Add(this.pnl_Reminder);
-            this.panelEx1.Controls.Add(this.lbl_CurrentUserValue);
-            this.panelEx1.Controls.Add(this.lbl_CurrentUser);
-            this.panelEx1.Controls.Add(this.lbl_Dashboard);
-            this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 169);
-            this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(934, 531);
-            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx1.Style.GradientAngle = 90;
-            this.panelEx1.TabIndex = 1;
+            this.pnl_MainPanel.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_MainPanel.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnl_MainPanel.Controls.Add(this.pnl_SystemStatus);
+            this.pnl_MainPanel.Controls.Add(this.pnl_Reminder);
+            this.pnl_MainPanel.Controls.Add(this.lbl_CurrentUserValue);
+            this.pnl_MainPanel.Controls.Add(this.lbl_CurrentUser);
+            this.pnl_MainPanel.Controls.Add(this.lbl_Dashboard);
+            this.pnl_MainPanel.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_MainPanel.Location = new System.Drawing.Point(0, 169);
+            this.pnl_MainPanel.Name = "pnl_MainPanel";
+            this.pnl_MainPanel.Size = new System.Drawing.Size(934, 531);
+            this.pnl_MainPanel.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pnl_MainPanel.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_MainPanel.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_MainPanel.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pnl_MainPanel.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_MainPanel.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_MainPanel.Style.GradientAngle = 90;
+            this.pnl_MainPanel.TabIndex = 1;
             // 
             // pnl_SystemStatus
             // 
@@ -946,7 +946,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 700);
-            this.Controls.Add(this.panelEx1);
+            this.Controls.Add(this.pnl_MainPanel);
             this.Controls.Add(this.rbc_UpMenu);
             this.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -958,8 +958,8 @@
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.rbc_UpMenu.ResumeLayout(false);
             this.rbc_UpMenu.PerformLayout();
-            this.ribbonPanel1.ResumeLayout(false);
-            this.panelEx1.ResumeLayout(false);
+            this.rbp_UpMenu.ResumeLayout(false);
+            this.pnl_MainPanel.ResumeLayout(false);
             this.pnl_SystemStatus.ResumeLayout(false);
             this.pnl_Reminder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Reminder)).EndInit();
@@ -970,7 +970,7 @@
         #endregion
 
         private DevComponents.DotNetBar.RibbonControl rbc_UpMenu;
-        private DevComponents.DotNetBar.RibbonPanel ribbonPanel1;
+        private DevComponents.DotNetBar.RibbonPanel rbp_UpMenu;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel2;
         private DevComponents.DotNetBar.ApplicationButton btn_MenuBar;
         private DevComponents.DotNetBar.RibbonTabItem rti_ManagmentSection;
@@ -989,7 +989,7 @@
         private DevComponents.DotNetBar.ButtonItem btn_AssignmentJob;
         private DevComponents.DotNetBar.ButtonItem btn_JobsManager;
         private DevComponents.DotNetBar.ButtonItem btn_Users;
-        private DevComponents.DotNetBar.PanelEx panelEx1;
+        private DevComponents.DotNetBar.PanelEx pnl_MainPanel;
         private DevComponents.DotNetBar.LabelX lbl_Dashboard;
         private DevComponents.DotNetBar.LabelX lbl_CurrentUserValue;
         private DevComponents.DotNetBar.LabelX lbl_CurrentUser;

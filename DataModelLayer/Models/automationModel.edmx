@@ -37,6 +37,27 @@
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Reminder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Reminder">
+          <Key>
+            <PropertyRef Name="RemindID" />
+            <PropertyRef Name="RemindSubject" />
+            <PropertyRef Name="RemindCaption" />
+            <PropertyRef Name="RemindCreatedDate" />
+            <PropertyRef Name="RemindRememberDate" />
+            <PropertyRef Name="RemindIsRead" />
+            <PropertyRef Name="RemindUserID" />
+          </Key>
+          <Property Name="RemindID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RemindSubject" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RemindCaption" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="RemindCreatedDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="RemindRememberDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="RemindIsRead" Type="tinyint" Nullable="false" />
+          <Property Name="RemindUserID" Type="int" Nullable="false" />
+          <Property Name="RemindRead" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_Users">
           <Key>
@@ -93,6 +114,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vw_Reminder" EntityType="Self.Vw_Reminder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Reminder].[RemindID] AS [RemindID], 
+    [Vw_Reminder].[RemindSubject] AS [RemindSubject], 
+    [Vw_Reminder].[RemindCaption] AS [RemindCaption], 
+    [Vw_Reminder].[RemindCreatedDate] AS [RemindCreatedDate], 
+    [Vw_Reminder].[RemindRememberDate] AS [RemindRememberDate], 
+    [Vw_Reminder].[RemindIsRead] AS [RemindIsRead], 
+    [Vw_Reminder].[RemindUserID] AS [RemindUserID], 
+    [Vw_Reminder].[RemindRead] AS [RemindRead]
+    FROM [dbo].[Vw_Reminder] AS [Vw_Reminder]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_Users].[UserID] AS [UserID], 
@@ -188,6 +221,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="User" EntitySet="Users" />
             <End Role="Reminder" EntitySet="Reminders" />
           </AssociationSet>
+          <EntitySet Name="Vw_Reminder" EntityType="Office_Automation_DatabaseModel.Vw_Reminder" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -214,6 +248,25 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Vw_Reminder">
+          <Key>
+            <PropertyRef Name="RemindID" />
+            <PropertyRef Name="RemindSubject" />
+            <PropertyRef Name="RemindCaption" />
+            <PropertyRef Name="RemindCreatedDate" />
+            <PropertyRef Name="RemindRememberDate" />
+            <PropertyRef Name="RemindIsRead" />
+            <PropertyRef Name="RemindUserID" />
+          </Key>
+          <Property Name="RemindID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RemindSubject" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RemindCaption" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="RemindCreatedDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RemindRememberDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RemindIsRead" Type="Byte" Nullable="false" />
+          <Property Name="RemindUserID" Type="Int32" Nullable="false" />
+          <Property Name="RemindRead" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -264,6 +317,20 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Reminders">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Reminder">
               <MappingFragment StoreEntitySet="Reminder">
+                <ScalarProperty Name="RemindUserID" ColumnName="RemindUserID" />
+                <ScalarProperty Name="RemindIsRead" ColumnName="RemindIsRead" />
+                <ScalarProperty Name="RemindRememberDate" ColumnName="RemindRememberDate" />
+                <ScalarProperty Name="RemindCreatedDate" ColumnName="RemindCreatedDate" />
+                <ScalarProperty Name="RemindCaption" ColumnName="RemindCaption" />
+                <ScalarProperty Name="RemindSubject" ColumnName="RemindSubject" />
+                <ScalarProperty Name="RemindID" ColumnName="RemindID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Reminder">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Reminder">
+              <MappingFragment StoreEntitySet="Vw_Reminder">
+                <ScalarProperty Name="RemindRead" ColumnName="RemindRead" />
                 <ScalarProperty Name="RemindUserID" ColumnName="RemindUserID" />
                 <ScalarProperty Name="RemindIsRead" ColumnName="RemindIsRead" />
                 <ScalarProperty Name="RemindRememberDate" ColumnName="RemindRememberDate" />
