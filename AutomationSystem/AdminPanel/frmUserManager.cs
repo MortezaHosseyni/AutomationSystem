@@ -60,6 +60,17 @@ namespace AutomationSystem.AdminPanel
 
             try
             {
+                //Check Repetitive User
+                var queryRepetitiveUserName = (from U in db.Users
+                                               where U.UserName == txt_UserName.Text.Trim()
+                                               where U.UserActivity == 1
+                                               select U).ToList();
+                if (queryRepetitiveUserName.Count == 1)
+                {
+                    MessageBox.Show("اين نام‌كاربري قبلا در سيستم ثبت شده است","نام‌كاربري تكراري");
+                    return;
+                }
+
                 //Hashing Password
                 SHA256CryptoServiceProvider SHA256 = new SHA256CryptoServiceProvider();
                 Byte[] B1;
