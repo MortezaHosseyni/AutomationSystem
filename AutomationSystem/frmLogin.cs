@@ -57,6 +57,22 @@ namespace AutomationSystem
                         MessageBox.Show("اطلاعات وارد شده را بررسي كرده و دوباره امتحان كنيد", "خطا هنگام ورود");
                         return;
                     }
+                    if (rdb_Admin.Checked)
+                    {
+                        if (loginQuery[0].UserName == "admin")
+                        {
+                            PublicVariable.global_UserType = 1; //admin
+                        }
+                        else
+                        {
+                            MessageBox.Show("اطلاعات وارد شده را بررسي كرده و دوباره امتحان كنيد", "خطا هنگام ورود");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        PublicVariable.global_UserType = 2; //user
+                    }
                     this.Close();
                 }
                 
