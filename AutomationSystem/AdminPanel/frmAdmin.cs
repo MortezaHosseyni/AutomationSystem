@@ -106,5 +106,11 @@ namespace AutomationSystem.AdminPanel
                 throw;
             }
         }
+
+        private void btn_Reminder_Click(object sender, EventArgs e)
+        {
+            frmReminder reminderForm = new frmReminder();
+            reminderForm.Show();
+        }
     }
 }
