@@ -163,6 +163,7 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 11;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_Save
             // 

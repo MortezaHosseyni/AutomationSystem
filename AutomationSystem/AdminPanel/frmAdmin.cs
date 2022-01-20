@@ -21,11 +21,11 @@ namespace AutomationSystem.AdminPanel
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            Reminder();
+            Reminder(searchCondition());
         }
-        private void Reminder()
+        private void Reminder(string searchRemind)
         {
-            var query = db.Database.SqlQuery<Vw_Reminder>("SELECT * FROM Vw_Reminder WHERE 1=1");
+            var query = db.Database.SqlQuery<Vw_Reminder>("SELECT * FROM Vw_Reminder WHERE 1=1" + searchRemind);
             var result = query.ToList();
 
             if (result.Count != 0)
@@ -48,10 +48,29 @@ namespace AutomationSystem.AdminPanel
             }
         }
 
+        private string searchCondition() {
+            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_RemindDateIn.Value.Year.ToString()}/{txt_RemindDateIn.Value.Month.ToString()}/{txt_RemindDateIn.Value.Day.ToString()}"));
+            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_RemindDateTo.Value.Year.ToString()}/{txt_RemindDateTo.Value.Month.ToString()}/{txt_RemindDateTo.Value.Day.ToString()}"));
+            
+
+            string searchString = $" AND RemindRememberDate BETWEEN '{dateIn}' AND '{dateTo}'";
+
+            if (txt_RemindSubjectSearch.Text != "")
+            {
+                searchString += $" AND RemindSubject LIKE '%{txt_RemindSubjectSearch.Text}%'";
+            }
+
+            return searchString;
+        }
         private void btn_Users_Click(object sender, EventArgs e)
         {
             frmUsers usersForm = new frmUsers();
             usersForm.Show();
+        }
+
+        private void btn_RemindSearch_Click(object sender, EventArgs e)
+        {
+            Reminder(searchCondition());
         }
     }
 }

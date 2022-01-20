@@ -99,7 +99,7 @@ namespace AutomationSystem.AdminPanel
 
 
                 //User Brithdate
-                string userBrithDate = String.Format("{0:yyyy/MM/dd}", Convert.ToDateTime(txt_BrithDate.Value.Year.ToString() + "/" + txt_BrithDate.Value.Month.ToString() + "/" + txt_BrithDate.Value.Day.ToString()));
+                string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Value.Year.ToString() + "/" + txt_BrithDate.Value.Month.ToString() + "/" + txt_BrithDate.Value.Day.ToString()));
 
                 //Insert Data
                 db.Sp_InsterUsers(txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_UserName.Text.Trim(), hashedPass, txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, 1, txt_Tel.Text.Trim(), userBrithDate, userPicArr, userSignArr, lbl_RegisterDateValue.Text.Trim());
@@ -161,6 +161,11 @@ namespace AutomationSystem.AdminPanel
         private void frmUserManager_Load(object sender, EventArgs e)
         {
             lbl_RegisterDateValue.Text = PublicVariable.todayDate;
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

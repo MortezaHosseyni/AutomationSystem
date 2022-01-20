@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbc_UpMenu = new DevComponents.DotNetBar.RibbonControl();
             this.rbp_UpMenu = new DevComponents.DotNetBar.RibbonPanel();
             this.rib_Reminder = new DevComponents.DotNetBar.RibbonBar();
@@ -70,24 +70,24 @@
             this.lbl_DateValue = new DevComponents.DotNetBar.LabelX();
             this.lbl_Date = new DevComponents.DotNetBar.LabelX();
             this.pnl_Reminder = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.lbl_CurrentUserValue = new DevComponents.DotNetBar.LabelX();
-            this.lbl_CurrentUser = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Dashboard = new DevComponents.DotNetBar.LabelX();
-            this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
-            this.dgv_Reminder = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.lbl_RemindSubject = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lbl_RemindDateIn = new DevComponents.DotNetBar.LabelX();
-            this.txt_RemindDateIn = new FreeControls.PersianDateTimePicker();
-            this.lbl_RemindDateTo = new DevComponents.DotNetBar.LabelX();
-            this.txt_RemindDateTo = new FreeControls.PersianDateTimePicker();
             this.btn_RemindSearch = new DevComponents.DotNetBar.ButtonX();
+            this.txt_RemindDateTo = new FreeControls.PersianDateTimePicker();
+            this.lbl_RemindDateTo = new DevComponents.DotNetBar.LabelX();
+            this.txt_RemindDateIn = new FreeControls.PersianDateTimePicker();
+            this.lbl_RemindDateIn = new DevComponents.DotNetBar.LabelX();
+            this.txt_RemindSubjectSearch = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbl_RemindSubjectSearch = new DevComponents.DotNetBar.LabelX();
+            this.dgv_Reminder = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.col_RemindSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RemindCaption = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RemindCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RemindRememberDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RemindRead = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RemindID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_CurrentUserValue = new DevComponents.DotNetBar.LabelX();
+            this.lbl_CurrentUser = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Dashboard = new DevComponents.DotNetBar.LabelX();
+            this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
             this.rbc_UpMenu.SuspendLayout();
             this.rbp_UpMenu.SuspendLayout();
             this.pnl_MainPanel.SuspendLayout();
@@ -740,8 +740,8 @@
             this.pnl_Reminder.Controls.Add(this.lbl_RemindDateTo);
             this.pnl_Reminder.Controls.Add(this.txt_RemindDateIn);
             this.pnl_Reminder.Controls.Add(this.lbl_RemindDateIn);
-            this.pnl_Reminder.Controls.Add(this.textBoxX1);
-            this.pnl_Reminder.Controls.Add(this.lbl_RemindSubject);
+            this.pnl_Reminder.Controls.Add(this.txt_RemindSubjectSearch);
+            this.pnl_Reminder.Controls.Add(this.lbl_RemindSubjectSearch);
             this.pnl_Reminder.Controls.Add(this.dgv_Reminder);
             this.pnl_Reminder.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Reminder.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -778,6 +778,170 @@
             this.pnl_Reminder.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pnl_Reminder.TabIndex = 3;
             this.pnl_Reminder.Text = "يادآور";
+            // 
+            // btn_RemindSearch
+            // 
+            this.btn_RemindSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_RemindSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_RemindSearch.Location = new System.Drawing.Point(43, 147);
+            this.btn_RemindSearch.Name = "btn_RemindSearch";
+            this.btn_RemindSearch.Size = new System.Drawing.Size(64, 44);
+            this.btn_RemindSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_RemindSearch.Symbol = "";
+            this.btn_RemindSearch.TabIndex = 7;
+            this.btn_RemindSearch.Click += new System.EventHandler(this.btn_RemindSearch_Click);
+            // 
+            // txt_RemindDateTo
+            // 
+            this.txt_RemindDateTo.BackColor = System.Drawing.Color.White;
+            this.txt_RemindDateTo.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_RemindDateTo.Location = new System.Drawing.Point(144, 154);
+            this.txt_RemindDateTo.Name = "txt_RemindDateTo";
+            this.txt_RemindDateTo.ShowTime = false;
+            this.txt_RemindDateTo.Size = new System.Drawing.Size(165, 31);
+            this.txt_RemindDateTo.TabIndex = 6;
+            this.txt_RemindDateTo.Text = "persianDateTimePicker2";
+            this.txt_RemindDateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateTo.Value")));
+            // 
+            // lbl_RemindDateTo
+            // 
+            // 
+            // 
+            // 
+            this.lbl_RemindDateTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_RemindDateTo.Location = new System.Drawing.Point(315, 154);
+            this.lbl_RemindDateTo.Name = "lbl_RemindDateTo";
+            this.lbl_RemindDateTo.Size = new System.Drawing.Size(11, 23);
+            this.lbl_RemindDateTo.TabIndex = 5;
+            this.lbl_RemindDateTo.Text = "تا";
+            // 
+            // txt_RemindDateIn
+            // 
+            this.txt_RemindDateIn.BackColor = System.Drawing.Color.White;
+            this.txt_RemindDateIn.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_RemindDateIn.Location = new System.Drawing.Point(332, 154);
+            this.txt_RemindDateIn.Name = "txt_RemindDateIn";
+            this.txt_RemindDateIn.ShowTime = false;
+            this.txt_RemindDateIn.Size = new System.Drawing.Size(165, 31);
+            this.txt_RemindDateIn.TabIndex = 4;
+            this.txt_RemindDateIn.Text = "persianDateTimePicker1";
+            this.txt_RemindDateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateIn.Value")));
+            // 
+            // lbl_RemindDateIn
+            // 
+            // 
+            // 
+            // 
+            this.lbl_RemindDateIn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_RemindDateIn.Location = new System.Drawing.Point(503, 154);
+            this.lbl_RemindDateIn.Name = "lbl_RemindDateIn";
+            this.lbl_RemindDateIn.Size = new System.Drawing.Size(99, 23);
+            this.lbl_RemindDateIn.TabIndex = 3;
+            this.lbl_RemindDateIn.Text = "تاريخ يادآوري از:";
+            // 
+            // txt_RemindSubjectSearch
+            // 
+            // 
+            // 
+            // 
+            this.txt_RemindSubjectSearch.Border.Class = "TextBoxBorder";
+            this.txt_RemindSubjectSearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_RemindSubjectSearch.Location = new System.Drawing.Point(628, 152);
+            this.txt_RemindSubjectSearch.Name = "txt_RemindSubjectSearch";
+            this.txt_RemindSubjectSearch.PreventEnterBeep = true;
+            this.txt_RemindSubjectSearch.Size = new System.Drawing.Size(165, 33);
+            this.txt_RemindSubjectSearch.TabIndex = 2;
+            // 
+            // lbl_RemindSubjectSearch
+            // 
+            // 
+            // 
+            // 
+            this.lbl_RemindSubjectSearch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_RemindSubjectSearch.Location = new System.Drawing.Point(792, 154);
+            this.lbl_RemindSubjectSearch.Name = "lbl_RemindSubjectSearch";
+            this.lbl_RemindSubjectSearch.Size = new System.Drawing.Size(93, 23);
+            this.lbl_RemindSubjectSearch.TabIndex = 1;
+            this.lbl_RemindSubjectSearch.Text = "موضوع يادآوري:";
+            // 
+            // dgv_Reminder
+            // 
+            this.dgv_Reminder.AllowUserToAddRows = false;
+            this.dgv_Reminder.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgv_Reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Reminder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_RemindSubject,
+            this.col_RemindCaption,
+            this.col_RemindCreatedDate,
+            this.col_RemindRememberDate,
+            this.col_RemindRead,
+            this.col_RemindID});
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgv_Reminder.EnableHeadersVisualStyles = false;
+            this.dgv_Reminder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.dgv_Reminder.Location = new System.Drawing.Point(3, 3);
+            this.dgv_Reminder.Name = "dgv_Reminder";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgv_Reminder.Size = new System.Drawing.Size(898, 127);
+            this.dgv_Reminder.TabIndex = 0;
+            // 
+            // col_RemindSubject
+            // 
+            this.col_RemindSubject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindSubject.HeaderText = "موضوع";
+            this.col_RemindSubject.Name = "col_RemindSubject";
+            // 
+            // col_RemindCaption
+            // 
+            this.col_RemindCaption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.col_RemindCaption.HeaderText = "توضيحات";
+            this.col_RemindCaption.Name = "col_RemindCaption";
+            this.col_RemindCaption.Width = 300;
+            // 
+            // col_RemindCreatedDate
+            // 
+            this.col_RemindCreatedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindCreatedDate.HeaderText = "تاريخ ثبت";
+            this.col_RemindCreatedDate.Name = "col_RemindCreatedDate";
+            // 
+            // col_RemindRememberDate
+            // 
+            this.col_RemindRememberDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_RemindRememberDate.HeaderText = "تاريخ يادآوري";
+            this.col_RemindRememberDate.Name = "col_RemindRememberDate";
+            // 
+            // col_RemindRead
+            // 
+            this.col_RemindRead.HeaderText = "وضعيت";
+            this.col_RemindRead.Name = "col_RemindRead";
+            // 
+            // col_RemindID
+            // 
+            this.col_RemindID.HeaderText = "RemindID";
+            this.col_RemindID.Name = "col_RemindID";
+            this.col_RemindID.Visible = false;
             // 
             // lbl_CurrentUserValue
             // 
@@ -828,169 +992,6 @@
             // superTooltip
             // 
             this.superTooltip.DefaultTooltipSettings = new DevComponents.DotNetBar.SuperTooltipInfo("", "", "", null, null, DevComponents.DotNetBar.eTooltipColor.Gray);
-            // 
-            // dgv_Reminder
-            // 
-            this.dgv_Reminder.AllowUserToAddRows = false;
-            this.dgv_Reminder.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_Reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Reminder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_RemindSubject,
-            this.col_RemindCaption,
-            this.col_RemindCreatedDate,
-            this.col_RemindRememberDate,
-            this.col_RemindRead,
-            this.col_RemindID});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_Reminder.EnableHeadersVisualStyles = false;
-            this.dgv_Reminder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.dgv_Reminder.Location = new System.Drawing.Point(3, 3);
-            this.dgv_Reminder.Name = "dgv_Reminder";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Reminder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_Reminder.Size = new System.Drawing.Size(898, 127);
-            this.dgv_Reminder.TabIndex = 0;
-            // 
-            // lbl_RemindSubject
-            // 
-            // 
-            // 
-            // 
-            this.lbl_RemindSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_RemindSubject.Location = new System.Drawing.Point(792, 154);
-            this.lbl_RemindSubject.Name = "lbl_RemindSubject";
-            this.lbl_RemindSubject.Size = new System.Drawing.Size(93, 23);
-            this.lbl_RemindSubject.TabIndex = 1;
-            this.lbl_RemindSubject.Text = "موضوع يادآوري:";
-            // 
-            // textBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(628, 152);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(165, 33);
-            this.textBoxX1.TabIndex = 2;
-            // 
-            // lbl_RemindDateIn
-            // 
-            // 
-            // 
-            // 
-            this.lbl_RemindDateIn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_RemindDateIn.Location = new System.Drawing.Point(503, 154);
-            this.lbl_RemindDateIn.Name = "lbl_RemindDateIn";
-            this.lbl_RemindDateIn.Size = new System.Drawing.Size(99, 23);
-            this.lbl_RemindDateIn.TabIndex = 3;
-            this.lbl_RemindDateIn.Text = "تاريخ يادآوري از:";
-            // 
-            // txt_RemindDateIn
-            // 
-            this.txt_RemindDateIn.BackColor = System.Drawing.Color.White;
-            this.txt_RemindDateIn.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_RemindDateIn.Location = new System.Drawing.Point(332, 154);
-            this.txt_RemindDateIn.Name = "txt_RemindDateIn";
-            this.txt_RemindDateIn.ShowTime = false;
-            this.txt_RemindDateIn.Size = new System.Drawing.Size(165, 31);
-            this.txt_RemindDateIn.TabIndex = 4;
-            this.txt_RemindDateIn.Text = "persianDateTimePicker1";
-            this.txt_RemindDateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateIn.Value")));
-            // 
-            // lbl_RemindDateTo
-            // 
-            // 
-            // 
-            // 
-            this.lbl_RemindDateTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_RemindDateTo.Location = new System.Drawing.Point(315, 154);
-            this.lbl_RemindDateTo.Name = "lbl_RemindDateTo";
-            this.lbl_RemindDateTo.Size = new System.Drawing.Size(11, 23);
-            this.lbl_RemindDateTo.TabIndex = 5;
-            this.lbl_RemindDateTo.Text = "تا";
-            // 
-            // txt_RemindDateTo
-            // 
-            this.txt_RemindDateTo.BackColor = System.Drawing.Color.White;
-            this.txt_RemindDateTo.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_RemindDateTo.Location = new System.Drawing.Point(144, 154);
-            this.txt_RemindDateTo.Name = "txt_RemindDateTo";
-            this.txt_RemindDateTo.ShowTime = false;
-            this.txt_RemindDateTo.Size = new System.Drawing.Size(165, 31);
-            this.txt_RemindDateTo.TabIndex = 6;
-            this.txt_RemindDateTo.Text = "persianDateTimePicker2";
-            this.txt_RemindDateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateTo.Value")));
-            // 
-            // btn_RemindSearch
-            // 
-            this.btn_RemindSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_RemindSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_RemindSearch.Location = new System.Drawing.Point(43, 147);
-            this.btn_RemindSearch.Name = "btn_RemindSearch";
-            this.btn_RemindSearch.Size = new System.Drawing.Size(45, 44);
-            this.btn_RemindSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_RemindSearch.Symbol = "";
-            this.btn_RemindSearch.TabIndex = 7;
-            // 
-            // col_RemindSubject
-            // 
-            this.col_RemindSubject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_RemindSubject.HeaderText = "موضوع";
-            this.col_RemindSubject.Name = "col_RemindSubject";
-            // 
-            // col_RemindCaption
-            // 
-            this.col_RemindCaption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.col_RemindCaption.HeaderText = "توضيحات";
-            this.col_RemindCaption.Name = "col_RemindCaption";
-            this.col_RemindCaption.Width = 300;
-            // 
-            // col_RemindCreatedDate
-            // 
-            this.col_RemindCreatedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_RemindCreatedDate.HeaderText = "تاريخ ثبت";
-            this.col_RemindCreatedDate.Name = "col_RemindCreatedDate";
-            // 
-            // col_RemindRememberDate
-            // 
-            this.col_RemindRememberDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_RemindRememberDate.HeaderText = "تاريخ يادآوري";
-            this.col_RemindRememberDate.Name = "col_RemindRememberDate";
-            // 
-            // col_RemindRead
-            // 
-            this.col_RemindRead.HeaderText = "وضعيت";
-            this.col_RemindRead.Name = "col_RemindRead";
-            // 
-            // col_RemindID
-            // 
-            this.col_RemindID.HeaderText = "RemindID";
-            this.col_RemindID.Name = "col_RemindID";
-            this.col_RemindID.Visible = false;
             // 
             // frmAdmin
             // 
@@ -1064,8 +1065,8 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_Reminder;
         private FreeControls.PersianDateTimePicker txt_RemindDateIn;
         private DevComponents.DotNetBar.LabelX lbl_RemindDateIn;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.LabelX lbl_RemindSubject;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_RemindSubjectSearch;
+        private DevComponents.DotNetBar.LabelX lbl_RemindSubjectSearch;
         private FreeControls.PersianDateTimePicker txt_RemindDateTo;
         private DevComponents.DotNetBar.LabelX lbl_RemindDateTo;
         private DevComponents.DotNetBar.ButtonX btn_RemindSearch;

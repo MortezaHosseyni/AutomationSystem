@@ -43,8 +43,8 @@ namespace AutomationSystem
         private void frmLogin_Load(object sender, EventArgs e)
         {
             //Date&Time
-            string pDate = String.Format("{0:yyyy/MM/dd}", Convert.ToDateTime(pCalender.GetYear(DateTime.Now).ToString() + "/" + pCalender.GetMonth(DateTime.Now).ToString() + "/" + pCalender.GetDayOfMonth(DateTime.Now).ToString()));
-            PublicVariable.todayDate = lbl_DateValue.Text.Trim();
+            string pDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(pCalender.GetYear(DateTime.Now).ToString() + "/" + pCalender.GetMonth(DateTime.Now).ToString() + "/" + pCalender.GetDayOfMonth(DateTime.Now).ToString()));
+            PublicVariable.todayDate = pDate;
             lbl_DateValue.Text = pDate;
             timer.Enabled = true;
 
