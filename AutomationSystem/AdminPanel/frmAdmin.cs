@@ -21,6 +21,8 @@ namespace AutomationSystem.AdminPanel
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
+            txt_RemindDateTo.Value = DateTime.Now.AddDays(1);
+
             Reminder(searchCondition());
         }
         private void Reminder(string searchRemind)
@@ -40,6 +42,17 @@ namespace AutomationSystem.AdminPanel
                     dgv_Reminder.Rows[i].Cells["col_RemindRead"].Value = result[i].RemindRead;
 
                     dgv_Reminder.Rows[i].Cells["col_RemindID"].Value = result[i].RemindID;
+                    dgv_Reminder.Rows[i].Cells["col_Readed"].Value = result[i].RemindIsRead;
+
+
+                    if (Convert.ToInt16(dgv_Reminder.Rows[i].Cells["col_Readed"].Value) == 1)
+                    {
+                        dgv_Reminder.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
+                    }
+                    else
+                    {
+                        dgv_Reminder.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                    }
                 }
             }
             else
@@ -71,6 +84,27 @@ namespace AutomationSystem.AdminPanel
         private void btn_RemindSearch_Click(object sender, EventArgs e)
         {
             Reminder(searchCondition());
+        }
+
+        private void dgv_Reminder_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(dgv_Reminder.CurrentRow.Cells["col_RemindCaption"].Value.ToString(),dgv_Reminder.CurrentRow.Cells["col_RemindSubject"].Value.ToString());
+
+            try
+            {
+                int currentRemindID = Convert.ToInt32(dgv_Reminder.CurrentRow.Cells["col_RemindID"].Value);
+
+                var updateQuery = (from R in db.Reminders where R.RemindID == currentRemindID select R).SingleOrDefault();
+                updateQuery.RemindIsRead = 2;
+                db.SaveChanges();
+
+                Reminder(searchCondition());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("در نمايش اطلاعات مشكلي رخ داد","پايگاه داده");
+                throw;
+            }
         }
     }
 }
