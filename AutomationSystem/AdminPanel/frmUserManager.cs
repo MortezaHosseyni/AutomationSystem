@@ -23,6 +23,7 @@ namespace AutomationSystem.AdminPanel
         public byte formType;
 
         //Form Propertys
+        public int userID { get; set; }
         public string userFirstName { get; set; }
         public string userLastName { get; set; }
         public string userName { get; set; }
@@ -199,11 +200,10 @@ namespace AutomationSystem.AdminPanel
                 txt_Email.Text = this.userEmail;
                 txt_Tel.Text = this.userTel;
                 txt_PersonalCode.Text = this.userPersonalCode;
-
                 txt_BrithDate.Text = this.userBrithDate;
 
+                //Get UserGender
                 lbl_RegisterDateValue.Text = this.userRegisterDate;
-
                 if (this.userGender == "مرد")
                 {
                     rbt_Man.Checked = true;
@@ -211,6 +211,26 @@ namespace AutomationSystem.AdminPanel
                 else
                 {
                     rbt_Woman.Checked = true;
+                }
+
+                //Get User Picture & Signature
+                var queryPicSign = (from U in db.Users where U.UserID == this.userID select U).ToList();
+                if (queryPicSign.Count == 1)
+                {
+                    if (queryPicSign[0].UserImage != null)
+                    {
+                        var dataUserPicture = (Byte[])(queryPicSign[0].UserImage);
+                        var streamUserPicture = new MemoryStream(dataUserPicture);
+                        pic_UserPic.Image = Image.FromStream(streamUserPicture);
+                    }
+                    
+                    if (queryPicSign[0].UserSignature != null)
+                    {
+                        var dataUserSignature = (Byte[])(queryPicSign[0].UserSignature);
+                        var streamUserSignature = new MemoryStream(dataUserSignature);
+                        pic_UserSignature.Image = Image.FromStream(streamUserSignature);
+                    }
+                    
                 }
             }
         }

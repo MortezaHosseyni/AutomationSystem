@@ -115,6 +115,7 @@ namespace AutomationSystem.AdminPanel
             {
                 frmUserManager userManagerForm = new frmUserManager();
                 userManagerForm.formType = 2; //Edit User
+                userManagerForm.userID = Convert.ToInt32(dgv_Users.CurrentRow.Cells["col_UserID"].Value);
                 userManagerForm.userFirstName = dgv_Users.CurrentRow.Cells["col_UserFristName"].Value.ToString();
                 userManagerForm.userLastName = dgv_Users.CurrentRow.Cells["col_UserLastName"].Value.ToString();
                 userManagerForm.userName = dgv_Users.CurrentRow.Cells["col_UserName"].Value.ToString();
