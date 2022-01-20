@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutomationSystem.Moduls;
+using DataModelLayer.Models;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Net;
+using System.Security.Cryptography;
 
 namespace AutomationSystem
 {
     public partial class frmLogin : Form
     {
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
         PersianCalendar pCalender = new PersianCalendar();
         public frmLogin()
         {
@@ -23,15 +26,45 @@ namespace AutomationSystem
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (txt_Username.Text == "muro" && txt_Password.Text == "9889" && rdb_Admin.Checked)
+            try
             {
-                AdminPanel.frmAdmin adminForm = new AdminPanel.frmAdmin();
-                this.Hide();
-                adminForm.Show();
+                
+
+                if (txt_Username.Text.Trim() != "" && txt_Password.Text.Trim() != "")
+                {
+                    //Hashing Password
+                    SHA256CryptoServiceProvider SHA256 = new SHA256CryptoServiceProvider();
+                    Byte[] B1;
+                    Byte[] B2;
+                    B1 = UTF8Encoding.UTF8.GetBytes(txt_Password.Text.Trim());
+                    B2 = SHA256.ComputeHash(B1);
+                    string hashedPass = BitConverter.ToString(B2);
+
+                    var loginQuery = (from U in db.Users
+                                      where U.UserName == txt_Username.Text.Trim()
+                                      where U.UserPassword == hashedPass
+                                      where U.UserActivity == 1
+                                      select U).ToList();
+                    if (loginQuery.Count == 1)
+                    {
+                        PublicVariable.global_UserFristName = loginQuery[0].UserFirstName;
+                        PublicVariable.global_UserLastName = loginQuery[0].UserLastName;
+                        PublicVariable.global_UserID = loginQuery[0].UserID;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("اطلاعات وارد شده را بررسي كرده و دوباره امتحان كنيد", "خطا هنگام ورود");
+                        return;
+                    }
+                    this.Close();
+                }
+                
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("اطلاعات وارد شده اشتباه است");
+                MessageBox.Show("خطايي در دريافت اطلاعات رخ داد","پايگاه داده");
+                throw;
             }
         }
 

@@ -17,6 +17,9 @@ namespace AutomationSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
+
+            AdminPanel.frmAdmin adminForm = new AdminPanel.frmAdmin();
+            adminForm.ShowDialog();
         }
     }
 }

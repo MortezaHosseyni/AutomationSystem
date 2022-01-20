@@ -9,5 +9,11 @@ namespace AutomationSystem.Moduls
     public static class PublicVariable
     {
         public static string todayDate = "";
+
+        public static string global_UserFristName = "";
+        public static string global_UserLastName = "";
+        public static int global_UserID;
+        public static byte global_UserType;
+
     }
 }
