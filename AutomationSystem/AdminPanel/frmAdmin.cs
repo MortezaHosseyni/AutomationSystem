@@ -78,7 +78,7 @@ namespace AutomationSystem.AdminPanel
         private void btn_Users_Click(object sender, EventArgs e)
         {
             frmUsers usersForm = new frmUsers();
-            usersForm.Show();
+            usersForm.ShowDialog();
         }
 
         private void btn_RemindSearch_Click(object sender, EventArgs e)
@@ -110,7 +110,9 @@ namespace AutomationSystem.AdminPanel
         private void btn_Reminder_Click(object sender, EventArgs e)
         {
             frmReminder reminderForm = new frmReminder();
-            reminderForm.Show();
+            reminderForm.ShowDialog();
+
+            Reminder(searchCondition());
         }
     }
 }

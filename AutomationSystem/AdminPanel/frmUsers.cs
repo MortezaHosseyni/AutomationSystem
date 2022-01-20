@@ -99,7 +99,7 @@ namespace AutomationSystem.AdminPanel
         private void btn_NewUser_Click(object sender, EventArgs e)
         {
             frmUserManager userManagerForm = new frmUserManager();
-            userManagerForm.Show();
+            userManagerForm.ShowDialog();
             ShowUsers(CreateSearchString());
         }
     }

@@ -289,6 +289,7 @@
             this.btn_Save.Symbol = "";
             this.btn_Save.TabIndex = 4;
             this.btn_Save.Text = "ثبت يادآور";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Exit
             // 
