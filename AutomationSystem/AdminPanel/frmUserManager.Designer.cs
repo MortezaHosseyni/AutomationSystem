@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserManager));
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Buttons = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
             this.btn_Save = new DevComponents.DotNetBar.ButtonX();
             this.pnl_UserInformation = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.txt_BrithDate = new FreeControls.PersianDateTimePicker();
+            this.txt_BrithDate = new BPersianCalender.BPersianCalenderTextBox();
             this.pnl_UserSignature = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.pic_UserSignature = new System.Windows.Forms.PictureBox();
             this.pnl_UserPic = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -245,14 +244,16 @@
             // txt_BrithDate
             // 
             this.txt_BrithDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.txt_BrithDate.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txt_BrithDate.Location = new System.Drawing.Point(402, 108);
+            this.txt_BrithDate.Miladi = new System.DateTime(((long)(0)));
             this.txt_BrithDate.Name = "txt_BrithDate";
-            this.txt_BrithDate.ShowTime = false;
-            this.txt_BrithDate.Size = new System.Drawing.Size(209, 29);
+            this.txt_BrithDate.NowDateSelected = false;
+            this.txt_BrithDate.ReadOnly = true;
+            this.txt_BrithDate.SelectedDate = null;
+            this.txt_BrithDate.Shamsi = null;
+            this.txt_BrithDate.Size = new System.Drawing.Size(209, 33);
             this.txt_BrithDate.TabIndex = 7;
-            this.txt_BrithDate.Text = "persianDateTimePicker1";
-            this.txt_BrithDate.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_BrithDate.Value")));
+            this.txt_BrithDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pnl_UserSignature
             // 
@@ -690,9 +691,9 @@
         private System.Windows.Forms.PictureBox pic_UserSignature;
         private System.Windows.Forms.PictureBox pic_UserPic;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_Buttons;
-        private FreeControls.PersianDateTimePicker txt_BrithDate;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ButtonX btn_Save;
         private System.Windows.Forms.OpenFileDialog openFileDLG;
+        private BPersianCalender.BPersianCalenderTextBox txt_BrithDate;
     }
 }

@@ -126,7 +126,7 @@ namespace AutomationSystem.AdminPanel
 
 
                 //User Brithdate
-                string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Value.Year.ToString() + "/" + txt_BrithDate.Value.Month.ToString() + "/" + txt_BrithDate.Value.Day.ToString()));
+                string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Text.ToString()));
 
                 //Insert Data
                 db.Sp_InsterUsers(txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_UserName.Text.Trim(), hashedPass, txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, 1, txt_Tel.Text.Trim(), userBrithDate, userPicArr, userSignArr, lbl_RegisterDateValue.Text.Trim());
@@ -188,6 +188,7 @@ namespace AutomationSystem.AdminPanel
         private void frmUserManager_Load(object sender, EventArgs e)
         {
             lbl_RegisterDateValue.Text = PublicVariable.todayDate;
+            txt_BrithDate.Text = PublicVariable.todayDate;
 
             if (this.formType == 2)
             {
@@ -198,7 +199,9 @@ namespace AutomationSystem.AdminPanel
                 txt_Email.Text = this.userEmail;
                 txt_Tel.Text = this.userTel;
                 txt_PersonalCode.Text = this.userPersonalCode;
-                txt_BrithDate.Value = Convert.ToDateTime(this.userBrithDate);
+
+                txt_BrithDate.Text = this.userBrithDate;
+
                 lbl_RegisterDateValue.Text = this.userRegisterDate;
 
                 if (this.userGender == "مرد")

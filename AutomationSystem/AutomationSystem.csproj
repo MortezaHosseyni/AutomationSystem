@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BPersianCalender">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\SadraComputer\SadraComputer\bin\Debug\BPersianCalender.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.Instrumentation, Version=14.1.0.37, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />

@@ -125,9 +125,7 @@ namespace AutomationSystem.AdminPanel
                 userManagerForm.userBrithDate = dgv_Users.CurrentRow.Cells["col_UserBrithDay"].Value.ToString();
                 userManagerForm.userGender = dgv_Users.CurrentRow.Cells["col_UserGender"].Value.ToString();
                 userManagerForm.userRegisterDate = dgv_Users.CurrentRow.Cells["col_UserRegisteredDate"].Value.ToString();
-
-
-
+                
                 userManagerForm.ShowDialog();
                 ShowUsers(CreateSearchString());
             }
