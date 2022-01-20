@@ -20,6 +20,22 @@ namespace AutomationSystem.AdminPanel
         string userPictureName = "";
         string userSignatureName = "";
 
+        public byte formType;
+
+        //Form Propertys
+        public string userFirstName { get; set; }
+        public string userLastName { get; set; }
+        public string userName { get; set; }
+        public string userPassword { get; set; }
+        public string userEmail { get; set; }
+        public string userTel { get; set; }
+        public string userPersonalCode { get; set; }
+        public string userBrithDate { get; set; }
+        public byte userGender { get; set; }
+        public string userRegisterDate { get; set; }
+
+
+
         public frmUserManager()
         {
             InitializeComponent();

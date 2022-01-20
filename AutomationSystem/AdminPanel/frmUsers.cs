@@ -38,13 +38,17 @@ namespace AutomationSystem.AdminPanel
 
                     dgv_Users.Rows[i].Cells["col_UserFristName"].Value = result[i].UserFirstName;
                     dgv_Users.Rows[i].Cells["col_UserLastName"].Value = result[i].UserLastName;
+                    dgv_Users.Rows[i].Cells["col_UserName"].Value = result[i].UserName;
                     dgv_Users.Rows[i].Cells["col_UserPersonalCode"].Value = result[i].UserPersonalID;
                     dgv_Users.Rows[i].Cells["col_UserEmail"].Value = result[i].UserEmail;
                     dgv_Users.Rows[i].Cells["col_UserGender"].Value = result[i].UserGender;
+                    dgv_Users.Rows[i].Cells["col_UserGenderCode"].Value = result[i].UserGender;
                     dgv_Users.Rows[i].Cells["col_UserStatus"].Value = result[i].UserActivity;
                     dgv_Users.Rows[i].Cells["col_UserTel"].Value = result[i].UserTel;
                     dgv_Users.Rows[i].Cells["col_UserBrithDay"].Value = result[i].UserBrithDate;
                     dgv_Users.Rows[i].Cells["col_UserRegisteredDate"].Value = result[i].UserRegisteredDate;
+
+                    
                 }
             }
             else
@@ -99,8 +103,38 @@ namespace AutomationSystem.AdminPanel
         private void btn_NewUser_Click(object sender, EventArgs e)
         {
             frmUserManager userManagerForm = new frmUserManager();
+            userManagerForm.formType = 1; //Add User
             userManagerForm.ShowDialog();
             ShowUsers(CreateSearchString());
+        }
+
+        private void btn_EditUser_Click(object sender, EventArgs e)
+        {
+            int itemSelected = dgv_Users.SelectedCells.Count;
+            if (itemSelected > 0)
+            {
+                frmUserManager userManagerForm = new frmUserManager();
+                userManagerForm.formType = 2; //Edit User
+                userManagerForm.userFirstName = dgv_Users.CurrentRow.Cells["col_UserFristName"].Value.ToString();
+                userManagerForm.userLastName = dgv_Users.CurrentRow.Cells["col_UserLastName"].Value.ToString();
+                userManagerForm.userName = dgv_Users.CurrentRow.Cells["col_UserName"].Value.ToString();
+                userManagerForm.userPassword = "**********";
+                userManagerForm.userEmail = dgv_Users.CurrentRow.Cells["col_UserEmail"].Value.ToString();
+                userManagerForm.userTel = dgv_Users.CurrentRow.Cells["col_UserTel"].Value.ToString();
+                userManagerForm.userPersonalCode = dgv_Users.CurrentRow.Cells["col_UserPersonalCode"].Value.ToString();
+                userManagerForm.userBrithDate = dgv_Users.CurrentRow.Cells["col_UserBrithDay"].Value.ToString();
+                userManagerForm.userGender = Convert.ToByte(dgv_Users.CurrentRow.Cells["col_UserGenderCode"].Value.ToString());
+                userManagerForm.userRegisterDate = dgv_Users.CurrentRow.Cells["col_UserRegisteredDate"].Value.ToString();
+
+
+
+                userManagerForm.ShowDialog();
+                ShowUsers(CreateSearchString());
+            }
+            else
+            {
+                MessageBox.Show("لطفا يك كاربر جهت ويرايش انتخاب كنيد","ويرايش كاربر");
+            }
         }
     }
 }
