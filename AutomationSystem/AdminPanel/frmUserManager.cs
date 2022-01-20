@@ -31,7 +31,7 @@ namespace AutomationSystem.AdminPanel
         public string userTel { get; set; }
         public string userPersonalCode { get; set; }
         public string userBrithDate { get; set; }
-        public byte userGender { get; set; }
+        public string userGender { get; set; }
         public string userRegisterDate { get; set; }
 
 
@@ -188,6 +188,28 @@ namespace AutomationSystem.AdminPanel
         private void frmUserManager_Load(object sender, EventArgs e)
         {
             lbl_RegisterDateValue.Text = PublicVariable.todayDate;
+
+            if (this.formType == 2)
+            {
+                txt_Name.Text = this.userFirstName;
+                txt_LastName.Text = this.userLastName;
+                txt_UserName.Text = this.userName;
+                txt_Password.Text = this.userPassword;
+                txt_Email.Text = this.userEmail;
+                txt_Tel.Text = this.userTel;
+                txt_PersonalCode.Text = this.userPersonalCode;
+                txt_BrithDate.Value = Convert.ToDateTime(this.userBrithDate);
+                lbl_RegisterDateValue.Text = this.userRegisterDate;
+
+                if (this.userGender == "مرد")
+                {
+                    rbt_Man.Checked = true;
+                }
+                else
+                {
+                    rbt_Woman.Checked = true;
+                }
+            }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
