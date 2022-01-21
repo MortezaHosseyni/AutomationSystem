@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbc_UpMenu = new DevComponents.DotNetBar.RibbonControl();
             this.rbp_UpMenu = new DevComponents.DotNetBar.RibbonPanel();
             this.rib_Reminder = new DevComponents.DotNetBar.RibbonBar();
@@ -42,7 +42,7 @@
             this.rib_AssignmentJob = new DevComponents.DotNetBar.RibbonBar();
             this.btn_AssignmentJob = new DevComponents.DotNetBar.ButtonItem();
             this.rib_JobsManager = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_JobsManager = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_UsersLog = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Jobs = new DevComponents.DotNetBar.RibbonBar();
             this.btn_Jobs = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Users = new DevComponents.DotNetBar.RibbonBar();
@@ -305,7 +305,7 @@
             this.rib_JobsManager.DragDropSupport = true;
             this.rib_JobsManager.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
             this.rib_JobsManager.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btn_JobsManager});
+            this.btn_UsersLog});
             this.rib_JobsManager.Location = new System.Drawing.Point(203, 0);
             this.rib_JobsManager.Name = "rib_JobsManager";
             this.rib_JobsManager.Size = new System.Drawing.Size(100, 99);
@@ -322,12 +322,12 @@
             this.rib_JobsManager.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_JobsManager.TitleVisible = false;
             // 
-            // btn_JobsManager
+            // btn_UsersLog
             // 
-            this.btn_JobsManager.Image = global::AutomationSystem.Properties.Resources._03_JobsManager;
-            this.btn_JobsManager.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_JobsManager.Name = "btn_JobsManager";
-            this.btn_JobsManager.SubItemsExpandWidth = 14;
+            this.btn_UsersLog.Image = global::AutomationSystem.Properties.Resources._03_JobsManager;
+            this.btn_UsersLog.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_UsersLog.Name = "btn_UsersLog";
+            this.btn_UsersLog.SubItemsExpandWidth = 14;
             // 
             // rib_Jobs
             // 
@@ -871,14 +871,14 @@
             // 
             this.dgv_Reminder.AllowUserToAddRows = false;
             this.dgv_Reminder.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Reminder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_RemindSubject,
@@ -888,26 +888,26 @@
             this.col_RemindRead,
             this.col_RemindID,
             this.col_Readed});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Reminder.EnableHeadersVisualStyles = false;
             this.dgv_Reminder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_Reminder.Location = new System.Drawing.Point(3, 3);
             this.dgv_Reminder.Name = "dgv_Reminder";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Reminder.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Reminder.Size = new System.Drawing.Size(898, 127);
             this.dgv_Reminder.TabIndex = 0;
             this.dgv_Reminder.DoubleClick += new System.EventHandler(this.dgv_Reminder_DoubleClick);
@@ -1051,7 +1051,7 @@
         private DevComponents.DotNetBar.ButtonItem btn_Reminder;
         private DevComponents.DotNetBar.ButtonItem btn_Messenger;
         private DevComponents.DotNetBar.ButtonItem btn_AssignmentJob;
-        private DevComponents.DotNetBar.ButtonItem btn_JobsManager;
+        private DevComponents.DotNetBar.ButtonItem btn_UsersLog;
         private DevComponents.DotNetBar.ButtonItem btn_Users;
         private DevComponents.DotNetBar.PanelEx pnl_MainPanel;
         private DevComponents.DotNetBar.LabelX lbl_Dashboard;
