@@ -51,6 +51,7 @@ namespace AutomationSystem
                         PublicVariable.global_UserLastName = loginQuery[0].UserLastName;
                         PublicVariable.global_UserID = loginQuery[0].UserID;
 
+
                     }
                     else
                     {

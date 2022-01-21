@@ -160,5 +160,32 @@ namespace AutomationSystem.AdminPanel
                 return;
             }
         }
+
+        private void cms_EnabelingUser_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"از فعال كردن كاربر {dgv_Users.CurrentRow.Cells["col_UserFristName"].Value.ToString()} {dgv_Users.CurrentRow.Cells["col_UserLastName"].Value.ToString()} مطمعن هستيد؟", "فعالسازي كاربر", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    int getUserID = Convert.ToInt32(dgv_Users.CurrentRow.Cells["col_UserID"].Value);
+                    var queryDisableUser = (from U in db.Users where U.UserID == getUserID select U).SingleOrDefault();
+                    queryDisableUser.UserActivity = 1;
+
+                    db.SaveChanges();
+                    ShowUsers(CreateSearchString());
+
+                    MessageBox.Show("كاربر با موفقيت فعال شد", "كاربران");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("هنگام ارتباط با سرور خطايي رخ داد", "پايگاه داده");
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
