@@ -135,5 +135,30 @@ namespace AutomationSystem.AdminPanel
                 MessageBox.Show("لطفا يك كاربر جهت ويرايش انتخاب كنيد","ويرايش كاربر");
             }
         }
+
+        private void btn_DeactiveUser_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"از غيرفعال كردن كاربر {dgv_Users.CurrentRow.Cells["col_UserFristName"].Value.ToString()} {dgv_Users.CurrentRow.Cells["col_UserLastName"].Value.ToString()} مطمعن هستيد؟","غيرفعالسازي كاربر",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    int getUserID = Convert.ToInt32(dgv_Users.CurrentRow.Cells["col_UserID"].Value);
+                    var queryDisableUser = (from U in db.Users where U.UserID == getUserID select U).SingleOrDefault();
+                    queryDisableUser.UserActivity = 2;
+
+                    db.SaveChanges();
+                    ShowUsers(CreateSearchString());
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("هنگام ارتباط با سرور خطايي رخ داد","پايگاه داده");
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
