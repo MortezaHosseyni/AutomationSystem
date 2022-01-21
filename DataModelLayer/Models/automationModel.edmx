@@ -17,6 +17,17 @@
           <Property Name="RemindIsRead" Type="tinyint" Nullable="false" />
           <Property Name="RemindUserID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="UserLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogUserPcName" Type="varchar" MaxLength="150" />
+          <Property Name="LogUserIPAddress" Type="varchar" MaxLength="50" />
+          <Property Name="LogUserEnterDate" Type="varchar" MaxLength="70" />
+          <Property Name="LogUserExitDate" Type="varchar" MaxLength="70" />
+          <Property Name="LogUserID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
@@ -96,6 +107,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserLog_Users1">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserLog" Type="Self.UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="LogUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="Sp_InsterUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserFirstName" Type="varchar" Mode="In" />
           <Parameter Name="UserLastName" Type="varchar" Mode="In" />
@@ -110,6 +133,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="UserImage" Type="image" Mode="In" />
           <Parameter Name="UserSignature" Type="image" Mode="In" />
           <Parameter Name="UserRegisteredDate" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_ExitDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LogUserID" Type="int" Mode="In" />
+          <Parameter Name="LogUserExitDate" Type="varchar" Mode="In" />
         </Function>
         <Function Name="Sp_UpdateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserID" Type="int" Mode="In" />
@@ -134,6 +161,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
         </Function>
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vw_Reminder" EntityType="Self.Vw_Reminder" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -169,6 +197,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="Users" EntitySet="Users" />
             <End Role="Reminder" EntitySet="Reminder" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserLog_Users1" Association="Self.FK_UserLog_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserLog" EntitySet="UserLog" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -193,6 +225,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserRegisteredDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Reminders" Relationship="Office_Automation_DatabaseModel.FK_Reminder_Users" FromRole="User" ToRole="Reminder" />
+          <NavigationProperty Name="UserLogs" Relationship="Office_Automation_DatabaseModel.FK_UserLog_Users1" FromRole="User" ToRole="UserLog" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -264,6 +297,15 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <Parameter Name="UserTel" Mode="In" Type="String" />
             <Parameter Name="UserBrithDate" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="UserLogs" EntityType="Office_Automation_DatabaseModel.UserLog" />
+          <AssociationSet Name="FK_UserLog_Users1" Association="Office_Automation_DatabaseModel.FK_UserLog_Users1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserLog" EntitySet="UserLogs" />
+          </AssociationSet>
+          <FunctionImport Name="Sp_Update_ExitDate">
+            <Parameter Name="LogUserID" Mode="In" Type="Int32" />
+            <Parameter Name="LogUserExitDate" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -309,6 +351,30 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="RemindUserID" Type="Int32" Nullable="false" />
           <Property Name="RemindRead" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="UserLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogUserPcName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserIPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserEnterDate" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserExitDate" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_UserLog_Users1" FromRole="UserLog" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_UserLog_Users1">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.UserLog" Role="UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="LogUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -385,6 +451,19 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Sp_UpdateUsers" FunctionName="Office_Automation_DatabaseModel.Store.Sp_UpdateUsers" />
           <FunctionImportMapping FunctionImportName="Sp_UpdateUsers_WithoutImage" FunctionName="Office_Automation_DatabaseModel.Store.Sp_UpdateUsers_WithoutImage" />
+          <EntitySetMapping Name="UserLogs">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.UserLog">
+              <MappingFragment StoreEntitySet="UserLog">
+                <ScalarProperty Name="LogUserID" ColumnName="LogUserID" />
+                <ScalarProperty Name="LogUserExitDate" ColumnName="LogUserExitDate" />
+                <ScalarProperty Name="LogUserEnterDate" ColumnName="LogUserEnterDate" />
+                <ScalarProperty Name="LogUserIPAddress" ColumnName="LogUserIPAddress" />
+                <ScalarProperty Name="LogUserPcName" ColumnName="LogUserPcName" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Update_ExitDate" FunctionName="Office_Automation_DatabaseModel.Store.Sp_Update_ExitDate" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

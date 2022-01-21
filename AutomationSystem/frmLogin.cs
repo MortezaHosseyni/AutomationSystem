@@ -51,7 +51,15 @@ namespace AutomationSystem
                         PublicVariable.global_UserLastName = loginQuery[0].UserLastName;
                         PublicVariable.global_UserID = loginQuery[0].UserID;
 
+                        UserLog UL = new UserLog();
+                        string pcName = Environment.MachineName;
+                        UL.LogUserPcName = pcName;
+                        UL.LogUserIPAddress = lbl_YourIPValue.Text.Trim();
+                        UL.LogUserEnterDate = lbl_DateValue.Text + "-" + string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString()));
+                        UL.LogUserID = PublicVariable.global_UserID;
 
+                        db.UserLogs.Add(UL);
+                        db.SaveChanges();
                     }
                     else
                     {

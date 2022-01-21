@@ -31,6 +31,7 @@ namespace DataModelLayer.Models
         public virtual DbSet<Vw_Users> Vw_Users { get; set; }
         public virtual DbSet<Reminder> Reminders { get; set; }
         public virtual DbSet<Vw_Reminder> Vw_Reminder { get; set; }
+        public virtual DbSet<UserLog> UserLogs { get; set; }
     
         public virtual int Sp_InsterUsers(string userFirstName, string userLastName, string userName, string userPassword, string userPersonalID, string userEmail, Nullable<byte> userGender, Nullable<byte> userActivity, string userTel, string userBrithDate, byte[] userImage, byte[] userSignature, string userRegisteredDate)
         {
@@ -165,6 +166,19 @@ namespace DataModelLayer.Models
                 new ObjectParameter("UserBrithDate", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_UpdateUsers_WithoutImage", userIDParameter, userFirstNameParameter, userLastNameParameter, userPersonalIDParameter, userEmailParameter, userGenderParameter, userTelParameter, userBrithDateParameter);
+        }
+    
+        public virtual int Sp_Update_ExitDate(Nullable<int> logUserID, string logUserExitDate)
+        {
+            var logUserIDParameter = logUserID.HasValue ?
+                new ObjectParameter("LogUserID", logUserID) :
+                new ObjectParameter("LogUserID", typeof(int));
+    
+            var logUserExitDateParameter = logUserExitDate != null ?
+                new ObjectParameter("LogUserExitDate", logUserExitDate) :
+                new ObjectParameter("LogUserExitDate", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Update_ExitDate", logUserIDParameter, logUserExitDateParameter);
         }
     }
 }
