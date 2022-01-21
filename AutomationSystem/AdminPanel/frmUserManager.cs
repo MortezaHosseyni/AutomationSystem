@@ -75,70 +75,79 @@ namespace AutomationSystem.AdminPanel
                 return;
             }
 
-            try
+            if (formType == 1)
             {
-                //Check Repetitive User
-                var queryRepetitiveUserName = (from U in db.Users
-                                               where U.UserName == txt_UserName.Text.Trim()
-                                               where U.UserActivity == 1
-                                               select U).ToList();
-                if (queryRepetitiveUserName.Count == 1)
+                //Add User
+                try
                 {
-                    MessageBox.Show("اين نام‌كاربري قبلا در سيستم ثبت شده است","نام‌كاربري تكراري");
-                    return;
+                    //Check Repetitive User
+                    var queryRepetitiveUserName = (from U in db.Users
+                                                   where U.UserName == txt_UserName.Text.Trim()
+                                                   where U.UserActivity == 1
+                                                   select U).ToList();
+                    if (queryRepetitiveUserName.Count == 1)
+                    {
+                        MessageBox.Show("اين نام‌كاربري قبلا در سيستم ثبت شده است", "نام‌كاربري تكراري");
+                        return;
+                    }
+
+                    //Hashing Password
+                    SHA256CryptoServiceProvider SHA256 = new SHA256CryptoServiceProvider();
+                    Byte[] B1;
+                    Byte[] B2;
+
+                    B1 = UTF8Encoding.UTF8.GetBytes(txt_Password.Text.Trim());
+                    B2 = SHA256.ComputeHash(B1);
+                    string hashedPass = BitConverter.ToString(B2);
+
+
+
+                    //User Picture Array
+                    FileStream fileStreamUserPic = new FileStream(userPictureName, FileMode.Open, FileAccess.Read);
+                    byte[] userPicArr = new byte[fileStreamUserPic.Length];
+                    fileStreamUserPic.Read(userPicArr, 0, Convert.ToInt32(fileStreamUserPic.Length));
+                    fileStreamUserPic.Close();
+
+                    //User Signature Array
+                    FileStream fileStreamUserSignature = new FileStream(userSignatureName, FileMode.Open, FileAccess.Read);
+                    byte[] userSignArr = new byte[fileStreamUserSignature.Length];
+                    fileStreamUserSignature.Read(userSignArr, 0, Convert.ToInt32(fileStreamUserSignature.Length));
+                    fileStreamUserSignature.Close();
+
+
+
+                    //User Gender Checking
+                    byte checkGender = 0;
+                    if (rbt_Man.Checked)
+                    {
+                        checkGender = 1;
+                    }
+                    else if (rbt_Woman.Checked)
+                    {
+                        checkGender = 2;
+                    }
+
+
+
+                    //User Brithdate
+                    string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Text.ToString()));
+
+                    //Insert Data
+                    db.Sp_InsterUsers(txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_UserName.Text.Trim(), hashedPass, txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, 1, txt_Tel.Text.Trim(), userBrithDate, userPicArr, userSignArr, lbl_RegisterDateValue.Text.Trim());
+                    db.SaveChanges();
+                    MessageBox.Show("كاربر با موفقيت ثبت شد");
+                    this.Close();
                 }
-
-                //Hashing Password
-                SHA256CryptoServiceProvider SHA256 = new SHA256CryptoServiceProvider();
-                Byte[] B1;
-                Byte[] B2;
-
-                B1 = UTF8Encoding.UTF8.GetBytes(txt_Password.Text.Trim());
-                B2 = SHA256.ComputeHash(B1);
-                string hashedPass = BitConverter.ToString(B2);
-
-
-
-                //User Picture Array
-                FileStream fileStreamUserPic = new FileStream(userPictureName,FileMode.Open,FileAccess.Read);
-                byte[] userPicArr = new byte[fileStreamUserPic.Length];
-                fileStreamUserPic.Read(userPicArr, 0, Convert.ToInt32(fileStreamUserPic.Length));
-                fileStreamUserPic.Close();
-
-                //User Signature Array
-                FileStream fileStreamUserSignature = new FileStream(userSignatureName, FileMode.Open, FileAccess.Read);
-                byte[] userSignArr = new byte[fileStreamUserSignature.Length];
-                fileStreamUserSignature.Read(userSignArr, 0, Convert.ToInt32(fileStreamUserSignature.Length));
-                fileStreamUserSignature.Close();
-
-
-
-                //User Gender Checking
-                byte checkGender = 0;
-                if (rbt_Man.Checked)
+                catch (Exception)
                 {
-                    checkGender = 1;
+                    MessageBox.Show("در ثبت اطلاعات خطايي رخ داد لطفا دوباره امتحان كنيد");
+                    throw;
                 }
-                else if (rbt_Woman.Checked)
-                {
-                    checkGender = 2;
-                }
-
-
-
-                //User Brithdate
-                string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Text.ToString()));
-
-                //Insert Data
-                db.Sp_InsterUsers(txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_UserName.Text.Trim(), hashedPass, txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, 1, txt_Tel.Text.Trim(), userBrithDate, userPicArr, userSignArr, lbl_RegisterDateValue.Text.Trim());
-                db.SaveChanges();
-                MessageBox.Show("كاربر با موفقيت ثبت شد");
-                this.Close();
             }
-            catch (Exception)
+            else if (formType == 2)
             {
-                MessageBox.Show("در ثبت اطلاعات خطايي رخ داد لطفا دوباره امتحان كنيد");
-                throw;
+                //Edit User
+
             }
         }
         private bool checkNullableValues()
@@ -196,7 +205,9 @@ namespace AutomationSystem.AdminPanel
                 txt_Name.Text = this.userFirstName;
                 txt_LastName.Text = this.userLastName;
                 txt_UserName.Text = this.userName;
+                txt_UserName.Enabled = false;
                 txt_Password.Text = this.userPassword;
+                txt_Password.Enabled = false;
                 txt_Email.Text = this.userEmail;
                 txt_Tel.Text = this.userTel;
                 txt_PersonalCode.Text = this.userPersonalCode;
