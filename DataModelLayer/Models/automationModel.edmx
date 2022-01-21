@@ -122,6 +122,16 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="UserBrithDate" Type="varchar" Mode="In" />
           <Parameter Name="UserImage" Type="image" Mode="In" />
         </Function>
+        <Function Name="Sp_UpdateUsers_WithoutImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="UserFirstName" Type="varchar" Mode="In" />
+          <Parameter Name="UserLastName" Type="varchar" Mode="In" />
+          <Parameter Name="UserPersonalID" Type="varchar" Mode="In" />
+          <Parameter Name="UserEmail" Type="varchar" Mode="In" />
+          <Parameter Name="UserGender" Type="tinyint" Mode="In" />
+          <Parameter Name="UserTel" Type="varchar" Mode="In" />
+          <Parameter Name="UserBrithDate" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -244,6 +254,16 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <Parameter Name="UserBrithDate" Mode="In" Type="String" />
             <Parameter Name="UserImage" Mode="In" Type="Binary" />
           </FunctionImport>
+          <FunctionImport Name="Sp_UpdateUsers_WithoutImage">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserFirstName" Mode="In" Type="String" />
+            <Parameter Name="UserLastName" Mode="In" Type="String" />
+            <Parameter Name="UserPersonalID" Mode="In" Type="String" />
+            <Parameter Name="UserEmail" Mode="In" Type="String" />
+            <Parameter Name="UserGender" Mode="In" Type="Byte" />
+            <Parameter Name="UserTel" Mode="In" Type="String" />
+            <Parameter Name="UserBrithDate" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -364,6 +384,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Sp_UpdateUsers" FunctionName="Office_Automation_DatabaseModel.Store.Sp_UpdateUsers" />
+          <FunctionImportMapping FunctionImportName="Sp_UpdateUsers_WithoutImage" FunctionName="Office_Automation_DatabaseModel.Store.Sp_UpdateUsers_WithoutImage" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

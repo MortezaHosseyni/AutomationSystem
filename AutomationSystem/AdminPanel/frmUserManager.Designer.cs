@@ -245,7 +245,7 @@
             // 
             this.txt_BrithDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txt_BrithDate.Location = new System.Drawing.Point(402, 108);
-            this.txt_BrithDate.Miladi = new System.DateTime(((long)(0)));
+            this.txt_BrithDate.Miladi = new System.DateTime(1, 1, 1, 11, 0, 0, 0);
             this.txt_BrithDate.Name = "txt_BrithDate";
             this.txt_BrithDate.NowDateSelected = false;
             this.txt_BrithDate.ReadOnly = true;

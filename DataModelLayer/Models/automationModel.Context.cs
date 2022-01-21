@@ -129,5 +129,42 @@ namespace DataModelLayer.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_UpdateUsers", userIDParameter, userFirstNameParameter, userLastNameParameter, userPersonalIDParameter, userEmailParameter, userGenderParameter, userTelParameter, userBrithDateParameter, userImageParameter);
         }
+    
+        public virtual int Sp_UpdateUsers_WithoutImage(Nullable<int> userID, string userFirstName, string userLastName, string userPersonalID, string userEmail, Nullable<byte> userGender, string userTel, string userBrithDate)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var userFirstNameParameter = userFirstName != null ?
+                new ObjectParameter("UserFirstName", userFirstName) :
+                new ObjectParameter("UserFirstName", typeof(string));
+    
+            var userLastNameParameter = userLastName != null ?
+                new ObjectParameter("UserLastName", userLastName) :
+                new ObjectParameter("UserLastName", typeof(string));
+    
+            var userPersonalIDParameter = userPersonalID != null ?
+                new ObjectParameter("UserPersonalID", userPersonalID) :
+                new ObjectParameter("UserPersonalID", typeof(string));
+    
+            var userEmailParameter = userEmail != null ?
+                new ObjectParameter("UserEmail", userEmail) :
+                new ObjectParameter("UserEmail", typeof(string));
+    
+            var userGenderParameter = userGender.HasValue ?
+                new ObjectParameter("UserGender", userGender) :
+                new ObjectParameter("UserGender", typeof(byte));
+    
+            var userTelParameter = userTel != null ?
+                new ObjectParameter("UserTel", userTel) :
+                new ObjectParameter("UserTel", typeof(string));
+    
+            var userBrithDateParameter = userBrithDate != null ?
+                new ObjectParameter("UserBrithDate", userBrithDate) :
+                new ObjectParameter("UserBrithDate", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_UpdateUsers_WithoutImage", userIDParameter, userFirstNameParameter, userLastNameParameter, userPersonalIDParameter, userEmailParameter, userGenderParameter, userTelParameter, userBrithDateParameter);
+        }
     }
 }

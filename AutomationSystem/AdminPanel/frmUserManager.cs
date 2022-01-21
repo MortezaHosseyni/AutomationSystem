@@ -148,10 +148,15 @@ namespace AutomationSystem.AdminPanel
                 try
                 {
                     //User Picture Update
-                    FileStream fileStreamUserPic = new FileStream(userPictureName, FileMode.Open, FileAccess.Read);
-                    byte[] userPicArr = new byte[fileStreamUserPic.Length];
-                    fileStreamUserPic.Read(userPicArr, 0, Convert.ToInt32(fileStreamUserPic.Length));
-                    fileStreamUserPic.Close();
+                    byte[] userPicArr = null;
+                    if (userPictureName != "")
+                    {
+                        FileStream fileStreamUserPic = new FileStream(userPictureName, FileMode.Open, FileAccess.Read);
+                        userPicArr = new byte[fileStreamUserPic.Length];
+                        fileStreamUserPic.Read(userPicArr, 0, Convert.ToInt32(fileStreamUserPic.Length));
+                        fileStreamUserPic.Close();
+                    }
+                    
 
                     //User Update Gender
                     byte checkGender = 0;
@@ -168,7 +173,14 @@ namespace AutomationSystem.AdminPanel
                     string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Text.ToString()));
 
                     //Update Data
-                    db.Sp_UpdateUsers(this.userID, txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, txt_Tel.Text.Trim(), txt_BrithDate.Text.Trim(), userPicArr);
+                    if (userPictureName != "")
+                    {
+                        db.Sp_UpdateUsers(this.userID, txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, txt_Tel.Text.Trim(), txt_BrithDate.Text.Trim(), userPicArr);
+                    }
+                    else if (userPictureName == "")
+                    {
+                        db.Sp_UpdateUsers_WithoutImage(this.userID, txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, txt_Tel.Text.Trim(), txt_BrithDate.Text.Trim());
+                    }
                     db.SaveChanges();
                     MessageBox.Show("اطلاعات كاربر با موفقيت ثبت شد", "ويرايش كاربر");
                 }
