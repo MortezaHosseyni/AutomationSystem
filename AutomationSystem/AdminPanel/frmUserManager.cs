@@ -70,14 +70,13 @@ namespace AutomationSystem.AdminPanel
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (!checkNullableValues())
+            if (formType == 1) //Add User
             {
-                return;
-            }
+                if (!checkNullableValues())
+                {
+                    return;
+                }
 
-            if (formType == 1)
-            {
-                //Add User
                 try
                 {
                     //Check Repetitive User
@@ -113,9 +112,7 @@ namespace AutomationSystem.AdminPanel
                     byte[] userSignArr = new byte[fileStreamUserSignature.Length];
                     fileStreamUserSignature.Read(userSignArr, 0, Convert.ToInt32(fileStreamUserSignature.Length));
                     fileStreamUserSignature.Close();
-
-
-
+                    
                     //User Gender Checking
                     byte checkGender = 0;
                     if (rbt_Man.Checked)
@@ -126,9 +123,7 @@ namespace AutomationSystem.AdminPanel
                     {
                         checkGender = 2;
                     }
-
-
-
+                    
                     //User Brithdate
                     string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Text.ToString()));
 
@@ -144,10 +139,45 @@ namespace AutomationSystem.AdminPanel
                     throw;
                 }
             }
-            else if (formType == 2)
+            else if (formType == 2) //Edit User
             {
-                //Edit User
+                if (!checkNullableValuesInUpdate())
+                {
+                    return;
+                }
+                try
+                {
+                    //User Picture Update
+                    FileStream fileStreamUserPic = new FileStream(userPictureName, FileMode.Open, FileAccess.Read);
+                    byte[] userPicArr = new byte[fileStreamUserPic.Length];
+                    fileStreamUserPic.Read(userPicArr, 0, Convert.ToInt32(fileStreamUserPic.Length));
+                    fileStreamUserPic.Close();
 
+                    //User Update Gender
+                    byte checkGender = 0;
+                    if (rbt_Man.Checked)
+                    {
+                        checkGender = 1;
+                    }
+                    else if (rbt_Woman.Checked)
+                    {
+                        checkGender = 2;
+                    }
+
+                    //User Update Brithdate
+                    string userBrithDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_BrithDate.Text.ToString()));
+
+                    //Update Data
+                    db.Sp_UpdateUsers(this.userID, txt_Name.Text.Trim(), txt_LastName.Text.Trim(), txt_PersonalCode.Text.Trim(), txt_Email.Text.Trim(), checkGender, txt_Tel.Text.Trim(), txt_BrithDate.Text.Trim(), userPicArr);
+                    db.SaveChanges();
+                    MessageBox.Show("اطلاعات كاربر با موفقيت ثبت شد", "ويرايش كاربر");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("در ثبت اطلاعات خاطايي رخ داد", "ويرايش كاربر");
+                    return;
+                }
+                
             }
         }
         private bool checkNullableValues()
@@ -195,6 +225,36 @@ namespace AutomationSystem.AdminPanel
             }
             return true;
         }
+
+        private bool checkNullableValuesInUpdate()
+        {
+            if (txt_Name.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا نام كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_LastName.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا نام خانوادگي كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_Tel.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا شماره تماس كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            if (txt_PersonalCode.Text.Trim() == "")
+            {
+                MessageBox.Show("لطفا كد پرسنلي كاربر را وارد كنيد");
+                txt_Name.Focus();
+                return false;
+            }
+            return true;
+        }
+
         private void frmUserManager_Load(object sender, EventArgs e)
         {
             lbl_RegisterDateValue.Text = PublicVariable.todayDate;
