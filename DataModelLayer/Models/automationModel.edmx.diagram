@@ -10,8 +10,7 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Reminder" Width="1.5" PointX="0.75" PointY="5.375" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Reminder_Users" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Reminder" Width="1.5" PointX="2.375" PointY="5.375" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.UserLog" Width="1.5" PointX="3" PointY="9.625" />
-        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_UserLog_Users1" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.UserLog" Width="1.5" PointX="4.5" PointY="5.625" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_UserLog_Users1" />
       </Diagram>
     </edmx:Diagrams>

@@ -70,6 +70,8 @@
             this.lbl_DateValue = new DevComponents.DotNetBar.LabelX();
             this.lbl_Date = new DevComponents.DotNetBar.LabelX();
             this.pnl_Reminder = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txt_RemindDateTo = new FreeControls.PersianDateTimePicker();
+            this.txt_RemindDateIn = new FreeControls.PersianDateTimePicker();
             this.btn_RemindSearch = new DevComponents.DotNetBar.ButtonX();
             this.lbl_RemindDateTo = new DevComponents.DotNetBar.LabelX();
             this.lbl_RemindDateIn = new DevComponents.DotNetBar.LabelX();
@@ -87,8 +89,6 @@
             this.lbl_CurrentUser = new DevComponents.DotNetBar.LabelX();
             this.lbl_Dashboard = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
-            this.txt_RemindDateIn = new FreeControls.PersianDateTimePicker();
-            this.txt_RemindDateTo = new FreeControls.PersianDateTimePicker();
             this.rbc_UpMenu.SuspendLayout();
             this.rbp_UpMenu.SuspendLayout();
             this.pnl_MainPanel.SuspendLayout();
@@ -782,6 +782,30 @@
             this.pnl_Reminder.TabIndex = 3;
             this.pnl_Reminder.Text = "يادآور";
             // 
+            // txt_RemindDateTo
+            // 
+            this.txt_RemindDateTo.BackColor = System.Drawing.Color.White;
+            this.txt_RemindDateTo.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txt_RemindDateTo.Location = new System.Drawing.Point(144, 152);
+            this.txt_RemindDateTo.Name = "txt_RemindDateTo";
+            this.txt_RemindDateTo.ShowTime = false;
+            this.txt_RemindDateTo.Size = new System.Drawing.Size(165, 29);
+            this.txt_RemindDateTo.TabIndex = 9;
+            this.txt_RemindDateTo.Text = "persianDateTimePicker2";
+            this.txt_RemindDateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateTo.Value")));
+            // 
+            // txt_RemindDateIn
+            // 
+            this.txt_RemindDateIn.BackColor = System.Drawing.Color.White;
+            this.txt_RemindDateIn.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txt_RemindDateIn.Location = new System.Drawing.Point(332, 152);
+            this.txt_RemindDateIn.Name = "txt_RemindDateIn";
+            this.txt_RemindDateIn.ShowTime = false;
+            this.txt_RemindDateIn.Size = new System.Drawing.Size(165, 29);
+            this.txt_RemindDateIn.TabIndex = 8;
+            this.txt_RemindDateIn.Text = "persianDateTimePicker1";
+            this.txt_RemindDateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateIn.Value")));
+            // 
             // btn_RemindSearch
             // 
             this.btn_RemindSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -980,30 +1004,6 @@
             // 
             this.superTooltip.DefaultTooltipSettings = new DevComponents.DotNetBar.SuperTooltipInfo("", "", "", null, null, DevComponents.DotNetBar.eTooltipColor.Gray);
             // 
-            // txt_RemindDateIn
-            // 
-            this.txt_RemindDateIn.BackColor = System.Drawing.Color.White;
-            this.txt_RemindDateIn.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txt_RemindDateIn.Location = new System.Drawing.Point(332, 152);
-            this.txt_RemindDateIn.Name = "txt_RemindDateIn";
-            this.txt_RemindDateIn.ShowTime = false;
-            this.txt_RemindDateIn.Size = new System.Drawing.Size(165, 29);
-            this.txt_RemindDateIn.TabIndex = 8;
-            this.txt_RemindDateIn.Text = "persianDateTimePicker1";
-            this.txt_RemindDateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateIn.Value")));
-            // 
-            // txt_RemindDateTo
-            // 
-            this.txt_RemindDateTo.BackColor = System.Drawing.Color.White;
-            this.txt_RemindDateTo.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txt_RemindDateTo.Location = new System.Drawing.Point(144, 152);
-            this.txt_RemindDateTo.Name = "txt_RemindDateTo";
-            this.txt_RemindDateTo.ShowTime = false;
-            this.txt_RemindDateTo.Size = new System.Drawing.Size(165, 29);
-            this.txt_RemindDateTo.TabIndex = 9;
-            this.txt_RemindDateTo.Text = "persianDateTimePicker2";
-            this.txt_RemindDateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_RemindDateTo.Value")));
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -1018,6 +1018,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "سيستم اتوماسيون اداري";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdmin_FormClosing);
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.rbc_UpMenu.ResumeLayout(false);
             this.rbc_UpMenu.PerformLayout();

@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using AutomationSystem.Moduls;
+using System.Globalization;
 
 namespace AutomationSystem.AdminPanel
 {
     public partial class frmAdmin : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        PersianCalendar pCalender = new PersianCalendar();
         public frmAdmin()
         {
             InitializeComponent();
@@ -113,6 +116,12 @@ namespace AutomationSystem.AdminPanel
             reminderForm.ShowDialog();
 
             Reminder(searchCondition());
+        }
+
+        private void frmAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            db.Sp_Update_ExitDate(PublicVariable.global_UserID, PublicVariable.todayDate + "-" + string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString())));
+            db.SaveChanges();
         }
     }
 }
