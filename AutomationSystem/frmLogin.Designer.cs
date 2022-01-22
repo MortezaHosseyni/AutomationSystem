@@ -197,6 +197,7 @@
             this.btn_About.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_About.TabIndex = 9;
             this.btn_About.Text = "درباره ما";
+            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
             // 
             // btn_Exit
             // 

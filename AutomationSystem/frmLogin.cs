@@ -118,5 +118,10 @@ namespace AutomationSystem
         {
             lbl_TimeValue.Text = string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString()));
         }
+
+        private void btn_About_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("طراح و برنامه‌نويس: مرتضي‌حسيني \nراه ارتباطي: morteza_hoseyni81@yahoo.com \n دانشگاه فني‌حرفه‌اي تبريز","درباره ما");
+        }
     }
 }
