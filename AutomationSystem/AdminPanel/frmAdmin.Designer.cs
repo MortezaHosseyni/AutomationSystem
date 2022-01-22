@@ -328,6 +328,7 @@
             this.btn_UsersLog.ImageFixedSize = new System.Drawing.Size(64, 64);
             this.btn_UsersLog.Name = "btn_UsersLog";
             this.btn_UsersLog.SubItemsExpandWidth = 14;
+            this.btn_UsersLog.Click += new System.EventHandler(this.btn_UsersLog_Click);
             // 
             // rib_Jobs
             // 

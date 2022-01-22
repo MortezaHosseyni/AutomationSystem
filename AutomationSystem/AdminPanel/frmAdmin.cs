@@ -123,5 +123,11 @@ namespace AutomationSystem.AdminPanel
             db.Sp_Update_ExitDate(PublicVariable.global_UserID, PublicVariable.todayDate + "-" + string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString())));
             db.SaveChanges();
         }
+
+        private void btn_UsersLog_Click(object sender, EventArgs e)
+        {
+            frmUsersLog usersLogForm = new frmUsersLog();
+            usersLogForm.ShowDialog();
+        }
     }
 }
