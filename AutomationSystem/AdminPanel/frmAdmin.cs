@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataModelLayer.Models;
 using AutomationSystem.Moduls;
 using System.Globalization;
+using System.Net;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -27,6 +28,16 @@ namespace AutomationSystem.AdminPanel
             txt_RemindDateTo.Value = DateTime.Now.AddDays(1);
 
             Reminder(searchCondition());
+
+            //Date&Time
+            lbl_DateValue.Text = PublicVariable.todayDate;
+            timer.Enabled = true;
+
+            //IP
+            string pcName = Environment.MachineName;
+            IPHostEntry ipe = Dns.GetHostByName(pcName);
+            IPAddress[] ipAdresses = ipe.AddressList;
+            lbl_YourIPValue.Text = ipAdresses[0].ToString();
         }
         private void Reminder(string searchRemind)
         {
@@ -128,6 +139,11 @@ namespace AutomationSystem.AdminPanel
         {
             frmUsersLog usersLogForm = new frmUsersLog();
             usersLogForm.ShowDialog();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lbl_TimeValue.Text = string.Format("{0:HH:mm:ss}",Convert.ToDateTime( pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString()));
         }
     }
 }

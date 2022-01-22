@@ -116,7 +116,7 @@ namespace AutomationSystem
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            lbl_TimeValue.Text = pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString(); ;
+            lbl_TimeValue.Text = string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString()));
         }
     }
 }
