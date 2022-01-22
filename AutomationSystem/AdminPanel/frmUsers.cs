@@ -163,8 +163,7 @@ namespace AutomationSystem.AdminPanel
                 return;
             }
         }
-
-        private void cms_EnabelingUser_Click(object sender, EventArgs e)
+        private void cms_EnableCurrentUser_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show($"از فعال كردن كاربر {dgv_Users.CurrentRow.Cells["col_UserFristName"].Value.ToString()} {dgv_Users.CurrentRow.Cells["col_UserLastName"].Value.ToString()} مطمعن هستيد؟", "فعالسازي كاربر", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

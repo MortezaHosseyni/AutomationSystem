@@ -70,7 +70,7 @@
             this.col_UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_UserGenderCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.فعالكردنكاربرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_EnableCurrentUser = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -514,6 +514,7 @@
             this.col_UserID,
             this.col_UserName,
             this.col_UserGenderCode});
+            this.dgv_Users.ContextMenuStrip = this.contextMenuStrip;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -604,16 +605,18 @@
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.فعالكردنكاربرToolStripMenuItem});
+            this.cms_EnableCurrentUser});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(152, 26);
+            this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 48);
             // 
-            // فعالكردنكاربرToolStripMenuItem
+            // cms_EnableCurrentUser
             // 
-            this.فعالكردنكاربرToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.فعالكردنكاربرToolStripMenuItem.Name = "فعالكردنكاربرToolStripMenuItem";
-            this.فعالكردنكاربرToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.فعالكردنكاربرToolStripMenuItem.Text = "فعال كردن كاربر";
+            this.cms_EnableCurrentUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cms_EnableCurrentUser.Name = "cms_EnableCurrentUser";
+            this.cms_EnableCurrentUser.Size = new System.Drawing.Size(152, 22);
+            this.cms_EnableCurrentUser.Text = "فعال كردن كاربر";
+            this.cms_EnableCurrentUser.Click += new System.EventHandler(this.cms_EnableCurrentUser_Click);
             // 
             // frmUsers
             // 
@@ -683,6 +686,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_UserGenderCode;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem فعالكردنكاربرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cms_EnableCurrentUser;
     }
 }
