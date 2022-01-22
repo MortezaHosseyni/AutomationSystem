@@ -69,6 +69,26 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Reminder' does n
           <Property Name="RemindRead" Type="varchar" MaxLength="11" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_UserLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_UserLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+            <PropertyRef Name="LogUserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="LogFullName" />
+          </Key>
+          <Property Name="LogID" Type="int" Nullable="false" />
+          <Property Name="LogUserPcName" Type="varchar" MaxLength="150" />
+          <Property Name="LogUserIPAddress" Type="varchar" MaxLength="50" />
+          <Property Name="LogUserEnterDate" Type="varchar" MaxLength="70" />
+          <Property Name="LogUserExitDate" Type="varchar" MaxLength="70" />
+          <Property Name="LogUserID" Type="int" Nullable="false" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="LogFullName" Type="varchar" MaxLength="201" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_Users">
           <Key>
@@ -174,6 +194,19 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Reminder].[RemindUserID] AS [RemindUserID], 
     [Vw_Reminder].[RemindRead] AS [RemindRead]
     FROM [dbo].[Vw_Reminder] AS [Vw_Reminder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_UserLog" EntityType="Self.Vw_UserLog" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_UserLog].[LogID] AS [LogID], 
+    [Vw_UserLog].[LogUserPcName] AS [LogUserPcName], 
+    [Vw_UserLog].[LogUserIPAddress] AS [LogUserIPAddress], 
+    [Vw_UserLog].[LogUserEnterDate] AS [LogUserEnterDate], 
+    [Vw_UserLog].[LogUserExitDate] AS [LogUserExitDate], 
+    [Vw_UserLog].[LogUserID] AS [LogUserID], 
+    [Vw_UserLog].[UserFirstName] AS [UserFirstName], 
+    [Vw_UserLog].[UserLastName] AS [UserLastName], 
+    [Vw_UserLog].[LogFullName] AS [LogFullName]
+    FROM [dbo].[Vw_UserLog] AS [Vw_UserLog]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -306,6 +339,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <Parameter Name="LogUserID" Mode="In" Type="Int32" />
             <Parameter Name="LogUserExitDate" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="Vw_UserLog" EntityType="Office_Automation_DatabaseModel.Vw_UserLog" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -375,6 +409,24 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Vw_UserLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+            <PropertyRef Name="LogUserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="LogFullName" />
+          </Key>
+          <Property Name="LogID" Type="Int32" Nullable="false" />
+          <Property Name="LogUserPcName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserIPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserEnterDate" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserExitDate" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserID" Type="Int32" Nullable="false" />
+          <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LogFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -464,6 +516,21 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Sp_Update_ExitDate" FunctionName="Office_Automation_DatabaseModel.Store.Sp_Update_ExitDate" />
+          <EntitySetMapping Name="Vw_UserLog">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_UserLog">
+              <MappingFragment StoreEntitySet="Vw_UserLog">
+                <ScalarProperty Name="LogFullName" ColumnName="LogFullName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="LogUserID" ColumnName="LogUserID" />
+                <ScalarProperty Name="LogUserExitDate" ColumnName="LogUserExitDate" />
+                <ScalarProperty Name="LogUserEnterDate" ColumnName="LogUserEnterDate" />
+                <ScalarProperty Name="LogUserIPAddress" ColumnName="LogUserIPAddress" />
+                <ScalarProperty Name="LogUserPcName" ColumnName="LogUserPcName" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

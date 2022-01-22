@@ -6,12 +6,13 @@
     <edmx:Diagrams>
       <Diagram DiagramId="0cde160c33de416a849be55601ceb3a2" Name="Diagram1">
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Users" Width="1.5" PointX="2.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Users" Width="1.5" PointX="2.375" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Reminder" Width="1.5" PointX="0.75" PointY="5.375" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Reminder_Users" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Reminder" Width="1.5" PointX="2.375" PointY="5.375" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.UserLog" Width="1.5" PointX="4.5" PointY="5.625" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.UserLog" Width="1.5" PointX="4" PointY="5.375" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_UserLog_Users1" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_UserLog" Width="1.5" PointX="4" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
