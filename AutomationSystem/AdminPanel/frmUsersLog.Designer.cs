@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsersLog));
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
@@ -54,6 +54,12 @@
             this.txt_TimeIn = new System.Windows.Forms.DateTimePicker();
             this.txt_TimeTo = new System.Windows.Forms.DateTimePicker();
             this.btn_Search = new DevComponents.DotNetBar.ButtonX();
+            this.col_LogUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LogFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LogComputerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LogIPAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LogEnterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LogExitDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_UsersLogTable.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -192,35 +198,44 @@
             // 
             // dgv_UsersLogTable
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_UsersLogTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_UsersLogTable.AllowUserToAddRows = false;
+            this.dgv_UsersLogTable.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UsersLogTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_UsersLogTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_UsersLogTable.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_UsersLogTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_LogUserID,
+            this.col_LogFullName,
+            this.col_LogComputerName,
+            this.col_LogIPAddress,
+            this.col_LogEnterDate,
+            this.col_LogExitDate});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UsersLogTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_UsersLogTable.EnableHeadersVisualStyles = false;
             this.dgv_UsersLogTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_UsersLogTable.Location = new System.Drawing.Point(3, 3);
             this.dgv_UsersLogTable.Name = "dgv_UsersLogTable";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_UsersLogTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UsersLogTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_UsersLogTable.Size = new System.Drawing.Size(879, 270);
             this.dgv_UsersLogTable.TabIndex = 0;
             // 
@@ -426,6 +441,42 @@
             this.btn_Search.Symbol = "";
             this.btn_Search.TabIndex = 5;
             // 
+            // col_LogUserID
+            // 
+            this.col_LogUserID.HeaderText = "LogUserID";
+            this.col_LogUserID.Name = "col_LogUserID";
+            this.col_LogUserID.Visible = false;
+            // 
+            // col_LogFullName
+            // 
+            this.col_LogFullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LogFullName.HeaderText = "نام و نام‌خانوادگي";
+            this.col_LogFullName.Name = "col_LogFullName";
+            // 
+            // col_LogComputerName
+            // 
+            this.col_LogComputerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LogComputerName.HeaderText = "نام كامپيوتر";
+            this.col_LogComputerName.Name = "col_LogComputerName";
+            // 
+            // col_LogIPAddress
+            // 
+            this.col_LogIPAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LogIPAddress.HeaderText = "آي‌پي";
+            this.col_LogIPAddress.Name = "col_LogIPAddress";
+            // 
+            // col_LogEnterDate
+            // 
+            this.col_LogEnterDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LogEnterDate.HeaderText = "تاريخ ورود";
+            this.col_LogEnterDate.Name = "col_LogEnterDate";
+            // 
+            // col_LogExitDate
+            // 
+            this.col_LogExitDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LogExitDate.HeaderText = "تاريخ خروج";
+            this.col_LogExitDate.Name = "col_LogExitDate";
+            // 
             // frmUsersLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -471,5 +522,11 @@
         private System.Windows.Forms.DateTimePicker txt_TimeTo;
         private System.Windows.Forms.DateTimePicker txt_TimeIn;
         private DevComponents.DotNetBar.ButtonX btn_Search;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LogUserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LogFullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LogComputerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LogIPAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LogEnterDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LogExitDate;
     }
 }
