@@ -22,7 +22,29 @@ namespace AutomationSystem.AdminPanel
 
         private void frmUserInfo_Load(object sender, EventArgs e)
         {
+            try
+            {
+                var infoQuery = (from U in db.Vw_Users where U.UserID == this.Get_UserID select U).ToList();
 
+                if (infoQuery.Count == 1)
+                {
+                    val_Name.Text = infoQuery[0].UserFirstName;
+                    val_LastName.Text = infoQuery[0].UserLastName;
+                    val_Tel.Text = infoQuery[0].UserTel;
+                    val_BrithDate.Text = infoQuery[0].UserBrithDate;
+                    val_Gender.Text = infoQuery[0].UserGender;
+                    val_PersonalCode.Text = infoQuery[0].UserPersonalID;
+                    val_Status.Text = infoQuery[0].UserActivity;
+                    val_UserName.Text = infoQuery[0].UserName;
+                    val_Email.Text = infoQuery[0].UserEmail;
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("خطايي در خواندن اطلاعات رخ داد","پايگاه‌ داده");
+                return;
+            }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

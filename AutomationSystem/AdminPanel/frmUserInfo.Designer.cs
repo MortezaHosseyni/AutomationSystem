@@ -485,9 +485,9 @@
             this.val_UserName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_UserName.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.val_UserName.ForeColor = System.Drawing.Color.Red;
-            this.val_UserName.Location = new System.Drawing.Point(93, 3);
+            this.val_UserName.Location = new System.Drawing.Point(9, 3);
             this.val_UserName.Name = "val_UserName";
-            this.val_UserName.Size = new System.Drawing.Size(205, 31);
+            this.val_UserName.Size = new System.Drawing.Size(289, 31);
             this.val_UserName.TabIndex = 3;
             this.val_UserName.Text = "نام كاربري";
             this.val_UserName.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -499,11 +499,11 @@
             // 
             // 
             this.val_Email.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.val_Email.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.val_Email.Font = new System.Drawing.Font("B Nazanin", 11.25F, System.Drawing.FontStyle.Bold);
             this.val_Email.ForeColor = System.Drawing.Color.Red;
-            this.val_Email.Location = new System.Drawing.Point(93, 40);
+            this.val_Email.Location = new System.Drawing.Point(9, 40);
             this.val_Email.Name = "val_Email";
-            this.val_Email.Size = new System.Drawing.Size(205, 31);
+            this.val_Email.Size = new System.Drawing.Size(289, 31);
             this.val_Email.TabIndex = 3;
             this.val_Email.Text = "ايميل";
             this.val_Email.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -517,9 +517,9 @@
             this.val_Job.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_Job.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.val_Job.ForeColor = System.Drawing.Color.Red;
-            this.val_Job.Location = new System.Drawing.Point(93, 77);
+            this.val_Job.Location = new System.Drawing.Point(9, 77);
             this.val_Job.Name = "val_Job";
-            this.val_Job.Size = new System.Drawing.Size(205, 31);
+            this.val_Job.Size = new System.Drawing.Size(289, 31);
             this.val_Job.TabIndex = 3;
             this.val_Job.Text = "شغل";
             this.val_Job.TextAlignment = System.Drawing.StringAlignment.Center;
