@@ -189,5 +189,12 @@ namespace AutomationSystem.AdminPanel
                 return;
             }
         }
+
+        private void dgv_Users_DoubleClick(object sender, EventArgs e)
+        {
+            frmUserInfo formUserInfo = new frmUserInfo();
+            formUserInfo.Get_UserID = Convert.ToInt32(dgv_Users.CurrentRow.Cells["col_UserID"].Value);
+            formUserInfo.ShowDialog();
+        }
     }
 }

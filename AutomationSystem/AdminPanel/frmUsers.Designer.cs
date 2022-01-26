@@ -524,7 +524,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Users.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Users.EnableHeadersVisualStyles = false;
-            this.dgv_Users.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.dgv_Users.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_Users.Location = new System.Drawing.Point(3, 3);
             this.dgv_Users.Name = "dgv_Users";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -537,6 +537,7 @@
             this.dgv_Users.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Users.Size = new System.Drawing.Size(963, 269);
             this.dgv_Users.TabIndex = 1;
+            this.dgv_Users.DoubleClick += new System.EventHandler(this.dgv_Users_DoubleClick);
             // 
             // col_UserFristName
             // 
@@ -608,13 +609,13 @@
             this.cms_EnableCurrentUser});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip.Size = new System.Drawing.Size(152, 26);
             // 
             // cms_EnableCurrentUser
             // 
             this.cms_EnableCurrentUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.cms_EnableCurrentUser.Name = "cms_EnableCurrentUser";
-            this.cms_EnableCurrentUser.Size = new System.Drawing.Size(152, 22);
+            this.cms_EnableCurrentUser.Size = new System.Drawing.Size(151, 22);
             this.cms_EnableCurrentUser.Text = "فعال كردن كاربر";
             this.cms_EnableCurrentUser.Click += new System.EventHandler(this.cms_EnableCurrentUser_Click);
             // 

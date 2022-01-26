@@ -590,6 +590,7 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 0;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // pic_PersonalPicture
             // 
@@ -621,6 +622,7 @@
             this.Name = "frmUserInfo";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmUserInfo_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_PersonalSignature.ResumeLayout(false);
             this.pnl_Details.ResumeLayout(false);
