@@ -377,7 +377,7 @@
             this.val_Name.Name = "val_Name";
             this.val_Name.Size = new System.Drawing.Size(205, 31);
             this.val_Name.TabIndex = 3;
-            this.val_Name.Text = "نام";
+            this.val_Name.Text = "...";
             this.val_Name.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_LastName
@@ -393,7 +393,7 @@
             this.val_LastName.Name = "val_LastName";
             this.val_LastName.Size = new System.Drawing.Size(205, 31);
             this.val_LastName.TabIndex = 3;
-            this.val_LastName.Text = "نام خانوادگي";
+            this.val_LastName.Text = "...";
             this.val_LastName.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_Tel
@@ -409,7 +409,7 @@
             this.val_Tel.Name = "val_Tel";
             this.val_Tel.Size = new System.Drawing.Size(205, 31);
             this.val_Tel.TabIndex = 3;
-            this.val_Tel.Text = "شماره تماس";
+            this.val_Tel.Text = "...";
             this.val_Tel.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_BrithDate
@@ -425,7 +425,7 @@
             this.val_BrithDate.Name = "val_BrithDate";
             this.val_BrithDate.Size = new System.Drawing.Size(205, 31);
             this.val_BrithDate.TabIndex = 3;
-            this.val_BrithDate.Text = "تاريخ تولد";
+            this.val_BrithDate.Text = "...";
             this.val_BrithDate.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_Gender
@@ -441,7 +441,7 @@
             this.val_Gender.Name = "val_Gender";
             this.val_Gender.Size = new System.Drawing.Size(205, 31);
             this.val_Gender.TabIndex = 3;
-            this.val_Gender.Text = "جنسيت";
+            this.val_Gender.Text = "...";
             this.val_Gender.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_PersonalCode
@@ -457,7 +457,7 @@
             this.val_PersonalCode.Name = "val_PersonalCode";
             this.val_PersonalCode.Size = new System.Drawing.Size(205, 31);
             this.val_PersonalCode.TabIndex = 3;
-            this.val_PersonalCode.Text = "شماره پرسنل";
+            this.val_PersonalCode.Text = "...";
             this.val_PersonalCode.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_Status
@@ -473,7 +473,7 @@
             this.val_Status.Name = "val_Status";
             this.val_Status.Size = new System.Drawing.Size(205, 31);
             this.val_Status.TabIndex = 3;
-            this.val_Status.Text = "وضعيت";
+            this.val_Status.Text = "...";
             this.val_Status.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_UserName
@@ -489,7 +489,7 @@
             this.val_UserName.Name = "val_UserName";
             this.val_UserName.Size = new System.Drawing.Size(289, 31);
             this.val_UserName.TabIndex = 3;
-            this.val_UserName.Text = "نام كاربري";
+            this.val_UserName.Text = "...";
             this.val_UserName.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_Email
@@ -505,7 +505,7 @@
             this.val_Email.Name = "val_Email";
             this.val_Email.Size = new System.Drawing.Size(289, 31);
             this.val_Email.TabIndex = 3;
-            this.val_Email.Text = "ايميل";
+            this.val_Email.Text = "...";
             this.val_Email.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // val_Job
@@ -521,7 +521,7 @@
             this.val_Job.Name = "val_Job";
             this.val_Job.Size = new System.Drawing.Size(289, 31);
             this.val_Job.TabIndex = 3;
-            this.val_Job.Text = "شغل";
+            this.val_Job.Text = "...";
             this.val_Job.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // pnl_Buttons

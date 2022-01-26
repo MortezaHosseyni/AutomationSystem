@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using System.IO;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -37,7 +38,17 @@ namespace AutomationSystem.AdminPanel
                     val_Status.Text = infoQuery[0].UserActivity;
                     val_UserName.Text = infoQuery[0].UserName;
                     val_Email.Text = infoQuery[0].UserEmail;
+                    val_Job.Text = "برنامه نويس";
 
+                    //User Picture
+                    var dataUserPicture = (Byte[])(infoQuery[0].UserImage);
+                    var streamUserPicture = new MemoryStream(dataUserPicture);
+                    pic_PersonalPicture.Image = Image.FromStream(streamUserPicture);
+
+                    //User Signature
+                    var dataUserSignature = (Byte[])(infoQuery[0].UserSignature);
+                    var streamUserSignature = new MemoryStream(dataUserSignature);
+                    pic_PersonalSignature.Image = Image.FromStream(streamUserSignature);
                 }
             }
             catch (Exception)
