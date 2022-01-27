@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Tittle = new DevComponents.DotNetBar.LabelX();
             this.pnl_Opreations = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -38,6 +39,7 @@
             this.lbl_HintTwo = new DevComponents.DotNetBar.LabelX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
             this.trv_Jobs = new System.Windows.Forms.TreeView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pnl_Main.SuspendLayout();
             this.pnl_Opreations.SuspendLayout();
             this.pnl_Jobs.SuspendLayout();
@@ -231,6 +233,7 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 0;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // trv_Jobs
             // 
@@ -238,6 +241,12 @@
             this.trv_Jobs.Name = "trv_Jobs";
             this.trv_Jobs.Size = new System.Drawing.Size(485, 436);
             this.trv_Jobs.TabIndex = 0;
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // frmJobs
             // 
@@ -270,5 +279,6 @@
         private DevComponents.DotNetBar.LabelX lbl_HintTwo;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private System.Windows.Forms.TreeView trv_Jobs;
+        private System.Windows.Forms.ImageList imageList;
     }
 }

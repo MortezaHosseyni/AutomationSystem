@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Office_Automation_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Jobs">
+          <Key>
+            <PropertyRef Name="JobsID" />
+          </Key>
+          <Property Name="JobsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobsName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="JobsDetails" Type="varchar" MaxLength="300" />
+          <Property Name="JobsLevel" Type="int" />
+          <Property Name="JobsDetermineLevel" Type="int" />
+        </EntityType>
         <EntityType Name="Reminder">
           <Key>
             <PropertyRef Name="RemindID" />
@@ -180,6 +190,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="UserBrithDate" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
+          <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -340,6 +351,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <Parameter Name="LogUserExitDate" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="Vw_UserLog" EntityType="Office_Automation_DatabaseModel.Vw_UserLog" />
+          <EntitySet Name="Jobs" EntityType="Office_Automation_DatabaseModel.Job" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -426,6 +438,16 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="LogFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobsID" />
+          </Key>
+          <Property Name="JobsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="JobsDetails" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="JobsLevel" Type="Int32" />
+          <Property Name="JobsDetermineLevel" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -528,6 +550,17 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="LogUserIPAddress" ColumnName="LogUserIPAddress" />
                 <ScalarProperty Name="LogUserPcName" ColumnName="LogUserPcName" />
                 <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Job">
+              <MappingFragment StoreEntitySet="Jobs">
+                <ScalarProperty Name="JobsDetermineLevel" ColumnName="JobsDetermineLevel" />
+                <ScalarProperty Name="JobsLevel" ColumnName="JobsLevel" />
+                <ScalarProperty Name="JobsDetails" ColumnName="JobsDetails" />
+                <ScalarProperty Name="JobsName" ColumnName="JobsName" />
+                <ScalarProperty Name="JobsID" ColumnName="JobsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
