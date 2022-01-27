@@ -78,6 +78,9 @@
     <Compile Include="Models\UserLog.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Vw_Jobs.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vw_Reminder.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>

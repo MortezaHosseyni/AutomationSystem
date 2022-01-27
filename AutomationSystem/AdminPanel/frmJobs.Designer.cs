@@ -241,6 +241,7 @@
             this.trv_Jobs.Location = new System.Drawing.Point(3, 3);
             this.trv_Jobs.Name = "trv_Jobs";
             this.trv_Jobs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.trv_Jobs.RightToLeftLayout = true;
             this.trv_Jobs.Size = new System.Drawing.Size(485, 436);
             this.trv_Jobs.TabIndex = 0;
             // 
