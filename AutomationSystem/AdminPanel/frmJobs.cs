@@ -29,6 +29,15 @@ namespace AutomationSystem.AdminPanel
             tn.ForeColor = Color.Red;
             tn.Tag = "1";
             trv_Jobs.Nodes.Add(tn);
+
+            loadTreeViewNodes(tn);
+
+            tn.Expand();
+        }
+
+        private void loadTreeViewNodes(TreeNode tvn)
+        {
+
         }
     }
 }

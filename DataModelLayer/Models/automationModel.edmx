@@ -58,6 +58,20 @@
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Jobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Jobs">
+          <Key>
+            <PropertyRef Name="JobsID" />
+            <PropertyRef Name="JobsName" />
+          </Key>
+          <Property Name="JobsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobsName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="JobsDetails" Type="varchar" MaxLength="300" />
+          <Property Name="JobsLevel" Type="int" />
+          <Property Name="JobsDetermineLevel" Type="int" />
+          <Property Name="JobsChild" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Reminder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_Reminder">
           <Key>
@@ -194,6 +208,16 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vw_Jobs" EntityType="Self.Vw_Jobs" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Jobs].[JobsID] AS [JobsID], 
+    [Vw_Jobs].[JobsName] AS [JobsName], 
+    [Vw_Jobs].[JobsDetails] AS [JobsDetails], 
+    [Vw_Jobs].[JobsLevel] AS [JobsLevel], 
+    [Vw_Jobs].[JobsDetermineLevel] AS [JobsDetermineLevel], 
+    [Vw_Jobs].[JobsChild] AS [JobsChild]
+    FROM [dbo].[Vw_Jobs] AS [Vw_Jobs]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_Reminder" EntityType="Self.Vw_Reminder" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_Reminder].[RemindID] AS [RemindID], 
@@ -352,6 +376,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           </FunctionImport>
           <EntitySet Name="Vw_UserLog" EntityType="Office_Automation_DatabaseModel.Vw_UserLog" />
           <EntitySet Name="Jobs" EntityType="Office_Automation_DatabaseModel.Job" />
+          <EntitySet Name="Vw_Jobs" EntityType="Office_Automation_DatabaseModel.Vw_Jobs" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -448,6 +473,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="JobsDetails" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="JobsLevel" Type="Int32" />
           <Property Name="JobsDetermineLevel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vw_Jobs">
+          <Key>
+            <PropertyRef Name="JobsID" />
+            <PropertyRef Name="JobsName" />
+          </Key>
+          <Property Name="JobsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="JobsDetails" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="JobsLevel" Type="Int32" />
+          <Property Name="JobsDetermineLevel" Type="Int32" />
+          <Property Name="JobsChild" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -556,6 +593,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Jobs">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Job">
               <MappingFragment StoreEntitySet="Jobs">
+                <ScalarProperty Name="JobsDetermineLevel" ColumnName="JobsDetermineLevel" />
+                <ScalarProperty Name="JobsLevel" ColumnName="JobsLevel" />
+                <ScalarProperty Name="JobsDetails" ColumnName="JobsDetails" />
+                <ScalarProperty Name="JobsName" ColumnName="JobsName" />
+                <ScalarProperty Name="JobsID" ColumnName="JobsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Jobs">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Jobs">
+              <MappingFragment StoreEntitySet="Vw_Jobs">
+                <ScalarProperty Name="JobsChild" ColumnName="JobsChild" />
                 <ScalarProperty Name="JobsDetermineLevel" ColumnName="JobsDetermineLevel" />
                 <ScalarProperty Name="JobsLevel" ColumnName="JobsLevel" />
                 <ScalarProperty Name="JobsDetails" ColumnName="JobsDetails" />
