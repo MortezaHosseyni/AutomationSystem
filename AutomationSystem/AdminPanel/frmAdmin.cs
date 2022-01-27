@@ -145,5 +145,11 @@ namespace AutomationSystem.AdminPanel
         {
             lbl_TimeValue.Text = string.Format("{0:HH:mm:ss}",Convert.ToDateTime( pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString()));
         }
+
+        private void btn_Jobs_Click(object sender, EventArgs e)
+        {
+            frmJobs jobsForm = new frmJobs();
+            jobsForm.ShowDialog();
+        }
     }
 }
