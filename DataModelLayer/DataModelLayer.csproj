@@ -66,6 +66,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>automationModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Job.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Reminder.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>

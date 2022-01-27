@@ -21,5 +21,14 @@ namespace AutomationSystem.AdminPanel
         {
             this.Close();
         }
+
+        private void frmJobs_Activated(object sender, EventArgs e)
+        {
+            trv_Jobs.Nodes.Clear();
+            TreeNode tn = new TreeNode("مديرعامل");
+            tn.ForeColor = Color.Red;
+            tn.Tag = "1";
+            trv_Jobs.Nodes.Add(tn);
+        }
     }
 }
