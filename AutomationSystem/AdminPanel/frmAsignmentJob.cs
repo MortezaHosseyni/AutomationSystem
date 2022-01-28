@@ -78,5 +78,22 @@ namespace AutomationSystem.AdminPanel
         {
             ShowUsers(CreateSearchString());
         }
+
+        private void btn_JobsHistory_Click(object sender, EventArgs e)
+        {
+            if (dgv_UsersList.SelectedCells.Count > 0)
+            {
+                frmJobsHistory jobsHistoryForm = new frmJobsHistory();
+
+                jobsHistoryForm.Get_UserID = Convert.ToInt32(dgv_UsersList.CurrentRow.Cells["col_UserID"].Value);
+                jobsHistoryForm.lbl_UserFristAndLastName.Text = dgv_UsersList.CurrentRow.Cells["col_FristName"].Value + "" + dgv_UsersList.CurrentRow.Cells["col_LastName"].Value;
+                jobsHistoryForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("براي مشاهده ليست لطفا يك كاربر انتخاب كنيد","تاريخچه مشاغل");
+                return;
+            }
+        }
     }
 }

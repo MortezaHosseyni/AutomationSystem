@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Jobs = new DevComponents.DotNetBar.LabelX();
             this.lbl_UserFristAndLastName = new DevComponents.DotNetBar.LabelX();
@@ -179,14 +179,14 @@
             this.dgv_UserJobHistory.AllowUserToAddRows = false;
             this.dgv_UserJobHistory.AllowUserToDeleteRows = false;
             this.dgv_UserJobHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_UserJobHistory.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UserJobHistory.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_UserJobHistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_UserJobHistory.Location = new System.Drawing.Point(3, 3);
             this.dgv_UserJobHistory.Name = "dgv_UserJobHistory";
@@ -233,6 +233,7 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 0;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // frmJobsHistory
             // 
@@ -246,6 +247,7 @@
             this.Name = "frmJobsHistory";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmJobsHistory_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_JobsList.ResumeLayout(false);
             this.pnl_Buttons.ResumeLayout(false);
@@ -258,12 +260,12 @@
 
         private DevComponents.DotNetBar.PanelEx pnl_Main;
         private DevComponents.DotNetBar.LabelX lbl_Jobs;
-        private DevComponents.DotNetBar.LabelX lbl_UserFristAndLastName;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_Buttons;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_JobsList;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ButtonX btn_DismissalJob;
         private DevComponents.DotNetBar.ButtonX btn_AsignmentJob;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_UserJobHistory;
+        internal DevComponents.DotNetBar.LabelX lbl_UserFristAndLastName;
     }
 }
