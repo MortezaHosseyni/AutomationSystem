@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AsignmentJob.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\automationModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +79,9 @@
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserLog.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vw_AsignmentJobs.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vw_Jobs.cs">

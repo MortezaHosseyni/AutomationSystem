@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Jobs = new DevComponents.DotNetBar.LabelX();
             this.lbl_UserFristAndLastName = new DevComponents.DotNetBar.LabelX();
@@ -38,6 +38,12 @@
             this.btn_AsignmentJob = new DevComponents.DotNetBar.ButtonX();
             this.btn_DismissalJob = new DevComponents.DotNetBar.ButtonX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.col_AsignJobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_JobName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_AsignAsigntedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_AsignDismissalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_AsignStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_JobsList.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
@@ -56,7 +62,7 @@
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(738, 494);
+            this.pnl_Main.Size = new System.Drawing.Size(863, 494);
             this.pnl_Main.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnl_Main.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnl_Main.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -73,7 +79,7 @@
             // 
             this.lbl_Jobs.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Jobs.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Jobs.Location = new System.Drawing.Point(404, 12);
+            this.lbl_Jobs.Location = new System.Drawing.Point(463, 12);
             this.lbl_Jobs.Name = "lbl_Jobs";
             this.lbl_Jobs.Size = new System.Drawing.Size(68, 47);
             this.lbl_Jobs.TabIndex = 4;
@@ -87,9 +93,9 @@
             this.lbl_UserFristAndLastName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_UserFristAndLastName.Font = new System.Drawing.Font("B Nazanin", 22.25F);
             this.lbl_UserFristAndLastName.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_UserFristAndLastName.Location = new System.Drawing.Point(92, 12);
+            this.lbl_UserFristAndLastName.Location = new System.Drawing.Point(39, 12);
             this.lbl_UserFristAndLastName.Name = "lbl_UserFristAndLastName";
-            this.lbl_UserFristAndLastName.Size = new System.Drawing.Size(306, 47);
+            this.lbl_UserFristAndLastName.Size = new System.Drawing.Size(418, 47);
             this.lbl_UserFristAndLastName.TabIndex = 5;
             this.lbl_UserFristAndLastName.Text = "نام و نام خانوادگي";
             // 
@@ -101,7 +107,7 @@
             this.pnl_JobsList.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_JobsList.Location = new System.Drawing.Point(12, 65);
             this.pnl_JobsList.Name = "pnl_JobsList";
-            this.pnl_JobsList.Size = new System.Drawing.Size(714, 311);
+            this.pnl_JobsList.Size = new System.Drawing.Size(839, 311);
             // 
             // 
             // 
@@ -143,7 +149,7 @@
             this.pnl_Buttons.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Buttons.Location = new System.Drawing.Point(12, 382);
             this.pnl_Buttons.Name = "pnl_Buttons";
-            this.pnl_Buttons.Size = new System.Drawing.Size(714, 100);
+            this.pnl_Buttons.Size = new System.Drawing.Size(839, 100);
             // 
             // 
             // 
@@ -179,25 +185,32 @@
             this.dgv_UserJobHistory.AllowUserToAddRows = false;
             this.dgv_UserJobHistory.AllowUserToDeleteRows = false;
             this.dgv_UserJobHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_UserJobHistory.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_UserJobHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_AsignJobID,
+            this.col_FullName,
+            this.col_JobName,
+            this.col_AsignAsigntedDate,
+            this.col_AsignDismissalDate,
+            this.col_AsignStatus});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UserJobHistory.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_UserJobHistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_UserJobHistory.Location = new System.Drawing.Point(3, 3);
             this.dgv_UserJobHistory.Name = "dgv_UserJobHistory";
-            this.dgv_UserJobHistory.Size = new System.Drawing.Size(702, 268);
+            this.dgv_UserJobHistory.Size = new System.Drawing.Size(827, 268);
             this.dgv_UserJobHistory.TabIndex = 0;
             // 
             // btn_AsignmentJob
             // 
             this.btn_AsignmentJob.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_AsignmentJob.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_AsignmentJob.Location = new System.Drawing.Point(444, 18);
+            this.btn_AsignmentJob.Location = new System.Drawing.Point(526, 14);
             this.btn_AsignmentJob.Name = "btn_AsignmentJob";
             this.btn_AsignmentJob.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
             this.btn_AsignmentJob.Size = new System.Drawing.Size(177, 55);
@@ -211,7 +224,7 @@
             // 
             this.btn_DismissalJob.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_DismissalJob.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_DismissalJob.Location = new System.Drawing.Point(261, 18);
+            this.btn_DismissalJob.Location = new System.Drawing.Point(343, 14);
             this.btn_DismissalJob.Name = "btn_DismissalJob";
             this.btn_DismissalJob.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
             this.btn_DismissalJob.Size = new System.Drawing.Size(177, 55);
@@ -225,7 +238,7 @@
             // 
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(78, 18);
+            this.btn_Exit.Location = new System.Drawing.Point(160, 14);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
             this.btn_Exit.Size = new System.Drawing.Size(177, 55);
@@ -235,11 +248,48 @@
             this.btn_Exit.Text = "خروج";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // col_AsignJobID
+            // 
+            this.col_AsignJobID.HeaderText = "AsignJobID";
+            this.col_AsignJobID.Name = "col_AsignJobID";
+            this.col_AsignJobID.Visible = false;
+            // 
+            // col_FullName
+            // 
+            this.col_FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_FullName.HeaderText = "نام و نام‌خانوادگي";
+            this.col_FullName.Name = "col_FullName";
+            // 
+            // col_JobName
+            // 
+            this.col_JobName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_JobName.HeaderText = "عنوان شغلي";
+            this.col_JobName.Name = "col_JobName";
+            // 
+            // col_AsignAsigntedDate
+            // 
+            this.col_AsignAsigntedDate.HeaderText = "تاريخ انتساب";
+            this.col_AsignAsigntedDate.Name = "col_AsignAsigntedDate";
+            this.col_AsignAsigntedDate.Width = 150;
+            // 
+            // col_AsignDismissalDate
+            // 
+            this.col_AsignDismissalDate.HeaderText = "تاريخ عزل";
+            this.col_AsignDismissalDate.Name = "col_AsignDismissalDate";
+            this.col_AsignDismissalDate.Width = 150;
+            // 
+            // col_AsignStatus
+            // 
+            this.col_AsignStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_AsignStatus.HeaderText = "وضعيت";
+            this.col_AsignStatus.Name = "col_AsignStatus";
+            this.col_AsignStatus.Width = 81;
+            // 
             // frmJobsHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 494);
+            this.ClientSize = new System.Drawing.Size(863, 494);
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -267,5 +317,11 @@
         private DevComponents.DotNetBar.ButtonX btn_AsignmentJob;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_UserJobHistory;
         internal DevComponents.DotNetBar.LabelX lbl_UserFristAndLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_AsignJobID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_JobName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_AsignAsigntedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_AsignDismissalDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_AsignStatus;
     }
 }

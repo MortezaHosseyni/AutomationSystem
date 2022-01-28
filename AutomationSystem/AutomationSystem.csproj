@@ -89,6 +89,12 @@
     <Compile Include="AdminPanel\frmJobs.Designer.cs">
       <DependentUpon>frmJobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmJobsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmJobsHistory.Designer.cs">
+      <DependentUpon>frmJobsHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmManageJobs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmJobs.resx">
       <DependentUpon>frmJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmJobsHistory.resx">
+      <DependentUpon>frmJobsHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmManageJobs.resx">
       <DependentUpon>frmManageJobs.cs</DependentUpon>
