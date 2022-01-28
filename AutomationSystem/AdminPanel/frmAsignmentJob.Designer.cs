@@ -44,6 +44,11 @@
             this.pnl_Buttons = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_JobsHistory = new DevComponents.DotNetBar.ButtonX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.col_FristName = new DevComponents.DotNetBar.Controls.DataGridViewSliderColumn();
+            this.col_LastName = new DevComponents.DotNetBar.Controls.DataGridViewSliderColumn();
+            this.col_Gender = new DevComponents.DotNetBar.Controls.DataGridViewSliderColumn();
+            this.col_PersonalCode = new DevComponents.DotNetBar.Controls.DataGridViewSliderColumn();
+            this.col_UserID = new DevComponents.DotNetBar.Controls.DataGridViewSliderColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_UsersList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UsersList)).BeginInit();
@@ -129,7 +134,15 @@
             // 
             // dgv_UsersList
             // 
+            this.dgv_UsersList.AllowUserToAddRows = false;
+            this.dgv_UsersList.AllowUserToDeleteRows = false;
             this.dgv_UsersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_UsersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_FristName,
+            this.col_LastName,
+            this.col_Gender,
+            this.col_PersonalCode,
+            this.col_UserID});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -342,6 +355,43 @@
             this.btn_Exit.TabIndex = 0;
             this.btn_Exit.Text = "خروج";
             // 
+            // col_FristName
+            // 
+            this.col_FristName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.col_FristName.HeaderText = "نام";
+            this.col_FristName.Name = "col_FristName";
+            this.col_FristName.Value = 0;
+            this.col_FristName.Width = 150;
+            // 
+            // col_LastName
+            // 
+            this.col_LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LastName.HeaderText = "نام خانوادگي";
+            this.col_LastName.Name = "col_LastName";
+            this.col_LastName.Value = 0;
+            // 
+            // col_Gender
+            // 
+            this.col_Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_Gender.HeaderText = "جنسيت";
+            this.col_Gender.Name = "col_Gender";
+            this.col_Gender.Value = 0;
+            this.col_Gender.Width = 84;
+            // 
+            // col_PersonalCode
+            // 
+            this.col_PersonalCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_PersonalCode.HeaderText = "شماره پرسنلي";
+            this.col_PersonalCode.Name = "col_PersonalCode";
+            this.col_PersonalCode.Value = 0;
+            // 
+            // col_UserID
+            // 
+            this.col_UserID.HeaderText = "UserID";
+            this.col_UserID.Name = "col_UserID";
+            this.col_UserID.Value = 0;
+            this.col_UserID.Visible = false;
+            // 
             // frmAsignmentJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -380,5 +430,10 @@
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_Buttons;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ButtonX btn_JobsHistory;
+        private DevComponents.DotNetBar.Controls.DataGridViewSliderColumn col_FristName;
+        private DevComponents.DotNetBar.Controls.DataGridViewSliderColumn col_LastName;
+        private DevComponents.DotNetBar.Controls.DataGridViewSliderColumn col_Gender;
+        private DevComponents.DotNetBar.Controls.DataGridViewSliderColumn col_PersonalCode;
+        private DevComponents.DotNetBar.Controls.DataGridViewSliderColumn col_UserID;
     }
 }

@@ -289,6 +289,8 @@
             this.btn_AssignmentJob.ImageFixedSize = new System.Drawing.Size(64, 64);
             this.btn_AssignmentJob.Name = "btn_AssignmentJob";
             this.btn_AssignmentJob.SubItemsExpandWidth = 14;
+            this.superTooltip.SetSuperTooltip(this.btn_AssignmentJob, new DevComponents.DotNetBar.SuperTooltipInfo("انتصاب شغل", "", "مي‌توانيد به پرسنل شغل انتصاب دهيد و تاريخچه مشاغل را مشاهده كنيد.", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_AssignmentJob.Click += new System.EventHandler(this.btn_AssignmentJob_Click);
             // 
             // rib_JobsManager
             // 

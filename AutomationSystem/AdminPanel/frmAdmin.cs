@@ -151,5 +151,11 @@ namespace AutomationSystem.AdminPanel
             frmJobs jobsForm = new frmJobs();
             jobsForm.ShowDialog();
         }
+
+        private void btn_AssignmentJob_Click(object sender, EventArgs e)
+        {
+            frmAsignmentJob asignmentJob = new frmAsignmentJob();
+            asignmentJob.ShowDialog();
+        }
     }
 }
