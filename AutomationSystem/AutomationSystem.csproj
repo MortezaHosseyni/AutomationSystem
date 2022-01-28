@@ -77,6 +77,12 @@
     <Compile Include="AdminPanel\frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmAsignmentJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAsignmentJob.Designer.cs">
+      <DependentUpon>frmAsignmentJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmJobs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminPanel\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmAsignmentJob.resx">
+      <DependentUpon>frmAsignmentJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmJobs.resx">
       <DependentUpon>frmJobs.cs</DependentUpon>
