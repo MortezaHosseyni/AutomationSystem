@@ -88,6 +88,7 @@ namespace AutomationSystem.AdminPanel
             int getTag = Convert.ToInt32(trv_Jobs.SelectedNode.Tag);
             jobsManagerForm.Get_JobLevel = getTag;
             jobsManagerForm.Get_JobDetermineLevel = jobLevel;
+            jobsManagerForm.formType = 1; //Add Job
 
             jobsManagerForm.ShowDialog();
         }
@@ -96,6 +97,22 @@ namespace AutomationSystem.AdminPanel
         {
             TreeNode node = trv_Jobs.SelectedNode;
             jobLevel = e.Node.Level;
+        }
+
+        private void btn_EditJob_Click(object sender, EventArgs e)
+        {
+            if (trv_Jobs.SelectedNode == null)
+            {
+                MessageBox.Show("براي ويرايش شغل ابتدا يكي از عناوين را انتخاب كنيد", "ويرايش شغل");
+                return;
+            }
+
+            frmManageJobs jobsManagerForm = new frmManageJobs();
+            int getTag = Convert.ToInt32(trv_Jobs.SelectedNode.Tag);
+            jobsManagerForm.Get_JobID = getTag;
+            jobsManagerForm.formType = 2; //Edit Job
+
+            jobsManagerForm.ShowDialog();
         }
     }
 }

@@ -217,6 +217,7 @@
             this.btn_EditJob.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btn_EditJob.TabIndex = 0;
             this.btn_EditJob.Text = "ويرايش شغل";
+            this.btn_EditJob.Click += new System.EventHandler(this.btn_EditJob_Click);
             // 
             // btn_NewJob
             // 
