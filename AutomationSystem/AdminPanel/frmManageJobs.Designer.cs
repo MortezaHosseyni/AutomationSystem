@@ -177,7 +177,7 @@
             // 
             this.btn_Save.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Save.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Save.Location = new System.Drawing.Point(327, 281);
+            this.btn_Save.Location = new System.Drawing.Point(307, 280);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
             this.btn_Save.Size = new System.Drawing.Size(235, 51);
@@ -191,7 +191,7 @@
             // 
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(86, 281);
+            this.btn_Exit.Location = new System.Drawing.Point(66, 280);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
             this.btn_Exit.Size = new System.Drawing.Size(235, 51);
@@ -200,6 +200,7 @@
             this.btn_Exit.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btn_Exit.TabIndex = 2;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // frmManageJobs
             // 
@@ -213,6 +214,7 @@
             this.Name = "frmManageJobs";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmManageJobs_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Contents.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -14,6 +14,7 @@ namespace AutomationSystem.AdminPanel
     public partial class frmJobs : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        int jobLevel;
         public frmJobs()
         {
             InitializeComponent();
@@ -72,6 +73,29 @@ namespace AutomationSystem.AdminPanel
                     M = null;
                 }
             }
+        }
+
+        private void btn_NewJob_Click(object sender, EventArgs e)
+        {
+            if (trv_Jobs.SelectedNode == null)
+            {
+                MessageBox.Show("براي افزودن شغل جديد ابتدا يكي از عناوين را انتخاب كنيد","شغل جديد");
+                return;
+            }
+
+            frmManageJobs jobsManagerForm = new frmManageJobs();
+
+            int getTag = Convert.ToInt32(trv_Jobs.SelectedNode.Tag);
+            jobsManagerForm.Get_JobLevel = getTag;
+            jobsManagerForm.Get_JobDetermineLevel = jobLevel;
+
+            jobsManagerForm.ShowDialog();
+        }
+
+        private void trv_Jobs_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeNode node = trv_Jobs.SelectedNode;
+            jobLevel = e.Node.Level;
         }
     }
 }

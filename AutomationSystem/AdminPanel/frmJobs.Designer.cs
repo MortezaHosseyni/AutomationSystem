@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
-            this.lbl_Tittle = new DevComponents.DotNetBar.LabelX();
-            this.pnl_Opreations = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.pnl_Jobs = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.btn_NewJob = new DevComponents.DotNetBar.ButtonX();
-            this.btn_EditJob = new DevComponents.DotNetBar.ButtonX();
-            this.lbl_HintOne = new DevComponents.DotNetBar.LabelX();
-            this.lbl_HintTwo = new DevComponents.DotNetBar.LabelX();
-            this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
             this.trv_Jobs = new System.Windows.Forms.TreeView();
+            this.pnl_Opreations = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.lbl_HintTwo = new DevComponents.DotNetBar.LabelX();
+            this.lbl_HintOne = new DevComponents.DotNetBar.LabelX();
+            this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.btn_EditJob = new DevComponents.DotNetBar.ButtonX();
+            this.btn_NewJob = new DevComponents.DotNetBar.ButtonX();
+            this.lbl_Tittle = new DevComponents.DotNetBar.LabelX();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pnl_Main.SuspendLayout();
-            this.pnl_Opreations.SuspendLayout();
             this.pnl_Jobs.SuspendLayout();
+            this.pnl_Opreations.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -66,19 +66,56 @@
             this.pnl_Main.Style.GradientAngle = 90;
             this.pnl_Main.TabIndex = 1;
             // 
-            // lbl_Tittle
+            // pnl_Jobs
+            // 
+            this.pnl_Jobs.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_Jobs.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Jobs.Controls.Add(this.trv_Jobs);
+            this.pnl_Jobs.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_Jobs.Location = new System.Drawing.Point(12, 74);
+            this.pnl_Jobs.Name = "pnl_Jobs";
+            this.pnl_Jobs.Size = new System.Drawing.Size(497, 479);
             // 
             // 
             // 
+            this.pnl_Jobs.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_Jobs.Style.BackColorGradientAngle = 90;
+            this.pnl_Jobs.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_Jobs.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Jobs.Style.BorderBottomWidth = 1;
+            this.pnl_Jobs.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_Jobs.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Jobs.Style.BorderLeftWidth = 1;
+            this.pnl_Jobs.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Jobs.Style.BorderRightWidth = 1;
+            this.pnl_Jobs.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Jobs.Style.BorderTopWidth = 1;
+            this.pnl_Jobs.Style.CornerDiameter = 4;
+            this.pnl_Jobs.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_Jobs.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_Jobs.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_Jobs.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
-            this.lbl_Tittle.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tittle.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Tittle.Location = new System.Drawing.Point(313, 12);
-            this.lbl_Tittle.Name = "lbl_Tittle";
-            this.lbl_Tittle.Size = new System.Drawing.Size(102, 51);
-            this.lbl_Tittle.Symbol = "";
-            this.lbl_Tittle.TabIndex = 0;
-            this.lbl_Tittle.Text = "مشاغل";
+            // 
+            // 
+            this.pnl_Jobs.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_Jobs.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_Jobs.TabIndex = 2;
+            this.pnl_Jobs.Text = "ليست مشاغل";
+            // 
+            // trv_Jobs
+            // 
+            this.trv_Jobs.Font = new System.Drawing.Font("B Nazanin", 16.25F);
+            this.trv_Jobs.Location = new System.Drawing.Point(3, 3);
+            this.trv_Jobs.Name = "trv_Jobs";
+            this.trv_Jobs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.trv_Jobs.RightToLeftLayout = true;
+            this.trv_Jobs.Size = new System.Drawing.Size(485, 436);
+            this.trv_Jobs.TabIndex = 0;
+            this.trv_Jobs.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trv_Jobs_AfterSelect);
             // 
             // pnl_Opreations
             // 
@@ -124,73 +161,19 @@
             this.pnl_Opreations.TabIndex = 1;
             this.pnl_Opreations.Text = "عمليات";
             // 
-            // pnl_Jobs
-            // 
-            this.pnl_Jobs.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnl_Jobs.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnl_Jobs.Controls.Add(this.trv_Jobs);
-            this.pnl_Jobs.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_Jobs.Location = new System.Drawing.Point(12, 74);
-            this.pnl_Jobs.Name = "pnl_Jobs";
-            this.pnl_Jobs.Size = new System.Drawing.Size(497, 479);
+            // lbl_HintTwo
             // 
             // 
             // 
-            this.pnl_Jobs.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.pnl_Jobs.Style.BackColorGradientAngle = 90;
-            this.pnl_Jobs.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnl_Jobs.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Jobs.Style.BorderBottomWidth = 1;
-            this.pnl_Jobs.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pnl_Jobs.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Jobs.Style.BorderLeftWidth = 1;
-            this.pnl_Jobs.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Jobs.Style.BorderRightWidth = 1;
-            this.pnl_Jobs.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Jobs.Style.BorderTopWidth = 1;
-            this.pnl_Jobs.Style.CornerDiameter = 4;
-            this.pnl_Jobs.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.pnl_Jobs.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.pnl_Jobs.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pnl_Jobs.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
-            // 
-            // 
-            this.pnl_Jobs.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pnl_Jobs.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pnl_Jobs.TabIndex = 2;
-            this.pnl_Jobs.Text = "ليست مشاغل";
-            // 
-            // btn_NewJob
-            // 
-            this.btn_NewJob.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_NewJob.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_NewJob.Location = new System.Drawing.Point(3, 15);
-            this.btn_NewJob.Name = "btn_NewJob";
-            this.btn_NewJob.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 20, 2);
-            this.btn_NewJob.Size = new System.Drawing.Size(201, 38);
-            this.btn_NewJob.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_NewJob.Symbol = "57404";
-            this.btn_NewJob.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.btn_NewJob.TabIndex = 0;
-            this.btn_NewJob.Text = "شغل جديد";
-            // 
-            // btn_EditJob
-            // 
-            this.btn_EditJob.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_EditJob.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_EditJob.Location = new System.Drawing.Point(3, 59);
-            this.btn_EditJob.Name = "btn_EditJob";
-            this.btn_EditJob.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 20, 2);
-            this.btn_EditJob.Size = new System.Drawing.Size(201, 38);
-            this.btn_EditJob.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_EditJob.Symbol = "57899";
-            this.btn_EditJob.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.btn_EditJob.TabIndex = 0;
-            this.btn_EditJob.Text = "ويرايش شغل";
+            this.lbl_HintTwo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_HintTwo.Location = new System.Drawing.Point(3, 261);
+            this.lbl_HintTwo.Name = "lbl_HintTwo";
+            this.lbl_HintTwo.Size = new System.Drawing.Size(201, 110);
+            this.lbl_HintTwo.Symbol = "";
+            this.lbl_HintTwo.TabIndex = 1;
+            this.lbl_HintTwo.Text = "براي ويرايش هر شغل ابتدا آن‌را انتخاب كنيد سپس روي دكمه ويرايش شغل كليك كنيد.";
+            this.lbl_HintTwo.WordWrap = true;
             // 
             // lbl_HintOne
             // 
@@ -207,20 +190,6 @@
     " شغل جديد را بزنيد.";
             this.lbl_HintOne.WordWrap = true;
             // 
-            // lbl_HintTwo
-            // 
-            // 
-            // 
-            // 
-            this.lbl_HintTwo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_HintTwo.Location = new System.Drawing.Point(3, 261);
-            this.lbl_HintTwo.Name = "lbl_HintTwo";
-            this.lbl_HintTwo.Size = new System.Drawing.Size(201, 110);
-            this.lbl_HintTwo.Symbol = "";
-            this.lbl_HintTwo.TabIndex = 1;
-            this.lbl_HintTwo.Text = "براي ويرايش هر شغل ابتدا آن‌را انتخاب كنيد سپس روي دكمه ويرايش شغل كليك كنيد.";
-            this.lbl_HintTwo.WordWrap = true;
-            // 
             // btn_Exit
             // 
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -235,15 +204,48 @@
             this.btn_Exit.Text = "خروج";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // trv_Jobs
+            // btn_EditJob
             // 
-            this.trv_Jobs.Font = new System.Drawing.Font("B Nazanin", 16.25F);
-            this.trv_Jobs.Location = new System.Drawing.Point(3, 3);
-            this.trv_Jobs.Name = "trv_Jobs";
-            this.trv_Jobs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.trv_Jobs.RightToLeftLayout = true;
-            this.trv_Jobs.Size = new System.Drawing.Size(485, 436);
-            this.trv_Jobs.TabIndex = 0;
+            this.btn_EditJob.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_EditJob.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_EditJob.Location = new System.Drawing.Point(3, 59);
+            this.btn_EditJob.Name = "btn_EditJob";
+            this.btn_EditJob.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 20, 2);
+            this.btn_EditJob.Size = new System.Drawing.Size(201, 38);
+            this.btn_EditJob.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_EditJob.Symbol = "57899";
+            this.btn_EditJob.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btn_EditJob.TabIndex = 0;
+            this.btn_EditJob.Text = "ويرايش شغل";
+            // 
+            // btn_NewJob
+            // 
+            this.btn_NewJob.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_NewJob.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_NewJob.Location = new System.Drawing.Point(3, 15);
+            this.btn_NewJob.Name = "btn_NewJob";
+            this.btn_NewJob.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 20, 20, 2);
+            this.btn_NewJob.Size = new System.Drawing.Size(201, 38);
+            this.btn_NewJob.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_NewJob.Symbol = "57404";
+            this.btn_NewJob.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btn_NewJob.TabIndex = 0;
+            this.btn_NewJob.Text = "شغل جديد";
+            this.btn_NewJob.Click += new System.EventHandler(this.btn_NewJob_Click);
+            // 
+            // lbl_Tittle
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tittle.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tittle.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Tittle.Location = new System.Drawing.Point(313, 12);
+            this.lbl_Tittle.Name = "lbl_Tittle";
+            this.lbl_Tittle.Size = new System.Drawing.Size(102, 51);
+            this.lbl_Tittle.Symbol = "";
+            this.lbl_Tittle.TabIndex = 0;
+            this.lbl_Tittle.Text = "مشاغل";
             // 
             // imageList
             // 
@@ -259,14 +261,14 @@
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmJobs";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Activated += new System.EventHandler(this.frmJobs_Activated);
             this.pnl_Main.ResumeLayout(false);
-            this.pnl_Opreations.ResumeLayout(false);
             this.pnl_Jobs.ResumeLayout(false);
+            this.pnl_Opreations.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
