@@ -12,21 +12,19 @@ namespace DataModelLayer.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Job
+    public partial class Vw_AsignmentJobs
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Job()
-        {
-            this.AsignmentJobs = new HashSet<AsignmentJob>();
-        }
-    
-        public int JobsID { get; set; }
+        public int AsignJobsID { get; set; }
+        public int AsignUserID { get; set; }
+        public int AsignJobID { get; set; }
+        public string AsignAsigntedDate { get; set; }
+        public string AsignDismissalDate { get; set; }
+        public byte AsignStatus { get; set; }
+        public string UserFirstName { get; set; }
+        public string UserLastName { get; set; }
         public string JobsName { get; set; }
-        public string JobsDetails { get; set; }
-        public Nullable<int> JobsLevel { get; set; }
         public Nullable<int> JobsDetermineLevel { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AsignmentJob> AsignmentJobs { get; set; }
+        public string UserFullName { get; set; }
+        public string AsignStatusView { get; set; }
     }
 }

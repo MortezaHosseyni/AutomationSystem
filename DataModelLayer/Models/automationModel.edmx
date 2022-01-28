@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Office_Automation_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AsignmentJobs">
+          <Key>
+            <PropertyRef Name="AsignJobsID" />
+          </Key>
+          <Property Name="AsignJobsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AsignUserID" Type="int" Nullable="false" />
+          <Property Name="AsignJobID" Type="int" Nullable="false" />
+          <Property Name="AsignAsigntedDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AsignDismissalDate" Type="varchar" MaxLength="30" />
+          <Property Name="AsignStatus" Type="tinyint" Nullable="false" />
+        </EntityType>
         <EntityType Name="Jobs">
           <Key>
             <PropertyRef Name="JobsID" />
@@ -56,6 +67,33 @@
           <Property Name="UserImage" Type="image" />
           <Property Name="UserSignature" Type="image" />
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_AsignmentJobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_AsignmentJobs">
+          <Key>
+            <PropertyRef Name="AsignJobsID" />
+            <PropertyRef Name="AsignUserID" />
+            <PropertyRef Name="AsignJobID" />
+            <PropertyRef Name="AsignAsigntedDate" />
+            <PropertyRef Name="AsignStatus" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="JobsName" />
+            <PropertyRef Name="UserFullName" />
+          </Key>
+          <Property Name="AsignJobsID" Type="int" Nullable="false" />
+          <Property Name="AsignUserID" Type="int" Nullable="false" />
+          <Property Name="AsignJobID" Type="int" Nullable="false" />
+          <Property Name="AsignAsigntedDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AsignDismissalDate" Type="varchar" MaxLength="30" />
+          <Property Name="AsignStatus" Type="tinyint" Nullable="false" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="JobsName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="JobsDetermineLevel" Type="int" />
+          <Property Name="UserFullName" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="AsignStatusView" Type="varchar" MaxLength="5" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Jobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -139,6 +177,30 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserSignature" Type="image" />
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <Association Name="FK_AsignmentJobs_Jobs">
+          <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+          <End Role="AsignmentJobs" Type="Self.AsignmentJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="JobsID" />
+            </Principal>
+            <Dependent Role="AsignmentJobs">
+              <PropertyRef Name="AsignJobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignmentJobs_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="AsignmentJobs" Type="Self.AsignmentJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="AsignmentJobs">
+              <PropertyRef Name="AsignUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Reminder_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
@@ -204,10 +266,27 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="UserBrithDate" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
+          <EntitySet Name="AsignmentJobs" EntityType="Self.AsignmentJobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vw_AsignmentJobs" EntityType="Self.Vw_AsignmentJobs" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_AsignmentJobs].[AsignJobsID] AS [AsignJobsID], 
+    [Vw_AsignmentJobs].[AsignUserID] AS [AsignUserID], 
+    [Vw_AsignmentJobs].[AsignJobID] AS [AsignJobID], 
+    [Vw_AsignmentJobs].[AsignAsigntedDate] AS [AsignAsigntedDate], 
+    [Vw_AsignmentJobs].[AsignDismissalDate] AS [AsignDismissalDate], 
+    [Vw_AsignmentJobs].[AsignStatus] AS [AsignStatus], 
+    [Vw_AsignmentJobs].[UserFirstName] AS [UserFirstName], 
+    [Vw_AsignmentJobs].[UserLastName] AS [UserLastName], 
+    [Vw_AsignmentJobs].[JobsName] AS [JobsName], 
+    [Vw_AsignmentJobs].[JobsDetermineLevel] AS [JobsDetermineLevel], 
+    [Vw_AsignmentJobs].[UserFullName] AS [UserFullName], 
+    [Vw_AsignmentJobs].[AsignStatusView] AS [AsignStatusView]
+    FROM [dbo].[Vw_AsignmentJobs] AS [Vw_AsignmentJobs]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_Jobs" EntityType="Self.Vw_Jobs" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_Jobs].[JobsID] AS [JobsID], 
@@ -261,6 +340,14 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Users].[UserRegisteredDate] AS [UserRegisteredDate]
     FROM [dbo].[Vw_Users] AS [Vw_Users]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_AsignmentJobs_Jobs" Association="Self.FK_AsignmentJobs_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="AsignmentJobs" EntitySet="AsignmentJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignmentJobs_Users" Association="Self.FK_AsignmentJobs_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="AsignmentJobs" EntitySet="AsignmentJobs" />
+          </AssociationSet>
           <AssociationSet Name="FK_Reminder_Users" Association="Self.FK_Reminder_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reminder" EntitySet="Reminder" />
@@ -294,6 +381,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserRegisteredDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Reminders" Relationship="Office_Automation_DatabaseModel.FK_Reminder_Users" FromRole="User" ToRole="Reminder" />
           <NavigationProperty Name="UserLogs" Relationship="Office_Automation_DatabaseModel.FK_UserLog_Users1" FromRole="User" ToRole="UserLog" />
+          <NavigationProperty Name="AsignmentJobs" Relationship="Office_Automation_DatabaseModel.FK_AsignmentJobs_Users" FromRole="User" ToRole="AsignmentJob" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -377,6 +465,16 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="Vw_UserLog" EntityType="Office_Automation_DatabaseModel.Vw_UserLog" />
           <EntitySet Name="Jobs" EntityType="Office_Automation_DatabaseModel.Job" />
           <EntitySet Name="Vw_Jobs" EntityType="Office_Automation_DatabaseModel.Vw_Jobs" />
+          <EntitySet Name="AsignmentJobs" EntityType="Office_Automation_DatabaseModel.AsignmentJob" />
+          <EntitySet Name="Vw_AsignmentJobs" EntityType="Office_Automation_DatabaseModel.Vw_AsignmentJobs" />
+          <AssociationSet Name="FK_AsignmentJobs_Jobs" Association="Office_Automation_DatabaseModel.FK_AsignmentJobs_Jobs">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="AsignmentJob" EntitySet="AsignmentJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignmentJobs_Users" Association="Office_Automation_DatabaseModel.FK_AsignmentJobs_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="AsignmentJob" EntitySet="AsignmentJobs" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -473,6 +571,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="JobsDetails" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="JobsLevel" Type="Int32" />
           <Property Name="JobsDetermineLevel" Type="Int32" />
+          <NavigationProperty Name="AsignmentJobs" Relationship="Office_Automation_DatabaseModel.FK_AsignmentJobs_Jobs" FromRole="Job" ToRole="AsignmentJob" />
         </EntityType>
         <EntityType Name="Vw_Jobs">
           <Key>
@@ -486,6 +585,68 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="JobsDetermineLevel" Type="Int32" />
           <Property Name="JobsChild" Type="Int32" />
         </EntityType>
+        <EntityType Name="AsignmentJob">
+          <Key>
+            <PropertyRef Name="AsignJobsID" />
+          </Key>
+          <Property Name="AsignJobsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AsignUserID" Type="Int32" Nullable="false" />
+          <Property Name="AsignJobID" Type="Int32" Nullable="false" />
+          <Property Name="AsignAsigntedDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AsignDismissalDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AsignStatus" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Job" Relationship="Office_Automation_DatabaseModel.FK_AsignmentJobs_Jobs" FromRole="AsignmentJob" ToRole="Job" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_AsignmentJobs_Users" FromRole="AsignmentJob" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Vw_AsignmentJobs">
+          <Key>
+            <PropertyRef Name="AsignJobsID" />
+            <PropertyRef Name="AsignUserID" />
+            <PropertyRef Name="AsignJobID" />
+            <PropertyRef Name="AsignAsigntedDate" />
+            <PropertyRef Name="AsignStatus" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="JobsName" />
+            <PropertyRef Name="UserFullName" />
+          </Key>
+          <Property Name="AsignJobsID" Type="Int32" Nullable="false" />
+          <Property Name="AsignUserID" Type="Int32" Nullable="false" />
+          <Property Name="AsignJobID" Type="Int32" Nullable="false" />
+          <Property Name="AsignAsigntedDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AsignDismissalDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AsignStatus" Type="Byte" Nullable="false" />
+          <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="JobsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="JobsDetermineLevel" Type="Int32" />
+          <Property Name="UserFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="AsignStatusView" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_AsignmentJobs_Jobs">
+          <End Type="Office_Automation_DatabaseModel.Job" Role="Job" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.AsignmentJob" Role="AsignmentJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobsID" />
+            </Principal>
+            <Dependent Role="AsignmentJob">
+              <PropertyRef Name="AsignJobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignmentJobs_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.AsignmentJob" Role="AsignmentJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="AsignmentJob">
+              <PropertyRef Name="AsignUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -610,6 +771,36 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="JobsDetails" ColumnName="JobsDetails" />
                 <ScalarProperty Name="JobsName" ColumnName="JobsName" />
                 <ScalarProperty Name="JobsID" ColumnName="JobsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsignmentJobs">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.AsignmentJob">
+              <MappingFragment StoreEntitySet="AsignmentJobs">
+                <ScalarProperty Name="AsignStatus" ColumnName="AsignStatus" />
+                <ScalarProperty Name="AsignDismissalDate" ColumnName="AsignDismissalDate" />
+                <ScalarProperty Name="AsignAsigntedDate" ColumnName="AsignAsigntedDate" />
+                <ScalarProperty Name="AsignJobID" ColumnName="AsignJobID" />
+                <ScalarProperty Name="AsignUserID" ColumnName="AsignUserID" />
+                <ScalarProperty Name="AsignJobsID" ColumnName="AsignJobsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_AsignmentJobs">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_AsignmentJobs">
+              <MappingFragment StoreEntitySet="Vw_AsignmentJobs">
+                <ScalarProperty Name="AsignStatusView" ColumnName="AsignStatusView" />
+                <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+                <ScalarProperty Name="JobsDetermineLevel" ColumnName="JobsDetermineLevel" />
+                <ScalarProperty Name="JobsName" ColumnName="JobsName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="AsignStatus" ColumnName="AsignStatus" />
+                <ScalarProperty Name="AsignDismissalDate" ColumnName="AsignDismissalDate" />
+                <ScalarProperty Name="AsignAsigntedDate" ColumnName="AsignAsigntedDate" />
+                <ScalarProperty Name="AsignJobID" ColumnName="AsignJobID" />
+                <ScalarProperty Name="AsignUserID" ColumnName="AsignUserID" />
+                <ScalarProperty Name="AsignJobsID" ColumnName="AsignJobsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

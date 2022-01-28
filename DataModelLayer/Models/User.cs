@@ -19,6 +19,7 @@ namespace DataModelLayer.Models
         {
             this.Reminders = new HashSet<Reminder>();
             this.UserLogs = new HashSet<UserLog>();
+            this.AsignmentJobs = new HashSet<AsignmentJob>();
         }
     
         public int UserID { get; set; }
@@ -40,5 +41,7 @@ namespace DataModelLayer.Models
         public virtual ICollection<Reminder> Reminders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserLog> UserLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AsignmentJob> AsignmentJobs { get; set; }
     }
 }

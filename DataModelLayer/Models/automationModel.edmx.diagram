@@ -15,6 +15,10 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_UserLog" Width="1.5" PointX="4" PointY="0.75" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Job" Width="1.5" PointX="5.625" PointY="0.75" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Jobs" Width="1.5" PointX="5.625" PointY="5.375" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.AsignmentJob" Width="1.5" PointX="7.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_AsignmentJobs" Width="1.5" PointX="7.25" PointY="5.375" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_AsignmentJobs_Jobs" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_AsignmentJobs_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
