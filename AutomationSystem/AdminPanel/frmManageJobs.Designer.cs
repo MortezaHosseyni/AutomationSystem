@@ -170,8 +170,8 @@
             this.txt_JobDetails.Name = "txt_JobDetails";
             this.txt_JobDetails.PreventEnterBeep = true;
             this.txt_JobDetails.Size = new System.Drawing.Size(308, 164);
-            this.txt_JobDetails.TabIndex = 1;
-            this.txt_JobDetails.WatermarkText = "عنوان شغل را وارد كنيد...";
+            this.txt_JobDetails.TabIndex = 2;
+            this.txt_JobDetails.WatermarkText = "توضيحاتي درمورد شغل (اختياري)...";
             // 
             // btn_Save
             // 
@@ -184,8 +184,9 @@
             this.btn_Save.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Save.Symbol = "58826";
             this.btn_Save.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.btn_Save.TabIndex = 2;
+            this.btn_Save.TabIndex = 3;
             this.btn_Save.Text = "ثبت اطلاعات";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Exit
             // 
@@ -198,7 +199,7 @@
             this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Exit.Symbol = "58829";
             this.btn_Exit.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.btn_Exit.TabIndex = 2;
+            this.btn_Exit.TabIndex = 4;
             this.btn_Exit.Text = "خروج";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
