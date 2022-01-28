@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_UsersList = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
@@ -136,6 +138,14 @@
             // 
             this.dgv_UsersList.AllowUserToAddRows = false;
             this.dgv_UsersList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UsersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_UsersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_UsersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_FristName,
@@ -143,17 +153,26 @@
             this.col_Gender,
             this.col_PersonalCode,
             this.col_UserID});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_UsersList.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UsersList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_UsersList.EnableHeadersVisualStyles = false;
             this.dgv_UsersList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_UsersList.Location = new System.Drawing.Point(3, 3);
             this.dgv_UsersList.Name = "dgv_UsersList";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UsersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_UsersList.Size = new System.Drawing.Size(875, 234);
             this.dgv_UsersList.TabIndex = 0;
             // 
@@ -227,6 +246,7 @@
             this.txt_SearchName.PreventEnterBeep = true;
             this.txt_SearchName.Size = new System.Drawing.Size(179, 36);
             this.txt_SearchName.TabIndex = 1;
+            this.txt_SearchName.WatermarkText = "نام پرسنل...";
             // 
             // lbl_SearchLastName
             // 
@@ -252,6 +272,7 @@
             this.txt_SearchLastName.PreventEnterBeep = true;
             this.txt_SearchLastName.Size = new System.Drawing.Size(179, 36);
             this.txt_SearchLastName.TabIndex = 1;
+            this.txt_SearchLastName.WatermarkText = "نام خانوادگي پرسنل...";
             // 
             // lbl_SearchPersonalCode
             // 
@@ -277,6 +298,7 @@
             this.txt_SearchPersonalCode.PreventEnterBeep = true;
             this.txt_SearchPersonalCode.Size = new System.Drawing.Size(179, 36);
             this.txt_SearchPersonalCode.TabIndex = 1;
+            this.txt_SearchPersonalCode.WatermarkText = "كد پرسنلي...";
             // 
             // btn_Search
             // 
