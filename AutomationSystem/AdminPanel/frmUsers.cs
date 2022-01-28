@@ -50,7 +50,6 @@ namespace AutomationSystem.AdminPanel
                     dgv_Users.Rows[i].Cells["col_UserTel"].Value = result[i].UserTel;
                     dgv_Users.Rows[i].Cells["col_UserBrithDay"].Value = result[i].UserBrithDate;
                     dgv_Users.Rows[i].Cells["col_UserRegisteredDate"].Value = result[i].UserRegisteredDate;
-
                     
                 }
             }
