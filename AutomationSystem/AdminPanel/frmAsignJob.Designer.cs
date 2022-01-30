@@ -254,7 +254,6 @@
 
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.LabelX lbl_AsignJobTo;
-        private DevComponents.DotNetBar.LabelX val_AsignJobOn;
         private DevComponents.DotNetBar.LabelX lbl_Info;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_JobsList;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_Buttons;
@@ -262,5 +261,6 @@
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ButtonX btn_Save;
         private System.Windows.Forms.ImageList imageList;
+        internal DevComponents.DotNetBar.LabelX val_AsignJobOn;
     }
 }
