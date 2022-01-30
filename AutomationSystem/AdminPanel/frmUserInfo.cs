@@ -25,7 +25,7 @@ namespace AutomationSystem.AdminPanel
         {
             try
             {
-                var infoQuery = (from U in db.Vw_Users where U.UserID == this.Get_UserID select U).ToList();
+                var infoQuery = db.Sp_ShowAllUserInfo(this.Get_UserID).ToList();
 
                 if (infoQuery.Count == 1)
                 {
@@ -38,7 +38,7 @@ namespace AutomationSystem.AdminPanel
                     val_Status.Text = infoQuery[0].UserActivity;
                     val_UserName.Text = infoQuery[0].UserName;
                     val_Email.Text = infoQuery[0].UserEmail;
-                    val_Job.Text = "برنامه نويس";
+                    val_Job.Text = infoQuery[0].JobsName;
 
                     //User Picture
                     var dataUserPicture = (Byte[])(infoQuery[0].UserImage);

@@ -75,6 +75,9 @@
     <Compile Include="Models\Reminder.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sp_ShowAllUserInfo_Result.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
