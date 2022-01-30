@@ -86,7 +86,7 @@ namespace AutomationSystem.AdminPanel
                 frmJobsHistory jobsHistoryForm = new frmJobsHistory();
 
                 jobsHistoryForm.Get_UserID = Convert.ToInt32(dgv_UsersList.CurrentRow.Cells["col_UserID"].Value);
-                jobsHistoryForm.lbl_UserFristAndLastName.Text = dgv_UsersList.CurrentRow.Cells["col_FristName"].Value + "" + dgv_UsersList.CurrentRow.Cells["col_LastName"].Value;
+                jobsHistoryForm.lbl_UserFristAndLastName.Text = dgv_UsersList.CurrentRow.Cells["col_FristName"].Value + " " + dgv_UsersList.CurrentRow.Cells["col_LastName"].Value;
                 jobsHistoryForm.ShowDialog();
             }
             else
