@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -71,6 +72,31 @@ namespace AutomationSystem.AdminPanel
                 asignJobForm.ShowDialog();
 
                 ShowUsers();
+            }
+        }
+
+        private void btn_DismissalJob_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"آيا از عزل كاربر {lbl_UserFristAndLastName.Text} از شغل فعلي مطمعن هستيد؟","عزل از شغل",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    var queryDissmisal = (from M in db.AsignmentJobs where M.AsignUserID == this.Get_UserID where M.AsignStatus == 1 select M).SingleOrDefault();
+
+                    queryDissmisal.AsignStatus = 2;
+                    queryDissmisal.AsignDismissalDate = PublicVariable.todayDate;
+
+                    db.SaveChanges();
+
+                    MessageBox.Show($"كاربر {lbl_UserFristAndLastName.Text} با موفقيت از شغل فعلي عزل شد", "عزل از شغل");
+
+                    ShowUsers();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("مشكلي در دريافت اطلاعات رخ داد", "پايگاه داده");
+                    return;
+                }
             }
         }
     }

@@ -140,6 +140,7 @@
             this.btn_DismissalJob.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btn_DismissalJob.TabIndex = 0;
             this.btn_DismissalJob.Text = "عزل كردن";
+            this.btn_DismissalJob.Click += new System.EventHandler(this.btn_DismissalJob_Click);
             // 
             // btn_AsignmentJob
             // 
