@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutomationSystem.Moduls;
+using AutomationSystem.AdminPanel;
+using AutomationSystem.UserPanel;
 
 namespace AutomationSystem
 {
@@ -21,12 +23,13 @@ namespace AutomationSystem
 
             if (PublicVariable.global_UserType == 1)
             {
-                AdminPanel.frmAdmin adminForm = new AdminPanel.frmAdmin();
+                frmAdmin adminForm = new frmAdmin();
                 adminForm.ShowDialog();
             }
             else
             {
-                MessageBox.Show("پنل كاربران");
+                frmMainUser userForm = new frmMainUser();
+                userForm.ShowDialog();
             }
         }
     }
