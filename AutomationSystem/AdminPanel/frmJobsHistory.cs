@@ -57,11 +57,19 @@ namespace AutomationSystem.AdminPanel
 
         private void btn_AsignmentJob_Click(object sender, EventArgs e)
         {
-            frmAsignJob asignJobForm = new frmAsignJob();
+            var queryCheckUserAsıgn = (from UserJ in db.AsignmentJobs where UserJ.AsignUserID == this.Get_UserID where UserJ.AsignStatus == 1 select UserJ).ToList();
+            if (queryCheckUserAsıgn.Count > 0)
+            {
+                MessageBox.Show($"كاربر {lbl_UserFristAndLastName.Text} داري شغل ميباشد، براي انتساب شغل جديد بايد از شغل قبلي عزل شود","انتساب شغل");
+            }
+            else
+            {
+                frmAsignJob asignJobForm = new frmAsignJob();
 
-            asignJobForm.Get_UserIDToAsignJob = this.Get_UserID;
-            asignJobForm.val_AsignJobOn.Text = lbl_UserFristAndLastName.Text;
-            asignJobForm.ShowDialog();
+                asignJobForm.Get_UserIDToAsignJob = this.Get_UserID;
+                asignJobForm.val_AsignJobOn.Text = lbl_UserFristAndLastName.Text;
+                asignJobForm.ShowDialog();
+            }
         }
     }
 }
