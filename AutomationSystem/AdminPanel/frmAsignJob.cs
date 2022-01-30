@@ -114,8 +114,19 @@ namespace AutomationSystem.AdminPanel
                     AJ.AsignAsigntedDate = PublicVariable.todayDate;
                     AJ.AsignStatus = 1;
 
+                    //Check Job Repetitive
                     int GetJobID = Convert.ToInt32(childNode.Tag);
                     var queryRepetitiveJob = (from Saj in db.AsignmentJobs where Saj.AsignUserID == this.Get_UserIDToAsignJob where Saj.AsignJobID == GetJobID select Saj).ToList();
+
+                    //Check Job Idleing
+                    var queryIdelingJob = (from Ujob in db.AsignmentJobs where Ujob.AsignJobID == GetJobID where Ujob.AsignStatus == 1 select Ujob).ToList();
+
+                    if (queryIdelingJob.Count > 0)
+                    {
+                        MessageBox.Show("اين شغل منتسب به كاربر ديگري است","انتساب شغل");
+                        break;
+                    }
+
                     if (queryRepetitiveJob.Count == 0)
                     {
                         db.AsignmentJobs.Add(AJ);
