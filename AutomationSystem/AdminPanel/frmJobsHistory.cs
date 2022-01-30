@@ -59,6 +59,7 @@ namespace AutomationSystem.AdminPanel
         {
             frmAsignJob asignJobForm = new frmAsignJob();
 
+            asignJobForm.Get_UserIDToAsignJob = this.Get_UserID;
             asignJobForm.val_AsignJobOn.Text = lbl_UserFristAndLastName.Text;
             asignJobForm.ShowDialog();
         }

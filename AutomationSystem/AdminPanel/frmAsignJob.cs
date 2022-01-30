@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.AdminPanel
 {
     public partial class frmAsignJob : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        
+        public int Get_UserIDToAsignJob { get; set; }
         public frmAsignJob()
         {
             InitializeComponent();
@@ -77,6 +80,57 @@ namespace AutomationSystem.AdminPanel
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetCheckedNode(trv_JobsList.Nodes);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("خطايي در ثبت اطلاعات رخ داد","پايگاه داده");
+                return;
+            }
+        }
+
+        public List<string> GetCheckedNode(TreeNodeCollection nodes)
+        {
+            List<string> nodeList = new List<string>();
+
+            if (nodes == null)
+            {
+                return nodeList;
+            }
+
+            foreach (TreeNode childNode in nodes)
+            {
+                if (childNode.Checked)
+                {
+                    AsignmentJob AJ = new AsignmentJob();
+                    AJ.AsignUserID = this.Get_UserIDToAsignJob;
+                    AJ.AsignJobID = Convert.ToInt32(childNode.Tag);
+                    AJ.AsignAsigntedDate = PublicVariable.todayDate;
+                    AJ.AsignStatus = 1;
+
+                    int GetJobID = Convert.ToInt32(childNode.Tag);
+                    var queryRepetitiveJob = (from Saj in db.AsignmentJobs where Saj.AsignUserID == this.Get_UserIDToAsignJob where Saj.AsignJobID == GetJobID select Saj).ToList();
+                    if (queryRepetitiveJob.Count == 0)
+                    {
+                        db.AsignmentJobs.Add(AJ);
+                        db.SaveChanges();
+
+                        MessageBox.Show($"شغل جديد با موفقيت به كاربر {val_AsignJobOn.Text} انتساب داده شد","انتساب شفل");
+                    }
+                    else
+                    {
+                        MessageBox.Show("اين شغل قبلا براي كاربر انتساب داده شده بود","انتساب شغل");
+                    }
+                }
+                nodeList.AddRange(GetCheckedNode(childNode.Nodes));
+            }
+            return nodeList;
         }
     }
 }
