@@ -122,6 +122,8 @@ namespace AutomationSystem.AdminPanel
                         db.SaveChanges();
 
                         MessageBox.Show($"شغل جديد با موفقيت به كاربر {val_AsignJobOn.Text} انتساب داده شد","انتساب شفل");
+
+                        this.Close();
                     }
                     else
                     {
