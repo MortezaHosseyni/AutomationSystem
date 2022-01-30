@@ -54,5 +54,12 @@ namespace AutomationSystem.AdminPanel
                 dgv_UserJobHistory.Rows.Clear();
             }
         }
+
+        private void btn_AsignmentJob_Click(object sender, EventArgs e)
+        {
+            frmAsignJob asignJobForm = new frmAsignJob();
+
+            asignJobForm.ShowDialog();
+        }
     }
 }

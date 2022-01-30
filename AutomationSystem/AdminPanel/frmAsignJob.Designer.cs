@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_AsignJobTo = new DevComponents.DotNetBar.LabelX();
             this.val_AsignJobOn = new DevComponents.DotNetBar.LabelX();
@@ -37,6 +38,7 @@
             this.trv_JobsList = new System.Windows.Forms.TreeView();
             this.btn_Save = new DevComponents.DotNetBar.ButtonX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.panelEx1.SuspendLayout();
             this.pnl_JobsList.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
@@ -187,8 +189,10 @@
             // 
             // trv_JobsList
             // 
+            this.trv_JobsList.CheckBoxes = true;
             this.trv_JobsList.Location = new System.Drawing.Point(3, 3);
             this.trv_JobsList.Name = "trv_JobsList";
+            this.trv_JobsList.RightToLeftLayout = true;
             this.trv_JobsList.Size = new System.Drawing.Size(646, 372);
             this.trv_JobsList.TabIndex = 0;
             // 
@@ -217,6 +221,13 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 0;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // frmAsignJob
             // 
@@ -230,6 +241,7 @@
             this.Name = "frmAsignJob";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Activated += new System.EventHandler(this.frmAsignJob_Activated);
             this.Load += new System.EventHandler(this.frmAsignJob_Load);
             this.panelEx1.ResumeLayout(false);
             this.pnl_JobsList.ResumeLayout(false);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.TreeView trv_JobsList;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ButtonX btn_Save;
+        private System.Windows.Forms.ImageList imageList;
     }
 }
