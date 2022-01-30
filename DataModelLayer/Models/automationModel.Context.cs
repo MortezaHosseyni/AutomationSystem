@@ -185,5 +185,14 @@ namespace DataModelLayer.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Update_ExitDate", logUserIDParameter, logUserExitDateParameter);
         }
+    
+        public virtual ObjectResult<Sp_ShowAllUserInfo_Result> Sp_ShowAllUserInfo(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_ShowAllUserInfo_Result>("Sp_ShowAllUserInfo", userIDParameter);
+        }
     }
 }
