@@ -123,5 +123,34 @@ namespace AutomationSystem.UserPanel
         {
             ShowDraft(searchCondition());
         }
+
+        private void btn_DeleteLetter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int item = dgv_DraftList.SelectedCells.Count;
+                if (item > 0)
+                {
+                    if (MessageBox.Show("آيا از حذف اين نامه مطمعن هستيد؟", "حذف نامه", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        int Get_LetterID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterID"].Value);
+                        var delLetterQuery = (from L in db.Letters where L.LetterID == Get_LetterID select L).SingleOrDefault();
+
+                        db.Letters.Remove(delLetterQuery);
+
+                        db.SaveChanges();
+
+                        MessageBox.Show("نامه با موفقيت از پيش‌نويس حذف شد", "حذف نامه");
+
+                        ShowDraft(searchCondition());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("خطايي در خواندن اطلاعات رخ داد","پايگاه داده");
+                return;
+            }
+        }
     }
 }
