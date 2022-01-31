@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_DraftList = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -52,6 +53,15 @@
             this.rdb_SearchAllSecurity = new System.Windows.Forms.RadioButton();
             this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.dgv_DraftList = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterForceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterSecurityType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterFollowingType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterAttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterAnswerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_DraftList.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -422,20 +432,83 @@
             // 
             // dgv_DraftList
             // 
+            this.dgv_DraftList.AllowUserToAddRows = false;
+            this.dgv_DraftList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_DraftList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_DraftList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_DraftList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_DraftList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_LetterID,
+            this.col_LetterSubject,
+            this.col_LetterType,
+            this.col_LetterForceType,
+            this.col_LetterSecurityType,
+            this.col_LetterFollowingType,
+            this.col_LetterAttachmentType,
+            this.col_LetterAnswerType,
+            this.col_LetterAnswerDeadLine});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_DraftList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_DraftList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_DraftList.Location = new System.Drawing.Point(3, 3);
             this.dgv_DraftList.Name = "dgv_DraftList";
             this.dgv_DraftList.Size = new System.Drawing.Size(1014, 284);
             this.dgv_DraftList.TabIndex = 0;
+            // 
+            // col_LetterID
+            // 
+            this.col_LetterID.HeaderText = "LetterID";
+            this.col_LetterID.Name = "col_LetterID";
+            this.col_LetterID.Visible = false;
+            // 
+            // col_LetterSubject
+            // 
+            this.col_LetterSubject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LetterSubject.HeaderText = "موضوع نامه";
+            this.col_LetterSubject.Name = "col_LetterSubject";
+            // 
+            // col_LetterType
+            // 
+            this.col_LetterType.HeaderText = "نوع نامه";
+            this.col_LetterType.Name = "col_LetterType";
+            // 
+            // col_LetterForceType
+            // 
+            this.col_LetterForceType.HeaderText = "فوريت";
+            this.col_LetterForceType.Name = "col_LetterForceType";
+            // 
+            // col_LetterSecurityType
+            // 
+            this.col_LetterSecurityType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterSecurityType.HeaderText = "طبقه بندي";
+            this.col_LetterSecurityType.Name = "col_LetterSecurityType";
+            this.col_LetterSecurityType.Width = 101;
+            // 
+            // col_LetterFollowingType
+            // 
+            this.col_LetterFollowingType.HeaderText = "پيگيري";
+            this.col_LetterFollowingType.Name = "col_LetterFollowingType";
+            // 
+            // col_LetterAttachmentType
+            // 
+            this.col_LetterAttachmentType.HeaderText = "پيوست";
+            this.col_LetterAttachmentType.Name = "col_LetterAttachmentType";
+            // 
+            // col_LetterAnswerType
+            // 
+            this.col_LetterAnswerType.HeaderText = "پاسخ";
+            this.col_LetterAnswerType.Name = "col_LetterAnswerType";
+            // 
+            // col_LetterAnswerDeadLine
+            // 
+            this.col_LetterAnswerDeadLine.HeaderText = "تاريخ پاسخ";
+            this.col_LetterAnswerDeadLine.Name = "col_LetterAnswerDeadLine";
             // 
             // frmUserDraft
             // 
@@ -488,5 +561,14 @@
         private DevComponents.DotNetBar.LabelX lbl_SearchLetterSecurityType;
         private DevComponents.DotNetBar.ButtonX btn_Search;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_DraftList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterForceType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSecurityType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterFollowingType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAttachmentType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerDeadLine;
     }
 }
