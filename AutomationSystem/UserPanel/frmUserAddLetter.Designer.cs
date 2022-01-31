@@ -55,6 +55,7 @@
             this.rdb_LetterSecurity_Confidential = new System.Windows.Forms.RadioButton();
             this.rdb_LetterSecurity_Normal = new System.Windows.Forms.RadioButton();
             this.lbl_LetterCaption = new DevComponents.DotNetBar.LabelX();
+            this.lbl_InfoTwo = new DevComponents.DotNetBar.LabelX();
             this.lbl_InfoOne = new DevComponents.DotNetBar.LabelX();
             this.lbl_LetterAttachFile = new DevComponents.DotNetBar.LabelX();
             this.lbl_LetterDeadLineSetValue = new DevComponents.DotNetBar.LabelX();
@@ -71,7 +72,8 @@
             this.tbi_LetterContext = new DevComponents.DotNetBar.TabItem(this.components);
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
-            this.lbl_InfoTwo = new DevComponents.DotNetBar.LabelX();
+            this.adv_LetterContext = new TextRuler.AdvancedTextEditorControl.AdvancedTextEditor();
+            this.btn_AddLetter = new DevComponents.DotNetBar.ButtonX();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -81,6 +83,7 @@
             this.pnl_LetterFollowing.SuspendLayout();
             this.pnl_LetterForced.SuspendLayout();
             this.pnl_LetterSecurity.SuspendLayout();
+            this.tcp_LetterContext.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -107,8 +110,8 @@
             // 
             this.tabControl1.BackColor = System.Drawing.Color.Transparent;
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tcp_LetterInformation);
             this.tabControl1.Controls.Add(this.tcp_LetterContext);
+            this.tabControl1.Controls.Add(this.tcp_LetterInformation);
             this.tabControl1.Location = new System.Drawing.Point(12, 61);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold);
@@ -413,6 +416,21 @@
             this.lbl_LetterCaption.TabIndex = 0;
             this.lbl_LetterCaption.Text = "چكيده:";
             // 
+            // lbl_InfoTwo
+            // 
+            this.lbl_InfoTwo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_InfoTwo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_InfoTwo.Location = new System.Drawing.Point(560, 410);
+            this.lbl_InfoTwo.Name = "lbl_InfoTwo";
+            this.lbl_InfoTwo.Size = new System.Drawing.Size(352, 56);
+            this.lbl_InfoTwo.Symbol = "";
+            this.lbl_InfoTwo.TabIndex = 0;
+            this.lbl_InfoTwo.Text = "توجه: براي الصاق فايل ابتدا وضعيت پيوست نامه را مشخص كنيد.";
+            this.lbl_InfoTwo.WordWrap = true;
+            // 
             // lbl_InfoOne
             // 
             this.lbl_InfoOne.BackColor = System.Drawing.Color.Transparent;
@@ -567,6 +585,8 @@
             // 
             // tcp_LetterContext
             // 
+            this.tcp_LetterContext.Controls.Add(this.btn_AddLetter);
+            this.tcp_LetterContext.Controls.Add(this.adv_LetterContext);
             this.tcp_LetterContext.DisabledBackColor = System.Drawing.Color.Empty;
             this.tcp_LetterContext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcp_LetterContext.Location = new System.Drawing.Point(0, 41);
@@ -607,20 +627,27 @@
             // 
             this.superTooltip.DefaultTooltipSettings = new DevComponents.DotNetBar.SuperTooltipInfo("", "", "", null, null, DevComponents.DotNetBar.eTooltipColor.Gray);
             // 
-            // lbl_InfoTwo
+            // adv_LetterContext
             // 
-            this.lbl_InfoTwo.BackColor = System.Drawing.Color.Transparent;
+            this.adv_LetterContext.Location = new System.Drawing.Point(3, 0);
+            this.adv_LetterContext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.adv_LetterContext.Name = "adv_LetterContext";
+            this.adv_LetterContext.Size = new System.Drawing.Size(1020, 433);
+            this.adv_LetterContext.TabIndex = 0;
             // 
+            // btn_AddLetter
             // 
-            // 
-            this.lbl_InfoTwo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_InfoTwo.Location = new System.Drawing.Point(560, 410);
-            this.lbl_InfoTwo.Name = "lbl_InfoTwo";
-            this.lbl_InfoTwo.Size = new System.Drawing.Size(352, 56);
-            this.lbl_InfoTwo.Symbol = "";
-            this.lbl_InfoTwo.TabIndex = 0;
-            this.lbl_InfoTwo.Text = "توجه: براي الصاق فايل ابتدا وضعيت پيوست نامه را مشخص كنيد.";
-            this.lbl_InfoTwo.WordWrap = true;
+            this.btn_AddLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_AddLetter.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AddLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_AddLetter.Location = new System.Drawing.Point(20, 442);
+            this.btn_AddLetter.Name = "btn_AddLetter";
+            this.btn_AddLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(20, 2, 2, 20);
+            this.btn_AddLetter.Size = new System.Drawing.Size(194, 40);
+            this.btn_AddLetter.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_AddLetter.Symbol = "";
+            this.btn_AddLetter.TabIndex = 1;
+            this.btn_AddLetter.Text = "ثبت نامه";
             // 
             // frmUserAddLetter
             // 
@@ -650,6 +677,7 @@
             this.pnl_LetterForced.PerformLayout();
             this.pnl_LetterSecurity.ResumeLayout(false);
             this.pnl_LetterSecurity.PerformLayout();
+            this.tcp_LetterContext.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -698,5 +726,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterCaption;
         private DevComponents.DotNetBar.LabelX lbl_InfoOne;
         private DevComponents.DotNetBar.LabelX lbl_InfoTwo;
+        private TextRuler.AdvancedTextEditorControl.AdvancedTextEditor adv_LetterContext;
+        private DevComponents.DotNetBar.ButtonX btn_AddLetter;
     }
 }
