@@ -349,6 +349,7 @@
             this.lbl_CreateMessage.Symbol = "57680";
             this.lbl_CreateMessage.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_CreateMessage.Text = "ايجاد نامه";
+            this.lbl_CreateMessage.Click += new System.EventHandler(this.lbl_CreateMessage_Click);
             // 
             // lbl_CreateNote
             // 
