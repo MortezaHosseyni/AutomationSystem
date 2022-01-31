@@ -152,6 +152,12 @@
     <Compile Include="UserPanel\frmMainUser.Designer.cs">
       <DependentUpon>frmMainUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserAddReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserAddReminder.Designer.cs">
+      <DependentUpon>frmUserAddReminder.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserReminder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </Compile>
     <EmbeddedResource Include="UserPanel\frmMainUser.resx">
       <DependentUpon>frmMainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserAddReminder.resx">
+      <DependentUpon>frmUserAddReminder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserReminder.resx">
       <DependentUpon>frmUserReminder.cs</DependentUpon>

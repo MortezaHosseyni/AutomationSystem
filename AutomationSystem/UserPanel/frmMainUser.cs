@@ -59,5 +59,13 @@ namespace AutomationSystem.UserPanel
         {
             Environment.Exit(0);
         }
+
+        private void lbl_AddReminder_Click(object sender, EventArgs e)
+        {
+            frmUserAddReminder addReminderForm = new frmUserAddReminder();
+
+            addReminderForm.Show();
+            addReminderForm.TopMost = true;
+        }
     }
 }
