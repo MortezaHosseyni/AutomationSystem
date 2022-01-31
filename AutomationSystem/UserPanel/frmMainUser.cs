@@ -18,6 +18,12 @@ namespace AutomationSystem.UserPanel
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
         PersianCalendar pCalender = new PersianCalendar();
+
+        byte formNumber = 7;
+
+        //Forms
+        frmUserAddReminder addReminderForm;
+        frmUserReminder userReminderForm;
         public frmMainUser()
         {
             InitializeComponent();
@@ -26,7 +32,7 @@ namespace AutomationSystem.UserPanel
         {
             ShowUserInfo();
 
-            frmUserReminder userReminderForm = new frmUserReminder();
+            userReminderForm = new frmUserReminder();
             userReminderForm.Show();
             userReminderForm.TopMost = true;
         }
@@ -60,12 +66,39 @@ namespace AutomationSystem.UserPanel
             Environment.Exit(0);
         }
 
-        private void lbl_AddReminder_Click(object sender, EventArgs e)
+        private void lbl_AddReminder_Click_1(object sender, EventArgs e)
         {
-            frmUserAddReminder addReminderForm = new frmUserAddReminder();
+            CloseForms();
+
+            formNumber = 14;
+
+            addReminderForm = new frmUserAddReminder();
 
             addReminderForm.Show();
             addReminderForm.TopMost = true;
+        }
+
+        private void CloseForms()
+        {
+            if (formNumber == 7)
+            {
+                userReminderForm.Close();
+            }
+            if (formNumber == 14)
+            {
+                addReminderForm.Close();
+            }
+        }
+
+        private void lbl_ShowNotes_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 7;
+
+            userReminderForm = new frmUserReminder();
+            userReminderForm.Show();
+            userReminderForm.TopMost = true;
         }
     }
 }

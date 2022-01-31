@@ -29,6 +29,27 @@
         private void InitializeComponent()
         {
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
+            this.exb_RightMenu = new DevComponents.DotNetBar.ExplorerBar();
+            this.ebg_Dashboard = new DevComponents.DotNetBar.ExplorerBarGroupItem();
+            this.lbl_AllRecivedMessages = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_ReadedMessages = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_UnReadedMessages = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_UrgentActionMessages = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_ConfidentialMessages = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_ArrivedNotes = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_ShowNotes = new DevComponents.DotNetBar.LabelItem();
+            this.ebg_Recycling = new DevComponents.DotNetBar.ExplorerBarGroupItem();
+            this.lbl_SendedMessages = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_Following = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_SendedNotes = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_ReferredMessages = new DevComponents.DotNetBar.LabelItem();
+            this.ebg_Operation = new DevComponents.DotNetBar.ExplorerBarGroupItem();
+            this.lbl_CreateMessage = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_CreateNote = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_AddReminder = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_Draft = new DevComponents.DotNetBar.LabelItem();
+            this.ebg_Newsletters = new DevComponents.DotNetBar.ExplorerBarGroupItem();
+            this.lbl_NewsAndAnnouncement = new DevComponents.DotNetBar.LabelItem();
             this.pnl_UpMenu = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
             this.pic_UserPicture = new System.Windows.Forms.PictureBox();
@@ -53,31 +74,10 @@
             this.val_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.exb_RightMenu = new DevComponents.DotNetBar.ExplorerBar();
-            this.ebg_Dashboard = new DevComponents.DotNetBar.ExplorerBarGroupItem();
-            this.ebg_Recycling = new DevComponents.DotNetBar.ExplorerBarGroupItem();
-            this.ebg_Operation = new DevComponents.DotNetBar.ExplorerBarGroupItem();
-            this.ebg_Newsletters = new DevComponents.DotNetBar.ExplorerBarGroupItem();
-            this.lbl_AllRecivedMessages = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_ReadedMessages = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_UnReadedMessages = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_UrgentActionMessages = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_ConfidentialMessages = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_ArrivedNotes = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_ShowNotes = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_SendedMessages = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_Following = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_SendedNotes = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_ReferredMessages = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_CreateMessage = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_CreateNote = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_AddReminder = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_Draft = new DevComponents.DotNetBar.LabelItem();
-            this.lbl_NewsAndAnnouncement = new DevComponents.DotNetBar.LabelItem();
             this.pnl_Main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -99,6 +99,357 @@
             this.pnl_Main.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnl_Main.Style.GradientAngle = 90;
             this.pnl_Main.TabIndex = 0;
+            // 
+            // exb_RightMenu
+            // 
+            this.exb_RightMenu.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
+            this.exb_RightMenu.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // 
+            // 
+            this.exb_RightMenu.BackStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ExplorerBarBackground2;
+            this.exb_RightMenu.BackStyle.BackColorGradientAngle = 90;
+            this.exb_RightMenu.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ExplorerBarBackground;
+            this.exb_RightMenu.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.exb_RightMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exb_RightMenu.GroupImages = null;
+            this.exb_RightMenu.Groups.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.ebg_Dashboard,
+            this.ebg_Recycling,
+            this.ebg_Operation,
+            this.ebg_Newsletters});
+            this.exb_RightMenu.Images = null;
+            this.exb_RightMenu.Location = new System.Drawing.Point(1074, 163);
+            this.exb_RightMenu.Name = "exb_RightMenu";
+            this.exb_RightMenu.Size = new System.Drawing.Size(284, 597);
+            this.exb_RightMenu.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
+            this.exb_RightMenu.TabIndex = 1;
+            // 
+            // ebg_Dashboard
+            // 
+            // 
+            // 
+            // 
+            this.ebg_Dashboard.BackStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(223)))), ((int)(((byte)(247)))));
+            this.ebg_Dashboard.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Dashboard.BackStyle.BorderBottomWidth = 1;
+            this.ebg_Dashboard.BackStyle.BorderColor = System.Drawing.Color.White;
+            this.ebg_Dashboard.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Dashboard.BackStyle.BorderLeftWidth = 1;
+            this.ebg_Dashboard.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Dashboard.BackStyle.BorderRightWidth = 1;
+            this.ebg_Dashboard.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Dashboard.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Dashboard.Expanded = true;
+            this.ebg_Dashboard.Name = "ebg_Dashboard";
+            this.ebg_Dashboard.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
+            this.ebg_Dashboard.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbl_AllRecivedMessages,
+            this.lbl_ReadedMessages,
+            this.lbl_UnReadedMessages,
+            this.lbl_UrgentActionMessages,
+            this.lbl_ConfidentialMessages,
+            this.lbl_ArrivedNotes,
+            this.lbl_ShowNotes});
+            this.ebg_Dashboard.Text = "كارتابل";
+            // 
+            // 
+            // 
+            this.ebg_Dashboard.TitleHotStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Dashboard.TitleHotStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Dashboard.TitleHotStyle.CornerDiameter = 3;
+            this.ebg_Dashboard.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Dashboard.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Dashboard.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Dashboard.TitleHotStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.ebg_Dashboard.TitleStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Dashboard.TitleStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Dashboard.TitleStyle.CornerDiameter = 3;
+            this.ebg_Dashboard.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Dashboard.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Dashboard.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Dashboard.TitleStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(93)))), ((int)(((byte)(198)))));
+            // 
+            // lbl_AllRecivedMessages
+            // 
+            this.lbl_AllRecivedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_AllRecivedMessages.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_AllRecivedMessages.Name = "lbl_AllRecivedMessages";
+            this.lbl_AllRecivedMessages.Symbol = "57673";
+            this.lbl_AllRecivedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_AllRecivedMessages.Text = "همه نامه‌هاي وارده";
+            // 
+            // lbl_ReadedMessages
+            // 
+            this.lbl_ReadedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ReadedMessages.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ReadedMessages.Name = "lbl_ReadedMessages";
+            this.lbl_ReadedMessages.Symbol = "57681";
+            this.lbl_ReadedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_ReadedMessages.Text = "نامه‌هاي خوانده شده";
+            // 
+            // lbl_UnReadedMessages
+            // 
+            this.lbl_UnReadedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_UnReadedMessages.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_UnReadedMessages.Name = "lbl_UnReadedMessages";
+            this.lbl_UnReadedMessages.Symbol = "57534";
+            this.lbl_UnReadedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_UnReadedMessages.Text = "نامه‌هاي خوانده نشده";
+            // 
+            // lbl_UrgentActionMessages
+            // 
+            this.lbl_UrgentActionMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_UrgentActionMessages.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_UrgentActionMessages.Name = "lbl_UrgentActionMessages";
+            this.lbl_UrgentActionMessages.Symbol = "57553";
+            this.lbl_UrgentActionMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_UrgentActionMessages.Text = "نامه‌هاي اقدام فوري";
+            // 
+            // lbl_ConfidentialMessages
+            // 
+            this.lbl_ConfidentialMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ConfidentialMessages.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ConfidentialMessages.Name = "lbl_ConfidentialMessages";
+            this.lbl_ConfidentialMessages.Symbol = "59543";
+            this.lbl_ConfidentialMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_ConfidentialMessages.Text = "نامه‌هاي محرمانه";
+            // 
+            // lbl_ArrivedNotes
+            // 
+            this.lbl_ArrivedNotes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ArrivedNotes.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ArrivedNotes.Name = "lbl_ArrivedNotes";
+            this.lbl_ArrivedNotes.Symbol = "57391";
+            this.lbl_ArrivedNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_ArrivedNotes.Text = "يادداشت‌هاي رسيده";
+            // 
+            // lbl_ShowNotes
+            // 
+            this.lbl_ShowNotes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ShowNotes.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ShowNotes.Name = "lbl_ShowNotes";
+            this.lbl_ShowNotes.Symbol = "57819";
+            this.lbl_ShowNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_ShowNotes.Text = "نمايش يادآوري‌ها";
+            this.lbl_ShowNotes.Click += new System.EventHandler(this.lbl_ShowNotes_Click);
+            // 
+            // ebg_Recycling
+            // 
+            // 
+            // 
+            // 
+            this.ebg_Recycling.BackStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(223)))), ((int)(((byte)(247)))));
+            this.ebg_Recycling.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Recycling.BackStyle.BorderBottomWidth = 1;
+            this.ebg_Recycling.BackStyle.BorderColor = System.Drawing.Color.White;
+            this.ebg_Recycling.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Recycling.BackStyle.BorderLeftWidth = 1;
+            this.ebg_Recycling.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Recycling.BackStyle.BorderRightWidth = 1;
+            this.ebg_Recycling.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Recycling.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Recycling.Expanded = true;
+            this.ebg_Recycling.Name = "ebg_Recycling";
+            this.ebg_Recycling.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
+            this.ebg_Recycling.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbl_SendedMessages,
+            this.lbl_Following,
+            this.lbl_SendedNotes,
+            this.lbl_ReferredMessages});
+            this.ebg_Recycling.Text = "بازيافت";
+            // 
+            // 
+            // 
+            this.ebg_Recycling.TitleHotStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Recycling.TitleHotStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Recycling.TitleHotStyle.CornerDiameter = 3;
+            this.ebg_Recycling.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Recycling.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Recycling.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Recycling.TitleHotStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.ebg_Recycling.TitleStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Recycling.TitleStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Recycling.TitleStyle.CornerDiameter = 3;
+            this.ebg_Recycling.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Recycling.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Recycling.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Recycling.TitleStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(93)))), ((int)(((byte)(198)))));
+            // 
+            // lbl_SendedMessages
+            // 
+            this.lbl_SendedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_SendedMessages.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_SendedMessages.Name = "lbl_SendedMessages";
+            this.lbl_SendedMessages.Symbol = "59549";
+            this.lbl_SendedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_SendedMessages.Text = "نامه‌هاي ارسالي";
+            // 
+            // lbl_Following
+            // 
+            this.lbl_Following.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Following.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_Following.Name = "lbl_Following";
+            this.lbl_Following.Symbol = "57559";
+            this.lbl_Following.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_Following.Text = "پيگيري";
+            // 
+            // lbl_SendedNotes
+            // 
+            this.lbl_SendedNotes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_SendedNotes.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_SendedNotes.Name = "lbl_SendedNotes";
+            this.lbl_SendedNotes.Symbol = "57404";
+            this.lbl_SendedNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_SendedNotes.Text = "يادداشت‌هاي ارسالي";
+            // 
+            // lbl_ReferredMessages
+            // 
+            this.lbl_ReferredMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ReferredMessages.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ReferredMessages.Name = "lbl_ReferredMessages";
+            this.lbl_ReferredMessages.Symbol = "57695";
+            this.lbl_ReferredMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_ReferredMessages.Text = "نامه‌هاي ارجاع داده شده";
+            // 
+            // ebg_Operation
+            // 
+            // 
+            // 
+            // 
+            this.ebg_Operation.BackStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(223)))), ((int)(((byte)(247)))));
+            this.ebg_Operation.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Operation.BackStyle.BorderBottomWidth = 1;
+            this.ebg_Operation.BackStyle.BorderColor = System.Drawing.Color.White;
+            this.ebg_Operation.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Operation.BackStyle.BorderLeftWidth = 1;
+            this.ebg_Operation.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Operation.BackStyle.BorderRightWidth = 1;
+            this.ebg_Operation.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Operation.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Operation.Expanded = true;
+            this.ebg_Operation.Name = "ebg_Operation";
+            this.ebg_Operation.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
+            this.ebg_Operation.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbl_CreateMessage,
+            this.lbl_CreateNote,
+            this.lbl_AddReminder,
+            this.lbl_Draft});
+            this.ebg_Operation.Text = "عمليات";
+            // 
+            // 
+            // 
+            this.ebg_Operation.TitleHotStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Operation.TitleHotStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Operation.TitleHotStyle.CornerDiameter = 3;
+            this.ebg_Operation.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Operation.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Operation.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Operation.TitleHotStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.ebg_Operation.TitleStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Operation.TitleStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Operation.TitleStyle.CornerDiameter = 3;
+            this.ebg_Operation.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Operation.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Operation.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Operation.TitleStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(93)))), ((int)(((byte)(198)))));
+            // 
+            // lbl_CreateMessage
+            // 
+            this.lbl_CreateMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_CreateMessage.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_CreateMessage.Name = "lbl_CreateMessage";
+            this.lbl_CreateMessage.Symbol = "57680";
+            this.lbl_CreateMessage.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_CreateMessage.Text = "ايجاد نامه";
+            // 
+            // lbl_CreateNote
+            // 
+            this.lbl_CreateNote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_CreateNote.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_CreateNote.Name = "lbl_CreateNote";
+            this.lbl_CreateNote.Symbol = "57416";
+            this.lbl_CreateNote.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_CreateNote.Text = "ايجاد يادداشت";
+            // 
+            // lbl_AddReminder
+            // 
+            this.lbl_AddReminder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_AddReminder.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_AddReminder.Name = "lbl_AddReminder";
+            this.lbl_AddReminder.Symbol = "59478";
+            this.lbl_AddReminder.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_AddReminder.Text = "ثبت يادآوري";
+            this.lbl_AddReminder.Click += new System.EventHandler(this.lbl_AddReminder_Click_1);
+            // 
+            // lbl_Draft
+            // 
+            this.lbl_Draft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Draft.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_Draft.Name = "lbl_Draft";
+            this.lbl_Draft.Symbol = "59568";
+            this.lbl_Draft.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_Draft.Text = "پيش نويس";
+            // 
+            // ebg_Newsletters
+            // 
+            // 
+            // 
+            // 
+            this.ebg_Newsletters.BackStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(223)))), ((int)(((byte)(247)))));
+            this.ebg_Newsletters.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Newsletters.BackStyle.BorderBottomWidth = 1;
+            this.ebg_Newsletters.BackStyle.BorderColor = System.Drawing.Color.White;
+            this.ebg_Newsletters.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Newsletters.BackStyle.BorderLeftWidth = 1;
+            this.ebg_Newsletters.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Newsletters.BackStyle.BorderRightWidth = 1;
+            this.ebg_Newsletters.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Newsletters.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Newsletters.Expanded = true;
+            this.ebg_Newsletters.Name = "ebg_Newsletters";
+            this.ebg_Newsletters.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
+            this.ebg_Newsletters.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbl_NewsAndAnnouncement});
+            this.ebg_Newsletters.Text = "خبرنامه";
+            // 
+            // 
+            // 
+            this.ebg_Newsletters.TitleHotStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Newsletters.TitleHotStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Newsletters.TitleHotStyle.CornerDiameter = 3;
+            this.ebg_Newsletters.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Newsletters.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Newsletters.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Newsletters.TitleHotStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.ebg_Newsletters.TitleStyle.BackColor = System.Drawing.Color.White;
+            this.ebg_Newsletters.TitleStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(211)))), ((int)(((byte)(247)))));
+            this.ebg_Newsletters.TitleStyle.CornerDiameter = 3;
+            this.ebg_Newsletters.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Newsletters.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Newsletters.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Newsletters.TitleStyle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(93)))), ((int)(((byte)(198)))));
+            // 
+            // lbl_NewsAndAnnouncement
+            // 
+            this.lbl_NewsAndAnnouncement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_NewsAndAnnouncement.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_NewsAndAnnouncement.Name = "lbl_NewsAndAnnouncement";
+            this.lbl_NewsAndAnnouncement.Symbol = "59383";
+            this.lbl_NewsAndAnnouncement.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_NewsAndAnnouncement.Text = "اخبار و اطلاعيه‌ها";
             // 
             // pnl_UpMenu
             // 
@@ -457,379 +808,6 @@
             this.lbl_Title.TabIndex = 0;
             this.lbl_Title.Text = "سيستم اتوماسيون اداري";
             // 
-            // exb_RightMenu
-            // 
-            this.exb_RightMenu.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
-            this.exb_RightMenu.BackColor = System.Drawing.SystemColors.Control;
-            // 
-            // 
-            // 
-            this.exb_RightMenu.BackStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ExplorerBarBackground2;
-            this.exb_RightMenu.BackStyle.BackColorGradientAngle = 90;
-            this.exb_RightMenu.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ExplorerBarBackground;
-            this.exb_RightMenu.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.exb_RightMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exb_RightMenu.GroupImages = null;
-            this.exb_RightMenu.Groups.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.ebg_Dashboard,
-            this.ebg_Recycling,
-            this.ebg_Operation,
-            this.ebg_Newsletters});
-            this.exb_RightMenu.Images = null;
-            this.exb_RightMenu.Location = new System.Drawing.Point(1074, 163);
-            this.exb_RightMenu.Name = "exb_RightMenu";
-            this.exb_RightMenu.Size = new System.Drawing.Size(284, 597);
-            this.exb_RightMenu.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
-            this.exb_RightMenu.TabIndex = 1;
-            // 
-            // ebg_Dashboard
-            // 
-            // 
-            // 
-            // 
-            this.ebg_Dashboard.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.ebg_Dashboard.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Dashboard.BackStyle.BorderBottomColor = System.Drawing.SystemColors.Window;
-            this.ebg_Dashboard.BackStyle.BorderBottomWidth = 1;
-            this.ebg_Dashboard.BackStyle.BorderColor = System.Drawing.Color.White;
-            this.ebg_Dashboard.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Dashboard.BackStyle.BorderLeftColor = System.Drawing.SystemColors.Window;
-            this.ebg_Dashboard.BackStyle.BorderLeftWidth = 1;
-            this.ebg_Dashboard.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Dashboard.BackStyle.BorderRightColor = System.Drawing.SystemColors.Window;
-            this.ebg_Dashboard.BackStyle.BorderRightWidth = 1;
-            this.ebg_Dashboard.BackStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Dashboard.BackStyle.BorderTopColor = System.Drawing.SystemColors.Window;
-            this.ebg_Dashboard.BackStyle.BorderTopWidth = 1;
-            this.ebg_Dashboard.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Dashboard.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Dashboard.Expanded = true;
-            this.ebg_Dashboard.Name = "ebg_Dashboard";
-            this.ebg_Dashboard.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
-            this.ebg_Dashboard.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.lbl_AllRecivedMessages,
-            this.lbl_ReadedMessages,
-            this.lbl_UnReadedMessages,
-            this.lbl_UrgentActionMessages,
-            this.lbl_ConfidentialMessages,
-            this.lbl_ArrivedNotes,
-            this.lbl_ShowNotes});
-            this.ebg_Dashboard.Text = "كارتابل";
-            // 
-            // 
-            // 
-            this.ebg_Dashboard.TitleHotStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Dashboard.TitleHotStyle.BackColor2 = System.Drawing.SystemColors.InactiveCaption;
-            this.ebg_Dashboard.TitleHotStyle.CornerDiameter = 3;
-            this.ebg_Dashboard.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Dashboard.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Dashboard.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Dashboard.TitleHotStyle.TextColor = System.Drawing.SystemColors.ActiveCaption;
-            // 
-            // 
-            // 
-            this.ebg_Dashboard.TitleStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Dashboard.TitleStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.ebg_Dashboard.TitleStyle.CornerDiameter = 3;
-            this.ebg_Dashboard.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Dashboard.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Dashboard.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Dashboard.TitleStyle.TextColor = System.Drawing.SystemColors.ControlText;
-            // 
-            // ebg_Recycling
-            // 
-            // 
-            // 
-            // 
-            this.ebg_Recycling.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.ebg_Recycling.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Recycling.BackStyle.BorderBottomColor = System.Drawing.SystemColors.Window;
-            this.ebg_Recycling.BackStyle.BorderBottomWidth = 1;
-            this.ebg_Recycling.BackStyle.BorderColor = System.Drawing.Color.White;
-            this.ebg_Recycling.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Recycling.BackStyle.BorderLeftColor = System.Drawing.SystemColors.Window;
-            this.ebg_Recycling.BackStyle.BorderLeftWidth = 1;
-            this.ebg_Recycling.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Recycling.BackStyle.BorderRightColor = System.Drawing.SystemColors.Window;
-            this.ebg_Recycling.BackStyle.BorderRightWidth = 1;
-            this.ebg_Recycling.BackStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Recycling.BackStyle.BorderTopColor = System.Drawing.SystemColors.Window;
-            this.ebg_Recycling.BackStyle.BorderTopWidth = 1;
-            this.ebg_Recycling.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Recycling.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Recycling.Expanded = true;
-            this.ebg_Recycling.Name = "ebg_Recycling";
-            this.ebg_Recycling.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
-            this.ebg_Recycling.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.lbl_SendedMessages,
-            this.lbl_Following,
-            this.lbl_SendedNotes,
-            this.lbl_ReferredMessages});
-            this.ebg_Recycling.Text = "بازيافت";
-            // 
-            // 
-            // 
-            this.ebg_Recycling.TitleHotStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Recycling.TitleHotStyle.BackColor2 = System.Drawing.SystemColors.InactiveCaption;
-            this.ebg_Recycling.TitleHotStyle.CornerDiameter = 3;
-            this.ebg_Recycling.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Recycling.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Recycling.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Recycling.TitleHotStyle.TextColor = System.Drawing.SystemColors.ActiveCaption;
-            // 
-            // 
-            // 
-            this.ebg_Recycling.TitleStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Recycling.TitleStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.ebg_Recycling.TitleStyle.CornerDiameter = 3;
-            this.ebg_Recycling.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Recycling.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Recycling.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Recycling.TitleStyle.TextColor = System.Drawing.SystemColors.ControlText;
-            // 
-            // ebg_Operation
-            // 
-            // 
-            // 
-            // 
-            this.ebg_Operation.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.ebg_Operation.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Operation.BackStyle.BorderBottomColor = System.Drawing.SystemColors.Window;
-            this.ebg_Operation.BackStyle.BorderBottomWidth = 1;
-            this.ebg_Operation.BackStyle.BorderColor = System.Drawing.Color.White;
-            this.ebg_Operation.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Operation.BackStyle.BorderLeftColor = System.Drawing.SystemColors.Window;
-            this.ebg_Operation.BackStyle.BorderLeftWidth = 1;
-            this.ebg_Operation.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Operation.BackStyle.BorderRightColor = System.Drawing.SystemColors.Window;
-            this.ebg_Operation.BackStyle.BorderRightWidth = 1;
-            this.ebg_Operation.BackStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Operation.BackStyle.BorderTopColor = System.Drawing.SystemColors.Window;
-            this.ebg_Operation.BackStyle.BorderTopWidth = 1;
-            this.ebg_Operation.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Operation.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Operation.Expanded = true;
-            this.ebg_Operation.Name = "ebg_Operation";
-            this.ebg_Operation.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
-            this.ebg_Operation.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.lbl_CreateMessage,
-            this.lbl_CreateNote,
-            this.lbl_AddReminder,
-            this.lbl_Draft});
-            this.ebg_Operation.Text = "عمليات";
-            // 
-            // 
-            // 
-            this.ebg_Operation.TitleHotStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Operation.TitleHotStyle.BackColor2 = System.Drawing.SystemColors.InactiveCaption;
-            this.ebg_Operation.TitleHotStyle.CornerDiameter = 3;
-            this.ebg_Operation.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Operation.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Operation.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Operation.TitleHotStyle.TextColor = System.Drawing.SystemColors.ActiveCaption;
-            // 
-            // 
-            // 
-            this.ebg_Operation.TitleStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Operation.TitleStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.ebg_Operation.TitleStyle.CornerDiameter = 3;
-            this.ebg_Operation.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Operation.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Operation.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Operation.TitleStyle.TextColor = System.Drawing.SystemColors.ControlText;
-            // 
-            // ebg_Newsletters
-            // 
-            // 
-            // 
-            // 
-            this.ebg_Newsletters.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.ebg_Newsletters.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Newsletters.BackStyle.BorderBottomColor = System.Drawing.SystemColors.Window;
-            this.ebg_Newsletters.BackStyle.BorderBottomWidth = 1;
-            this.ebg_Newsletters.BackStyle.BorderColor = System.Drawing.Color.White;
-            this.ebg_Newsletters.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Newsletters.BackStyle.BorderLeftColor = System.Drawing.SystemColors.Window;
-            this.ebg_Newsletters.BackStyle.BorderLeftWidth = 1;
-            this.ebg_Newsletters.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Newsletters.BackStyle.BorderRightColor = System.Drawing.SystemColors.Window;
-            this.ebg_Newsletters.BackStyle.BorderRightWidth = 1;
-            this.ebg_Newsletters.BackStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.ebg_Newsletters.BackStyle.BorderTopColor = System.Drawing.SystemColors.Window;
-            this.ebg_Newsletters.BackStyle.BorderTopWidth = 1;
-            this.ebg_Newsletters.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Newsletters.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Newsletters.Expanded = true;
-            this.ebg_Newsletters.Name = "ebg_Newsletters";
-            this.ebg_Newsletters.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
-            this.ebg_Newsletters.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.lbl_NewsAndAnnouncement});
-            this.ebg_Newsletters.Text = "خبرنامه";
-            // 
-            // 
-            // 
-            this.ebg_Newsletters.TitleHotStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Newsletters.TitleHotStyle.BackColor2 = System.Drawing.SystemColors.InactiveCaption;
-            this.ebg_Newsletters.TitleHotStyle.CornerDiameter = 3;
-            this.ebg_Newsletters.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Newsletters.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Newsletters.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Newsletters.TitleHotStyle.TextColor = System.Drawing.SystemColors.ActiveCaption;
-            // 
-            // 
-            // 
-            this.ebg_Newsletters.TitleStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.ebg_Newsletters.TitleStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.ebg_Newsletters.TitleStyle.CornerDiameter = 3;
-            this.ebg_Newsletters.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ebg_Newsletters.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Newsletters.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.ebg_Newsletters.TitleStyle.TextColor = System.Drawing.SystemColors.ControlText;
-            // 
-            // lbl_AllRecivedMessages
-            // 
-            this.lbl_AllRecivedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_AllRecivedMessages.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_AllRecivedMessages.Name = "lbl_AllRecivedMessages";
-            this.lbl_AllRecivedMessages.Symbol = "57673";
-            this.lbl_AllRecivedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_AllRecivedMessages.Text = "همه نامه‌هاي وارده";
-            // 
-            // lbl_ReadedMessages
-            // 
-            this.lbl_ReadedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_ReadedMessages.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_ReadedMessages.Name = "lbl_ReadedMessages";
-            this.lbl_ReadedMessages.Symbol = "57681";
-            this.lbl_ReadedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_ReadedMessages.Text = "نامه‌هاي خوانده شده";
-            // 
-            // lbl_UnReadedMessages
-            // 
-            this.lbl_UnReadedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_UnReadedMessages.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_UnReadedMessages.Name = "lbl_UnReadedMessages";
-            this.lbl_UnReadedMessages.Symbol = "57534";
-            this.lbl_UnReadedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_UnReadedMessages.Text = "نامه‌هاي خوانده نشده";
-            // 
-            // lbl_UrgentActionMessages
-            // 
-            this.lbl_UrgentActionMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_UrgentActionMessages.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_UrgentActionMessages.Name = "lbl_UrgentActionMessages";
-            this.lbl_UrgentActionMessages.Symbol = "57553";
-            this.lbl_UrgentActionMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_UrgentActionMessages.Text = "نامه‌هاي اقدام فوري";
-            // 
-            // lbl_ConfidentialMessages
-            // 
-            this.lbl_ConfidentialMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_ConfidentialMessages.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_ConfidentialMessages.Name = "lbl_ConfidentialMessages";
-            this.lbl_ConfidentialMessages.Symbol = "59543";
-            this.lbl_ConfidentialMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_ConfidentialMessages.Text = "نامه‌هاي محرمانه";
-            // 
-            // lbl_ArrivedNotes
-            // 
-            this.lbl_ArrivedNotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_ArrivedNotes.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_ArrivedNotes.Name = "lbl_ArrivedNotes";
-            this.lbl_ArrivedNotes.Symbol = "57391";
-            this.lbl_ArrivedNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_ArrivedNotes.Text = "يادداشت‌هاي رسيده";
-            // 
-            // lbl_ShowNotes
-            // 
-            this.lbl_ShowNotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_ShowNotes.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_ShowNotes.Name = "lbl_ShowNotes";
-            this.lbl_ShowNotes.Symbol = "57819";
-            this.lbl_ShowNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_ShowNotes.Text = "نمايش يادآوري‌ها";
-            // 
-            // lbl_SendedMessages
-            // 
-            this.lbl_SendedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_SendedMessages.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_SendedMessages.Name = "lbl_SendedMessages";
-            this.lbl_SendedMessages.Symbol = "59549";
-            this.lbl_SendedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_SendedMessages.Text = "نامه‌هاي ارسالي";
-            // 
-            // lbl_Following
-            // 
-            this.lbl_Following.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_Following.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_Following.Name = "lbl_Following";
-            this.lbl_Following.Symbol = "57559";
-            this.lbl_Following.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_Following.Text = "پيگيري";
-            // 
-            // lbl_SendedNotes
-            // 
-            this.lbl_SendedNotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_SendedNotes.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_SendedNotes.Name = "lbl_SendedNotes";
-            this.lbl_SendedNotes.Symbol = "57404";
-            this.lbl_SendedNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_SendedNotes.Text = "يادداشت‌هاي ارسالي";
-            // 
-            // lbl_ReferredMessages
-            // 
-            this.lbl_ReferredMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_ReferredMessages.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_ReferredMessages.Name = "lbl_ReferredMessages";
-            this.lbl_ReferredMessages.Symbol = "57695";
-            this.lbl_ReferredMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_ReferredMessages.Text = "نامه‌هاي ارجاع داده شده";
-            // 
-            // lbl_CreateMessage
-            // 
-            this.lbl_CreateMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_CreateMessage.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_CreateMessage.Name = "lbl_CreateMessage";
-            this.lbl_CreateMessage.Symbol = "57680";
-            this.lbl_CreateMessage.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_CreateMessage.Text = "ايجاد نامه";
-            // 
-            // lbl_CreateNote
-            // 
-            this.lbl_CreateNote.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_CreateNote.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_CreateNote.Name = "lbl_CreateNote";
-            this.lbl_CreateNote.Symbol = "57416";
-            this.lbl_CreateNote.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_CreateNote.Text = "ايجاد يادداشت";
-            // 
-            // lbl_AddReminder
-            // 
-            this.lbl_AddReminder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_AddReminder.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_AddReminder.Name = "lbl_AddReminder";
-            this.lbl_AddReminder.Symbol = "59478";
-            this.lbl_AddReminder.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_AddReminder.Text = "ثبت يادآوري";
-            // 
-            // lbl_Draft
-            // 
-            this.lbl_Draft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_Draft.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_Draft.Name = "lbl_Draft";
-            this.lbl_Draft.Symbol = "59568";
-            this.lbl_Draft.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_Draft.Text = "پيش نويس";
-            // 
-            // lbl_NewsAndAnnouncement
-            // 
-            this.lbl_NewsAndAnnouncement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_NewsAndAnnouncement.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_NewsAndAnnouncement.Name = "lbl_NewsAndAnnouncement";
-            this.lbl_NewsAndAnnouncement.Symbol = "59383";
-            this.lbl_NewsAndAnnouncement.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_NewsAndAnnouncement.Text = "اخبار و اطلاعيه‌ها";
-            // 
             // frmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -846,9 +824,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMainUser_Load);
             this.pnl_Main.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).EndInit();
             this.pnl_UpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
