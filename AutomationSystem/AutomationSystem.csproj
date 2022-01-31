@@ -137,6 +137,27 @@
     <Compile Include="AdminPanel\frmUsersLog.Designer.cs">
       <DependentUpon>frmUsersLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editor\AdvancedTextEditorControl\AdvancedTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\AdvancedTextEditorControl\AdvancedTextEditor.Designer.cs">
+      <DependentUpon>AdvancedTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\AdvancedTextEditorControl\FontComboBoxControl\FontComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\Dialogs\dlgFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Dialogs\dlgFind.Designer.cs">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ExtendedRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\TextRulerControl\TextRuler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +230,12 @@
     <EmbeddedResource Include="AdminPanel\frmUsersLog.resx">
       <DependentUpon>frmUsersLog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editor\AdvancedTextEditorControl\AdvancedTextEditor.resx">
+      <DependentUpon>AdvancedTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Dialogs\dlgFind.resx">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +264,7 @@
     <EmbeddedResource Include="UserPanel\frmUserReminder.resx">
       <DependentUpon>frmUserReminder.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Editor\Resources\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -251,6 +279,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Editor\Resources\l_indent_pos_lower.png" />
+    <Content Include="Editor\Resources\l_indet_pos_upper.png" />
+    <Content Include="Editor\Resources\r_indent_pos.png" />
+    <Content Include="Editor\Resources\tab_pos.png" />
     <Content Include="Images\01-Users.png" />
     <Content Include="Images\02-Jobs.png" />
     <Content Include="Images\03-JobsManager.png" />

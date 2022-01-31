@@ -195,6 +195,7 @@
             this.btn_LetterAttachFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_LetterAttachFile.BackColor = System.Drawing.Color.Transparent;
             this.btn_LetterAttachFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_LetterAttachFile.Enabled = false;
             this.btn_LetterAttachFile.Location = new System.Drawing.Point(89, 383);
             this.btn_LetterAttachFile.Name = "btn_LetterAttachFile";
             this.btn_LetterAttachFile.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10, 2, 2, 10);
@@ -207,6 +208,7 @@
             // txt_LetterDeadLineValue
             // 
             this.txt_LetterDeadLineValue.BackColor = System.Drawing.Color.White;
+            this.txt_LetterDeadLineValue.Enabled = false;
             this.txt_LetterDeadLineValue.Font = new System.Drawing.Font("Tahoma", 14.25F);
             this.txt_LetterDeadLineValue.Location = new System.Drawing.Point(89, 348);
             this.txt_LetterDeadLineValue.Name = "txt_LetterDeadLineValue";
@@ -233,13 +235,13 @@
             this.rdb_LetterDeadLine_Yes.Name = "rdb_LetterDeadLine_Yes";
             this.rdb_LetterDeadLine_Yes.Size = new System.Drawing.Size(53, 32);
             this.rdb_LetterDeadLine_Yes.TabIndex = 0;
-            this.rdb_LetterDeadLine_Yes.TabStop = true;
             this.rdb_LetterDeadLine_Yes.Text = "دارد";
             this.rdb_LetterDeadLine_Yes.UseVisualStyleBackColor = true;
             // 
             // rdb_LetterDeadLine_No
             // 
             this.rdb_LetterDeadLine_No.AutoSize = true;
+            this.rdb_LetterDeadLine_No.Checked = true;
             this.rdb_LetterDeadLine_No.Location = new System.Drawing.Point(188, 6);
             this.rdb_LetterDeadLine_No.Name = "rdb_LetterDeadLine_No";
             this.rdb_LetterDeadLine_No.Size = new System.Drawing.Size(58, 32);
@@ -265,13 +267,13 @@
             this.rdb_LetterAttachment_Yes.Name = "rdb_LetterAttachment_Yes";
             this.rdb_LetterAttachment_Yes.Size = new System.Drawing.Size(53, 32);
             this.rdb_LetterAttachment_Yes.TabIndex = 0;
-            this.rdb_LetterAttachment_Yes.TabStop = true;
             this.rdb_LetterAttachment_Yes.Text = "دارد";
             this.rdb_LetterAttachment_Yes.UseVisualStyleBackColor = true;
             // 
             // rdb_LetterAttachment_No
             // 
             this.rdb_LetterAttachment_No.AutoSize = true;
+            this.rdb_LetterAttachment_No.Checked = true;
             this.rdb_LetterAttachment_No.Location = new System.Drawing.Point(188, 6);
             this.rdb_LetterAttachment_No.Name = "rdb_LetterAttachment_No";
             this.rdb_LetterAttachment_No.Size = new System.Drawing.Size(58, 32);
@@ -297,13 +299,13 @@
             this.rdb_LetterFollowing_Yes.Name = "rdb_LetterFollowing_Yes";
             this.rdb_LetterFollowing_Yes.Size = new System.Drawing.Size(53, 32);
             this.rdb_LetterFollowing_Yes.TabIndex = 0;
-            this.rdb_LetterFollowing_Yes.TabStop = true;
             this.rdb_LetterFollowing_Yes.Text = "دارد";
             this.rdb_LetterFollowing_Yes.UseVisualStyleBackColor = true;
             // 
             // rdb_LetterFollowing_No
             // 
             this.rdb_LetterFollowing_No.AutoSize = true;
+            this.rdb_LetterFollowing_No.Checked = true;
             this.rdb_LetterFollowing_No.Location = new System.Drawing.Point(188, 6);
             this.rdb_LetterFollowing_No.Name = "rdb_LetterFollowing_No";
             this.rdb_LetterFollowing_No.Size = new System.Drawing.Size(58, 32);
@@ -330,7 +332,6 @@
             this.rdb_LetterForced_Posthaste.Name = "rdb_LetterForced_Posthaste";
             this.rdb_LetterForced_Posthaste.Size = new System.Drawing.Size(50, 32);
             this.rdb_LetterForced_Posthaste.TabIndex = 0;
-            this.rdb_LetterForced_Posthaste.TabStop = true;
             this.rdb_LetterForced_Posthaste.Text = "آني";
             this.rdb_LetterForced_Posthaste.UseVisualStyleBackColor = true;
             // 
@@ -341,13 +342,13 @@
             this.rdb_LetterForced_Immediate.Name = "rdb_LetterForced_Immediate";
             this.rdb_LetterForced_Immediate.Size = new System.Drawing.Size(60, 32);
             this.rdb_LetterForced_Immediate.TabIndex = 0;
-            this.rdb_LetterForced_Immediate.TabStop = true;
             this.rdb_LetterForced_Immediate.Text = "فوري";
             this.rdb_LetterForced_Immediate.UseVisualStyleBackColor = true;
             // 
             // rdb_LetterForced_Normal
             // 
             this.rdb_LetterForced_Normal.AutoSize = true;
+            this.rdb_LetterForced_Normal.Checked = true;
             this.rdb_LetterForced_Normal.Location = new System.Drawing.Point(186, 6);
             this.rdb_LetterForced_Normal.Name = "rdb_LetterForced_Normal";
             this.rdb_LetterForced_Normal.Size = new System.Drawing.Size(60, 32);
@@ -374,7 +375,6 @@
             this.rdb_LetterSecurity_Secretive.Name = "rdb_LetterSecurity_Secretive";
             this.rdb_LetterSecurity_Secretive.Size = new System.Drawing.Size(59, 32);
             this.rdb_LetterSecurity_Secretive.TabIndex = 0;
-            this.rdb_LetterSecurity_Secretive.TabStop = true;
             this.rdb_LetterSecurity_Secretive.Text = "سري";
             this.rdb_LetterSecurity_Secretive.UseVisualStyleBackColor = true;
             // 
@@ -385,13 +385,13 @@
             this.rdb_LetterSecurity_Confidential.Name = "rdb_LetterSecurity_Confidential";
             this.rdb_LetterSecurity_Confidential.Size = new System.Drawing.Size(74, 32);
             this.rdb_LetterSecurity_Confidential.TabIndex = 0;
-            this.rdb_LetterSecurity_Confidential.TabStop = true;
             this.rdb_LetterSecurity_Confidential.Text = "محرمانه";
             this.rdb_LetterSecurity_Confidential.UseVisualStyleBackColor = true;
             // 
             // rdb_LetterSecurity_Normal
             // 
             this.rdb_LetterSecurity_Normal.AutoSize = true;
+            this.rdb_LetterSecurity_Normal.Checked = true;
             this.rdb_LetterSecurity_Normal.Location = new System.Drawing.Point(186, 6);
             this.rdb_LetterSecurity_Normal.Name = "rdb_LetterSecurity_Normal";
             this.rdb_LetterSecurity_Normal.Size = new System.Drawing.Size(60, 32);
