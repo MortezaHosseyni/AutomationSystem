@@ -7,18 +7,21 @@
       <Diagram DiagramId="0cde160c33de416a849be55601ceb3a2" Name="Diagram1">
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Users" Width="1.5" PointX="2.375" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Reminder" Width="1.5" PointX="0.75" PointY="5.375" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Reminder" Width="1.5" PointX="0.75" PointY="5.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Reminder_Users" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Reminder" Width="1.5" PointX="2.375" PointY="5.375" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.UserLog" Width="1.5" PointX="4" PointY="5.375" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Reminder" Width="1.5" PointX="2.375" PointY="5.75" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.UserLog" Width="1.5" PointX="4" PointY="5.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_UserLog_Users1" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_UserLog" Width="1.5" PointX="4" PointY="0.75" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Job" Width="1.5" PointX="5.625" PointY="0.75" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Jobs" Width="1.5" PointX="5.625" PointY="5.375" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Jobs" Width="1.5" PointX="5.625" PointY="5.75" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.AsignmentJob" Width="1.5" PointX="7.25" PointY="0.75" />
-        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_AsignmentJobs" Width="1.5" PointX="7.25" PointY="5.375" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_AsignmentJobs" Width="1.5" PointX="7.25" PointY="5.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_AsignmentJobs_Jobs" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_AsignmentJobs_Users" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Letter" Width="1.5" PointX="8.875" PointY="0.75" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Letters" Width="1.5" PointX="8.875" PointY="5.75" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Letters_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -26,6 +26,30 @@
           <Property Name="JobsLevel" Type="int" />
           <Property Name="JobsDetermineLevel" Type="int" />
         </EntityType>
+        <EntityType Name="Letters">
+          <Key>
+            <PropertyRef Name="LetterID" />
+          </Key>
+          <Property Name="LetterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LetterSubject" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="LetterCaption" Type="varchar(max)" Nullable="false" />
+          <Property Name="LetterNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="LetterCreatedDate" Type="varchar" MaxLength="30" />
+          <Property Name="LetterUserID" Type="int" Nullable="false" />
+          <Property Name="LetterSecurityType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterForceType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterArchiveType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterFollowingType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterAttachmentType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterReadType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterDraftType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterAbstract" Type="varchar" MaxLength="250" />
+          <Property Name="LetterAnswerType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterAnswerDeadLine" Type="varchar" MaxLength="30" />
+          <Property Name="LetterReffrence" Type="varchar" MaxLength="50" />
+          <Property Name="LetterReplyID" Type="int" />
+        </EntityType>
         <EntityType Name="Reminder">
           <Key>
             <PropertyRef Name="RemindID" />
@@ -108,6 +132,60 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Jobs' does not h
           <Property Name="JobsLevel" Type="int" />
           <Property Name="JobsDetermineLevel" Type="int" />
           <Property Name="JobsChild" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Letters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Letters">
+          <Key>
+            <PropertyRef Name="LetterID" />
+            <PropertyRef Name="LetterSubject" />
+            <PropertyRef Name="LetterCaption" />
+            <PropertyRef Name="LetterNo" />
+            <PropertyRef Name="LetterUserID" />
+            <PropertyRef Name="LetterSecurityType" />
+            <PropertyRef Name="LetterForceType" />
+            <PropertyRef Name="LetterArchiveType" />
+            <PropertyRef Name="LetterFollowingType" />
+            <PropertyRef Name="LetterAttachmentType" />
+            <PropertyRef Name="LetterReadType" />
+            <PropertyRef Name="LetterType" />
+            <PropertyRef Name="LetterDraftType" />
+            <PropertyRef Name="LetterAnswerType" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="UserFullName" />
+          </Key>
+          <Property Name="LetterID" Type="int" Nullable="false" />
+          <Property Name="LetterSubject" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="LetterCaption" Type="varchar(max)" Nullable="false" />
+          <Property Name="LetterNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="LetterCreatedDate" Type="varchar" MaxLength="30" />
+          <Property Name="LetterUserID" Type="int" Nullable="false" />
+          <Property Name="LetterSecurityType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterForceType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterArchiveType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterFollowingType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterAttachmentType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterReadType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterDraftType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterAbstract" Type="varchar" MaxLength="250" />
+          <Property Name="LetterAnswerType" Type="tinyint" Nullable="false" />
+          <Property Name="LetterAnswerDeadLine" Type="varchar" MaxLength="30" />
+          <Property Name="LetterReffrence" Type="varchar" MaxLength="50" />
+          <Property Name="LetterReplyID" Type="int" />
+          <Property Name="View_LetterSecurityType" Type="varchar" MaxLength="7" />
+          <Property Name="View_LetterForceType" Type="varchar" MaxLength="4" />
+          <Property Name="View_LetterArchiveType" Type="varchar" MaxLength="12" />
+          <Property Name="View_LetterFollowingType" Type="varchar" MaxLength="5" />
+          <Property Name="View_LetterAttachmentType" Type="varchar" MaxLength="5" />
+          <Property Name="View_LetterReadType" Type="varchar" MaxLength="11" />
+          <Property Name="View_LetterType" Type="varchar" MaxLength="12" />
+          <Property Name="View_LetterDraftType" Type="varchar" MaxLength="8" />
+          <Property Name="View_LetterAnswerType" Type="varchar" MaxLength="5" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="UserFullName" Type="varchar" MaxLength="201" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Reminder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -201,6 +279,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Letters_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Letters" Type="Self.Letters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Letters">
+              <PropertyRef Name="LetterUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Reminder_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
@@ -271,6 +361,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
           <EntitySet Name="AsignmentJobs" EntityType="Self.AsignmentJobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -299,6 +390,41 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Jobs].[JobsDetermineLevel] AS [JobsDetermineLevel], 
     [Vw_Jobs].[JobsChild] AS [JobsChild]
     FROM [dbo].[Vw_Jobs] AS [Vw_Jobs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_Letters" EntityType="Self.Vw_Letters" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Letters].[LetterID] AS [LetterID], 
+    [Vw_Letters].[LetterSubject] AS [LetterSubject], 
+    [Vw_Letters].[LetterCaption] AS [LetterCaption], 
+    [Vw_Letters].[LetterNo] AS [LetterNo], 
+    [Vw_Letters].[LetterCreatedDate] AS [LetterCreatedDate], 
+    [Vw_Letters].[LetterUserID] AS [LetterUserID], 
+    [Vw_Letters].[LetterSecurityType] AS [LetterSecurityType], 
+    [Vw_Letters].[LetterForceType] AS [LetterForceType], 
+    [Vw_Letters].[LetterArchiveType] AS [LetterArchiveType], 
+    [Vw_Letters].[LetterFollowingType] AS [LetterFollowingType], 
+    [Vw_Letters].[LetterAttachmentType] AS [LetterAttachmentType], 
+    [Vw_Letters].[LetterReadType] AS [LetterReadType], 
+    [Vw_Letters].[LetterType] AS [LetterType], 
+    [Vw_Letters].[LetterDraftType] AS [LetterDraftType], 
+    [Vw_Letters].[LetterAbstract] AS [LetterAbstract], 
+    [Vw_Letters].[LetterAnswerType] AS [LetterAnswerType], 
+    [Vw_Letters].[LetterAnswerDeadLine] AS [LetterAnswerDeadLine], 
+    [Vw_Letters].[LetterReffrence] AS [LetterReffrence], 
+    [Vw_Letters].[LetterReplyID] AS [LetterReplyID], 
+    [Vw_Letters].[View_LetterSecurityType] AS [View_LetterSecurityType], 
+    [Vw_Letters].[View_LetterForceType] AS [View_LetterForceType], 
+    [Vw_Letters].[View_LetterArchiveType] AS [View_LetterArchiveType], 
+    [Vw_Letters].[View_LetterFollowingType] AS [View_LetterFollowingType], 
+    [Vw_Letters].[View_LetterAttachmentType] AS [View_LetterAttachmentType], 
+    [Vw_Letters].[View_LetterReadType] AS [View_LetterReadType], 
+    [Vw_Letters].[View_LetterType] AS [View_LetterType], 
+    [Vw_Letters].[View_LetterDraftType] AS [View_LetterDraftType], 
+    [Vw_Letters].[View_LetterAnswerType] AS [View_LetterAnswerType], 
+    [Vw_Letters].[UserFirstName] AS [UserFirstName], 
+    [Vw_Letters].[UserLastName] AS [UserLastName], 
+    [Vw_Letters].[UserFullName] AS [UserFullName]
+    FROM [dbo].[Vw_Letters] AS [Vw_Letters]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vw_Reminder" EntityType="Self.Vw_Reminder" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -351,6 +477,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="Users" EntitySet="Users" />
             <End Role="AsignmentJobs" EntitySet="AsignmentJobs" />
           </AssociationSet>
+          <AssociationSet Name="FK_Letters_Users" Association="Self.FK_Letters_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Letters" EntitySet="Letters" />
+          </AssociationSet>
           <AssociationSet Name="FK_Reminder_Users" Association="Self.FK_Reminder_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reminder" EntitySet="Reminder" />
@@ -385,6 +515,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="Reminders" Relationship="Office_Automation_DatabaseModel.FK_Reminder_Users" FromRole="User" ToRole="Reminder" />
           <NavigationProperty Name="UserLogs" Relationship="Office_Automation_DatabaseModel.FK_UserLog_Users1" FromRole="User" ToRole="UserLog" />
           <NavigationProperty Name="AsignmentJobs" Relationship="Office_Automation_DatabaseModel.FK_AsignmentJobs_Users" FromRole="User" ToRole="AsignmentJob" />
+          <NavigationProperty Name="Letters" Relationship="Office_Automation_DatabaseModel.FK_Letters_Users" FromRole="User" ToRole="Letter" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -481,6 +612,12 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <FunctionImport Name="Sp_ShowAllUserInfo" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_ShowAllUserInfo_Result)">
           <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Letters" EntityType="Office_Automation_DatabaseModel.Letter" />
+          <EntitySet Name="Vw_Letters" EntityType="Office_Automation_DatabaseModel.Vw_Letters" />
+          <AssociationSet Name="FK_Letters_Users" Association="Office_Automation_DatabaseModel.FK_Letters_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Letter" EntitySet="Letters" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -668,6 +805,95 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Type="Binary" Name="UserSignature" Nullable="true" MaxLength="Max" />
           <Property Type="String" Name="JobsName" Nullable="false" MaxLength="150" />
         </ComplexType>
+        <EntityType Name="Letter">
+          <Key>
+            <PropertyRef Name="LetterID" />
+          </Key>
+          <Property Name="LetterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LetterSubject" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LetterCaption" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LetterNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LetterCreatedDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LetterUserID" Type="Int32" Nullable="false" />
+          <Property Name="LetterSecurityType" Type="Byte" Nullable="false" />
+          <Property Name="LetterForceType" Type="Byte" Nullable="false" />
+          <Property Name="LetterArchiveType" Type="Byte" Nullable="false" />
+          <Property Name="LetterFollowingType" Type="Byte" Nullable="false" />
+          <Property Name="LetterAttachmentType" Type="Byte" Nullable="false" />
+          <Property Name="LetterReadType" Type="Byte" Nullable="false" />
+          <Property Name="LetterType" Type="Byte" Nullable="false" />
+          <Property Name="LetterDraftType" Type="Byte" Nullable="false" />
+          <Property Name="LetterAbstract" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LetterAnswerType" Type="Byte" Nullable="false" />
+          <Property Name="LetterAnswerDeadLine" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LetterReffrence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LetterReplyID" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_Letters_Users" FromRole="Letter" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Vw_Letters">
+          <Key>
+            <PropertyRef Name="LetterID" />
+            <PropertyRef Name="LetterSubject" />
+            <PropertyRef Name="LetterCaption" />
+            <PropertyRef Name="LetterNo" />
+            <PropertyRef Name="LetterUserID" />
+            <PropertyRef Name="LetterSecurityType" />
+            <PropertyRef Name="LetterForceType" />
+            <PropertyRef Name="LetterArchiveType" />
+            <PropertyRef Name="LetterFollowingType" />
+            <PropertyRef Name="LetterAttachmentType" />
+            <PropertyRef Name="LetterReadType" />
+            <PropertyRef Name="LetterType" />
+            <PropertyRef Name="LetterDraftType" />
+            <PropertyRef Name="LetterAnswerType" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="UserFullName" />
+          </Key>
+          <Property Name="LetterID" Type="Int32" Nullable="false" />
+          <Property Name="LetterSubject" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LetterCaption" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LetterNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LetterCreatedDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LetterUserID" Type="Int32" Nullable="false" />
+          <Property Name="LetterSecurityType" Type="Byte" Nullable="false" />
+          <Property Name="LetterForceType" Type="Byte" Nullable="false" />
+          <Property Name="LetterArchiveType" Type="Byte" Nullable="false" />
+          <Property Name="LetterFollowingType" Type="Byte" Nullable="false" />
+          <Property Name="LetterAttachmentType" Type="Byte" Nullable="false" />
+          <Property Name="LetterReadType" Type="Byte" Nullable="false" />
+          <Property Name="LetterType" Type="Byte" Nullable="false" />
+          <Property Name="LetterDraftType" Type="Byte" Nullable="false" />
+          <Property Name="LetterAbstract" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LetterAnswerType" Type="Byte" Nullable="false" />
+          <Property Name="LetterAnswerDeadLine" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LetterReffrence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LetterReplyID" Type="Int32" />
+          <Property Name="View_LetterSecurityType" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterForceType" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterArchiveType" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterFollowingType" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterAttachmentType" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterReadType" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterType" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterDraftType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="View_LetterAnswerType" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Letters_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.Letter" Role="Letter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Letter">
+              <PropertyRef Name="LetterUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -844,6 +1070,68 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Letters">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Letter">
+              <MappingFragment StoreEntitySet="Letters">
+                <ScalarProperty Name="LetterReplyID" ColumnName="LetterReplyID" />
+                <ScalarProperty Name="LetterReffrence" ColumnName="LetterReffrence" />
+                <ScalarProperty Name="LetterAnswerDeadLine" ColumnName="LetterAnswerDeadLine" />
+                <ScalarProperty Name="LetterAnswerType" ColumnName="LetterAnswerType" />
+                <ScalarProperty Name="LetterAbstract" ColumnName="LetterAbstract" />
+                <ScalarProperty Name="LetterDraftType" ColumnName="LetterDraftType" />
+                <ScalarProperty Name="LetterType" ColumnName="LetterType" />
+                <ScalarProperty Name="LetterReadType" ColumnName="LetterReadType" />
+                <ScalarProperty Name="LetterAttachmentType" ColumnName="LetterAttachmentType" />
+                <ScalarProperty Name="LetterFollowingType" ColumnName="LetterFollowingType" />
+                <ScalarProperty Name="LetterArchiveType" ColumnName="LetterArchiveType" />
+                <ScalarProperty Name="LetterForceType" ColumnName="LetterForceType" />
+                <ScalarProperty Name="LetterSecurityType" ColumnName="LetterSecurityType" />
+                <ScalarProperty Name="LetterUserID" ColumnName="LetterUserID" />
+                <ScalarProperty Name="LetterCreatedDate" ColumnName="LetterCreatedDate" />
+                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
+                <ScalarProperty Name="LetterCaption" ColumnName="LetterCaption" />
+                <ScalarProperty Name="LetterSubject" ColumnName="LetterSubject" />
+                <ScalarProperty Name="LetterID" ColumnName="LetterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Letters">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Letters">
+              <MappingFragment StoreEntitySet="Vw_Letters">
+                <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="View_LetterAnswerType" ColumnName="View_LetterAnswerType" />
+                <ScalarProperty Name="View_LetterDraftType" ColumnName="View_LetterDraftType" />
+                <ScalarProperty Name="View_LetterType" ColumnName="View_LetterType" />
+                <ScalarProperty Name="View_LetterReadType" ColumnName="View_LetterReadType" />
+                <ScalarProperty Name="View_LetterAttachmentType" ColumnName="View_LetterAttachmentType" />
+                <ScalarProperty Name="View_LetterFollowingType" ColumnName="View_LetterFollowingType" />
+                <ScalarProperty Name="View_LetterArchiveType" ColumnName="View_LetterArchiveType" />
+                <ScalarProperty Name="View_LetterForceType" ColumnName="View_LetterForceType" />
+                <ScalarProperty Name="View_LetterSecurityType" ColumnName="View_LetterSecurityType" />
+                <ScalarProperty Name="LetterReplyID" ColumnName="LetterReplyID" />
+                <ScalarProperty Name="LetterReffrence" ColumnName="LetterReffrence" />
+                <ScalarProperty Name="LetterAnswerDeadLine" ColumnName="LetterAnswerDeadLine" />
+                <ScalarProperty Name="LetterAnswerType" ColumnName="LetterAnswerType" />
+                <ScalarProperty Name="LetterAbstract" ColumnName="LetterAbstract" />
+                <ScalarProperty Name="LetterDraftType" ColumnName="LetterDraftType" />
+                <ScalarProperty Name="LetterType" ColumnName="LetterType" />
+                <ScalarProperty Name="LetterReadType" ColumnName="LetterReadType" />
+                <ScalarProperty Name="LetterAttachmentType" ColumnName="LetterAttachmentType" />
+                <ScalarProperty Name="LetterFollowingType" ColumnName="LetterFollowingType" />
+                <ScalarProperty Name="LetterArchiveType" ColumnName="LetterArchiveType" />
+                <ScalarProperty Name="LetterForceType" ColumnName="LetterForceType" />
+                <ScalarProperty Name="LetterSecurityType" ColumnName="LetterSecurityType" />
+                <ScalarProperty Name="LetterUserID" ColumnName="LetterUserID" />
+                <ScalarProperty Name="LetterCreatedDate" ColumnName="LetterCreatedDate" />
+                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
+                <ScalarProperty Name="LetterCaption" ColumnName="LetterCaption" />
+                <ScalarProperty Name="LetterSubject" ColumnName="LetterSubject" />
+                <ScalarProperty Name="LetterID" ColumnName="LetterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
