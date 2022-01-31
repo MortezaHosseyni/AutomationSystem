@@ -30,10 +30,12 @@ namespace AutomationSystem.UserPanel
         }
         private void frmMainUser_Load(object sender, EventArgs e)
         {
+            this.AutoScroll = false;
             ShowUserInfo();
 
             userReminderForm = new frmUserReminder();
             userReminderForm.Show();
+            userReminderForm.MdiParent = this;
             userReminderForm.TopMost = true;
         }
 
@@ -75,7 +77,7 @@ namespace AutomationSystem.UserPanel
             addReminderForm = new frmUserAddReminder();
 
             addReminderForm.Show();
-            addReminderForm.TopMost = true;
+            addReminderForm.MdiParent = this;
         }
 
         private void CloseForms()
@@ -98,7 +100,7 @@ namespace AutomationSystem.UserPanel
 
             userReminderForm = new frmUserReminder();
             userReminderForm.Show();
-            userReminderForm.TopMost = true;
+            userReminderForm.MdiParent = this;
         }
     }
 }

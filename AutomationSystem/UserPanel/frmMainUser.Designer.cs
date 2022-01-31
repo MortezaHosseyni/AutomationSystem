@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.exb_RightMenu = new DevComponents.DotNetBar.ExplorerBar();
             this.ebg_Dashboard = new DevComponents.DotNetBar.ExplorerBarGroupItem();
             this.lbl_AllRecivedMessages = new DevComponents.DotNetBar.LabelItem();
@@ -74,31 +73,10 @@
             this.val_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnl_Main
-            // 
-            this.pnl_Main.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnl_Main.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pnl_Main.Controls.Add(this.exb_RightMenu);
-            this.pnl_Main.Controls.Add(this.pnl_UpMenu);
-            this.pnl_Main.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Main.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(1370, 772);
-            this.pnl_Main.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pnl_Main.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnl_Main.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.pnl_Main.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pnl_Main.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pnl_Main.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pnl_Main.Style.GradientAngle = 90;
-            this.pnl_Main.TabIndex = 0;
             // 
             // exb_RightMenu
             // 
@@ -536,6 +514,7 @@
             // 
             // val_Job
             // 
+            this.val_Job.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -550,6 +529,7 @@
             // 
             // lbl_Job
             // 
+            this.lbl_Job.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -562,6 +542,7 @@
             // 
             // val_Gender
             // 
+            this.val_Gender.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -576,6 +557,7 @@
             // 
             // lbl_Gender
             // 
+            this.lbl_Gender.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -588,6 +570,7 @@
             // 
             // val_BrithDate
             // 
+            this.val_BrithDate.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -602,6 +585,7 @@
             // 
             // lbl_BrithDate
             // 
+            this.lbl_BrithDate.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -614,6 +598,7 @@
             // 
             // val_AllSendedMessages
             // 
+            this.val_AllSendedMessages.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -628,6 +613,7 @@
             // 
             // val_AllReciveMessages
             // 
+            this.val_AllReciveMessages.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -642,6 +628,7 @@
             // 
             // val_PersonalCode
             // 
+            this.val_PersonalCode.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -656,6 +643,7 @@
             // 
             // lbl_AllSendedMessage
             // 
+            this.lbl_AllSendedMessage.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -668,6 +656,7 @@
             // 
             // lbl_AllReciveMessages
             // 
+            this.lbl_AllReciveMessages.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -680,6 +669,7 @@
             // 
             // lbl_PersonalCode
             // 
+            this.lbl_PersonalCode.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -692,6 +682,7 @@
             // 
             // val_Date
             // 
+            this.val_Date.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -706,6 +697,7 @@
             // 
             // val_LastName
             // 
+            this.val_LastName.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -720,6 +712,7 @@
             // 
             // lbl_Date
             // 
+            this.lbl_Date.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -732,6 +725,7 @@
             // 
             // lbl_LastName
             // 
+            this.lbl_LastName.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -744,6 +738,7 @@
             // 
             // val_Time
             // 
+            this.val_Time.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -758,6 +753,7 @@
             // 
             // lbl_Time
             // 
+            this.lbl_Time.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -770,6 +766,7 @@
             // 
             // val_Name
             // 
+            this.val_Name.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -784,6 +781,7 @@
             // 
             // lbl_Name
             // 
+            this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -796,6 +794,7 @@
             // 
             // lbl_Title
             // 
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
@@ -814,16 +813,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 772);
             this.ControlBox = false;
-            this.Controls.Add(this.pnl_Main);
+            this.Controls.Add(this.exb_RightMenu);
+            this.Controls.Add(this.pnl_UpMenu);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "frmMainUser";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMainUser_Load);
-            this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).EndInit();
             this.pnl_UpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).EndInit();
@@ -832,8 +832,6 @@
         }
 
         #endregion
-
-        private DevComponents.DotNetBar.PanelEx pnl_Main;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_UpMenu;
         private DevComponents.DotNetBar.LabelX lbl_Title;
         private DevComponents.DotNetBar.LabelX lbl_LastName;
