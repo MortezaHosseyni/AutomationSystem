@@ -25,6 +25,10 @@ namespace AutomationSystem.UserPanel
         private void frmMainUser_Load(object sender, EventArgs e)
         {
             ShowUserInfo();
+
+            frmUserReminder userReminderForm = new frmUserReminder();
+            userReminderForm.Show();
+            userReminderForm.TopMost = true;
         }
 
         private void ShowUserInfo()
