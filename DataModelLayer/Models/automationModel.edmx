@@ -479,7 +479,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="AsignmentJob" EntitySet="AsignmentJobs" />
           </AssociationSet>
           <FunctionImport Name="Sp_ShowAllUserInfo" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_ShowAllUserInfo_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
