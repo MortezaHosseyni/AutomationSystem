@@ -62,6 +62,8 @@
             this.col_LetterAttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterAnswerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -216,6 +218,7 @@
             this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Search.Symbol = "";
             this.btn_Search.TabIndex = 3;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // pnl_SearchLetterSecurityType
             // 
@@ -235,7 +238,6 @@
             this.rdb_SearchSecretiveSecurity.Name = "rdb_SearchSecretiveSecurity";
             this.rdb_SearchSecretiveSecurity.Size = new System.Drawing.Size(59, 32);
             this.rdb_SearchSecretiveSecurity.TabIndex = 0;
-            this.rdb_SearchSecretiveSecurity.TabStop = true;
             this.rdb_SearchSecretiveSecurity.Text = "سري";
             this.rdb_SearchSecretiveSecurity.UseVisualStyleBackColor = true;
             // 
@@ -246,7 +248,6 @@
             this.rdb_SearchConfidentialSecurity.Name = "rdb_SearchConfidentialSecurity";
             this.rdb_SearchConfidentialSecurity.Size = new System.Drawing.Size(74, 32);
             this.rdb_SearchConfidentialSecurity.TabIndex = 0;
-            this.rdb_SearchConfidentialSecurity.TabStop = true;
             this.rdb_SearchConfidentialSecurity.Text = "محرمانه";
             this.rdb_SearchConfidentialSecurity.UseVisualStyleBackColor = true;
             // 
@@ -257,7 +258,6 @@
             this.rdb_SearchNormalSecurity.Name = "rdb_SearchNormalSecurity";
             this.rdb_SearchNormalSecurity.Size = new System.Drawing.Size(60, 32);
             this.rdb_SearchNormalSecurity.TabIndex = 0;
-            this.rdb_SearchNormalSecurity.TabStop = true;
             this.rdb_SearchNormalSecurity.Text = "عادي";
             this.rdb_SearchNormalSecurity.UseVisualStyleBackColor = true;
             // 
@@ -291,7 +291,6 @@
             this.rdb_SearchPosthasteForced.Name = "rdb_SearchPosthasteForced";
             this.rdb_SearchPosthasteForced.Size = new System.Drawing.Size(50, 32);
             this.rdb_SearchPosthasteForced.TabIndex = 0;
-            this.rdb_SearchPosthasteForced.TabStop = true;
             this.rdb_SearchPosthasteForced.Text = "آني";
             this.rdb_SearchPosthasteForced.UseVisualStyleBackColor = true;
             // 
@@ -302,7 +301,6 @@
             this.rdb_SearchImmediateForced.Name = "rdb_SearchImmediateForced";
             this.rdb_SearchImmediateForced.Size = new System.Drawing.Size(60, 32);
             this.rdb_SearchImmediateForced.TabIndex = 0;
-            this.rdb_SearchImmediateForced.TabStop = true;
             this.rdb_SearchImmediateForced.Text = "فوري";
             this.rdb_SearchImmediateForced.UseVisualStyleBackColor = true;
             // 
@@ -313,7 +311,6 @@
             this.rdb_SearchNormalForced.Name = "rdb_SearchNormalForced";
             this.rdb_SearchNormalForced.Size = new System.Drawing.Size(60, 32);
             this.rdb_SearchNormalForced.TabIndex = 0;
-            this.rdb_SearchNormalForced.TabStop = true;
             this.rdb_SearchNormalForced.Text = "عادي";
             this.rdb_SearchNormalForced.UseVisualStyleBackColor = true;
             // 
@@ -434,7 +431,9 @@
             this.col_LetterFollowingType,
             this.col_LetterAttachmentType,
             this.col_LetterAnswerType,
-            this.col_LetterAnswerDeadLine});
+            this.col_LetterAnswerDeadLine,
+            this.col_ForceT,
+            this.col_SecurityT});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -512,6 +511,18 @@
             this.col_LetterAnswerDeadLine.HeaderText = "تاريخ پاسخ";
             this.col_LetterAnswerDeadLine.Name = "col_LetterAnswerDeadLine";
             // 
+            // col_ForceT
+            // 
+            this.col_ForceT.HeaderText = "ForceT";
+            this.col_ForceT.Name = "col_ForceT";
+            this.col_ForceT.Visible = false;
+            // 
+            // col_SecurityT
+            // 
+            this.col_SecurityT.HeaderText = "SecurityT";
+            this.col_SecurityT.Name = "col_SecurityT";
+            this.col_SecurityT.Visible = false;
+            // 
             // frmUserDraft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -573,5 +584,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAttachmentType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerDeadLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_SecurityT;
     }
 }

@@ -47,6 +47,29 @@ namespace AutomationSystem.UserPanel
                     dgv_DraftList.Rows[i].Cells["col_LetterAttachmentType"].Value = result[i].View_LetterAttachmentType;
                     dgv_DraftList.Rows[i].Cells["col_LetterAnswerType"].Value = result[i].View_LetterAnswerType;
                     dgv_DraftList.Rows[i].Cells["col_LetterAnswerDeadLine"].Value = result[i].LetterAnswerDeadLine;
+
+                    dgv_DraftList.Rows[i].Cells["col_ForceT"].Value = result[i].LetterForceType;
+                    dgv_DraftList.Rows[i].Cells["col_SecurityT"].Value = result[i].LetterSecurityType;
+
+                    //ForceType Style
+                    if (Convert.ToInt16(dgv_DraftList.Rows[i].Cells["col_ForceT"].Value) == 2)
+                    {
+                        dgv_DraftList.Rows[i].Cells["col_LetterForceType"].Style.BackColor = Color.Yellow;
+                    }
+                    if (Convert.ToInt16(dgv_DraftList.Rows[i].Cells["col_ForceT"].Value) == 3)
+                    {
+                        dgv_DraftList.Rows[i].Cells["col_LetterForceType"].Style.BackColor = Color.Red;
+                    }
+
+                    //SecurityTyle Style
+                    if (Convert.ToInt16(dgv_DraftList.Rows[i].Cells["col_SecurityT"].Value) == 2)
+                    {
+                        dgv_DraftList.Rows[i].Cells["col_LetterSecurityType"].Style.BackColor = Color.Yellow;
+                    }
+                    if (Convert.ToInt16(dgv_DraftList.Rows[i].Cells["col_SecurityT"].Value) == 3)
+                    {
+                        dgv_DraftList.Rows[i].Cells["col_LetterSecurityType"].Style.BackColor = Color.Red;
+                    }
                 }
             }
             else
@@ -94,6 +117,11 @@ namespace AutomationSystem.UserPanel
             }
 
             return searchString;
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            ShowDraft(searchCondition());
         }
     }
 }
