@@ -377,6 +377,7 @@
             this.lbl_Draft.Symbol = "59568";
             this.lbl_Draft.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_Draft.Text = "پيش نويس";
+            this.lbl_Draft.Click += new System.EventHandler(this.lbl_Draft_Click);
             // 
             // ebg_Newsletters
             // 

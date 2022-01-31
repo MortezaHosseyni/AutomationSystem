@@ -16,5 +16,11 @@ namespace AutomationSystem.UserPanel
         {
             InitializeComponent();
         }
+
+        private void frmUserDraft_Load(object sender, EventArgs e)
+        {
+            this.Left = 10;
+            this.Top = 160;
+        }
     }
 }

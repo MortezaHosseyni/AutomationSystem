@@ -31,27 +31,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.pnl_DraftList = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.pnl_Buttons = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.btn_SendLetter = new DevComponents.DotNetBar.ButtonX();
             this.btn_DeleteLetter = new DevComponents.DotNetBar.ButtonX();
-            this.lbl_SearchSubject = new DevComponents.DotNetBar.LabelX();
-            this.txt_SearchSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lbl_SearchLetterForcedType = new DevComponents.DotNetBar.LabelX();
-            this.pnl_SearchLetterForcedType = new System.Windows.Forms.Panel();
-            this.rdb_SearchAllForced = new System.Windows.Forms.RadioButton();
-            this.rdb_SearchNormalForced = new System.Windows.Forms.RadioButton();
-            this.rdb_SearchImmediateForced = new System.Windows.Forms.RadioButton();
-            this.rdb_SearchPosthasteForced = new System.Windows.Forms.RadioButton();
-            this.lbl_SearchLetterSecurityType = new DevComponents.DotNetBar.LabelX();
+            this.btn_SendLetter = new DevComponents.DotNetBar.ButtonX();
+            this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.pnl_SearchLetterSecurityType = new System.Windows.Forms.Panel();
             this.rdb_SearchSecretiveSecurity = new System.Windows.Forms.RadioButton();
             this.rdb_SearchConfidentialSecurity = new System.Windows.Forms.RadioButton();
             this.rdb_SearchNormalSecurity = new System.Windows.Forms.RadioButton();
             this.rdb_SearchAllSecurity = new System.Windows.Forms.RadioButton();
-            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
+            this.pnl_SearchLetterForcedType = new System.Windows.Forms.Panel();
+            this.rdb_SearchPosthasteForced = new System.Windows.Forms.RadioButton();
+            this.rdb_SearchImmediateForced = new System.Windows.Forms.RadioButton();
+            this.rdb_SearchNormalForced = new System.Windows.Forms.RadioButton();
+            this.rdb_SearchAllForced = new System.Windows.Forms.RadioButton();
+            this.lbl_SearchLetterSecurityType = new DevComponents.DotNetBar.LabelX();
+            this.txt_SearchSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbl_SearchLetterForcedType = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SearchSubject = new DevComponents.DotNetBar.LabelX();
+            this.pnl_DraftList = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_DraftList = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +61,13 @@
             this.col_LetterAttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterAnswerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main.SuspendLayout();
-            this.pnl_DraftList.SuspendLayout();
-            this.pnl_Search.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
-            this.pnl_SearchLetterForcedType.SuspendLayout();
+            this.pnl_Search.SuspendLayout();
             this.pnl_SearchLetterSecurityType.SuspendLayout();
+            this.pnl_SearchLetterForcedType.SuspendLayout();
+            this.pnl_DraftList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DraftList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,58 +93,72 @@
             this.pnl_Main.Style.GradientAngle = 90;
             this.pnl_Main.TabIndex = 0;
             // 
-            // lbl_Title
+            // pnl_Buttons
+            // 
+            this.pnl_Buttons.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_Buttons.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Buttons.Controls.Add(this.btn_DeleteLetter);
+            this.pnl_Buttons.Controls.Add(this.btn_SendLetter);
+            this.pnl_Buttons.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_Buttons.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.pnl_Buttons.Location = new System.Drawing.Point(12, 524);
+            this.pnl_Buttons.Name = "pnl_Buttons";
+            this.pnl_Buttons.Size = new System.Drawing.Size(1026, 74);
             // 
             // 
             // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "پيش نويس‌ها";
-            // 
-            // pnl_DraftList
-            // 
-            this.pnl_DraftList.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnl_DraftList.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnl_DraftList.Controls.Add(this.dgv_DraftList);
-            this.pnl_DraftList.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_DraftList.Location = new System.Drawing.Point(12, 62);
-            this.pnl_DraftList.Name = "pnl_DraftList";
-            this.pnl_DraftList.Size = new System.Drawing.Size(1026, 296);
+            this.pnl_Buttons.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_Buttons.Style.BackColorGradientAngle = 90;
+            this.pnl_Buttons.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_Buttons.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Buttons.Style.BorderBottomWidth = 1;
+            this.pnl_Buttons.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_Buttons.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Buttons.Style.BorderLeftWidth = 1;
+            this.pnl_Buttons.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Buttons.Style.BorderRightWidth = 1;
+            this.pnl_Buttons.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Buttons.Style.BorderTopWidth = 1;
+            this.pnl_Buttons.Style.CornerDiameter = 4;
+            this.pnl_Buttons.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_Buttons.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_Buttons.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_Buttons.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.pnl_DraftList.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.pnl_DraftList.Style.BackColorGradientAngle = 90;
-            this.pnl_DraftList.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnl_DraftList.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_DraftList.Style.BorderBottomWidth = 1;
-            this.pnl_DraftList.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pnl_DraftList.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_DraftList.Style.BorderLeftWidth = 1;
-            this.pnl_DraftList.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_DraftList.Style.BorderRightWidth = 1;
-            this.pnl_DraftList.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_DraftList.Style.BorderTopWidth = 1;
-            this.pnl_DraftList.Style.CornerDiameter = 4;
-            this.pnl_DraftList.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.pnl_DraftList.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.pnl_DraftList.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pnl_DraftList.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.pnl_Buttons.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.pnl_DraftList.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_Buttons.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_Buttons.TabIndex = 7;
             // 
+            // btn_DeleteLetter
             // 
+            this.btn_DeleteLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_DeleteLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_DeleteLetter.Location = new System.Drawing.Point(281, 3);
+            this.btn_DeleteLetter.Name = "btn_DeleteLetter";
+            this.btn_DeleteLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
+            this.btn_DeleteLetter.Size = new System.Drawing.Size(232, 62);
+            this.btn_DeleteLetter.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_DeleteLetter.Symbol = "";
+            this.btn_DeleteLetter.TabIndex = 0;
+            this.btn_DeleteLetter.Text = "حذف از پيش‌نويس";
             // 
-            this.pnl_DraftList.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pnl_DraftList.TabIndex = 5;
+            // btn_SendLetter
+            // 
+            this.btn_SendLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_SendLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_SendLetter.Location = new System.Drawing.Point(519, 3);
+            this.btn_SendLetter.Name = "btn_SendLetter";
+            this.btn_SendLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
+            this.btn_SendLetter.Size = new System.Drawing.Size(232, 62);
+            this.btn_SendLetter.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_SendLetter.Symbol = "";
+            this.btn_SendLetter.TabIndex = 0;
+            this.btn_SendLetter.Text = "ارسال نامه";
             // 
             // pnl_Search
             // 
@@ -192,177 +206,16 @@
             this.pnl_Search.TabIndex = 6;
             this.pnl_Search.Text = "جستجو";
             // 
-            // pnl_Buttons
+            // btn_Search
             // 
-            this.pnl_Buttons.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnl_Buttons.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnl_Buttons.Controls.Add(this.btn_DeleteLetter);
-            this.pnl_Buttons.Controls.Add(this.btn_SendLetter);
-            this.pnl_Buttons.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_Buttons.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.pnl_Buttons.Location = new System.Drawing.Point(12, 524);
-            this.pnl_Buttons.Name = "pnl_Buttons";
-            this.pnl_Buttons.Size = new System.Drawing.Size(1026, 74);
-            // 
-            // 
-            // 
-            this.pnl_Buttons.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.pnl_Buttons.Style.BackColorGradientAngle = 90;
-            this.pnl_Buttons.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnl_Buttons.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Buttons.Style.BorderBottomWidth = 1;
-            this.pnl_Buttons.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pnl_Buttons.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Buttons.Style.BorderLeftWidth = 1;
-            this.pnl_Buttons.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Buttons.Style.BorderRightWidth = 1;
-            this.pnl_Buttons.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Buttons.Style.BorderTopWidth = 1;
-            this.pnl_Buttons.Style.CornerDiameter = 4;
-            this.pnl_Buttons.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.pnl_Buttons.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.pnl_Buttons.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pnl_Buttons.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.pnl_Buttons.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pnl_Buttons.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pnl_Buttons.TabIndex = 7;
-            // 
-            // btn_SendLetter
-            // 
-            this.btn_SendLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_SendLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_SendLetter.Location = new System.Drawing.Point(519, 3);
-            this.btn_SendLetter.Name = "btn_SendLetter";
-            this.btn_SendLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
-            this.btn_SendLetter.Size = new System.Drawing.Size(232, 62);
-            this.btn_SendLetter.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_SendLetter.Symbol = "";
-            this.btn_SendLetter.TabIndex = 0;
-            this.btn_SendLetter.Text = "ارسال نامه";
-            // 
-            // btn_DeleteLetter
-            // 
-            this.btn_DeleteLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_DeleteLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_DeleteLetter.Location = new System.Drawing.Point(281, 3);
-            this.btn_DeleteLetter.Name = "btn_DeleteLetter";
-            this.btn_DeleteLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
-            this.btn_DeleteLetter.Size = new System.Drawing.Size(232, 62);
-            this.btn_DeleteLetter.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_DeleteLetter.Symbol = "";
-            this.btn_DeleteLetter.TabIndex = 0;
-            this.btn_DeleteLetter.Text = "حذف از پيش‌نويس";
-            // 
-            // lbl_SearchSubject
-            // 
-            // 
-            // 
-            // 
-            this.lbl_SearchSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_SearchSubject.Location = new System.Drawing.Point(910, 39);
-            this.lbl_SearchSubject.Name = "lbl_SearchSubject";
-            this.lbl_SearchSubject.Size = new System.Drawing.Size(71, 29);
-            this.lbl_SearchSubject.TabIndex = 0;
-            this.lbl_SearchSubject.Text = "موضوع نامه:";
-            // 
-            // txt_SearchSubject
-            // 
-            // 
-            // 
-            // 
-            this.txt_SearchSubject.Border.Class = "TextBoxBorder";
-            this.txt_SearchSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_SearchSubject.Location = new System.Drawing.Point(690, 34);
-            this.txt_SearchSubject.Name = "txt_SearchSubject";
-            this.txt_SearchSubject.PreventEnterBeep = true;
-            this.txt_SearchSubject.Size = new System.Drawing.Size(214, 36);
-            this.txt_SearchSubject.TabIndex = 1;
-            this.txt_SearchSubject.WatermarkText = "جستجو در موضوعات...";
-            // 
-            // lbl_SearchLetterForcedType
-            // 
-            // 
-            // 
-            // 
-            this.lbl_SearchLetterForcedType.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_SearchLetterForcedType.Location = new System.Drawing.Point(618, 39);
-            this.lbl_SearchLetterForcedType.Name = "lbl_SearchLetterForcedType";
-            this.lbl_SearchLetterForcedType.Size = new System.Drawing.Size(66, 29);
-            this.lbl_SearchLetterForcedType.TabIndex = 0;
-            this.lbl_SearchLetterForcedType.Text = "فوريت نامه:";
-            // 
-            // pnl_SearchLetterForcedType
-            // 
-            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchPosthasteForced);
-            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchImmediateForced);
-            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchNormalForced);
-            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchAllForced);
-            this.pnl_SearchLetterForcedType.Location = new System.Drawing.Point(451, 7);
-            this.pnl_SearchLetterForcedType.Name = "pnl_SearchLetterForcedType";
-            this.pnl_SearchLetterForcedType.Size = new System.Drawing.Size(161, 98);
-            this.pnl_SearchLetterForcedType.TabIndex = 2;
-            // 
-            // rdb_SearchAllForced
-            // 
-            this.rdb_SearchAllForced.AutoSize = true;
-            this.rdb_SearchAllForced.Location = new System.Drawing.Point(96, 3);
-            this.rdb_SearchAllForced.Name = "rdb_SearchAllForced";
-            this.rdb_SearchAllForced.Size = new System.Drawing.Size(55, 32);
-            this.rdb_SearchAllForced.TabIndex = 0;
-            this.rdb_SearchAllForced.TabStop = true;
-            this.rdb_SearchAllForced.Text = "همه";
-            this.rdb_SearchAllForced.UseVisualStyleBackColor = true;
-            // 
-            // rdb_SearchNormalForced
-            // 
-            this.rdb_SearchNormalForced.AutoSize = true;
-            this.rdb_SearchNormalForced.Location = new System.Drawing.Point(5, 3);
-            this.rdb_SearchNormalForced.Name = "rdb_SearchNormalForced";
-            this.rdb_SearchNormalForced.Size = new System.Drawing.Size(60, 32);
-            this.rdb_SearchNormalForced.TabIndex = 0;
-            this.rdb_SearchNormalForced.TabStop = true;
-            this.rdb_SearchNormalForced.Text = "عادي";
-            this.rdb_SearchNormalForced.UseVisualStyleBackColor = true;
-            // 
-            // rdb_SearchImmediateForced
-            // 
-            this.rdb_SearchImmediateForced.AutoSize = true;
-            this.rdb_SearchImmediateForced.Location = new System.Drawing.Point(91, 59);
-            this.rdb_SearchImmediateForced.Name = "rdb_SearchImmediateForced";
-            this.rdb_SearchImmediateForced.Size = new System.Drawing.Size(60, 32);
-            this.rdb_SearchImmediateForced.TabIndex = 0;
-            this.rdb_SearchImmediateForced.TabStop = true;
-            this.rdb_SearchImmediateForced.Text = "فوري";
-            this.rdb_SearchImmediateForced.UseVisualStyleBackColor = true;
-            // 
-            // rdb_SearchPosthasteForced
-            // 
-            this.rdb_SearchPosthasteForced.AutoSize = true;
-            this.rdb_SearchPosthasteForced.Location = new System.Drawing.Point(15, 59);
-            this.rdb_SearchPosthasteForced.Name = "rdb_SearchPosthasteForced";
-            this.rdb_SearchPosthasteForced.Size = new System.Drawing.Size(50, 32);
-            this.rdb_SearchPosthasteForced.TabIndex = 0;
-            this.rdb_SearchPosthasteForced.TabStop = true;
-            this.rdb_SearchPosthasteForced.Text = "آني";
-            this.rdb_SearchPosthasteForced.UseVisualStyleBackColor = true;
-            // 
-            // lbl_SearchLetterSecurityType
-            // 
-            // 
-            // 
-            // 
-            this.lbl_SearchLetterSecurityType.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_SearchLetterSecurityType.Location = new System.Drawing.Point(336, 39);
-            this.lbl_SearchLetterSecurityType.Name = "lbl_SearchLetterSecurityType";
-            this.lbl_SearchLetterSecurityType.Size = new System.Drawing.Size(94, 29);
-            this.lbl_SearchLetterSecurityType.TabIndex = 0;
-            this.lbl_SearchLetterSecurityType.Text = "طبقه بندي نامه:";
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(43, 14);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(103, 87);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 3;
             // 
             // pnl_SearchLetterSecurityType
             // 
@@ -419,16 +272,149 @@
             this.rdb_SearchAllSecurity.Text = "همه";
             this.rdb_SearchAllSecurity.UseVisualStyleBackColor = true;
             // 
-            // btn_Search
+            // pnl_SearchLetterForcedType
             // 
-            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Search.Location = new System.Drawing.Point(43, 14);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(103, 87);
-            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_Search.Symbol = "";
-            this.btn_Search.TabIndex = 3;
+            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchPosthasteForced);
+            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchImmediateForced);
+            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchNormalForced);
+            this.pnl_SearchLetterForcedType.Controls.Add(this.rdb_SearchAllForced);
+            this.pnl_SearchLetterForcedType.Location = new System.Drawing.Point(451, 7);
+            this.pnl_SearchLetterForcedType.Name = "pnl_SearchLetterForcedType";
+            this.pnl_SearchLetterForcedType.Size = new System.Drawing.Size(161, 98);
+            this.pnl_SearchLetterForcedType.TabIndex = 2;
+            // 
+            // rdb_SearchPosthasteForced
+            // 
+            this.rdb_SearchPosthasteForced.AutoSize = true;
+            this.rdb_SearchPosthasteForced.Location = new System.Drawing.Point(15, 59);
+            this.rdb_SearchPosthasteForced.Name = "rdb_SearchPosthasteForced";
+            this.rdb_SearchPosthasteForced.Size = new System.Drawing.Size(50, 32);
+            this.rdb_SearchPosthasteForced.TabIndex = 0;
+            this.rdb_SearchPosthasteForced.TabStop = true;
+            this.rdb_SearchPosthasteForced.Text = "آني";
+            this.rdb_SearchPosthasteForced.UseVisualStyleBackColor = true;
+            // 
+            // rdb_SearchImmediateForced
+            // 
+            this.rdb_SearchImmediateForced.AutoSize = true;
+            this.rdb_SearchImmediateForced.Location = new System.Drawing.Point(91, 59);
+            this.rdb_SearchImmediateForced.Name = "rdb_SearchImmediateForced";
+            this.rdb_SearchImmediateForced.Size = new System.Drawing.Size(60, 32);
+            this.rdb_SearchImmediateForced.TabIndex = 0;
+            this.rdb_SearchImmediateForced.TabStop = true;
+            this.rdb_SearchImmediateForced.Text = "فوري";
+            this.rdb_SearchImmediateForced.UseVisualStyleBackColor = true;
+            // 
+            // rdb_SearchNormalForced
+            // 
+            this.rdb_SearchNormalForced.AutoSize = true;
+            this.rdb_SearchNormalForced.Location = new System.Drawing.Point(5, 3);
+            this.rdb_SearchNormalForced.Name = "rdb_SearchNormalForced";
+            this.rdb_SearchNormalForced.Size = new System.Drawing.Size(60, 32);
+            this.rdb_SearchNormalForced.TabIndex = 0;
+            this.rdb_SearchNormalForced.TabStop = true;
+            this.rdb_SearchNormalForced.Text = "عادي";
+            this.rdb_SearchNormalForced.UseVisualStyleBackColor = true;
+            // 
+            // rdb_SearchAllForced
+            // 
+            this.rdb_SearchAllForced.AutoSize = true;
+            this.rdb_SearchAllForced.Location = new System.Drawing.Point(96, 3);
+            this.rdb_SearchAllForced.Name = "rdb_SearchAllForced";
+            this.rdb_SearchAllForced.Size = new System.Drawing.Size(55, 32);
+            this.rdb_SearchAllForced.TabIndex = 0;
+            this.rdb_SearchAllForced.TabStop = true;
+            this.rdb_SearchAllForced.Text = "همه";
+            this.rdb_SearchAllForced.UseVisualStyleBackColor = true;
+            // 
+            // lbl_SearchLetterSecurityType
+            // 
+            // 
+            // 
+            // 
+            this.lbl_SearchLetterSecurityType.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchLetterSecurityType.Location = new System.Drawing.Point(336, 39);
+            this.lbl_SearchLetterSecurityType.Name = "lbl_SearchLetterSecurityType";
+            this.lbl_SearchLetterSecurityType.Size = new System.Drawing.Size(94, 29);
+            this.lbl_SearchLetterSecurityType.TabIndex = 0;
+            this.lbl_SearchLetterSecurityType.Text = "طبقه بندي نامه:";
+            // 
+            // txt_SearchSubject
+            // 
+            // 
+            // 
+            // 
+            this.txt_SearchSubject.Border.Class = "TextBoxBorder";
+            this.txt_SearchSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SearchSubject.Location = new System.Drawing.Point(690, 34);
+            this.txt_SearchSubject.Name = "txt_SearchSubject";
+            this.txt_SearchSubject.PreventEnterBeep = true;
+            this.txt_SearchSubject.Size = new System.Drawing.Size(214, 36);
+            this.txt_SearchSubject.TabIndex = 1;
+            this.txt_SearchSubject.WatermarkText = "جستجو در موضوعات...";
+            // 
+            // lbl_SearchLetterForcedType
+            // 
+            // 
+            // 
+            // 
+            this.lbl_SearchLetterForcedType.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchLetterForcedType.Location = new System.Drawing.Point(618, 39);
+            this.lbl_SearchLetterForcedType.Name = "lbl_SearchLetterForcedType";
+            this.lbl_SearchLetterForcedType.Size = new System.Drawing.Size(66, 29);
+            this.lbl_SearchLetterForcedType.TabIndex = 0;
+            this.lbl_SearchLetterForcedType.Text = "فوريت نامه:";
+            // 
+            // lbl_SearchSubject
+            // 
+            // 
+            // 
+            // 
+            this.lbl_SearchSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchSubject.Location = new System.Drawing.Point(910, 39);
+            this.lbl_SearchSubject.Name = "lbl_SearchSubject";
+            this.lbl_SearchSubject.Size = new System.Drawing.Size(71, 29);
+            this.lbl_SearchSubject.TabIndex = 0;
+            this.lbl_SearchSubject.Text = "موضوع نامه:";
+            // 
+            // pnl_DraftList
+            // 
+            this.pnl_DraftList.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_DraftList.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_DraftList.Controls.Add(this.dgv_DraftList);
+            this.pnl_DraftList.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_DraftList.Location = new System.Drawing.Point(12, 62);
+            this.pnl_DraftList.Name = "pnl_DraftList";
+            this.pnl_DraftList.Size = new System.Drawing.Size(1026, 296);
+            // 
+            // 
+            // 
+            this.pnl_DraftList.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_DraftList.Style.BackColorGradientAngle = 90;
+            this.pnl_DraftList.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_DraftList.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DraftList.Style.BorderBottomWidth = 1;
+            this.pnl_DraftList.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_DraftList.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DraftList.Style.BorderLeftWidth = 1;
+            this.pnl_DraftList.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DraftList.Style.BorderRightWidth = 1;
+            this.pnl_DraftList.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DraftList.Style.BorderTopWidth = 1;
+            this.pnl_DraftList.Style.CornerDiameter = 4;
+            this.pnl_DraftList.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_DraftList.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_DraftList.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_DraftList.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.pnl_DraftList.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_DraftList.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_DraftList.TabIndex = 5;
             // 
             // dgv_DraftList
             // 
@@ -510,6 +496,20 @@
             this.col_LetterAnswerDeadLine.HeaderText = "تاريخ پاسخ";
             this.col_LetterAnswerDeadLine.Name = "col_LetterAnswerDeadLine";
             // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "پيش نويس‌ها";
+            // 
             // frmUserDraft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -519,18 +519,19 @@
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmUserDraft";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Load += new System.EventHandler(this.frmUserDraft_Load);
             this.pnl_Main.ResumeLayout(false);
-            this.pnl_DraftList.ResumeLayout(false);
-            this.pnl_Search.ResumeLayout(false);
             this.pnl_Buttons.ResumeLayout(false);
-            this.pnl_SearchLetterForcedType.ResumeLayout(false);
-            this.pnl_SearchLetterForcedType.PerformLayout();
+            this.pnl_Search.ResumeLayout(false);
             this.pnl_SearchLetterSecurityType.ResumeLayout(false);
             this.pnl_SearchLetterSecurityType.PerformLayout();
+            this.pnl_SearchLetterForcedType.ResumeLayout(false);
+            this.pnl_SearchLetterForcedType.PerformLayout();
+            this.pnl_DraftList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DraftList)).EndInit();
             this.ResumeLayout(false);
 

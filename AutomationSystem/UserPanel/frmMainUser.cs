@@ -24,6 +24,7 @@ namespace AutomationSystem.UserPanel
         //Forms
         frmUserAddReminder addReminderForm;
         frmUserReminder userReminderForm;
+        frmUserDraft userDraftForm;
         public frmMainUser()
         {
             InitializeComponent();
@@ -90,6 +91,10 @@ namespace AutomationSystem.UserPanel
             {
                 addReminderForm.Close();
             }
+            if (formNumber == 15)
+            {
+                userDraftForm.Close();
+            }
         }
 
         private void lbl_ShowNotes_Click(object sender, EventArgs e)
@@ -101,6 +106,17 @@ namespace AutomationSystem.UserPanel
             userReminderForm = new frmUserReminder();
             userReminderForm.Show();
             userReminderForm.MdiParent = this;
+        }
+
+        private void lbl_Draft_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 15;
+
+            userDraftForm = new frmUserDraft();
+            userDraftForm.MdiParent = this;
+            userDraftForm.Show();
         }
     }
 }
