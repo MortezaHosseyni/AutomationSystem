@@ -152,5 +152,11 @@ namespace AutomationSystem.UserPanel
                 return;
             }
         }
+
+        private void btn_SendLetter_Click(object sender, EventArgs e)
+        {
+            frmUserChooseLetterSend userChooseLetterSendForm = new frmUserChooseLetterSend();
+            userChooseLetterSendForm.ShowDialog();
+        }
     }
 }

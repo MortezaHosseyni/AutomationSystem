@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Buttons = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_DeleteLetter = new DevComponents.DotNetBar.ButtonX();
@@ -52,7 +52,6 @@
             this.lbl_SearchSubject = new DevComponents.DotNetBar.LabelX();
             this.pnl_DraftList = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_DraftList = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +63,7 @@
             this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -162,6 +162,7 @@
             this.btn_SendLetter.Symbol = "";
             this.btn_SendLetter.TabIndex = 0;
             this.btn_SendLetter.Text = "ارسال نامه";
+            this.btn_SendLetter.Click += new System.EventHandler(this.btn_SendLetter_Click);
             // 
             // pnl_Search
             // 
@@ -420,8 +421,8 @@
             // 
             this.dgv_DraftList.AllowUserToAddRows = false;
             this.dgv_DraftList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_DraftList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_DraftList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_DraftList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_DraftList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_LetterID,
@@ -435,33 +436,19 @@
             this.col_LetterAnswerDeadLine,
             this.col_ForceT,
             this.col_SecurityT});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_DraftList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_DraftList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_DraftList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_DraftList.Location = new System.Drawing.Point(3, 3);
             this.dgv_DraftList.Name = "dgv_DraftList";
             this.dgv_DraftList.Size = new System.Drawing.Size(1014, 284);
             this.dgv_DraftList.TabIndex = 0;
-            // 
-            // lbl_Title
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "پيش نويس‌ها";
             // 
             // col_LetterID
             // 
@@ -523,6 +510,20 @@
             this.col_SecurityT.HeaderText = "SecurityT";
             this.col_SecurityT.Name = "col_SecurityT";
             this.col_SecurityT.Visible = false;
+            // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "پيش نويس‌ها";
             // 
             // frmUserDraft
             // 
