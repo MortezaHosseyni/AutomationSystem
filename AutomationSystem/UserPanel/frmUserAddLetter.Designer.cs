@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserAddLetter));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tcp_LetterContext = new DevComponents.DotNetBar.TabControlPanel();
+            this.btn_AddLetter = new DevComponents.DotNetBar.ButtonX();
+            this.adv_LetterContext = new TextRuler.AdvancedTextEditorControl.AdvancedTextEditor();
+            this.tbi_LetterContext = new DevComponents.DotNetBar.TabItem(this.components);
             this.tcp_LetterInformation = new DevComponents.DotNetBar.TabControlPanel();
             this.txt_LetterCaption = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -68,22 +72,18 @@
             this.lbl_LetterCreatedDate = new DevComponents.DotNetBar.LabelX();
             this.lbl_LetterSubject = new DevComponents.DotNetBar.LabelX();
             this.tbi_LetterInformation = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tcp_LetterContext = new DevComponents.DotNetBar.TabControlPanel();
-            this.tbi_LetterContext = new DevComponents.DotNetBar.TabItem(this.components);
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
-            this.adv_LetterContext = new TextRuler.AdvancedTextEditorControl.AdvancedTextEditor();
-            this.btn_AddLetter = new DevComponents.DotNetBar.ButtonX();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tcp_LetterContext.SuspendLayout();
             this.tcp_LetterInformation.SuspendLayout();
             this.pnl_LetterDeadLineType.SuspendLayout();
             this.pnl_LetterAttachment.SuspendLayout();
             this.pnl_LetterFollowing.SuspendLayout();
             this.pnl_LetterForced.SuspendLayout();
             this.pnl_LetterSecurity.SuspendLayout();
-            this.tcp_LetterContext.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -110,8 +110,8 @@
             // 
             this.tabControl1.BackColor = System.Drawing.Color.Transparent;
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tcp_LetterContext);
             this.tabControl1.Controls.Add(this.tcp_LetterInformation);
+            this.tabControl1.Controls.Add(this.tcp_LetterContext);
             this.tabControl1.Location = new System.Drawing.Point(12, 61);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold);
@@ -121,6 +121,55 @@
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tbi_LetterInformation);
             this.tabControl1.Tabs.Add(this.tbi_LetterContext);
+            // 
+            // tcp_LetterContext
+            // 
+            this.tcp_LetterContext.Controls.Add(this.btn_AddLetter);
+            this.tcp_LetterContext.Controls.Add(this.adv_LetterContext);
+            this.tcp_LetterContext.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tcp_LetterContext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcp_LetterContext.Location = new System.Drawing.Point(0, 41);
+            this.tcp_LetterContext.Name = "tcp_LetterContext";
+            this.tcp_LetterContext.Padding = new System.Windows.Forms.Padding(1);
+            this.tcp_LetterContext.Size = new System.Drawing.Size(1026, 496);
+            this.tcp_LetterContext.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tcp_LetterContext.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tcp_LetterContext.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tcp_LetterContext.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tcp_LetterContext.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tcp_LetterContext.Style.GradientAngle = 90;
+            this.tcp_LetterContext.TabIndex = 5;
+            this.tcp_LetterContext.TabItem = this.tbi_LetterContext;
+            // 
+            // btn_AddLetter
+            // 
+            this.btn_AddLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_AddLetter.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AddLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_AddLetter.Location = new System.Drawing.Point(20, 442);
+            this.btn_AddLetter.Name = "btn_AddLetter";
+            this.btn_AddLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(20, 2, 2, 20);
+            this.btn_AddLetter.Size = new System.Drawing.Size(194, 40);
+            this.btn_AddLetter.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_AddLetter.Symbol = "";
+            this.btn_AddLetter.TabIndex = 1;
+            this.btn_AddLetter.Text = "ثبت نامه";
+            // 
+            // adv_LetterContext
+            // 
+            this.adv_LetterContext.Font = new System.Drawing.Font("B Nazanin", 8.25F);
+            this.adv_LetterContext.Location = new System.Drawing.Point(3, 0);
+            this.adv_LetterContext.Margin = new System.Windows.Forms.Padding(6);
+            this.adv_LetterContext.Name = "adv_LetterContext";
+            this.adv_LetterContext.Size = new System.Drawing.Size(1020, 433);
+            this.adv_LetterContext.TabIndex = 0;
+            // 
+            // tbi_LetterContext
+            // 
+            this.tbi_LetterContext.AttachedControl = this.tcp_LetterContext;
+            this.tbi_LetterContext.Name = "tbi_LetterContext";
+            this.tbi_LetterContext.Text = "متن نامه";
             // 
             // tcp_LetterInformation
             // 
@@ -240,6 +289,7 @@
             this.rdb_LetterDeadLine_Yes.TabIndex = 0;
             this.rdb_LetterDeadLine_Yes.Text = "دارد";
             this.rdb_LetterDeadLine_Yes.UseVisualStyleBackColor = true;
+            this.rdb_LetterDeadLine_Yes.CheckedChanged += new System.EventHandler(this.rdb_LetterDeadLine_Yes_CheckedChanged);
             // 
             // rdb_LetterDeadLine_No
             // 
@@ -272,6 +322,7 @@
             this.rdb_LetterAttachment_Yes.TabIndex = 0;
             this.rdb_LetterAttachment_Yes.Text = "دارد";
             this.rdb_LetterAttachment_Yes.UseVisualStyleBackColor = true;
+            this.rdb_LetterAttachment_Yes.CheckedChanged += new System.EventHandler(this.rdb_LetterAttachment_Yes_CheckedChanged);
             // 
             // rdb_LetterAttachment_No
             // 
@@ -583,32 +634,6 @@
             this.tbi_LetterInformation.Name = "tbi_LetterInformation";
             this.tbi_LetterInformation.Text = "مشخصات نامه";
             // 
-            // tcp_LetterContext
-            // 
-            this.tcp_LetterContext.Controls.Add(this.btn_AddLetter);
-            this.tcp_LetterContext.Controls.Add(this.adv_LetterContext);
-            this.tcp_LetterContext.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tcp_LetterContext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcp_LetterContext.Location = new System.Drawing.Point(0, 41);
-            this.tcp_LetterContext.Name = "tcp_LetterContext";
-            this.tcp_LetterContext.Padding = new System.Windows.Forms.Padding(1);
-            this.tcp_LetterContext.Size = new System.Drawing.Size(1026, 496);
-            this.tcp_LetterContext.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tcp_LetterContext.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tcp_LetterContext.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tcp_LetterContext.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tcp_LetterContext.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tcp_LetterContext.Style.GradientAngle = 90;
-            this.tcp_LetterContext.TabIndex = 5;
-            this.tcp_LetterContext.TabItem = this.tbi_LetterContext;
-            // 
-            // tbi_LetterContext
-            // 
-            this.tbi_LetterContext.AttachedControl = this.tcp_LetterContext;
-            this.tbi_LetterContext.Name = "tbi_LetterContext";
-            this.tbi_LetterContext.Text = "متن نامه";
-            // 
             // lbl_Title
             // 
             // 
@@ -627,28 +652,6 @@
             // 
             this.superTooltip.DefaultTooltipSettings = new DevComponents.DotNetBar.SuperTooltipInfo("", "", "", null, null, DevComponents.DotNetBar.eTooltipColor.Gray);
             // 
-            // adv_LetterContext
-            // 
-            this.adv_LetterContext.Location = new System.Drawing.Point(3, 0);
-            this.adv_LetterContext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.adv_LetterContext.Name = "adv_LetterContext";
-            this.adv_LetterContext.Size = new System.Drawing.Size(1020, 433);
-            this.adv_LetterContext.TabIndex = 0;
-            // 
-            // btn_AddLetter
-            // 
-            this.btn_AddLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_AddLetter.BackColor = System.Drawing.Color.Transparent;
-            this.btn_AddLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_AddLetter.Location = new System.Drawing.Point(20, 442);
-            this.btn_AddLetter.Name = "btn_AddLetter";
-            this.btn_AddLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(20, 2, 2, 20);
-            this.btn_AddLetter.Size = new System.Drawing.Size(194, 40);
-            this.btn_AddLetter.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_AddLetter.Symbol = "";
-            this.btn_AddLetter.TabIndex = 1;
-            this.btn_AddLetter.Text = "ثبت نامه";
-            // 
             // frmUserAddLetter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -666,6 +669,7 @@
             this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tcp_LetterContext.ResumeLayout(false);
             this.tcp_LetterInformation.ResumeLayout(false);
             this.pnl_LetterDeadLineType.ResumeLayout(false);
             this.pnl_LetterDeadLineType.PerformLayout();
@@ -677,7 +681,6 @@
             this.pnl_LetterForced.PerformLayout();
             this.pnl_LetterSecurity.ResumeLayout(false);
             this.pnl_LetterSecurity.PerformLayout();
-            this.tcp_LetterContext.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
