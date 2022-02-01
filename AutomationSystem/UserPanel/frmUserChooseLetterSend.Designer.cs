@@ -39,7 +39,8 @@
             this.dgv_Recivers = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_JobUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_SelectUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_SelectUser = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_JobName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
@@ -185,6 +186,7 @@
             this.dgv_Recivers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Recivers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_JobUserID,
+            this.col_UserID,
             this.col_SelectUser,
             this.col_FullName,
             this.col_JobName});
@@ -222,11 +224,19 @@
             this.col_JobUserID.Name = "col_JobUserID";
             this.col_JobUserID.Visible = false;
             // 
+            // col_UserID
+            // 
+            this.col_UserID.HeaderText = "UserID";
+            this.col_UserID.Name = "col_UserID";
+            this.col_UserID.Visible = false;
+            // 
             // col_SelectUser
             // 
             this.col_SelectUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_SelectUser.HeaderText = "انتخاب";
             this.col_SelectUser.Name = "col_SelectUser";
+            this.col_SelectUser.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_SelectUser.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.col_SelectUser.Width = 76;
             // 
             // col_FullName
@@ -250,7 +260,7 @@
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmUserChooseLetterSend";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -274,7 +284,8 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_Recivers;
         private DevComponents.DotNetBar.LabelX lbl_Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_JobUserID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_SelectUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_UserID;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn col_SelectUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_JobName;
     }
