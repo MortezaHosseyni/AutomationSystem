@@ -16,6 +16,16 @@
           <Property Name="AsignDismissalDate" Type="varchar" MaxLength="30" />
           <Property Name="AsignStatus" Type="tinyint" Nullable="false" />
         </EntityType>
+        <EntityType Name="AttachmentFiles">
+          <Key>
+            <PropertyRef Name="AttachFileID" />
+          </Key>
+          <Property Name="AttachFileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AttachFileData" Type="varbinary(max)" Nullable="false" />
+          <Property Name="AttachFileName" Type="varchar" MaxLength="500" />
+          <Property Name="AttachFileSize" Type="int" />
+          <Property Name="AttachLetterID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Jobs">
           <Key>
             <PropertyRef Name="JobsID" />
@@ -279,6 +289,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_AttachmentFiles_Letters">
+          <End Role="Letters" Type="Self.Letters" Multiplicity="1" />
+          <End Role="AttachmentFiles" Type="Self.AttachmentFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letters">
+              <PropertyRef Name="LetterID" />
+            </Principal>
+            <Dependent Role="AttachmentFiles">
+              <PropertyRef Name="AttachLetterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Letters_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Letters" Type="Self.Letters" Multiplicity="*" />
@@ -360,6 +382,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
         </Function>
         <EntityContainer Name="Office_Automation_DatabaseModelStoreContainer">
           <EntitySet Name="AsignmentJobs" EntityType="Self.AsignmentJobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AttachmentFiles" EntityType="Self.AttachmentFiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
@@ -476,6 +499,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <AssociationSet Name="FK_AsignmentJobs_Users" Association="Self.FK_AsignmentJobs_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="AsignmentJobs" EntitySet="AsignmentJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AttachmentFiles_Letters" Association="Self.FK_AttachmentFiles_Letters">
+            <End Role="Letters" EntitySet="Letters" />
+            <End Role="AttachmentFiles" EntitySet="AttachmentFiles" />
           </AssociationSet>
           <AssociationSet Name="FK_Letters_Users" Association="Self.FK_Letters_Users">
             <End Role="Users" EntitySet="Users" />
@@ -617,6 +644,11 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <AssociationSet Name="FK_Letters_Users" Association="Office_Automation_DatabaseModel.FK_Letters_Users">
             <End Role="User" EntitySet="Users" />
             <End Role="Letter" EntitySet="Letters" />
+          </AssociationSet>
+          <EntitySet Name="AttachmentFiles" EntityType="Office_Automation_DatabaseModel.AttachmentFile" />
+          <AssociationSet Name="FK_AttachmentFiles_Letters" Association="Office_Automation_DatabaseModel.FK_AttachmentFiles_Letters">
+            <End Role="Letter" EntitySet="Letters" />
+            <End Role="AttachmentFile" EntitySet="AttachmentFiles" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
@@ -829,6 +861,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="LetterReffrence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LetterReplyID" Type="Int32" />
           <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_Letters_Users" FromRole="Letter" ToRole="User" />
+          <NavigationProperty Name="AttachmentFiles" Relationship="Office_Automation_DatabaseModel.FK_AttachmentFiles_Letters" FromRole="Letter" ToRole="AttachmentFile" />
         </EntityType>
         <EntityType Name="Vw_Letters">
           <Key>
@@ -891,6 +924,29 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Principal>
             <Dependent Role="Letter">
               <PropertyRef Name="LetterUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AttachmentFile">
+          <Key>
+            <PropertyRef Name="AttachFileID" />
+          </Key>
+          <Property Name="AttachFileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttachFileData" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="AttachFileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AttachFileSize" Type="Int32" />
+          <Property Name="AttachLetterID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Letter" Relationship="Office_Automation_DatabaseModel.FK_AttachmentFiles_Letters" FromRole="AttachmentFile" ToRole="Letter" />
+        </EntityType>
+        <Association Name="FK_AttachmentFiles_Letters">
+          <End Type="Office_Automation_DatabaseModel.Letter" Role="Letter" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.AttachmentFile" Role="AttachmentFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letter">
+              <PropertyRef Name="LetterID" />
+            </Principal>
+            <Dependent Role="AttachmentFile">
+              <PropertyRef Name="AttachLetterID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1129,6 +1185,17 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="LetterCaption" ColumnName="LetterCaption" />
                 <ScalarProperty Name="LetterSubject" ColumnName="LetterSubject" />
                 <ScalarProperty Name="LetterID" ColumnName="LetterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AttachmentFiles">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.AttachmentFile">
+              <MappingFragment StoreEntitySet="AttachmentFiles">
+                <ScalarProperty Name="AttachLetterID" ColumnName="AttachLetterID" />
+                <ScalarProperty Name="AttachFileSize" ColumnName="AttachFileSize" />
+                <ScalarProperty Name="AttachFileName" ColumnName="AttachFileName" />
+                <ScalarProperty Name="AttachFileData" ColumnName="AttachFileData" />
+                <ScalarProperty Name="AttachFileID" ColumnName="AttachFileID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

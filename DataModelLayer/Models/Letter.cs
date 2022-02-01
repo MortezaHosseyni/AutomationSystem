@@ -14,6 +14,12 @@ namespace DataModelLayer.Models
     
     public partial class Letter
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Letter()
+        {
+            this.AttachmentFiles = new HashSet<AttachmentFile>();
+        }
+    
         public int LetterID { get; set; }
         public string LetterSubject { get; set; }
         public string LetterCaption { get; set; }
@@ -35,5 +41,7 @@ namespace DataModelLayer.Models
         public Nullable<int> LetterReplyID { get; set; }
     
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AttachmentFile> AttachmentFiles { get; set; }
     }
 }
