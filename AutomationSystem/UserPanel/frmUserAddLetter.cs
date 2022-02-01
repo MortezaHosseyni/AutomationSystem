@@ -159,6 +159,31 @@ namespace AutomationSystem.UserPanel
                 }
 
                 db.Letters.Add(L);
+
+                //AttachFile Save
+                if (rdb_LetterAttachment_Yes.Checked == true)
+                {
+                    if (lbl_AttachmentFilePath.Text != "")
+                    {
+                        FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
+                        int intLenght = Convert.ToInt32(objFileStream.Length);
+                        byte[] objData = new byte[intLenght];
+                        string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
+
+                        objFileStream.Read(objData, 0, intLenght);
+
+                        objFileStream.Close();
+
+                        AttachmentFile AF = new AttachmentFile();
+                        AF.AttachFileSize = intLenght / 1024; //KB
+                        AF.AttachFileName = strPath[strPath.Length - 1];
+                        AF.AttachFileData = objData;
+                        AF.AttachLetterID = L.LetterID;
+
+                        db.AttachmentFiles.Add(AF);
+                    }
+                }
+
                 db.SaveChanges();
             }
             catch (Exception)

@@ -54,6 +54,9 @@
     <Compile Include="Models\AsignmentJob.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AttachmentFile.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\automationModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
