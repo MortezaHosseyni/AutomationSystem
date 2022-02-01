@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.UserPanel
 {
@@ -29,7 +30,7 @@ namespace AutomationSystem.UserPanel
 
         private void ShowDraft(string searchDraft)
         {
-            var query = db.Database.SqlQuery<Vw_Letters>("SELECT * FROM Vw_Letters WHERE LetterDraftType = 1" + searchDraft);
+            var query = db.Database.SqlQuery<Vw_Letters>($"SELECT * FROM Vw_Letters WHERE LetterDraftType = 1 AND LetterUserID = {PublicVariable.global_UserID} {searchDraft}");
             var result = query.ToList();
 
             if (result.Count != 0)

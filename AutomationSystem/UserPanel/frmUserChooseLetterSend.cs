@@ -55,7 +55,7 @@ namespace AutomationSystem.UserPanel
             //Subject Search
             if (txt_SearchFristAndLastName.Text != "")
             {
-                searchString += $" AND UserFullName LIKE '%{txt_SearchFristAndLastName.Text}%'";
+                searchString += $" AND UserFullName LIKE '%{txt_SearchFristAndLastName.Text.Trim()}%'";
             }
             
             return searchString;
