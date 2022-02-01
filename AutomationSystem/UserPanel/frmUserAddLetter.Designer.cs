@@ -36,7 +36,7 @@
             this.btn_AddLetter = new DevComponents.DotNetBar.ButtonX();
             this.tbi_LetterContext = new DevComponents.DotNetBar.TabItem(this.components);
             this.tcp_LetterInformation = new DevComponents.DotNetBar.TabControlPanel();
-            this.txt_LetterCaption = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_LetterAbstract = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btn_LetterAttachFile = new DevComponents.DotNetBar.ButtonX();
             this.txt_LetterDeadLineValue = new FreeControls.PersianDateTimePicker();
@@ -157,6 +157,7 @@
             this.btn_AddLetter.Symbol = "";
             this.btn_AddLetter.TabIndex = 1;
             this.btn_AddLetter.Text = "ثبت نامه";
+            this.btn_AddLetter.Click += new System.EventHandler(this.btn_AddLetter_Click);
             // 
             // tbi_LetterContext
             // 
@@ -167,7 +168,7 @@
             // tcp_LetterInformation
             // 
             this.tcp_LetterInformation.Controls.Add(this.lbl_AttachmentFilePath);
-            this.tcp_LetterInformation.Controls.Add(this.txt_LetterCaption);
+            this.tcp_LetterInformation.Controls.Add(this.txt_LetterAbstract);
             this.tcp_LetterInformation.Controls.Add(this.txt_LetterSubject);
             this.tcp_LetterInformation.Controls.Add(this.btn_LetterAttachFile);
             this.tcp_LetterInformation.Controls.Add(this.txt_LetterDeadLineValue);
@@ -205,21 +206,21 @@
             this.tcp_LetterInformation.TabIndex = 1;
             this.tcp_LetterInformation.TabItem = this.tbi_LetterInformation;
             // 
-            // txt_LetterCaption
+            // txt_LetterAbstract
             // 
             // 
             // 
             // 
-            this.txt_LetterCaption.Border.Class = "TextBoxBorder";
-            this.txt_LetterCaption.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterCaption.Location = new System.Drawing.Point(560, 98);
-            this.txt_LetterCaption.Multiline = true;
-            this.txt_LetterCaption.Name = "txt_LetterCaption";
-            this.txt_LetterCaption.PreventEnterBeep = true;
-            this.txt_LetterCaption.Size = new System.Drawing.Size(352, 217);
-            this.superTooltip.SetSuperTooltip(this.txt_LetterCaption, new DevComponents.DotNetBar.SuperTooltipInfo("چكيده", "", "يك چكيده براي نامه بنويسيد و مي‌توانيد حداكثر از 200 كاراكتر استفاده كنيد.", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.txt_LetterCaption.TabIndex = 2;
-            this.txt_LetterCaption.WatermarkText = "چكيده...";
+            this.txt_LetterAbstract.Border.Class = "TextBoxBorder";
+            this.txt_LetterAbstract.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_LetterAbstract.Location = new System.Drawing.Point(560, 98);
+            this.txt_LetterAbstract.Multiline = true;
+            this.txt_LetterAbstract.Name = "txt_LetterAbstract";
+            this.txt_LetterAbstract.PreventEnterBeep = true;
+            this.txt_LetterAbstract.Size = new System.Drawing.Size(352, 217);
+            this.superTooltip.SetSuperTooltip(this.txt_LetterAbstract, new DevComponents.DotNetBar.SuperTooltipInfo("چكيده", "", "يك چكيده براي نامه بنويسيد و مي‌توانيد حداكثر از 200 كاراكتر استفاده كنيد.", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.txt_LetterAbstract.TabIndex = 2;
+            this.txt_LetterAbstract.WatermarkText = "چكيده...";
             // 
             // txt_LetterSubject
             // 
@@ -749,7 +750,7 @@
         private DevComponents.DotNetBar.ButtonX btn_LetterAttachFile;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterSubject;
         private DevComponents.DotNetBar.SuperTooltip superTooltip;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterCaption;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterAbstract;
         private DevComponents.DotNetBar.LabelX lbl_InfoOne;
         private DevComponents.DotNetBar.LabelX lbl_InfoTwo;
         private TextRuler.AdvancedTextEditorControl.AdvancedTextEditor adv_LetterContext;
