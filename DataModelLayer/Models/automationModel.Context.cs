@@ -197,5 +197,14 @@ namespace DataModelLayer.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_ShowAllUserInfo_Result>("Sp_ShowAllUserInfo", userIDParameter);
         }
+    
+        public virtual ObjectResult<Sp_ShowAllUserInfo_UserForm_Result> Sp_ShowAllUserInfo_UserForm(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_ShowAllUserInfo_UserForm_Result>("Sp_ShowAllUserInfo_UserForm", userIDParameter);
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace AutomationSystem.UserPanel
 
         private void ShowUserInfo()
         {
-            var query = db.Sp_ShowAllUserInfo(PublicVariable.global_UserID).ToList();
+            var query = db.Sp_ShowAllUserInfo_UserForm(PublicVariable.global_UserID).ToList();
 
             if (query.Count == 1)
             {
