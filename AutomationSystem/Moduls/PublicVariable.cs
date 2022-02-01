@@ -15,5 +15,6 @@ namespace AutomationSystem.Moduls
         public static int global_UserID;
         public static byte global_UserType;
 
+        public static int global_JobsDetermineLevel;
     }
 }

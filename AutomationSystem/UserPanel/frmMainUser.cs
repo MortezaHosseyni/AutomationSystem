@@ -55,6 +55,7 @@ namespace AutomationSystem.UserPanel
                 val_Job.Text = query[0].JobsName;
                 val_AllReciveMessages.Text = "24";
                 val_AllSendedMessages.Text = "38";
+                PublicVariable.global_JobsDetermineLevel = Convert.ToInt32(query[0].JobsDetermineLevel);
 
                 var dataUserPicture = (Byte[])(query[0].UserImage);
                 var streamUserPicture = new MemoryStream(dataUserPicture);
