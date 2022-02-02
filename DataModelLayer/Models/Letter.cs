@@ -18,6 +18,7 @@ namespace DataModelLayer.Models
         public Letter()
         {
             this.AttachmentFiles = new HashSet<AttachmentFile>();
+            this.SentLetters = new HashSet<SentLetter>();
         }
     
         public int LetterID { get; set; }
@@ -43,5 +44,7 @@ namespace DataModelLayer.Models
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AttachmentFile> AttachmentFiles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SentLetter> SentLetters { get; set; }
     }
 }

@@ -24,6 +24,9 @@
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Letters_Users" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.AttachmentFile" Width="1.5" PointX="10.5" PointY="0.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_AttachmentFiles_Letters" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.SentLetter" Width="1.5" PointX="12.125" PointY="0.75" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentLetters_Letters" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentLetters_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
