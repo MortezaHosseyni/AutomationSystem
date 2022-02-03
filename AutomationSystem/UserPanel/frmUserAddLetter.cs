@@ -34,6 +34,7 @@ namespace AutomationSystem.UserPanel
             }
             else if (this.formType == 2)
             {
+                tbc_LetterInformations.SelectedTabIndex = 1;
                 showLetterEditInfo();
             }
 
@@ -51,6 +52,7 @@ namespace AutomationSystem.UserPanel
                     txt_LetterSubject.Text = queryLetterInfo[0].LetterSubject;
                     txt_LetterAbstract.Text = queryLetterInfo[0].LetterAbstract;
                     adv_LetterContext.TextEditor.Text = queryLetterInfo[0].LetterCaption;
+                    tbc_LetterInformations.SelectedTabIndex = 0;
                     val_LetterCreatedDate.Text = queryLetterInfo[0].LetterCreatedDate;
 
                     //LetterSecurityType
