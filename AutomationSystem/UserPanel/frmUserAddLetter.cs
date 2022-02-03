@@ -35,6 +35,7 @@ namespace AutomationSystem.UserPanel
             else if (this.formType == 2)
             {
                 tbc_LetterInformations.SelectedTabIndex = 1;
+                btn_AddLetter.Text = "ويرايش نامه";
                 showLetterEditInfo();
             }
 
@@ -181,122 +182,234 @@ namespace AutomationSystem.UserPanel
                 MessageBox.Show("اطلاعات نامه ناقص است، لطفا همه بخش‌هاي نامه را كامل كنيد","نامه جديد");
                 return;
             }
-            using (TransactionScope ts = new TransactionScope())
+            if (this.formType == 1) //AddLetter
             {
-                try
+                using (TransactionScope ts = new TransactionScope())
                 {
-                    Letter L = new Letter();
-                    L.LetterSubject = txt_LetterSubject.Text.Trim();
-                    L.LetterAbstract = txt_LetterAbstract.Text.Trim();
-                    L.LetterCaption = adv_LetterContext.TextEditor.Text;
+                    try
                     {
-                        //Letter Number Formul
-                        var lastLetterID = (from LLID in db.Letters orderby LLID.LetterID descending select LLID).First();
-                        L.LetterNo = PublicVariable.todayDate.Substring(0, 4).Substring(2, 2) + PublicVariable.global_JobsDetermineLevel + "/" + Convert.ToInt32(lastLetterID.LetterID + 1);
-                    }
-                    L.LetterCreatedDate = val_LetterCreatedDate.Text;
-                    L.LetterUserID = PublicVariable.global_UserID;
-
-                    //SecurityType
-                    if (rdb_LetterSecurity_Normal.Checked == true)
-                    {
-                        L.LetterSecurityType = 1;
-                    }
-                    else if (rdb_LetterSecurity_Confidential.Checked == true)
-                    {
-                        L.LetterSecurityType = 2;
-                    }
-                    else if (rdb_LetterSecurity_Secretive.Checked == true)
-                    {
-                        L.LetterSecurityType = 3;
-                    }
-
-                    //ForcedType
-                    if (rdb_LetterForced_Normal.Checked == true)
-                    {
-                        L.LetterForceType = 1;
-                    }
-                    else if (rdb_LetterForced_Immediate.Checked == true)
-                    {
-                        L.LetterForceType = 2;
-                    }
-                    else if (rdb_LetterForced_Posthaste.Checked == true)
-                    {
-                        L.LetterForceType = 3;
-                    }
-
-                    L.LetterArchiveType = 1;
-
-                    //FollowingType
-                    if (rdb_LetterFollowing_Yes.Checked == true)
-                    {
-                        L.LetterFollowingType = 1;
-                    }
-                    else if (rdb_LetterFollowing_No.Checked == true)
-                    {
-                        L.LetterFollowingType = 2;
-                    }
-
-                    //AttachmentType
-                    if (rdb_LetterAttachment_Yes.Checked == true)
-                    {
-                        L.LetterAttachmentType = 1;
-                    }
-                    else if (rdb_LetterAttachment_No.Checked == true)
-                    {
-                        L.LetterAttachmentType = 2;
-                    }
-
-                    L.LetterReadType = 1;
-                    L.LetterType = 1;
-                    L.LetterDraftType = 1;
-
-                    //AnswerType
-                    if (rdb_LetterDeadLine_Yes.Checked == true)
-                    {
-                        L.LetterAnswerType = 1;
-                        L.LetterAnswerDeadLine = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_LetterDeadLineValue.Value.Year.ToString() + "/" + txt_LetterDeadLineValue.Value.Month.ToString() + "/" + txt_LetterDeadLineValue.Value.Day.ToString()));
-                    }
-                    else if (rdb_LetterDeadLine_No.Checked == true)
-                    {
-                        L.LetterAnswerType = 2;
-                    }
-
-                    db.Letters.Add(L);
-                    db.SaveChanges();
-
-                    //AttachFile Save
-                    if (rdb_LetterAttachment_Yes.Checked == true)
-                    {
-                        if (lbl_AttachmentFilePath.Text != "")
+                        Letter L = new Letter();
+                        L.LetterSubject = txt_LetterSubject.Text.Trim();
+                        L.LetterAbstract = txt_LetterAbstract.Text.Trim();
+                        L.LetterCaption = adv_LetterContext.TextEditor.Text;
                         {
-                            FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
-                            int intLenght = Convert.ToInt32(objFileStream.Length);
-                            byte[] objData = new byte[intLenght];
-                            string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
-
-                            objFileStream.Read(objData, 0, intLenght);
-
-                            objFileStream.Close();
-
-                            AttachmentFile AF = new AttachmentFile();
-                            AF.AttachFileSize = intLenght / 1024; //KB
-                            AF.AttachFileName = strPath[strPath.Length - 1];
-                            AF.AttachFileData = objData;
-                            AF.AttachLetterID = L.LetterID;
-
-                            db.AttachmentFiles.Add(AF);
-                            db.SaveChanges();
+                            //Letter Number Formul
+                            var lastLetterID = (from LLID in db.Letters orderby LLID.LetterID descending select LLID).First();
+                            L.LetterNo = PublicVariable.todayDate.Substring(0, 4).Substring(2, 2) + PublicVariable.global_JobsDetermineLevel + "/" + Convert.ToInt32(lastLetterID.LetterID + 1);
                         }
-                    }
-                    ts.Complete();
+                        L.LetterCreatedDate = val_LetterCreatedDate.Text;
+                        L.LetterUserID = PublicVariable.global_UserID;
 
-                    MessageBox.Show("اطلاعات با موفقيت ثبت شد","ايجاد نامه");
+                        //SecurityType
+                        if (rdb_LetterSecurity_Normal.Checked == true)
+                        {
+                            L.LetterSecurityType = 1;
+                        }
+                        else if (rdb_LetterSecurity_Confidential.Checked == true)
+                        {
+                            L.LetterSecurityType = 2;
+                        }
+                        else if (rdb_LetterSecurity_Secretive.Checked == true)
+                        {
+                            L.LetterSecurityType = 3;
+                        }
+
+                        //ForcedType
+                        if (rdb_LetterForced_Normal.Checked == true)
+                        {
+                            L.LetterForceType = 1;
+                        }
+                        else if (rdb_LetterForced_Immediate.Checked == true)
+                        {
+                            L.LetterForceType = 2;
+                        }
+                        else if (rdb_LetterForced_Posthaste.Checked == true)
+                        {
+                            L.LetterForceType = 3;
+                        }
+
+                        L.LetterArchiveType = 1;
+
+                        //FollowingType
+                        if (rdb_LetterFollowing_Yes.Checked == true)
+                        {
+                            L.LetterFollowingType = 1;
+                        }
+                        else if (rdb_LetterFollowing_No.Checked == true)
+                        {
+                            L.LetterFollowingType = 2;
+                        }
+
+                        //AttachmentType
+                        if (rdb_LetterAttachment_Yes.Checked == true)
+                        {
+                            L.LetterAttachmentType = 1;
+                        }
+                        else if (rdb_LetterAttachment_No.Checked == true)
+                        {
+                            L.LetterAttachmentType = 2;
+                        }
+
+                        L.LetterReadType = 1;
+                        L.LetterType = 1;
+                        L.LetterDraftType = 1;
+
+                        //AnswerType
+                        if (rdb_LetterDeadLine_Yes.Checked == true)
+                        {
+                            L.LetterAnswerType = 1;
+                            L.LetterAnswerDeadLine = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_LetterDeadLineValue.Value.Year.ToString() + "/" + txt_LetterDeadLineValue.Value.Month.ToString() + "/" + txt_LetterDeadLineValue.Value.Day.ToString()));
+                        }
+                        else if (rdb_LetterDeadLine_No.Checked == true)
+                        {
+                            L.LetterAnswerType = 2;
+                        }
+
+                        db.Letters.Add(L);
+                        db.SaveChanges();
+
+                        //AttachFile Save
+                        if (rdb_LetterAttachment_Yes.Checked == true)
+                        {
+                            if (lbl_AttachmentFilePath.Text != "")
+                            {
+                                FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
+                                int intLenght = Convert.ToInt32(objFileStream.Length);
+                                byte[] objData = new byte[intLenght];
+                                string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
+
+                                objFileStream.Read(objData, 0, intLenght);
+
+                                objFileStream.Close();
+
+                                AttachmentFile AF = new AttachmentFile();
+                                AF.AttachFileSize = intLenght / 1024; //KB
+                                AF.AttachFileName = strPath[strPath.Length - 1];
+                                AF.AttachFileData = objData;
+                                AF.AttachLetterID = L.LetterID;
+
+                                db.AttachmentFiles.Add(AF);
+                                db.SaveChanges();
+                            }
+                        }
+                        ts.Complete();
+
+                        MessageBox.Show("اطلاعات با موفقيت ثبت شد", "ايجاد نامه");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("خطايي در خواندن اطلاعات رخ داد", "پايگاه داده");
+                        return;
+                    }
                 }
-                catch (Exception)
+            }
+            else if (this.formType == 2) //EditLetter
+            {
+                using (TransactionScope ts = new TransactionScope())
                 {
-                    MessageBox.Show("خطايي در خواندن اطلاعات رخ داد", "پايگاه داده");
-                    return;
+                    try
+                    {
+                        var query_update = (from L in db.Letters where L.LetterID == this.getLetterID where L.LetterUserID == PublicVariable.global_UserID select L).SingleOrDefault();
+                        query_update.LetterSubject = txt_LetterSubject.Text.Trim();
+                        query_update.LetterAbstract = txt_LetterAbstract.Text.Trim();
+                        query_update.LetterCaption = adv_LetterContext.TextEditor.Text;
+                        query_update.LetterCreatedDate = val_LetterCreatedDate.Text;
+
+                        //SecurityType
+                        if (rdb_LetterSecurity_Normal.Checked == true)
+                        {
+                            query_update.LetterSecurityType = 1;
+                        }
+                        else if (rdb_LetterSecurity_Confidential.Checked == true)
+                        {
+                            query_update.LetterSecurityType = 2;
+                        }
+                        else if (rdb_LetterSecurity_Secretive.Checked == true)
+                        {
+                            query_update.LetterSecurityType = 3;
+                        }
+
+                        //ForcedType
+                        if (rdb_LetterForced_Normal.Checked == true)
+                        {
+                            query_update.LetterForceType = 1;
+                        }
+                        else if (rdb_LetterForced_Immediate.Checked == true)
+                        {
+                            query_update.LetterForceType = 2;
+                        }
+                        else if (rdb_LetterForced_Posthaste.Checked == true)
+                        {
+                            query_update.LetterForceType = 3;
+                        }
+
+                        //FollowingType
+                        if (rdb_LetterFollowing_Yes.Checked == true)
+                        {
+                            query_update.LetterFollowingType = 1;
+                        }
+                        else if (rdb_LetterFollowing_No.Checked == true)
+                        {
+                            query_update.LetterFollowingType = 2;
+                        }
+
+                        //AttachmentType
+                        if (rdb_LetterAttachment_Yes.Checked == true)
+                        {
+                            query_update.LetterAttachmentType = 1;
+                        }
+                        else if (rdb_LetterAttachment_No.Checked == true)
+                        {
+                            query_update.LetterAttachmentType = 2;
+                        }
+
+                        //AnswerType
+                        if (rdb_LetterDeadLine_Yes.Checked == true)
+                        {
+                            query_update.LetterAnswerType = 1;
+                            query_update.LetterAnswerDeadLine = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(txt_LetterDeadLineValue.Value.Year.ToString() + "/" + txt_LetterDeadLineValue.Value.Month.ToString() + "/" + txt_LetterDeadLineValue.Value.Day.ToString()));
+                        }
+                        else if (rdb_LetterDeadLine_No.Checked == true)
+                        {
+                            query_update.LetterAnswerType = 2;
+                            query_update.LetterAnswerDeadLine = "";
+                        }
+                        
+                        db.SaveChanges();
+
+                        //AttachFile Save
+                        //if (rdb_LetterAttachment_Yes.Checked == true)
+                        //{
+                        //    if (lbl_AttachmentFilePath.Text != "")
+                        //    {
+                        //        FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
+                        //        int intLenght = Convert.ToInt32(objFileStream.Length);
+                        //        byte[] objData = new byte[intLenght];
+                        //        string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
+
+                        //        objFileStream.Read(objData, 0, intLenght);
+
+                        //        objFileStream.Close();
+
+                        //        AttachmentFile AF = new AttachmentFile();
+                        //        AF.AttachFileSize = intLenght / 1024; //KB
+                        //        AF.AttachFileName = strPath[strPath.Length - 1];
+                        //        AF.AttachFileData = objData;
+                        //        AF.AttachLetterID = L.LetterID;
+
+                        //        db.AttachmentFiles.Add(AF);
+                        //        db.SaveChanges();
+                        //    }
+                        //}
+                        ts.Complete();
+
+                        MessageBox.Show("اطلاعات با موفقيت ويرايش شد", "ويرايش نامه");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("خطايي در خواندن اطلاعات رخ داد", "پايگاه داده");
+                        return;
+                    }
                 }
             }
         }
