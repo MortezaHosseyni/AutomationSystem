@@ -165,6 +165,7 @@ namespace AutomationSystem.UserPanel
 
                 userChooseLetterSendForm.GetLetterID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterID"].Value);
                 userChooseLetterSendForm.ShowDialog();
+                ShowDraft(searchCondition());
             }
             else
             {

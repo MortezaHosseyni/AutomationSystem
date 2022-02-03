@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
 using AutomationSystem.Moduls;
+using System.Transactions;
 
 namespace AutomationSystem.UserPanel
 {
@@ -70,6 +71,45 @@ namespace AutomationSystem.UserPanel
         private void btn_Search_Click(object sender, EventArgs e)
         {
             ShowAllowedUsers(searchCondition());
+        }
+
+        private void btn_SendLetter_Click(object sender, EventArgs e)
+        {
+            using (TransactionScope ts = new TransactionScope())
+            {
+                try
+                {
+                    //Remove Letter on Drafts
+                    var query_update = (from L in db.Letters where L.LetterID == this.GetLetterID select L).SingleOrDefault();
+                    query_update.LetterDraftType = 2;
+                    db.SaveChanges();
+
+                    //Sending Letter
+                    List<DataGridView> rowsWithCheckColumn = new List<DataGridView>();
+                    foreach (DataGridViewRow row in dgv_Recivers.Rows)
+                    {
+                        SentLetter SL = new SentLetter();
+                        if (Convert.ToBoolean(row.Cells["col_SelectUser"].Value) == true)
+                        {
+                            SL.SentSendedLetterID = this.GetLetterID;
+                            SL.SentUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
+
+                            db.SentLetters.Add(SL);
+                        }
+                    }
+                    db.SaveChanges();
+                    ts.Complete();
+
+                    MessageBox.Show("نامه با موفقيت ارسال شد","ارسال نامه");
+
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("خطايي در دريافت اطلاعات رخ داد", "پايگاه داده");
+                    return;
+                }
+            }
         }
     }
 }

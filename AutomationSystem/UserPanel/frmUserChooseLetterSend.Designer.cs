@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_SelectReciver = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
@@ -37,12 +37,12 @@
             this.txt_SearchFristAndLastName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_SearchFristAndLastName = new DevComponents.DotNetBar.LabelX();
             this.dgv_Recivers = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_JobUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_SelectUser = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_JobName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main.SuspendLayout();
             this.pnl_SelectReciver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Recivers)).BeginInit();
@@ -140,6 +140,7 @@
             this.btn_SendLetter.Symbol = "";
             this.btn_SendLetter.TabIndex = 4;
             this.btn_SendLetter.Text = "ارسال";
+            this.btn_SendLetter.Click += new System.EventHandler(this.btn_SendLetter_Click);
             // 
             // btn_Search
             // 
@@ -191,33 +192,19 @@
             this.col_SelectUser,
             this.col_FullName,
             this.col_JobName});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Recivers.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Recivers.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Recivers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_Recivers.Location = new System.Drawing.Point(3, 3);
             this.dgv_Recivers.Name = "dgv_Recivers";
             this.dgv_Recivers.Size = new System.Drawing.Size(566, 247);
             this.dgv_Recivers.TabIndex = 0;
-            // 
-            // lbl_Title
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 20.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(246, 12);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(111, 40);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 2;
-            this.lbl_Title.Text = "ارسال نامه";
             // 
             // col_JobUserID
             // 
@@ -251,6 +238,20 @@
             this.col_JobName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_JobName.HeaderText = "شغل";
             this.col_JobName.Name = "col_JobName";
+            // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 20.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(246, 12);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(111, 40);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 2;
+            this.lbl_Title.Text = "ارسال نامه";
             // 
             // frmUserChooseLetterSend
             // 
