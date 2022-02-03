@@ -52,8 +52,10 @@
             this.lbl_SearchSubject = new DevComponents.DotNetBar.LabelX();
             this.pnl_DraftList = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_DraftList = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterForceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSecurityType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +65,6 @@
             this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -427,6 +428,7 @@
             this.dgv_DraftList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_LetterID,
             this.col_LetterSubject,
+            this.col_LetterNo,
             this.col_LetterType,
             this.col_LetterForceType,
             this.col_LetterSecurityType,
@@ -450,6 +452,20 @@
             this.dgv_DraftList.Size = new System.Drawing.Size(1014, 284);
             this.dgv_DraftList.TabIndex = 0;
             // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "پيش نويس‌ها";
+            // 
             // col_LetterID
             // 
             this.col_LetterID.HeaderText = "LetterID";
@@ -462,6 +478,12 @@
             this.col_LetterSubject.HeaderText = "موضوع نامه";
             this.col_LetterSubject.Name = "col_LetterSubject";
             // 
+            // col_LetterNo
+            // 
+            this.col_LetterNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_LetterNo.HeaderText = "شماره نامه";
+            this.col_LetterNo.Name = "col_LetterNo";
+            // 
             // col_LetterType
             // 
             this.col_LetterType.HeaderText = "نوع سند";
@@ -469,8 +491,10 @@
             // 
             // col_LetterForceType
             // 
+            this.col_LetterForceType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_LetterForceType.HeaderText = "فوريت";
             this.col_LetterForceType.Name = "col_LetterForceType";
+            this.col_LetterForceType.Width = 73;
             // 
             // col_LetterSecurityType
             // 
@@ -481,13 +505,17 @@
             // 
             // col_LetterFollowingType
             // 
+            this.col_LetterFollowingType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_LetterFollowingType.HeaderText = "پيگيري";
             this.col_LetterFollowingType.Name = "col_LetterFollowingType";
+            this.col_LetterFollowingType.Width = 80;
             // 
             // col_LetterAttachmentType
             // 
+            this.col_LetterAttachmentType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_LetterAttachmentType.HeaderText = "پيوست";
             this.col_LetterAttachmentType.Name = "col_LetterAttachmentType";
+            this.col_LetterAttachmentType.Width = 78;
             // 
             // col_LetterAnswerType
             // 
@@ -510,20 +538,6 @@
             this.col_SecurityT.HeaderText = "SecurityT";
             this.col_SecurityT.Name = "col_SecurityT";
             this.col_SecurityT.Visible = false;
-            // 
-            // lbl_Title
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "پيش نويس‌ها";
             // 
             // frmUserDraft
             // 
@@ -579,6 +593,7 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_DraftList;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterForceType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSecurityType;

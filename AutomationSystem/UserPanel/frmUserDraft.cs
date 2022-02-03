@@ -50,6 +50,7 @@ namespace AutomationSystem.UserPanel
                     dgv_DraftList.Rows[i].Cells["col_LetterAttachmentType"].Value = result[i].View_LetterAttachmentType;
                     dgv_DraftList.Rows[i].Cells["col_LetterAnswerType"].Value = result[i].View_LetterAnswerType;
                     dgv_DraftList.Rows[i].Cells["col_LetterAnswerDeadLine"].Value = result[i].LetterAnswerDeadLine;
+                    dgv_DraftList.Rows[i].Cells["col_LetterNo"].Value = result[i].LetterNo;
 
                     dgv_DraftList.Rows[i].Cells["col_ForceT"].Value = result[i].LetterForceType;
                     dgv_DraftList.Rows[i].Cells["col_SecurityT"].Value = result[i].LetterSecurityType;
