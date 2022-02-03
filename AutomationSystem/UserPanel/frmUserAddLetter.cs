@@ -97,7 +97,11 @@ namespace AutomationSystem.UserPanel
                     L.LetterSubject = txt_LetterSubject.Text.Trim();
                     L.LetterAbstract = txt_LetterAbstract.Text.Trim();
                     L.LetterCaption = adv_LetterContext.TextEditor.Text;
-                    L.LetterNo = "00/1112";
+                    {
+                        //Letter Number Formul
+                        var lastLetterID = (from LLID in db.Letters orderby LLID.LetterID descending select LLID).First();
+                        L.LetterNo = PublicVariable.todayDate.Substring(0, 4).Substring(2, 2) + PublicVariable.global_JobsDetermineLevel + "/" + Convert.ToInt32(lastLetterID.LetterID + 1);
+                    }
                     L.LetterCreatedDate = val_LetterCreatedDate.Text;
                     L.LetterUserID = PublicVariable.global_UserID;
 
