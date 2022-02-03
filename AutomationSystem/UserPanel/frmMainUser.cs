@@ -132,6 +132,7 @@ namespace AutomationSystem.UserPanel
             formNumber = 12;
 
             userAddLetterForm = new frmUserAddLetter();
+            userAddLetterForm.formType = 1;
             userAddLetterForm.MdiParent = this;
             userAddLetterForm.Show();
         }

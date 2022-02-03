@@ -185,6 +185,8 @@ namespace AutomationSystem.UserPanel
                 frmUserAddLetter userAddLetterForm = new frmUserAddLetter();
 
                 userAddLetterForm.MdiParent = mainUser;
+                userAddLetterForm.formType = 2;
+                userAddLetterForm.getLetterID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterID"].Value);
                 this.Close();
                 userAddLetterForm.Show();
             }

@@ -17,6 +17,8 @@ namespace AutomationSystem.UserPanel
     public partial class frmUserAddLetter : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        public byte formType { get; set; } // newLetter = 1 | editLetter = 2
+        public int getLetterID { get; set; }
         public frmUserAddLetter()
         {
             InitializeComponent();
@@ -26,8 +28,96 @@ namespace AutomationSystem.UserPanel
         {
             val_LetterCreatedDate.Text = PublicVariable.todayDate;
 
+            if (this.formType == 1)
+            {
+
+            }
+            else if (this.formType == 2)
+            {
+                showLetterEditInfo();
+            }
+
             this.Left = 10;
             this.Top = 160;
+        }
+
+        private void showLetterEditInfo()
+        {
+            try
+            {
+                var queryLetterInfo = (from L in db.Vw_Letters where L.LetterID == this.getLetterID select L).ToList();
+                if (queryLetterInfo.Count > 0)
+                {
+                    txt_LetterSubject.Text = queryLetterInfo[0].LetterSubject;
+                    txt_LetterAbstract.Text = queryLetterInfo[0].LetterAbstract;
+                    adv_LetterContext.TextEditor.Text = queryLetterInfo[0].LetterCaption;
+                    val_LetterCreatedDate.Text = queryLetterInfo[0].LetterCreatedDate;
+
+                    //LetterSecurityType
+                    if (queryLetterInfo[0].LetterSecurityType == 1)
+                    {
+                        rdb_LetterSecurity_Normal.Checked = true;
+                    }
+                    else if (queryLetterInfo[0].LetterSecurityType == 2)
+                    {
+                        rdb_LetterSecurity_Confidential.Checked = true;
+                    }
+                    else if (queryLetterInfo[0].LetterSecurityType == 3)
+                    {
+                        rdb_LetterSecurity_Secretive.Checked = true;
+                    }
+
+                    //LetterForcedType
+                    if (queryLetterInfo[0].LetterForceType == 1)
+                    {
+                        rdb_LetterForced_Normal.Checked = true;
+                    }
+                    else if (queryLetterInfo[0].LetterForceType == 2)
+                    {
+                        rdb_LetterForced_Immediate.Checked = true;
+                    }
+                    else if (queryLetterInfo[0].LetterForceType == 3)
+                    {
+                        rdb_LetterForced_Posthaste.Checked = true;
+                    }
+
+                    //LetterFollowingType
+                    if (queryLetterInfo[0].LetterFollowingType == 1)
+                    {
+                        rdb_LetterFollowing_Yes.Checked = true;
+                    }
+                    else if (queryLetterInfo[0].LetterFollowingType == 2)
+                    {
+                        rdb_LetterFollowing_No.Checked = true;
+                    }
+
+                    //LetterAttachmentType
+                    if (queryLetterInfo[0].LetterAttachmentType == 1)
+                    {
+                        rdb_LetterAttachment_Yes.Checked = true;
+                    }
+                    else if (queryLetterInfo[0].LetterAttachmentType == 2)
+                    {
+                        rdb_LetterAttachment_No.Checked = true;
+                    }
+
+                    //LetterDeadLineType
+                    if (queryLetterInfo[0].LetterAnswerType == 1)
+                    {
+                        rdb_LetterDeadLine_Yes.Checked = true;
+                        txt_LetterDeadLineValue.Value = Convert.ToDateTime(queryLetterInfo[0].LetterAnswerDeadLine);
+                    }
+                    else if (queryLetterInfo[0].LetterAnswerType == 2)
+                    {
+                        rdb_LetterDeadLine_No.Checked = true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("خطايي در دريافت اطلاعات رخ داد","پايگاه داده");
+                return;
+            }
         }
 
         private void rdb_LetterDeadLine_Yes_CheckedChanged(object sender, EventArgs e)
