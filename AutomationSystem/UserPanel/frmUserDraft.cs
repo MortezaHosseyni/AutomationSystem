@@ -33,6 +33,8 @@ namespace AutomationSystem.UserPanel
             var query = db.Database.SqlQuery<Vw_Letters>($"SELECT * FROM Vw_Letters WHERE LetterDraftType = 1 AND LetterUserID = {PublicVariable.global_UserID} {searchDraft}");
             var result = query.ToList();
 
+            dgv_DraftList.Rows.Clear();
+
             if (result.Count != 0)
             {
                 dgv_DraftList.RowCount = result.Count;
@@ -156,8 +158,19 @@ namespace AutomationSystem.UserPanel
 
         private void btn_SendLetter_Click(object sender, EventArgs e)
         {
-            frmUserChooseLetterSend userChooseLetterSendForm = new frmUserChooseLetterSend();
-            userChooseLetterSendForm.ShowDialog();
+            int item = dgv_DraftList.SelectedCells.Count;
+            if (item > 0)
+            {
+                frmUserChooseLetterSend userChooseLetterSendForm = new frmUserChooseLetterSend();
+
+                userChooseLetterSendForm.GetLetterID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterID"].Value);
+                userChooseLetterSendForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("براي ارسال نامه ابتدا نامه‌اي را از جدول پيش‌نويس‌ها انتخاب كنيد","ارسال نامه");
+                return;
+            }
         }
     }
 }

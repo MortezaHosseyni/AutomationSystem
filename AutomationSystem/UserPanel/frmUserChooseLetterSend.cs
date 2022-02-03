@@ -15,6 +15,7 @@ namespace AutomationSystem.UserPanel
     public partial class frmUserChooseLetterSend : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        public int GetLetterID { get; set; }
         public frmUserChooseLetterSend()
         {
             InitializeComponent();
