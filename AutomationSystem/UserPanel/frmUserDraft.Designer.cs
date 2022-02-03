@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
@@ -65,6 +66,8 @@
             this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsm_EditLetter = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -72,6 +75,7 @@
             this.pnl_SearchLetterForcedType.SuspendLayout();
             this.pnl_DraftList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DraftList)).BeginInit();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -438,6 +442,7 @@
             this.col_LetterAnswerDeadLine,
             this.col_ForceT,
             this.col_SecurityT});
+            this.dgv_DraftList.ContextMenuStrip = this.contextMenuStrip;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -539,6 +544,23 @@
             this.col_SecurityT.Name = "col_SecurityT";
             this.col_SecurityT.Visible = false;
             // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_EditLetter});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 56);
+            // 
+            // tsm_EditLetter
+            // 
+            this.tsm_EditLetter.BackColor = System.Drawing.Color.SpringGreen;
+            this.tsm_EditLetter.Font = new System.Drawing.Font("B Nazanin", 12.25F);
+            this.tsm_EditLetter.Image = global::AutomationSystem.Properties.Resources._09_EditIcon;
+            this.tsm_EditLetter.Name = "tsm_EditLetter";
+            this.tsm_EditLetter.Size = new System.Drawing.Size(152, 30);
+            this.tsm_EditLetter.Text = "ويرايش نامه";
+            // 
             // frmUserDraft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -562,6 +584,7 @@
             this.pnl_SearchLetterForcedType.PerformLayout();
             this.pnl_DraftList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DraftList)).EndInit();
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -603,5 +626,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerDeadLine;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SecurityT;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem tsm_EditLetter;
     }
 }
