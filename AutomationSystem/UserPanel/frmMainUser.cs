@@ -120,7 +120,7 @@ namespace AutomationSystem.UserPanel
 
             formNumber = 15;
 
-            userDraftForm = new frmUserDraft();
+            userDraftForm = new frmUserDraft(this);
             userDraftForm.MdiParent = this;
             userDraftForm.Show();
         }

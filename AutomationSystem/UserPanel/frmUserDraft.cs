@@ -15,8 +15,10 @@ namespace AutomationSystem.UserPanel
     public partial class frmUserDraft : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
-        public frmUserDraft()
+        public frmMainUser mainUser;
+        public frmUserDraft(frmMainUser inParent)
         {
+            mainUser = inParent;
             InitializeComponent();
         }
 
@@ -171,6 +173,24 @@ namespace AutomationSystem.UserPanel
             else
             {
                 MessageBox.Show("براي ارسال نامه ابتدا نامه‌اي را از جدول پيش‌نويس‌ها انتخاب كنيد","ارسال نامه");
+                return;
+            }
+        }
+
+        private void tsm_EditLetter_Click(object sender, EventArgs e)
+        {
+            int item = dgv_DraftList.SelectedCells.Count;
+            if (item > 0)
+            {
+                frmUserAddLetter userAddLetterForm = new frmUserAddLetter();
+
+                userAddLetterForm.MdiParent = mainUser;
+                this.Close();
+                userAddLetterForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("لطفا يك نامه انتخاب كنيد","ويرايش نامه");
                 return;
             }
         }

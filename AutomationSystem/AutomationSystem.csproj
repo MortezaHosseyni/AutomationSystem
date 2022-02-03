@@ -301,6 +301,7 @@
     <Content Include="Images\06-AddReminder.png" />
     <Content Include="Images\07-UserPicture.png" />
     <Content Include="Images\08-UserSignature.png" />
+    <Content Include="Images\09-EditIcon.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
