@@ -93,6 +93,7 @@ namespace AutomationSystem.UserPanel
                         {
                             SL.SentSendedLetterID = this.GetLetterID;
                             SL.SentUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
+                            SL.SentReadType = 1;
 
                             db.SentLetters.Add(SL);
                         }
