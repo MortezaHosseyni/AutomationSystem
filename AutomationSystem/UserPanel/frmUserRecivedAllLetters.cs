@@ -56,16 +56,16 @@ namespace AutomationSystem.UserPanel
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterSenderUserID"].Value = result[i].SentUserID;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterReffrence"].Value = result[i].LetterReffrence;
 
-                    dgv_RecivedLetters.Rows[i].Cells["col_ScurityT"].Value = result[i].LetterSecurityType;
+                    dgv_RecivedLetters.Rows[i].Cells["col_SecurityT"].Value = result[i].LetterSecurityType;
                     dgv_RecivedLetters.Rows[i].Cells["col_ForceT"].Value = result[i].LetterForceType;
                     dgv_RecivedLetters.Rows[i].Cells["col_ArchiveT"].Value = result[i].LetterArchiveType;
 
                     //SecurityType - Colors
-                    if (Convert.ToInt16(dgv_RecivedLetters.Rows[i].Cells["col_ScurityT"].Value) == 2)
+                    if (Convert.ToInt16(dgv_RecivedLetters.Rows[i].Cells["col_SecurityT"].Value) == 2)
                     {
                         dgv_RecivedLetters.Rows[i].Cells["col_LetterSecurityType"].Style.BackColor = Color.Yellow;
                     }
-                    else if (Convert.ToInt16(dgv_RecivedLetters.Rows[i].Cells["col_ScurityT"].Value) == 3)
+                    else if (Convert.ToInt16(dgv_RecivedLetters.Rows[i].Cells["col_SecurityT"].Value) == 3)
                     {
                         dgv_RecivedLetters.Rows[i].Cells["col_LetterSecurityType"].Style.BackColor = Color.Red;
                     }
@@ -85,6 +85,11 @@ namespace AutomationSystem.UserPanel
                     {
                         dgv_RecivedLetters.Rows[i].Cells["col_LetterArchiveType"].Style.BackColor = Color.Plum;
                     }
+                }
+                dgv_RecivedLetters.TopLeftHeaderCell.Value = "رديف";
+                for (int counter = 0; counter <= dgv_RecivedLetters.Rows.Count - 1; counter++)
+                {
+                    dgv_RecivedLetters.Rows[counter].HeaderCell.Value = (counter + 1).ToString();
                 }
             }
             else
