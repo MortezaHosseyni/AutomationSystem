@@ -32,7 +32,6 @@ namespace DataModelLayer.Models
         public byte LetterArchiveType { get; set; }
         public byte LetterFollowingType { get; set; }
         public byte LetterAttachmentType { get; set; }
-        public byte LetterReadType { get; set; }
         public byte LetterType { get; set; }
         public byte LetterDraftType { get; set; }
         public string LetterAbstract { get; set; }
@@ -40,10 +39,11 @@ namespace DataModelLayer.Models
         public string LetterAnswerDeadLine { get; set; }
         public string LetterReffrence { get; set; }
         public Nullable<int> LetterReplyID { get; set; }
+        public string LetterSentDate { get; set; }
     
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AttachmentFile> AttachmentFiles { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SentLetter> SentLetters { get; set; }
     }

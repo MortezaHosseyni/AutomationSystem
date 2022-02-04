@@ -25,7 +25,6 @@ namespace DataModelLayer.Models
         public byte LetterArchiveType { get; set; }
         public byte LetterFollowingType { get; set; }
         public byte LetterAttachmentType { get; set; }
-        public byte LetterReadType { get; set; }
         public byte LetterType { get; set; }
         public byte LetterDraftType { get; set; }
         public string LetterAbstract { get; set; }
@@ -38,12 +37,12 @@ namespace DataModelLayer.Models
         public string View_LetterArchiveType { get; set; }
         public string View_LetterFollowingType { get; set; }
         public string View_LetterAttachmentType { get; set; }
-        public string View_LetterReadType { get; set; }
         public string View_LetterType { get; set; }
         public string View_LetterDraftType { get; set; }
         public string View_LetterAnswerType { get; set; }
         public string UserFirstName { get; set; }
         public string UserLastName { get; set; }
         public string UserFullName { get; set; }
+        public string LetterSentDate { get; set; }
     }
 }

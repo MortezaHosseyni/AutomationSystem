@@ -17,6 +17,7 @@ namespace DataModelLayer.Models
         public int SentLetterID { get; set; }
         public int SentSendedLetterID { get; set; }
         public int SentUserID { get; set; }
+        public Nullable<byte> SentReadType { get; set; }
     
         public virtual Letter Letter { get; set; }
         public virtual User User { get; set; }

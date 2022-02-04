@@ -254,8 +254,7 @@ namespace AutomationSystem.UserPanel
                         {
                             L.LetterAttachmentType = 2;
                         }
-
-                        L.LetterReadType = 1;
+                        
                         L.LetterType = 1;
                         L.LetterDraftType = 1;
 
