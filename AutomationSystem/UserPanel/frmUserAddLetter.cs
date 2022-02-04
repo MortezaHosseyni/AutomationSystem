@@ -410,21 +410,24 @@ namespace AutomationSystem.UserPanel
                                 }
                                 else if (queryCheckAttachment.Count == 1) //Letter have attach -Editing-> Attach changed
                                 {
-                                    FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
-                                    int intLenght = Convert.ToInt32(objFileStream.Length);
-                                    byte[] objData = new byte[intLenght];
-                                    string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
+                                    if (lbl_AttachmentFilePath.Text != queryCheckAttachment[0].AttachFileName) //Letter have attach but not changeing
+                                    {
+                                        FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
+                                        int intLenght = Convert.ToInt32(objFileStream.Length);
+                                        byte[] objData = new byte[intLenght];
+                                        string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
 
-                                    objFileStream.Read(objData, 0, intLenght);
+                                        objFileStream.Read(objData, 0, intLenght);
 
-                                    objFileStream.Close();
+                                        objFileStream.Close();
 
-                                    var queryUpdateAttach = (from AF in db.AttachmentFiles where AF.AttachLetterID == this.getLetterID select AF).SingleOrDefault();
-                                    queryUpdateAttach.AttachFileSize = intLenght / 1024; //KB
-                                    queryUpdateAttach.AttachFileName = strPath[strPath.Length - 1];
-                                    queryUpdateAttach.AttachFileData = objData;
+                                        var queryUpdateAttach = (from AF in db.AttachmentFiles where AF.AttachLetterID == this.getLetterID select AF).SingleOrDefault();
+                                        queryUpdateAttach.AttachFileSize = intLenght / 1024; //KB
+                                        queryUpdateAttach.AttachFileName = strPath[strPath.Length - 1];
+                                        queryUpdateAttach.AttachFileData = objData;
 
-                                    db.SaveChanges();
+                                        db.SaveChanges();
+                                    }
                                 }
                             }
                         }
