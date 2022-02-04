@@ -26,12 +26,13 @@ namespace AutomationSystem.UserPanel
             this.Left = 10;
             this.Top = 160;
 
-            ShowRecivedLetters();
+            txt_DateOn.Value = DateTime.Now.AddDays(-10);
+            ShowRecivedLetters(searchCondition());
         }
 
-        private void ShowRecivedLetters()//string searchRecivedLetters)
+        private void ShowRecivedLetters(string searchRecivedLetters)
         {
-            var query = db.Database.SqlQuery<Vw_ReciveLetter>($"SELECT * FROM Vw_ReciveLetter WHERE LetterDraftType = 2 AND SentUserID = {PublicVariable.global_UserID}");
+            var query = db.Database.SqlQuery<Vw_ReciveLetter>($"SELECT * FROM Vw_ReciveLetter WHERE LetterDraftType = 2 AND SentUserID = {PublicVariable.global_UserID} {searchRecivedLetters}");
             var result = query.ToList();
 
             dgv_RecivedLetters.Rows.Clear();
@@ -56,6 +57,7 @@ namespace AutomationSystem.UserPanel
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterSender"].Value = result[i].UserFullName;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterSenderUserID"].Value = result[i].SentUserID;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterReffrence"].Value = result[i].LetterReffrence;
+                    dgv_RecivedLetters.Rows[i].Cells["col_LetterRecivedDate"].Value = result[i].LetterSentDate;
 
                     dgv_RecivedLetters.Rows[i].Cells["col_SecurityT"].Value = result[i].LetterSecurityType;
                     dgv_RecivedLetters.Rows[i].Cells["col_ForceT"].Value = result[i].LetterForceType;
@@ -154,45 +156,118 @@ namespace AutomationSystem.UserPanel
             }
         }
 
-        //private string searchCondition()
-        //{
-        //    string searchString = "";
+        private string searchCondition()
+        {
+            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateOn.Value.Year.ToString()}/{txt_DateOn.Value.Month.ToString()}/{txt_DateOn.Value.Day.ToString()}"));
+            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateTo.Value.Year.ToString()}/{txt_DateTo.Value.Month.ToString()}/{txt_DateTo.Value.Day.ToString()}"));
 
-        //    //Subject Search
-        //    if (txt_SearchSubject.Text != "")
-        //    {
-        //        searchString += $" AND LetterSubject LIKE '%{txt_SearchSubject.Text}%'";
-        //    }
 
-        //    //ForcedType Search
-        //    if (rdb_SearchNormalForced.Checked)
-        //    {
-        //        searchString += " AND LetterForceType = 1";
-        //    }
-        //    else if (rdb_SearchImmediateForced.Checked)
-        //    {
-        //        searchString += " AND LetterForceType = 2";
-        //    }
-        //    else if (rdb_SearchPosthasteForced.Checked)
-        //    {
-        //        searchString += " AND LetterForceType = 3";
-        //    }
+            string searchString = $" AND LetterSentDate BETWEEN '{dateIn}' AND '{dateTo}'";
 
-        //    //SecurityType Search
-        //    if (rdb_SearchNormalSecurity.Checked)
-        //    {
-        //        searchString += " AND LetterSecurityType = 1";
-        //    }
-        //    else if (rdb_SearchConfidentialSecurity.Checked)
-        //    {
-        //        searchString += " AND LetterSecurityType = 2";
-        //    }
-        //    else if (rdb_SearchSecretiveSecurity.Checked)
-        //    {
-        //        searchString += " AND LetterSecurityType = 3";
-        //    }
+            if (txt_LetterSender.Text != "")
+            {
+                searchString += $" AND UserFullName LIKE '%{txt_LetterSender.Text}%'";
+            }
 
-        //    return searchString;
-        //}
+            if (txt_LetterNo.Text != "")
+            {
+                searchString += $" AND LetterNo LIKE '%{txt_LetterNo.Text}%'";
+            }
+
+            if (txt_LetterSubject.Text != "")
+            {
+                searchString += $" AND LetterSubject LIKE '%{txt_LetterSubject.Text}%'";
+            }
+
+            if (txt_LetterReffrence.Text != "")
+            {
+                searchString += $" AND LetterReffrence LIKE '%{txt_LetterReffrence.Text}%'";
+            }
+
+            //SecurityType - Search
+            if (rdb_LetterSecurity_Normal.Checked == true)
+            {
+                searchString += " AND LetterSecurityType = 1";
+            }
+            else if (rdb_LetterSecurity_Confidential.Checked == true)
+            {
+                searchString += " AND LetterSecurityType = 2";
+            }
+            else if (rdb_LetterSecurity_Secretive.Checked == true)
+            {
+                searchString += " AND LetterSecurityType = 3";
+            }
+
+            //ForcedType - Search
+            if (rdb_LetterForceType_Normal.Checked == true)
+            {
+                searchString += " AND LetterForceType = 1";
+            }
+            else if (rdb_LetterForceType_Immediate.Checked == true)
+            {
+                searchString += " AND LetterForceType = 2";
+            }
+            else if (rdb_LetterForceType_Posthaste.Checked == true)
+            {
+                searchString += " AND LetterForceType = 3";
+            }
+
+            //ArchivedType - Search
+            if (rdb_LetterArchiveType_Archived.Checked == true)
+            {
+                searchString += " AND LetterArchiveType = 2";
+            }
+            else if (rdb_LetterArchiveType_NotArchived.Checked == true)
+            {
+                searchString += " AND LetterArchiveType = 1";
+            }
+
+            //LetterType - Search
+            if (rdb_LetterType_Letter.Checked == true)
+            {
+                searchString += " AND LetterType = 1";
+            }
+            else if (rdb_LetterType_ReplyLetter.Checked == true)
+            {
+                searchString += " AND LetterType = 2";
+            }
+
+            //LetterStatus - Search
+            if (rdb_LetterStatus_Readed.Checked == true)
+            {
+                searchString += " AND SentReadType = 2";
+            }
+            else if (rdb_LetterStatus_NotReaded.Checked == true)
+            {
+                searchString += " AND SentReadType = 1";
+            }
+
+            //LetterAttachment - Search
+            if (rdb_LetterAttachmentType_Yes.Checked == true)
+            {
+                searchString += " AND LetterAttachmentType = 1";
+            }
+            else if (rdb_LetterAttachmentType_No.Checked == true)
+            {
+                searchString += " AND LetterAttachmentType = 2";
+            }
+
+            //LetterFollowing - Search
+            if (rdb_LetterFollowingType_Yes.Checked == true)
+            {
+                searchString += " AND LetterFollowingType = 1";
+            }
+            if (rdb_LetterFollowingType_No.Checked == true)
+            {
+                searchString += " AND LetterFollowingType = 2";
+            }
+
+            return searchString;
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            ShowRecivedLetters(searchCondition());
+        }
     }
 }
