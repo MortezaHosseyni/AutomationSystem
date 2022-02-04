@@ -36,6 +36,11 @@ namespace AutomationSystem.UserPanel
             {
                 tbc_LetterInformations.SelectedTabIndex = 1;
                 btn_AddLetter.Text = "ويرايش نامه";
+                var queryAttachName = (from AN in db.AttachmentFiles where AN.AttachLetterID == this.getLetterID select AN).ToList();
+                if (queryAttachName.Count > 0)
+                {
+                    lbl_AttachmentFilePath.Text = queryAttachName[0].AttachFileName;
+                }
                 showLetterEditInfo();
             }
 
@@ -382,9 +387,8 @@ namespace AutomationSystem.UserPanel
                         {
                             if (lbl_AttachmentFilePath.Text != "")
                             {
-                                //Letter not attach -Editing-> Add attach 
                                 var queryCheckAttachment = (from AF in db.AttachmentFiles where AF.AttachLetterID == this.getLetterID select AF).ToList();
-                                if (queryCheckAttachment.Count == 0)
+                                if (queryCheckAttachment.Count == 0) //Letter not have attach -Editing-> Add attach
                                 {
                                     FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
                                     int intLenght = Convert.ToInt32(objFileStream.Length);
@@ -404,7 +408,10 @@ namespace AutomationSystem.UserPanel
                                     db.AttachmentFiles.Add(AF);
                                     db.SaveChanges();
                                 }
-                                
+                                else if (queryCheckAttachment.Count == 1) //Letter have attach -Editing-> Attach edited
+                                {
+
+                                }
                             }
                         }
                         ts.Complete();
