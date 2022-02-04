@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRecivedAllLetters));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.txt_LetterReffrence = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterNo = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -82,12 +83,11 @@
             this.lbl_Sender = new DevComponents.DotNetBar.LabelX();
             this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
             this.pnl_RecivedLetters = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.dgv_RecivedLetters = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterSubjet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSecurityType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterForceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,9 +98,9 @@
             this.col_LetterAttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterReffrence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterFollowingType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_RecivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterRecivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterDownloadAttach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_SenderUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterSenderUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterReplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -202,6 +202,17 @@
             this.pnl_Search.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pnl_Search.TabIndex = 6;
             this.pnl_Search.Text = "جستجو";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(6, 0);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(43, 46);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 4;
             // 
             // txt_LetterReffrence
             // 
@@ -803,6 +814,43 @@
             this.pnl_RecivedLetters.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pnl_RecivedLetters.TabIndex = 5;
             // 
+            // dgv_RecivedLetters
+            // 
+            this.dgv_RecivedLetters.AllowUserToAddRows = false;
+            this.dgv_RecivedLetters.AllowUserToDeleteRows = false;
+            this.dgv_RecivedLetters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_RecivedLetters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_LetterID,
+            this.col_LetterNo,
+            this.col_LetterSubject,
+            this.col_LetterSender,
+            this.col_LetterSecurityType,
+            this.col_LetterForceType,
+            this.col_LetterArchiveType,
+            this.col_LetterType,
+            this.col_LetterAnswerDeadLine,
+            this.col_LetterReadType,
+            this.col_LetterAttachmentType,
+            this.col_LetterReffrence,
+            this.col_LetterFollowingType,
+            this.col_LetterRecivedDate,
+            this.col_LetterDownloadAttach,
+            this.col_LetterSenderUserID,
+            this.col_LetterReplyID});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_RecivedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgv_RecivedLetters.Location = new System.Drawing.Point(3, 3);
+            this.dgv_RecivedLetters.Name = "dgv_RecivedLetters";
+            this.dgv_RecivedLetters.Size = new System.Drawing.Size(1014, 324);
+            this.dgv_RecivedLetters.TabIndex = 0;
+            // 
             // lbl_Title
             // 
             // 
@@ -817,54 +865,6 @@
             this.lbl_Title.TabIndex = 4;
             this.lbl_Title.Text = "نامه‌هاي وارده";
             // 
-            // btn_Search
-            // 
-            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Search.Location = new System.Drawing.Point(6, 0);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(43, 46);
-            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_Search.Symbol = "";
-            this.btn_Search.TabIndex = 4;
-            // 
-            // dgv_RecivedLetters
-            // 
-            this.dgv_RecivedLetters.AllowUserToAddRows = false;
-            this.dgv_RecivedLetters.AllowUserToDeleteRows = false;
-            this.dgv_RecivedLetters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_RecivedLetters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_LetterID,
-            this.col_LetterNo,
-            this.col_LetterSubjet,
-            this.col_LetterSender,
-            this.col_LetterSecurityType,
-            this.col_LetterForceType,
-            this.col_LetterArchiveType,
-            this.col_LetterType,
-            this.col_LetterAnswerDeadLine,
-            this.col_LetterReadType,
-            this.col_LetterAttachmentType,
-            this.col_LetterReffrence,
-            this.col_LetterFollowingType,
-            this.col_RecivedDate,
-            this.col_LetterDownloadAttach,
-            this.col_SenderUserID,
-            this.col_LetterReplyID});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_RecivedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgv_RecivedLetters.Location = new System.Drawing.Point(3, 3);
-            this.dgv_RecivedLetters.Name = "dgv_RecivedLetters";
-            this.dgv_RecivedLetters.Size = new System.Drawing.Size(1014, 324);
-            this.dgv_RecivedLetters.TabIndex = 0;
-            // 
             // col_LetterID
             // 
             this.col_LetterID.HeaderText = "LetterID";
@@ -878,17 +878,17 @@
             this.col_LetterNo.Name = "col_LetterNo";
             this.col_LetterNo.Width = 98;
             // 
-            // col_LetterSubjet
+            // col_LetterSubject
             // 
-            this.col_LetterSubjet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_LetterSubjet.HeaderText = "موضوع";
-            this.col_LetterSubjet.Name = "col_LetterSubjet";
+            this.col_LetterSubject.HeaderText = "موضوع";
+            this.col_LetterSubject.Name = "col_LetterSubject";
+            this.col_LetterSubject.Width = 200;
             // 
             // col_LetterSender
             // 
-            this.col_LetterSender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_LetterSender.HeaderText = "فرستنده";
             this.col_LetterSender.Name = "col_LetterSender";
+            this.col_LetterSender.Width = 150;
             // 
             // col_LetterSecurityType
             // 
@@ -916,8 +916,10 @@
             // 
             // col_LetterAnswerDeadLine
             // 
+            this.col_LetterAnswerDeadLine.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_LetterAnswerDeadLine.HeaderText = "مهلت پاسخ";
             this.col_LetterAnswerDeadLine.Name = "col_LetterAnswerDeadLine";
+            this.col_LetterAnswerDeadLine.Width = 102;
             // 
             // col_LetterReadType
             // 
@@ -933,9 +935,9 @@
             // 
             // col_LetterReffrence
             // 
-            this.col_LetterReffrence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_LetterReffrence.HeaderText = "عطف به";
             this.col_LetterReffrence.Name = "col_LetterReffrence";
+            this.col_LetterReffrence.Width = 140;
             // 
             // col_LetterFollowingType
             // 
@@ -944,23 +946,25 @@
             this.col_LetterFollowingType.Name = "col_LetterFollowingType";
             this.col_LetterFollowingType.Width = 80;
             // 
-            // col_RecivedDate
+            // col_LetterRecivedDate
             // 
-            this.col_RecivedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_RecivedDate.HeaderText = "تاريخ دريافت";
-            this.col_RecivedDate.Name = "col_RecivedDate";
-            this.col_RecivedDate.Width = 102;
+            this.col_LetterRecivedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterRecivedDate.HeaderText = "تاريخ دريافت";
+            this.col_LetterRecivedDate.Name = "col_LetterRecivedDate";
+            this.col_LetterRecivedDate.Width = 111;
             // 
             // col_LetterDownloadAttach
             // 
+            this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
+            this.col_LetterDownloadAttach.Width = 123;
             // 
-            // col_SenderUserID
+            // col_LetterSenderUserID
             // 
-            this.col_SenderUserID.HeaderText = "SenderUserID";
-            this.col_SenderUserID.Name = "col_SenderUserID";
-            this.col_SenderUserID.Visible = false;
+            this.col_LetterSenderUserID.HeaderText = "LetterSenderUserID";
+            this.col_LetterSenderUserID.Name = "col_LetterSenderUserID";
+            this.col_LetterSenderUserID.Visible = false;
             // 
             // col_LetterReplyID
             // 
@@ -981,6 +985,7 @@
             this.Name = "frmUserRecivedAllLetters";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmUserRecivedAllLetters_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Search.ResumeLayout(false);
             this.pnl_Following.ResumeLayout(false);
@@ -1062,7 +1067,7 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_RecivedLetters;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSubjet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSender;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSecurityType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterForceType;
@@ -1073,9 +1078,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAttachmentType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReffrence;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterFollowingType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_RecivedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterRecivedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterDownloadAttach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_SenderUserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSenderUserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReplyID;
     }
 }

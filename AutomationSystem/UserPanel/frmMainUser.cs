@@ -26,6 +26,7 @@ namespace AutomationSystem.UserPanel
         frmUserReminder userReminderForm;
         frmUserDraft userDraftForm;
         frmUserAddLetter userAddLetterForm;
+        frmUserRecivedAllLetters userReciveAllLettersForm;
         public frmMainUser()
         {
             InitializeComponent();
@@ -85,9 +86,17 @@ namespace AutomationSystem.UserPanel
 
         private void CloseForms()
         {
+            if (formNumber == 1)
+            {
+                userReciveAllLettersForm.Close();
+            }
             if (formNumber == 7)
             {
                 userReminderForm.Close();
+            }
+            if (formNumber == 12)
+            {
+                userAddLetterForm.Close();
             }
             if (formNumber == 14)
             {
@@ -96,10 +105,6 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 15)
             {
                 userDraftForm.Close();
-            }
-            if (formNumber == 12)
-            {
-                userAddLetterForm.Close();
             }
         }
 
@@ -135,6 +140,17 @@ namespace AutomationSystem.UserPanel
             userAddLetterForm.formType = 1;
             userAddLetterForm.MdiParent = this;
             userAddLetterForm.Show();
+        }
+
+        private void lbl_AllRecivedMessages_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 1;
+
+            userReciveAllLettersForm = new frmUserRecivedAllLetters();
+            userReciveAllLettersForm.MdiParent = this;
+            userReciveAllLettersForm.Show();
         }
     }
 }

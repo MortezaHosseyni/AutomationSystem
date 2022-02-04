@@ -159,6 +159,7 @@
             this.lbl_AllRecivedMessages.Symbol = "57673";
             this.lbl_AllRecivedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_AllRecivedMessages.Text = "همه نامه‌هاي وارده";
+            this.lbl_AllRecivedMessages.Click += new System.EventHandler(this.lbl_AllRecivedMessages_Click);
             // 
             // lbl_ReadedMessages
             // 
