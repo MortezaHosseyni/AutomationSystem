@@ -1,6 +1,6 @@
 ﻿namespace AutomationSystem.UserPanel
 {
-    partial class frmUserRecivedAllLetters
+    partial class frmUserSendedLetters
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRecivedAllLetters));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserSendedLetters));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
+            this.pnl_RecivedLetters = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dgv_SendedLetters = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterReciver = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterSecurityType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterForceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterArchiveType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterAttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterReffrence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterFollowingType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterSentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterDownloadAttach = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.col_LetterReciverUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterReplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ArchiveT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_AttachmentT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.txt_LetterReffrence = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterNo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_LetterSender = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_LetterReciver = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_DateTo = new FreeControls.PersianDateTimePicker();
             this.txt_DateOn = new FreeControls.PersianDateTimePicker();
             this.pnl_Following = new System.Windows.Forms.Panel();
@@ -48,10 +71,6 @@
             this.rdb_LetterAttachmentType_No = new System.Windows.Forms.RadioButton();
             this.rdb_LetterAttachmentType_Yes = new System.Windows.Forms.RadioButton();
             this.rdb_LetterAttachmentType_All = new System.Windows.Forms.RadioButton();
-            this.pnl_Status = new System.Windows.Forms.Panel();
-            this.rdb_LetterStatus_NotReaded = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterStatus_Readed = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterStatus_All = new System.Windows.Forms.RadioButton();
             this.pnl_LetterType = new System.Windows.Forms.Panel();
             this.rdb_LetterType_ReplyLetter = new System.Windows.Forms.RadioButton();
             this.rdb_LetterType_Letter = new System.Windows.Forms.RadioButton();
@@ -67,7 +86,6 @@
             this.rdb_LetterForceType_Immediate = new System.Windows.Forms.RadioButton();
             this.rdb_LetterForceType_Normal = new System.Windows.Forms.RadioButton();
             this.rdb_LetterForceType_All = new System.Windows.Forms.RadioButton();
-            this.lbl_Status = new DevComponents.DotNetBar.LabelX();
             this.pnl_SecurityType = new System.Windows.Forms.Panel();
             this.rdb_LetterSecurity_Secretive = new System.Windows.Forms.RadioButton();
             this.rdb_LetterSecurity_Confidential = new System.Windows.Forms.RadioButton();
@@ -81,44 +99,18 @@
             this.lbl_ReffrenceTo = new DevComponents.DotNetBar.LabelX();
             this.lbl_LetterSubject = new DevComponents.DotNetBar.LabelX();
             this.lbl_LetterNo = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Sender = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Reciver = new DevComponents.DotNetBar.LabelX();
             this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
-            this.pnl_RecivedLetters = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgv_RecivedLetters = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterSender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterSecurityType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterForceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterArchiveType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterReadType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterAttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterReffrence = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterFollowingType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterRecivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterDownloadAttach = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.col_LetterSenderUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterReplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ArchiveT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_AttachmentT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.saveAttachFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.pnl_Main.SuspendLayout();
+            this.pnl_RecivedLetters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SendedLetters)).BeginInit();
             this.pnl_Search.SuspendLayout();
             this.pnl_Following.SuspendLayout();
             this.pnl_Attachment.SuspendLayout();
-            this.pnl_Status.SuspendLayout();
             this.pnl_LetterType.SuspendLayout();
             this.pnl_ArchiveType.SuspendLayout();
             this.pnl_ForcedType.SuspendLayout();
             this.pnl_SecurityType.SuspendLayout();
-            this.pnl_RecivedLetters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_RecivedLetters)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -142,6 +134,229 @@
             this.pnl_Main.Style.GradientAngle = 90;
             this.pnl_Main.TabIndex = 0;
             // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(438, 12);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 5;
+            this.lbl_Title.Text = "نامه‌هاي صادره";
+            // 
+            // pnl_RecivedLetters
+            // 
+            this.pnl_RecivedLetters.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_RecivedLetters.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_RecivedLetters.Controls.Add(this.dgv_SendedLetters);
+            this.pnl_RecivedLetters.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_RecivedLetters.Location = new System.Drawing.Point(12, 58);
+            this.pnl_RecivedLetters.Name = "pnl_RecivedLetters";
+            this.pnl_RecivedLetters.Size = new System.Drawing.Size(1026, 336);
+            // 
+            // 
+            // 
+            this.pnl_RecivedLetters.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_RecivedLetters.Style.BackColorGradientAngle = 90;
+            this.pnl_RecivedLetters.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_RecivedLetters.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_RecivedLetters.Style.BorderBottomWidth = 1;
+            this.pnl_RecivedLetters.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_RecivedLetters.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_RecivedLetters.Style.BorderLeftWidth = 1;
+            this.pnl_RecivedLetters.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_RecivedLetters.Style.BorderRightWidth = 1;
+            this.pnl_RecivedLetters.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_RecivedLetters.Style.BorderTopWidth = 1;
+            this.pnl_RecivedLetters.Style.CornerDiameter = 4;
+            this.pnl_RecivedLetters.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_RecivedLetters.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_RecivedLetters.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_RecivedLetters.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.pnl_RecivedLetters.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_RecivedLetters.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_RecivedLetters.TabIndex = 6;
+            // 
+            // dgv_SendedLetters
+            // 
+            this.dgv_SendedLetters.AllowUserToAddRows = false;
+            this.dgv_SendedLetters.AllowUserToDeleteRows = false;
+            this.dgv_SendedLetters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_SendedLetters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_LetterID,
+            this.col_LetterNo,
+            this.col_LetterSubject,
+            this.col_LetterReciver,
+            this.col_LetterSecurityType,
+            this.col_LetterForceType,
+            this.col_LetterArchiveType,
+            this.col_LetterType,
+            this.col_LetterAnswerDeadLine,
+            this.col_LetterAttachmentType,
+            this.col_LetterReffrence,
+            this.col_LetterFollowingType,
+            this.col_LetterSentDate,
+            this.col_LetterDownloadAttach,
+            this.col_LetterReciverUserID,
+            this.col_LetterReplyID,
+            this.col_SecurityT,
+            this.col_ForceT,
+            this.col_ArchiveT,
+            this.col_AttachmentT});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_SendedLetters.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_SendedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgv_SendedLetters.Location = new System.Drawing.Point(3, 3);
+            this.dgv_SendedLetters.Name = "dgv_SendedLetters";
+            this.dgv_SendedLetters.Size = new System.Drawing.Size(1014, 324);
+            this.dgv_SendedLetters.TabIndex = 0;
+            // 
+            // col_LetterID
+            // 
+            this.col_LetterID.HeaderText = "LetterID";
+            this.col_LetterID.Name = "col_LetterID";
+            this.col_LetterID.Visible = false;
+            // 
+            // col_LetterNo
+            // 
+            this.col_LetterNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterNo.HeaderText = "شماره نامه";
+            this.col_LetterNo.Name = "col_LetterNo";
+            this.col_LetterNo.Width = 98;
+            // 
+            // col_LetterSubject
+            // 
+            this.col_LetterSubject.HeaderText = "موضوع";
+            this.col_LetterSubject.Name = "col_LetterSubject";
+            this.col_LetterSubject.Width = 200;
+            // 
+            // col_LetterReciver
+            // 
+            this.col_LetterReciver.HeaderText = "گيرنده";
+            this.col_LetterReciver.Name = "col_LetterReciver";
+            this.col_LetterReciver.Width = 150;
+            // 
+            // col_LetterSecurityType
+            // 
+            this.col_LetterSecurityType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterSecurityType.HeaderText = "طبقه بندي";
+            this.col_LetterSecurityType.Name = "col_LetterSecurityType";
+            this.col_LetterSecurityType.Width = 101;
+            // 
+            // col_LetterForceType
+            // 
+            this.col_LetterForceType.HeaderText = "فوريت";
+            this.col_LetterForceType.Name = "col_LetterForceType";
+            // 
+            // col_LetterArchiveType
+            // 
+            this.col_LetterArchiveType.HeaderText = "بايگاني";
+            this.col_LetterArchiveType.Name = "col_LetterArchiveType";
+            // 
+            // col_LetterType
+            // 
+            this.col_LetterType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterType.HeaderText = "نوع سند";
+            this.col_LetterType.Name = "col_LetterType";
+            this.col_LetterType.Width = 86;
+            // 
+            // col_LetterAnswerDeadLine
+            // 
+            this.col_LetterAnswerDeadLine.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterAnswerDeadLine.HeaderText = "مهلت پاسخ";
+            this.col_LetterAnswerDeadLine.Name = "col_LetterAnswerDeadLine";
+            this.col_LetterAnswerDeadLine.Width = 102;
+            // 
+            // col_LetterAttachmentType
+            // 
+            this.col_LetterAttachmentType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterAttachmentType.HeaderText = "پيوست";
+            this.col_LetterAttachmentType.Name = "col_LetterAttachmentType";
+            this.col_LetterAttachmentType.Width = 78;
+            // 
+            // col_LetterReffrence
+            // 
+            this.col_LetterReffrence.HeaderText = "عطف به";
+            this.col_LetterReffrence.Name = "col_LetterReffrence";
+            this.col_LetterReffrence.Width = 140;
+            // 
+            // col_LetterFollowingType
+            // 
+            this.col_LetterFollowingType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterFollowingType.HeaderText = "پيگيري";
+            this.col_LetterFollowingType.Name = "col_LetterFollowingType";
+            this.col_LetterFollowingType.Width = 80;
+            // 
+            // col_LetterSentDate
+            // 
+            this.col_LetterSentDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_LetterSentDate.HeaderText = "تاريخ ارسال";
+            this.col_LetterSentDate.Name = "col_LetterSentDate";
+            this.col_LetterSentDate.Width = 104;
+            // 
+            // col_LetterDownloadAttach
+            // 
+            this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
+            this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
+            this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
+            this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_LetterDownloadAttach.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_LetterDownloadAttach.Width = 123;
+            // 
+            // col_LetterReciverUserID
+            // 
+            this.col_LetterReciverUserID.HeaderText = "LetterReciverUserID";
+            this.col_LetterReciverUserID.Name = "col_LetterReciverUserID";
+            this.col_LetterReciverUserID.Visible = false;
+            // 
+            // col_LetterReplyID
+            // 
+            this.col_LetterReplyID.HeaderText = "LetterReplyID";
+            this.col_LetterReplyID.Name = "col_LetterReplyID";
+            this.col_LetterReplyID.Visible = false;
+            // 
+            // col_SecurityT
+            // 
+            this.col_SecurityT.HeaderText = "SecurityT";
+            this.col_SecurityT.Name = "col_SecurityT";
+            this.col_SecurityT.Visible = false;
+            // 
+            // col_ForceT
+            // 
+            this.col_ForceT.HeaderText = "ForceT";
+            this.col_ForceT.Name = "col_ForceT";
+            this.col_ForceT.Visible = false;
+            // 
+            // col_ArchiveT
+            // 
+            this.col_ArchiveT.HeaderText = "ArchiveT";
+            this.col_ArchiveT.Name = "col_ArchiveT";
+            this.col_ArchiveT.Visible = false;
+            // 
+            // col_AttachmentT
+            // 
+            this.col_AttachmentT.HeaderText = "AttachmentT";
+            this.col_AttachmentT.Name = "col_AttachmentT";
+            this.col_AttachmentT.Visible = false;
+            // 
             // pnl_Search
             // 
             this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
@@ -150,18 +365,16 @@
             this.pnl_Search.Controls.Add(this.txt_LetterReffrence);
             this.pnl_Search.Controls.Add(this.txt_LetterSubject);
             this.pnl_Search.Controls.Add(this.txt_LetterNo);
-            this.pnl_Search.Controls.Add(this.txt_LetterSender);
+            this.pnl_Search.Controls.Add(this.txt_LetterReciver);
             this.pnl_Search.Controls.Add(this.txt_DateTo);
             this.pnl_Search.Controls.Add(this.txt_DateOn);
             this.pnl_Search.Controls.Add(this.pnl_Following);
             this.pnl_Search.Controls.Add(this.pnl_Attachment);
-            this.pnl_Search.Controls.Add(this.pnl_Status);
             this.pnl_Search.Controls.Add(this.pnl_LetterType);
             this.pnl_Search.Controls.Add(this.lbl_FollowingType);
             this.pnl_Search.Controls.Add(this.pnl_ArchiveType);
             this.pnl_Search.Controls.Add(this.lbl_Attachment);
             this.pnl_Search.Controls.Add(this.pnl_ForcedType);
-            this.pnl_Search.Controls.Add(this.lbl_Status);
             this.pnl_Search.Controls.Add(this.pnl_SecurityType);
             this.pnl_Search.Controls.Add(this.lbl_LetterType);
             this.pnl_Search.Controls.Add(this.lbl_ForcedType);
@@ -171,11 +384,11 @@
             this.pnl_Search.Controls.Add(this.lbl_ReffrenceTo);
             this.pnl_Search.Controls.Add(this.lbl_LetterSubject);
             this.pnl_Search.Controls.Add(this.lbl_LetterNo);
-            this.pnl_Search.Controls.Add(this.lbl_Sender);
+            this.pnl_Search.Controls.Add(this.lbl_Reciver);
             this.pnl_Search.Controls.Add(this.lbl_DateOn);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Search.Font = new System.Drawing.Font("B Nazanin", 10.25F, System.Drawing.FontStyle.Bold);
-            this.pnl_Search.Location = new System.Drawing.Point(12, 391);
+            this.pnl_Search.Location = new System.Drawing.Point(12, 400);
             this.pnl_Search.Name = "pnl_Search";
             this.pnl_Search.Size = new System.Drawing.Size(1026, 207);
             // 
@@ -206,20 +419,19 @@
             // 
             // 
             this.pnl_Search.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pnl_Search.TabIndex = 6;
+            this.pnl_Search.TabIndex = 7;
             this.pnl_Search.Text = "جستجو";
             // 
             // btn_Search
             // 
             this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Search.Location = new System.Drawing.Point(6, 0);
+            this.btn_Search.Location = new System.Drawing.Point(14, 75);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(43, 46);
+            this.btn_Search.Size = new System.Drawing.Size(88, 75);
             this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Search.Symbol = "";
             this.btn_Search.TabIndex = 4;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txt_LetterReffrence
             // 
@@ -228,10 +440,10 @@
             // 
             this.txt_LetterReffrence.Border.Class = "TextBoxBorder";
             this.txt_LetterReffrence.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterReffrence.Location = new System.Drawing.Point(52, 0);
+            this.txt_LetterReffrence.Location = new System.Drawing.Point(14, 0);
             this.txt_LetterReffrence.Name = "txt_LetterReffrence";
             this.txt_LetterReffrence.PreventEnterBeep = true;
-            this.txt_LetterReffrence.Size = new System.Drawing.Size(93, 29);
+            this.txt_LetterReffrence.Size = new System.Drawing.Size(131, 29);
             this.txt_LetterReffrence.TabIndex = 3;
             this.txt_LetterReffrence.WatermarkText = "عطف به...";
             // 
@@ -263,19 +475,19 @@
             this.txt_LetterNo.TabIndex = 3;
             this.txt_LetterNo.WatermarkText = "شماره نامه پيام...";
             // 
-            // txt_LetterSender
+            // txt_LetterReciver
             // 
             // 
             // 
             // 
-            this.txt_LetterSender.Border.Class = "TextBoxBorder";
-            this.txt_LetterSender.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterSender.Location = new System.Drawing.Point(540, 1);
-            this.txt_LetterSender.Name = "txt_LetterSender";
-            this.txt_LetterSender.PreventEnterBeep = true;
-            this.txt_LetterSender.Size = new System.Drawing.Size(121, 29);
-            this.txt_LetterSender.TabIndex = 3;
-            this.txt_LetterSender.WatermarkText = "فرستنده پيام...";
+            this.txt_LetterReciver.Border.Class = "TextBoxBorder";
+            this.txt_LetterReciver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_LetterReciver.Location = new System.Drawing.Point(540, 1);
+            this.txt_LetterReciver.Name = "txt_LetterReciver";
+            this.txt_LetterReciver.PreventEnterBeep = true;
+            this.txt_LetterReciver.Size = new System.Drawing.Size(129, 29);
+            this.txt_LetterReciver.TabIndex = 3;
+            this.txt_LetterReciver.WatermarkText = "گيرنده پيام...";
             // 
             // txt_DateTo
             // 
@@ -306,7 +518,7 @@
             this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_No);
             this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_Yes);
             this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_All);
-            this.pnl_Following.Location = new System.Drawing.Point(3, 54);
+            this.pnl_Following.Location = new System.Drawing.Point(136, 54);
             this.pnl_Following.Name = "pnl_Following";
             this.pnl_Following.Size = new System.Drawing.Size(64, 113);
             this.pnl_Following.TabIndex = 1;
@@ -350,7 +562,7 @@
             this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_No);
             this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_Yes);
             this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_All);
-            this.pnl_Attachment.Location = new System.Drawing.Point(115, 54);
+            this.pnl_Attachment.Location = new System.Drawing.Point(248, 54);
             this.pnl_Attachment.Name = "pnl_Attachment";
             this.pnl_Attachment.Size = new System.Drawing.Size(64, 113);
             this.pnl_Attachment.TabIndex = 1;
@@ -389,50 +601,6 @@
             this.rdb_LetterAttachmentType_All.Text = "همه";
             this.rdb_LetterAttachmentType_All.UseVisualStyleBackColor = true;
             // 
-            // pnl_Status
-            // 
-            this.pnl_Status.Controls.Add(this.rdb_LetterStatus_NotReaded);
-            this.pnl_Status.Controls.Add(this.rdb_LetterStatus_Readed);
-            this.pnl_Status.Controls.Add(this.rdb_LetterStatus_All);
-            this.pnl_Status.Location = new System.Drawing.Point(221, 54);
-            this.pnl_Status.Name = "pnl_Status";
-            this.pnl_Status.Size = new System.Drawing.Size(98, 113);
-            this.pnl_Status.TabIndex = 1;
-            // 
-            // rdb_LetterStatus_NotReaded
-            // 
-            this.rdb_LetterStatus_NotReaded.AutoSize = true;
-            this.rdb_LetterStatus_NotReaded.Location = new System.Drawing.Point(3, 78);
-            this.rdb_LetterStatus_NotReaded.Name = "rdb_LetterStatus_NotReaded";
-            this.rdb_LetterStatus_NotReaded.Size = new System.Drawing.Size(90, 27);
-            this.rdb_LetterStatus_NotReaded.TabIndex = 0;
-            this.rdb_LetterStatus_NotReaded.TabStop = true;
-            this.rdb_LetterStatus_NotReaded.Text = "خوانده نشده";
-            this.rdb_LetterStatus_NotReaded.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterStatus_Readed
-            // 
-            this.rdb_LetterStatus_Readed.AutoSize = true;
-            this.rdb_LetterStatus_Readed.Location = new System.Drawing.Point(7, 40);
-            this.rdb_LetterStatus_Readed.Name = "rdb_LetterStatus_Readed";
-            this.rdb_LetterStatus_Readed.Size = new System.Drawing.Size(85, 27);
-            this.rdb_LetterStatus_Readed.TabIndex = 0;
-            this.rdb_LetterStatus_Readed.TabStop = true;
-            this.rdb_LetterStatus_Readed.Text = "خوانده شده";
-            this.rdb_LetterStatus_Readed.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterStatus_All
-            // 
-            this.rdb_LetterStatus_All.AutoSize = true;
-            this.rdb_LetterStatus_All.Checked = true;
-            this.rdb_LetterStatus_All.Location = new System.Drawing.Point(45, 7);
-            this.rdb_LetterStatus_All.Name = "rdb_LetterStatus_All";
-            this.rdb_LetterStatus_All.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterStatus_All.TabIndex = 0;
-            this.rdb_LetterStatus_All.TabStop = true;
-            this.rdb_LetterStatus_All.Text = "همه";
-            this.rdb_LetterStatus_All.UseVisualStyleBackColor = true;
-            // 
             // pnl_LetterType
             // 
             this.pnl_LetterType.Controls.Add(this.rdb_LetterType_ReplyLetter);
@@ -446,7 +614,7 @@
             // rdb_LetterType_ReplyLetter
             // 
             this.rdb_LetterType_ReplyLetter.AutoSize = true;
-            this.rdb_LetterType_ReplyLetter.Location = new System.Drawing.Point(6, 73);
+            this.rdb_LetterType_ReplyLetter.Location = new System.Drawing.Point(6, 78);
             this.rdb_LetterType_ReplyLetter.Name = "rdb_LetterType_ReplyLetter";
             this.rdb_LetterType_ReplyLetter.Size = new System.Drawing.Size(53, 27);
             this.rdb_LetterType_ReplyLetter.TabIndex = 0;
@@ -457,7 +625,7 @@
             // rdb_LetterType_Letter
             // 
             this.rdb_LetterType_Letter.AutoSize = true;
-            this.rdb_LetterType_Letter.Location = new System.Drawing.Point(12, 40);
+            this.rdb_LetterType_Letter.Location = new System.Drawing.Point(12, 45);
             this.rdb_LetterType_Letter.Name = "rdb_LetterType_Letter";
             this.rdb_LetterType_Letter.Size = new System.Drawing.Size(47, 27);
             this.rdb_LetterType_Letter.TabIndex = 0;
@@ -469,7 +637,7 @@
             // 
             this.rdb_LetterType_All.AutoSize = true;
             this.rdb_LetterType_All.Checked = true;
-            this.rdb_LetterType_All.Location = new System.Drawing.Point(12, 7);
+            this.rdb_LetterType_All.Location = new System.Drawing.Point(12, 12);
             this.rdb_LetterType_All.Name = "rdb_LetterType_All";
             this.rdb_LetterType_All.Size = new System.Drawing.Size(47, 27);
             this.rdb_LetterType_All.TabIndex = 0;
@@ -483,7 +651,7 @@
             // 
             // 
             this.lbl_FollowingType.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FollowingType.Location = new System.Drawing.Point(73, 99);
+            this.lbl_FollowingType.Location = new System.Drawing.Point(206, 99);
             this.lbl_FollowingType.Name = "lbl_FollowingType";
             this.lbl_FollowingType.Size = new System.Drawing.Size(39, 25);
             this.lbl_FollowingType.TabIndex = 0;
@@ -539,7 +707,7 @@
             // 
             // 
             this.lbl_Attachment.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Attachment.Location = new System.Drawing.Point(172, 99);
+            this.lbl_Attachment.Location = new System.Drawing.Point(305, 99);
             this.lbl_Attachment.Name = "lbl_Attachment";
             this.lbl_Attachment.Size = new System.Drawing.Size(47, 25);
             this.lbl_Attachment.TabIndex = 0;
@@ -600,18 +768,6 @@
             this.rdb_LetterForceType_All.TabStop = true;
             this.rdb_LetterForceType_All.Text = "همه";
             this.rdb_LetterForceType_All.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Status
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Status.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Status.Location = new System.Drawing.Point(325, 99);
-            this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(38, 25);
-            this.lbl_Status.TabIndex = 0;
-            this.lbl_Status.Text = "وضعيت:";
             // 
             // pnl_SecurityType
             // 
@@ -765,17 +921,17 @@
             this.lbl_LetterNo.TabIndex = 0;
             this.lbl_LetterNo.Text = "شماره‌نامه:";
             // 
-            // lbl_Sender
+            // lbl_Reciver
             // 
             // 
             // 
             // 
-            this.lbl_Sender.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Sender.Location = new System.Drawing.Point(654, 3);
-            this.lbl_Sender.Name = "lbl_Sender";
-            this.lbl_Sender.Size = new System.Drawing.Size(54, 25);
-            this.lbl_Sender.TabIndex = 0;
-            this.lbl_Sender.Text = "فرستنده:";
+            this.lbl_Reciver.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Reciver.Location = new System.Drawing.Point(675, 3);
+            this.lbl_Reciver.Name = "lbl_Reciver";
+            this.lbl_Reciver.Size = new System.Drawing.Size(37, 25);
+            this.lbl_Reciver.TabIndex = 0;
+            this.lbl_Reciver.Text = "گيرنده:";
             // 
             // lbl_DateOn
             // 
@@ -789,237 +945,7 @@
             this.lbl_DateOn.TabIndex = 0;
             this.lbl_DateOn.Text = "از تاريخ";
             // 
-            // pnl_RecivedLetters
-            // 
-            this.pnl_RecivedLetters.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnl_RecivedLetters.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnl_RecivedLetters.Controls.Add(this.dgv_RecivedLetters);
-            this.pnl_RecivedLetters.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_RecivedLetters.Location = new System.Drawing.Point(12, 49);
-            this.pnl_RecivedLetters.Name = "pnl_RecivedLetters";
-            this.pnl_RecivedLetters.Size = new System.Drawing.Size(1026, 336);
-            // 
-            // 
-            // 
-            this.pnl_RecivedLetters.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.pnl_RecivedLetters.Style.BackColorGradientAngle = 90;
-            this.pnl_RecivedLetters.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnl_RecivedLetters.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_RecivedLetters.Style.BorderBottomWidth = 1;
-            this.pnl_RecivedLetters.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pnl_RecivedLetters.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_RecivedLetters.Style.BorderLeftWidth = 1;
-            this.pnl_RecivedLetters.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_RecivedLetters.Style.BorderRightWidth = 1;
-            this.pnl_RecivedLetters.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_RecivedLetters.Style.BorderTopWidth = 1;
-            this.pnl_RecivedLetters.Style.CornerDiameter = 4;
-            this.pnl_RecivedLetters.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.pnl_RecivedLetters.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.pnl_RecivedLetters.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pnl_RecivedLetters.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.pnl_RecivedLetters.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pnl_RecivedLetters.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pnl_RecivedLetters.TabIndex = 5;
-            // 
-            // dgv_RecivedLetters
-            // 
-            this.dgv_RecivedLetters.AllowUserToAddRows = false;
-            this.dgv_RecivedLetters.AllowUserToDeleteRows = false;
-            this.dgv_RecivedLetters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_RecivedLetters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_LetterID,
-            this.col_LetterNo,
-            this.col_LetterSubject,
-            this.col_LetterSender,
-            this.col_LetterSecurityType,
-            this.col_LetterForceType,
-            this.col_LetterArchiveType,
-            this.col_LetterType,
-            this.col_LetterAnswerDeadLine,
-            this.col_LetterReadType,
-            this.col_LetterAttachmentType,
-            this.col_LetterReffrence,
-            this.col_LetterFollowingType,
-            this.col_LetterRecivedDate,
-            this.col_LetterDownloadAttach,
-            this.col_LetterSenderUserID,
-            this.col_LetterReplyID,
-            this.col_SecurityT,
-            this.col_ForceT,
-            this.col_ArchiveT,
-            this.col_AttachmentT});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_RecivedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgv_RecivedLetters.Location = new System.Drawing.Point(3, 3);
-            this.dgv_RecivedLetters.Name = "dgv_RecivedLetters";
-            this.dgv_RecivedLetters.Size = new System.Drawing.Size(1014, 324);
-            this.dgv_RecivedLetters.TabIndex = 0;
-            this.dgv_RecivedLetters.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RecivedLetters_CellClick);
-            // 
-            // col_LetterID
-            // 
-            this.col_LetterID.HeaderText = "LetterID";
-            this.col_LetterID.Name = "col_LetterID";
-            this.col_LetterID.Visible = false;
-            // 
-            // col_LetterNo
-            // 
-            this.col_LetterNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_LetterNo.HeaderText = "شماره نامه";
-            this.col_LetterNo.Name = "col_LetterNo";
-            this.col_LetterNo.Width = 98;
-            // 
-            // col_LetterSubject
-            // 
-            this.col_LetterSubject.HeaderText = "موضوع";
-            this.col_LetterSubject.Name = "col_LetterSubject";
-            this.col_LetterSubject.Width = 200;
-            // 
-            // col_LetterSender
-            // 
-            this.col_LetterSender.HeaderText = "فرستنده";
-            this.col_LetterSender.Name = "col_LetterSender";
-            this.col_LetterSender.Width = 150;
-            // 
-            // col_LetterSecurityType
-            // 
-            this.col_LetterSecurityType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_LetterSecurityType.HeaderText = "طبقه بندي";
-            this.col_LetterSecurityType.Name = "col_LetterSecurityType";
-            this.col_LetterSecurityType.Width = 101;
-            // 
-            // col_LetterForceType
-            // 
-            this.col_LetterForceType.HeaderText = "فوريت";
-            this.col_LetterForceType.Name = "col_LetterForceType";
-            // 
-            // col_LetterArchiveType
-            // 
-            this.col_LetterArchiveType.HeaderText = "بايگاني";
-            this.col_LetterArchiveType.Name = "col_LetterArchiveType";
-            // 
-            // col_LetterType
-            // 
-            this.col_LetterType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_LetterType.HeaderText = "نوع سند";
-            this.col_LetterType.Name = "col_LetterType";
-            this.col_LetterType.Width = 86;
-            // 
-            // col_LetterAnswerDeadLine
-            // 
-            this.col_LetterAnswerDeadLine.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_LetterAnswerDeadLine.HeaderText = "مهلت پاسخ";
-            this.col_LetterAnswerDeadLine.Name = "col_LetterAnswerDeadLine";
-            this.col_LetterAnswerDeadLine.Width = 102;
-            // 
-            // col_LetterReadType
-            // 
-            this.col_LetterReadType.HeaderText = "وضعيت";
-            this.col_LetterReadType.Name = "col_LetterReadType";
-            // 
-            // col_LetterAttachmentType
-            // 
-            this.col_LetterAttachmentType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_LetterAttachmentType.HeaderText = "پيوست";
-            this.col_LetterAttachmentType.Name = "col_LetterAttachmentType";
-            this.col_LetterAttachmentType.Width = 78;
-            // 
-            // col_LetterReffrence
-            // 
-            this.col_LetterReffrence.HeaderText = "عطف به";
-            this.col_LetterReffrence.Name = "col_LetterReffrence";
-            this.col_LetterReffrence.Width = 140;
-            // 
-            // col_LetterFollowingType
-            // 
-            this.col_LetterFollowingType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_LetterFollowingType.HeaderText = "پيگيري";
-            this.col_LetterFollowingType.Name = "col_LetterFollowingType";
-            this.col_LetterFollowingType.Width = 80;
-            // 
-            // col_LetterRecivedDate
-            // 
-            this.col_LetterRecivedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_LetterRecivedDate.HeaderText = "تاريخ دريافت";
-            this.col_LetterRecivedDate.Name = "col_LetterRecivedDate";
-            this.col_LetterRecivedDate.Width = 111;
-            // 
-            // col_LetterDownloadAttach
-            // 
-            this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle3;
-            this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
-            this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
-            this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_LetterDownloadAttach.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_LetterDownloadAttach.Width = 123;
-            // 
-            // col_LetterSenderUserID
-            // 
-            this.col_LetterSenderUserID.HeaderText = "LetterSenderUserID";
-            this.col_LetterSenderUserID.Name = "col_LetterSenderUserID";
-            this.col_LetterSenderUserID.Visible = false;
-            // 
-            // col_LetterReplyID
-            // 
-            this.col_LetterReplyID.HeaderText = "LetterReplyID";
-            this.col_LetterReplyID.Name = "col_LetterReplyID";
-            this.col_LetterReplyID.Visible = false;
-            // 
-            // col_SecurityT
-            // 
-            this.col_SecurityT.HeaderText = "SecurityT";
-            this.col_SecurityT.Name = "col_SecurityT";
-            this.col_SecurityT.Visible = false;
-            // 
-            // col_ForceT
-            // 
-            this.col_ForceT.HeaderText = "ForceT";
-            this.col_ForceT.Name = "col_ForceT";
-            this.col_ForceT.Visible = false;
-            // 
-            // col_ArchiveT
-            // 
-            this.col_ArchiveT.HeaderText = "ArchiveT";
-            this.col_ArchiveT.Name = "col_ArchiveT";
-            this.col_ArchiveT.Visible = false;
-            // 
-            // col_AttachmentT
-            // 
-            this.col_AttachmentT.HeaderText = "AttachmentT";
-            this.col_AttachmentT.Name = "col_AttachmentT";
-            this.col_AttachmentT.Visible = false;
-            // 
-            // lbl_Title
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(451, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "نامه‌هاي وارده";
-            // 
-            // frmUserRecivedAllLetters
+            // frmUserSendedLetters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1028,19 +954,19 @@
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "frmUserRecivedAllLetters";
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Name = "frmUserSendedLetters";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmUserRecivedAllLetters_Load);
+            this.Load += new System.EventHandler(this.frmUserSendedLetters_Load);
             this.pnl_Main.ResumeLayout(false);
+            this.pnl_RecivedLetters.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SendedLetters)).EndInit();
             this.pnl_Search.ResumeLayout(false);
             this.pnl_Following.ResumeLayout(false);
             this.pnl_Following.PerformLayout();
             this.pnl_Attachment.ResumeLayout(false);
             this.pnl_Attachment.PerformLayout();
-            this.pnl_Status.ResumeLayout(false);
-            this.pnl_Status.PerformLayout();
             this.pnl_LetterType.ResumeLayout(false);
             this.pnl_LetterType.PerformLayout();
             this.pnl_ArchiveType.ResumeLayout(false);
@@ -1049,8 +975,6 @@
             this.pnl_ForcedType.PerformLayout();
             this.pnl_SecurityType.ResumeLayout(false);
             this.pnl_SecurityType.PerformLayout();
-            this.pnl_RecivedLetters.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_RecivedLetters)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1060,79 +984,72 @@
         private DevComponents.DotNetBar.PanelEx pnl_Main;
         private DevComponents.DotNetBar.LabelX lbl_Title;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_RecivedLetters;
-        private DevComponents.DotNetBar.Controls.GroupPanel pnl_Search;
-        private DevComponents.DotNetBar.LabelX lbl_SecurityType;
-        private DevComponents.DotNetBar.LabelX lbl_DateOn;
-        private DevComponents.DotNetBar.LabelX lbl_DateTo;
-        private DevComponents.DotNetBar.LabelX lbl_LetterNo;
-        private DevComponents.DotNetBar.LabelX lbl_Sender;
-        private DevComponents.DotNetBar.LabelX lbl_LetterSubject;
-        private DevComponents.DotNetBar.LabelX lbl_ReffrenceTo;
-        private System.Windows.Forms.Panel pnl_SecurityType;
-        private System.Windows.Forms.RadioButton rdb_LetterSecurity_Secretive;
-        private System.Windows.Forms.RadioButton rdb_LetterSecurity_Confidential;
-        private System.Windows.Forms.RadioButton rdb_LetterSecurity_Normal;
-        private System.Windows.Forms.RadioButton rdb_LetterSecurity_All;
-        private System.Windows.Forms.Panel pnl_ArchiveType;
-        private System.Windows.Forms.RadioButton rdb_LetterArchiveType_NotArchived;
-        private System.Windows.Forms.RadioButton rdb_LetterArchiveType_Archived;
-        private System.Windows.Forms.RadioButton rdb_LetterArchiveType_All;
-        private DevComponents.DotNetBar.LabelX lbl_ArchiveType;
-        private System.Windows.Forms.Panel pnl_ForcedType;
-        private System.Windows.Forms.RadioButton rdb_LetterForceType_Posthaste;
-        private System.Windows.Forms.RadioButton rdb_LetterForceType_Immediate;
-        private System.Windows.Forms.RadioButton rdb_LetterForceType_Normal;
-        private System.Windows.Forms.RadioButton rdb_LetterForceType_All;
-        private DevComponents.DotNetBar.LabelX lbl_ForcedType;
-        private System.Windows.Forms.Panel pnl_LetterType;
-        private System.Windows.Forms.RadioButton rdb_LetterType_ReplyLetter;
-        private System.Windows.Forms.RadioButton rdb_LetterType_Letter;
-        private System.Windows.Forms.RadioButton rdb_LetterType_All;
-        private DevComponents.DotNetBar.LabelX lbl_LetterType;
-        private System.Windows.Forms.Panel pnl_Status;
-        private System.Windows.Forms.RadioButton rdb_LetterStatus_NotReaded;
-        private System.Windows.Forms.RadioButton rdb_LetterStatus_Readed;
-        private System.Windows.Forms.RadioButton rdb_LetterStatus_All;
-        private DevComponents.DotNetBar.LabelX lbl_Status;
-        private System.Windows.Forms.Panel pnl_Attachment;
-        private System.Windows.Forms.RadioButton rdb_LetterAttachmentType_No;
-        private System.Windows.Forms.RadioButton rdb_LetterAttachmentType_Yes;
-        private System.Windows.Forms.RadioButton rdb_LetterAttachmentType_All;
-        private DevComponents.DotNetBar.LabelX lbl_Attachment;
-        private System.Windows.Forms.Panel pnl_Following;
-        private System.Windows.Forms.RadioButton rdb_LetterFollowingType_No;
-        private System.Windows.Forms.RadioButton rdb_LetterFollowingType_Yes;
-        private System.Windows.Forms.RadioButton rdb_LetterFollowingType_All;
-        private DevComponents.DotNetBar.LabelX lbl_FollowingType;
-        private FreeControls.PersianDateTimePicker txt_DateOn;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterNo;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterSender;
-        private FreeControls.PersianDateTimePicker txt_DateTo;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterSubject;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterReffrence;
-        private DevComponents.DotNetBar.ButtonX btn_Search;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgv_RecivedLetters;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgv_SendedLetters;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSubject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReciver;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSecurityType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterForceType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterArchiveType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerDeadLine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReadType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAttachmentType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReffrence;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterFollowingType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterRecivedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSentDate;
         private System.Windows.Forms.DataGridViewLinkColumn col_LetterDownloadAttach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSenderUserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReciverUserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReplyID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SecurityT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ArchiveT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_AttachmentT;
-        private System.Windows.Forms.SaveFileDialog saveAttachFileDialog;
+        private DevComponents.DotNetBar.Controls.GroupPanel pnl_Search;
+        private DevComponents.DotNetBar.ButtonX btn_Search;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterReffrence;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterSubject;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterNo;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterReciver;
+        private FreeControls.PersianDateTimePicker txt_DateTo;
+        private FreeControls.PersianDateTimePicker txt_DateOn;
+        private System.Windows.Forms.Panel pnl_Following;
+        private System.Windows.Forms.RadioButton rdb_LetterFollowingType_No;
+        private System.Windows.Forms.RadioButton rdb_LetterFollowingType_Yes;
+        private System.Windows.Forms.RadioButton rdb_LetterFollowingType_All;
+        private System.Windows.Forms.Panel pnl_Attachment;
+        private System.Windows.Forms.RadioButton rdb_LetterAttachmentType_No;
+        private System.Windows.Forms.RadioButton rdb_LetterAttachmentType_Yes;
+        private System.Windows.Forms.RadioButton rdb_LetterAttachmentType_All;
+        private System.Windows.Forms.Panel pnl_LetterType;
+        private System.Windows.Forms.RadioButton rdb_LetterType_ReplyLetter;
+        private System.Windows.Forms.RadioButton rdb_LetterType_Letter;
+        private System.Windows.Forms.RadioButton rdb_LetterType_All;
+        private DevComponents.DotNetBar.LabelX lbl_FollowingType;
+        private System.Windows.Forms.Panel pnl_ArchiveType;
+        private System.Windows.Forms.RadioButton rdb_LetterArchiveType_NotArchived;
+        private System.Windows.Forms.RadioButton rdb_LetterArchiveType_Archived;
+        private System.Windows.Forms.RadioButton rdb_LetterArchiveType_All;
+        private DevComponents.DotNetBar.LabelX lbl_Attachment;
+        private System.Windows.Forms.Panel pnl_ForcedType;
+        private System.Windows.Forms.RadioButton rdb_LetterForceType_Posthaste;
+        private System.Windows.Forms.RadioButton rdb_LetterForceType_Immediate;
+        private System.Windows.Forms.RadioButton rdb_LetterForceType_Normal;
+        private System.Windows.Forms.RadioButton rdb_LetterForceType_All;
+        private System.Windows.Forms.Panel pnl_SecurityType;
+        private System.Windows.Forms.RadioButton rdb_LetterSecurity_Secretive;
+        private System.Windows.Forms.RadioButton rdb_LetterSecurity_Confidential;
+        private System.Windows.Forms.RadioButton rdb_LetterSecurity_Normal;
+        private System.Windows.Forms.RadioButton rdb_LetterSecurity_All;
+        private DevComponents.DotNetBar.LabelX lbl_LetterType;
+        private DevComponents.DotNetBar.LabelX lbl_ForcedType;
+        private DevComponents.DotNetBar.LabelX lbl_ArchiveType;
+        private DevComponents.DotNetBar.LabelX lbl_SecurityType;
+        private DevComponents.DotNetBar.LabelX lbl_DateTo;
+        private DevComponents.DotNetBar.LabelX lbl_ReffrenceTo;
+        private DevComponents.DotNetBar.LabelX lbl_LetterSubject;
+        private DevComponents.DotNetBar.LabelX lbl_LetterNo;
+        private DevComponents.DotNetBar.LabelX lbl_Reciver;
+        private DevComponents.DotNetBar.LabelX lbl_DateOn;
     }
 }

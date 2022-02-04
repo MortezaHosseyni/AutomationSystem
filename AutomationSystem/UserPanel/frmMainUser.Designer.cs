@@ -269,6 +269,7 @@
             this.lbl_SendedMessages.Symbol = "59549";
             this.lbl_SendedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_SendedMessages.Text = "نامه‌هاي ارسالي";
+            this.lbl_SendedMessages.Click += new System.EventHandler(this.lbl_SendedMessages_Click);
             // 
             // lbl_Following
             // 
