@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
 using AutomationSystem.Moduls;
+using System.IO;
 
 namespace AutomationSystem.UserPanel
 {
@@ -101,6 +102,55 @@ namespace AutomationSystem.UserPanel
             else
             {
                 dgv_RecivedLetters.Rows.Clear();
+            }
+        }
+
+        private void dgv_RecivedLetters_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_RecivedLetters.CurrentCell.ColumnIndex.Equals(14) && e.RowIndex != -1)
+            {
+                if (dgv_RecivedLetters.CurrentCell != null && dgv_RecivedLetters.CurrentCell.Value != null)
+                {
+                    int get_LetterID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterID"].Value);
+                    var queryFileName = (from FN in db.AttachmentFiles where FN.AttachLetterID == get_LetterID select FN).ToList();
+                    saveAttachmentFile(saveAttachFileDialog, dgv_RecivedLetters, get_LetterID);
+                }
+            }
+            else
+            {
+                MessageBox.Show(dgv_RecivedLetters.CurrentCell.ToString());
+            }
+        }
+
+        private void saveAttachmentFile(SaveFileDialog objSFD, DataGridView objGrid, int getLetterID)
+        {
+            try
+            {
+                string strID = objGrid.CurrentRow.Cells["col_LetterDownloadAttach"].Value.ToString();
+                if (strID != null)
+                {
+                    var queryAttachment = (from AF in db.AttachmentFiles where AF.AttachLetterID == getLetterID select AF).ToList();
+
+                    byte[] objData = (byte[])queryAttachment[0].AttachFileData;
+
+                    objSFD.FileName = queryAttachment[0].AttachFileName;
+                    objSFD.Title = "دريافت فايل الصاقي";
+
+                    if (objSFD.ShowDialog() != DialogResult.Cancel)
+                    {
+                        string strFileToSave = objSFD.FileName;
+                        FileStream objFileStream = new FileStream(strFileToSave, FileMode.Create, FileAccess.Write);
+                        objFileStream.Write(objData, 0, objData.Length);
+                        objFileStream.Close();
+
+                        MessageBox.Show("فايل الصاقي باموفقيت دانلود شد", "دريافت فايل الصاق");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("در خواندن اطلاعات خطايي رخ داد","پايگاه داده");
+                return;
             }
         }
 

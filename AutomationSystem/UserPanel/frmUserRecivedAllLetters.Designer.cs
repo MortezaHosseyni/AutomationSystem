@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRecivedAllLetters));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -84,6 +85,7 @@
             this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
             this.pnl_RecivedLetters = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_RecivedLetters = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,14 +100,14 @@
             this.col_LetterReffrence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterFollowingType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterRecivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LetterDownloadAttach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterDownloadAttach = new System.Windows.Forms.DataGridViewLinkColumn();
             this.col_LetterSenderUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterReplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ArchiveT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_AttachmentT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveAttachFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.pnl_Main.SuspendLayout();
             this.pnl_Search.SuspendLayout();
             this.pnl_Following.SuspendLayout();
@@ -845,19 +847,34 @@
             this.col_ForceT,
             this.col_ArchiveT,
             this.col_AttachmentT});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_RecivedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_RecivedLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_RecivedLetters.Name = "dgv_RecivedLetters";
             this.dgv_RecivedLetters.Size = new System.Drawing.Size(1014, 324);
             this.dgv_RecivedLetters.TabIndex = 0;
+            this.dgv_RecivedLetters.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RecivedLetters_CellClick);
+            // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(451, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "نامه‌هاي وارده";
             // 
             // col_LetterID
             // 
@@ -950,8 +967,12 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
+            this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_LetterDownloadAttach.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.col_LetterDownloadAttach.Width = 123;
             // 
             // col_LetterSenderUserID
@@ -965,20 +986,6 @@
             this.col_LetterReplyID.HeaderText = "LetterReplyID";
             this.col_LetterReplyID.Name = "col_LetterReplyID";
             this.col_LetterReplyID.Visible = false;
-            // 
-            // lbl_Title
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(451, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "نامه‌هاي وارده";
             // 
             // col_SecurityT
             // 
@@ -1111,12 +1118,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReffrence;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterFollowingType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterRecivedDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterDownloadAttach;
+        private System.Windows.Forms.DataGridViewLinkColumn col_LetterDownloadAttach;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSenderUserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReplyID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SecurityT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ArchiveT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_AttachmentT;
+        private System.Windows.Forms.SaveFileDialog saveAttachFileDialog;
     }
 }
