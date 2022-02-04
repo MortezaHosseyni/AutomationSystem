@@ -105,6 +105,7 @@
             this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ArchiveT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_AttachmentT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_Search.SuspendLayout();
             this.pnl_Following.SuspendLayout();
@@ -842,7 +843,8 @@
             this.col_LetterReplyID,
             this.col_SecurityT,
             this.col_ForceT,
-            this.col_ArchiveT});
+            this.col_ArchiveT,
+            this.col_AttachmentT});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -996,6 +998,12 @@
             this.col_ArchiveT.Name = "col_ArchiveT";
             this.col_ArchiveT.Visible = false;
             // 
+            // col_AttachmentT
+            // 
+            this.col_AttachmentT.HeaderText = "AttachmentT";
+            this.col_AttachmentT.Name = "col_AttachmentT";
+            this.col_AttachmentT.Visible = false;
+            // 
             // frmUserRecivedAllLetters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -1109,5 +1117,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SecurityT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ArchiveT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_AttachmentT;
     }
 }

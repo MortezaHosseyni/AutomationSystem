@@ -59,6 +59,12 @@ namespace AutomationSystem.UserPanel
                     dgv_RecivedLetters.Rows[i].Cells["col_SecurityT"].Value = result[i].LetterSecurityType;
                     dgv_RecivedLetters.Rows[i].Cells["col_ForceT"].Value = result[i].LetterForceType;
                     dgv_RecivedLetters.Rows[i].Cells["col_ArchiveT"].Value = result[i].LetterArchiveType;
+                    dgv_RecivedLetters.Rows[i].Cells["col_AttachmentT"].Value = result[i].LetterAttachmentType;
+
+                    if (Convert.ToInt16(dgv_RecivedLetters.Rows[i].Cells["col_AttachmentT"].Value) == 1)
+                    {
+                        dgv_RecivedLetters.Rows[i].Cells["col_LetterDownloadAttach"].Value = result[i].AttachFileName;
+                    }
 
                     //SecurityType - Colors
                     if (Convert.ToInt16(dgv_RecivedLetters.Rows[i].Cells["col_SecurityT"].Value) == 2)
