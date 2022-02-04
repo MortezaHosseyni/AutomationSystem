@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserSendedLetters));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
@@ -141,9 +141,9 @@
             // 
             this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(438, 12);
+            this.lbl_Title.Location = new System.Drawing.Point(436, 3);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
+            this.lbl_Title.Size = new System.Drawing.Size(170, 40);
             this.lbl_Title.Symbol = "";
             this.lbl_Title.TabIndex = 5;
             this.lbl_Title.Text = "نامه‌هاي صادره";
@@ -154,7 +154,7 @@
             this.pnl_RecivedLetters.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.pnl_RecivedLetters.Controls.Add(this.dgv_SendedLetters);
             this.pnl_RecivedLetters.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_RecivedLetters.Location = new System.Drawing.Point(12, 58);
+            this.pnl_RecivedLetters.Location = new System.Drawing.Point(12, 49);
             this.pnl_RecivedLetters.Name = "pnl_RecivedLetters";
             this.pnl_RecivedLetters.Size = new System.Drawing.Size(1026, 336);
             // 
@@ -213,14 +213,14 @@
             this.col_ForceT,
             this.col_ArchiveT,
             this.col_AttachmentT});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_SendedLetters.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_SendedLetters.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_SendedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_SendedLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_SendedLetters.Name = "dgv_SendedLetters";
@@ -313,8 +313,8 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle3;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
             this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -388,7 +388,7 @@
             this.pnl_Search.Controls.Add(this.lbl_DateOn);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Search.Font = new System.Drawing.Font("B Nazanin", 10.25F, System.Drawing.FontStyle.Bold);
-            this.pnl_Search.Location = new System.Drawing.Point(12, 400);
+            this.pnl_Search.Location = new System.Drawing.Point(12, 391);
             this.pnl_Search.Name = "pnl_Search";
             this.pnl_Search.Size = new System.Drawing.Size(1026, 207);
             // 
