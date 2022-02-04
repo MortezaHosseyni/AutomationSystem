@@ -47,5 +47,6 @@ namespace DataModelLayer.Models
         public string LetterSentDate { get; set; }
         public Nullable<byte> SentReadType { get; set; }
         public string View_LetterReadType { get; set; }
+        public string LetterReciverFullName { get; set; }
     }
 }
