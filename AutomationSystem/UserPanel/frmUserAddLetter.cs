@@ -431,6 +431,25 @@ namespace AutomationSystem.UserPanel
                                 }
                             }
                         }
+                        if (rdb_LetterAttachment_No.Checked == true) //Letter have attch -Editing-> Attach removed
+                        {
+                            try
+                            {
+                                var queryCheckAttachment = (from AF in db.AttachmentFiles where AF.AttachLetterID == this.getLetterID select AF).ToList();
+                                if (queryCheckAttachment.Count > 0)
+                                {
+                                    var queryDeleteAttachment = (from AF in db.AttachmentFiles where AF.AttachLetterID == this.getLetterID select AF).SingleOrDefault();
+
+                                    db.AttachmentFiles.Remove(queryDeleteAttachment);
+                                    db.SaveChanges();
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("خطايي در دريافت اطلاعات رخ داد","پايگاه داده");
+                                return;
+                            }
+                        }
                         ts.Complete();
 
                         MessageBox.Show("اطلاعات با موفقيت ويرايش شد", "ويرايش نامه");
