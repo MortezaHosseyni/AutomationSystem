@@ -378,29 +378,35 @@ namespace AutomationSystem.UserPanel
                         db.SaveChanges();
 
                         //AttachFile Save
-                        //if (rdb_LetterAttachment_Yes.Checked == true)
-                        //{
-                        //    if (lbl_AttachmentFilePath.Text != "")
-                        //    {
-                        //        FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
-                        //        int intLenght = Convert.ToInt32(objFileStream.Length);
-                        //        byte[] objData = new byte[intLenght];
-                        //        string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
+                        if (rdb_LetterAttachment_Yes.Checked == true)
+                        {
+                            if (lbl_AttachmentFilePath.Text != "")
+                            {
+                                //Letter not attach -Editing-> Add attach 
+                                var queryCheckAttachment = (from AF in db.AttachmentFiles where AF.AttachLetterID == this.getLetterID select AF).ToList();
+                                if (queryCheckAttachment.Count == 0)
+                                {
+                                    FileStream objFileStream = new FileStream(lbl_AttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
+                                    int intLenght = Convert.ToInt32(objFileStream.Length);
+                                    byte[] objData = new byte[intLenght];
+                                    string[] strPath = lbl_AttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
 
-                        //        objFileStream.Read(objData, 0, intLenght);
+                                    objFileStream.Read(objData, 0, intLenght);
 
-                        //        objFileStream.Close();
+                                    objFileStream.Close();
 
-                        //        AttachmentFile AF = new AttachmentFile();
-                        //        AF.AttachFileSize = intLenght / 1024; //KB
-                        //        AF.AttachFileName = strPath[strPath.Length - 1];
-                        //        AF.AttachFileData = objData;
-                        //        AF.AttachLetterID = L.LetterID;
+                                    AttachmentFile AF = new AttachmentFile();
+                                    AF.AttachFileSize = intLenght / 1024; //KB
+                                    AF.AttachFileName = strPath[strPath.Length - 1];
+                                    AF.AttachFileData = objData;
+                                    AF.AttachLetterID = this.getLetterID;
 
-                        //        db.AttachmentFiles.Add(AF);
-                        //        db.SaveChanges();
-                        //    }
-                        //}
+                                    db.AttachmentFiles.Add(AF);
+                                    db.SaveChanges();
+                                }
+                                
+                            }
+                        }
                         ts.Complete();
 
                         MessageBox.Show("اطلاعات با موفقيت ويرايش شد", "ويرايش نامه");
