@@ -52,7 +52,7 @@ namespace AutomationSystem.UserPanel
                     dgv_SendedLetters.Rows[i].Cells["col_LetterAnswerDeadLine"].Value = result[i].LetterAnswerDeadLine;
                     dgv_SendedLetters.Rows[i].Cells["col_LetterNo"].Value = result[i].LetterNo;
                     dgv_SendedLetters.Rows[i].Cells["col_LetterArchiveType"].Value = result[i].View_LetterArchiveType;
-                    dgv_SendedLetters.Rows[i].Cells["col_LetterReciver"].Value = result[i].UserFullName;
+                    dgv_SendedLetters.Rows[i].Cells["col_LetterReciver"].Value = result[i].LetterReciverFullName;
                     dgv_SendedLetters.Rows[i].Cells["col_LetterReciverUserID"].Value = result[i].SentUserID;
                     dgv_SendedLetters.Rows[i].Cells["col_LetterReffrence"].Value = result[i].LetterReffrence;
                     dgv_SendedLetters.Rows[i].Cells["col_LetterSentDate"].Value = result[i].LetterSentDate;
