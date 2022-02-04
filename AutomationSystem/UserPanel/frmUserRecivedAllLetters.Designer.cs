@@ -84,7 +84,6 @@
             this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
             this.pnl_RecivedLetters = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_RecivedLetters = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +101,10 @@
             this.col_LetterDownloadAttach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSenderUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterReplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
+            this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ArchiveT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_Search.SuspendLayout();
             this.pnl_Following.SuspendLayout();
@@ -836,7 +839,10 @@
             this.col_LetterRecivedDate,
             this.col_LetterDownloadAttach,
             this.col_LetterSenderUserID,
-            this.col_LetterReplyID});
+            this.col_LetterReplyID,
+            this.col_SecurityT,
+            this.col_ForceT,
+            this.col_ArchiveT});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -850,20 +856,6 @@
             this.dgv_RecivedLetters.Name = "dgv_RecivedLetters";
             this.dgv_RecivedLetters.Size = new System.Drawing.Size(1014, 324);
             this.dgv_RecivedLetters.TabIndex = 0;
-            // 
-            // lbl_Title
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(451, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "نامه‌هاي وارده";
             // 
             // col_LetterID
             // 
@@ -971,6 +963,38 @@
             this.col_LetterReplyID.HeaderText = "LetterReplyID";
             this.col_LetterReplyID.Name = "col_LetterReplyID";
             this.col_LetterReplyID.Visible = false;
+            // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(451, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "نامه‌هاي وارده";
+            // 
+            // col_SecurityT
+            // 
+            this.col_SecurityT.HeaderText = "SecurityT";
+            this.col_SecurityT.Name = "col_SecurityT";
+            this.col_SecurityT.Visible = false;
+            // 
+            // col_ForceT
+            // 
+            this.col_ForceT.HeaderText = "ForceT";
+            this.col_ForceT.Name = "col_ForceT";
+            this.col_ForceT.Visible = false;
+            // 
+            // col_ArchiveT
+            // 
+            this.col_ArchiveT.HeaderText = "ArchiveT";
+            this.col_ArchiveT.Name = "col_ArchiveT";
+            this.col_ArchiveT.Visible = false;
             // 
             // frmUserRecivedAllLetters
             // 
@@ -1082,5 +1106,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterDownloadAttach;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSenderUserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReplyID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_SecurityT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ArchiveT;
     }
 }
