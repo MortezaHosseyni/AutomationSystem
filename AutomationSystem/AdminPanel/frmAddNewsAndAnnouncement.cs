@@ -89,6 +89,8 @@ namespace AutomationSystem.AdminPanel
 
                     objFileStream.Close();
 
+                    N.NewsAttachmentFileSize = intLenght;
+                    N.NewsAttachmentFileName = strPath[strPath.Length - 1];
                     N.NewsAttachment = objData;
                 }
 
@@ -96,6 +98,7 @@ namespace AutomationSystem.AdminPanel
                 db.SaveChanges();
 
                 MessageBox.Show("اطلاعيه با موفقيت ارسال شد","ارسال خبر");
+                this.Close();
             }
             catch (Exception)
             {
