@@ -179,6 +179,7 @@
             this.lbl_UnReadedMessages.Symbol = "57534";
             this.lbl_UnReadedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_UnReadedMessages.Text = "نامه‌هاي خوانده نشده";
+            this.lbl_UnReadedMessages.Click += new System.EventHandler(this.lbl_UnReadedMessages_Click);
             // 
             // lbl_UrgentActionMessages
             // 

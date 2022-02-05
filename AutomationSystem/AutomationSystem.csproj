@@ -240,6 +240,12 @@
     <Compile Include="UserPanel\frmUserShowSentNotes.Designer.cs">
       <DependentUpon>frmUserShowSentNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserUnReadLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserUnReadLetters.Designer.cs">
+      <DependentUpon>frmUserUnReadLetters.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserShowSentNotes.resx">
       <DependentUpon>frmUserShowSentNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserUnReadLetters.resx">
+      <DependentUpon>frmUserUnReadLetters.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Editor\Resources\Thumbs.db" />
     <None Include="Properties\Settings.settings">
