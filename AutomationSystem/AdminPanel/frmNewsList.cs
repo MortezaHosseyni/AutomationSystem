@@ -96,7 +96,7 @@ namespace AutomationSystem.AdminPanel
                 if (dgv_NewsList.CurrentCell != null && dgv_NewsList.CurrentCell.Value != null)
                 {
                     int get_NewsID = Convert.ToInt32(dgv_NewsList.CurrentRow.Cells["col_NewsID"].Value);
-                    var queryFileName = (from FN in db.AttachmentFiles where FN.AttachLetterID == get_NewsID select FN).ToList();
+                    var queryFileName = (from AN in db.News where AN.NewsID == get_NewsID select AN).ToList();
                     saveAttachmentFile(saveFileDialog, dgv_NewsList, get_NewsID);
                 }
             }
@@ -109,11 +109,11 @@ namespace AutomationSystem.AdminPanel
                 string strID = objGrid.CurrentRow.Cells["col_NewsAttachment"].Value.ToString();
                 if (strID != null)
                 {
-                    var queryAttachment = (from AF in db.AttachmentFiles where AF.AttachLetterID == getLetterID select AF).ToList();
+                    var queryAttachment = (from AN in db.News where AN.NewsID == getLetterID select AN).ToList();
 
-                    byte[] objData = (byte[])queryAttachment[0].AttachFileData;
+                    byte[] objData = (byte[])queryAttachment[0].NewsAttachment;
 
-                    objSFD.FileName = queryAttachment[0].AttachFileName;
+                    objSFD.FileName = queryAttachment[0].NewsAttachmentFileName;
                     objSFD.Title = "دريافت فايل الصاقي";
 
                     if (objSFD.ShowDialog() != DialogResult.Cancel)
