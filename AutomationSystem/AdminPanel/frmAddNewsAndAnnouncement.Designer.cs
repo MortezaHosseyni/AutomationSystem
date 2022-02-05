@@ -31,7 +31,7 @@
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Buttons = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
-            this.btn_Save = new DevComponents.DotNetBar.ButtonX();
+            this.btn_SendNews = new DevComponents.DotNetBar.ButtonX();
             this.pnl_AddNewsAndAnnouncement = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.lbl_NewsSubject = new DevComponents.DotNetBar.LabelX();
@@ -76,7 +76,7 @@
             this.pnl_Buttons.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Buttons.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.pnl_Buttons.Controls.Add(this.btn_Exit);
-            this.pnl_Buttons.Controls.Add(this.btn_Save);
+            this.pnl_Buttons.Controls.Add(this.btn_SendNews);
             this.pnl_Buttons.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Buttons.Location = new System.Drawing.Point(12, 339);
             this.pnl_Buttons.Name = "pnl_Buttons";
@@ -125,18 +125,19 @@
             this.btn_Exit.Text = "خروج";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // btn_Save
+            // btn_SendNews
             // 
-            this.btn_Save.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_Save.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Save.Location = new System.Drawing.Point(367, 15);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
-            this.btn_Save.Size = new System.Drawing.Size(220, 43);
-            this.btn_Save.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_Save.Symbol = "";
-            this.btn_Save.TabIndex = 4;
-            this.btn_Save.Text = "ارسال خبر";
+            this.btn_SendNews.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_SendNews.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_SendNews.Location = new System.Drawing.Point(367, 15);
+            this.btn_SendNews.Name = "btn_SendNews";
+            this.btn_SendNews.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
+            this.btn_SendNews.Size = new System.Drawing.Size(220, 43);
+            this.btn_SendNews.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_SendNews.Symbol = "";
+            this.btn_SendNews.TabIndex = 4;
+            this.btn_SendNews.Text = "ارسال خبر";
+            this.btn_SendNews.Click += new System.EventHandler(this.btn_SendNews_Click);
             // 
             // pnl_AddNewsAndAnnouncement
             // 
@@ -369,7 +370,7 @@
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_Buttons;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_AddNewsAndAnnouncement;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
-        private DevComponents.DotNetBar.ButtonX btn_Save;
+        private DevComponents.DotNetBar.ButtonX btn_SendNews;
         private DevComponents.DotNetBar.LabelX lbl_NewsSubject;
         private DevComponents.DotNetBar.LabelX lbl_NewsContext;
         private DevComponents.DotNetBar.LabelX lbl_NewsAttachmentFilePath;

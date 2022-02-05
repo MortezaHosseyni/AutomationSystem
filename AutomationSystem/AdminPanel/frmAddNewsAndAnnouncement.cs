@@ -59,5 +59,34 @@ namespace AutomationSystem.AdminPanel
                 return;
             }
         }
+
+        private void btn_SendNews_Click(object sender, EventArgs e)
+        {
+            if (txt_NewsSubject.Text == "" || txt_NewsContext.Text == "")
+            {
+                MessageBox.Show("اطلاعات ناقص است، لطفا فيلدهاي خالي را پُر كنيد","ارسال اطلاعيه");
+                txt_NewsSubject.Focus();
+                return;
+            }
+
+            try
+            {
+                News N = new News();
+                N.NewsUserID = PublicVariable.global_UserID;
+                N.NewsSubject = txt_NewsSubject.Text.Trim();
+                N.NewsContext = txt_NewsContext.Text.Trim();
+                N.NewsDate = val_NewsDate.Text.Trim();
+
+                db.News.Add(N);
+                db.SaveChanges();
+
+                MessageBox.Show("اطلاعيه با موفقيت ارسال شد","ارسال خبر");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("خطايي در خواندن اطلاعات رخ داد","پايگاه داده");
+                return;
+            }
+        }
     }
 }
