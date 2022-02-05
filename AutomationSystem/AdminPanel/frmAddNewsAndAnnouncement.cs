@@ -77,6 +77,21 @@ namespace AutomationSystem.AdminPanel
                 N.NewsContext = txt_NewsContext.Text.Trim();
                 N.NewsDate = val_NewsDate.Text.Trim();
 
+                //AttachFile Save
+                if (lbl_NewsAttachmentFilePath.Text != "")
+                {
+                    FileStream objFileStream = new FileStream(lbl_NewsAttachmentFilePath.Text, FileMode.Open, FileAccess.Read);
+                    int intLenght = Convert.ToInt32(objFileStream.Length);
+                    byte[] objData = new byte[intLenght];
+                    string[] strPath = lbl_NewsAttachmentFilePath.Text.Split(Convert.ToChar(@"\"));
+
+                    objFileStream.Read(objData, 0, intLenght);
+
+                    objFileStream.Close();
+
+                    N.NewsAttachment = objData;
+                }
+
                 db.News.Add(N);
                 db.SaveChanges();
 
