@@ -28,6 +28,11 @@
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentLetters_Letters" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentLetters_Users" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_ReciveLetter" Width="1.5" PointX="10.5" PointY="6.5" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Note" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.SentNote" Width="1.5" PointX="15.375" PointY="0.75" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Notes_Users" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentNotes_Notes" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentNotes_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -78,10 +78,16 @@
     <Compile Include="Models\Letter.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Note.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Reminder.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SentLetter.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SentNote.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sp_ShowAllUserInfo_Result.cs">

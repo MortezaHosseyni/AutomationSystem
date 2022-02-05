@@ -60,6 +60,16 @@
           <Property Name="LetterReplyID" Type="int" />
           <Property Name="LetterSentDate" Type="varchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="NoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NoteSubject" Type="varchar" MaxLength="200" />
+          <Property Name="NoteContext" Type="varchar" MaxLength="500" />
+          <Property Name="NoteCreateDate" Type="varchar" MaxLength="30" />
+          <Property Name="NoteUserID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Reminder">
           <Key>
             <PropertyRef Name="RemindID" />
@@ -80,6 +90,14 @@
           <Property Name="SentSendedLetterID" Type="int" Nullable="false" />
           <Property Name="SentUserID" Type="int" Nullable="false" />
           <Property Name="SentReadType" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="SentNotes">
+          <Key>
+            <PropertyRef Name="SentNoteID" />
+          </Key>
+          <Property Name="SentNoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SentNoteSendedNoteID" Type="int" Nullable="false" />
+          <Property Name="SentNoteUserID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="UserLog">
           <Key>
@@ -376,6 +394,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Notes_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="NoteUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Reminder_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
@@ -409,6 +439,30 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Principal>
             <Dependent Role="SentLetters">
               <PropertyRef Name="SentUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentNotes_Notes">
+          <End Role="Notes" Type="Self.Notes" Multiplicity="1" />
+          <End Role="SentNotes" Type="Self.SentNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notes">
+              <PropertyRef Name="NoteID" />
+            </Principal>
+            <Dependent Role="SentNotes">
+              <PropertyRef Name="SentNoteSendedNoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentNotes_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="SentNotes" Type="Self.SentNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="SentNotes">
+              <PropertyRef Name="SentNoteUserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -475,8 +529,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="AttachmentFiles" EntityType="Self.AttachmentFiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentLetters" EntityType="Self.SentLetters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SentNotes" EntityType="Self.SentNotes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vw_AsignmentJobs" EntityType="Self.Vw_AsignmentJobs" store:Type="Views" store:Schema="dbo">
@@ -636,6 +692,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="Users" EntitySet="Users" />
             <End Role="Letters" EntitySet="Letters" />
           </AssociationSet>
+          <AssociationSet Name="FK_Notes_Users" Association="Self.FK_Notes_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
           <AssociationSet Name="FK_Reminder_Users" Association="Self.FK_Reminder_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reminder" EntitySet="Reminder" />
@@ -647,6 +707,14 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <AssociationSet Name="FK_SentLetters_Users" Association="Self.FK_SentLetters_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="SentLetters" EntitySet="SentLetters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentNotes_Notes" Association="Self.FK_SentNotes_Notes">
+            <End Role="Notes" EntitySet="Notes" />
+            <End Role="SentNotes" EntitySet="SentNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentNotes_Users" Association="Self.FK_SentNotes_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="SentNotes" EntitySet="SentNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_UserLog_Users1" Association="Self.FK_UserLog_Users1">
             <End Role="Users" EntitySet="Users" />
@@ -680,6 +748,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="AsignmentJobs" Relationship="Office_Automation_DatabaseModel.FK_AsignmentJobs_Users" FromRole="User" ToRole="AsignmentJob" />
           <NavigationProperty Name="Letters" Relationship="Office_Automation_DatabaseModel.FK_Letters_Users" FromRole="User" ToRole="Letter" />
           <NavigationProperty Name="SentLetters" Relationship="Office_Automation_DatabaseModel.FK_SentLetters_Users" FromRole="User" ToRole="SentLetter" />
+          <NavigationProperty Name="Notes" Relationship="Office_Automation_DatabaseModel.FK_Notes_Users" FromRole="User" ToRole="Note" />
+          <NavigationProperty Name="SentNotes" Relationship="Office_Automation_DatabaseModel.FK_SentNotes_Users" FromRole="User" ToRole="SentNote" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -800,6 +870,20 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="SentLetter" EntitySet="SentLetters" />
           </AssociationSet>
           <EntitySet Name="Vw_ReciveLetter" EntityType="Office_Automation_DatabaseModel.Vw_ReciveLetter" />
+          <EntitySet Name="Notes" EntityType="Office_Automation_DatabaseModel.Note" />
+          <EntitySet Name="SentNotes" EntityType="Office_Automation_DatabaseModel.SentNote" />
+          <AssociationSet Name="FK_Notes_Users" Association="Office_Automation_DatabaseModel.FK_Notes_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Note" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentNotes_Notes" Association="Office_Automation_DatabaseModel.FK_SentNotes_Notes">
+            <End Role="Note" EntitySet="Notes" />
+            <End Role="SentNote" EntitySet="SentNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentNotes_Users" Association="Office_Automation_DatabaseModel.FK_SentNotes_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SentNote" EntitySet="SentNotes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -1204,6 +1288,64 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="View_LetterReadType" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="LetterReciverFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="NoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoteSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NoteContext" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="NoteCreateDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NoteUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_Notes_Users" FromRole="Note" ToRole="User" />
+          <NavigationProperty Name="SentNotes" Relationship="Office_Automation_DatabaseModel.FK_SentNotes_Notes" FromRole="Note" ToRole="SentNote" />
+        </EntityType>
+        <EntityType Name="SentNote">
+          <Key>
+            <PropertyRef Name="SentNoteID" />
+          </Key>
+          <Property Name="SentNoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SentNoteSendedNoteID" Type="Int32" Nullable="false" />
+          <Property Name="SentNoteUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Note" Relationship="Office_Automation_DatabaseModel.FK_SentNotes_Notes" FromRole="SentNote" ToRole="Note" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_SentNotes_Users" FromRole="SentNote" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Notes_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.Note" Role="Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Note">
+              <PropertyRef Name="NoteUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentNotes_Notes">
+          <End Type="Office_Automation_DatabaseModel.Note" Role="Note" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.SentNote" Role="SentNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Note">
+              <PropertyRef Name="NoteID" />
+            </Principal>
+            <Dependent Role="SentNote">
+              <PropertyRef Name="SentNoteSendedNoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentNotes_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.SentNote" Role="SentNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="SentNote">
+              <PropertyRef Name="SentNoteUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1519,6 +1661,26 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
                 <ScalarProperty Name="LetterSubject" ColumnName="LetterSubject" />
                 <ScalarProperty Name="LetterID" ColumnName="LetterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Note">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="NoteUserID" ColumnName="NoteUserID" />
+                <ScalarProperty Name="NoteCreateDate" ColumnName="NoteCreateDate" />
+                <ScalarProperty Name="NoteContext" ColumnName="NoteContext" />
+                <ScalarProperty Name="NoteSubject" ColumnName="NoteSubject" />
+                <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SentNotes">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.SentNote">
+              <MappingFragment StoreEntitySet="SentNotes">
+                <ScalarProperty Name="SentNoteUserID" ColumnName="SentNoteUserID" />
+                <ScalarProperty Name="SentNoteSendedNoteID" ColumnName="SentNoteSendedNoteID" />
+                <ScalarProperty Name="SentNoteID" ColumnName="SentNoteID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
