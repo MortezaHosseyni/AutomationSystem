@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_NewsList = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_NewsList = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.col_NewsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_NewsSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_NewsContext = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_NewsDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_NewsAttachment = new System.Windows.Forms.DataGridViewLinkColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_NewsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NewsList)).BeginInit();
@@ -159,14 +165,21 @@
             this.dgv_NewsList.AllowUserToAddRows = false;
             this.dgv_NewsList.AllowUserToDeleteRows = false;
             this.dgv_NewsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_NewsList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_NewsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_NewsID,
+            this.col_NewsSubject,
+            this.col_NewsContext,
+            this.col_NewsDate,
+            this.col_FullName,
+            this.col_NewsAttachment});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_NewsList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_NewsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_NewsList.Location = new System.Drawing.Point(3, 3);
             this.dgv_NewsList.Name = "dgv_NewsList";
@@ -177,14 +190,54 @@
             // 
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(395, 510);
+            this.btn_Exit.Location = new System.Drawing.Point(361, 510);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
-            this.btn_Exit.Size = new System.Drawing.Size(162, 46);
+            this.btn_Exit.Size = new System.Drawing.Size(247, 46);
             this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 3;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // col_NewsID
+            // 
+            this.col_NewsID.HeaderText = "NewsID";
+            this.col_NewsID.Name = "col_NewsID";
+            this.col_NewsID.Visible = false;
+            // 
+            // col_NewsSubject
+            // 
+            this.col_NewsSubject.HeaderText = "موضوع";
+            this.col_NewsSubject.Name = "col_NewsSubject";
+            this.col_NewsSubject.Width = 160;
+            // 
+            // col_NewsContext
+            // 
+            this.col_NewsContext.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_NewsContext.HeaderText = "متن";
+            this.col_NewsContext.Name = "col_NewsContext";
+            // 
+            // col_NewsDate
+            // 
+            this.col_NewsDate.HeaderText = "تاريخ خبر";
+            this.col_NewsDate.Name = "col_NewsDate";
+            this.col_NewsDate.Width = 130;
+            // 
+            // col_FullName
+            // 
+            this.col_FullName.HeaderText = "نويسنده خبر";
+            this.col_FullName.Name = "col_FullName";
+            this.col_FullName.Width = 160;
+            // 
+            // col_NewsAttachment
+            // 
+            this.col_NewsAttachment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_NewsAttachment.HeaderText = "فايل الصاقي";
+            this.col_NewsAttachment.Name = "col_NewsAttachment";
+            this.col_NewsAttachment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_NewsAttachment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_NewsAttachment.Width = 104;
             // 
             // frmNewsList
             // 
@@ -199,6 +252,7 @@
             this.Name = "frmNewsList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmNewsList_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_NewsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NewsList)).EndInit();
@@ -214,5 +268,11 @@
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_NewsList;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_NewsList;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_NewsID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_NewsSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_NewsContext;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_NewsDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_FullName;
+        private System.Windows.Forms.DataGridViewLinkColumn col_NewsAttachment;
     }
 }
