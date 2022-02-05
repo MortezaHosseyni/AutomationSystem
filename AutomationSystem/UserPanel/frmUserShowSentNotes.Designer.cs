@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserShowSentNotes));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_SentNotes = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -41,8 +44,20 @@
             this.col_ReciverFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_NoteReciverID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_NoteCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_NoteDateTo = new FreeControls.PersianDateTimePicker();
+            this.txt_NoteDateIn = new FreeControls.PersianDateTimePicker();
+            this.lbl_RemindDateTo = new DevComponents.DotNetBar.LabelX();
+            this.lbl_NoteDateIn = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SearchSubject = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SearchReciver = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SearchContext = new DevComponents.DotNetBar.LabelX();
+            this.txt_SearchSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_SearchReciver = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_SearchContext = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.pnl_Main.SuspendLayout();
             this.pnl_SentNotes.SuspendLayout();
+            this.pnl_Search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SentNotes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,6 +140,17 @@
             // 
             this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Search.Controls.Add(this.btn_Search);
+            this.pnl_Search.Controls.Add(this.txt_SearchReciver);
+            this.pnl_Search.Controls.Add(this.txt_SearchContext);
+            this.pnl_Search.Controls.Add(this.txt_SearchSubject);
+            this.pnl_Search.Controls.Add(this.txt_NoteDateTo);
+            this.pnl_Search.Controls.Add(this.txt_NoteDateIn);
+            this.pnl_Search.Controls.Add(this.lbl_RemindDateTo);
+            this.pnl_Search.Controls.Add(this.lbl_SearchContext);
+            this.pnl_Search.Controls.Add(this.lbl_SearchReciver);
+            this.pnl_Search.Controls.Add(this.lbl_SearchSubject);
+            this.pnl_Search.Controls.Add(this.lbl_NoteDateIn);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Search.Location = new System.Drawing.Point(12, 448);
             this.pnl_Search.Name = "pnl_Search";
@@ -164,8 +190,16 @@
             // 
             this.dgv_SentNotes.AllowUserToAddRows = false;
             this.dgv_SentNotes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_SentNotes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_SentNotes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_SentNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_SentNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_SentNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_SentNoteID,
@@ -174,17 +208,26 @@
             this.col_ReciverFullName,
             this.col_NoteReciverID,
             this.col_NoteCreateDate});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_SentNotes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_SentNotes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_SentNotes.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgv_SentNotes.EnableHeadersVisualStyles = false;
+            this.dgv_SentNotes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_SentNotes.Location = new System.Drawing.Point(3, 3);
             this.dgv_SentNotes.Name = "dgv_SentNotes";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_SentNotes.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_SentNotes.Size = new System.Drawing.Size(1014, 335);
             this.dgv_SentNotes.TabIndex = 0;
             // 
@@ -224,6 +267,143 @@
             this.col_NoteCreateDate.Name = "col_NoteCreateDate";
             this.col_NoteCreateDate.Width = 110;
             // 
+            // txt_NoteDateTo
+            // 
+            this.txt_NoteDateTo.BackColor = System.Drawing.Color.White;
+            this.txt_NoteDateTo.Font = new System.Drawing.Font("B Nazanin", 14F);
+            this.txt_NoteDateTo.Location = new System.Drawing.Point(548, 11);
+            this.txt_NoteDateTo.Name = "txt_NoteDateTo";
+            this.txt_NoteDateTo.ShowTime = false;
+            this.txt_NoteDateTo.Size = new System.Drawing.Size(165, 33);
+            this.txt_NoteDateTo.TabIndex = 13;
+            this.txt_NoteDateTo.Text = "persianDateTimePicker2";
+            this.txt_NoteDateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_NoteDateTo.Value")));
+            // 
+            // txt_NoteDateIn
+            // 
+            this.txt_NoteDateIn.BackColor = System.Drawing.Color.White;
+            this.txt_NoteDateIn.Font = new System.Drawing.Font("B Nazanin", 14F);
+            this.txt_NoteDateIn.Location = new System.Drawing.Point(736, 11);
+            this.txt_NoteDateIn.Name = "txt_NoteDateIn";
+            this.txt_NoteDateIn.ShowTime = false;
+            this.txt_NoteDateIn.Size = new System.Drawing.Size(165, 33);
+            this.txt_NoteDateIn.TabIndex = 12;
+            this.txt_NoteDateIn.Text = "persianDateTimePicker1";
+            this.txt_NoteDateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_NoteDateIn.Value")));
+            // 
+            // lbl_RemindDateTo
+            // 
+            // 
+            // 
+            // 
+            this.lbl_RemindDateTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_RemindDateTo.Location = new System.Drawing.Point(719, 13);
+            this.lbl_RemindDateTo.Name = "lbl_RemindDateTo";
+            this.lbl_RemindDateTo.Size = new System.Drawing.Size(11, 27);
+            this.lbl_RemindDateTo.TabIndex = 11;
+            this.lbl_RemindDateTo.Text = "تا";
+            // 
+            // lbl_NoteDateIn
+            // 
+            // 
+            // 
+            // 
+            this.lbl_NoteDateIn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_NoteDateIn.Location = new System.Drawing.Point(907, 13);
+            this.lbl_NoteDateIn.Name = "lbl_NoteDateIn";
+            this.lbl_NoteDateIn.Size = new System.Drawing.Size(99, 27);
+            this.lbl_NoteDateIn.TabIndex = 10;
+            this.lbl_NoteDateIn.Text = "تاريخ يادآوري از:";
+            // 
+            // lbl_SearchSubject
+            // 
+            // 
+            // 
+            // 
+            this.lbl_SearchSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchSubject.Location = new System.Drawing.Point(481, 13);
+            this.lbl_SearchSubject.Name = "lbl_SearchSubject";
+            this.lbl_SearchSubject.Size = new System.Drawing.Size(46, 27);
+            this.lbl_SearchSubject.TabIndex = 10;
+            this.lbl_SearchSubject.Text = "موضوع:";
+            // 
+            // lbl_SearchReciver
+            // 
+            // 
+            // 
+            // 
+            this.lbl_SearchReciver.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchReciver.Location = new System.Drawing.Point(481, 65);
+            this.lbl_SearchReciver.Name = "lbl_SearchReciver";
+            this.lbl_SearchReciver.Size = new System.Drawing.Size(44, 27);
+            this.lbl_SearchReciver.TabIndex = 10;
+            this.lbl_SearchReciver.Text = "گيرنده:";
+            // 
+            // lbl_SearchContext
+            // 
+            // 
+            // 
+            // 
+            this.lbl_SearchContext.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchContext.Location = new System.Drawing.Point(925, 68);
+            this.lbl_SearchContext.Name = "lbl_SearchContext";
+            this.lbl_SearchContext.Size = new System.Drawing.Size(84, 27);
+            this.lbl_SearchContext.TabIndex = 10;
+            this.lbl_SearchContext.Text = "متن يادداشت:";
+            // 
+            // txt_SearchSubject
+            // 
+            // 
+            // 
+            // 
+            this.txt_SearchSubject.Border.Class = "TextBoxBorder";
+            this.txt_SearchSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SearchSubject.Location = new System.Drawing.Point(164, 11);
+            this.txt_SearchSubject.Name = "txt_SearchSubject";
+            this.txt_SearchSubject.PreventEnterBeep = true;
+            this.txt_SearchSubject.Size = new System.Drawing.Size(311, 36);
+            this.txt_SearchSubject.TabIndex = 1;
+            this.txt_SearchSubject.WatermarkText = "جستجو در موضوع نيادداشت‌ها...";
+            // 
+            // txt_SearchReciver
+            // 
+            // 
+            // 
+            // 
+            this.txt_SearchReciver.Border.Class = "TextBoxBorder";
+            this.txt_SearchReciver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SearchReciver.Location = new System.Drawing.Point(164, 63);
+            this.txt_SearchReciver.Name = "txt_SearchReciver";
+            this.txt_SearchReciver.PreventEnterBeep = true;
+            this.txt_SearchReciver.Size = new System.Drawing.Size(311, 36);
+            this.txt_SearchReciver.TabIndex = 2;
+            this.txt_SearchReciver.WatermarkText = "جستجو در گيرنده يادداشت...";
+            // 
+            // txt_SearchContext
+            // 
+            // 
+            // 
+            // 
+            this.txt_SearchContext.Border.Class = "TextBoxBorder";
+            this.txt_SearchContext.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SearchContext.Location = new System.Drawing.Point(548, 63);
+            this.txt_SearchContext.Name = "txt_SearchContext";
+            this.txt_SearchContext.PreventEnterBeep = true;
+            this.txt_SearchContext.Size = new System.Drawing.Size(371, 36);
+            this.txt_SearchContext.TabIndex = 3;
+            this.txt_SearchContext.WatermarkText = "جستجو در متن يادداشت‌ها...";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(28, 13);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(97, 86);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 4;
+            // 
             // frmUserShowSentNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -240,6 +420,7 @@
             this.Load += new System.EventHandler(this.frmUserShowSentNotes_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_SentNotes.ResumeLayout(false);
+            this.pnl_Search.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SentNotes)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,5 +439,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ReciverFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_NoteReciverID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_NoteCreateDate;
+        private FreeControls.PersianDateTimePicker txt_NoteDateTo;
+        private FreeControls.PersianDateTimePicker txt_NoteDateIn;
+        private DevComponents.DotNetBar.LabelX lbl_RemindDateTo;
+        private DevComponents.DotNetBar.LabelX lbl_NoteDateIn;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SearchReciver;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SearchContext;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SearchSubject;
+        private DevComponents.DotNetBar.LabelX lbl_SearchContext;
+        private DevComponents.DotNetBar.LabelX lbl_SearchReciver;
+        private DevComponents.DotNetBar.LabelX lbl_SearchSubject;
+        private DevComponents.DotNetBar.ButtonX btn_Search;
     }
 }
