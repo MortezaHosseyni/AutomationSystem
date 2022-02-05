@@ -25,12 +25,13 @@ namespace AutomationSystem.UserPanel
             this.Left = 10;
             this.Top = 160;
 
-            ShowSentNotes();
+            txt_NoteDateIn.Value = DateTime.Now.AddDays(-10);
+            ShowSentNotes(searchCondition());
         }
 
-        private void ShowSentNotes()
+        private void ShowSentNotes(string searchSentNotes)
         {
-            var query = db.Database.SqlQuery<Vw_ReciveNotes>($"SELECT * FROM Vw_ReciveNotes WHERE NoteUserID = {PublicVariable.global_UserID}");
+            var query = db.Database.SqlQuery<Vw_ReciveNotes>($"SELECT * FROM Vw_ReciveNotes WHERE NoteUserID = {PublicVariable.global_UserID} {searchSentNotes}");
             var result = query.ToList();
 
             if (result.Count != 0)
@@ -51,6 +52,37 @@ namespace AutomationSystem.UserPanel
             {
                 dgv_SentNotes.Rows.Clear();
             }
+        }
+
+        private string searchCondition()
+        {
+            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_NoteDateIn.Value.Year.ToString()}/{txt_NoteDateIn.Value.Month.ToString()}/{txt_NoteDateIn.Value.Day.ToString()}"));
+            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_NoteDateTo.Value.Year.ToString()}/{txt_NoteDateTo.Value.Month.ToString()}/{txt_NoteDateTo.Value.Day.ToString()}"));
+
+
+            string searchString = $" AND NoteCreateDate BETWEEN '{dateIn}' AND '{dateTo}'";
+
+            if (txt_SearchSubject.Text != "")
+            {
+                searchString += $" AND NoteSubject LIKE '%{txt_SearchSubject.Text}%'";
+            }
+
+            if (txt_SearchReciver.Text != "")
+            {
+                searchString += $" AND ReciverFullName LIKE '%{txt_SearchReciver.Text}%'";
+            }
+
+            if (txt_SearchContext.Text != "")
+            {
+                searchString += $" AND NoteContext LIKE '%{txt_SearchContext.Text}%'";
+            }
+
+            return searchString;
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            ShowSentNotes(searchCondition());
         }
     }
 }
