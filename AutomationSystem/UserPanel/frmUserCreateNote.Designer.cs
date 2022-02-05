@@ -44,7 +44,7 @@
             this.lbl_InfoOne = new DevComponents.DotNetBar.LabelX();
             this.lbl_SearchFullName = new DevComponents.DotNetBar.LabelX();
             this.txt_SearchFullName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.lbl_InfoTwo = new DevComponents.DotNetBar.LabelX();
             this.btn_SendNote = new DevComponents.DotNetBar.ButtonX();
             this.dgv_Recivers = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -188,7 +188,7 @@
             // 
             this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnl_Search.Controls.Add(this.buttonX1);
+            this.pnl_Search.Controls.Add(this.btn_Search);
             this.pnl_Search.Controls.Add(this.txt_SearchFullName);
             this.pnl_Search.Controls.Add(this.lbl_SearchFullName);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
@@ -391,16 +391,17 @@
             this.txt_SearchFullName.TabIndex = 3;
             this.txt_SearchFullName.WatermarkText = "جستجوي در نام كاركنان...";
             // 
-            // buttonX1
+            // btn_Search
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(26, 39);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(52, 36);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.Symbol = "";
-            this.buttonX1.TabIndex = 2;
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(26, 39);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(52, 36);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 2;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // lbl_InfoTwo
             // 
@@ -526,7 +527,7 @@
         private DevComponents.DotNetBar.LabelX val_NoteCreatedDate;
         private DevComponents.DotNetBar.LabelX lbl_NoteCreateDate;
         private DevComponents.DotNetBar.LabelX lbl_InfoOne;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btn_Search;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_SearchFullName;
         private DevComponents.DotNetBar.LabelX lbl_SearchFullName;
         private DevComponents.DotNetBar.LabelX lbl_InfoTwo;
