@@ -249,6 +249,7 @@
             this.dgv_NewsList.Size = new System.Drawing.Size(1014, 361);
             this.dgv_NewsList.TabIndex = 0;
             this.dgv_NewsList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NewsList_CellClick);
+            this.dgv_NewsList.DoubleClick += new System.EventHandler(this.dgv_NewsList_DoubleClick);
             // 
             // col_NewsID
             // 

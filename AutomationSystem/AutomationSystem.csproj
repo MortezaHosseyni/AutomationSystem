@@ -246,6 +246,12 @@
     <Compile Include="UserPanel\frmUserSendedLetters.Designer.cs">
       <DependentUpon>frmUserSendedLetters.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserShowNewsContext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowNewsContext.Designer.cs">
+      <DependentUpon>frmUserShowNewsContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserShowReadedLetters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserSendedLetters.resx">
       <DependentUpon>frmUserSendedLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowNewsContext.resx">
+      <DependentUpon>frmUserShowNewsContext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserShowReadedLetters.resx">
       <DependentUpon>frmUserShowReadedLetters.cs</DependentUpon>

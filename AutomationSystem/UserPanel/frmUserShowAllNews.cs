@@ -141,5 +141,14 @@ namespace AutomationSystem.UserPanel
                 }
             }
         }
+
+        private void dgv_NewsList_DoubleClick(object sender, EventArgs e)
+        {
+            frmUserShowNewsContext userShowNewsContextForm = new frmUserShowNewsContext();
+
+            userShowNewsContextForm.val_NewsSubject.Text = dgv_NewsList.CurrentRow.Cells["col_NewsSubject"].Value.ToString();
+            userShowNewsContextForm.val_NewsContext.Text = dgv_NewsList.CurrentRow.Cells["col_NewsContext"].Value.ToString();
+            userShowNewsContextForm.ShowDialog();
+        }
     }
 }
