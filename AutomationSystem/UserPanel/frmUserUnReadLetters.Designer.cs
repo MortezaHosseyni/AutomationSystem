@@ -28,11 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserUnReadLetters));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
+            this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
+            this.txt_LetterReffrence = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_LetterSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_LetterNo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_LetterSender = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_DateTo = new FreeControls.PersianDateTimePicker();
+            this.txt_DateOn = new FreeControls.PersianDateTimePicker();
+            this.pnl_Following = new System.Windows.Forms.Panel();
+            this.rdb_LetterFollowingType_No = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterFollowingType_Yes = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterFollowingType_All = new System.Windows.Forms.RadioButton();
+            this.pnl_Attachment = new System.Windows.Forms.Panel();
+            this.rdb_LetterAttachmentType_No = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterAttachmentType_Yes = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterAttachmentType_All = new System.Windows.Forms.RadioButton();
+            this.pnl_LetterType = new System.Windows.Forms.Panel();
+            this.rdb_LetterType_ReplyLetter = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterType_Letter = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterType_All = new System.Windows.Forms.RadioButton();
+            this.lbl_FollowingType = new DevComponents.DotNetBar.LabelX();
+            this.pnl_ArchiveType = new System.Windows.Forms.Panel();
+            this.rdb_LetterArchiveType_NotArchived = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterArchiveType_Archived = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterArchiveType_All = new System.Windows.Forms.RadioButton();
+            this.lbl_Attachment = new DevComponents.DotNetBar.LabelX();
+            this.pnl_ForcedType = new System.Windows.Forms.Panel();
+            this.rdb_LetterForceType_Posthaste = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterForceType_Immediate = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterForceType_Normal = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterForceType_All = new System.Windows.Forms.RadioButton();
+            this.pnl_SecurityType = new System.Windows.Forms.Panel();
             this.rdb_LetterSecurity_Secretive = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterSecurity_Confidential = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterSecurity_Normal = new System.Windows.Forms.RadioButton();
+            this.rdb_LetterSecurity_All = new System.Windows.Forms.RadioButton();
             this.lbl_LetterType = new DevComponents.DotNetBar.LabelX();
             this.lbl_ForcedType = new DevComponents.DotNetBar.LabelX();
             this.lbl_ArchiveType = new DevComponents.DotNetBar.LabelX();
@@ -66,53 +102,18 @@
             this.col_ArchiveT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_AttachmentT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.rdb_LetterSecurity_Confidential = new System.Windows.Forms.RadioButton();
-            this.txt_DateOn = new FreeControls.PersianDateTimePicker();
-            this.rdb_LetterAttachmentType_No = new System.Windows.Forms.RadioButton();
-            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
-            this.txt_LetterReffrence = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_LetterSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_LetterNo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_LetterSender = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_DateTo = new FreeControls.PersianDateTimePicker();
-            this.pnl_Following = new System.Windows.Forms.Panel();
-            this.rdb_LetterFollowingType_No = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterFollowingType_Yes = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterFollowingType_All = new System.Windows.Forms.RadioButton();
-            this.pnl_Attachment = new System.Windows.Forms.Panel();
-            this.rdb_LetterAttachmentType_Yes = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterAttachmentType_All = new System.Windows.Forms.RadioButton();
-            this.pnl_SecurityType = new System.Windows.Forms.Panel();
-            this.rdb_LetterSecurity_Normal = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterSecurity_All = new System.Windows.Forms.RadioButton();
-            this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.pnl_LetterType = new System.Windows.Forms.Panel();
-            this.rdb_LetterType_ReplyLetter = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterType_Letter = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterType_All = new System.Windows.Forms.RadioButton();
-            this.lbl_FollowingType = new DevComponents.DotNetBar.LabelX();
-            this.pnl_ArchiveType = new System.Windows.Forms.Panel();
-            this.rdb_LetterArchiveType_NotArchived = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterArchiveType_Archived = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterArchiveType_All = new System.Windows.Forms.RadioButton();
-            this.lbl_Attachment = new DevComponents.DotNetBar.LabelX();
-            this.pnl_ForcedType = new System.Windows.Forms.Panel();
-            this.rdb_LetterForceType_Posthaste = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterForceType_Immediate = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterForceType_Normal = new System.Windows.Forms.RadioButton();
-            this.rdb_LetterForceType_All = new System.Windows.Forms.RadioButton();
-            this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
+            this.saveAttachFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panelEx1.SuspendLayout();
-            this.pnl_ReadedLetters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_UnReadedLetters)).BeginInit();
+            this.pnl_Main.SuspendLayout();
+            this.pnl_Search.SuspendLayout();
             this.pnl_Following.SuspendLayout();
             this.pnl_Attachment.SuspendLayout();
-            this.pnl_SecurityType.SuspendLayout();
-            this.pnl_Search.SuspendLayout();
             this.pnl_LetterType.SuspendLayout();
             this.pnl_ArchiveType.SuspendLayout();
             this.pnl_ForcedType.SuspendLayout();
-            this.pnl_Main.SuspendLayout();
+            this.pnl_SecurityType.SuspendLayout();
+            this.pnl_ReadedLetters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UnReadedLetters)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -134,6 +135,451 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             // 
+            // pnl_Main
+            // 
+            this.pnl_Main.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_Main.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnl_Main.Controls.Add(this.pnl_Search);
+            this.pnl_Main.Controls.Add(this.pnl_ReadedLetters);
+            this.pnl_Main.Controls.Add(this.labelX1);
+            this.pnl_Main.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Main.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Main.Name = "pnl_Main";
+            this.pnl_Main.Size = new System.Drawing.Size(1050, 610);
+            this.pnl_Main.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pnl_Main.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_Main.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_Main.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pnl_Main.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_Main.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_Main.Style.GradientAngle = 90;
+            this.pnl_Main.TabIndex = 4;
+            // 
+            // pnl_Search
+            // 
+            this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Search.Controls.Add(this.btn_Search);
+            this.pnl_Search.Controls.Add(this.txt_LetterReffrence);
+            this.pnl_Search.Controls.Add(this.txt_LetterSubject);
+            this.pnl_Search.Controls.Add(this.txt_LetterNo);
+            this.pnl_Search.Controls.Add(this.txt_LetterSender);
+            this.pnl_Search.Controls.Add(this.txt_DateTo);
+            this.pnl_Search.Controls.Add(this.txt_DateOn);
+            this.pnl_Search.Controls.Add(this.pnl_Following);
+            this.pnl_Search.Controls.Add(this.pnl_Attachment);
+            this.pnl_Search.Controls.Add(this.pnl_LetterType);
+            this.pnl_Search.Controls.Add(this.lbl_FollowingType);
+            this.pnl_Search.Controls.Add(this.pnl_ArchiveType);
+            this.pnl_Search.Controls.Add(this.lbl_Attachment);
+            this.pnl_Search.Controls.Add(this.pnl_ForcedType);
+            this.pnl_Search.Controls.Add(this.pnl_SecurityType);
+            this.pnl_Search.Controls.Add(this.lbl_LetterType);
+            this.pnl_Search.Controls.Add(this.lbl_ForcedType);
+            this.pnl_Search.Controls.Add(this.lbl_ArchiveType);
+            this.pnl_Search.Controls.Add(this.lbl_SecurityType);
+            this.pnl_Search.Controls.Add(this.lbl_DateTo);
+            this.pnl_Search.Controls.Add(this.lbl_ReffrenceTo);
+            this.pnl_Search.Controls.Add(this.lbl_LetterSubject);
+            this.pnl_Search.Controls.Add(this.lbl_LetterNo);
+            this.pnl_Search.Controls.Add(this.lbl_Sender);
+            this.pnl_Search.Controls.Add(this.lbl_DateOn);
+            this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_Search.Font = new System.Drawing.Font("B Nazanin", 10.25F, System.Drawing.FontStyle.Bold);
+            this.pnl_Search.Location = new System.Drawing.Point(12, 392);
+            this.pnl_Search.Name = "pnl_Search";
+            this.pnl_Search.Size = new System.Drawing.Size(1026, 207);
+            // 
+            // 
+            // 
+            this.pnl_Search.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_Search.Style.BackColorGradientAngle = 90;
+            this.pnl_Search.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_Search.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderBottomWidth = 1;
+            this.pnl_Search.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_Search.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderLeftWidth = 1;
+            this.pnl_Search.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderRightWidth = 1;
+            this.pnl_Search.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderTopWidth = 1;
+            this.pnl_Search.Style.CornerDiameter = 4;
+            this.pnl_Search.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_Search.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_Search.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_Search.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.pnl_Search.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_Search.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_Search.TabIndex = 7;
+            this.pnl_Search.Text = "جستجو";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(14, 66);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(101, 87);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 4;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // txt_LetterReffrence
+            // 
+            // 
+            // 
+            // 
+            this.txt_LetterReffrence.Border.Class = "TextBoxBorder";
+            this.txt_LetterReffrence.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_LetterReffrence.Location = new System.Drawing.Point(14, 0);
+            this.txt_LetterReffrence.Name = "txt_LetterReffrence";
+            this.txt_LetterReffrence.PreventEnterBeep = true;
+            this.txt_LetterReffrence.Size = new System.Drawing.Size(131, 29);
+            this.txt_LetterReffrence.TabIndex = 3;
+            this.txt_LetterReffrence.WatermarkText = "عطف به...";
+            // 
+            // txt_LetterSubject
+            // 
+            // 
+            // 
+            // 
+            this.txt_LetterSubject.Border.Class = "TextBoxBorder";
+            this.txt_LetterSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_LetterSubject.Location = new System.Drawing.Point(193, 1);
+            this.txt_LetterSubject.Name = "txt_LetterSubject";
+            this.txt_LetterSubject.PreventEnterBeep = true;
+            this.txt_LetterSubject.Size = new System.Drawing.Size(121, 29);
+            this.txt_LetterSubject.TabIndex = 3;
+            this.txt_LetterSubject.WatermarkText = "موضوع پيام...";
+            // 
+            // txt_LetterNo
+            // 
+            // 
+            // 
+            // 
+            this.txt_LetterNo.Border.Class = "TextBoxBorder";
+            this.txt_LetterNo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_LetterNo.Location = new System.Drawing.Point(361, 2);
+            this.txt_LetterNo.Name = "txt_LetterNo";
+            this.txt_LetterNo.PreventEnterBeep = true;
+            this.txt_LetterNo.Size = new System.Drawing.Size(121, 29);
+            this.txt_LetterNo.TabIndex = 3;
+            this.txt_LetterNo.WatermarkText = "شماره نامه پيام...";
+            // 
+            // txt_LetterSender
+            // 
+            // 
+            // 
+            // 
+            this.txt_LetterSender.Border.Class = "TextBoxBorder";
+            this.txt_LetterSender.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_LetterSender.Location = new System.Drawing.Point(540, 1);
+            this.txt_LetterSender.Name = "txt_LetterSender";
+            this.txt_LetterSender.PreventEnterBeep = true;
+            this.txt_LetterSender.Size = new System.Drawing.Size(121, 29);
+            this.txt_LetterSender.TabIndex = 3;
+            this.txt_LetterSender.WatermarkText = "فرستنده پيام...";
+            // 
+            // txt_DateTo
+            // 
+            this.txt_DateTo.BackColor = System.Drawing.Color.White;
+            this.txt_DateTo.Font = new System.Drawing.Font("B Nazanin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txt_DateTo.Location = new System.Drawing.Point(718, 3);
+            this.txt_DateTo.Name = "txt_DateTo";
+            this.txt_DateTo.ShowTime = false;
+            this.txt_DateTo.Size = new System.Drawing.Size(119, 28);
+            this.txt_DateTo.TabIndex = 2;
+            this.txt_DateTo.Text = "persianDateTimePicker1";
+            this.txt_DateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateTo.Value")));
+            // 
+            // txt_DateOn
+            // 
+            this.txt_DateOn.BackColor = System.Drawing.Color.White;
+            this.txt_DateOn.Font = new System.Drawing.Font("B Nazanin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txt_DateOn.Location = new System.Drawing.Point(857, 3);
+            this.txt_DateOn.Name = "txt_DateOn";
+            this.txt_DateOn.ShowTime = false;
+            this.txt_DateOn.Size = new System.Drawing.Size(119, 28);
+            this.txt_DateOn.TabIndex = 2;
+            this.txt_DateOn.Text = "persianDateTimePicker1";
+            this.txt_DateOn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateOn.Value")));
+            // 
+            // pnl_Following
+            // 
+            this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_No);
+            this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_Yes);
+            this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_All);
+            this.pnl_Following.Location = new System.Drawing.Point(136, 54);
+            this.pnl_Following.Name = "pnl_Following";
+            this.pnl_Following.Size = new System.Drawing.Size(64, 113);
+            this.pnl_Following.TabIndex = 1;
+            // 
+            // rdb_LetterFollowingType_No
+            // 
+            this.rdb_LetterFollowingType_No.AutoSize = true;
+            this.rdb_LetterFollowingType_No.Location = new System.Drawing.Point(3, 78);
+            this.rdb_LetterFollowingType_No.Name = "rdb_LetterFollowingType_No";
+            this.rdb_LetterFollowingType_No.Size = new System.Drawing.Size(53, 27);
+            this.rdb_LetterFollowingType_No.TabIndex = 0;
+            this.rdb_LetterFollowingType_No.TabStop = true;
+            this.rdb_LetterFollowingType_No.Text = "ندارد";
+            this.rdb_LetterFollowingType_No.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterFollowingType_Yes
+            // 
+            this.rdb_LetterFollowingType_Yes.AutoSize = true;
+            this.rdb_LetterFollowingType_Yes.Location = new System.Drawing.Point(8, 45);
+            this.rdb_LetterFollowingType_Yes.Name = "rdb_LetterFollowingType_Yes";
+            this.rdb_LetterFollowingType_Yes.Size = new System.Drawing.Size(48, 27);
+            this.rdb_LetterFollowingType_Yes.TabIndex = 0;
+            this.rdb_LetterFollowingType_Yes.TabStop = true;
+            this.rdb_LetterFollowingType_Yes.Text = "دارد";
+            this.rdb_LetterFollowingType_Yes.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterFollowingType_All
+            // 
+            this.rdb_LetterFollowingType_All.AutoSize = true;
+            this.rdb_LetterFollowingType_All.Checked = true;
+            this.rdb_LetterFollowingType_All.Location = new System.Drawing.Point(9, 12);
+            this.rdb_LetterFollowingType_All.Name = "rdb_LetterFollowingType_All";
+            this.rdb_LetterFollowingType_All.Size = new System.Drawing.Size(47, 27);
+            this.rdb_LetterFollowingType_All.TabIndex = 0;
+            this.rdb_LetterFollowingType_All.TabStop = true;
+            this.rdb_LetterFollowingType_All.Text = "همه";
+            this.rdb_LetterFollowingType_All.UseVisualStyleBackColor = true;
+            // 
+            // pnl_Attachment
+            // 
+            this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_No);
+            this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_Yes);
+            this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_All);
+            this.pnl_Attachment.Location = new System.Drawing.Point(248, 54);
+            this.pnl_Attachment.Name = "pnl_Attachment";
+            this.pnl_Attachment.Size = new System.Drawing.Size(64, 113);
+            this.pnl_Attachment.TabIndex = 1;
+            // 
+            // rdb_LetterAttachmentType_No
+            // 
+            this.rdb_LetterAttachmentType_No.AutoSize = true;
+            this.rdb_LetterAttachmentType_No.Location = new System.Drawing.Point(3, 78);
+            this.rdb_LetterAttachmentType_No.Name = "rdb_LetterAttachmentType_No";
+            this.rdb_LetterAttachmentType_No.Size = new System.Drawing.Size(53, 27);
+            this.rdb_LetterAttachmentType_No.TabIndex = 0;
+            this.rdb_LetterAttachmentType_No.TabStop = true;
+            this.rdb_LetterAttachmentType_No.Text = "ندارد";
+            this.rdb_LetterAttachmentType_No.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterAttachmentType_Yes
+            // 
+            this.rdb_LetterAttachmentType_Yes.AutoSize = true;
+            this.rdb_LetterAttachmentType_Yes.Location = new System.Drawing.Point(8, 45);
+            this.rdb_LetterAttachmentType_Yes.Name = "rdb_LetterAttachmentType_Yes";
+            this.rdb_LetterAttachmentType_Yes.Size = new System.Drawing.Size(48, 27);
+            this.rdb_LetterAttachmentType_Yes.TabIndex = 0;
+            this.rdb_LetterAttachmentType_Yes.TabStop = true;
+            this.rdb_LetterAttachmentType_Yes.Text = "دارد";
+            this.rdb_LetterAttachmentType_Yes.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterAttachmentType_All
+            // 
+            this.rdb_LetterAttachmentType_All.AutoSize = true;
+            this.rdb_LetterAttachmentType_All.Checked = true;
+            this.rdb_LetterAttachmentType_All.Location = new System.Drawing.Point(9, 12);
+            this.rdb_LetterAttachmentType_All.Name = "rdb_LetterAttachmentType_All";
+            this.rdb_LetterAttachmentType_All.Size = new System.Drawing.Size(47, 27);
+            this.rdb_LetterAttachmentType_All.TabIndex = 0;
+            this.rdb_LetterAttachmentType_All.TabStop = true;
+            this.rdb_LetterAttachmentType_All.Text = "همه";
+            this.rdb_LetterAttachmentType_All.UseVisualStyleBackColor = true;
+            // 
+            // pnl_LetterType
+            // 
+            this.pnl_LetterType.Controls.Add(this.rdb_LetterType_ReplyLetter);
+            this.pnl_LetterType.Controls.Add(this.rdb_LetterType_Letter);
+            this.pnl_LetterType.Controls.Add(this.rdb_LetterType_All);
+            this.pnl_LetterType.Location = new System.Drawing.Point(369, 54);
+            this.pnl_LetterType.Name = "pnl_LetterType";
+            this.pnl_LetterType.Size = new System.Drawing.Size(71, 113);
+            this.pnl_LetterType.TabIndex = 1;
+            // 
+            // rdb_LetterType_ReplyLetter
+            // 
+            this.rdb_LetterType_ReplyLetter.AutoSize = true;
+            this.rdb_LetterType_ReplyLetter.Location = new System.Drawing.Point(6, 73);
+            this.rdb_LetterType_ReplyLetter.Name = "rdb_LetterType_ReplyLetter";
+            this.rdb_LetterType_ReplyLetter.Size = new System.Drawing.Size(53, 27);
+            this.rdb_LetterType_ReplyLetter.TabIndex = 0;
+            this.rdb_LetterType_ReplyLetter.TabStop = true;
+            this.rdb_LetterType_ReplyLetter.Text = "پاسخ";
+            this.rdb_LetterType_ReplyLetter.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterType_Letter
+            // 
+            this.rdb_LetterType_Letter.AutoSize = true;
+            this.rdb_LetterType_Letter.Location = new System.Drawing.Point(12, 40);
+            this.rdb_LetterType_Letter.Name = "rdb_LetterType_Letter";
+            this.rdb_LetterType_Letter.Size = new System.Drawing.Size(47, 27);
+            this.rdb_LetterType_Letter.TabIndex = 0;
+            this.rdb_LetterType_Letter.TabStop = true;
+            this.rdb_LetterType_Letter.Text = "نامه";
+            this.rdb_LetterType_Letter.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterType_All
+            // 
+            this.rdb_LetterType_All.AutoSize = true;
+            this.rdb_LetterType_All.Checked = true;
+            this.rdb_LetterType_All.Location = new System.Drawing.Point(12, 7);
+            this.rdb_LetterType_All.Name = "rdb_LetterType_All";
+            this.rdb_LetterType_All.Size = new System.Drawing.Size(47, 27);
+            this.rdb_LetterType_All.TabIndex = 0;
+            this.rdb_LetterType_All.TabStop = true;
+            this.rdb_LetterType_All.Text = "همه";
+            this.rdb_LetterType_All.UseVisualStyleBackColor = true;
+            // 
+            // lbl_FollowingType
+            // 
+            // 
+            // 
+            // 
+            this.lbl_FollowingType.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_FollowingType.Location = new System.Drawing.Point(206, 99);
+            this.lbl_FollowingType.Name = "lbl_FollowingType";
+            this.lbl_FollowingType.Size = new System.Drawing.Size(39, 25);
+            this.lbl_FollowingType.TabIndex = 0;
+            this.lbl_FollowingType.Text = "پيگيري:";
+            // 
+            // pnl_ArchiveType
+            // 
+            this.pnl_ArchiveType.Controls.Add(this.rdb_LetterArchiveType_NotArchived);
+            this.pnl_ArchiveType.Controls.Add(this.rdb_LetterArchiveType_Archived);
+            this.pnl_ArchiveType.Controls.Add(this.rdb_LetterArchiveType_All);
+            this.pnl_ArchiveType.Location = new System.Drawing.Point(492, 54);
+            this.pnl_ArchiveType.Name = "pnl_ArchiveType";
+            this.pnl_ArchiveType.Size = new System.Drawing.Size(99, 113);
+            this.pnl_ArchiveType.TabIndex = 1;
+            // 
+            // rdb_LetterArchiveType_NotArchived
+            // 
+            this.rdb_LetterArchiveType_NotArchived.AutoSize = true;
+            this.rdb_LetterArchiveType_NotArchived.Location = new System.Drawing.Point(2, 79);
+            this.rdb_LetterArchiveType_NotArchived.Name = "rdb_LetterArchiveType_NotArchived";
+            this.rdb_LetterArchiveType_NotArchived.Size = new System.Drawing.Size(92, 27);
+            this.rdb_LetterArchiveType_NotArchived.TabIndex = 0;
+            this.rdb_LetterArchiveType_NotArchived.TabStop = true;
+            this.rdb_LetterArchiveType_NotArchived.Text = "بايگاني نشده";
+            this.rdb_LetterArchiveType_NotArchived.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterArchiveType_Archived
+            // 
+            this.rdb_LetterArchiveType_Archived.AutoSize = true;
+            this.rdb_LetterArchiveType_Archived.Location = new System.Drawing.Point(6, 41);
+            this.rdb_LetterArchiveType_Archived.Name = "rdb_LetterArchiveType_Archived";
+            this.rdb_LetterArchiveType_Archived.Size = new System.Drawing.Size(87, 27);
+            this.rdb_LetterArchiveType_Archived.TabIndex = 0;
+            this.rdb_LetterArchiveType_Archived.TabStop = true;
+            this.rdb_LetterArchiveType_Archived.Text = "بايگاني شده";
+            this.rdb_LetterArchiveType_Archived.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterArchiveType_All
+            // 
+            this.rdb_LetterArchiveType_All.AutoSize = true;
+            this.rdb_LetterArchiveType_All.Checked = true;
+            this.rdb_LetterArchiveType_All.Location = new System.Drawing.Point(46, 3);
+            this.rdb_LetterArchiveType_All.Name = "rdb_LetterArchiveType_All";
+            this.rdb_LetterArchiveType_All.Size = new System.Drawing.Size(47, 27);
+            this.rdb_LetterArchiveType_All.TabIndex = 0;
+            this.rdb_LetterArchiveType_All.TabStop = true;
+            this.rdb_LetterArchiveType_All.Text = "همه";
+            this.rdb_LetterArchiveType_All.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Attachment
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Attachment.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Attachment.Location = new System.Drawing.Point(305, 99);
+            this.lbl_Attachment.Name = "lbl_Attachment";
+            this.lbl_Attachment.Size = new System.Drawing.Size(47, 25);
+            this.lbl_Attachment.TabIndex = 0;
+            this.lbl_Attachment.Text = "پيوست:";
+            // 
+            // pnl_ForcedType
+            // 
+            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_Posthaste);
+            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_Immediate);
+            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_Normal);
+            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_All);
+            this.pnl_ForcedType.Location = new System.Drawing.Point(639, 72);
+            this.pnl_ForcedType.Name = "pnl_ForcedType";
+            this.pnl_ForcedType.Size = new System.Drawing.Size(131, 74);
+            this.pnl_ForcedType.TabIndex = 1;
+            // 
+            // rdb_LetterForceType_Posthaste
+            // 
+            this.rdb_LetterForceType_Posthaste.AutoSize = true;
+            this.rdb_LetterForceType_Posthaste.Location = new System.Drawing.Point(8, 41);
+            this.rdb_LetterForceType_Posthaste.Name = "rdb_LetterForceType_Posthaste";
+            this.rdb_LetterForceType_Posthaste.Size = new System.Drawing.Size(46, 27);
+            this.rdb_LetterForceType_Posthaste.TabIndex = 0;
+            this.rdb_LetterForceType_Posthaste.TabStop = true;
+            this.rdb_LetterForceType_Posthaste.Text = "آني";
+            this.rdb_LetterForceType_Posthaste.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterForceType_Immediate
+            // 
+            this.rdb_LetterForceType_Immediate.AutoSize = true;
+            this.rdb_LetterForceType_Immediate.Location = new System.Drawing.Point(64, 39);
+            this.rdb_LetterForceType_Immediate.Name = "rdb_LetterForceType_Immediate";
+            this.rdb_LetterForceType_Immediate.Size = new System.Drawing.Size(52, 27);
+            this.rdb_LetterForceType_Immediate.TabIndex = 0;
+            this.rdb_LetterForceType_Immediate.TabStop = true;
+            this.rdb_LetterForceType_Immediate.Text = "فوري";
+            this.rdb_LetterForceType_Immediate.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterForceType_Normal
+            // 
+            this.rdb_LetterForceType_Normal.AutoSize = true;
+            this.rdb_LetterForceType_Normal.Location = new System.Drawing.Point(64, 3);
+            this.rdb_LetterForceType_Normal.Name = "rdb_LetterForceType_Normal";
+            this.rdb_LetterForceType_Normal.Size = new System.Drawing.Size(53, 27);
+            this.rdb_LetterForceType_Normal.TabIndex = 0;
+            this.rdb_LetterForceType_Normal.TabStop = true;
+            this.rdb_LetterForceType_Normal.Text = "عادي";
+            this.rdb_LetterForceType_Normal.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterForceType_All
+            // 
+            this.rdb_LetterForceType_All.AutoSize = true;
+            this.rdb_LetterForceType_All.Checked = true;
+            this.rdb_LetterForceType_All.Location = new System.Drawing.Point(7, 3);
+            this.rdb_LetterForceType_All.Name = "rdb_LetterForceType_All";
+            this.rdb_LetterForceType_All.Size = new System.Drawing.Size(47, 27);
+            this.rdb_LetterForceType_All.TabIndex = 0;
+            this.rdb_LetterForceType_All.TabStop = true;
+            this.rdb_LetterForceType_All.Text = "همه";
+            this.rdb_LetterForceType_All.UseVisualStyleBackColor = true;
+            // 
+            // pnl_SecurityType
+            // 
+            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_Secretive);
+            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_Confidential);
+            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_Normal);
+            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_All);
+            this.pnl_SecurityType.Location = new System.Drawing.Point(813, 72);
+            this.pnl_SecurityType.Name = "pnl_SecurityType";
+            this.pnl_SecurityType.Size = new System.Drawing.Size(151, 74);
+            this.pnl_SecurityType.TabIndex = 1;
+            // 
             // rdb_LetterSecurity_Secretive
             // 
             this.rdb_LetterSecurity_Secretive.AutoSize = true;
@@ -144,6 +590,40 @@
             this.rdb_LetterSecurity_Secretive.TabStop = true;
             this.rdb_LetterSecurity_Secretive.Text = "سري";
             this.rdb_LetterSecurity_Secretive.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterSecurity_Confidential
+            // 
+            this.rdb_LetterSecurity_Confidential.AutoSize = true;
+            this.rdb_LetterSecurity_Confidential.Location = new System.Drawing.Point(70, 41);
+            this.rdb_LetterSecurity_Confidential.Name = "rdb_LetterSecurity_Confidential";
+            this.rdb_LetterSecurity_Confidential.Size = new System.Drawing.Size(66, 27);
+            this.rdb_LetterSecurity_Confidential.TabIndex = 0;
+            this.rdb_LetterSecurity_Confidential.TabStop = true;
+            this.rdb_LetterSecurity_Confidential.Text = "محرمانه";
+            this.rdb_LetterSecurity_Confidential.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterSecurity_Normal
+            // 
+            this.rdb_LetterSecurity_Normal.AutoSize = true;
+            this.rdb_LetterSecurity_Normal.Location = new System.Drawing.Point(83, 3);
+            this.rdb_LetterSecurity_Normal.Name = "rdb_LetterSecurity_Normal";
+            this.rdb_LetterSecurity_Normal.Size = new System.Drawing.Size(53, 27);
+            this.rdb_LetterSecurity_Normal.TabIndex = 0;
+            this.rdb_LetterSecurity_Normal.TabStop = true;
+            this.rdb_LetterSecurity_Normal.Text = "عادي";
+            this.rdb_LetterSecurity_Normal.UseVisualStyleBackColor = true;
+            // 
+            // rdb_LetterSecurity_All
+            // 
+            this.rdb_LetterSecurity_All.AutoSize = true;
+            this.rdb_LetterSecurity_All.Checked = true;
+            this.rdb_LetterSecurity_All.Location = new System.Drawing.Point(8, 3);
+            this.rdb_LetterSecurity_All.Name = "rdb_LetterSecurity_All";
+            this.rdb_LetterSecurity_All.Size = new System.Drawing.Size(47, 27);
+            this.rdb_LetterSecurity_All.TabIndex = 0;
+            this.rdb_LetterSecurity_All.TabStop = true;
+            this.rdb_LetterSecurity_All.Text = "همه";
+            this.rdb_LetterSecurity_All.UseVisualStyleBackColor = true;
             // 
             // lbl_LetterType
             // 
@@ -330,19 +810,20 @@
             this.col_ForceT,
             this.col_ArchiveT,
             this.col_AttachmentT});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_UnReadedLetters.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UnReadedLetters.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_UnReadedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_UnReadedLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_UnReadedLetters.Name = "dgv_UnReadedLetters";
             this.dgv_UnReadedLetters.Size = new System.Drawing.Size(1014, 324);
             this.dgv_UnReadedLetters.TabIndex = 0;
+            this.dgv_UnReadedLetters.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_UnReadedLetters_CellClick);
             // 
             // col_LetterID
             // 
@@ -430,8 +911,8 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
             this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -488,485 +969,6 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "نامه‌هاي خوانده نشده";
             // 
-            // rdb_LetterSecurity_Confidential
-            // 
-            this.rdb_LetterSecurity_Confidential.AutoSize = true;
-            this.rdb_LetterSecurity_Confidential.Location = new System.Drawing.Point(70, 41);
-            this.rdb_LetterSecurity_Confidential.Name = "rdb_LetterSecurity_Confidential";
-            this.rdb_LetterSecurity_Confidential.Size = new System.Drawing.Size(66, 27);
-            this.rdb_LetterSecurity_Confidential.TabIndex = 0;
-            this.rdb_LetterSecurity_Confidential.TabStop = true;
-            this.rdb_LetterSecurity_Confidential.Text = "محرمانه";
-            this.rdb_LetterSecurity_Confidential.UseVisualStyleBackColor = true;
-            // 
-            // txt_DateOn
-            // 
-            this.txt_DateOn.BackColor = System.Drawing.Color.White;
-            this.txt_DateOn.Font = new System.Drawing.Font("B Nazanin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txt_DateOn.Location = new System.Drawing.Point(857, 3);
-            this.txt_DateOn.Name = "txt_DateOn";
-            this.txt_DateOn.ShowTime = false;
-            this.txt_DateOn.Size = new System.Drawing.Size(119, 28);
-            this.txt_DateOn.TabIndex = 2;
-            this.txt_DateOn.Text = "persianDateTimePicker1";
-            this.txt_DateOn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateOn.Value")));
-            // 
-            // rdb_LetterAttachmentType_No
-            // 
-            this.rdb_LetterAttachmentType_No.AutoSize = true;
-            this.rdb_LetterAttachmentType_No.Location = new System.Drawing.Point(3, 78);
-            this.rdb_LetterAttachmentType_No.Name = "rdb_LetterAttachmentType_No";
-            this.rdb_LetterAttachmentType_No.Size = new System.Drawing.Size(53, 27);
-            this.rdb_LetterAttachmentType_No.TabIndex = 0;
-            this.rdb_LetterAttachmentType_No.TabStop = true;
-            this.rdb_LetterAttachmentType_No.Text = "ندارد";
-            this.rdb_LetterAttachmentType_No.UseVisualStyleBackColor = true;
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Search.Location = new System.Drawing.Point(14, 66);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(101, 87);
-            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_Search.Symbol = "";
-            this.btn_Search.TabIndex = 4;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
-            // 
-            // txt_LetterReffrence
-            // 
-            // 
-            // 
-            // 
-            this.txt_LetterReffrence.Border.Class = "TextBoxBorder";
-            this.txt_LetterReffrence.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterReffrence.Location = new System.Drawing.Point(14, 0);
-            this.txt_LetterReffrence.Name = "txt_LetterReffrence";
-            this.txt_LetterReffrence.PreventEnterBeep = true;
-            this.txt_LetterReffrence.Size = new System.Drawing.Size(131, 29);
-            this.txt_LetterReffrence.TabIndex = 3;
-            this.txt_LetterReffrence.WatermarkText = "عطف به...";
-            // 
-            // txt_LetterSubject
-            // 
-            // 
-            // 
-            // 
-            this.txt_LetterSubject.Border.Class = "TextBoxBorder";
-            this.txt_LetterSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterSubject.Location = new System.Drawing.Point(193, 1);
-            this.txt_LetterSubject.Name = "txt_LetterSubject";
-            this.txt_LetterSubject.PreventEnterBeep = true;
-            this.txt_LetterSubject.Size = new System.Drawing.Size(121, 29);
-            this.txt_LetterSubject.TabIndex = 3;
-            this.txt_LetterSubject.WatermarkText = "موضوع پيام...";
-            // 
-            // txt_LetterNo
-            // 
-            // 
-            // 
-            // 
-            this.txt_LetterNo.Border.Class = "TextBoxBorder";
-            this.txt_LetterNo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterNo.Location = new System.Drawing.Point(361, 2);
-            this.txt_LetterNo.Name = "txt_LetterNo";
-            this.txt_LetterNo.PreventEnterBeep = true;
-            this.txt_LetterNo.Size = new System.Drawing.Size(121, 29);
-            this.txt_LetterNo.TabIndex = 3;
-            this.txt_LetterNo.WatermarkText = "شماره نامه پيام...";
-            // 
-            // txt_LetterSender
-            // 
-            // 
-            // 
-            // 
-            this.txt_LetterSender.Border.Class = "TextBoxBorder";
-            this.txt_LetterSender.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterSender.Location = new System.Drawing.Point(540, 1);
-            this.txt_LetterSender.Name = "txt_LetterSender";
-            this.txt_LetterSender.PreventEnterBeep = true;
-            this.txt_LetterSender.Size = new System.Drawing.Size(121, 29);
-            this.txt_LetterSender.TabIndex = 3;
-            this.txt_LetterSender.WatermarkText = "فرستنده پيام...";
-            // 
-            // txt_DateTo
-            // 
-            this.txt_DateTo.BackColor = System.Drawing.Color.White;
-            this.txt_DateTo.Font = new System.Drawing.Font("B Nazanin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txt_DateTo.Location = new System.Drawing.Point(718, 3);
-            this.txt_DateTo.Name = "txt_DateTo";
-            this.txt_DateTo.ShowTime = false;
-            this.txt_DateTo.Size = new System.Drawing.Size(119, 28);
-            this.txt_DateTo.TabIndex = 2;
-            this.txt_DateTo.Text = "persianDateTimePicker1";
-            this.txt_DateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateTo.Value")));
-            // 
-            // pnl_Following
-            // 
-            this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_No);
-            this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_Yes);
-            this.pnl_Following.Controls.Add(this.rdb_LetterFollowingType_All);
-            this.pnl_Following.Location = new System.Drawing.Point(136, 54);
-            this.pnl_Following.Name = "pnl_Following";
-            this.pnl_Following.Size = new System.Drawing.Size(64, 113);
-            this.pnl_Following.TabIndex = 1;
-            // 
-            // rdb_LetterFollowingType_No
-            // 
-            this.rdb_LetterFollowingType_No.AutoSize = true;
-            this.rdb_LetterFollowingType_No.Location = new System.Drawing.Point(3, 78);
-            this.rdb_LetterFollowingType_No.Name = "rdb_LetterFollowingType_No";
-            this.rdb_LetterFollowingType_No.Size = new System.Drawing.Size(53, 27);
-            this.rdb_LetterFollowingType_No.TabIndex = 0;
-            this.rdb_LetterFollowingType_No.TabStop = true;
-            this.rdb_LetterFollowingType_No.Text = "ندارد";
-            this.rdb_LetterFollowingType_No.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterFollowingType_Yes
-            // 
-            this.rdb_LetterFollowingType_Yes.AutoSize = true;
-            this.rdb_LetterFollowingType_Yes.Location = new System.Drawing.Point(8, 45);
-            this.rdb_LetterFollowingType_Yes.Name = "rdb_LetterFollowingType_Yes";
-            this.rdb_LetterFollowingType_Yes.Size = new System.Drawing.Size(48, 27);
-            this.rdb_LetterFollowingType_Yes.TabIndex = 0;
-            this.rdb_LetterFollowingType_Yes.TabStop = true;
-            this.rdb_LetterFollowingType_Yes.Text = "دارد";
-            this.rdb_LetterFollowingType_Yes.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterFollowingType_All
-            // 
-            this.rdb_LetterFollowingType_All.AutoSize = true;
-            this.rdb_LetterFollowingType_All.Checked = true;
-            this.rdb_LetterFollowingType_All.Location = new System.Drawing.Point(9, 12);
-            this.rdb_LetterFollowingType_All.Name = "rdb_LetterFollowingType_All";
-            this.rdb_LetterFollowingType_All.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterFollowingType_All.TabIndex = 0;
-            this.rdb_LetterFollowingType_All.TabStop = true;
-            this.rdb_LetterFollowingType_All.Text = "همه";
-            this.rdb_LetterFollowingType_All.UseVisualStyleBackColor = true;
-            // 
-            // pnl_Attachment
-            // 
-            this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_No);
-            this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_Yes);
-            this.pnl_Attachment.Controls.Add(this.rdb_LetterAttachmentType_All);
-            this.pnl_Attachment.Location = new System.Drawing.Point(248, 54);
-            this.pnl_Attachment.Name = "pnl_Attachment";
-            this.pnl_Attachment.Size = new System.Drawing.Size(64, 113);
-            this.pnl_Attachment.TabIndex = 1;
-            // 
-            // rdb_LetterAttachmentType_Yes
-            // 
-            this.rdb_LetterAttachmentType_Yes.AutoSize = true;
-            this.rdb_LetterAttachmentType_Yes.Location = new System.Drawing.Point(8, 45);
-            this.rdb_LetterAttachmentType_Yes.Name = "rdb_LetterAttachmentType_Yes";
-            this.rdb_LetterAttachmentType_Yes.Size = new System.Drawing.Size(48, 27);
-            this.rdb_LetterAttachmentType_Yes.TabIndex = 0;
-            this.rdb_LetterAttachmentType_Yes.TabStop = true;
-            this.rdb_LetterAttachmentType_Yes.Text = "دارد";
-            this.rdb_LetterAttachmentType_Yes.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterAttachmentType_All
-            // 
-            this.rdb_LetterAttachmentType_All.AutoSize = true;
-            this.rdb_LetterAttachmentType_All.Checked = true;
-            this.rdb_LetterAttachmentType_All.Location = new System.Drawing.Point(9, 12);
-            this.rdb_LetterAttachmentType_All.Name = "rdb_LetterAttachmentType_All";
-            this.rdb_LetterAttachmentType_All.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterAttachmentType_All.TabIndex = 0;
-            this.rdb_LetterAttachmentType_All.TabStop = true;
-            this.rdb_LetterAttachmentType_All.Text = "همه";
-            this.rdb_LetterAttachmentType_All.UseVisualStyleBackColor = true;
-            // 
-            // pnl_SecurityType
-            // 
-            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_Secretive);
-            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_Confidential);
-            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_Normal);
-            this.pnl_SecurityType.Controls.Add(this.rdb_LetterSecurity_All);
-            this.pnl_SecurityType.Location = new System.Drawing.Point(813, 72);
-            this.pnl_SecurityType.Name = "pnl_SecurityType";
-            this.pnl_SecurityType.Size = new System.Drawing.Size(151, 74);
-            this.pnl_SecurityType.TabIndex = 1;
-            // 
-            // rdb_LetterSecurity_Normal
-            // 
-            this.rdb_LetterSecurity_Normal.AutoSize = true;
-            this.rdb_LetterSecurity_Normal.Location = new System.Drawing.Point(83, 3);
-            this.rdb_LetterSecurity_Normal.Name = "rdb_LetterSecurity_Normal";
-            this.rdb_LetterSecurity_Normal.Size = new System.Drawing.Size(53, 27);
-            this.rdb_LetterSecurity_Normal.TabIndex = 0;
-            this.rdb_LetterSecurity_Normal.TabStop = true;
-            this.rdb_LetterSecurity_Normal.Text = "عادي";
-            this.rdb_LetterSecurity_Normal.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterSecurity_All
-            // 
-            this.rdb_LetterSecurity_All.AutoSize = true;
-            this.rdb_LetterSecurity_All.Checked = true;
-            this.rdb_LetterSecurity_All.Location = new System.Drawing.Point(8, 3);
-            this.rdb_LetterSecurity_All.Name = "rdb_LetterSecurity_All";
-            this.rdb_LetterSecurity_All.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterSecurity_All.TabIndex = 0;
-            this.rdb_LetterSecurity_All.TabStop = true;
-            this.rdb_LetterSecurity_All.Text = "همه";
-            this.rdb_LetterSecurity_All.UseVisualStyleBackColor = true;
-            // 
-            // pnl_Search
-            // 
-            this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnl_Search.Controls.Add(this.btn_Search);
-            this.pnl_Search.Controls.Add(this.txt_LetterReffrence);
-            this.pnl_Search.Controls.Add(this.txt_LetterSubject);
-            this.pnl_Search.Controls.Add(this.txt_LetterNo);
-            this.pnl_Search.Controls.Add(this.txt_LetterSender);
-            this.pnl_Search.Controls.Add(this.txt_DateTo);
-            this.pnl_Search.Controls.Add(this.txt_DateOn);
-            this.pnl_Search.Controls.Add(this.pnl_Following);
-            this.pnl_Search.Controls.Add(this.pnl_Attachment);
-            this.pnl_Search.Controls.Add(this.pnl_LetterType);
-            this.pnl_Search.Controls.Add(this.lbl_FollowingType);
-            this.pnl_Search.Controls.Add(this.pnl_ArchiveType);
-            this.pnl_Search.Controls.Add(this.lbl_Attachment);
-            this.pnl_Search.Controls.Add(this.pnl_ForcedType);
-            this.pnl_Search.Controls.Add(this.pnl_SecurityType);
-            this.pnl_Search.Controls.Add(this.lbl_LetterType);
-            this.pnl_Search.Controls.Add(this.lbl_ForcedType);
-            this.pnl_Search.Controls.Add(this.lbl_ArchiveType);
-            this.pnl_Search.Controls.Add(this.lbl_SecurityType);
-            this.pnl_Search.Controls.Add(this.lbl_DateTo);
-            this.pnl_Search.Controls.Add(this.lbl_ReffrenceTo);
-            this.pnl_Search.Controls.Add(this.lbl_LetterSubject);
-            this.pnl_Search.Controls.Add(this.lbl_LetterNo);
-            this.pnl_Search.Controls.Add(this.lbl_Sender);
-            this.pnl_Search.Controls.Add(this.lbl_DateOn);
-            this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_Search.Font = new System.Drawing.Font("B Nazanin", 10.25F, System.Drawing.FontStyle.Bold);
-            this.pnl_Search.Location = new System.Drawing.Point(12, 392);
-            this.pnl_Search.Name = "pnl_Search";
-            this.pnl_Search.Size = new System.Drawing.Size(1026, 207);
-            // 
-            // 
-            // 
-            this.pnl_Search.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.pnl_Search.Style.BackColorGradientAngle = 90;
-            this.pnl_Search.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnl_Search.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Search.Style.BorderBottomWidth = 1;
-            this.pnl_Search.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pnl_Search.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Search.Style.BorderLeftWidth = 1;
-            this.pnl_Search.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Search.Style.BorderRightWidth = 1;
-            this.pnl_Search.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.pnl_Search.Style.BorderTopWidth = 1;
-            this.pnl_Search.Style.CornerDiameter = 4;
-            this.pnl_Search.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.pnl_Search.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.pnl_Search.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pnl_Search.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.pnl_Search.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pnl_Search.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pnl_Search.TabIndex = 7;
-            this.pnl_Search.Text = "جستجو";
-            // 
-            // pnl_LetterType
-            // 
-            this.pnl_LetterType.Controls.Add(this.rdb_LetterType_ReplyLetter);
-            this.pnl_LetterType.Controls.Add(this.rdb_LetterType_Letter);
-            this.pnl_LetterType.Controls.Add(this.rdb_LetterType_All);
-            this.pnl_LetterType.Location = new System.Drawing.Point(369, 54);
-            this.pnl_LetterType.Name = "pnl_LetterType";
-            this.pnl_LetterType.Size = new System.Drawing.Size(71, 113);
-            this.pnl_LetterType.TabIndex = 1;
-            // 
-            // rdb_LetterType_ReplyLetter
-            // 
-            this.rdb_LetterType_ReplyLetter.AutoSize = true;
-            this.rdb_LetterType_ReplyLetter.Location = new System.Drawing.Point(6, 73);
-            this.rdb_LetterType_ReplyLetter.Name = "rdb_LetterType_ReplyLetter";
-            this.rdb_LetterType_ReplyLetter.Size = new System.Drawing.Size(53, 27);
-            this.rdb_LetterType_ReplyLetter.TabIndex = 0;
-            this.rdb_LetterType_ReplyLetter.TabStop = true;
-            this.rdb_LetterType_ReplyLetter.Text = "پاسخ";
-            this.rdb_LetterType_ReplyLetter.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterType_Letter
-            // 
-            this.rdb_LetterType_Letter.AutoSize = true;
-            this.rdb_LetterType_Letter.Location = new System.Drawing.Point(12, 40);
-            this.rdb_LetterType_Letter.Name = "rdb_LetterType_Letter";
-            this.rdb_LetterType_Letter.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterType_Letter.TabIndex = 0;
-            this.rdb_LetterType_Letter.TabStop = true;
-            this.rdb_LetterType_Letter.Text = "نامه";
-            this.rdb_LetterType_Letter.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterType_All
-            // 
-            this.rdb_LetterType_All.AutoSize = true;
-            this.rdb_LetterType_All.Checked = true;
-            this.rdb_LetterType_All.Location = new System.Drawing.Point(12, 7);
-            this.rdb_LetterType_All.Name = "rdb_LetterType_All";
-            this.rdb_LetterType_All.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterType_All.TabIndex = 0;
-            this.rdb_LetterType_All.TabStop = true;
-            this.rdb_LetterType_All.Text = "همه";
-            this.rdb_LetterType_All.UseVisualStyleBackColor = true;
-            // 
-            // lbl_FollowingType
-            // 
-            // 
-            // 
-            // 
-            this.lbl_FollowingType.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FollowingType.Location = new System.Drawing.Point(206, 99);
-            this.lbl_FollowingType.Name = "lbl_FollowingType";
-            this.lbl_FollowingType.Size = new System.Drawing.Size(39, 25);
-            this.lbl_FollowingType.TabIndex = 0;
-            this.lbl_FollowingType.Text = "پيگيري:";
-            // 
-            // pnl_ArchiveType
-            // 
-            this.pnl_ArchiveType.Controls.Add(this.rdb_LetterArchiveType_NotArchived);
-            this.pnl_ArchiveType.Controls.Add(this.rdb_LetterArchiveType_Archived);
-            this.pnl_ArchiveType.Controls.Add(this.rdb_LetterArchiveType_All);
-            this.pnl_ArchiveType.Location = new System.Drawing.Point(492, 54);
-            this.pnl_ArchiveType.Name = "pnl_ArchiveType";
-            this.pnl_ArchiveType.Size = new System.Drawing.Size(99, 113);
-            this.pnl_ArchiveType.TabIndex = 1;
-            // 
-            // rdb_LetterArchiveType_NotArchived
-            // 
-            this.rdb_LetterArchiveType_NotArchived.AutoSize = true;
-            this.rdb_LetterArchiveType_NotArchived.Location = new System.Drawing.Point(2, 79);
-            this.rdb_LetterArchiveType_NotArchived.Name = "rdb_LetterArchiveType_NotArchived";
-            this.rdb_LetterArchiveType_NotArchived.Size = new System.Drawing.Size(92, 27);
-            this.rdb_LetterArchiveType_NotArchived.TabIndex = 0;
-            this.rdb_LetterArchiveType_NotArchived.TabStop = true;
-            this.rdb_LetterArchiveType_NotArchived.Text = "بايگاني نشده";
-            this.rdb_LetterArchiveType_NotArchived.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterArchiveType_Archived
-            // 
-            this.rdb_LetterArchiveType_Archived.AutoSize = true;
-            this.rdb_LetterArchiveType_Archived.Location = new System.Drawing.Point(6, 41);
-            this.rdb_LetterArchiveType_Archived.Name = "rdb_LetterArchiveType_Archived";
-            this.rdb_LetterArchiveType_Archived.Size = new System.Drawing.Size(87, 27);
-            this.rdb_LetterArchiveType_Archived.TabIndex = 0;
-            this.rdb_LetterArchiveType_Archived.TabStop = true;
-            this.rdb_LetterArchiveType_Archived.Text = "بايگاني شده";
-            this.rdb_LetterArchiveType_Archived.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterArchiveType_All
-            // 
-            this.rdb_LetterArchiveType_All.AutoSize = true;
-            this.rdb_LetterArchiveType_All.Checked = true;
-            this.rdb_LetterArchiveType_All.Location = new System.Drawing.Point(46, 3);
-            this.rdb_LetterArchiveType_All.Name = "rdb_LetterArchiveType_All";
-            this.rdb_LetterArchiveType_All.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterArchiveType_All.TabIndex = 0;
-            this.rdb_LetterArchiveType_All.TabStop = true;
-            this.rdb_LetterArchiveType_All.Text = "همه";
-            this.rdb_LetterArchiveType_All.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Attachment
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Attachment.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Attachment.Location = new System.Drawing.Point(305, 99);
-            this.lbl_Attachment.Name = "lbl_Attachment";
-            this.lbl_Attachment.Size = new System.Drawing.Size(47, 25);
-            this.lbl_Attachment.TabIndex = 0;
-            this.lbl_Attachment.Text = "پيوست:";
-            // 
-            // pnl_ForcedType
-            // 
-            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_Posthaste);
-            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_Immediate);
-            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_Normal);
-            this.pnl_ForcedType.Controls.Add(this.rdb_LetterForceType_All);
-            this.pnl_ForcedType.Location = new System.Drawing.Point(639, 72);
-            this.pnl_ForcedType.Name = "pnl_ForcedType";
-            this.pnl_ForcedType.Size = new System.Drawing.Size(131, 74);
-            this.pnl_ForcedType.TabIndex = 1;
-            // 
-            // rdb_LetterForceType_Posthaste
-            // 
-            this.rdb_LetterForceType_Posthaste.AutoSize = true;
-            this.rdb_LetterForceType_Posthaste.Location = new System.Drawing.Point(8, 41);
-            this.rdb_LetterForceType_Posthaste.Name = "rdb_LetterForceType_Posthaste";
-            this.rdb_LetterForceType_Posthaste.Size = new System.Drawing.Size(46, 27);
-            this.rdb_LetterForceType_Posthaste.TabIndex = 0;
-            this.rdb_LetterForceType_Posthaste.TabStop = true;
-            this.rdb_LetterForceType_Posthaste.Text = "آني";
-            this.rdb_LetterForceType_Posthaste.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterForceType_Immediate
-            // 
-            this.rdb_LetterForceType_Immediate.AutoSize = true;
-            this.rdb_LetterForceType_Immediate.Location = new System.Drawing.Point(64, 39);
-            this.rdb_LetterForceType_Immediate.Name = "rdb_LetterForceType_Immediate";
-            this.rdb_LetterForceType_Immediate.Size = new System.Drawing.Size(52, 27);
-            this.rdb_LetterForceType_Immediate.TabIndex = 0;
-            this.rdb_LetterForceType_Immediate.TabStop = true;
-            this.rdb_LetterForceType_Immediate.Text = "فوري";
-            this.rdb_LetterForceType_Immediate.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterForceType_Normal
-            // 
-            this.rdb_LetterForceType_Normal.AutoSize = true;
-            this.rdb_LetterForceType_Normal.Location = new System.Drawing.Point(64, 3);
-            this.rdb_LetterForceType_Normal.Name = "rdb_LetterForceType_Normal";
-            this.rdb_LetterForceType_Normal.Size = new System.Drawing.Size(53, 27);
-            this.rdb_LetterForceType_Normal.TabIndex = 0;
-            this.rdb_LetterForceType_Normal.TabStop = true;
-            this.rdb_LetterForceType_Normal.Text = "عادي";
-            this.rdb_LetterForceType_Normal.UseVisualStyleBackColor = true;
-            // 
-            // rdb_LetterForceType_All
-            // 
-            this.rdb_LetterForceType_All.AutoSize = true;
-            this.rdb_LetterForceType_All.Checked = true;
-            this.rdb_LetterForceType_All.Location = new System.Drawing.Point(7, 3);
-            this.rdb_LetterForceType_All.Name = "rdb_LetterForceType_All";
-            this.rdb_LetterForceType_All.Size = new System.Drawing.Size(47, 27);
-            this.rdb_LetterForceType_All.TabIndex = 0;
-            this.rdb_LetterForceType_All.TabStop = true;
-            this.rdb_LetterForceType_All.Text = "همه";
-            this.rdb_LetterForceType_All.UseVisualStyleBackColor = true;
-            // 
-            // pnl_Main
-            // 
-            this.pnl_Main.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnl_Main.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pnl_Main.Controls.Add(this.pnl_Search);
-            this.pnl_Main.Controls.Add(this.pnl_ReadedLetters);
-            this.pnl_Main.Controls.Add(this.labelX1);
-            this.pnl_Main.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Main.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(1050, 610);
-            this.pnl_Main.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pnl_Main.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnl_Main.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.pnl_Main.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pnl_Main.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pnl_Main.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pnl_Main.Style.GradientAngle = 90;
-            this.pnl_Main.TabIndex = 4;
-            // 
             // frmUserUnReadLetters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -976,28 +978,28 @@
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmUserUnReadLetters";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmUserUnReadLetters_Load);
             this.panelEx1.ResumeLayout(false);
-            this.pnl_ReadedLetters.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_UnReadedLetters)).EndInit();
+            this.pnl_Main.ResumeLayout(false);
+            this.pnl_Search.ResumeLayout(false);
             this.pnl_Following.ResumeLayout(false);
             this.pnl_Following.PerformLayout();
             this.pnl_Attachment.ResumeLayout(false);
             this.pnl_Attachment.PerformLayout();
-            this.pnl_SecurityType.ResumeLayout(false);
-            this.pnl_SecurityType.PerformLayout();
-            this.pnl_Search.ResumeLayout(false);
             this.pnl_LetterType.ResumeLayout(false);
             this.pnl_LetterType.PerformLayout();
             this.pnl_ArchiveType.ResumeLayout(false);
             this.pnl_ArchiveType.PerformLayout();
             this.pnl_ForcedType.ResumeLayout(false);
             this.pnl_ForcedType.PerformLayout();
-            this.pnl_Main.ResumeLayout(false);
+            this.pnl_SecurityType.ResumeLayout(false);
+            this.pnl_SecurityType.PerformLayout();
+            this.pnl_ReadedLetters.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UnReadedLetters)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1075,5 +1077,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ArchiveT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_AttachmentT;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.SaveFileDialog saveAttachFileDialog;
     }
 }
