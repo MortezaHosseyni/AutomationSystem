@@ -288,6 +288,7 @@
             this.lbl_SendedNotes.Symbol = "57404";
             this.lbl_SendedNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_SendedNotes.Text = "يادداشت‌هاي ارسالي";
+            this.lbl_SendedNotes.Click += new System.EventHandler(this.lbl_SendedNotes_Click);
             // 
             // lbl_ReferredMessages
             // 
