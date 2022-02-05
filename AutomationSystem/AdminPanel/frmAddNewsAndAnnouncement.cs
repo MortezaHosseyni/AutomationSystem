@@ -106,5 +106,11 @@ namespace AutomationSystem.AdminPanel
                 return;
             }
         }
+
+        private void btn_NewsList_Click(object sender, EventArgs e)
+        {
+            frmNewsList newsListForm = new frmNewsList();
+            newsListForm.ShowDialog();
+        }
     }
 }

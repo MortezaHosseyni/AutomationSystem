@@ -356,7 +356,7 @@
             this.btn_NewsList.Symbol = "";
             this.btn_NewsList.TabIndex = 4;
             this.btn_NewsList.Text = "ليست اطلاعيه‌ها";
-            this.btn_NewsList.Click += new System.EventHandler(this.btn_SendNews_Click);
+            this.btn_NewsList.Click += new System.EventHandler(this.btn_NewsList_Click);
             // 
             // frmAddNewsAndAnnouncement
             // 

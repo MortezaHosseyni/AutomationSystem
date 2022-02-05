@@ -21,7 +21,8 @@ namespace AutomationSystem.AdminPanel
 
         private void frmNewsList_Load(object sender, EventArgs e)
         {
-
+            txt_DateOn.Value = DateTime.Now.AddDays(-10);
+            ShowAllNews(searchCondition());
         }
 
         private void ShowAllNews(string searchRecivedLetters)
@@ -56,9 +57,35 @@ namespace AutomationSystem.AdminPanel
             }
         }
 
+        private string searchCondition()
+        {
+            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateOn.Value.Year.ToString()}/{txt_DateOn.Value.Month.ToString()}/{txt_DateOn.Value.Day.ToString()}"));
+            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateTo.Value.Year.ToString()}/{txt_DateTo.Value.Month.ToString()}/{txt_DateTo.Value.Day.ToString()}"));
+
+
+            string searchString = $" AND NewsDate BETWEEN '{dateIn}' AND '{dateTo}'";
+
+            if (txt_NewsSubject.Text != "")
+            {
+                searchString += $" AND NewsSubject LIKE '%{txt_NewsSubject.Text}%'";
+            }
+
+            if (txt_NewsContext.Text != "")
+            {
+                searchString += $" AND NewsContext LIKE '%{txt_NewsContext.Text}%'";
+            }
+
+            return searchString;
+        }
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            ShowAllNews(searchCondition());
         }
     }
 }
