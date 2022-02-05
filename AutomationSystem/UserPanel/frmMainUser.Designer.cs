@@ -169,6 +169,7 @@
             this.lbl_ReadedMessages.Symbol = "57681";
             this.lbl_ReadedMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_ReadedMessages.Text = "نامه‌هاي خوانده شده";
+            this.lbl_ReadedMessages.Click += new System.EventHandler(this.lbl_ReadedMessages_Click);
             // 
             // lbl_UnReadedMessages
             // 
