@@ -45,6 +45,7 @@
             this.val_NewsWriter = new DevComponents.DotNetBar.LabelX();
             this.btn_AttachFile = new DevComponents.DotNetBar.ButtonX();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btn_NewsList = new DevComponents.DotNetBar.ButtonX();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_AddNewsAndAnnouncement.SuspendLayout();
@@ -76,6 +77,7 @@
             this.pnl_Buttons.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Buttons.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.pnl_Buttons.Controls.Add(this.btn_Exit);
+            this.pnl_Buttons.Controls.Add(this.btn_NewsList);
             this.pnl_Buttons.Controls.Add(this.btn_SendNews);
             this.pnl_Buttons.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Buttons.Location = new System.Drawing.Point(12, 339);
@@ -115,7 +117,7 @@
             // 
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(141, 15);
+            this.btn_Exit.Location = new System.Drawing.Point(33, 17);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
             this.btn_Exit.Size = new System.Drawing.Size(220, 43);
@@ -129,7 +131,7 @@
             // 
             this.btn_SendNews.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_SendNews.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_SendNews.Location = new System.Drawing.Point(367, 15);
+            this.btn_SendNews.Location = new System.Drawing.Point(259, 17);
             this.btn_SendNews.Name = "btn_SendNews";
             this.btn_SendNews.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
             this.btn_SendNews.Size = new System.Drawing.Size(220, 43);
@@ -342,6 +344,20 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // btn_NewsList
+            // 
+            this.btn_NewsList.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_NewsList.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_NewsList.Location = new System.Drawing.Point(485, 17);
+            this.btn_NewsList.Name = "btn_NewsList";
+            this.btn_NewsList.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 20, 20);
+            this.btn_NewsList.Size = new System.Drawing.Size(220, 43);
+            this.btn_NewsList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_NewsList.Symbol = "";
+            this.btn_NewsList.TabIndex = 4;
+            this.btn_NewsList.Text = "ليست اطلاعيه‌ها";
+            this.btn_NewsList.Click += new System.EventHandler(this.btn_SendNews_Click);
+            // 
             // frmAddNewsAndAnnouncement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -382,5 +398,6 @@
         private DevComponents.DotNetBar.LabelX val_NewsWriter;
         private DevComponents.DotNetBar.ButtonX btn_AttachFile;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private DevComponents.DotNetBar.ButtonX btn_NewsList;
     }
 }
