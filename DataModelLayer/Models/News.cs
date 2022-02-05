@@ -20,6 +20,8 @@ namespace DataModelLayer.Models
         public int NewsUserID { get; set; }
         public string NewsDate { get; set; }
         public byte[] NewsAttachment { get; set; }
+        public string NewsAttachmentFileName { get; set; }
+        public Nullable<int> NewsAttachmentFileSize { get; set; }
     
         public virtual User User { get; set; }
     }

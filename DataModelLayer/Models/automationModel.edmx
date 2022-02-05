@@ -70,6 +70,8 @@
           <Property Name="NewsUserID" Type="int" Nullable="false" />
           <Property Name="NewsDate" Type="varchar" MaxLength="50" />
           <Property Name="NewsAttachment" Type="varbinary(max)" />
+          <Property Name="NewsAttachmentFileName" Type="varchar" MaxLength="200" />
+          <Property Name="NewsAttachmentFileSize" Type="int" />
         </EntityType>
         <EntityType Name="Notes">
           <Key>
@@ -1538,6 +1540,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="NewsUserID" Type="Int32" Nullable="false" />
           <Property Name="NewsDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NewsAttachment" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NewsAttachmentFileName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NewsAttachmentFileSize" Type="Int32" />
           <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_News_Users" FromRole="News" ToRole="User" />
         </EntityType>
         <Association Name="FK_News_Users">
@@ -1934,6 +1938,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="News">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.News">
               <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="NewsAttachmentFileSize" ColumnName="NewsAttachmentFileSize" />
+                <ScalarProperty Name="NewsAttachmentFileName" ColumnName="NewsAttachmentFileName" />
                 <ScalarProperty Name="NewsAttachment" ColumnName="NewsAttachment" />
                 <ScalarProperty Name="NewsDate" ColumnName="NewsDate" />
                 <ScalarProperty Name="NewsUserID" ColumnName="NewsUserID" />
