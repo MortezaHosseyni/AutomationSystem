@@ -44,6 +44,7 @@
             this.val_NewsDate = new DevComponents.DotNetBar.LabelX();
             this.val_NewsWriter = new DevComponents.DotNetBar.LabelX();
             this.btn_AttachFile = new DevComponents.DotNetBar.ButtonX();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_AddNewsAndAnnouncement.SuspendLayout();
@@ -120,7 +121,7 @@
             this.btn_Exit.Size = new System.Drawing.Size(220, 43);
             this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Exit.Symbol = "";
-            this.btn_Exit.TabIndex = 0;
+            this.btn_Exit.TabIndex = 5;
             this.btn_Exit.Text = "خروج";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
@@ -134,8 +135,8 @@
             this.btn_Save.Size = new System.Drawing.Size(220, 43);
             this.btn_Save.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Save.Symbol = "";
-            this.btn_Save.TabIndex = 0;
-            this.btn_Save.Text = "ثبت اطلاعات";
+            this.btn_Save.TabIndex = 4;
+            this.btn_Save.Text = "ارسال خبر";
             // 
             // pnl_AddNewsAndAnnouncement
             // 
@@ -253,10 +254,11 @@
             // 
             // 
             this.lbl_NewsAttachmentFilePath.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_NewsAttachmentFilePath.Font = new System.Drawing.Font("B Nazanin", 10.25F);
             this.lbl_NewsAttachmentFilePath.Location = new System.Drawing.Point(30, 198);
             this.lbl_NewsAttachmentFilePath.Name = "lbl_NewsAttachmentFilePath";
             this.lbl_NewsAttachmentFilePath.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_NewsAttachmentFilePath.Size = new System.Drawing.Size(322, 40);
+            this.lbl_NewsAttachmentFilePath.Size = new System.Drawing.Size(322, 59);
             this.lbl_NewsAttachmentFilePath.TabIndex = 0;
             this.lbl_NewsAttachmentFilePath.WordWrap = true;
             // 
@@ -273,6 +275,7 @@
             this.txt_NewsSubject.PreventEnterBeep = true;
             this.txt_NewsSubject.Size = new System.Drawing.Size(274, 36);
             this.txt_NewsSubject.TabIndex = 1;
+            this.txt_NewsSubject.WatermarkText = "موضوع خبر...";
             // 
             // txt_NewsContext
             // 
@@ -287,7 +290,8 @@
             this.txt_NewsContext.Name = "txt_NewsContext";
             this.txt_NewsContext.PreventEnterBeep = true;
             this.txt_NewsContext.Size = new System.Drawing.Size(274, 179);
-            this.txt_NewsContext.TabIndex = 1;
+            this.txt_NewsContext.TabIndex = 2;
+            this.txt_NewsContext.WatermarkText = "متن خبر...";
             // 
             // val_NewsDate
             // 
@@ -329,8 +333,13 @@
             this.btn_AttachFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_AttachFile.Symbol = "57671";
             this.btn_AttachFile.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.btn_AttachFile.TabIndex = 2;
+            this.btn_AttachFile.TabIndex = 3;
             this.btn_AttachFile.Text = "الصاق فايل";
+            this.btn_AttachFile.Click += new System.EventHandler(this.btn_AttachFile_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // frmAddNewsAndAnnouncement
             // 
@@ -345,6 +354,7 @@
             this.Name = "frmAddNewsAndAnnouncement";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmAddNewsAndAnnouncement_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Buttons.ResumeLayout(false);
             this.pnl_AddNewsAndAnnouncement.ResumeLayout(false);
@@ -370,5 +380,6 @@
         private DevComponents.DotNetBar.LabelX val_NewsDate;
         private DevComponents.DotNetBar.LabelX val_NewsWriter;
         private DevComponents.DotNetBar.ButtonX btn_AttachFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
