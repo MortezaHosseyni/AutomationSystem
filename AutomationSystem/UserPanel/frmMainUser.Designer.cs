@@ -199,6 +199,7 @@
             this.lbl_ConfidentialMessages.Symbol = "59543";
             this.lbl_ConfidentialMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_ConfidentialMessages.Text = "نامه‌هاي محرمانه";
+            this.lbl_ConfidentialMessages.Click += new System.EventHandler(this.lbl_ConfidentialMessages_Click);
             // 
             // lbl_ArrivedNotes
             // 

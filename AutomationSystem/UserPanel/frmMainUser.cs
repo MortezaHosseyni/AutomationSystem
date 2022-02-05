@@ -34,6 +34,7 @@ namespace AutomationSystem.UserPanel
         frmUserShowReadedLetters userReadedLettersForm;
         frmUserUnReadLetters userUnReadedLettersForm;
         frmUserImmediateLetters userImmediateLettersForm;
+        frmUserConfidentialLetters userConfidentialLettersForm;
         public frmMainUser()
         {
             InitializeComponent();
@@ -108,6 +109,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 4)
             {
                 userImmediateLettersForm.Close();
+            }
+            if (formNumber == 5)
+            {
+                userConfidentialLettersForm.Close();
             }
             if (formNumber == 6)
             {
@@ -263,6 +268,17 @@ namespace AutomationSystem.UserPanel
             userImmediateLettersForm = new frmUserImmediateLetters();
             userImmediateLettersForm.MdiParent = this;
             userImmediateLettersForm.Show();
+        }
+
+        private void lbl_ConfidentialMessages_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 5;
+
+            userConfidentialLettersForm = new frmUserConfidentialLetters();
+            userConfidentialLettersForm.MdiParent = this;
+            userConfidentialLettersForm.Show();
         }
     }
 }
