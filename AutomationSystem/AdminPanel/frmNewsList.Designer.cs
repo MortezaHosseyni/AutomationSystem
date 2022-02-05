@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewsList));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_NewsList = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -41,8 +42,18 @@
             this.col_NewsDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_NewsAttachment = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.txt_NewsContext = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_NewsSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_DateTo = new FreeControls.PersianDateTimePicker();
+            this.txt_DateOn = new FreeControls.PersianDateTimePicker();
+            this.lbl_DateTo = new DevComponents.DotNetBar.LabelX();
+            this.lbl_NewsContext = new DevComponents.DotNetBar.LabelX();
+            this.lbl_NewsSubject = new DevComponents.DotNetBar.LabelX();
+            this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.pnl_Main.SuspendLayout();
             this.pnl_NewsList.SuspendLayout();
+            this.pnl_Search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NewsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,6 +136,15 @@
             // 
             this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Search.Controls.Add(this.btn_Search);
+            this.pnl_Search.Controls.Add(this.txt_NewsContext);
+            this.pnl_Search.Controls.Add(this.txt_NewsSubject);
+            this.pnl_Search.Controls.Add(this.txt_DateTo);
+            this.pnl_Search.Controls.Add(this.txt_DateOn);
+            this.pnl_Search.Controls.Add(this.lbl_DateTo);
+            this.pnl_Search.Controls.Add(this.lbl_NewsContext);
+            this.pnl_Search.Controls.Add(this.lbl_NewsSubject);
+            this.pnl_Search.Controls.Add(this.lbl_DateOn);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Search.Location = new System.Drawing.Point(12, 372);
             this.pnl_Search.Name = "pnl_Search";
@@ -239,6 +259,117 @@
             this.col_NewsAttachment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.col_NewsAttachment.Width = 104;
             // 
+            // txt_NewsContext
+            // 
+            // 
+            // 
+            // 
+            this.txt_NewsContext.Border.Class = "TextBoxBorder";
+            this.txt_NewsContext.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_NewsContext.Location = new System.Drawing.Point(166, 51);
+            this.txt_NewsContext.Name = "txt_NewsContext";
+            this.txt_NewsContext.PreventEnterBeep = true;
+            this.txt_NewsContext.Size = new System.Drawing.Size(444, 36);
+            this.txt_NewsContext.TabIndex = 10;
+            this.txt_NewsContext.WatermarkText = "جستجو در متن اطلاعيه...";
+            // 
+            // txt_NewsSubject
+            // 
+            // 
+            // 
+            // 
+            this.txt_NewsSubject.Border.Class = "TextBoxBorder";
+            this.txt_NewsSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_NewsSubject.Location = new System.Drawing.Point(166, 3);
+            this.txt_NewsSubject.Name = "txt_NewsSubject";
+            this.txt_NewsSubject.PreventEnterBeep = true;
+            this.txt_NewsSubject.Size = new System.Drawing.Size(240, 36);
+            this.txt_NewsSubject.TabIndex = 11;
+            this.txt_NewsSubject.WatermarkText = "جستجو در موضوع اطلاعيه...";
+            // 
+            // txt_DateTo
+            // 
+            this.txt_DateTo.BackColor = System.Drawing.Color.White;
+            this.txt_DateTo.Font = new System.Drawing.Font("B Nazanin", 14.25F);
+            this.txt_DateTo.Location = new System.Drawing.Point(511, 3);
+            this.txt_DateTo.Name = "txt_DateTo";
+            this.txt_DateTo.ShowTime = false;
+            this.txt_DateTo.Size = new System.Drawing.Size(169, 34);
+            this.txt_DateTo.TabIndex = 8;
+            this.txt_DateTo.Text = "persianDateTimePicker1";
+            this.txt_DateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateTo.Value")));
+            // 
+            // txt_DateOn
+            // 
+            this.txt_DateOn.BackColor = System.Drawing.Color.White;
+            this.txt_DateOn.Font = new System.Drawing.Font("B Nazanin", 14.25F);
+            this.txt_DateOn.Location = new System.Drawing.Point(702, 3);
+            this.txt_DateOn.Name = "txt_DateOn";
+            this.txt_DateOn.ShowTime = false;
+            this.txt_DateOn.Size = new System.Drawing.Size(165, 34);
+            this.txt_DateOn.TabIndex = 9;
+            this.txt_DateOn.Text = "persianDateTimePicker1";
+            this.txt_DateOn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateOn.Value")));
+            // 
+            // lbl_DateTo
+            // 
+            // 
+            // 
+            // 
+            this.lbl_DateTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_DateTo.Location = new System.Drawing.Point(686, 7);
+            this.lbl_DateTo.Name = "lbl_DateTo";
+            this.lbl_DateTo.Size = new System.Drawing.Size(10, 25);
+            this.lbl_DateTo.TabIndex = 4;
+            this.lbl_DateTo.Text = "تا";
+            // 
+            // lbl_NewsContext
+            // 
+            // 
+            // 
+            // 
+            this.lbl_NewsContext.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_NewsContext.Location = new System.Drawing.Point(616, 57);
+            this.lbl_NewsContext.Name = "lbl_NewsContext";
+            this.lbl_NewsContext.Size = new System.Drawing.Size(76, 25);
+            this.lbl_NewsContext.TabIndex = 5;
+            this.lbl_NewsContext.Text = "متن اطلاعيه:";
+            // 
+            // lbl_NewsSubject
+            // 
+            // 
+            // 
+            // 
+            this.lbl_NewsSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_NewsSubject.Location = new System.Drawing.Point(412, 9);
+            this.lbl_NewsSubject.Name = "lbl_NewsSubject";
+            this.lbl_NewsSubject.Size = new System.Drawing.Size(71, 25);
+            this.lbl_NewsSubject.TabIndex = 6;
+            this.lbl_NewsSubject.Text = "موضوع خبر:";
+            // 
+            // lbl_DateOn
+            // 
+            // 
+            // 
+            // 
+            this.lbl_DateOn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_DateOn.Location = new System.Drawing.Point(873, 7);
+            this.lbl_DateOn.Name = "lbl_DateOn";
+            this.lbl_DateOn.Size = new System.Drawing.Size(44, 25);
+            this.lbl_DateOn.TabIndex = 7;
+            this.lbl_DateOn.Text = "از تاريخ";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(23, 3);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(110, 84);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 12;
+            // 
             // frmNewsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -255,6 +386,7 @@
             this.Load += new System.EventHandler(this.frmNewsList_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_NewsList.ResumeLayout(false);
+            this.pnl_Search.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NewsList)).EndInit();
             this.ResumeLayout(false);
 
@@ -274,5 +406,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_NewsDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_FullName;
         private System.Windows.Forms.DataGridViewLinkColumn col_NewsAttachment;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_NewsContext;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_NewsSubject;
+        private FreeControls.PersianDateTimePicker txt_DateTo;
+        private FreeControls.PersianDateTimePicker txt_DateOn;
+        private DevComponents.DotNetBar.LabelX lbl_DateTo;
+        private DevComponents.DotNetBar.LabelX lbl_NewsContext;
+        private DevComponents.DotNetBar.LabelX lbl_NewsSubject;
+        private DevComponents.DotNetBar.LabelX lbl_DateOn;
+        private DevComponents.DotNetBar.ButtonX btn_Search;
     }
 }
