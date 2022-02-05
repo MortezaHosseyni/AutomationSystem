@@ -78,6 +78,9 @@
     <Compile Include="Models\Letter.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\News.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Note.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>

@@ -60,6 +60,17 @@
           <Property Name="LetterReplyID" Type="int" />
           <Property Name="LetterSentDate" Type="varchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NewsSubject" Type="varchar" MaxLength="150" />
+          <Property Name="NewsContext" Type="varchar" MaxLength="1000" />
+          <Property Name="NewsUserID" Type="int" Nullable="false" />
+          <Property Name="NewsDate" Type="varchar" MaxLength="50" />
+          <Property Name="NewsAttachment" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Notes">
           <Key>
             <PropertyRef Name="NoteID" />
@@ -452,6 +463,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_News_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="NewsUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Notes_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
@@ -587,6 +610,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="AttachmentFiles" EntityType="Self.AttachmentFiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentLetters" EntityType="Self.SentLetters" Schema="dbo" store:Type="Tables" />
@@ -785,6 +809,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="Users" EntitySet="Users" />
             <End Role="Letters" EntitySet="Letters" />
           </AssociationSet>
+          <AssociationSet Name="FK_News_Users" Association="Self.FK_News_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
           <AssociationSet Name="FK_Notes_Users" Association="Self.FK_Notes_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Notes" EntitySet="Notes" />
@@ -843,6 +871,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="SentLetters" Relationship="Office_Automation_DatabaseModel.FK_SentLetters_Users" FromRole="User" ToRole="SentLetter" />
           <NavigationProperty Name="Notes" Relationship="Office_Automation_DatabaseModel.FK_Notes_Users" FromRole="User" ToRole="Note" />
           <NavigationProperty Name="SentNotes" Relationship="Office_Automation_DatabaseModel.FK_SentNotes_Users" FromRole="User" ToRole="SentNote" />
+          <NavigationProperty Name="News" Relationship="Office_Automation_DatabaseModel.FK_News_Users" FromRole="User" ToRole="News" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -980,6 +1009,11 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="Vw_Notes" EntityType="Office_Automation_DatabaseModel.Vw_Notes" />
           <EntitySet Name="Vw_ReciveNotes" EntityType="Office_Automation_DatabaseModel.Vw_ReciveNotes" />
           <EntitySet Name="Vw_SentNote" EntityType="Office_Automation_DatabaseModel.Vw_SentNote" />
+          <EntitySet Name="News" EntityType="Office_Automation_DatabaseModel.News" />
+          <AssociationSet Name="FK_News_Users" Association="Office_Automation_DatabaseModel.FK_News_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -1494,6 +1528,30 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="ReciverFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NewsSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NewsContext" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="NewsUserID" Type="Int32" Nullable="false" />
+          <Property Name="NewsDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NewsAttachment" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_News_Users" FromRole="News" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_News_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.News" Role="News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="NewsUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1870,6 +1928,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="SentNoteSendedNoteID" ColumnName="SentNoteSendedNoteID" />
                 <ScalarProperty Name="SentNoteUserID" ColumnName="SentNoteUserID" />
                 <ScalarProperty Name="SentNoteID" ColumnName="SentNoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="NewsAttachment" ColumnName="NewsAttachment" />
+                <ScalarProperty Name="NewsDate" ColumnName="NewsDate" />
+                <ScalarProperty Name="NewsUserID" ColumnName="NewsUserID" />
+                <ScalarProperty Name="NewsContext" ColumnName="NewsContext" />
+                <ScalarProperty Name="NewsSubject" ColumnName="NewsSubject" />
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
