@@ -223,6 +223,25 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Letters' does no
           <Property Name="LetterSentDate" Type="varchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Notes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Notes">
+          <Key>
+            <PropertyRef Name="NoteID" />
+            <PropertyRef Name="NoteUserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="CreatorFullName" />
+          </Key>
+          <Property Name="NoteID" Type="int" Nullable="false" />
+          <Property Name="NoteSubject" Type="varchar" MaxLength="200" />
+          <Property Name="NoteContext" Type="varchar" MaxLength="500" />
+          <Property Name="NoteCreateDate" Type="varchar" MaxLength="30" />
+          <Property Name="NoteUserID" Type="int" Nullable="false" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CreatorFullName" Type="varchar" MaxLength="201" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReciveLetter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_ReciveLetter">
           <Key>
@@ -279,6 +298,27 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReciveLetter' do
           <Property Name="LetterReciverFullName" Type="varchar" MaxLength="201" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReciveNotes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_ReciveNotes">
+          <Key>
+            <PropertyRef Name="NoteUserID" />
+            <PropertyRef Name="CreatorFullName" />
+            <PropertyRef Name="SentNoteID" />
+            <PropertyRef Name="NoteReciverID" />
+            <PropertyRef Name="SentNoteSendedNoteID" />
+            <PropertyRef Name="ReciverFullName" />
+          </Key>
+          <Property Name="NoteSubject" Type="varchar" MaxLength="200" />
+          <Property Name="NoteContext" Type="varchar" MaxLength="500" />
+          <Property Name="NoteCreateDate" Type="varchar" MaxLength="30" />
+          <Property Name="NoteUserID" Type="int" Nullable="false" />
+          <Property Name="CreatorFullName" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="SentNoteID" Type="int" Nullable="false" />
+          <Property Name="NoteReciverID" Type="int" Nullable="false" />
+          <Property Name="SentNoteSendedNoteID" Type="int" Nullable="false" />
+          <Property Name="ReciverFullName" Type="varchar" MaxLength="201" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Reminder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_Reminder">
           <Key>
@@ -298,6 +338,24 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Reminder' does n
           <Property Name="RemindIsRead" Type="tinyint" Nullable="false" />
           <Property Name="RemindUserID" Type="int" Nullable="false" />
           <Property Name="RemindRead" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_SentNote' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_SentNote">
+          <Key>
+            <PropertyRef Name="SentNoteID" />
+            <PropertyRef Name="SentNoteUserID" />
+            <PropertyRef Name="SentNoteSendedNoteID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="ReciverFullName" />
+          </Key>
+          <Property Name="SentNoteID" Type="int" Nullable="false" />
+          <Property Name="SentNoteUserID" Type="int" Nullable="false" />
+          <Property Name="SentNoteSendedNoteID" Type="int" Nullable="false" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ReciverFullName" Type="varchar" MaxLength="201" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_UserLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -595,6 +653,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Letters].[LetterSentDate] AS [LetterSentDate]
     FROM [dbo].[Vw_Letters] AS [Vw_Letters]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Vw_Notes" EntityType="Self.Vw_Notes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Notes].[NoteID] AS [NoteID], 
+    [Vw_Notes].[NoteSubject] AS [NoteSubject], 
+    [Vw_Notes].[NoteContext] AS [NoteContext], 
+    [Vw_Notes].[NoteCreateDate] AS [NoteCreateDate], 
+    [Vw_Notes].[NoteUserID] AS [NoteUserID], 
+    [Vw_Notes].[UserFirstName] AS [UserFirstName], 
+    [Vw_Notes].[UserLastName] AS [UserLastName], 
+    [Vw_Notes].[CreatorFullName] AS [CreatorFullName]
+    FROM [dbo].[Vw_Notes] AS [Vw_Notes]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_ReciveLetter" EntityType="Self.Vw_ReciveLetter" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_ReciveLetter].[LetterID] AS [LetterID], 
@@ -633,6 +703,19 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_ReciveLetter].[LetterReciverFullName] AS [LetterReciverFullName]
     FROM [dbo].[Vw_ReciveLetter] AS [Vw_ReciveLetter]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Vw_ReciveNotes" EntityType="Self.Vw_ReciveNotes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_ReciveNotes].[NoteSubject] AS [NoteSubject], 
+    [Vw_ReciveNotes].[NoteContext] AS [NoteContext], 
+    [Vw_ReciveNotes].[NoteCreateDate] AS [NoteCreateDate], 
+    [Vw_ReciveNotes].[NoteUserID] AS [NoteUserID], 
+    [Vw_ReciveNotes].[CreatorFullName] AS [CreatorFullName], 
+    [Vw_ReciveNotes].[SentNoteID] AS [SentNoteID], 
+    [Vw_ReciveNotes].[NoteReciverID] AS [NoteReciverID], 
+    [Vw_ReciveNotes].[SentNoteSendedNoteID] AS [SentNoteSendedNoteID], 
+    [Vw_ReciveNotes].[ReciverFullName] AS [ReciverFullName]
+    FROM [dbo].[Vw_ReciveNotes] AS [Vw_ReciveNotes]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_Reminder" EntityType="Self.Vw_Reminder" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_Reminder].[RemindID] AS [RemindID], 
@@ -644,6 +727,16 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Reminder].[RemindUserID] AS [RemindUserID], 
     [Vw_Reminder].[RemindRead] AS [RemindRead]
     FROM [dbo].[Vw_Reminder] AS [Vw_Reminder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_SentNote" EntityType="Self.Vw_SentNote" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_SentNote].[SentNoteID] AS [SentNoteID], 
+    [Vw_SentNote].[SentNoteUserID] AS [SentNoteUserID], 
+    [Vw_SentNote].[SentNoteSendedNoteID] AS [SentNoteSendedNoteID], 
+    [Vw_SentNote].[UserFirstName] AS [UserFirstName], 
+    [Vw_SentNote].[UserLastName] AS [UserLastName], 
+    [Vw_SentNote].[ReciverFullName] AS [ReciverFullName]
+    FROM [dbo].[Vw_SentNote] AS [Vw_SentNote]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vw_UserLog" EntityType="Self.Vw_UserLog" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -884,6 +977,9 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="User" EntitySet="Users" />
             <End Role="SentNote" EntitySet="SentNotes" />
           </AssociationSet>
+          <EntitySet Name="Vw_Notes" EntityType="Office_Automation_DatabaseModel.Vw_Notes" />
+          <EntitySet Name="Vw_ReciveNotes" EntityType="Office_Automation_DatabaseModel.Vw_ReciveNotes" />
+          <EntitySet Name="Vw_SentNote" EntityType="Office_Automation_DatabaseModel.Vw_SentNote" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -1346,6 +1442,58 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Vw_Notes">
+          <Key>
+            <PropertyRef Name="NoteID" />
+            <PropertyRef Name="NoteUserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="CreatorFullName" />
+          </Key>
+          <Property Name="NoteID" Type="Int32" Nullable="false" />
+          <Property Name="NoteSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NoteContext" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="NoteCreateDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NoteUserID" Type="Int32" Nullable="false" />
+          <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreatorFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Vw_ReciveNotes">
+          <Key>
+            <PropertyRef Name="NoteUserID" />
+            <PropertyRef Name="CreatorFullName" />
+            <PropertyRef Name="SentNoteID" />
+            <PropertyRef Name="NoteReciverID" />
+            <PropertyRef Name="SentNoteSendedNoteID" />
+            <PropertyRef Name="ReciverFullName" />
+          </Key>
+          <Property Name="NoteSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NoteContext" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="NoteCreateDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NoteUserID" Type="Int32" Nullable="false" />
+          <Property Name="CreatorFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="SentNoteID" Type="Int32" Nullable="false" />
+          <Property Name="NoteReciverID" Type="Int32" Nullable="false" />
+          <Property Name="SentNoteSendedNoteID" Type="Int32" Nullable="false" />
+          <Property Name="ReciverFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Vw_SentNote">
+          <Key>
+            <PropertyRef Name="SentNoteID" />
+            <PropertyRef Name="SentNoteUserID" />
+            <PropertyRef Name="SentNoteSendedNoteID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="ReciverFullName" />
+          </Key>
+          <Property Name="SentNoteID" Type="Int32" Nullable="false" />
+          <Property Name="SentNoteUserID" Type="Int32" Nullable="false" />
+          <Property Name="SentNoteSendedNoteID" Type="Int32" Nullable="false" />
+          <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ReciverFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1680,6 +1828,47 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
               <MappingFragment StoreEntitySet="SentNotes">
                 <ScalarProperty Name="SentNoteUserID" ColumnName="SentNoteUserID" />
                 <ScalarProperty Name="SentNoteSendedNoteID" ColumnName="SentNoteSendedNoteID" />
+                <ScalarProperty Name="SentNoteID" ColumnName="SentNoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Notes">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Notes">
+              <MappingFragment StoreEntitySet="Vw_Notes">
+                <ScalarProperty Name="CreatorFullName" ColumnName="CreatorFullName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="NoteUserID" ColumnName="NoteUserID" />
+                <ScalarProperty Name="NoteCreateDate" ColumnName="NoteCreateDate" />
+                <ScalarProperty Name="NoteContext" ColumnName="NoteContext" />
+                <ScalarProperty Name="NoteSubject" ColumnName="NoteSubject" />
+                <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_ReciveNotes">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_ReciveNotes">
+              <MappingFragment StoreEntitySet="Vw_ReciveNotes">
+                <ScalarProperty Name="ReciverFullName" ColumnName="ReciverFullName" />
+                <ScalarProperty Name="SentNoteSendedNoteID" ColumnName="SentNoteSendedNoteID" />
+                <ScalarProperty Name="NoteReciverID" ColumnName="NoteReciverID" />
+                <ScalarProperty Name="SentNoteID" ColumnName="SentNoteID" />
+                <ScalarProperty Name="CreatorFullName" ColumnName="CreatorFullName" />
+                <ScalarProperty Name="NoteUserID" ColumnName="NoteUserID" />
+                <ScalarProperty Name="NoteCreateDate" ColumnName="NoteCreateDate" />
+                <ScalarProperty Name="NoteContext" ColumnName="NoteContext" />
+                <ScalarProperty Name="NoteSubject" ColumnName="NoteSubject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_SentNote">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_SentNote">
+              <MappingFragment StoreEntitySet="Vw_SentNote">
+                <ScalarProperty Name="ReciverFullName" ColumnName="ReciverFullName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="SentNoteSendedNoteID" ColumnName="SentNoteSendedNoteID" />
+                <ScalarProperty Name="SentNoteUserID" ColumnName="SentNoteUserID" />
                 <ScalarProperty Name="SentNoteID" ColumnName="SentNoteID" />
               </MappingFragment>
             </EntityTypeMapping>

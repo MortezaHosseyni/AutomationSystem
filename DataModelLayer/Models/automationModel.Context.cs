@@ -44,6 +44,9 @@ namespace DataModelLayer.Models
         public virtual DbSet<Vw_ReciveLetter> Vw_ReciveLetter { get; set; }
         public virtual DbSet<Note> Notes { get; set; }
         public virtual DbSet<SentNote> SentNotes { get; set; }
+        public virtual DbSet<Vw_Notes> Vw_Notes { get; set; }
+        public virtual DbSet<Vw_ReciveNotes> Vw_ReciveNotes { get; set; }
+        public virtual DbSet<Vw_SentNote> Vw_SentNote { get; set; }
     
         public virtual int Sp_InsterUsers(string userFirstName, string userLastName, string userName, string userPassword, string userPersonalID, string userEmail, Nullable<byte> userGender, Nullable<byte> userActivity, string userTel, string userBrithDate, byte[] userImage, byte[] userSignature, string userRegisteredDate)
         {

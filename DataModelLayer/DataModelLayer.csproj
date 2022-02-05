@@ -111,10 +111,19 @@
     <Compile Include="Models\Vw_Letters.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Vw_Notes.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vw_ReciveLetter.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Vw_ReciveNotes.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vw_Reminder.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vw_SentNote.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vw_UserLog.cs">

@@ -33,6 +33,9 @@
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Notes_Users" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentNotes_Notes" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_SentNotes_Users" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Notes" Width="1.5" PointX="15.375" PointY="6.5" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_ReciveNotes" Width="1.5" PointX="13.75" PointY="6.5" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_SentNote" Width="1.5" PointX="12.125" PointY="6.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
