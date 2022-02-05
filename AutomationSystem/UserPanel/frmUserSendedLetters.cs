@@ -212,7 +212,7 @@ namespace AutomationSystem.UserPanel
 
         private void dgv_SendedLetters_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv_SendedLetters.CurrentCell.ColumnIndex.Equals(14) && e.RowIndex != -1)
+            if (dgv_SendedLetters.CurrentCell.ColumnIndex.Equals(13) && e.RowIndex != -1)
             {
                 if (dgv_SendedLetters.CurrentCell != null && dgv_SendedLetters.CurrentCell.Value != null)
                 {
@@ -220,10 +220,6 @@ namespace AutomationSystem.UserPanel
                     var queryFileName = (from FN in db.AttachmentFiles where FN.AttachLetterID == get_LetterID select FN).ToList();
                     saveAttachmentFile(saveAttachFileDialog, dgv_SendedLetters, get_LetterID);
                 }
-            }
-            else
-            {
-                MessageBox.Show(dgv_SendedLetters.CurrentCell.ToString());
             }
         }
 

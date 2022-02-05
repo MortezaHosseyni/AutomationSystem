@@ -211,7 +211,7 @@ namespace AutomationSystem.UserPanel
 
         private void dgv_UnReadedLetters_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv_UnReadedLetters.CurrentCell.ColumnIndex.Equals(14) && e.RowIndex != -1)
+            if (dgv_UnReadedLetters.CurrentCell.ColumnIndex.Equals(13) && e.RowIndex != -1)
             {
                 if (dgv_UnReadedLetters.CurrentCell != null && dgv_UnReadedLetters.CurrentCell.Value != null)
                 {
@@ -219,10 +219,6 @@ namespace AutomationSystem.UserPanel
                     var queryFileName = (from FN in db.AttachmentFiles where FN.AttachLetterID == get_LetterID select FN).ToList();
                     saveAttachmentFile(saveAttachFileDialog, dgv_UnReadedLetters, get_LetterID);
                 }
-            }
-            else
-            {
-                MessageBox.Show(dgv_UnReadedLetters.CurrentCell.ToString());
             }
         }
 
