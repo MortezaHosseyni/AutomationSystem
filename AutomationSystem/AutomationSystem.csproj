@@ -222,6 +222,12 @@
     <Compile Include="UserPanel\frmUserSendedLetters.Designer.cs">
       <DependentUpon>frmUserSendedLetters.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserShowReadedLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowReadedLetters.Designer.cs">
+      <DependentUpon>frmUserShowReadedLetters.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserShowReciveNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserSendedLetters.resx">
       <DependentUpon>frmUserSendedLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowReadedLetters.resx">
+      <DependentUpon>frmUserShowReadedLetters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserShowReciveNotes.resx">
       <DependentUpon>frmUserShowReciveNotes.cs</DependentUpon>
