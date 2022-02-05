@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using System.IO;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -86,6 +87,51 @@ namespace AutomationSystem.AdminPanel
         private void btn_Search_Click(object sender, EventArgs e)
         {
             ShowAllNews(searchCondition());
+        }
+
+        private void dgv_NewsList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_NewsList.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+            {
+                if (dgv_NewsList.CurrentCell != null && dgv_NewsList.CurrentCell.Value != null)
+                {
+                    int get_NewsID = Convert.ToInt32(dgv_NewsList.CurrentRow.Cells["col_NewsID"].Value);
+                    var queryFileName = (from FN in db.AttachmentFiles where FN.AttachLetterID == get_NewsID select FN).ToList();
+                    saveAttachmentFile(saveFileDialog, dgv_NewsList, get_NewsID);
+                }
+            }
+        }
+
+        private void saveAttachmentFile(SaveFileDialog objSFD, DataGridView objGrid, int getLetterID)
+        {
+            try
+            {
+                string strID = objGrid.CurrentRow.Cells["col_NewsAttachment"].Value.ToString();
+                if (strID != null)
+                {
+                    var queryAttachment = (from AF in db.AttachmentFiles where AF.AttachLetterID == getLetterID select AF).ToList();
+
+                    byte[] objData = (byte[])queryAttachment[0].AttachFileData;
+
+                    objSFD.FileName = queryAttachment[0].AttachFileName;
+                    objSFD.Title = "دريافت فايل الصاقي";
+
+                    if (objSFD.ShowDialog() != DialogResult.Cancel)
+                    {
+                        string strFileToSave = objSFD.FileName;
+                        FileStream objFileStream = new FileStream(strFileToSave, FileMode.Create, FileAccess.Write);
+                        objFileStream.Write(objData, 0, objData.Length);
+                        objFileStream.Close();
+
+                        MessageBox.Show("فايل الصاقي باموفقيت دانلود شد", "دريافت فايل الصاق");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("در خواندن اطلاعات خطايي رخ داد", "پايگاه داده");
+                return;
+            }
         }
     }
 }

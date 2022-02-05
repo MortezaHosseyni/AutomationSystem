@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewsList));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
@@ -51,6 +51,7 @@
             this.lbl_NewsSubject = new DevComponents.DotNetBar.LabelX();
             this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
             this.btn_Search = new DevComponents.DotNetBar.ButtonX();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.pnl_Main.SuspendLayout();
             this.pnl_NewsList.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -192,19 +193,20 @@
             this.col_NewsDate,
             this.col_FullName,
             this.col_NewsAttachment});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_NewsList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_NewsList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_NewsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_NewsList.Location = new System.Drawing.Point(3, 3);
             this.dgv_NewsList.Name = "dgv_NewsList";
             this.dgv_NewsList.Size = new System.Drawing.Size(929, 294);
             this.dgv_NewsList.TabIndex = 0;
+            this.dgv_NewsList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NewsList_CellClick);
             // 
             // btn_Exit
             // 
@@ -416,5 +418,6 @@
         private DevComponents.DotNetBar.LabelX lbl_NewsSubject;
         private DevComponents.DotNetBar.LabelX lbl_DateOn;
         private DevComponents.DotNetBar.ButtonX btn_Search;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
