@@ -157,5 +157,11 @@ namespace AutomationSystem.AdminPanel
             frmAsignmentJob asignmentJob = new frmAsignmentJob();
             asignmentJob.ShowDialog();
         }
+
+        private void btn_Messenger_Click(object sender, EventArgs e)
+        {
+            frmAddNewsAndAnnouncement newsAndAnnouncement = new frmAddNewsAndAnnouncement();
+            newsAndAnnouncement.ShowDialog();
+        }
     }
 }

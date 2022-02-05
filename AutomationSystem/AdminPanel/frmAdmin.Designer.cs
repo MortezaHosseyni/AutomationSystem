@@ -29,28 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbc_UpMenu = new DevComponents.DotNetBar.RibbonControl();
             this.rbp_UpMenu = new DevComponents.DotNetBar.RibbonPanel();
             this.rib_Reminder = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Reminder = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Messenger = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Messenger = new DevComponents.DotNetBar.ButtonItem();
             this.rib_AssignmentJob = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_AssignmentJob = new DevComponents.DotNetBar.ButtonItem();
             this.rib_JobsManager = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_UsersLog = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Jobs = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Jobs = new DevComponents.DotNetBar.ButtonItem();
             this.rib_Users = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_Users = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.rti_ManagmentSection = new DevComponents.DotNetBar.RibbonTabItem();
             this.rti_Reports = new DevComponents.DotNetBar.RibbonTabItem();
-            this.btn_MenuBar = new DevComponents.DotNetBar.ApplicationButton();
             this.btn_Title = new DevComponents.DotNetBar.ButtonItem();
             this.styleManager = new DevComponents.DotNetBar.StyleManager(this.components);
             this.pnl_MainPanel = new DevComponents.DotNetBar.PanelEx();
@@ -90,6 +83,13 @@
             this.lbl_Dashboard = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btn_Reminder = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_Messenger = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_AssignmentJob = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_UsersLog = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_Jobs = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_Users = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_MenuBar = new DevComponents.DotNetBar.ApplicationButton();
             this.rbc_UpMenu.SuspendLayout();
             this.rbp_UpMenu.SuspendLayout();
             this.pnl_MainPanel.SuspendLayout();
@@ -201,15 +201,6 @@
             this.rib_Reminder.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Reminder.TitleVisible = false;
             // 
-            // btn_Reminder
-            // 
-            this.btn_Reminder.Image = global::AutomationSystem.Properties.Resources._06_AddReminder;
-            this.btn_Reminder.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Reminder.Name = "btn_Reminder";
-            this.btn_Reminder.SubItemsExpandWidth = 14;
-            this.superTooltip.SetSuperTooltip(this.btn_Reminder, new DevComponents.DotNetBar.SuperTooltipInfo("ثبت يادآور", "", "مي‌توانيد براي خود يادآور ثبت كنيد تا در ورود بعدي به سيستم آنرا مشاهده كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.btn_Reminder.Click += new System.EventHandler(this.btn_Reminder_Click);
-            // 
             // rib_Messenger
             // 
             this.rib_Messenger.AutoOverflowEnabled = true;
@@ -242,13 +233,6 @@
             // 
             this.rib_Messenger.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Messenger.TitleVisible = false;
-            // 
-            // btn_Messenger
-            // 
-            this.btn_Messenger.Image = global::AutomationSystem.Properties.Resources._05_SendMessage;
-            this.btn_Messenger.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Messenger.Name = "btn_Messenger";
-            this.btn_Messenger.SubItemsExpandWidth = 14;
             // 
             // rib_AssignmentJob
             // 
@@ -283,15 +267,6 @@
             this.rib_AssignmentJob.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_AssignmentJob.TitleVisible = false;
             // 
-            // btn_AssignmentJob
-            // 
-            this.btn_AssignmentJob.Image = global::AutomationSystem.Properties.Resources._04_AssignmentJob;
-            this.btn_AssignmentJob.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_AssignmentJob.Name = "btn_AssignmentJob";
-            this.btn_AssignmentJob.SubItemsExpandWidth = 14;
-            this.superTooltip.SetSuperTooltip(this.btn_AssignmentJob, new DevComponents.DotNetBar.SuperTooltipInfo("انتصاب شغل", "", "مي‌توانيد به پرسنل شغل انتصاب دهيد و تاريخچه مشاغل را مشاهده كنيد.", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.btn_AssignmentJob.Click += new System.EventHandler(this.btn_AssignmentJob_Click);
-            // 
             // rib_JobsManager
             // 
             this.rib_JobsManager.AutoOverflowEnabled = true;
@@ -324,15 +299,6 @@
             // 
             this.rib_JobsManager.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_JobsManager.TitleVisible = false;
-            // 
-            // btn_UsersLog
-            // 
-            this.btn_UsersLog.Image = global::AutomationSystem.Properties.Resources._03_JobsManager;
-            this.btn_UsersLog.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_UsersLog.Name = "btn_UsersLog";
-            this.btn_UsersLog.SubItemsExpandWidth = 14;
-            this.superTooltip.SetSuperTooltip(this.btn_UsersLog, new DevComponents.DotNetBar.SuperTooltipInfo("مديريت ورود و خروج", "", "مي‌توانيد ورود و خروج كاربران را مشاهده كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.btn_UsersLog.Click += new System.EventHandler(this.btn_UsersLog_Click);
             // 
             // rib_Jobs
             // 
@@ -367,16 +333,6 @@
             this.rib_Jobs.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Jobs.TitleVisible = false;
             // 
-            // btn_Jobs
-            // 
-            this.btn_Jobs.Image = global::AutomationSystem.Properties.Resources._02_Jobs;
-            this.btn_Jobs.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Jobs.Name = "btn_Jobs";
-            this.btn_Jobs.SubItemsExpandWidth = 14;
-            this.superTooltip.SetSuperTooltip(this.btn_Jobs, new DevComponents.DotNetBar.SuperTooltipInfo("مشاغل", "", "در اين بخش مي‌توانيد مشاغل موجود در سازمان را مشاهده كنيد و عملياتي روي آنها انجا" +
-            "م دهيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.btn_Jobs.Click += new System.EventHandler(this.btn_Jobs_Click);
-            // 
             // rib_Users
             // 
             this.rib_Users.AutoOverflowEnabled = true;
@@ -409,15 +365,6 @@
             // 
             this.rib_Users.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rib_Users.TitleVisible = false;
-            // 
-            // btn_Users
-            // 
-            this.btn_Users.Image = global::AutomationSystem.Properties.Resources._01_Users;
-            this.btn_Users.ImageFixedSize = new System.Drawing.Size(64, 64);
-            this.btn_Users.Name = "btn_Users";
-            this.btn_Users.SubItemsExpandWidth = 14;
-            this.superTooltip.SetSuperTooltip(this.btn_Users, new DevComponents.DotNetBar.SuperTooltipInfo("كاربران", "", "مي‌توانيد كاربران را مشاهده و مديريت كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.btn_Users.Click += new System.EventHandler(this.btn_Users_Click);
             // 
             // ribbonPanel2
             // 
@@ -460,18 +407,6 @@
             this.rti_Reports.Symbol = "57931";
             this.rti_Reports.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.rti_Reports.Text = "گزارشات و آمار";
-            // 
-            // btn_MenuBar
-            // 
-            this.btn_MenuBar.AutoExpandOnClick = true;
-            this.btn_MenuBar.CanCustomize = false;
-            this.btn_MenuBar.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.Image;
-            this.btn_MenuBar.Image = ((System.Drawing.Image)(resources.GetObject("btn_MenuBar.Image")));
-            this.btn_MenuBar.ImagePaddingHorizontal = 2;
-            this.btn_MenuBar.ImagePaddingVertical = 2;
-            this.btn_MenuBar.Name = "btn_MenuBar";
-            this.btn_MenuBar.ShowSubItems = false;
-            this.btn_MenuBar.Text = "&File";
             // 
             // btn_Title
             // 
@@ -880,14 +815,14 @@
             // 
             this.dgv_Reminder.AllowUserToAddRows = false;
             this.dgv_Reminder.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Reminder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_RemindSubject,
@@ -897,26 +832,26 @@
             this.col_RemindRead,
             this.col_RemindID,
             this.col_Readed});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Reminder.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Reminder.EnableHeadersVisualStyles = false;
             this.dgv_Reminder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_Reminder.Location = new System.Drawing.Point(3, 3);
             this.dgv_Reminder.Name = "dgv_Reminder";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Reminder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Reminder.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_Reminder.Size = new System.Drawing.Size(898, 127);
             this.dgv_Reminder.TabIndex = 0;
             this.dgv_Reminder.DoubleClick += new System.EventHandler(this.dgv_Reminder_DoubleClick);
@@ -1016,6 +951,73 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // btn_Reminder
+            // 
+            this.btn_Reminder.Image = global::AutomationSystem.Properties.Resources._06_AddReminder;
+            this.btn_Reminder.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Reminder.Name = "btn_Reminder";
+            this.btn_Reminder.SubItemsExpandWidth = 14;
+            this.superTooltip.SetSuperTooltip(this.btn_Reminder, new DevComponents.DotNetBar.SuperTooltipInfo("ثبت يادآور", "", "مي‌توانيد براي خود يادآور ثبت كنيد تا در ورود بعدي به سيستم آنرا مشاهده كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_Reminder.Click += new System.EventHandler(this.btn_Reminder_Click);
+            // 
+            // btn_Messenger
+            // 
+            this.btn_Messenger.Image = global::AutomationSystem.Properties.Resources._05_SendMessage;
+            this.btn_Messenger.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Messenger.Name = "btn_Messenger";
+            this.btn_Messenger.SubItemsExpandWidth = 14;
+            this.superTooltip.SetSuperTooltip(this.btn_Messenger, new DevComponents.DotNetBar.SuperTooltipInfo("اخبار و اطلاعيه", "", "ارسال اخبار و اطلاعيه براي كاركنان", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_Messenger.Click += new System.EventHandler(this.btn_Messenger_Click);
+            // 
+            // btn_AssignmentJob
+            // 
+            this.btn_AssignmentJob.Image = global::AutomationSystem.Properties.Resources._04_AssignmentJob;
+            this.btn_AssignmentJob.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_AssignmentJob.Name = "btn_AssignmentJob";
+            this.btn_AssignmentJob.SubItemsExpandWidth = 14;
+            this.superTooltip.SetSuperTooltip(this.btn_AssignmentJob, new DevComponents.DotNetBar.SuperTooltipInfo("انتصاب شغل", "", "مي‌توانيد به پرسنل شغل انتصاب دهيد و تاريخچه مشاغل را مشاهده كنيد.", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_AssignmentJob.Click += new System.EventHandler(this.btn_AssignmentJob_Click);
+            // 
+            // btn_UsersLog
+            // 
+            this.btn_UsersLog.Image = global::AutomationSystem.Properties.Resources._03_JobsManager;
+            this.btn_UsersLog.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_UsersLog.Name = "btn_UsersLog";
+            this.btn_UsersLog.SubItemsExpandWidth = 14;
+            this.superTooltip.SetSuperTooltip(this.btn_UsersLog, new DevComponents.DotNetBar.SuperTooltipInfo("مديريت ورود و خروج", "", "مي‌توانيد ورود و خروج كاربران را مشاهده كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_UsersLog.Click += new System.EventHandler(this.btn_UsersLog_Click);
+            // 
+            // btn_Jobs
+            // 
+            this.btn_Jobs.Image = global::AutomationSystem.Properties.Resources._02_Jobs;
+            this.btn_Jobs.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Jobs.Name = "btn_Jobs";
+            this.btn_Jobs.SubItemsExpandWidth = 14;
+            this.superTooltip.SetSuperTooltip(this.btn_Jobs, new DevComponents.DotNetBar.SuperTooltipInfo("مشاغل", "", "در اين بخش مي‌توانيد مشاغل موجود در سازمان را مشاهده كنيد و عملياتي روي آنها انجا" +
+            "م دهيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_Jobs.Click += new System.EventHandler(this.btn_Jobs_Click);
+            // 
+            // btn_Users
+            // 
+            this.btn_Users.Image = global::AutomationSystem.Properties.Resources._01_Users;
+            this.btn_Users.ImageFixedSize = new System.Drawing.Size(64, 64);
+            this.btn_Users.Name = "btn_Users";
+            this.btn_Users.SubItemsExpandWidth = 14;
+            this.superTooltip.SetSuperTooltip(this.btn_Users, new DevComponents.DotNetBar.SuperTooltipInfo("كاربران", "", "مي‌توانيد كاربران را مشاهده و مديريت كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_Users.Click += new System.EventHandler(this.btn_Users_Click);
+            // 
+            // btn_MenuBar
+            // 
+            this.btn_MenuBar.AutoExpandOnClick = true;
+            this.btn_MenuBar.CanCustomize = false;
+            this.btn_MenuBar.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.Image;
+            this.btn_MenuBar.Image = ((System.Drawing.Image)(resources.GetObject("btn_MenuBar.Image")));
+            this.btn_MenuBar.ImagePaddingHorizontal = 2;
+            this.btn_MenuBar.ImagePaddingVertical = 2;
+            this.btn_MenuBar.Name = "btn_MenuBar";
+            this.btn_MenuBar.ShowSubItems = false;
+            this.btn_MenuBar.Text = "&File";
             // 
             // frmAdmin
             // 

@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPanel\frmAddNewsAndAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAddNewsAndAnnouncement.Designer.cs">
+      <DependentUpon>frmAddNewsAndAnnouncement.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     <Compile Include="UserPanel\frmUserUnReadLetters.Designer.cs">
       <DependentUpon>frmUserUnReadLetters.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminPanel\frmAddNewsAndAnnouncement.resx">
+      <DependentUpon>frmAddNewsAndAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
