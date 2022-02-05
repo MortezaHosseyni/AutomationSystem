@@ -10,19 +10,22 @@ using System.Windows.Forms;
 using DataModelLayer.Models;
 using System.IO;
 
-namespace AutomationSystem.AdminPanel
+namespace AutomationSystem.UserPanel
 {
-    public partial class frmNewsList : Form
+    public partial class frmUserShowAllNews : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
-        public frmNewsList()
+        public frmUserShowAllNews()
         {
             InitializeComponent();
         }
 
-        private void frmNewsList_Load(object sender, EventArgs e)
+        private void frmUserShowAllNews_Load(object sender, EventArgs e)
         {
-            txt_DateOn.Value = DateTime.Now.AddDays(-10);
+            this.Left = 10;
+            this.Top = 160;
+
+            txt_DateOn.Value = DateTime.Now.AddDays(-1);
             ShowAllNews(searchCondition());
         }
 
@@ -89,19 +92,6 @@ namespace AutomationSystem.AdminPanel
             ShowAllNews(searchCondition());
         }
 
-        private void dgv_NewsList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgv_NewsList.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
-            {
-                if (dgv_NewsList.CurrentCell != null && dgv_NewsList.CurrentCell.Value != null)
-                {
-                    int get_NewsID = Convert.ToInt32(dgv_NewsList.CurrentRow.Cells["col_NewsID"].Value);
-                    var queryFileName = (from AN in db.News where AN.NewsID == get_NewsID select AN).ToList();
-                    saveAttachmentFile(saveFileDialog, dgv_NewsList, get_NewsID);
-                }
-            }
-        }
-
         private void saveAttachmentFile(SaveFileDialog objSFD, DataGridView objGrid, int getNewsID)
         {
             try
@@ -131,6 +121,24 @@ namespace AutomationSystem.AdminPanel
             {
                 MessageBox.Show("در خواندن اطلاعات خطايي رخ داد", "پايگاه داده");
                 return;
+            }
+        }
+
+        private void btn_Search_Click_1(object sender, EventArgs e)
+        {
+            ShowAllNews(searchCondition());
+        }
+
+        private void dgv_NewsList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_NewsList.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+            {
+                if (dgv_NewsList.CurrentCell != null && dgv_NewsList.CurrentCell.Value != null)
+                {
+                    int get_NewsID = Convert.ToInt32(dgv_NewsList.CurrentRow.Cells["col_NewsID"].Value);
+                    var queryFileName = (from AN in db.News where AN.NewsID == get_NewsID select AN).ToList();
+                    saveAttachmentFile(saveFileDialog, dgv_NewsList, get_NewsID);
+                }
             }
         }
     }

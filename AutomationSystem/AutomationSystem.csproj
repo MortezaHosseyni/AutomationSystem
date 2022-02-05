@@ -270,6 +270,12 @@
     <Compile Include="UserPanel\frmUserUnReadLetters.Designer.cs">
       <DependentUpon>frmUserUnReadLetters.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserShowAllNews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowAllNews.Designer.cs">
+      <DependentUpon>frmUserShowAllNews.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel\frmAddNewsAndAnnouncement.resx">
       <DependentUpon>frmAddNewsAndAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserUnReadLetters.resx">
       <DependentUpon>frmUserUnReadLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowAllNews.resx">
+      <DependentUpon>frmUserShowAllNews.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Editor\Resources\Thumbs.db" />
     <None Include="Properties\Settings.settings">

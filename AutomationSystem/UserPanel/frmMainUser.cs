@@ -35,6 +35,7 @@ namespace AutomationSystem.UserPanel
         frmUserUnReadLetters userUnReadedLettersForm;
         frmUserImmediateLetters userImmediateLettersForm;
         frmUserConfidentialLetters userConfidentialLettersForm;
+        frmUserShowAllNews userShowNews;
         public frmMainUser()
         {
             InitializeComponent();
@@ -145,6 +146,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 15)
             {
                 userDraftForm.Close();
+            }
+            if (formNumber == 16)
+            {
+                userShowNews.Close();
             }
         }
 
@@ -279,6 +284,17 @@ namespace AutomationSystem.UserPanel
             userConfidentialLettersForm = new frmUserConfidentialLetters();
             userConfidentialLettersForm.MdiParent = this;
             userConfidentialLettersForm.Show();
+        }
+
+        private void lbl_NewsAndAnnouncement_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 16;
+
+            userShowNews = new frmUserShowAllNews();
+            userShowNews.MdiParent = this;
+            userShowNews.Show();
         }
     }
 }

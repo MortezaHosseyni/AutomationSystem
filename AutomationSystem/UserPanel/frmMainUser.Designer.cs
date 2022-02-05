@@ -439,6 +439,7 @@
             this.lbl_NewsAndAnnouncement.Symbol = "59383";
             this.lbl_NewsAndAnnouncement.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_NewsAndAnnouncement.Text = "اخبار و اطلاعيه‌ها";
+            this.lbl_NewsAndAnnouncement.Click += new System.EventHandler(this.lbl_NewsAndAnnouncement_Click);
             // 
             // pnl_UpMenu
             // 
