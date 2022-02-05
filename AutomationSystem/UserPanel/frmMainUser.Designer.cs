@@ -205,6 +205,7 @@
             this.lbl_ArrivedNotes.Symbol = "57391";
             this.lbl_ArrivedNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_ArrivedNotes.Text = "يادداشت‌هاي رسيده";
+            this.lbl_ArrivedNotes.Click += new System.EventHandler(this.lbl_ArrivedNotes_Click);
             // 
             // lbl_ShowNotes
             // 
