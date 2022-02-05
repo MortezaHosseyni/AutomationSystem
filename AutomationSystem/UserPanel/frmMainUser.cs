@@ -33,6 +33,7 @@ namespace AutomationSystem.UserPanel
         frmUserShowReciveNotes userShowReciveNotes;
         frmUserShowReadedLetters userReadedLettersForm;
         frmUserUnReadLetters userUnReadedLettersForm;
+        frmUserImmediateLetters userImmediateLettersForm;
         public frmMainUser()
         {
             InitializeComponent();
@@ -103,6 +104,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 3)
             {
                 userUnReadedLettersForm.Close();
+            }
+            if (formNumber == 4)
+            {
+                userImmediateLettersForm.Close();
             }
             if (formNumber == 6)
             {
@@ -247,6 +252,17 @@ namespace AutomationSystem.UserPanel
             userUnReadedLettersForm = new frmUserUnReadLetters();
             userUnReadedLettersForm.MdiParent = this;
             userUnReadedLettersForm.Show();
+        }
+
+        private void lbl_UrgentActionMessages_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 4;
+
+            userImmediateLettersForm = new frmUserImmediateLetters();
+            userImmediateLettersForm.MdiParent = this;
+            userImmediateLettersForm.Show();
         }
     }
 }

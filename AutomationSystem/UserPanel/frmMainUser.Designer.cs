@@ -189,6 +189,7 @@
             this.lbl_UrgentActionMessages.Symbol = "57553";
             this.lbl_UrgentActionMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_UrgentActionMessages.Text = "نامه‌هاي اقدام فوري";
+            this.lbl_UrgentActionMessages.Click += new System.EventHandler(this.lbl_UrgentActionMessages_Click);
             // 
             // lbl_ConfidentialMessages
             // 

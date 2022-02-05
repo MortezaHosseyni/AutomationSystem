@@ -118,10 +118,6 @@ namespace AutomationSystem.UserPanel
                     saveAttachmentFile(saveAttachFileDialog, dgv_RecivedLetters, get_LetterID);
                 }
             }
-            else
-            {
-                MessageBox.Show(dgv_RecivedLetters.CurrentCell.ToString());
-            }
         }
 
         private void saveAttachmentFile(SaveFileDialog objSFD, DataGridView objGrid, int getLetterID)
