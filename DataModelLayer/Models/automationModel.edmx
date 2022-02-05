@@ -236,6 +236,28 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Letters' does no
           <Property Name="LetterSentDate" Type="varchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_News' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+            <PropertyRef Name="NewsUserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="NewsID" Type="int" Nullable="false" />
+          <Property Name="NewsSubject" Type="varchar" MaxLength="150" />
+          <Property Name="NewsContext" Type="varchar" MaxLength="1000" />
+          <Property Name="NewsUserID" Type="int" Nullable="false" />
+          <Property Name="NewsDate" Type="varchar" MaxLength="50" />
+          <Property Name="NewsAttachment" Type="varbinary(max)" />
+          <Property Name="NewsAttachmentFileName" Type="varchar" MaxLength="200" />
+          <Property Name="NewsAttachmentFileSize" Type="int" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="201" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Notes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_Notes">
           <Key>
@@ -679,6 +701,21 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Letters].[LetterSentDate] AS [LetterSentDate]
     FROM [dbo].[Vw_Letters] AS [Vw_Letters]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Vw_News" EntityType="Self.Vw_News" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_News].[NewsID] AS [NewsID], 
+    [Vw_News].[NewsSubject] AS [NewsSubject], 
+    [Vw_News].[NewsContext] AS [NewsContext], 
+    [Vw_News].[NewsUserID] AS [NewsUserID], 
+    [Vw_News].[NewsDate] AS [NewsDate], 
+    [Vw_News].[NewsAttachment] AS [NewsAttachment], 
+    [Vw_News].[NewsAttachmentFileName] AS [NewsAttachmentFileName], 
+    [Vw_News].[NewsAttachmentFileSize] AS [NewsAttachmentFileSize], 
+    [Vw_News].[UserFirstName] AS [UserFirstName], 
+    [Vw_News].[UserLastName] AS [UserLastName], 
+    [Vw_News].[FullName] AS [FullName]
+    FROM [dbo].[Vw_News] AS [Vw_News]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_Notes" EntityType="Self.Vw_Notes" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_Notes].[NoteID] AS [NoteID], 
@@ -1016,6 +1053,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="User" EntitySet="Users" />
             <End Role="News" EntitySet="News" />
           </AssociationSet>
+          <EntitySet Name="Vw_News" EntityType="Office_Automation_DatabaseModel.Vw_News" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -1556,6 +1594,26 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Vw_News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+            <PropertyRef Name="NewsUserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="NewsID" Type="Int32" Nullable="false" />
+          <Property Name="NewsSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NewsContext" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="NewsUserID" Type="Int32" Nullable="false" />
+          <Property Name="NewsDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NewsAttachment" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NewsAttachmentFileName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NewsAttachmentFileSize" Type="Int32" />
+          <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1938,6 +1996,23 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="News">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.News">
               <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="NewsAttachmentFileSize" ColumnName="NewsAttachmentFileSize" />
+                <ScalarProperty Name="NewsAttachmentFileName" ColumnName="NewsAttachmentFileName" />
+                <ScalarProperty Name="NewsAttachment" ColumnName="NewsAttachment" />
+                <ScalarProperty Name="NewsDate" ColumnName="NewsDate" />
+                <ScalarProperty Name="NewsUserID" ColumnName="NewsUserID" />
+                <ScalarProperty Name="NewsContext" ColumnName="NewsContext" />
+                <ScalarProperty Name="NewsSubject" ColumnName="NewsSubject" />
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_News">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_News">
+              <MappingFragment StoreEntitySet="Vw_News">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
                 <ScalarProperty Name="NewsAttachmentFileSize" ColumnName="NewsAttachmentFileSize" />
                 <ScalarProperty Name="NewsAttachmentFileName" ColumnName="NewsAttachmentFileName" />
                 <ScalarProperty Name="NewsAttachment" ColumnName="NewsAttachment" />

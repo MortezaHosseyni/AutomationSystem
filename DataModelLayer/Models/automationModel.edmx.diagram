@@ -38,6 +38,7 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_SentNote" Width="1.5" PointX="12.125" PointY="6.5" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.News" Width="1.5" PointX="17" PointY="0.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_News_Users" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_News" Width="1.5" PointX="17" PointY="6.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

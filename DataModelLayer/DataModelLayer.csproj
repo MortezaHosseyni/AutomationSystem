@@ -114,6 +114,9 @@
     <Compile Include="Models\Vw_Letters.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Vw_News.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vw_Notes.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
