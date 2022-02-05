@@ -192,6 +192,12 @@
     <Compile Include="UserPanel\frmUserChooseLetterSend.Designer.cs">
       <DependentUpon>frmUserChooseLetterSend.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserCreateNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserCreateNote.Designer.cs">
+      <DependentUpon>frmUserCreateNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserDraft.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserChooseLetterSend.resx">
       <DependentUpon>frmUserChooseLetterSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserCreateNote.resx">
+      <DependentUpon>frmUserCreateNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserDraft.resx">
       <DependentUpon>frmUserDraft.cs</DependentUpon>

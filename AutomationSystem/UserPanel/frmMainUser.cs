@@ -28,6 +28,7 @@ namespace AutomationSystem.UserPanel
         frmUserAddLetter userAddLetterForm;
         frmUserRecivedAllLetters userReciveAllLettersForm;
         frmUserSendedLetters userSendedLettersForm;
+        frmUserCreateNote userCreateNoteForm;
         public frmMainUser()
         {
             InitializeComponent();
@@ -103,6 +104,10 @@ namespace AutomationSystem.UserPanel
             {
                 userAddLetterForm.Close();
             }
+            if (formNumber == 13)
+            {
+                userCreateNoteForm.Close();
+            }
             if (formNumber == 14)
             {
                 addReminderForm.Close();
@@ -167,6 +172,17 @@ namespace AutomationSystem.UserPanel
             userSendedLettersForm = new frmUserSendedLetters();
             userSendedLettersForm.MdiParent = this;
             userSendedLettersForm.Show();
+        }
+
+        private void lbl_CreateNote_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 13;
+
+            userCreateNoteForm = new frmUserCreateNote();
+            userCreateNoteForm.MdiParent = this;
+            userCreateNoteForm.Show();
         }
     }
 }

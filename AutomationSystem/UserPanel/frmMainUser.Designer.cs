@@ -361,6 +361,7 @@
             this.lbl_CreateNote.Symbol = "57416";
             this.lbl_CreateNote.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_CreateNote.Text = "ايجاد يادداشت";
+            this.lbl_CreateNote.Click += new System.EventHandler(this.lbl_CreateNote_Click);
             // 
             // lbl_AddReminder
             // 
