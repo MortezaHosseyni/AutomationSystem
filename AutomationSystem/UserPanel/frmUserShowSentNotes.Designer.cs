@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
@@ -56,7 +57,7 @@
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(1034, 571);
+            this.pnl_Main.Size = new System.Drawing.Size(1050, 610);
             this.pnl_Main.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnl_Main.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnl_Main.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -88,7 +89,7 @@
             this.pnl_SentNotes.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_SentNotes.Location = new System.Drawing.Point(12, 64);
             this.pnl_SentNotes.Name = "pnl_SentNotes";
-            this.pnl_SentNotes.Size = new System.Drawing.Size(1010, 351);
+            this.pnl_SentNotes.Size = new System.Drawing.Size(1026, 378);
             // 
             // 
             // 
@@ -125,9 +126,9 @@
             this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_Search.Location = new System.Drawing.Point(12, 421);
+            this.pnl_Search.Location = new System.Drawing.Point(12, 448);
             this.pnl_Search.Name = "pnl_Search";
-            this.pnl_Search.Size = new System.Drawing.Size(1010, 138);
+            this.pnl_Search.Size = new System.Drawing.Size(1026, 150);
             // 
             // 
             // 
@@ -163,6 +164,8 @@
             // 
             this.dgv_SentNotes.AllowUserToAddRows = false;
             this.dgv_SentNotes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_SentNotes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_SentNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_SentNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_SentNoteID,
@@ -182,7 +185,7 @@
             this.dgv_SentNotes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_SentNotes.Location = new System.Drawing.Point(3, 3);
             this.dgv_SentNotes.Name = "dgv_SentNotes";
-            this.dgv_SentNotes.Size = new System.Drawing.Size(998, 308);
+            this.dgv_SentNotes.Size = new System.Drawing.Size(1014, 335);
             this.dgv_SentNotes.TabIndex = 0;
             // 
             // col_SentNoteID
@@ -219,13 +222,13 @@
             // 
             this.col_NoteCreateDate.HeaderText = "تاريخ ارسال";
             this.col_NoteCreateDate.Name = "col_NoteCreateDate";
-            this.col_NoteCreateDate.Width = 160;
+            this.col_NoteCreateDate.Width = 110;
             // 
             // frmUserShowSentNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 571);
+            this.ClientSize = new System.Drawing.Size(1050, 610);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
