@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRecivedAllLetters));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Search = new DevComponents.DotNetBar.ButtonX();
@@ -510,6 +510,7 @@
             // rdb_LetterArchiveType_NotArchived
             // 
             this.rdb_LetterArchiveType_NotArchived.AutoSize = true;
+            this.rdb_LetterArchiveType_NotArchived.Checked = true;
             this.rdb_LetterArchiveType_NotArchived.Location = new System.Drawing.Point(2, 79);
             this.rdb_LetterArchiveType_NotArchived.Name = "rdb_LetterArchiveType_NotArchived";
             this.rdb_LetterArchiveType_NotArchived.Size = new System.Drawing.Size(92, 27);
@@ -532,12 +533,10 @@
             // rdb_LetterArchiveType_All
             // 
             this.rdb_LetterArchiveType_All.AutoSize = true;
-            this.rdb_LetterArchiveType_All.Checked = true;
             this.rdb_LetterArchiveType_All.Location = new System.Drawing.Point(46, 3);
             this.rdb_LetterArchiveType_All.Name = "rdb_LetterArchiveType_All";
             this.rdb_LetterArchiveType_All.Size = new System.Drawing.Size(47, 27);
             this.rdb_LetterArchiveType_All.TabIndex = 0;
-            this.rdb_LetterArchiveType_All.TabStop = true;
             this.rdb_LetterArchiveType_All.Text = "همه";
             this.rdb_LetterArchiveType_All.UseVisualStyleBackColor = true;
             // 
@@ -865,14 +864,14 @@
             this.col_AttachmentT,
             this.col_LetterAnswerType});
             this.dgv_RecivedLetters.ContextMenuStrip = this.contextMenuStrip;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_RecivedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_RecivedLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_RecivedLetters.Name = "dgv_RecivedLetters";
@@ -971,8 +970,8 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle3;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
             this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1031,7 +1030,7 @@
             this.tsm_ReplyLetter});
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(153, 146);
+            this.contextMenuStrip.Size = new System.Drawing.Size(150, 124);
             // 
             // tsm_ArchiveLetter
             // 
