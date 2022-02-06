@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_SelectReciver = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
@@ -43,6 +43,8 @@
             this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_JobName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
+            this.lbl_ReferenceCaption = new DevComponents.DotNetBar.LabelX();
+            this.txt_ReferenceCaption = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.pnl_Main.SuspendLayout();
             this.pnl_SelectReciver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Recivers)).BeginInit();
@@ -58,7 +60,7 @@
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(602, 460);
+            this.pnl_Main.Size = new System.Drawing.Size(602, 542);
             this.pnl_Main.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnl_Main.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnl_Main.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -75,13 +77,15 @@
             this.pnl_SelectReciver.Controls.Add(this.btn_Exit);
             this.pnl_SelectReciver.Controls.Add(this.btn_SendLetter);
             this.pnl_SelectReciver.Controls.Add(this.btn_Search);
+            this.pnl_SelectReciver.Controls.Add(this.txt_ReferenceCaption);
+            this.pnl_SelectReciver.Controls.Add(this.lbl_ReferenceCaption);
             this.pnl_SelectReciver.Controls.Add(this.txt_SearchFristAndLastName);
             this.pnl_SelectReciver.Controls.Add(this.lbl_SearchFristAndLastName);
             this.pnl_SelectReciver.Controls.Add(this.dgv_Recivers);
             this.pnl_SelectReciver.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_SelectReciver.Location = new System.Drawing.Point(12, 58);
             this.pnl_SelectReciver.Name = "pnl_SelectReciver";
-            this.pnl_SelectReciver.Size = new System.Drawing.Size(578, 390);
+            this.pnl_SelectReciver.Size = new System.Drawing.Size(578, 472);
             // 
             // 
             // 
@@ -117,7 +121,7 @@
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(150, 338);
+            this.btn_Exit.Location = new System.Drawing.Point(142, 425);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(20, 2, 2, 20);
             this.btn_Exit.Size = new System.Drawing.Size(152, 35);
@@ -132,7 +136,7 @@
             this.btn_SendLetter.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_SendLetter.BackColor = System.Drawing.Color.Transparent;
             this.btn_SendLetter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_SendLetter.Location = new System.Drawing.Point(308, 338);
+            this.btn_SendLetter.Location = new System.Drawing.Point(300, 425);
             this.btn_SendLetter.Name = "btn_SendLetter";
             this.btn_SendLetter.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(20, 2, 2, 20);
             this.btn_SendLetter.Size = new System.Drawing.Size(152, 35);
@@ -146,7 +150,7 @@
             // 
             this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Search.Location = new System.Drawing.Point(46, 274);
+            this.btn_Search.Location = new System.Drawing.Point(38, 361);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(55, 36);
             this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -161,7 +165,7 @@
             // 
             this.txt_SearchFristAndLastName.Border.Class = "TextBoxBorder";
             this.txt_SearchFristAndLastName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_SearchFristAndLastName.Location = new System.Drawing.Point(140, 274);
+            this.txt_SearchFristAndLastName.Location = new System.Drawing.Point(132, 361);
             this.txt_SearchFristAndLastName.Name = "txt_SearchFristAndLastName";
             this.txt_SearchFristAndLastName.PreventEnterBeep = true;
             this.txt_SearchFristAndLastName.Size = new System.Drawing.Size(287, 36);
@@ -175,7 +179,7 @@
             // 
             // 
             this.lbl_SearchFristAndLastName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_SearchFristAndLastName.Location = new System.Drawing.Point(433, 280);
+            this.lbl_SearchFristAndLastName.Location = new System.Drawing.Point(425, 367);
             this.lbl_SearchFristAndLastName.Name = "lbl_SearchFristAndLastName";
             this.lbl_SearchFristAndLastName.Size = new System.Drawing.Size(103, 25);
             this.lbl_SearchFristAndLastName.TabIndex = 1;
@@ -192,14 +196,14 @@
             this.col_SelectUser,
             this.col_FullName,
             this.col_JobName});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Recivers.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Recivers.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Recivers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_Recivers.Location = new System.Drawing.Point(3, 3);
             this.dgv_Recivers.Name = "dgv_Recivers";
@@ -253,11 +257,41 @@
             this.lbl_Title.TabIndex = 2;
             this.lbl_Title.Text = "ارسال نامه";
             // 
+            // lbl_ReferenceCaption
+            // 
+            this.lbl_ReferenceCaption.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_ReferenceCaption.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_ReferenceCaption.Location = new System.Drawing.Point(425, 257);
+            this.lbl_ReferenceCaption.Name = "lbl_ReferenceCaption";
+            this.lbl_ReferenceCaption.Size = new System.Drawing.Size(95, 25);
+            this.lbl_ReferenceCaption.TabIndex = 1;
+            this.lbl_ReferenceCaption.Text = "توضيحات ارجاع:";
+            this.lbl_ReferenceCaption.Visible = false;
+            // 
+            // txt_ReferenceCaption
+            // 
+            // 
+            // 
+            // 
+            this.txt_ReferenceCaption.Border.Class = "TextBoxBorder";
+            this.txt_ReferenceCaption.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_ReferenceCaption.Location = new System.Drawing.Point(132, 256);
+            this.txt_ReferenceCaption.Multiline = true;
+            this.txt_ReferenceCaption.Name = "txt_ReferenceCaption";
+            this.txt_ReferenceCaption.PreventEnterBeep = true;
+            this.txt_ReferenceCaption.Size = new System.Drawing.Size(287, 99);
+            this.txt_ReferenceCaption.TabIndex = 2;
+            this.txt_ReferenceCaption.Visible = false;
+            this.txt_ReferenceCaption.WatermarkText = "توضيحاتي درمورد ارجاع نامه...";
+            // 
             // frmUserChooseLetterSend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 460);
+            this.ClientSize = new System.Drawing.Size(602, 542);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_Main);
             this.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -290,5 +324,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_JobName;
         public DevComponents.DotNetBar.ButtonX btn_SendLetter;
         public DevComponents.DotNetBar.LabelX lbl_Title;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_ReferenceCaption;
+        private DevComponents.DotNetBar.LabelX lbl_ReferenceCaption;
     }
 }

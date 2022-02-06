@@ -35,6 +35,8 @@ namespace AutomationSystem.UserPanel
             {
                 if (isReference == 1)
                 {
+                    lbl_ReferenceCaption.Visible = true;
+                    txt_ReferenceCaption.Visible = true;
                     ShowAllowedUsers_ToReference(searchCondition());
                 }
                 else
@@ -166,6 +168,7 @@ namespace AutomationSystem.UserPanel
                                 RL.RefSenderUserID = PublicVariable.global_UserID;
                                 RL.RefDate = PublicVariable.todayDate;
                                 RL.RefReadType = 1;
+                                RL.RefCaption = txt_ReferenceCaption.Text.Trim();
 
                                 db.ReferenceLetters.Add(RL);
                             }
