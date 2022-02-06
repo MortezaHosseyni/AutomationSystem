@@ -311,7 +311,14 @@ namespace AutomationSystem.UserPanel
                         }
                         ts.Complete();
 
-                        MessageBox.Show("اطلاعات با موفقيت ثبت شد", "ايجاد نامه");
+                        if (isReply == 1)
+                        {
+                            MessageBox.Show($"پاسخ به نامه {this.getLetterNo} با موفقيت ثبت شد", "پاسخ به نامه");
+                        }
+                        else
+                        {
+                            MessageBox.Show("اطلاعات با موفقيت ثبت شد", "ايجاد نامه");
+                        }
                     }
                     catch (Exception)
                     {

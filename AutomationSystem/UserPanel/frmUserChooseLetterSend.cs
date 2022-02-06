@@ -82,6 +82,7 @@ namespace AutomationSystem.UserPanel
                     //Remove Letter on Drafts
                     var query_update = (from L in db.Letters where L.LetterID == this.GetLetterID select L).SingleOrDefault();
                     query_update.LetterDraftType = 2;
+                    query_update.LetterSentDate = PublicVariable.todayDate;
                     db.SaveChanges();
 
                     //Sending Letter
