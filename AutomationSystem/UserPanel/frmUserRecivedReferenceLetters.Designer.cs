@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRecivedReferenceLetters));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
@@ -95,6 +95,7 @@
             this.cbi_Forced_Normal = new DevComponents.Editors.ComboItem();
             this.cbi_Forced_Immediate = new DevComponents.Editors.ComboItem();
             this.cbi_Forced_Posthaste = new DevComponents.Editors.ComboItem();
+            this.cbx_SearchCreator = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbx_SearchFollowing = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbi_Following_All = new DevComponents.Editors.ComboItem();
             this.cbi_Following_Yes = new DevComponents.Editors.ComboItem();
@@ -112,7 +113,6 @@
             this.lbl_Attachment = new DevComponents.DotNetBar.LabelX();
             this.lbl_Status = new DevComponents.DotNetBar.LabelX();
             this.lbl_Creator = new DevComponents.DotNetBar.LabelX();
-            this.cbx_SearchCreator = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RecivedReferenceLetters)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
@@ -184,19 +184,20 @@
             this.col_LetterAnswerType,
             this.col_LetterReferencerUserID});
             this.dgv_RecivedReferenceLetters.ContextMenuStrip = this.contextMenuStrip;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_RecivedReferenceLetters.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_RecivedReferenceLetters.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_RecivedReferenceLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_RecivedReferenceLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_RecivedReferenceLetters.Name = "dgv_RecivedReferenceLetters";
             this.dgv_RecivedReferenceLetters.Size = new System.Drawing.Size(1014, 356);
             this.dgv_RecivedReferenceLetters.TabIndex = 0;
+            this.dgv_RecivedReferenceLetters.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RecivedReferenceLetters_CellClick);
             // 
             // col_LetterID
             // 
@@ -292,8 +293,8 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
             this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -790,6 +791,18 @@
             // 
             this.cbi_Forced_Posthaste.Text = "آني";
             // 
+            // cbx_SearchCreator
+            // 
+            this.cbx_SearchCreator.DisplayMember = "Text";
+            this.cbx_SearchCreator.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbx_SearchCreator.FormattingEnabled = true;
+            this.cbx_SearchCreator.ItemHeight = 24;
+            this.cbx_SearchCreator.Location = new System.Drawing.Point(415, 75);
+            this.cbx_SearchCreator.Name = "cbx_SearchCreator";
+            this.cbx_SearchCreator.Size = new System.Drawing.Size(229, 30);
+            this.cbx_SearchCreator.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbx_SearchCreator.TabIndex = 5;
+            // 
             // cbx_SearchFollowing
             // 
             this.cbx_SearchFollowing.DisplayMember = "Text";
@@ -930,18 +943,6 @@
             this.lbl_Creator.Size = new System.Drawing.Size(59, 25);
             this.lbl_Creator.TabIndex = 0;
             this.lbl_Creator.Text = "ايجاد كننده:";
-            // 
-            // cbx_SearchCreator
-            // 
-            this.cbx_SearchCreator.DisplayMember = "Text";
-            this.cbx_SearchCreator.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbx_SearchCreator.FormattingEnabled = true;
-            this.cbx_SearchCreator.ItemHeight = 24;
-            this.cbx_SearchCreator.Location = new System.Drawing.Point(415, 75);
-            this.cbx_SearchCreator.Name = "cbx_SearchCreator";
-            this.cbx_SearchCreator.Size = new System.Drawing.Size(229, 30);
-            this.cbx_SearchCreator.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbx_SearchCreator.TabIndex = 5;
             // 
             // frmUserRecivedReferenceLetters
             // 
