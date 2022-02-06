@@ -53,6 +53,9 @@
             this.lbl_SearchSubject = new DevComponents.DotNetBar.LabelX();
             this.pnl_DraftList = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_DraftList = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsm_EditLetter = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,9 +68,8 @@
             this.col_LetterAnswerDeadLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_SecurityT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsm_EditLetter = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
+            this.col_LetterT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_LetterReplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -441,7 +443,9 @@
             this.col_LetterAnswerType,
             this.col_LetterAnswerDeadLine,
             this.col_ForceT,
-            this.col_SecurityT});
+            this.col_SecurityT,
+            this.col_LetterT,
+            this.col_LetterReplyID});
             this.dgv_DraftList.ContextMenuStrip = this.contextMenuStrip;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -456,6 +460,38 @@
             this.dgv_DraftList.Name = "dgv_DraftList";
             this.dgv_DraftList.Size = new System.Drawing.Size(1014, 284);
             this.dgv_DraftList.TabIndex = 0;
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_EditLetter});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip.Size = new System.Drawing.Size(142, 34);
+            // 
+            // tsm_EditLetter
+            // 
+            this.tsm_EditLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tsm_EditLetter.Font = new System.Drawing.Font("B Nazanin", 12.25F);
+            this.tsm_EditLetter.Image = global::AutomationSystem.Properties.Resources._09_EditIcon;
+            this.tsm_EditLetter.Name = "tsm_EditLetter";
+            this.tsm_EditLetter.Size = new System.Drawing.Size(141, 30);
+            this.tsm_EditLetter.Text = "ويرايش نامه";
+            this.tsm_EditLetter.Click += new System.EventHandler(this.tsm_EditLetter_Click);
+            // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "پيش نويس‌ها";
             // 
             // col_LetterID
             // 
@@ -530,37 +566,17 @@
             this.col_SecurityT.Name = "col_SecurityT";
             this.col_SecurityT.Visible = false;
             // 
-            // contextMenuStrip
+            // col_LetterT
             // 
-            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_EditLetter});
-            this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(153, 56);
+            this.col_LetterT.HeaderText = "LetterT";
+            this.col_LetterT.Name = "col_LetterT";
+            this.col_LetterT.Visible = false;
             // 
-            // tsm_EditLetter
+            // col_LetterReplyID
             // 
-            this.tsm_EditLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tsm_EditLetter.Font = new System.Drawing.Font("B Nazanin", 12.25F);
-            this.tsm_EditLetter.Image = global::AutomationSystem.Properties.Resources._09_EditIcon;
-            this.tsm_EditLetter.Name = "tsm_EditLetter";
-            this.tsm_EditLetter.Size = new System.Drawing.Size(152, 30);
-            this.tsm_EditLetter.Text = "ويرايش نامه";
-            this.tsm_EditLetter.Click += new System.EventHandler(this.tsm_EditLetter_Click);
-            // 
-            // lbl_Title
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(438, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(150, 44);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "پيش نويس‌ها";
+            this.col_LetterReplyID.HeaderText = "LetterReplyID";
+            this.col_LetterReplyID.Name = "col_LetterReplyID";
+            this.col_LetterReplyID.Visible = false;
             // 
             // frmUserDraft
             // 
@@ -615,6 +631,8 @@
         private DevComponents.DotNetBar.LabelX lbl_SearchLetterSecurityType;
         private DevComponents.DotNetBar.ButtonX btn_Search;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_DraftList;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem tsm_EditLetter;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterNo;
@@ -627,7 +645,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerDeadLine;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SecurityT;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem tsm_EditLetter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterReplyID;
     }
 }

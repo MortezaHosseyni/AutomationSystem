@@ -53,9 +53,11 @@ namespace AutomationSystem.UserPanel
                     dgv_DraftList.Rows[i].Cells["col_LetterAnswerType"].Value = result[i].View_LetterAnswerType;
                     dgv_DraftList.Rows[i].Cells["col_LetterAnswerDeadLine"].Value = result[i].LetterAnswerDeadLine;
                     dgv_DraftList.Rows[i].Cells["col_LetterNo"].Value = result[i].LetterNo;
+                    dgv_DraftList.Rows[i].Cells["col_LetterReplyID"].Value = result[i].LetterReplyID;
 
                     dgv_DraftList.Rows[i].Cells["col_ForceT"].Value = result[i].LetterForceType;
                     dgv_DraftList.Rows[i].Cells["col_SecurityT"].Value = result[i].LetterSecurityType;
+                    dgv_DraftList.Rows[i].Cells["col_LetterT"].Value = result[i].LetterType;
 
                     //ForceType Style
                     if (Convert.ToInt16(dgv_DraftList.Rows[i].Cells["col_ForceT"].Value) == 2)
@@ -164,11 +166,33 @@ namespace AutomationSystem.UserPanel
             int item = dgv_DraftList.SelectedCells.Count;
             if (item > 0)
             {
-                frmUserChooseLetterSend userChooseLetterSendForm = new frmUserChooseLetterSend();
+                int getLetterReplyID;
+                int getLetterCreator;
+                if (Convert.ToByte(dgv_DraftList.CurrentRow.Cells["col_LetterT"].Value) == 2)
+                {
+                    getLetterReplyID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterReplyID"].Value);
+                    var query = (from L in db.Letters where L.LetterID == getLetterReplyID select L).ToList();
+                    if (query.Count > 0)
+                    {
+                        getLetterCreator = query[0].LetterUserID;
 
-                userChooseLetterSendForm.GetLetterID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterID"].Value);
-                userChooseLetterSendForm.ShowDialog();
-                ShowDraft(searchCondition());
+                        frmUserChooseLetterSend userChooseLetterSendForm = new frmUserChooseLetterSend();
+
+                        userChooseLetterSendForm.getLetterReplyID = getLetterCreator;
+                        userChooseLetterSendForm.isReply = 1;
+                        userChooseLetterSendForm.GetLetterID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterID"].Value);
+                        userChooseLetterSendForm.ShowDialog();
+                        ShowDraft(searchCondition());
+                    }
+                }
+                else
+                {
+                    frmUserChooseLetterSend userChooseLetterSendForm = new frmUserChooseLetterSend();
+
+                    userChooseLetterSendForm.GetLetterID = Convert.ToInt32(dgv_DraftList.CurrentRow.Cells["col_LetterID"].Value);
+                    userChooseLetterSendForm.ShowDialog();
+                    ShowDraft(searchCondition());
+                }
             }
             else
             {
