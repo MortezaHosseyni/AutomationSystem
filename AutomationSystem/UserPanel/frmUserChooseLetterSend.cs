@@ -146,31 +146,45 @@ namespace AutomationSystem.UserPanel
                 {
                     if (this.isReference == 1)
                     {
+                        
+                        
                         List<DataGridView> rowsWithCheckColumn = new List<DataGridView>();
                         foreach (DataGridViewRow row in dgv_Recivers.Rows)
                         {
                             ReferenceLetter RL = new ReferenceLetter();
                             if (Convert.ToBoolean(row.Cells["col_SelectUser"].Value) == true)
                             {
-                                var queryRefLevel = (from RE in db.ReferenceLetters where RE.RefLetterID == this.GetLetterID orderby RE.RefLevelNumber descending select RE).ToList();
-                                if (queryRefLevel.Count > 0)
+                                //Check letter before refer
+                                int getReciverUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
+                                var queryCheckRefer = (from refL in db.ReferenceLetters where refL.RefLetterID == this.GetLetterID where refL.RefSenderUserID == PublicVariable.global_UserID where refL.RefReciverUserID == getReciverUserID select refL).ToList();
+                                if (queryCheckRefer.Count == 0)
                                 {
-                                    var lastLevelNumber = queryRefLevel.Last().RefLevelNumber;
-                                    RL.RefLevelNumber = lastLevelNumber + 1;
+                                    //Refer Letter
+                                    var queryRefLevel = (from RE in db.ReferenceLetters where RE.RefLetterID == this.GetLetterID orderby RE.RefLevelNumber descending select RE).ToList();
+                                    if (queryRefLevel.Count > 0)
+                                    {
+                                        var lastLevelNumber = queryRefLevel.First().RefLevelNumber;
+                                        RL.RefLevelNumber = lastLevelNumber + 1;
+                                    }
+                                    else
+                                    {
+                                        RL.RefLevelNumber = 1;
+                                    }
+
+                                    RL.RefLetterID = this.GetLetterID;
+                                    RL.RefReciverUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
+                                    RL.RefSenderUserID = PublicVariable.global_UserID;
+                                    RL.RefDate = PublicVariable.todayDate;
+                                    RL.RefReadType = 1;
+                                    RL.RefCaption = txt_ReferenceCaption.Text.Trim();
+
+                                    db.ReferenceLetters.Add(RL);
                                 }
                                 else
                                 {
-                                    RL.RefLevelNumber = 1;
+                                    MessageBox.Show($"اين نامه قبلا به {row.Cells["col_FullName"].Value.ToString()} ارجاع داده شده است","ارجاع نامه");
+                                    return;
                                 }
-
-                                RL.RefLetterID = this.GetLetterID;
-                                RL.RefReciverUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
-                                RL.RefSenderUserID = PublicVariable.global_UserID;
-                                RL.RefDate = PublicVariable.todayDate;
-                                RL.RefReadType = 1;
-                                RL.RefCaption = txt_ReferenceCaption.Text.Trim();
-
-                                db.ReferenceLetters.Add(RL);
                             }
                         }
                         db.SaveChanges();
