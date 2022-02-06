@@ -331,5 +331,16 @@ namespace AutomationSystem.UserPanel
                 return;
             }
         }
+
+        private void tsm_ReferenceLetter_Click(object sender, EventArgs e)
+        {
+            frmUserChooseLetterSend userChooseLetterReference = new frmUserChooseLetterSend();
+            userChooseLetterReference.btn_SendLetter.Text = "ارجاع";
+            userChooseLetterReference.lbl_Title.Text = "ارجاع نامه";
+            userChooseLetterReference.GetLetterID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterID"].Value);
+            userChooseLetterReference.isReference = 1;
+
+            userChooseLetterReference.ShowDialog();
+        }
     }
 }

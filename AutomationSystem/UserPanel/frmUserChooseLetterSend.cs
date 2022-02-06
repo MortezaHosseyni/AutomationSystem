@@ -18,7 +18,8 @@ namespace AutomationSystem.UserPanel
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
         public int GetLetterID { get; set; }
         public int getLetterReplyID { get; set; }
-        public byte isReply { get; set; }
+        public byte isReply { get; set; } // 1 = Reply Letter
+        public byte isReference { get; set; } // 1 = Reference
         public frmUserChooseLetterSend()
         {
             InitializeComponent();
@@ -111,32 +112,71 @@ namespace AutomationSystem.UserPanel
             {
                 try
                 {
-                    //Remove Letter on Drafts
-                    var query_update = (from L in db.Letters where L.LetterID == this.GetLetterID select L).SingleOrDefault();
-                    query_update.LetterDraftType = 2;
-                    query_update.LetterSentDate = PublicVariable.todayDate;
-                    db.SaveChanges();
-
-                    //Sending Letter
-                    List<DataGridView> rowsWithCheckColumn = new List<DataGridView>();
-                    foreach (DataGridViewRow row in dgv_Recivers.Rows)
+                    if (this.isReference == 1)
                     {
-                        SentLetter SL = new SentLetter();
-                        if (Convert.ToBoolean(row.Cells["col_SelectUser"].Value) == true)
+                        List<DataGridView> rowsWithCheckColumn = new List<DataGridView>();
+                        foreach (DataGridViewRow row in dgv_Recivers.Rows)
                         {
-                            SL.SentSendedLetterID = this.GetLetterID;
-                            SL.SentUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
-                            SL.SentReadType = 1;
+                            ReferenceLetter RL = new ReferenceLetter();
+                            if (Convert.ToBoolean(row.Cells["col_SelectUser"].Value) == true)
+                            {
+                                var queryRefLevel = (from RE in db.ReferenceLetters where RE.RefLetterID == this.GetLetterID orderby RE.RefLevelNumber descending select RE).ToList();
+                                if (queryRefLevel.Count > 0)
+                                {
+                                    var lastLevelNumber = queryRefLevel.Last().RefLevelNumber;
+                                    RL.RefLevelNumber = lastLevelNumber + 1;
+                                }
+                                else
+                                {
+                                    RL.RefLevelNumber = 1;
+                                }
 
-                            db.SentLetters.Add(SL);
+                                RL.RefLetterID = this.GetLetterID;
+                                RL.RefReciverUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
+                                RL.RefSenderUserID = PublicVariable.global_UserID;
+                                RL.RefDate = PublicVariable.todayDate;
+                                RL.RefReadType = 1;
+
+                                db.ReferenceLetters.Add(RL);
+                            }
                         }
+                        db.SaveChanges();
+                        ts.Complete();
+
+                        MessageBox.Show("نامه با موفقيت ارجاع شد", "ارسال نامه");
+
+                        this.Close();
                     }
-                    db.SaveChanges();
-                    ts.Complete();
+                    else
+                    {
+                        //Remove Letter on Drafts
+                        var query_update = (from L in db.Letters where L.LetterID == this.GetLetterID select L).SingleOrDefault();
+                        query_update.LetterDraftType = 2;
+                        query_update.LetterSentDate = PublicVariable.todayDate;
+                        db.SaveChanges();
 
-                    MessageBox.Show("نامه با موفقيت ارسال شد","ارسال نامه");
+                        //Sending Letter
+                        List<DataGridView> rowsWithCheckColumn = new List<DataGridView>();
+                        foreach (DataGridViewRow row in dgv_Recivers.Rows)
+                        {
+                            SentLetter SL = new SentLetter();
+                            if (Convert.ToBoolean(row.Cells["col_SelectUser"].Value) == true)
+                            {
+                                SL.SentSendedLetterID = this.GetLetterID;
+                                SL.SentUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
+                                SL.SentReadType = 1;
 
-                    this.Close();
+                                db.SentLetters.Add(SL);
+                            }
+                        }
+                        db.SaveChanges();
+                        ts.Complete();
+
+                        MessageBox.Show("نامه با موفقيت ارسال شد", "ارسال نامه");
+
+                        this.Close();
+                    }
+                    
                 }
                 catch (Exception)
                 {

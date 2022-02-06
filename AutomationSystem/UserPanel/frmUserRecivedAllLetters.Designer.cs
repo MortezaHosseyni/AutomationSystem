@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRecivedAllLetters));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Search = new DevComponents.DotNetBar.ButtonX();
@@ -526,7 +526,6 @@
             this.rdb_LetterArchiveType_Archived.Name = "rdb_LetterArchiveType_Archived";
             this.rdb_LetterArchiveType_Archived.Size = new System.Drawing.Size(87, 27);
             this.rdb_LetterArchiveType_Archived.TabIndex = 0;
-            this.rdb_LetterArchiveType_Archived.TabStop = true;
             this.rdb_LetterArchiveType_Archived.Text = "بايگاني شده";
             this.rdb_LetterArchiveType_Archived.UseVisualStyleBackColor = true;
             // 
@@ -864,14 +863,14 @@
             this.col_AttachmentT,
             this.col_LetterAnswerType});
             this.dgv_RecivedLetters.ContextMenuStrip = this.contextMenuStrip;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_RecivedLetters.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_RecivedLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_RecivedLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_RecivedLetters.Name = "dgv_RecivedLetters";
@@ -970,8 +969,8 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
             this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1030,7 +1029,7 @@
             this.tsm_ReplyLetter});
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(150, 124);
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 146);
             // 
             // tsm_ArchiveLetter
             // 
@@ -1056,6 +1055,7 @@
             this.tsm_ReferenceLetter.Name = "tsm_ReferenceLetter";
             this.tsm_ReferenceLetter.Size = new System.Drawing.Size(152, 30);
             this.tsm_ReferenceLetter.Text = "ارجاع نامه";
+            this.tsm_ReferenceLetter.Click += new System.EventHandler(this.tsm_ReferenceLetter_Click);
             // 
             // tsm_ReplyLetter
             // 
