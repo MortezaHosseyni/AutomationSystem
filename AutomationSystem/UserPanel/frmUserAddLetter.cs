@@ -258,7 +258,17 @@ namespace AutomationSystem.UserPanel
                             L.LetterAttachmentType = 2;
                         }
                         
-                        L.LetterType = 1;
+                        if (this.isReply == 1) //ReplyToLetter
+                        {
+                            L.LetterType = 2;
+                            L.LetterReffrence = this.getLetterNo;
+                            L.LetterReplyID = this.getLetterID;
+                        }
+                        else
+                        {
+                            L.LetterType = 1;
+                        }
+                        
                         L.LetterDraftType = 1;
 
                         //AnswerType
