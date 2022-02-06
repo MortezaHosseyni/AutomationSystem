@@ -19,12 +19,9 @@ namespace AutomationSystem.UserPanel
         {
             InitializeComponent();
         }
-
-        private void frmUserRecivedReferenceLetters_Load(object sender, EventArgs e)
+        
+        private void fillComboBox()
         {
-            this.Left = 10;
-            this.Top = 160;
-
             //ComboBox-Items
             cbx_SearchSecurity.SelectedIndex = 0;
             cbx_SearchStatus.SelectedIndex = 0;
@@ -33,6 +30,19 @@ namespace AutomationSystem.UserPanel
             cbx_SearchFollowing.SelectedIndex = 0;
             cbx_SearchAttachment.SelectedIndex = 0;
 
+            //CreatorCombo-Items
+            var query = (from U in db.Vw_Users where U.UserActivity == 1 select U).ToList();
+            
+            cbx_SearchCreator.DataSource = query;
+            cbx_SearchCreator.ValueMember = "UserID";
+            cbx_SearchCreator.DisplayMember = "UserFirstName";
+        }
+        private void frmUserRecivedReferenceLetters_Load(object sender, EventArgs e)
+        {
+            this.Left = 10;
+            this.Top = 160;
+
+            fillComboBox();
             ShowRecivedReferenceLetters();
         }
 

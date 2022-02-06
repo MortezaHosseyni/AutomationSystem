@@ -54,7 +54,7 @@ namespace AutomationSystem.UserPanel
 
         private void ShowUserInfo()
         {
-            var query = db.Sp_ShowAllUserInfo_UserForm(PublicVariable.global_UserID).ToList();
+            var query = db.Sp_ShowAllUserInfo_UserForm_Up(PublicVariable.global_UserID).ToList();
 
             if (query.Count == 1)
             {
@@ -62,7 +62,7 @@ namespace AutomationSystem.UserPanel
                 val_LastName.Text = query[0].UserLastName;
                 val_PersonalCode.Text = query[0].UserPersonalID;
                 val_BrithDate.Text = query[0].UserBrithDate;
-                val_Gender.Text = query[0].UserGender;
+                val_Gender.Text = query[0].View_UserGender;
                 val_Job.Text = query[0].JobsName;
                 val_AllReciveMessages.Text = "24";
                 val_AllSendedMessages.Text = "38";
