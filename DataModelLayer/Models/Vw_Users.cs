@@ -30,5 +30,6 @@ namespace DataModelLayer.Models
         public byte[] UserImage { get; set; }
         public byte[] UserSignature { get; set; }
         public string UserRegisteredDate { get; set; }
+        public string FullName { get; set; }
     }
 }

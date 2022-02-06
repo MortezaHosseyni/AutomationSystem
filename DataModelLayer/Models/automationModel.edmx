@@ -514,6 +514,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <PropertyRef Name="UserActivity" />
             <PropertyRef Name="UserGender" />
             <PropertyRef Name="UserRegisteredDate" />
+            <PropertyRef Name="FullName" />
           </Key>
           <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserFirstName" Type="varchar" MaxLength="50" Nullable="false" />
@@ -531,6 +532,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserImage" Type="image" />
           <Property Name="UserSignature" Type="image" />
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="201" Nullable="false" />
         </EntityType>
         <Association Name="FK_AsignmentJobs_Jobs">
           <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
@@ -1024,7 +1026,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Users].[UserBrithDate] AS [UserBrithDate], 
     [Vw_Users].[UserImage] AS [UserImage], 
     [Vw_Users].[UserSignature] AS [UserSignature], 
-    [Vw_Users].[UserRegisteredDate] AS [UserRegisteredDate]
+    [Vw_Users].[UserRegisteredDate] AS [UserRegisteredDate], 
+    [Vw_Users].[FullName] AS [FullName]
     FROM [dbo].[Vw_Users] AS [Vw_Users]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_AsignmentJobs_Jobs" Association="Self.FK_AsignmentJobs_Jobs">
@@ -1254,7 +1257,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="Vw_ReferenceLetters" EntityType="Office_Automation_DatabaseModel.Vw_ReferenceLetters" />
           <EntitySet Name="Vw_Users" EntityType="Office_Automation_DatabaseModel.Vw_Users" />
           <FunctionImport Name="Sp_ShowAllUserInfo_UserForm_Up" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_ShowAllUserInfo_UserForm_Up_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
@@ -1952,6 +1955,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <PropertyRef Name="UserActivity" />
             <PropertyRef Name="UserGender" />
             <PropertyRef Name="UserRegisteredDate" />
+            <PropertyRef Name="FullName" />
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -1969,6 +1973,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserRegisteredDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
         </EntityType>
         <ComplexType Name="Sp_ShowAllUserInfo_UserForm_Up_Result">
           <Property Type="Int32" Name="UserID" Nullable="false" />
@@ -2459,6 +2464,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Vw_Users">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Users">
               <MappingFragment StoreEntitySet="Vw_Users">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="UserRegisteredDate" ColumnName="UserRegisteredDate" />
                 <ScalarProperty Name="UserSignature" ColumnName="UserSignature" />
                 <ScalarProperty Name="UserImage" ColumnName="UserImage" />

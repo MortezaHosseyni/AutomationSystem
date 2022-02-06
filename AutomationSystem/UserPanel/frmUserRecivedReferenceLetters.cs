@@ -35,7 +35,7 @@ namespace AutomationSystem.UserPanel
             
             cbx_SearchCreator.DataSource = query;
             cbx_SearchCreator.ValueMember = "UserID";
-            cbx_SearchCreator.DisplayMember = "UserFirstName";
+            cbx_SearchCreator.DisplayMember = "FullName";
         }
         private void frmUserRecivedReferenceLetters_Load(object sender, EventArgs e)
         {
