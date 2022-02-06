@@ -234,6 +234,12 @@
     <Compile Include="UserPanel\frmUserRecivedAllLetters.Designer.cs">
       <DependentUpon>frmUserRecivedAllLetters.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserRecivedReferenceLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserRecivedReferenceLetters.Designer.cs">
+      <DependentUpon>frmUserRecivedReferenceLetters.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserReminder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserRecivedAllLetters.resx">
       <DependentUpon>frmUserRecivedAllLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserRecivedReferenceLetters.resx">
+      <DependentUpon>frmUserRecivedReferenceLetters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserReminder.resx">
       <DependentUpon>frmUserReminder.cs</DependentUpon>
