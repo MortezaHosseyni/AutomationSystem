@@ -83,6 +83,19 @@
           <Property Name="NoteCreateDate" Type="varchar" MaxLength="30" />
           <Property Name="NoteUserID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="ReferenceLetters">
+          <Key>
+            <PropertyRef Name="RefID" />
+          </Key>
+          <Property Name="RefID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RefLetterID" Type="int" Nullable="false" />
+          <Property Name="RefSenderUserID" Type="int" Nullable="false" />
+          <Property Name="RefReciverUserID" Type="int" Nullable="false" />
+          <Property Name="RefDate" Type="varchar" MaxLength="50" />
+          <Property Name="RefReadType" Type="int" />
+          <Property Name="RefCaption" Type="varchar" MaxLength="500" />
+          <Property Name="RefLevelNumber" Type="int" />
+        </EntityType>
         <EntityType Name="Reminder">
           <Key>
             <PropertyRef Name="RemindID" />
@@ -511,6 +524,42 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ReferenceLetters_Letters">
+          <End Role="Letters" Type="Self.Letters" Multiplicity="1" />
+          <End Role="ReferenceLetters" Type="Self.ReferenceLetters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letters">
+              <PropertyRef Name="LetterID" />
+            </Principal>
+            <Dependent Role="ReferenceLetters">
+              <PropertyRef Name="RefLetterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReferenceLetters_Users_Reciver">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="ReferenceLetters" Type="Self.ReferenceLetters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ReferenceLetters">
+              <PropertyRef Name="RefReciverUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReferenceLetters_Users_Sender">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="ReferenceLetters" Type="Self.ReferenceLetters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ReferenceLetters">
+              <PropertyRef Name="RefSenderUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Reminder_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
@@ -636,6 +685,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReferenceLetters" EntityType="Self.ReferenceLetters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentLetters" EntityType="Self.SentLetters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentNotes" EntityType="Self.SentNotes" Schema="dbo" store:Type="Tables" />
@@ -856,6 +906,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="Users" EntitySet="Users" />
             <End Role="Notes" EntitySet="Notes" />
           </AssociationSet>
+          <AssociationSet Name="FK_ReferenceLetters_Letters" Association="Self.FK_ReferenceLetters_Letters">
+            <End Role="Letters" EntitySet="Letters" />
+            <End Role="ReferenceLetters" EntitySet="ReferenceLetters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReferenceLetters_Users_Reciver" Association="Self.FK_ReferenceLetters_Users_Reciver">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ReferenceLetters" EntitySet="ReferenceLetters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReferenceLetters_Users_Sender" Association="Self.FK_ReferenceLetters_Users_Sender">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ReferenceLetters" EntitySet="ReferenceLetters" />
+          </AssociationSet>
           <AssociationSet Name="FK_Reminder_Users" Association="Self.FK_Reminder_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reminder" EntitySet="Reminder" />
@@ -911,6 +973,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="Notes" Relationship="Office_Automation_DatabaseModel.FK_Notes_Users" FromRole="User" ToRole="Note" />
           <NavigationProperty Name="SentNotes" Relationship="Office_Automation_DatabaseModel.FK_SentNotes_Users" FromRole="User" ToRole="SentNote" />
           <NavigationProperty Name="News" Relationship="Office_Automation_DatabaseModel.FK_News_Users" FromRole="User" ToRole="News" />
+          <NavigationProperty Name="ReferenceLetters" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Reciver" FromRole="User" ToRole="ReferenceLetter" />
+          <NavigationProperty Name="ReferenceLetters1" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender" FromRole="User" ToRole="ReferenceLetter" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -1054,6 +1118,19 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="News" EntitySet="News" />
           </AssociationSet>
           <EntitySet Name="Vw_News" EntityType="Office_Automation_DatabaseModel.Vw_News" />
+          <EntitySet Name="ReferenceLetters" EntityType="Office_Automation_DatabaseModel.ReferenceLetter" />
+          <AssociationSet Name="FK_ReferenceLetters_Letters" Association="Office_Automation_DatabaseModel.FK_ReferenceLetters_Letters">
+            <End Role="Letter" EntitySet="Letters" />
+            <End Role="ReferenceLetter" EntitySet="ReferenceLetters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReferenceLetters_Users_Reciver" Association="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Reciver">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ReferenceLetter" EntitySet="ReferenceLetters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReferenceLetters_Users_Sender" Association="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ReferenceLetter" EntitySet="ReferenceLetters" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -1294,6 +1371,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="AttachmentFiles" Relationship="Office_Automation_DatabaseModel.FK_AttachmentFiles_Letters" FromRole="Letter" ToRole="AttachmentFile" />
           <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_Letters_Users" FromRole="Letter" ToRole="User" />
           <NavigationProperty Name="SentLetters" Relationship="Office_Automation_DatabaseModel.FK_SentLetters_Letters" FromRole="Letter" ToRole="SentLetter" />
+          <NavigationProperty Name="ReferenceLetters" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Letters" FromRole="Letter" ToRole="ReferenceLetter" />
         </EntityType>
         <EntityType Name="SentLetter">
           <Key>
@@ -1614,6 +1692,58 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="ReferenceLetter">
+          <Key>
+            <PropertyRef Name="RefID" />
+          </Key>
+          <Property Name="RefID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RefLetterID" Type="Int32" Nullable="false" />
+          <Property Name="RefSenderUserID" Type="Int32" Nullable="false" />
+          <Property Name="RefReciverUserID" Type="Int32" Nullable="false" />
+          <Property Name="RefDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RefReadType" Type="Int32" />
+          <Property Name="RefCaption" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="RefLevelNumber" Type="Int32" />
+          <NavigationProperty Name="Letter" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Letters" FromRole="ReferenceLetter" ToRole="Letter" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Reciver" FromRole="ReferenceLetter" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender" FromRole="ReferenceLetter" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_ReferenceLetters_Letters">
+          <End Type="Office_Automation_DatabaseModel.Letter" Role="Letter" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.ReferenceLetter" Role="ReferenceLetter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Letter">
+              <PropertyRef Name="LetterID" />
+            </Principal>
+            <Dependent Role="ReferenceLetter">
+              <PropertyRef Name="RefLetterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReferenceLetters_Users_Reciver">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.ReferenceLetter" Role="ReferenceLetter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ReferenceLetter">
+              <PropertyRef Name="RefReciverUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReferenceLetters_Users_Sender">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.ReferenceLetter" Role="ReferenceLetter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ReferenceLetter">
+              <PropertyRef Name="RefSenderUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2021,6 +2151,20 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="NewsContext" ColumnName="NewsContext" />
                 <ScalarProperty Name="NewsSubject" ColumnName="NewsSubject" />
                 <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferenceLetters">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.ReferenceLetter">
+              <MappingFragment StoreEntitySet="ReferenceLetters">
+                <ScalarProperty Name="RefLevelNumber" ColumnName="RefLevelNumber" />
+                <ScalarProperty Name="RefCaption" ColumnName="RefCaption" />
+                <ScalarProperty Name="RefReadType" ColumnName="RefReadType" />
+                <ScalarProperty Name="RefDate" ColumnName="RefDate" />
+                <ScalarProperty Name="RefReciverUserID" ColumnName="RefReciverUserID" />
+                <ScalarProperty Name="RefSenderUserID" ColumnName="RefSenderUserID" />
+                <ScalarProperty Name="RefLetterID" ColumnName="RefLetterID" />
+                <ScalarProperty Name="RefID" ColumnName="RefID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

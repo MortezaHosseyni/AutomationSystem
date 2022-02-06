@@ -25,6 +25,8 @@ namespace DataModelLayer.Models
             this.Notes = new HashSet<Note>();
             this.SentNotes = new HashSet<SentNote>();
             this.News = new HashSet<News>();
+            this.ReferenceLetters = new HashSet<ReferenceLetter>();
+            this.ReferenceLetters1 = new HashSet<ReferenceLetter>();
         }
     
         public int UserID { get; set; }
@@ -58,5 +60,9 @@ namespace DataModelLayer.Models
         public virtual ICollection<SentNote> SentNotes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<News> News { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReferenceLetter> ReferenceLetters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReferenceLetter> ReferenceLetters1 { get; set; }
     }
 }

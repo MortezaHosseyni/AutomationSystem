@@ -39,6 +39,10 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.News" Width="1.5" PointX="17" PointY="0.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_News_Users" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_News" Width="1.5" PointX="17" PointY="6.5" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.ReferenceLetter" Width="1.5" PointX="18.625" PointY="0.75" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_ReferenceLetters_Letters" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Reciver" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

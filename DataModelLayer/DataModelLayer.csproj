@@ -84,6 +84,9 @@
     <Compile Include="Models\Note.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ReferenceLetter.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Reminder.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
