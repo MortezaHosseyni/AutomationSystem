@@ -262,6 +262,12 @@ namespace AutomationSystem.UserPanel
                 searchString += " AND LetterFollowingType = 2";
             }
 
+            //Creator - Search
+            if (cbx_SearchCreator.SelectedIndex != 0)
+            {
+                searchString += " AND LetterUserID = " + cbx_SearchCreator.SelectedValue;
+            }
+
             return searchString;
         }
 
