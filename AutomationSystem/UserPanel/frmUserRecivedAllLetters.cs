@@ -16,8 +16,10 @@ namespace AutomationSystem.UserPanel
     public partial class frmUserRecivedAllLetters : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
-        public frmUserRecivedAllLetters()
+        public frmMainUser mainUser;
+        public frmUserRecivedAllLetters(frmMainUser inParent)
         {
+            mainUser = inParent;
             InitializeComponent();
         }
 
@@ -264,6 +266,27 @@ namespace AutomationSystem.UserPanel
         private void btn_Search_Click(object sender, EventArgs e)
         {
             ShowRecivedLetters(searchCondition());
+        }
+
+        private void tsm_ReplyLetter_Click(object sender, EventArgs e)
+        {
+            int item = dgv_RecivedLetters.SelectedCells.Count;
+
+            if (item > 0)
+            {
+                frmUserAddLetter userAddLetter = new frmUserAddLetter();
+
+                userAddLetter.MdiParent = mainUser;
+                userAddLetter.formType = 1;
+                userAddLetter.isReply = 1;
+                userAddLetter.getLetterID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterID"].Value);
+                userAddLetter.getLetterNo = dgv_RecivedLetters.CurrentRow.Cells["col_LetterNo"].Value.ToString();
+                userAddLetter.val_ReplyToLetter.Visible = true;
+                userAddLetter.val_ReplyToLetter.Text = $"پاسخ نامه با شماره {dgv_RecivedLetters.CurrentRow.Cells["col_LetterNo"].Value.ToString()} مربوط به {dgv_RecivedLetters.CurrentRow.Cells["col_LetterSender"].Value.ToString()}";
+
+                this.Close();
+                userAddLetter.Show();
+            }
         }
     }
 }

@@ -19,6 +19,9 @@ namespace AutomationSystem.UserPanel
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
         public byte formType { get; set; } // newLetter = 1 | editLetter = 2
         public int getLetterID { get; set; }
+        public string getLetterNo { get; set; }
+        public byte isReply { get; set; } // 1 = Reply to letter
+
         public frmUserAddLetter()
         {
             InitializeComponent();

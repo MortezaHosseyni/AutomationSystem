@@ -1037,14 +1037,14 @@
             this.tsm_ReplyLetter});
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(150, 124);
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 146);
             // 
             // tsm_ArchiveLetter
             // 
             this.tsm_ArchiveLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsm_ArchiveLetter.Image = global::AutomationSystem.Properties.Resources._10_ArchiveLetter;
             this.tsm_ArchiveLetter.Name = "tsm_ArchiveLetter";
-            this.tsm_ArchiveLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ArchiveLetter.Size = new System.Drawing.Size(152, 30);
             this.tsm_ArchiveLetter.Text = "بايگاني نامه";
             // 
             // tsm_ReadLetter
@@ -1052,7 +1052,7 @@
             this.tsm_ReadLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tsm_ReadLetter.Image = global::AutomationSystem.Properties.Resources._11_ReadLetter;
             this.tsm_ReadLetter.Name = "tsm_ReadLetter";
-            this.tsm_ReadLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ReadLetter.Size = new System.Drawing.Size(152, 30);
             this.tsm_ReadLetter.Text = "خواندن نامه";
             // 
             // tsm_ReferenceLetter
@@ -1060,7 +1060,7 @@
             this.tsm_ReferenceLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tsm_ReferenceLetter.Image = global::AutomationSystem.Properties.Resources._12_ReffrenceLetter;
             this.tsm_ReferenceLetter.Name = "tsm_ReferenceLetter";
-            this.tsm_ReferenceLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ReferenceLetter.Size = new System.Drawing.Size(152, 30);
             this.tsm_ReferenceLetter.Text = "ارجاع نامه";
             // 
             // tsm_ReplyLetter
@@ -1068,8 +1068,9 @@
             this.tsm_ReplyLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsm_ReplyLetter.Image = global::AutomationSystem.Properties.Resources._13_ReplyLetter;
             this.tsm_ReplyLetter.Name = "tsm_ReplyLetter";
-            this.tsm_ReplyLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ReplyLetter.Size = new System.Drawing.Size(152, 30);
             this.tsm_ReplyLetter.Text = "پاسخ به نامه";
+            this.tsm_ReplyLetter.Click += new System.EventHandler(this.tsm_ReplyLetter_Click);
             // 
             // frmUserRecivedAllLetters
             // 

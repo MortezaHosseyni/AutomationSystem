@@ -193,7 +193,7 @@ namespace AutomationSystem.UserPanel
 
             formNumber = 1;
 
-            userReciveAllLettersForm = new frmUserRecivedAllLetters();
+            userReciveAllLettersForm = new frmUserRecivedAllLetters(this);
             userReciveAllLettersForm.MdiParent = this;
             userReciveAllLettersForm.Show();
         }

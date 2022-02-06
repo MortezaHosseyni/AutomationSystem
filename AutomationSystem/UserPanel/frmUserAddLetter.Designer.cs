@@ -71,12 +71,12 @@
             this.tbi_LetterInformation = new DevComponents.DotNetBar.TabItem(this.components);
             this.tcp_LetterContext = new DevComponents.DotNetBar.TabControlPanel();
             this.btn_AddLetter = new DevComponents.DotNetBar.ButtonX();
-            this.adv_LetterContext = new TextRuler.AdvancedTextEditorControl.AdvancedTextEditor();
             this.tbi_LetterContext = new DevComponents.DotNetBar.TabItem(this.components);
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.val_ReplyToLetter = new DevComponents.DotNetBar.LabelX();
+            this.adv_LetterContext = new TextRuler.AdvancedTextEditorControl.AdvancedTextEditor();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbc_LetterInformations)).BeginInit();
             this.tbc_LetterInformations.SuspendLayout();
@@ -641,15 +641,6 @@
             this.btn_AddLetter.Text = "ثبت نامه";
             this.btn_AddLetter.Click += new System.EventHandler(this.btn_AddLetter_Click);
             // 
-            // adv_LetterContext
-            // 
-            this.adv_LetterContext.Font = new System.Drawing.Font("B Nazanin", 8.25F);
-            this.adv_LetterContext.Location = new System.Drawing.Point(3, 0);
-            this.adv_LetterContext.Margin = new System.Windows.Forms.Padding(6);
-            this.adv_LetterContext.Name = "adv_LetterContext";
-            this.adv_LetterContext.Size = new System.Drawing.Size(1020, 433);
-            this.adv_LetterContext.TabIndex = 0;
-            // 
             // tbi_LetterContext
             // 
             this.tbi_LetterContext.AttachedControl = this.tcp_LetterContext;
@@ -693,6 +684,15 @@
             this.val_ReplyToLetter.Text = "...";
             this.val_ReplyToLetter.TextAlignment = System.Drawing.StringAlignment.Center;
             this.val_ReplyToLetter.Visible = false;
+            // 
+            // adv_LetterContext
+            // 
+            this.adv_LetterContext.Font = new System.Drawing.Font("B Nazanin", 8.25F);
+            this.adv_LetterContext.Location = new System.Drawing.Point(3, 0);
+            this.adv_LetterContext.Margin = new System.Windows.Forms.Padding(6);
+            this.adv_LetterContext.Name = "adv_LetterContext";
+            this.adv_LetterContext.Size = new System.Drawing.Size(1020, 433);
+            this.adv_LetterContext.TabIndex = 0;
             // 
             // frmUserAddLetter
             // 
@@ -775,6 +775,6 @@
         private DevComponents.DotNetBar.ButtonX btn_AddLetter;
         private DevComponents.DotNetBar.LabelX lbl_AttachmentFilePath;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private DevComponents.DotNetBar.LabelX val_ReplyToLetter;
+        public DevComponents.DotNetBar.LabelX val_ReplyToLetter;
     }
 }
