@@ -86,6 +86,13 @@
             this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
             this.pnl_RecivedLetters = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_RecivedLetters = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
+            this.saveAttachFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsm_ArchiveLetter = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_ReadLetter = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_ReferenceLetter = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_ReplyLetter = new System.Windows.Forms.ToolStripMenuItem();
             this.col_LetterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,13 +114,7 @@
             this.col_ForceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ArchiveT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_AttachmentT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.saveAttachFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsm_ArchiveLetter = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_ReadLetter = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_ReferenceLetter = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_ReplyLetter = new System.Windows.Forms.ToolStripMenuItem();
+            this.col_LetterAnswerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_Search.SuspendLayout();
             this.pnl_Following.SuspendLayout();
@@ -861,7 +862,8 @@
             this.col_SecurityT,
             this.col_ForceT,
             this.col_ArchiveT,
-            this.col_AttachmentT});
+            this.col_AttachmentT,
+            this.col_LetterAnswerType});
             this.dgv_RecivedLetters.ContextMenuStrip = this.contextMenuStrip;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -877,6 +879,65 @@
             this.dgv_RecivedLetters.Size = new System.Drawing.Size(1014, 324);
             this.dgv_RecivedLetters.TabIndex = 0;
             this.dgv_RecivedLetters.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RecivedLetters_CellClick);
+            // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(451, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "نامه‌هاي وارده";
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Font = new System.Drawing.Font("B Nazanin", 13F);
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_ArchiveLetter,
+            this.tsm_ReadLetter,
+            this.tsm_ReferenceLetter,
+            this.tsm_ReplyLetter});
+            this.contextMenuStrip.Name = "contextMenuStrip1";
+            this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip.Size = new System.Drawing.Size(150, 124);
+            // 
+            // tsm_ArchiveLetter
+            // 
+            this.tsm_ArchiveLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tsm_ArchiveLetter.Image = global::AutomationSystem.Properties.Resources._10_ArchiveLetter;
+            this.tsm_ArchiveLetter.Name = "tsm_ArchiveLetter";
+            this.tsm_ArchiveLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ArchiveLetter.Text = "بايگاني نامه";
+            // 
+            // tsm_ReadLetter
+            // 
+            this.tsm_ReadLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tsm_ReadLetter.Image = global::AutomationSystem.Properties.Resources._11_ReadLetter;
+            this.tsm_ReadLetter.Name = "tsm_ReadLetter";
+            this.tsm_ReadLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ReadLetter.Text = "خواندن نامه";
+            // 
+            // tsm_ReferenceLetter
+            // 
+            this.tsm_ReferenceLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tsm_ReferenceLetter.Image = global::AutomationSystem.Properties.Resources._12_ReffrenceLetter;
+            this.tsm_ReferenceLetter.Name = "tsm_ReferenceLetter";
+            this.tsm_ReferenceLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ReferenceLetter.Text = "ارجاع نامه";
+            // 
+            // tsm_ReplyLetter
+            // 
+            this.tsm_ReplyLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tsm_ReplyLetter.Image = global::AutomationSystem.Properties.Resources._13_ReplyLetter;
+            this.tsm_ReplyLetter.Name = "tsm_ReplyLetter";
+            this.tsm_ReplyLetter.Size = new System.Drawing.Size(149, 30);
+            this.tsm_ReplyLetter.Text = "پاسخ به نامه";
+            this.tsm_ReplyLetter.Click += new System.EventHandler(this.tsm_ReplyLetter_Click);
             // 
             // col_LetterID
             // 
@@ -1013,64 +1074,11 @@
             this.col_AttachmentT.Name = "col_AttachmentT";
             this.col_AttachmentT.Visible = false;
             // 
-            // lbl_Title
+            // col_LetterAnswerType
             // 
-            // 
-            // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(451, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(152, 40);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 4;
-            this.lbl_Title.Text = "نامه‌هاي وارده";
-            // 
-            // contextMenuStrip
-            // 
-            this.contextMenuStrip.Font = new System.Drawing.Font("B Nazanin", 13F);
-            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_ArchiveLetter,
-            this.tsm_ReadLetter,
-            this.tsm_ReferenceLetter,
-            this.tsm_ReplyLetter});
-            this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(153, 146);
-            // 
-            // tsm_ArchiveLetter
-            // 
-            this.tsm_ArchiveLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tsm_ArchiveLetter.Image = global::AutomationSystem.Properties.Resources._10_ArchiveLetter;
-            this.tsm_ArchiveLetter.Name = "tsm_ArchiveLetter";
-            this.tsm_ArchiveLetter.Size = new System.Drawing.Size(152, 30);
-            this.tsm_ArchiveLetter.Text = "بايگاني نامه";
-            // 
-            // tsm_ReadLetter
-            // 
-            this.tsm_ReadLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tsm_ReadLetter.Image = global::AutomationSystem.Properties.Resources._11_ReadLetter;
-            this.tsm_ReadLetter.Name = "tsm_ReadLetter";
-            this.tsm_ReadLetter.Size = new System.Drawing.Size(152, 30);
-            this.tsm_ReadLetter.Text = "خواندن نامه";
-            // 
-            // tsm_ReferenceLetter
-            // 
-            this.tsm_ReferenceLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tsm_ReferenceLetter.Image = global::AutomationSystem.Properties.Resources._12_ReffrenceLetter;
-            this.tsm_ReferenceLetter.Name = "tsm_ReferenceLetter";
-            this.tsm_ReferenceLetter.Size = new System.Drawing.Size(152, 30);
-            this.tsm_ReferenceLetter.Text = "ارجاع نامه";
-            // 
-            // tsm_ReplyLetter
-            // 
-            this.tsm_ReplyLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tsm_ReplyLetter.Image = global::AutomationSystem.Properties.Resources._13_ReplyLetter;
-            this.tsm_ReplyLetter.Name = "tsm_ReplyLetter";
-            this.tsm_ReplyLetter.Size = new System.Drawing.Size(152, 30);
-            this.tsm_ReplyLetter.Text = "پاسخ به نامه";
-            this.tsm_ReplyLetter.Click += new System.EventHandler(this.tsm_ReplyLetter_Click);
+            this.col_LetterAnswerType.HeaderText = "LetterAnswerType";
+            this.col_LetterAnswerType.Name = "col_LetterAnswerType";
+            this.col_LetterAnswerType.Visible = false;
             // 
             // frmUserRecivedAllLetters
             // 
@@ -1166,6 +1174,12 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterReffrence;
         private DevComponents.DotNetBar.ButtonX btn_Search;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_RecivedLetters;
+        private System.Windows.Forms.SaveFileDialog saveAttachFileDialog;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem tsm_ArchiveLetter;
+        private System.Windows.Forms.ToolStripMenuItem tsm_ReadLetter;
+        private System.Windows.Forms.ToolStripMenuItem tsm_ReferenceLetter;
+        private System.Windows.Forms.ToolStripMenuItem tsm_ReplyLetter;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterSubject;
@@ -1187,11 +1201,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ForceT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ArchiveT;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_AttachmentT;
-        private System.Windows.Forms.SaveFileDialog saveAttachFileDialog;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ArchiveLetter;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ReadLetter;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ReferenceLetter;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ReplyLetter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_LetterAnswerType;
     }
 }

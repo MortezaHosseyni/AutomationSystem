@@ -52,6 +52,7 @@ namespace AutomationSystem.UserPanel
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterSecurityType"].Value = result[i].View_LetterSecurityType;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterFollowingType"].Value = result[i].View_LetterFollowingType;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterAttachmentType"].Value = result[i].View_LetterAttachmentType;
+                    dgv_RecivedLetters.Rows[i].Cells["col_LetterAnswerType"].Value = result[i].LetterAnswerType;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterAnswerDeadLine"].Value = result[i].LetterAnswerDeadLine;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterNo"].Value = result[i].LetterNo;
                     dgv_RecivedLetters.Rows[i].Cells["col_LetterReadType"].Value = result[i].View_LetterReadType;
@@ -274,6 +275,15 @@ namespace AutomationSystem.UserPanel
 
             if (item > 0)
             {
+                if (Convert.ToByte(dgv_RecivedLetters.CurrentRow.Cells["col_LetterAnswerType"].Value) == 1)
+                {
+                    if (Convert.ToDateTime(dgv_RecivedLetters.CurrentRow.Cells["col_LetterAnswerDeadLine"].Value.ToString()) < Convert.ToDateTime(PublicVariable.todayDate))
+                    {
+                        MessageBox.Show("مهلت پاسخ اين نامه گذشته است","پاسخ نامه");
+                        return;
+                    }
+                }
+
                 frmUserAddLetter userAddLetter = new frmUserAddLetter();
 
                 userAddLetter.MdiParent = mainUser;
