@@ -129,6 +129,12 @@
     <Compile Include="Models\Vw_ReciveNotes.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Vw_ReciveReference.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vw_ReferenceLetters.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vw_Reminder.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
