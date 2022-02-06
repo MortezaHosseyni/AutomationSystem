@@ -419,6 +419,10 @@
     <Content Include="Images\07-UserPicture.png" />
     <Content Include="Images\08-UserSignature.png" />
     <Content Include="Images\09-EditIcon.png" />
+    <Content Include="Images\10-ArchiveLetter.png" />
+    <Content Include="Images\11-ReadLetter.png" />
+    <Content Include="Images\12-ReffrenceLetter.png" />
+    <Content Include="Images\13-ReplyLetter.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
