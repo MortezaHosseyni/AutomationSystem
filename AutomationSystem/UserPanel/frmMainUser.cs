@@ -36,6 +36,7 @@ namespace AutomationSystem.UserPanel
         frmUserImmediateLetters userImmediateLettersForm;
         frmUserConfidentialLetters userConfidentialLettersForm;
         frmUserShowAllNews userShowNews;
+        frmUserRecivedReferenceLetters userRecivedReference;
         public frmMainUser()
         {
             InitializeComponent();
@@ -150,6 +151,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 16)
             {
                 userShowNews.Close();
+            }
+            if (formNumber == 17)
+            {
+                userRecivedReference.Close();
             }
         }
 
@@ -295,6 +300,17 @@ namespace AutomationSystem.UserPanel
             userShowNews = new frmUserShowAllNews();
             userShowNews.MdiParent = this;
             userShowNews.Show();
+        }
+
+        private void lbl_ShowGetReferenceLetters_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 17;
+
+            userRecivedReference = new frmUserRecivedReferenceLetters();
+            userRecivedReference.MdiParent = this;
+            userRecivedReference.Show();
         }
     }
 }

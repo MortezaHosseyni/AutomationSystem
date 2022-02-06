@@ -37,6 +37,7 @@
             this.lbl_ConfidentialMessages = new DevComponents.DotNetBar.LabelItem();
             this.lbl_ArrivedNotes = new DevComponents.DotNetBar.LabelItem();
             this.lbl_ShowNotes = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_ShowGetReferenceLetters = new DevComponents.DotNetBar.LabelItem();
             this.ebg_Recycling = new DevComponents.DotNetBar.ExplorerBarGroupItem();
             this.lbl_SendedMessages = new DevComponents.DotNetBar.LabelItem();
             this.lbl_Following = new DevComponents.DotNetBar.LabelItem();
@@ -128,7 +129,8 @@
             this.lbl_UrgentActionMessages,
             this.lbl_ConfidentialMessages,
             this.lbl_ArrivedNotes,
-            this.lbl_ShowNotes});
+            this.lbl_ShowNotes,
+            this.lbl_ShowGetReferenceLetters});
             this.ebg_Dashboard.Text = "كارتابل";
             // 
             // 
@@ -220,6 +222,15 @@
             this.lbl_ShowNotes.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_ShowNotes.Text = "نمايش يادآوري‌ها";
             this.lbl_ShowNotes.Click += new System.EventHandler(this.lbl_ShowNotes_Click);
+            // 
+            // lbl_ShowGetReferenceLetters
+            // 
+            this.lbl_ShowGetReferenceLetters.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ShowGetReferenceLetters.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ShowGetReferenceLetters.Name = "lbl_ShowGetReferenceLetters";
+            this.lbl_ShowGetReferenceLetters.Symbol = "";
+            this.lbl_ShowGetReferenceLetters.Text = "نامه‌هاي مرجوعه وارده";
+            this.lbl_ShowGetReferenceLetters.Click += new System.EventHandler(this.lbl_ShowGetReferenceLetters_Click);
             // 
             // ebg_Recycling
             // 
@@ -889,5 +900,6 @@
         private DevComponents.DotNetBar.LabelItem lbl_AddReminder;
         private DevComponents.DotNetBar.LabelItem lbl_Draft;
         private DevComponents.DotNetBar.LabelItem lbl_NewsAndAnnouncement;
+        private DevComponents.DotNetBar.LabelItem lbl_ShowGetReferenceLetters;
     }
 }
