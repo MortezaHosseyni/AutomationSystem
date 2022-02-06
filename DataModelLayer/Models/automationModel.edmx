@@ -511,6 +511,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <PropertyRef Name="UserName" />
             <PropertyRef Name="UserPassword" />
             <PropertyRef Name="UserPersonalID" />
+            <PropertyRef Name="UserActivity" />
+            <PropertyRef Name="UserGender" />
             <PropertyRef Name="UserRegisteredDate" />
           </Key>
           <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
@@ -520,8 +522,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserPassword" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="UserPersonalID" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="UserEmail" Type="varchar" MaxLength="100" />
-          <Property Name="UserGender" Type="varchar" MaxLength="3" />
-          <Property Name="UserActivity" Type="varchar" MaxLength="7" />
+          <Property Name="UserActivity" Type="tinyint" Nullable="false" />
+          <Property Name="UserGender" Type="tinyint" Nullable="false" />
+          <Property Name="View_UserGender" Type="varchar" MaxLength="3" />
+          <Property Name="View_UserActivity" Type="varchar" MaxLength="7" />
           <Property Name="UserTel" Type="varchar" MaxLength="11" />
           <Property Name="UserBrithDate" Type="varchar" MaxLength="30" />
           <Property Name="UserImage" Type="image" />
@@ -1009,8 +1013,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Users].[UserPassword] AS [UserPassword], 
     [Vw_Users].[UserPersonalID] AS [UserPersonalID], 
     [Vw_Users].[UserEmail] AS [UserEmail], 
-    [Vw_Users].[UserGender] AS [UserGender], 
     [Vw_Users].[UserActivity] AS [UserActivity], 
+    [Vw_Users].[UserGender] AS [UserGender], 
+    [Vw_Users].[View_UserGender] AS [View_UserGender], 
+    [Vw_Users].[View_UserActivity] AS [View_UserActivity], 
     [Vw_Users].[UserTel] AS [UserTel], 
     [Vw_Users].[UserBrithDate] AS [UserBrithDate], 
     [Vw_Users].[UserImage] AS [UserImage], 
@@ -1112,34 +1118,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="ReferenceLetters" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Reciver" FromRole="User" ToRole="ReferenceLetter" />
           <NavigationProperty Name="ReferenceLetters1" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender" FromRole="User" ToRole="ReferenceLetter" />
         </EntityType>
-        <EntityType Name="Vw_Users">
-          <Key>
-            <PropertyRef Name="UserID" />
-            <PropertyRef Name="UserFirstName" />
-            <PropertyRef Name="UserLastName" />
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="UserPassword" />
-            <PropertyRef Name="UserPersonalID" />
-            <PropertyRef Name="UserRegisteredDate" />
-          </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserLastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserPersonalID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="UserGender" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="UserActivity" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
-          <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="UserBrithDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="UserSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="UserRegisteredDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="Office_Automation_DatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" />
           <FunctionImport Name="Sp_InsterUsers">
             <Parameter Name="UserFirstName" Mode="In" Type="String" />
             <Parameter Name="UserLastName" Mode="In" Type="String" />
@@ -1269,6 +1249,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           </AssociationSet>
           <EntitySet Name="Vw_ReciveReference" EntityType="Office_Automation_DatabaseModel.Vw_ReciveReference" />
           <EntitySet Name="Vw_ReferenceLetters" EntityType="Office_Automation_DatabaseModel.Vw_ReferenceLetters" />
+          <EntitySet Name="Vw_Users" EntityType="Office_Automation_DatabaseModel.Vw_Users" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -1954,6 +1935,35 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="RefReciver_FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
           <Property Name="RefSender_FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Vw_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserFirstName" />
+            <PropertyRef Name="UserLastName" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserPassword" />
+            <PropertyRef Name="UserPersonalID" />
+            <PropertyRef Name="UserActivity" />
+            <PropertyRef Name="UserGender" />
+            <PropertyRef Name="UserRegisteredDate" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="UserPersonalID" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserActivity" Type="Byte" Nullable="false" />
+          <Property Name="UserGender" Type="Byte" Nullable="false" />
+          <Property Name="View_UserGender" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="View_UserActivity" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="UserBrithDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserRegisteredDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1963,26 +1973,6 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
-                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
-                <ScalarProperty Name="UserPersonalID" ColumnName="UserPersonalID" />
-                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
-                <ScalarProperty Name="UserGender" ColumnName="UserGender" />
-                <ScalarProperty Name="UserActivity" ColumnName="UserActivity" />
-                <ScalarProperty Name="UserTel" ColumnName="UserTel" />
-                <ScalarProperty Name="UserBrithDate" ColumnName="UserBrithDate" />
-                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
-                <ScalarProperty Name="UserSignature" ColumnName="UserSignature" />
-                <ScalarProperty Name="UserRegisteredDate" ColumnName="UserRegisteredDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vw_Users">
-            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Users">
-              <MappingFragment StoreEntitySet="Vw_Users">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
                 <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
@@ -2439,6 +2429,28 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="RefReciverUserID" ColumnName="RefReciverUserID" />
                 <ScalarProperty Name="RefLevelNumber" ColumnName="RefLevelNumber" />
                 <ScalarProperty Name="RefLetterID" ColumnName="RefLetterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Users">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Users">
+              <MappingFragment StoreEntitySet="Vw_Users">
+                <ScalarProperty Name="UserRegisteredDate" ColumnName="UserRegisteredDate" />
+                <ScalarProperty Name="UserSignature" ColumnName="UserSignature" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="UserBrithDate" ColumnName="UserBrithDate" />
+                <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+                <ScalarProperty Name="View_UserActivity" ColumnName="View_UserActivity" />
+                <ScalarProperty Name="View_UserGender" ColumnName="View_UserGender" />
+                <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+                <ScalarProperty Name="UserActivity" ColumnName="UserActivity" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserPersonalID" ColumnName="UserPersonalID" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

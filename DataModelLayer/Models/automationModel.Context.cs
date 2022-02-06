@@ -28,7 +28,6 @@ namespace DataModelLayer.Models
         }
     
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Vw_Users> Vw_Users { get; set; }
         public virtual DbSet<Reminder> Reminders { get; set; }
         public virtual DbSet<Vw_Reminder> Vw_Reminder { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
@@ -52,6 +51,7 @@ namespace DataModelLayer.Models
         public virtual DbSet<ReferenceLetter> ReferenceLetters { get; set; }
         public virtual DbSet<Vw_ReciveReference> Vw_ReciveReference { get; set; }
         public virtual DbSet<Vw_ReferenceLetters> Vw_ReferenceLetters { get; set; }
+        public virtual DbSet<Vw_Users> Vw_Users { get; set; }
     
         public virtual int Sp_InsterUsers(string userFirstName, string userLastName, string userName, string userPassword, string userPersonalID, string userEmail, Nullable<byte> userGender, Nullable<byte> userActivity, string userTel, string userBrithDate, byte[] userImage, byte[] userSignature, string userRegisteredDate)
         {

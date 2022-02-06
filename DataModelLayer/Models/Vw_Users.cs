@@ -21,8 +21,10 @@ namespace DataModelLayer.Models
         public string UserPassword { get; set; }
         public string UserPersonalID { get; set; }
         public string UserEmail { get; set; }
-        public string UserGender { get; set; }
-        public string UserActivity { get; set; }
+        public byte UserActivity { get; set; }
+        public byte UserGender { get; set; }
+        public string View_UserGender { get; set; }
+        public string View_UserActivity { get; set; }
         public string UserTel { get; set; }
         public string UserBrithDate { get; set; }
         public byte[] UserImage { get; set; }
