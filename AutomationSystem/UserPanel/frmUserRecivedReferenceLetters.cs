@@ -80,6 +80,7 @@ namespace AutomationSystem.UserPanel
                     dgv_RecivedReferenceLetters.Rows[i].Cells["col_LetterReferenceDate"].Value = result[i].RefDate;
                     dgv_RecivedReferenceLetters.Rows[i].Cells["col_LetterReferencer"].Value = result[i].RefSender_FullName;
                     dgv_RecivedReferenceLetters.Rows[i].Cells["col_RefCaption"].Value = result[i].RefCaption;
+                    dgv_RecivedReferenceLetters.Rows[i].Cells["col_LetterReferencerUserID"].Value = result[i].RefReciverUserID;
 
                     dgv_RecivedReferenceLetters.Rows[i].Cells["col_SecurityT"].Value = result[i].LetterSecurityType;
                     dgv_RecivedReferenceLetters.Rows[i].Cells["col_ForceT"].Value = result[i].LetterForceType;

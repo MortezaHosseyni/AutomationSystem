@@ -314,6 +314,7 @@
             this.lbl_ReferredMessages.Symbol = "57695";
             this.lbl_ReferredMessages.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_ReferredMessages.Text = "نامه‌هاي ارجاع داده شده";
+            this.lbl_ReferredMessages.Click += new System.EventHandler(this.lbl_ReferredMessages_Click);
             // 
             // ebg_Operation
             // 

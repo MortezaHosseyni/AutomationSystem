@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserSentReferenceLetters));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.cbx_SearchForced = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbi_Forced_All = new DevComponents.Editors.ComboItem();
@@ -66,7 +66,7 @@
             this.txt_LetterReffrence = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_LetterNo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_LetterSender = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_LetterReciver = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_DateOn = new FreeControls.PersianDateTimePicker();
             this.lbl_FollowingType = new DevComponents.DotNetBar.LabelX();
             this.lbl_Attachment = new DevComponents.DotNetBar.LabelX();
@@ -79,7 +79,7 @@
             this.lbl_LetterSubject = new DevComponents.DotNetBar.LabelX();
             this.lbl_Creator = new DevComponents.DotNetBar.LabelX();
             this.lbl_LetterNo = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Sender = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Reciver = new DevComponents.DotNetBar.LabelX();
             this.lbl_DateOn = new DevComponents.DotNetBar.LabelX();
             this.saveAttachFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.dgv_RecivedReferenceLetters = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -240,7 +240,7 @@
             this.pnl_Search.Controls.Add(this.txt_LetterReffrence);
             this.pnl_Search.Controls.Add(this.txt_LetterSubject);
             this.pnl_Search.Controls.Add(this.txt_LetterNo);
-            this.pnl_Search.Controls.Add(this.txt_LetterSender);
+            this.pnl_Search.Controls.Add(this.txt_LetterReciver);
             this.pnl_Search.Controls.Add(this.txt_DateTo);
             this.pnl_Search.Controls.Add(this.txt_DateOn);
             this.pnl_Search.Controls.Add(this.lbl_FollowingType);
@@ -254,7 +254,7 @@
             this.pnl_Search.Controls.Add(this.lbl_LetterSubject);
             this.pnl_Search.Controls.Add(this.lbl_Creator);
             this.pnl_Search.Controls.Add(this.lbl_LetterNo);
-            this.pnl_Search.Controls.Add(this.lbl_Sender);
+            this.pnl_Search.Controls.Add(this.lbl_Reciver);
             this.pnl_Search.Controls.Add(this.lbl_DateOn);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Search.Font = new System.Drawing.Font("B Nazanin", 10.25F, System.Drawing.FontStyle.Bold);
@@ -419,6 +419,7 @@
             this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Search.Symbol = "";
             this.btn_Search.TabIndex = 4;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txt_LetterReffrence
             // 
@@ -462,19 +463,19 @@
             this.txt_LetterNo.TabIndex = 2;
             this.txt_LetterNo.WatermarkText = "شماره نامه پيام...";
             // 
-            // txt_LetterSender
+            // txt_LetterReciver
             // 
             // 
             // 
             // 
-            this.txt_LetterSender.Border.Class = "TextBoxBorder";
-            this.txt_LetterSender.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_LetterSender.Location = new System.Drawing.Point(415, 110);
-            this.txt_LetterSender.Name = "txt_LetterSender";
-            this.txt_LetterSender.PreventEnterBeep = true;
-            this.txt_LetterSender.Size = new System.Drawing.Size(229, 29);
-            this.txt_LetterSender.TabIndex = 4;
-            this.txt_LetterSender.WatermarkText = "فرستنده پيام...";
+            this.txt_LetterReciver.Border.Class = "TextBoxBorder";
+            this.txt_LetterReciver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_LetterReciver.Location = new System.Drawing.Point(415, 110);
+            this.txt_LetterReciver.Name = "txt_LetterReciver";
+            this.txt_LetterReciver.PreventEnterBeep = true;
+            this.txt_LetterReciver.Size = new System.Drawing.Size(229, 29);
+            this.txt_LetterReciver.TabIndex = 4;
+            this.txt_LetterReciver.WatermarkText = "گيرنده پيام...";
             // 
             // txt_DateOn
             // 
@@ -631,18 +632,18 @@
             this.lbl_LetterNo.TabIndex = 0;
             this.lbl_LetterNo.Text = "شماره‌نامه:";
             // 
-            // lbl_Sender
+            // lbl_Reciver
             // 
-            this.lbl_Sender.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Reciver.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.lbl_Sender.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Sender.Location = new System.Drawing.Point(650, 113);
-            this.lbl_Sender.Name = "lbl_Sender";
-            this.lbl_Sender.Size = new System.Drawing.Size(48, 25);
-            this.lbl_Sender.TabIndex = 0;
-            this.lbl_Sender.Text = "فرستنده:";
+            this.lbl_Reciver.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Reciver.Location = new System.Drawing.Point(654, 112);
+            this.lbl_Reciver.Name = "lbl_Reciver";
+            this.lbl_Reciver.Size = new System.Drawing.Size(36, 25);
+            this.lbl_Reciver.TabIndex = 0;
+            this.lbl_Reciver.Text = "گيرنده:";
             // 
             // lbl_DateOn
             // 
@@ -687,19 +688,20 @@
             this.col_LetterAnswerType,
             this.col_ReferenceReciverUserID});
             this.dgv_RecivedReferenceLetters.ContextMenuStrip = this.contextMenuStrip;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_RecivedReferenceLetters.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_RecivedReferenceLetters.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_RecivedReferenceLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_RecivedReferenceLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_RecivedReferenceLetters.Name = "dgv_RecivedReferenceLetters";
             this.dgv_RecivedReferenceLetters.Size = new System.Drawing.Size(1014, 356);
             this.dgv_RecivedReferenceLetters.TabIndex = 0;
+            this.dgv_RecivedReferenceLetters.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RecivedReferenceLetters_CellClick);
             // 
             // contextMenuStrip
             // 
@@ -753,12 +755,12 @@
             // 
             this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(430, 4);
+            this.lbl_Title.Location = new System.Drawing.Point(430, 3);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(232, 40);
-            this.lbl_Title.Symbol = "";
+            this.lbl_Title.Size = new System.Drawing.Size(245, 40);
+            this.lbl_Title.Symbol = "";
             this.lbl_Title.TabIndex = 10;
-            this.lbl_Title.Text = "نامه‌هاي مرجوعه وارده";
+            this.lbl_Title.Text = "نامه‌هاي ارجاع داده شده";
             // 
             // pnl_RecivedReferenceLetters
             // 
@@ -893,8 +895,8 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle4;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
             this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1004,7 +1006,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterReffrence;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterSubject;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterNo;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterSender;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_LetterReciver;
         private FreeControls.PersianDateTimePicker txt_DateOn;
         private DevComponents.DotNetBar.LabelX lbl_FollowingType;
         private DevComponents.DotNetBar.LabelX lbl_Attachment;
@@ -1017,7 +1019,7 @@
         private DevComponents.DotNetBar.LabelX lbl_LetterSubject;
         private DevComponents.DotNetBar.LabelX lbl_Creator;
         private DevComponents.DotNetBar.LabelX lbl_LetterNo;
-        private DevComponents.DotNetBar.LabelX lbl_Sender;
+        private DevComponents.DotNetBar.LabelX lbl_Reciver;
         private DevComponents.DotNetBar.LabelX lbl_DateOn;
         private System.Windows.Forms.SaveFileDialog saveAttachFileDialog;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_RecivedReferenceLetters;
