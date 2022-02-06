@@ -298,5 +298,38 @@ namespace AutomationSystem.UserPanel
                 userAddLetter.Show();
             }
         }
+
+        private void tsm_ArchiveLetter_Click(object sender, EventArgs e)
+        {
+            int item = dgv_RecivedLetters.SelectedCells.Count;
+            if (item > 0)
+            {
+                try
+                {
+                    if (MessageBox.Show($"از بايگاني كردن نامه {dgv_RecivedLetters.CurrentRow.Cells["col_LetterNo"].Value.ToString()} مطمعن هستيد؟","بايگاني نامه",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        int getLetterID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterID"].Value);
+                        var queryUpdate = (from L in db.Letters where L.LetterID == getLetterID select L).SingleOrDefault();
+                        queryUpdate.LetterArchiveType = 2;
+
+                        db.SaveChanges();
+
+                        MessageBox.Show("نامه باموفقيت بايگاني شد", "بايگاني نامه");
+
+                        ShowRecivedLetters(searchCondition());
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("خطايي در خواندن اطلاعات رخ داد","پايگاه داده");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("براي بايگاني كردن نامه ابتدا نامه‌اي را انتخاب كنيد","بايگاني نامه");
+                return;
+            }
+        }
     }
 }
