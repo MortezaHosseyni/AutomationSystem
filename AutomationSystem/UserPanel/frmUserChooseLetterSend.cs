@@ -33,7 +33,14 @@ namespace AutomationSystem.UserPanel
             }
             else
             {
-                ShowAllowedUsers(searchCondition());
+                if (isReference == 1)
+                {
+                    ShowAllowedUsers_ToReference(searchCondition());
+                }
+                else
+                {
+                    ShowAllowedUsers(searchCondition());
+                }
             }
         }
 
@@ -63,6 +70,29 @@ namespace AutomationSystem.UserPanel
         private void ShowAllowedUsers_ToReply(string searchAllowedUser)
         {
             var query = db.Database.SqlQuery<Vw_AsignmentJobs>($"SELECT * FROM Vw_AsignmentJobs WHERE [AsignStatus] = 1 AND AsignUserID = {this.getLetterReplyID} AND [JobsDetermineLevel] >= {PublicVariable.global_JobsDetermineLevel} - 1 {searchAllowedUser}");
+            var result = query.ToList();
+
+            if (result.Count != 0)
+            {
+                dgv_Recivers.RowCount = result.Count;
+                for (int i = 0; i <= result.Count - 1; i++)
+                {
+                    dgv_Recivers.Rows[i].Cells["col_JobUserID"].Value = result[i].AsignJobID;
+                    dgv_Recivers.Rows[i].Cells["col_UserID"].Value = result[i].AsignUserID;
+
+                    dgv_Recivers.Rows[i].Cells["col_FullName"].Value = result[i].UserFullName;
+                    dgv_Recivers.Rows[i].Cells["col_JobName"].Value = result[i].JobsName;
+                }
+            }
+            else
+            {
+                dgv_Recivers.Rows.Clear();
+            }
+        }
+
+        private void ShowAllowedUsers_ToReference(string searchAllowedUser)
+        {
+            var query = db.Database.SqlQuery<Vw_AsignmentJobs>($"SELECT * FROM Vw_AsignmentJobs WHERE AsignStatus = 1 AND JobsDetermineLevel >= {PublicVariable.global_JobsDetermineLevel} - 1 {searchAllowedUser} EXCEPT (SELECT * FROM Vw_AsignmentJobs WHERE AsignUserID IN ({PublicVariable.global_UserID}, {this.getLetterReplyID}))");
             var result = query.ToList();
 
             if (result.Count != 0)

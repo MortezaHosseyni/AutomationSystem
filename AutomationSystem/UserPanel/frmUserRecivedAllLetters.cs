@@ -339,6 +339,7 @@ namespace AutomationSystem.UserPanel
             userChooseLetterReference.lbl_Title.Text = "ارجاع نامه";
             userChooseLetterReference.GetLetterID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterID"].Value);
             userChooseLetterReference.isReference = 1;
+            userChooseLetterReference.getLetterReplyID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterSenderUserID"].Value);
 
             userChooseLetterReference.ShowDialog();
         }
