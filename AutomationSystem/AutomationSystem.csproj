@@ -204,6 +204,12 @@
     <Compile Include="UserPanel\frmUserChooseLetterSend.Designer.cs">
       <DependentUpon>frmUserChooseLetterSend.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserCirculationLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserCirculationLetter.Designer.cs">
+      <DependentUpon>frmUserCirculationLetter.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserConfidentialLetters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserChooseLetterSend.resx">
       <DependentUpon>frmUserChooseLetterSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserCirculationLetter.resx">
+      <DependentUpon>frmUserCirculationLetter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserConfidentialLetters.resx">
       <DependentUpon>frmUserConfidentialLetters.cs</DependentUpon>
