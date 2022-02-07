@@ -222,6 +222,12 @@
     <Compile Include="UserPanel\frmUserDraft.Designer.cs">
       <DependentUpon>frmUserDraft.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserFollowingLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserFollowingLetters.Designer.cs">
+      <DependentUpon>frmUserFollowingLetters.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserImmediateLetters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserDraft.resx">
       <DependentUpon>frmUserDraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserFollowingLetters.resx">
+      <DependentUpon>frmUserFollowingLetters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserImmediateLetters.resx">
       <DependentUpon>frmUserImmediateLetters.cs</DependentUpon>
