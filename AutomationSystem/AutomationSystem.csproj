@@ -240,6 +240,12 @@
     <Compile Include="UserPanel\frmUserImmediateLetters.Designer.cs">
       <DependentUpon>frmUserImmediateLetters.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserNewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserNewMessage.Designer.cs">
+      <DependentUpon>frmUserNewMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserRecivedAllLetters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,6 +400,9 @@
     <EmbeddedResource Include="UserPanel\frmUserImmediateLetters.resx">
       <DependentUpon>frmUserImmediateLetters.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserNewMessage.resx">
+      <DependentUpon>frmUserNewMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserRecivedAllLetters.resx">
       <DependentUpon>frmUserRecivedAllLetters.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,6 +469,8 @@
     <Content Include="Images\12-ReffrenceLetter.png" />
     <Content Include="Images\13-ReplyLetter.png" />
     <Content Include="Images\14-Circulation.png" />
+    <Content Include="Images\15-Announcement.png" />
+    <Content Include="Images\16-Announce.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
