@@ -295,6 +295,7 @@
             this.lbl_Following.Symbol = "57559";
             this.lbl_Following.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.lbl_Following.Text = "پيگيري";
+            this.lbl_Following.Click += new System.EventHandler(this.lbl_Following_Click);
             // 
             // lbl_SendedNotes
             // 

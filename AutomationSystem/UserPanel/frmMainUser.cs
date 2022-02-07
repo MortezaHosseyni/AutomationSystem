@@ -38,6 +38,7 @@ namespace AutomationSystem.UserPanel
         frmUserShowAllNews userShowNews;
         frmUserRecivedReferenceLetters userRecivedReference;
         frmUserSentReferenceLetters userSentReference;
+        frmUserFollowingLetters userFollowingLetters;
         public frmMainUser()
         {
             InitializeComponent();
@@ -128,6 +129,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 8)
             {
                 userSendedLettersForm.Close();
+            }
+            if (formNumber == 9)
+            {
+                userFollowingLetters.Close();
             }
             if (formNumber == 10)
             {
@@ -327,6 +332,17 @@ namespace AutomationSystem.UserPanel
             userSentReference = new frmUserSentReferenceLetters();
             userSentReference.MdiParent = this;
             userSentReference.Show();
+        }
+
+        private void lbl_Following_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 9;
+
+            userFollowingLetters = new frmUserFollowingLetters();
+            userFollowingLetters.MdiParent = this;
+            userFollowingLetters.Show();
         }
     }
 }
