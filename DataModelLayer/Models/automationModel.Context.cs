@@ -227,5 +227,14 @@ namespace DataModelLayer.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_ShowAllUserInfo_UserForm_Up_Result>("Sp_ShowAllUserInfo_UserForm_Up", userIDParameter);
         }
+    
+        public virtual ObjectResult<Sp_LetterCount_Result> Sp_LetterCount(Nullable<int> sentUserID)
+        {
+            var sentUserIDParameter = sentUserID.HasValue ?
+                new ObjectParameter("SentUserID", sentUserID) :
+                new ObjectParameter("SentUserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_LetterCount_Result>("Sp_LetterCount", sentUserIDParameter);
+        }
     }
 }

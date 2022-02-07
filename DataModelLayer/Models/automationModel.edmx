@@ -729,6 +729,9 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="UserSignature" Type="image" Mode="In" />
           <Parameter Name="UserRegisteredDate" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="Sp_LetterCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SentUserID" Type="int" Mode="In" />
+        </Function>
         <Function Name="Sp_ShowAllUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserID" Type="int" Mode="In" />
         </Function>
@@ -1258,6 +1261,9 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="Vw_Users" EntityType="Office_Automation_DatabaseModel.Vw_Users" />
           <FunctionImport Name="Sp_ShowAllUserInfo_UserForm_Up" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_ShowAllUserInfo_UserForm_Up_Result)">
           <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_LetterCount" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_LetterCount_Result)">
+            <Parameter Name="SentUserID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
@@ -1993,6 +1999,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Type="Byte" Name="UserGender" Nullable="false" />
           <Property Type="Byte" Name="UserActivity" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="Sp_LetterCount_Result">
+          <Property Type="Int32" Name="SentLettersCount" Nullable="true" />
+          <Property Type="Int32" Name="ReciveLettersCount" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2503,6 +2513,14 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
                 <ScalarProperty Name="JobsDetermineLevel" ColumnName="JobsDetermineLevel" />
                 <ScalarProperty Name="UserGender" ColumnName="UserGender" />
                 <ScalarProperty Name="UserActivity" ColumnName="UserActivity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_LetterCount" FunctionName="Office_Automation_DatabaseModel.Store.Sp_LetterCount">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Office_Automation_DatabaseModel.Sp_LetterCount_Result">
+                <ScalarProperty Name="SentLettersCount" ColumnName="SentLettersCount" />
+                <ScalarProperty Name="ReciveLettersCount" ColumnName="ReciveLettersCount" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

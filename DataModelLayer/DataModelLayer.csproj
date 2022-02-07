@@ -96,6 +96,9 @@
     <Compile Include="Models\SentNote.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sp_LetterCount_Result.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Sp_ShowAllUserInfo_Result.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
