@@ -116,6 +116,7 @@
           <Property Name="SentSendedLetterID" Type="int" Nullable="false" />
           <Property Name="SentUserID" Type="int" Nullable="false" />
           <Property Name="SentReadType" Type="tinyint" />
+          <Property Name="SentMessage" Type="tinyint" />
         </EntityType>
         <EntityType Name="SentNotes">
           <Key>
@@ -344,6 +345,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReciveLetter' do
           <Property Name="SentReadType" Type="tinyint" />
           <Property Name="View_LetterReadType" Type="varchar" MaxLength="11" />
           <Property Name="LetterReciverFullName" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="SentMessage" Type="tinyint" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReciveNotes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -901,7 +903,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_ReciveLetter].[LetterSentDate] AS [LetterSentDate], 
     [Vw_ReciveLetter].[SentReadType] AS [SentReadType], 
     [Vw_ReciveLetter].[View_LetterReadType] AS [View_LetterReadType], 
-    [Vw_ReciveLetter].[LetterReciverFullName] AS [LetterReciverFullName]
+    [Vw_ReciveLetter].[LetterReciverFullName] AS [LetterReciverFullName], 
+    [Vw_ReciveLetter].[SentMessage] AS [SentMessage]
     FROM [dbo].[Vw_ReciveLetter] AS [Vw_ReciveLetter]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vw_ReciveNotes" EntityType="Self.Vw_ReciveNotes" store:Type="Views" store:Schema="dbo">
@@ -1263,7 +1266,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Sp_LetterCount" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_LetterCount_Result)">
-            <Parameter Name="SentUserID" Mode="In" Type="Int32" />
+          <Parameter Name="SentUserID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
@@ -1517,6 +1520,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="SentReadType" Type="Byte" />
           <NavigationProperty Name="Letter" Relationship="Office_Automation_DatabaseModel.FK_SentLetters_Letters" FromRole="SentLetter" ToRole="Letter" />
           <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_SentLetters_Users" FromRole="SentLetter" ToRole="User" />
+          <Property Name="SentMessage" Type="Byte" />
         </EntityType>
         <EntityType Name="Vw_Letters">
           <Key>
@@ -1669,6 +1673,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="SentReadType" Type="Byte" />
           <Property Name="View_LetterReadType" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="LetterReciverFullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="SentMessage" Type="Byte" />
         </EntityType>
         <EntityType Name="Note">
           <Key>
@@ -2218,6 +2223,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="SentLetters">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.SentLetter">
               <MappingFragment StoreEntitySet="SentLetters">
+                <ScalarProperty Name="SentMessage" ColumnName="SentMessage" />
                 <ScalarProperty Name="SentReadType" ColumnName="SentReadType" />
                 <ScalarProperty Name="SentUserID" ColumnName="SentUserID" />
                 <ScalarProperty Name="SentSendedLetterID" ColumnName="SentSendedLetterID" />
@@ -2264,6 +2270,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Vw_ReciveLetter">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_ReciveLetter">
               <MappingFragment StoreEntitySet="Vw_ReciveLetter">
+                <ScalarProperty Name="SentMessage" ColumnName="SentMessage" />
                 <ScalarProperty Name="LetterReciverFullName" ColumnName="LetterReciverFullName" />
                 <ScalarProperty Name="View_LetterReadType" ColumnName="View_LetterReadType" />
                 <ScalarProperty Name="SentReadType" ColumnName="SentReadType" />
