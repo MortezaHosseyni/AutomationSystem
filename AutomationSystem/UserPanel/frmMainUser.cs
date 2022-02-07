@@ -371,6 +371,7 @@ namespace AutomationSystem.UserPanel
 
                 newMessage.val_MessageTitle.Text = $"كاربر {PublicVariable.global_UserFristName} {PublicVariable.global_UserLastName} يك پيام جديد داريد!";
                 newMessage.val_MessageContext.Text = $"شما تعداد {queryCheckMessage.Count.ToString()} پيغام خوانده نشده داريد، در اسراع وقت مشاهده كنيد";
+                newMessage.letType = 1;
                 newMessage.ShowDialog();
 
                 lbl_AllRecivedMessages.Text = $"همه نامه‌هاي وارده ({queryCheckMessage.Count})";
@@ -386,6 +387,7 @@ namespace AutomationSystem.UserPanel
 
                 newMessage.val_MessageTitle.Text = $"كاربر {PublicVariable.global_UserFristName} {PublicVariable.global_UserLastName} يك ارجاع جديد داريد!";
                 newMessage.val_MessageContext.Text = $"شما تعداد {queryCheckMessage.Count.ToString()} پيغام مرجوعه خوانده نشده داريد، در اسراع وقت مطالعه كنيد";
+                newMessage.letType = 2;
                 newMessage.ShowDialog();
 
                 lbl_ShowGetReferenceLetters.Text = $"نامه‌هاي مرجوعه وارده ({queryCheckRefMessage.Count})";

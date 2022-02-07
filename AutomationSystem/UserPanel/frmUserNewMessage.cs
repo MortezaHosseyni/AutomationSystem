@@ -15,6 +15,7 @@ namespace AutomationSystem.UserPanel
     public partial class frmUserNewMessage : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        public byte letType { get; set; }
         public frmUserNewMessage()
         {
             InitializeComponent();
@@ -34,12 +35,15 @@ namespace AutomationSystem.UserPanel
 
         private void sentMessage()
         {
-            //Letter
-            db.Sp_UpdateSentMessage(PublicVariable.global_UserID);
+            if (letType == 1)//Letter
+            {
+                db.Sp_UpdateSentMessage(PublicVariable.global_UserID);
+            }
+            else if (letType == 2)//Reference
+            {
+                db.Sp_UpdateRefMessage(PublicVariable.global_UserID);
+            }
             db.SaveChanges();
-
-            //Reference
-
         }
     }
 }
