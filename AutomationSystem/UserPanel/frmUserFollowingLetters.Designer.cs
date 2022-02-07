@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserFollowingLetters));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
@@ -57,10 +57,6 @@
             this.col_AttachmentT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_LetterAnswerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsm_ArchiveLetter = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_ReadLetter = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_ReferenceLetter = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_ReplyLetter = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_RecivedLetters = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_ForcedType = new DevComponents.DotNetBar.LabelX();
             this.lbl_SecurityType = new DevComponents.DotNetBar.LabelX();
@@ -109,6 +105,7 @@
             this.rdb_LetterForceType_All = new System.Windows.Forms.RadioButton();
             this.lbl_Status = new DevComponents.DotNetBar.LabelX();
             this.pnl_SecurityType = new System.Windows.Forms.Panel();
+            this.tsm_CirculationLetter = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_FollowingLetters)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
@@ -183,14 +180,14 @@
             this.col_AttachmentT,
             this.col_LetterAnswerType});
             this.dgv_FollowingLetters.ContextMenuStrip = this.contextMenuStrip;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_FollowingLetters.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_FollowingLetters.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_FollowingLetters.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_FollowingLetters.Location = new System.Drawing.Point(3, 3);
             this.dgv_FollowingLetters.Name = "dgv_FollowingLetters";
@@ -282,8 +279,8 @@
             // col_LetterDownloadAttach
             // 
             this.col_LetterDownloadAttach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.col_LetterDownloadAttach.DefaultCellStyle = dataGridViewCellStyle1;
             this.col_LetterDownloadAttach.HeaderText = "دريافت پيوست";
             this.col_LetterDownloadAttach.Name = "col_LetterDownloadAttach";
             this.col_LetterDownloadAttach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -336,45 +333,10 @@
             // 
             this.contextMenuStrip.Font = new System.Drawing.Font("B Nazanin", 13F);
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_ArchiveLetter,
-            this.tsm_ReadLetter,
-            this.tsm_ReferenceLetter,
-            this.tsm_ReplyLetter});
+            this.tsm_CirculationLetter});
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(150, 124);
-            // 
-            // tsm_ArchiveLetter
-            // 
-            this.tsm_ArchiveLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tsm_ArchiveLetter.Image = global::AutomationSystem.Properties.Resources._10_ArchiveLetter;
-            this.tsm_ArchiveLetter.Name = "tsm_ArchiveLetter";
-            this.tsm_ArchiveLetter.Size = new System.Drawing.Size(149, 30);
-            this.tsm_ArchiveLetter.Text = "بايگاني نامه";
-            // 
-            // tsm_ReadLetter
-            // 
-            this.tsm_ReadLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tsm_ReadLetter.Image = global::AutomationSystem.Properties.Resources._11_ReadLetter;
-            this.tsm_ReadLetter.Name = "tsm_ReadLetter";
-            this.tsm_ReadLetter.Size = new System.Drawing.Size(149, 30);
-            this.tsm_ReadLetter.Text = "خواندن نامه";
-            // 
-            // tsm_ReferenceLetter
-            // 
-            this.tsm_ReferenceLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tsm_ReferenceLetter.Image = global::AutomationSystem.Properties.Resources._12_ReffrenceLetter;
-            this.tsm_ReferenceLetter.Name = "tsm_ReferenceLetter";
-            this.tsm_ReferenceLetter.Size = new System.Drawing.Size(149, 30);
-            this.tsm_ReferenceLetter.Text = "ارجاع نامه";
-            // 
-            // tsm_ReplyLetter
-            // 
-            this.tsm_ReplyLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tsm_ReplyLetter.Image = global::AutomationSystem.Properties.Resources._13_ReplyLetter;
-            this.tsm_ReplyLetter.Name = "tsm_ReplyLetter";
-            this.tsm_ReplyLetter.Size = new System.Drawing.Size(149, 30);
-            this.tsm_ReplyLetter.Text = "پاسخ به نامه";
+            this.contextMenuStrip.Size = new System.Drawing.Size(192, 56);
             // 
             // pnl_RecivedLetters
             // 
@@ -1019,6 +981,15 @@
             this.pnl_SecurityType.Size = new System.Drawing.Size(81, 120);
             this.pnl_SecurityType.TabIndex = 1;
             // 
+            // tsm_CirculationLetter
+            // 
+            this.tsm_CirculationLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsm_CirculationLetter.Image = global::AutomationSystem.Properties.Resources._14_Circulation;
+            this.tsm_CirculationLetter.Name = "tsm_CirculationLetter";
+            this.tsm_CirculationLetter.Size = new System.Drawing.Size(191, 30);
+            this.tsm_CirculationLetter.Text = "مشاهده گردش نامه";
+            this.tsm_CirculationLetter.Click += new System.EventHandler(this.tsm_CirculationLetter_Click);
+            // 
             // frmUserFollowingLetters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -1061,10 +1032,7 @@
         private DevComponents.DotNetBar.PanelEx pnl_Main;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_FollowingLetters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ArchiveLetter;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ReadLetter;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ReferenceLetter;
-        private System.Windows.Forms.ToolStripMenuItem tsm_ReplyLetter;
+        private System.Windows.Forms.ToolStripMenuItem tsm_CirculationLetter;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_RecivedLetters;
         private DevComponents.DotNetBar.LabelX lbl_ForcedType;
         private DevComponents.DotNetBar.LabelX lbl_SecurityType;

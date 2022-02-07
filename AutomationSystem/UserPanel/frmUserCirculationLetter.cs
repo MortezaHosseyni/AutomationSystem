@@ -15,6 +15,7 @@ namespace AutomationSystem.UserPanel
     public partial class frmUserCirculationLetter : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        public int getLetterID { get; set; }
         public frmUserCirculationLetter()
         {
             InitializeComponent();
@@ -22,9 +23,14 @@ namespace AutomationSystem.UserPanel
 
         private void frmUserCirculationLetter_Load(object sender, EventArgs e)
         {
-
+            circulationLetter();
         }
 
+        private void circulationLetter()
+        {
+
+        }
+         
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();

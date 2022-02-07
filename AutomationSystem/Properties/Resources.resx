@@ -121,40 +121,43 @@
   <data name="07-UserPicture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\07-UserPicture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="10-ArchiveLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\10-ArchiveLetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="03-JobsManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\03-JobsManager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="11-ReadLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\11-ReadLetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="09-EditIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\09-EditIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="02-Jobs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\02-Jobs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="12-ReffrenceLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\12-ReffrenceLetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="06-AddReminder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\06-AddReminder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="13-ReplyLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\13-ReplyLetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="01-Users" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\01-Users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="08-UserSignature" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\08-UserSignature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="11-ReadLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\11-ReadLetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="10-ArchiveLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\10-ArchiveLetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="04-AssignmentJob" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\04-AssignmentJob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="02-Jobs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\02-Jobs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="03-JobsManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\03-JobsManager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="05-SendMessage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\05-SendMessage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="13-ReplyLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\13-ReplyLetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="09-EditIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\09-EditIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="06-AddReminder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\06-AddReminder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="08-UserSignature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\08-UserSignature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="14-Circulation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\14-Circulation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

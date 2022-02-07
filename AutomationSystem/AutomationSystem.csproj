@@ -459,6 +459,7 @@
     <Content Include="Images\11-ReadLetter.png" />
     <Content Include="Images\12-ReffrenceLetter.png" />
     <Content Include="Images\13-ReplyLetter.png" />
+    <Content Include="Images\14-Circulation.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

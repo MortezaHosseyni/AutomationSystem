@@ -255,5 +255,18 @@ namespace AutomationSystem.UserPanel
         {
             ShowFollowingLetters(searchCondition());
         }
+
+        private void tsm_CirculationLetter_Click(object sender, EventArgs e)
+        {
+            int item = dgv_FollowingLetters.SelectedCells.Count;
+            if (item > 0)
+            {
+                frmUserCirculationLetter circulationLetter = new frmUserCirculationLetter();
+
+                circulationLetter.getLetterID = Convert.ToInt32(dgv_FollowingLetters.CurrentRow.Cells["col_LetterID"].Value); 
+                circulationLetter.lbl_CirculationLetterTitle.Text = $"گردش نامه باشماره {dgv_FollowingLetters.CurrentRow.Cells["col_LetterNo"].Value.ToString()} در مورخه {dgv_FollowingLetters.CurrentRow.Cells["col_LetterRecivedDate"].Value.ToString()}";
+                circulationLetter.ShowDialog();
+            }
+        }
     }
 }
