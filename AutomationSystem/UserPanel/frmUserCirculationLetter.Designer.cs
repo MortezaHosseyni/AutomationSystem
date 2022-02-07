@@ -66,9 +66,9 @@
             this.lbl_CirculationLetterTitle.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_CirculationLetterTitle.Font = new System.Drawing.Font("B Nazanin", 16.25F);
             this.lbl_CirculationLetterTitle.ForeColor = System.Drawing.Color.Red;
-            this.lbl_CirculationLetterTitle.Location = new System.Drawing.Point(12, 45);
+            this.lbl_CirculationLetterTitle.Location = new System.Drawing.Point(12, 12);
             this.lbl_CirculationLetterTitle.Name = "lbl_CirculationLetterTitle";
-            this.lbl_CirculationLetterTitle.Size = new System.Drawing.Size(567, 38);
+            this.lbl_CirculationLetterTitle.Size = new System.Drawing.Size(530, 38);
             this.lbl_CirculationLetterTitle.TabIndex = 0;
             this.lbl_CirculationLetterTitle.Text = "...";
             this.lbl_CirculationLetterTitle.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -84,7 +84,6 @@
             this.lbl_CirculationLetterContext.Name = "lbl_CirculationLetterContext";
             this.lbl_CirculationLetterContext.Size = new System.Drawing.Size(555, 546);
             this.lbl_CirculationLetterContext.TabIndex = 1;
-            this.lbl_CirculationLetterContext.Text = "...";
             this.lbl_CirculationLetterContext.TextLineAlignment = System.Drawing.StringAlignment.Near;
             this.lbl_CirculationLetterContext.WordWrap = true;
             // 
@@ -94,9 +93,9 @@
             this.pnl_CirculationLetter.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.pnl_CirculationLetter.Controls.Add(this.lbl_CirculationLetterContext);
             this.pnl_CirculationLetter.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_CirculationLetter.Location = new System.Drawing.Point(12, 89);
+            this.pnl_CirculationLetter.Location = new System.Drawing.Point(12, 56);
             this.pnl_CirculationLetter.Name = "pnl_CirculationLetter";
-            this.pnl_CirculationLetter.Size = new System.Drawing.Size(567, 556);
+            this.pnl_CirculationLetter.Size = new System.Drawing.Size(567, 589);
             // 
             // 
             // 

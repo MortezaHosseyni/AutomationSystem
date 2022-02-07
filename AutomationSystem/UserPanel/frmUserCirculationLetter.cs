@@ -28,7 +28,25 @@ namespace AutomationSystem.UserPanel
 
         private void circulationLetter()
         {
+            try
+            {
+                var queryCirculation = (from RR in db.Vw_ReciveReference where RR.RefLetterID == this.getLetterID orderby RR.RefLevelNumber select RR).ToList();
+                if (queryCirculation.Count > 0)
+                {
+                    int counter = 0;
+                    for (int i = 0; i <= queryCirculation.Count - 1; i++)
+                    {
+                        counter++;
+                        lbl_CirculationLetterContext.Text += $"{counter}. نامه شما توسط {queryCirculation[i].RefSender_FullName} به {queryCirculation[i].RefReciver_FullName} در مورخه {queryCirculation[i].RefDate} ارجاع داده شد. \nپاراف نامه: {queryCirculation[i].RefCaption} \n\n";
+                    }
+                }
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("خطايي در دريافت اطلاعات رخ داد","پايگاه داده");
+                return;
+            }
         }
          
         private void btn_Exit_Click(object sender, EventArgs e)
