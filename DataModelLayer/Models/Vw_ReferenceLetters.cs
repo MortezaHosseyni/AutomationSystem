@@ -25,5 +25,6 @@ namespace DataModelLayer.Models
         public string View_RefReadType { get; set; }
         public string RefReciver_FullName { get; set; }
         public string RefSender_FullName { get; set; }
+        public Nullable<byte> RefMessage { get; set; }
     }
 }

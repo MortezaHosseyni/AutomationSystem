@@ -95,6 +95,7 @@
           <Property Name="RefReadType" Type="int" />
           <Property Name="RefCaption" Type="varchar" MaxLength="500" />
           <Property Name="RefLevelNumber" Type="int" />
+          <Property Name="RefMessage" Type="tinyint" />
         </EntityType>
         <EntityType Name="Reminder">
           <Key>
@@ -420,6 +421,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReciveReference'
           <Property Name="AttachFileData" Type="varbinary(max)" />
           <Property Name="AttachFileName" Type="varchar" MaxLength="500" />
           <Property Name="AttachFileSize" Type="int" />
+          <Property Name="RefMessage" Type="tinyint" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReferenceLetters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -443,6 +445,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ReferenceLetters
           <Property Name="View_RefReadType" Type="varchar" MaxLength="11" />
           <Property Name="RefReciver_FullName" Type="varchar" MaxLength="201" Nullable="false" />
           <Property Name="RefSender_FullName" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="RefMessage" Type="tinyint" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Reminder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -965,7 +968,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_ReciveReference].[View_LetterType] AS [View_LetterType], 
     [Vw_ReciveReference].[AttachFileData] AS [AttachFileData], 
     [Vw_ReciveReference].[AttachFileName] AS [AttachFileName], 
-    [Vw_ReciveReference].[AttachFileSize] AS [AttachFileSize]
+    [Vw_ReciveReference].[AttachFileSize] AS [AttachFileSize], 
+    [Vw_ReciveReference].[RefMessage] AS [RefMessage]
     FROM [dbo].[Vw_ReciveReference] AS [Vw_ReciveReference]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vw_ReferenceLetters" EntityType="Self.Vw_ReferenceLetters" store:Type="Views" store:Schema="dbo">
@@ -980,7 +984,8 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_ReferenceLetters].[RefID] AS [RefID], 
     [Vw_ReferenceLetters].[View_RefReadType] AS [View_RefReadType], 
     [Vw_ReferenceLetters].[RefReciver_FullName] AS [RefReciver_FullName], 
-    [Vw_ReferenceLetters].[RefSender_FullName] AS [RefSender_FullName]
+    [Vw_ReferenceLetters].[RefSender_FullName] AS [RefSender_FullName], 
+    [Vw_ReferenceLetters].[RefMessage] AS [RefMessage]
     FROM [dbo].[Vw_ReferenceLetters] AS [Vw_ReferenceLetters]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vw_Reminder" EntityType="Self.Vw_Reminder" store:Type="Views" store:Schema="dbo">
@@ -1272,7 +1277,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="SentUserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Sp_UpdateSentMessage">
-            <Parameter Name="SentUserID" Mode="In" Type="Int32" />
+          <Parameter Name="SentUserID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
@@ -1852,6 +1857,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="Letter" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Letters" FromRole="ReferenceLetter" ToRole="Letter" />
           <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Reciver" FromRole="ReferenceLetter" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender" FromRole="ReferenceLetter" ToRole="User" />
+          <Property Name="RefMessage" Type="Byte" />
         </EntityType>
         <Association Name="FK_ReferenceLetters_Letters">
           <End Type="Office_Automation_DatabaseModel.Letter" Role="Letter" Multiplicity="1" />
@@ -1939,6 +1945,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="AttachFileData" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="AttachFileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="AttachFileSize" Type="Int32" />
+          <Property Name="RefMessage" Type="Byte" />
         </EntityType>
         <EntityType Name="Vw_ReferenceLetters">
           <Key>
@@ -1960,6 +1967,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="View_RefReadType" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="RefReciver_FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
           <Property Name="RefSender_FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="RefMessage" Type="Byte" />
         </EntityType>
         <EntityType Name="Vw_Users">
           <Key>
@@ -2409,6 +2417,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="ReferenceLetters">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.ReferenceLetter">
               <MappingFragment StoreEntitySet="ReferenceLetters">
+                <ScalarProperty Name="RefMessage" ColumnName="RefMessage" />
                 <ScalarProperty Name="RefLevelNumber" ColumnName="RefLevelNumber" />
                 <ScalarProperty Name="RefCaption" ColumnName="RefCaption" />
                 <ScalarProperty Name="RefReadType" ColumnName="RefReadType" />
@@ -2423,6 +2432,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Vw_ReciveReference">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_ReciveReference">
               <MappingFragment StoreEntitySet="Vw_ReciveReference">
+                <ScalarProperty Name="RefMessage" ColumnName="RefMessage" />
                 <ScalarProperty Name="AttachFileSize" ColumnName="AttachFileSize" />
                 <ScalarProperty Name="AttachFileName" ColumnName="AttachFileName" />
                 <ScalarProperty Name="AttachFileData" ColumnName="AttachFileData" />
@@ -2470,6 +2480,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Vw_ReferenceLetters">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_ReferenceLetters">
               <MappingFragment StoreEntitySet="Vw_ReferenceLetters">
+                <ScalarProperty Name="RefMessage" ColumnName="RefMessage" />
                 <ScalarProperty Name="RefSender_FullName" ColumnName="RefSender_FullName" />
                 <ScalarProperty Name="RefReciver_FullName" ColumnName="RefReciver_FullName" />
                 <ScalarProperty Name="View_RefReadType" ColumnName="View_RefReadType" />

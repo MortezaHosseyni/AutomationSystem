@@ -22,6 +22,7 @@ namespace DataModelLayer.Models
         public Nullable<int> RefReadType { get; set; }
         public string RefCaption { get; set; }
         public Nullable<int> RefLevelNumber { get; set; }
+        public Nullable<byte> RefMessage { get; set; }
     
         public virtual Letter Letter { get; set; }
         public virtual User User { get; set; }

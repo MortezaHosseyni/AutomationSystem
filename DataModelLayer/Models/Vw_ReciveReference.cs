@@ -55,5 +55,6 @@ namespace DataModelLayer.Models
         public byte[] AttachFileData { get; set; }
         public string AttachFileName { get; set; }
         public Nullable<int> AttachFileSize { get; set; }
+        public Nullable<byte> RefMessage { get; set; }
     }
 }
