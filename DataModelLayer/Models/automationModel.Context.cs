@@ -245,5 +245,14 @@ namespace DataModelLayer.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_UpdateSentMessage", sentUserIDParameter);
         }
+    
+        public virtual int Sp_UpdateRefMessage(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_UpdateRefMessage", userIDParameter);
+        }
     }
 }
