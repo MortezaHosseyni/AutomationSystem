@@ -355,5 +355,10 @@ namespace AutomationSystem.UserPanel
             db.Sp_Update_ExitDate(PublicVariable.global_UserID, PublicVariable.todayDate + "-" + string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString())));
             db.SaveChanges();
         }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

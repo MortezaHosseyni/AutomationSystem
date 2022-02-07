@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.exb_RightMenu = new DevComponents.DotNetBar.ExplorerBar();
             this.ebg_Dashboard = new DevComponents.DotNetBar.ExplorerBarGroupItem();
             this.lbl_AllRecivedMessages = new DevComponents.DotNetBar.LabelItem();
@@ -74,6 +75,7 @@
             this.val_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -832,6 +834,11 @@
             this.lbl_Title.TabIndex = 0;
             this.lbl_Title.Text = "سيستم اتوماسيون اداري";
             // 
+            // timer
+            // 
+            this.timer.Interval = 5000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // frmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -904,5 +911,6 @@
         private DevComponents.DotNetBar.LabelItem lbl_Draft;
         private DevComponents.DotNetBar.LabelItem lbl_NewsAndAnnouncement;
         private DevComponents.DotNetBar.LabelItem lbl_ShowGetReferenceLetters;
+        private System.Windows.Forms.Timer timer;
     }
 }
