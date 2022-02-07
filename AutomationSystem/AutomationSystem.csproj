@@ -78,6 +78,12 @@
     <Compile Include="AdminPanel\frmAddNewsAndAnnouncement.Designer.cs">
       <DependentUpon>frmAddNewsAndAnnouncement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmAddSystemPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAddSystemPart.Designer.cs">
+      <DependentUpon>frmAddSystemPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </Compile>
     <EmbeddedResource Include="AdminPanel\frmAddNewsAndAnnouncement.resx">
       <DependentUpon>frmAddNewsAndAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmAddSystemPart.resx">
+      <DependentUpon>frmAddSystemPart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
