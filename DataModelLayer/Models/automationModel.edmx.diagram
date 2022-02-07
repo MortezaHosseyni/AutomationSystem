@@ -45,6 +45,8 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_ReciveReference" Width="1.5" PointX="18.625" PointY="6.5" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_ReferenceLetters" Width="1.5" PointX="20.25" PointY="6.5" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Users" Width="1.5" PointX="0.75" PointY="6.5" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.SystemPart" Width="1.5" PointX="20.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_SystemParts" Width="1.5" PointX="21.875" PointY="6.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

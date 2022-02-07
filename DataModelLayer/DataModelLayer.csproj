@@ -108,6 +108,9 @@
     <Compile Include="Models\Sp_ShowAllUserInfo_UserForm_Up_Result.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SystemPart.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
@@ -145,6 +148,9 @@
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vw_SentNote.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vw_SystemParts.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vw_UserLog.cs">

@@ -127,6 +127,15 @@
           <Property Name="SentNoteSendedNoteID" Type="int" Nullable="false" />
           <Property Name="SentNoteUserID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="SystemParts">
+          <Key>
+            <PropertyRef Name="SPartID" />
+          </Key>
+          <Property Name="SPartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SPartName" Type="varchar" MaxLength="150" />
+          <Property Name="SPartDetail" Type="varchar" MaxLength="250" />
+          <Property Name="SPartLevel" Type="int" />
+        </EntityType>
         <EntityType Name="UserLog">
           <Key>
             <PropertyRef Name="LogID" />
@@ -487,6 +496,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_SentNote' does n
           <Property Name="ReciverFullName" Type="varchar" MaxLength="201" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_SystemParts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_SystemParts">
+          <Key>
+            <PropertyRef Name="SPartID" />
+          </Key>
+          <Property Name="SPartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SPartName" Type="varchar" MaxLength="150" />
+          <Property Name="SPartDetail" Type="varchar" MaxLength="250" />
+          <Property Name="SPartLevel" Type="int" />
+          <Property Name="SPartChildCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_UserLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_UserLog">
           <Key>
@@ -788,6 +809,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentLetters" EntityType="Self.SentLetters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentNotes" EntityType="Self.SentNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemParts" EntityType="Self.SystemParts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vw_AsignmentJobs" EntityType="Self.Vw_AsignmentJobs" store:Type="Views" store:Schema="dbo">
@@ -1012,6 +1034,15 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_SentNote].[UserLastName] AS [UserLastName], 
     [Vw_SentNote].[ReciverFullName] AS [ReciverFullName]
     FROM [dbo].[Vw_SentNote] AS [Vw_SentNote]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_SystemParts" EntityType="Self.Vw_SystemParts" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_SystemParts].[SPartID] AS [SPartID], 
+    [Vw_SystemParts].[SPartName] AS [SPartName], 
+    [Vw_SystemParts].[SPartDetail] AS [SPartDetail], 
+    [Vw_SystemParts].[SPartLevel] AS [SPartLevel], 
+    [Vw_SystemParts].[SPartChildCount] AS [SPartChildCount]
+    FROM [dbo].[Vw_SystemParts] AS [Vw_SystemParts]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Vw_UserLog" EntityType="Self.Vw_UserLog" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1283,8 +1314,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="SentUserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Sp_UpdateRefMessage">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="SystemParts" EntityType="Office_Automation_DatabaseModel.SystemPart" />
+          <EntitySet Name="Vw_SystemParts" EntityType="Office_Automation_DatabaseModel.Vw_SystemParts" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -2028,6 +2061,25 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Type="Int32" Name="SentLettersCount" Nullable="true" />
           <Property Type="Int32" Name="ReciveLettersCount" Nullable="true" />
         </ComplexType>
+        <EntityType Name="SystemPart">
+          <Key>
+            <PropertyRef Name="SPartID" />
+          </Key>
+          <Property Name="SPartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SPartName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SPartDetail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SPartLevel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vw_SystemParts">
+          <Key>
+            <PropertyRef Name="SPartID" />
+          </Key>
+          <Property Name="SPartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SPartName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SPartDetail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SPartLevel" Type="Int32" />
+          <Property Name="SPartChildCount" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2556,6 +2608,27 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Sp_UpdateSentMessage" FunctionName="Office_Automation_DatabaseModel.Store.Sp_UpdateSentMessage" />
           <FunctionImportMapping FunctionImportName="Sp_UpdateRefMessage" FunctionName="Office_Automation_DatabaseModel.Store.Sp_UpdateRefMessage" />
+          <EntitySetMapping Name="SystemParts">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.SystemPart">
+              <MappingFragment StoreEntitySet="SystemParts">
+                <ScalarProperty Name="SPartLevel" ColumnName="SPartLevel" />
+                <ScalarProperty Name="SPartDetail" ColumnName="SPartDetail" />
+                <ScalarProperty Name="SPartName" ColumnName="SPartName" />
+                <ScalarProperty Name="SPartID" ColumnName="SPartID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_SystemParts">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_SystemParts">
+              <MappingFragment StoreEntitySet="Vw_SystemParts">
+                <ScalarProperty Name="SPartChildCount" ColumnName="SPartChildCount" />
+                <ScalarProperty Name="SPartLevel" ColumnName="SPartLevel" />
+                <ScalarProperty Name="SPartDetail" ColumnName="SPartDetail" />
+                <ScalarProperty Name="SPartName" ColumnName="SPartName" />
+                <ScalarProperty Name="SPartID" ColumnName="SPartID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
