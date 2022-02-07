@@ -369,7 +369,7 @@ namespace AutomationSystem.UserPanel
                 frmUserNewMessage newMessage = new frmUserNewMessage();
 
                 newMessage.val_MessageTitle.Text = $"كاربر {PublicVariable.global_UserFristName} {PublicVariable.global_UserLastName} يك پيام جديد داريد!";
-                newMessage.val_MessageContext.Text = $"شما تعداد {queryCheckMessage.Count.ToString()} پيغام دريافت كرديد، در اسراع وقت مشاهده كنيد";
+                newMessage.val_MessageContext.Text = $"شما تعداد {queryCheckMessage.Count.ToString()} پيغام خوانده نشده داريد، در اسراع وقت مشاهده كنيد";
                 newMessage.ShowDialog();
 
                 lbl_AllRecivedMessages.Text = $"همه نامه‌هاي وارده ({queryCheckMessage.Count})";

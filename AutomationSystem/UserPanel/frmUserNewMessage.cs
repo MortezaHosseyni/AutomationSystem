@@ -28,13 +28,14 @@ namespace AutomationSystem.UserPanel
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             sentMessage();
+
+            this.Close();
         }
 
         private void sentMessage()
         {
-            
-
-            this.Close();
+            db.Sp_UpdateSentMessage(PublicVariable.global_UserID);
+            db.SaveChanges();
         }
     }
 }
