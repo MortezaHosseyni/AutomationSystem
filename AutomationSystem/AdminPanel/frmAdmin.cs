@@ -42,6 +42,11 @@ namespace AutomationSystem.AdminPanel
             //ActiveUsers
             var queryActiveUsers = (from U in db.Users where U.UserActivity == 1 select U).ToList();
             lbl_AllActiveUsersValue.Text = queryActiveUsers.Count.ToString();
+
+            //LastLogin
+            var queryLastLogin = db.Database.SqlQuery<UserLog>("SELECT TOP 1 * FROM UserLog WHERE LogUserID = 1 AND LogUserExitDate IS NOT NULL ORDER BY LogID DESC");
+            var resultLastLogin = queryLastLogin.ToList();
+            lbl_LastLoginValue.Text = resultLastLogin[0].LogUserEnterDate;
         }
         private void Reminder(string searchRemind)
         {
