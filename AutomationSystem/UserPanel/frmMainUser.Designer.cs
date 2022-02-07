@@ -836,7 +836,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 5000;
+            this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // frmMainUser

@@ -177,6 +177,7 @@ namespace AutomationSystem.UserPanel
                                     RL.RefDate = PublicVariable.todayDate;
                                     RL.RefReadType = 1;
                                     RL.RefCaption = txt_ReferenceCaption.Text.Trim();
+                                    RL.RefMessage = 1;
 
                                     db.ReferenceLetters.Add(RL);
                                 }
@@ -212,6 +213,7 @@ namespace AutomationSystem.UserPanel
                                 SL.SentSendedLetterID = this.GetLetterID;
                                 SL.SentUserID = Convert.ToInt32(row.Cells["col_UserID"].Value);
                                 SL.SentReadType = 1;
+                                SL.SentMessage = 1;
 
                                 db.SentLetters.Add(SL);
                             }
