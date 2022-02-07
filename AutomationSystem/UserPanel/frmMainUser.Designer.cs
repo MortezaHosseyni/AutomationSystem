@@ -76,6 +76,7 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbl_News = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -468,6 +469,7 @@
             this.pnl_UpMenu.Controls.Add(this.lbl_Gender);
             this.pnl_UpMenu.Controls.Add(this.val_BrithDate);
             this.pnl_UpMenu.Controls.Add(this.lbl_BrithDate);
+            this.pnl_UpMenu.Controls.Add(this.lbl_News);
             this.pnl_UpMenu.Controls.Add(this.val_AllSendedMessages);
             this.pnl_UpMenu.Controls.Add(this.val_AllReciveMessages);
             this.pnl_UpMenu.Controls.Add(this.val_PersonalCode);
@@ -839,6 +841,24 @@
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lbl_News
+            // 
+            this.lbl_News.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_News.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_News.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lbl_News.ForeColor = System.Drawing.Color.Red;
+            this.lbl_News.Location = new System.Drawing.Point(162, 12);
+            this.lbl_News.Name = "lbl_News";
+            this.lbl_News.Size = new System.Drawing.Size(80, 28);
+            this.lbl_News.Symbol = "";
+            this.lbl_News.TabIndex = 1;
+            this.lbl_News.Text = "...";
+            this.lbl_News.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.lbl_News.Visible = false;
+            // 
             // frmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -912,5 +932,6 @@
         private DevComponents.DotNetBar.LabelItem lbl_NewsAndAnnouncement;
         private DevComponents.DotNetBar.LabelItem lbl_ShowGetReferenceLetters;
         private System.Windows.Forms.Timer timer;
+        private DevComponents.DotNetBar.LabelX lbl_News;
     }
 }

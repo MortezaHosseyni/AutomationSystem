@@ -393,6 +393,15 @@ namespace AutomationSystem.UserPanel
                 lbl_ShowGetReferenceLetters.Text = $"نامه‌هاي مرجوعه وارده ({queryCheckRefMessage.Count})";
             }
 
+            //News Get check
+            var queryGetNews = (from N in db.News where N.NewsDate == PublicVariable.todayDate select N).ToList();
+            if (queryGetNews.Count > 0)
+            {
+                lbl_News.Text = queryGetNews.Count.ToString();
+                lbl_NewsAndAnnouncement.Text = $"اخبار و اطلاعيه‌ها ({queryGetNews.Count})";
+                lbl_News.Visible = true;
+            }
+
             timer.Start();
         }
     }
