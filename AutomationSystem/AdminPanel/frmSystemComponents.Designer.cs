@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
-            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.pnl_ComponentsList = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.btn_AddComponent = new DevComponents.DotNetBar.ButtonX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.btn_AddComponent = new DevComponents.DotNetBar.ButtonX();
+            this.pnl_ComponentsList = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.trv_SystemComponents = new System.Windows.Forms.TreeView();
+            this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main.SuspendLayout();
             this.pnl_ComponentsList.SuspendLayout();
             this.SuspendLayout();
@@ -60,19 +60,32 @@
             this.pnl_Main.Style.GradientAngle = 90;
             this.pnl_Main.TabIndex = 0;
             // 
-            // lbl_Title
+            // btn_Exit
             // 
+            this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Exit.Location = new System.Drawing.Point(102, 488);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 10, 10);
+            this.btn_Exit.Size = new System.Drawing.Size(155, 41);
+            this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Exit.Symbol = "";
+            this.btn_Exit.TabIndex = 2;
+            this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // btn_AddComponent
             // 
-            // 
-            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(187, 3);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(148, 56);
-            this.lbl_Title.Symbol = "";
-            this.lbl_Title.TabIndex = 0;
-            this.lbl_Title.Text = "اجزاء سيستم";
+            this.btn_AddComponent.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_AddComponent.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_AddComponent.Location = new System.Drawing.Point(263, 488);
+            this.btn_AddComponent.Name = "btn_AddComponent";
+            this.btn_AddComponent.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 10, 10);
+            this.btn_AddComponent.Size = new System.Drawing.Size(155, 41);
+            this.btn_AddComponent.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_AddComponent.Symbol = "";
+            this.btn_AddComponent.TabIndex = 2;
+            this.btn_AddComponent.Text = "تعريف اجزاء";
             // 
             // pnl_ComponentsList
             // 
@@ -114,38 +127,27 @@
             this.pnl_ComponentsList.TabIndex = 1;
             this.pnl_ComponentsList.Text = "ليست اجزاء سيستم";
             // 
-            // btn_AddComponent
-            // 
-            this.btn_AddComponent.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_AddComponent.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_AddComponent.Location = new System.Drawing.Point(263, 488);
-            this.btn_AddComponent.Name = "btn_AddComponent";
-            this.btn_AddComponent.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 10, 10);
-            this.btn_AddComponent.Size = new System.Drawing.Size(155, 41);
-            this.btn_AddComponent.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_AddComponent.Symbol = "";
-            this.btn_AddComponent.TabIndex = 2;
-            this.btn_AddComponent.Text = "تعريف اجزاء";
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(102, 488);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 10, 10);
-            this.btn_Exit.Size = new System.Drawing.Size(155, 41);
-            this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_Exit.Symbol = "";
-            this.btn_Exit.TabIndex = 2;
-            this.btn_Exit.Text = "خروج";
-            // 
             // trv_SystemComponents
             // 
             this.trv_SystemComponents.Location = new System.Drawing.Point(3, 3);
             this.trv_SystemComponents.Name = "trv_SystemComponents";
+            this.trv_SystemComponents.RightToLeftLayout = true;
             this.trv_SystemComponents.Size = new System.Drawing.Size(481, 374);
             this.trv_SystemComponents.TabIndex = 0;
+            // 
+            // lbl_Title
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.lbl_Title.Location = new System.Drawing.Point(182, 3);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(148, 56);
+            this.lbl_Title.Symbol = "";
+            this.lbl_Title.TabIndex = 0;
+            this.lbl_Title.Text = "اجزاء سيستم";
             // 
             // frmSystemComponents
             // 
@@ -159,6 +161,8 @@
             this.Name = "frmSystemComponents";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Activated += new System.EventHandler(this.frmSystemComponents_Activated);
+            this.Load += new System.EventHandler(this.frmSystemComponents_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_ComponentsList.ResumeLayout(false);
             this.ResumeLayout(false);

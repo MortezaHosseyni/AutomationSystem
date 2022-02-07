@@ -183,5 +183,11 @@ namespace AutomationSystem.AdminPanel
             frmAddNewsAndAnnouncement newsAndAnnouncement = new frmAddNewsAndAnnouncement();
             newsAndAnnouncement.ShowDialog();
         }
+
+        private void btn_SystemComponents_Click(object sender, EventArgs e)
+        {
+            frmSystemComponents systemParts = new frmSystemComponents();
+            systemParts.ShowDialog();
+        }
     }
 }
