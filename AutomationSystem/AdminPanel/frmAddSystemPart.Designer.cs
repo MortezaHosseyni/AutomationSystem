@@ -132,7 +132,7 @@
             this.txt_SPartDetail.PreventEnterBeep = true;
             this.txt_SPartDetail.Size = new System.Drawing.Size(396, 137);
             this.txt_SPartDetail.TabIndex = 2;
-            this.txt_SPartDetail.WatermarkText = "توضيحاتي درمورد اجزاء...";
+            this.txt_SPartDetail.WatermarkText = "توضيحاتي درمورد اجزاء (اختياري)...";
             // 
             // btn_Save
             // 
@@ -146,6 +146,7 @@
             this.btn_Save.Symbol = "";
             this.btn_Save.TabIndex = 3;
             this.btn_Save.Text = "ثبت";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Exit
             // 
@@ -159,6 +160,7 @@
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 3;
             this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // frmAddSystemPart
             // 

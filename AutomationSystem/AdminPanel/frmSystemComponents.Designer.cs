@@ -86,6 +86,7 @@
             this.btn_AddComponent.Symbol = "";
             this.btn_AddComponent.TabIndex = 2;
             this.btn_AddComponent.Text = "تعريف اجزاء";
+            this.btn_AddComponent.Click += new System.EventHandler(this.btn_AddComponent_Click);
             // 
             // pnl_ComponentsList
             // 

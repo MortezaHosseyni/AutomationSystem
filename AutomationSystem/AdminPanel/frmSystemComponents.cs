@@ -69,5 +69,17 @@ namespace AutomationSystem.AdminPanel
                 }
             }
         }
+
+        private void btn_AddComponent_Click(object sender, EventArgs e)
+        {
+            if (trv_SystemComponents.SelectedNode == null)
+            {
+                MessageBox.Show("لطفا يكي از اجزاء را انتخاب كنيد","افزودن اجزاء");
+                return;
+            }
+            frmAddSystemPart addSystemPart = new frmAddSystemPart();
+            addSystemPart.getSPartID = Convert.ToInt32(trv_SystemComponents.SelectedNode.Tag);
+            addSystemPart.ShowDialog();
+        }
     }
 }
