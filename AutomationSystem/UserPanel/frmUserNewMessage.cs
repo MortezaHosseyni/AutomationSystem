@@ -34,8 +34,12 @@ namespace AutomationSystem.UserPanel
 
         private void sentMessage()
         {
+            //Letter
             db.Sp_UpdateSentMessage(PublicVariable.global_UserID);
             db.SaveChanges();
+
+            //Reference
+
         }
     }
 }

@@ -361,6 +361,7 @@ namespace AutomationSystem.UserPanel
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            //Letters Message check
             var queryCheckMessage = (from RR in db.Vw_ReciveLetter where RR.SentUserID == PublicVariable.global_UserID where RR.SentMessage == 1 select RR).ToList();
             if (queryCheckMessage.Count > 0)
             {
@@ -374,6 +375,22 @@ namespace AutomationSystem.UserPanel
 
                 lbl_AllRecivedMessages.Text = $"همه نامه‌هاي وارده ({queryCheckMessage.Count})";
             }
+
+            //Reference Message check
+            var queryCheckRefMessage = (from RRe in db.Vw_ReciveReference where RRe.RefReciverUserID == PublicVariable.global_UserID where RRe.RefMessage == 1 select RRe).ToList();
+            if (queryCheckRefMessage.Count > 0)
+            {
+                timer.Stop();
+
+                frmUserNewMessage newMessage = new frmUserNewMessage();
+
+                newMessage.val_MessageTitle.Text = $"كاربر {PublicVariable.global_UserFristName} {PublicVariable.global_UserLastName} يك ارجاع جديد داريد!";
+                newMessage.val_MessageContext.Text = $"شما تعداد {queryCheckMessage.Count.ToString()} پيغام مرجوعه خوانده نشده داريد، در اسراع وقت مطالعه كنيد";
+                newMessage.ShowDialog();
+
+                lbl_ShowGetReferenceLetters.Text = $"نامه‌هاي مرجوعه وارده ({queryCheckRefMessage.Count})";
+            }
+
             timer.Start();
         }
     }
