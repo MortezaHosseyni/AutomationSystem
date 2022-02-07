@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
-            this.val_MessageTittle = new DevComponents.DotNetBar.LabelX();
+            this.val_MessageTitle = new DevComponents.DotNetBar.LabelX();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
             this.val_MessageContext = new DevComponents.DotNetBar.LabelX();
             this.pic_Announce = new System.Windows.Forms.PictureBox();
@@ -44,7 +44,7 @@
             this.pnl_Main.Controls.Add(this.pic_Announce);
             this.pnl_Main.Controls.Add(this.val_MessageContext);
             this.pnl_Main.Controls.Add(this.btn_Exit);
-            this.pnl_Main.Controls.Add(this.val_MessageTittle);
+            this.pnl_Main.Controls.Add(this.val_MessageTitle);
             this.pnl_Main.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
@@ -59,20 +59,20 @@
             this.pnl_Main.Style.GradientAngle = 90;
             this.pnl_Main.TabIndex = 0;
             // 
-            // val_MessageTittle
+            // val_MessageTitle
             // 
             // 
             // 
             // 
-            this.val_MessageTittle.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.val_MessageTittle.Font = new System.Drawing.Font("B Nazanin", 15.25F);
-            this.val_MessageTittle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.val_MessageTittle.Location = new System.Drawing.Point(12, 12);
-            this.val_MessageTittle.Name = "val_MessageTittle";
-            this.val_MessageTittle.Size = new System.Drawing.Size(682, 34);
-            this.val_MessageTittle.TabIndex = 0;
-            this.val_MessageTittle.Text = "...";
-            this.val_MessageTittle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.val_MessageTitle.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.val_MessageTitle.Font = new System.Drawing.Font("B Nazanin", 18.25F);
+            this.val_MessageTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.val_MessageTitle.Location = new System.Drawing.Point(12, 12);
+            this.val_MessageTitle.Name = "val_MessageTitle";
+            this.val_MessageTitle.Size = new System.Drawing.Size(682, 34);
+            this.val_MessageTitle.TabIndex = 0;
+            this.val_MessageTitle.Text = "...";
+            this.val_MessageTitle.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // btn_Exit
             // 
@@ -84,6 +84,7 @@
             this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 1;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // val_MessageContext
             // 
@@ -91,6 +92,7 @@
             // 
             // 
             this.val_MessageContext.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.val_MessageContext.Font = new System.Drawing.Font("B Nazanin", 16.25F);
             this.val_MessageContext.Location = new System.Drawing.Point(132, 52);
             this.val_MessageContext.Name = "val_MessageContext";
             this.val_MessageContext.Size = new System.Drawing.Size(606, 366);
@@ -122,6 +124,7 @@
             this.Name = "frmUserNewMessage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmUserNewMessage_Load);
             this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Announce)).EndInit();
             this.ResumeLayout(false);
@@ -131,9 +134,9 @@
         #endregion
 
         private DevComponents.DotNetBar.PanelEx pnl_Main;
-        private DevComponents.DotNetBar.LabelX val_MessageTittle;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
-        private DevComponents.DotNetBar.LabelX val_MessageContext;
         private System.Windows.Forms.PictureBox pic_Announce;
+        public DevComponents.DotNetBar.LabelX val_MessageTitle;
+        public DevComponents.DotNetBar.LabelX val_MessageContext;
     }
 }

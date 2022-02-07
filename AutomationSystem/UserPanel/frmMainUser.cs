@@ -52,6 +52,9 @@ namespace AutomationSystem.UserPanel
             userReminderForm.Show();
             userReminderForm.MdiParent = this;
             userReminderForm.TopMost = true;
+
+            timer.Start();
+            timer_Tick(sender, e);
         }
 
         private void ShowUserInfo()
@@ -358,7 +361,20 @@ namespace AutomationSystem.UserPanel
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            var queryCheckMessage = (from RR in db.Vw_ReciveLetter where RR.SentUserID == PublicVariable.global_UserID where RR.SentMessage == 1 select RR).ToList();
+            if (queryCheckMessage.Count > 0)
+            {
+                timer.Stop();
 
+                frmUserNewMessage newMessage = new frmUserNewMessage();
+
+                newMessage.val_MessageTitle.Text = $"كاربر {PublicVariable.global_UserFristName} {PublicVariable.global_UserLastName} يك پيام جديد داريد!";
+                newMessage.val_MessageContext.Text = $"شما تعداد {queryCheckMessage.Count.ToString()} پيغام دريافت كرديد، در اسراع وقت مشاهده كنيد";
+                newMessage.ShowDialog();
+
+                lbl_AllRecivedMessages.Text = $"همه نامه‌هاي وارده ({queryCheckMessage.Count})";
+            }
+            timer.Start();
         }
     }
 }

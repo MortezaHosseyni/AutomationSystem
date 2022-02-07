@@ -7,14 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataModelLayer.Models;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.UserPanel
 {
     public partial class frmUserNewMessage : Form
     {
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
         public frmUserNewMessage()
         {
             InitializeComponent();
+        }
+
+        private void frmUserNewMessage_Load(object sender, EventArgs e)
+        {
+            sentMessage();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            sentMessage();
+        }
+
+        private void sentMessage()
+        {
+            
+
+            this.Close();
         }
     }
 }
