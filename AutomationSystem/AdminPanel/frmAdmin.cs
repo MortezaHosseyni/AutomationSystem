@@ -46,7 +46,18 @@ namespace AutomationSystem.AdminPanel
             //LastLogin
             var queryLastLogin = db.Database.SqlQuery<UserLog>("SELECT TOP 1 * FROM UserLog WHERE LogUserID = 1 AND LogUserExitDate IS NOT NULL ORDER BY LogID DESC");
             var resultLastLogin = queryLastLogin.ToList();
-            lbl_LastLoginValue.Text = resultLastLogin[0].LogUserEnterDate;
+            if (resultLastLogin.Count > 0)
+            {
+                lbl_LastLoginValue.Text = resultLastLogin[0].LogUserEnterDate;
+            }
+
+            //OnlineUsers
+            var queryOnlineUsers = db.Database.SqlQuery<UserLog>($"SELECT DISTINCT LogUserID, 1 AS LogID, '1' AS LogUserPcName, '1' AS LogUserIPAddress, '1' AS LogUserEnterDate, '1' AS LogUserExitDate FROM UserLog WHERE LogUserExitDate IS NULL AND LEFT(LogUserEnterDate, 10) = '{PublicVariable.todayDate}'");
+            var resultOnlineUsers = queryOnlineUsers.ToList();
+            if (resultOnlineUsers.Count > 0)
+            {
+                lbl_OnlineUsersValue.Text = resultOnlineUsers.Count.ToString();
+            }
         }
         private void Reminder(string searchRemind)
         {
