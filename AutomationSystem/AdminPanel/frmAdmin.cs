@@ -38,6 +38,10 @@ namespace AutomationSystem.AdminPanel
             IPHostEntry ipe = Dns.GetHostByName(pcName);
             IPAddress[] ipAdresses = ipe.AddressList;
             lbl_YourIPValue.Text = ipAdresses[0].ToString();
+
+            //ActiveUsers
+            var queryActiveUsers = (from U in db.Users where U.UserActivity == 1 select U).ToList();
+            lbl_AllActiveUsersValue.Text = queryActiveUsers.Count.ToString();
         }
         private void Reminder(string searchRemind)
         {
