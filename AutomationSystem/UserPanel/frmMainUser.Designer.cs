@@ -848,6 +848,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainUser_FormClosing);
             this.Load += new System.EventHandler(this.frmMainUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).EndInit();
             this.pnl_UpMenu.ResumeLayout(false);

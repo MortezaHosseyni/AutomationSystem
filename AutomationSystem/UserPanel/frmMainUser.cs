@@ -84,6 +84,8 @@ namespace AutomationSystem.UserPanel
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
+            db.Sp_Update_ExitDate(PublicVariable.global_UserID, PublicVariable.todayDate + "-" + string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString())));
+            db.SaveChanges();
             Environment.Exit(0);
         }
 
@@ -346,6 +348,12 @@ namespace AutomationSystem.UserPanel
             userFollowingLetters = new frmUserFollowingLetters();
             userFollowingLetters.MdiParent = this;
             userFollowingLetters.Show();
+        }
+
+        private void frmMainUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            db.Sp_Update_ExitDate(PublicVariable.global_UserID, PublicVariable.todayDate + "-" + string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString())));
+            db.SaveChanges();
         }
     }
 }
