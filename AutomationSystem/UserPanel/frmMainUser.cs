@@ -66,8 +66,11 @@ namespace AutomationSystem.UserPanel
                 val_BrithDate.Text = query[0].UserBrithDate;
                 val_Gender.Text = query[0].View_UserGender;
                 val_Job.Text = query[0].JobsName;
-                val_AllReciveMessages.Text = "24";
-                val_AllSendedMessages.Text = "38";
+
+                var queryLetterCount = db.Sp_LetterCount(PublicVariable.global_UserID).ToList();
+                val_AllReciveMessages.Text = queryLetterCount[0].SentLettersCount.ToString();
+                val_AllSendedMessages.Text = queryLetterCount[0].ReciveLettersCount.ToString();
+
                 PublicVariable.global_JobsDetermineLevel = Convert.ToInt32(query[0].JobsDetermineLevel);
 
                 var dataUserPicture = (Byte[])(query[0].UserImage);
