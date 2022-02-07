@@ -747,6 +747,9 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Parameter Name="LogUserID" Type="int" Mode="In" />
           <Parameter Name="LogUserExitDate" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="Sp_UpdateSentMessage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SentUserID" Type="int" Mode="In" />
+        </Function>
         <Function Name="Sp_UpdateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserID" Type="int" Mode="In" />
           <Parameter Name="UserFirstName" Type="varchar" Mode="In" />
@@ -1267,6 +1270,9 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           </FunctionImport>
           <FunctionImport Name="Sp_LetterCount" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_LetterCount_Result)">
           <Parameter Name="SentUserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_UpdateSentMessage">
+            <Parameter Name="SentUserID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
@@ -2531,6 +2537,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_UpdateSentMessage" FunctionName="Office_Automation_DatabaseModel.Store.Sp_UpdateSentMessage" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
