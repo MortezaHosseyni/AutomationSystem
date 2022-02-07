@@ -471,6 +471,8 @@
     <Content Include="Images\14-Circulation.png" />
     <Content Include="Images\15-Announcement.png" />
     <Content Include="Images\16-Announce.png" />
+    <Content Include="Images\17-SystemComponents.png" />
+    <Content Include="Images\18-AccessRights.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -148,8 +148,11 @@
   <data name="04-AssignmentJob" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\04-AssignmentJob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="03-JobsManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\03-JobsManager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="16-Announce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\16-Announce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="08-UserSignature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\08-UserSignature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="09-EditIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\09-EditIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,10 +163,13 @@
   <data name="15-Announcement" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\15-Announcement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="08-UserSignature" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\08-UserSignature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="17-SystemComponents" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\17-SystemComponents.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="16-Announce" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\16-Announce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="03-JobsManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\03-JobsManager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="18-AccessRights" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\18-AccessRights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
