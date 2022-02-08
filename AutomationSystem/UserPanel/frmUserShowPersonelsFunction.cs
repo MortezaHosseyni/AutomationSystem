@@ -33,7 +33,7 @@ namespace AutomationSystem.UserPanel
             trv_SubPersonels.Nodes.Clear();
             TreeNode tn = new TreeNode(userJobName);
             tn.ForeColor = Color.Red;
-            tn.Tag = "1";
+            tn.Tag = userJobID;
             trv_SubPersonels.Nodes.Add(tn);
 
             loadTreeViewNodes(tn);
@@ -55,10 +55,10 @@ namespace AutomationSystem.UserPanel
                     M.Text = treeQuery[i].JobsID + "-" + treeQuery[i].JobsName;
 
                     int currentJobID = treeQuery[i].JobsID;
-                    var queryJobName = (from UJ in db.AsignmentJobs where UJ.AsignJobID == currentJobID where UJ.AsignStatus == 1 select UJ).ToList();
+                    var queryJobName = (from UJ in db.Vw_AsignmentJobs where UJ.AsignJobID == currentJobID where UJ.AsignStatus == 1 select UJ).ToList();
                     if (queryJobName.Count > 0)
                     {
-                        M.Text = $"{M.Text} ({treeQuery[0].})";
+                        M.Text = $"{M.Text} ({queryJobName[0].UserFullName})";
                     }
 
                     tvn.Nodes.Add(M);
