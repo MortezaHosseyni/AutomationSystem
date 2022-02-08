@@ -53,6 +53,7 @@
             this.lbl_NewsAndAnnouncement = new DevComponents.DotNetBar.LabelItem();
             this.ebg_Assessment = new DevComponents.DotNetBar.ExplorerBarGroupItem();
             this.lbl_DailyFunction = new DevComponents.DotNetBar.LabelItem();
+            this.lbl_ShowPersonelsFunctions = new DevComponents.DotNetBar.LabelItem();
             this.pnl_UpMenu = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
             this.pic_UserPicture = new System.Windows.Forms.PictureBox();
@@ -79,7 +80,6 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbl_ShowPersonelsFunctions = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -511,6 +511,16 @@
             this.lbl_DailyFunction.Text = "ثبت كاركرد روزانه";
             this.lbl_DailyFunction.Click += new System.EventHandler(this.lbl_DailyFunction_Click);
             // 
+            // lbl_ShowPersonelsFunctions
+            // 
+            this.lbl_ShowPersonelsFunctions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ShowPersonelsFunctions.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ShowPersonelsFunctions.Name = "lbl_ShowPersonelsFunctions";
+            this.lbl_ShowPersonelsFunctions.Symbol = "58057";
+            this.lbl_ShowPersonelsFunctions.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_ShowPersonelsFunctions.Text = "نمايش كاركرد پرسنل";
+            this.lbl_ShowPersonelsFunctions.Click += new System.EventHandler(this.lbl_ShowPersonelsFunctions_Click);
+            // 
             // pnl_UpMenu
             // 
             this.pnl_UpMenu.CanvasColor = System.Drawing.SystemColors.Control;
@@ -912,15 +922,6 @@
             // 
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // lbl_ShowPersonelsFunctions
-            // 
-            this.lbl_ShowPersonelsFunctions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_ShowPersonelsFunctions.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_ShowPersonelsFunctions.Name = "lbl_ShowPersonelsFunctions";
-            this.lbl_ShowPersonelsFunctions.Symbol = "58057";
-            this.lbl_ShowPersonelsFunctions.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.lbl_ShowPersonelsFunctions.Text = "نمايش كاركرد پرسنل";
             // 
             // frmMainUser
             // 

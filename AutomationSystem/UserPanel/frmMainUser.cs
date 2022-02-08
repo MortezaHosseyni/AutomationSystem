@@ -40,6 +40,7 @@ namespace AutomationSystem.UserPanel
         frmUserSentReferenceLetters userSentReference;
         frmUserFollowingLetters userFollowingLetters;
         frmUserDailyFunction userDailyFunction;
+        frmUserShowPersonelsFunction userPersonelsFunctions;
         public frmMainUser()
         {
             InitializeComponent();
@@ -185,6 +186,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 50)
             {
                 userDailyFunction.Close();
+            }
+            if (formNumber == 60)
+            {
+                userPersonelsFunctions.Close();
             }
         }
 
@@ -545,6 +550,18 @@ namespace AutomationSystem.UserPanel
             userDailyFunction = new frmUserDailyFunction();
             userDailyFunction.MdiParent = this;
             userDailyFunction.Show();
+        }
+
+        private void lbl_ShowPersonelsFunctions_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 60;
+
+            userPersonelsFunctions = new frmUserShowPersonelsFunction();
+            userPersonelsFunctions.MdiParent = this;
+            userPersonelsFunctions.userJobName = val_Job.Text.Trim();
+            userPersonelsFunctions.Show();
         }
     }
 }

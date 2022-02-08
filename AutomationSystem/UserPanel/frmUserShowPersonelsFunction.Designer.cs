@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_SubPersonels = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -131,6 +131,7 @@
             // 
             this.trv_SubPersonels.Location = new System.Drawing.Point(3, 3);
             this.trv_SubPersonels.Name = "trv_SubPersonels";
+            this.trv_SubPersonels.RightToLeftLayout = true;
             this.trv_SubPersonels.Size = new System.Drawing.Size(437, 397);
             this.trv_SubPersonels.TabIndex = 0;
             // 
@@ -177,14 +178,14 @@
             // dgv_PersonelWorks
             // 
             this.dgv_PersonelWorks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_PersonelWorks.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_PersonelWorks.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_PersonelWorks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_PersonelWorks.Location = new System.Drawing.Point(3, 3);
             this.dgv_PersonelWorks.Name = "dgv_PersonelWorks";
@@ -298,6 +299,7 @@
             this.Name = "frmUserShowPersonelsFunction";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Activated += new System.EventHandler(this.frmUserShowPersonelsFunction_Activated);
             this.Load += new System.EventHandler(this.frmUserShowPersonelsFunction_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
