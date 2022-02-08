@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserDailyFunction));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_AddDailyFunction = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_FunctionDoTime = new DevComponents.DotNetBar.LabelX();
@@ -44,14 +46,26 @@
             this.cmb_FunctionRequesterUnit = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.lbl_FunctionTimeUnit = new DevComponents.DotNetBar.LabelX();
             this.btn_Save = new DevComponents.DotNetBar.ButtonX();
+            this.pnl_DailyFunctionsList = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dgv_DailyFunctionsList = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.col_WorkID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_WorkSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_WorkCaption = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_WorkRequesterUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_WorkJobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_WorkDoneTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_WorkDoneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_AddDailyFunction.SuspendLayout();
+            this.pnl_DailyFunctionsList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DailyFunctionsList)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main
             // 
             this.pnl_Main.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Main.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnl_Main.Controls.Add(this.pnl_DailyFunctionsList);
             this.pnl_Main.Controls.Add(this.pnl_AddDailyFunction);
             this.pnl_Main.Controls.Add(this.lbl_Title);
             this.pnl_Main.DisabledBackColor = System.Drawing.Color.Empty;
@@ -296,6 +310,119 @@
             this.btn_Save.Text = "ثبت كاركرد";
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
+            // pnl_DailyFunctionsList
+            // 
+            this.pnl_DailyFunctionsList.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_DailyFunctionsList.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_DailyFunctionsList.Controls.Add(this.dgv_DailyFunctionsList);
+            this.pnl_DailyFunctionsList.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_DailyFunctionsList.Location = new System.Drawing.Point(12, 282);
+            this.pnl_DailyFunctionsList.Name = "pnl_DailyFunctionsList";
+            this.pnl_DailyFunctionsList.Size = new System.Drawing.Size(1026, 316);
+            // 
+            // 
+            // 
+            this.pnl_DailyFunctionsList.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_DailyFunctionsList.Style.BackColorGradientAngle = 90;
+            this.pnl_DailyFunctionsList.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_DailyFunctionsList.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DailyFunctionsList.Style.BorderBottomWidth = 1;
+            this.pnl_DailyFunctionsList.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_DailyFunctionsList.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DailyFunctionsList.Style.BorderLeftWidth = 1;
+            this.pnl_DailyFunctionsList.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DailyFunctionsList.Style.BorderRightWidth = 1;
+            this.pnl_DailyFunctionsList.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_DailyFunctionsList.Style.BorderTopWidth = 1;
+            this.pnl_DailyFunctionsList.Style.CornerDiameter = 4;
+            this.pnl_DailyFunctionsList.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_DailyFunctionsList.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_DailyFunctionsList.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_DailyFunctionsList.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.pnl_DailyFunctionsList.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_DailyFunctionsList.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_DailyFunctionsList.TabIndex = 2;
+            this.pnl_DailyFunctionsList.Text = " فعاليت‌هاي انجام شده";
+            // 
+            // dgv_DailyFunctionsList
+            // 
+            this.dgv_DailyFunctionsList.AllowUserToAddRows = false;
+            this.dgv_DailyFunctionsList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgv_DailyFunctionsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_DailyFunctionsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DailyFunctionsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_WorkID,
+            this.col_WorkSubject,
+            this.col_WorkCaption,
+            this.col_WorkRequesterUnit,
+            this.col_WorkJobID,
+            this.col_WorkDoneTime,
+            this.col_WorkDoneDate});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_DailyFunctionsList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_DailyFunctionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgv_DailyFunctionsList.Location = new System.Drawing.Point(3, 3);
+            this.dgv_DailyFunctionsList.Name = "dgv_DailyFunctionsList";
+            this.dgv_DailyFunctionsList.Size = new System.Drawing.Size(1014, 273);
+            this.dgv_DailyFunctionsList.TabIndex = 0;
+            // 
+            // col_WorkID
+            // 
+            this.col_WorkID.HeaderText = "WorkID";
+            this.col_WorkID.Name = "col_WorkID";
+            this.col_WorkID.Visible = false;
+            // 
+            // col_WorkSubject
+            // 
+            this.col_WorkSubject.HeaderText = "موضوع";
+            this.col_WorkSubject.Name = "col_WorkSubject";
+            this.col_WorkSubject.Width = 180;
+            // 
+            // col_WorkCaption
+            // 
+            this.col_WorkCaption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_WorkCaption.HeaderText = "شرح فعاليت";
+            this.col_WorkCaption.Name = "col_WorkCaption";
+            // 
+            // col_WorkRequesterUnit
+            // 
+            this.col_WorkRequesterUnit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_WorkRequesterUnit.HeaderText = "واحد درخواست كننده";
+            this.col_WorkRequesterUnit.Name = "col_WorkRequesterUnit";
+            this.col_WorkRequesterUnit.Width = 166;
+            // 
+            // col_WorkJobID
+            // 
+            this.col_WorkJobID.HeaderText = "WorkJobID";
+            this.col_WorkJobID.Name = "col_WorkJobID";
+            this.col_WorkJobID.Visible = false;
+            // 
+            // col_WorkDoneTime
+            // 
+            this.col_WorkDoneTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_WorkDoneTime.HeaderText = "مدت زمان انجام";
+            this.col_WorkDoneTime.Name = "col_WorkDoneTime";
+            this.col_WorkDoneTime.Width = 129;
+            // 
+            // col_WorkDoneDate
+            // 
+            this.col_WorkDoneDate.HeaderText = "تاريخ انجام";
+            this.col_WorkDoneDate.Name = "col_WorkDoneDate";
+            this.col_WorkDoneDate.Width = 120;
+            // 
             // frmUserDailyFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -314,6 +441,8 @@
             this.pnl_Main.PerformLayout();
             this.pnl_AddDailyFunction.ResumeLayout(false);
             this.pnl_AddDailyFunction.PerformLayout();
+            this.pnl_DailyFunctionsList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DailyFunctionsList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,5 +464,14 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmb_FunctionRequesterUnit;
         private DevComponents.DotNetBar.LabelX lbl_FunctionTimeUnit;
         private DevComponents.DotNetBar.ButtonX btn_Save;
+        private DevComponents.DotNetBar.Controls.GroupPanel pnl_DailyFunctionsList;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgv_DailyFunctionsList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkCaption;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkRequesterUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkJobID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkDoneTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkDoneDate;
     }
 }
