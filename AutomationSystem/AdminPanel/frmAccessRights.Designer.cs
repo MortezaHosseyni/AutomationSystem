@@ -163,6 +163,7 @@
             this.Name = "frmAccessRights";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Activated += new System.EventHandler(this.frmAccessRights_Activated);
             this.Load += new System.EventHandler(this.frmAccessRights_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
