@@ -531,6 +531,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_DailyFunction_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 24 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 50;
