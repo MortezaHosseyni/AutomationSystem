@@ -34,6 +34,7 @@
             this.trv_AccessRights = new System.Windows.Forms.TreeView();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
             this.btn_Save = new DevComponents.DotNetBar.ButtonX();
+            this.val_UserFullName = new DevComponents.DotNetBar.LabelX();
             this.pnl_Main.SuspendLayout();
             this.pnl_AccessRights.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             this.pnl_Main.Controls.Add(this.btn_Exit);
             this.pnl_Main.Controls.Add(this.btn_Save);
             this.pnl_Main.Controls.Add(this.pnl_AccessRights);
+            this.pnl_Main.Controls.Add(this.val_UserFullName);
             this.pnl_Main.Controls.Add(this.lbl_Title);
             this.pnl_Main.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -68,12 +70,11 @@
             // 
             this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Title.Font = new System.Drawing.Font("B Nazanin", 22.25F);
-            this.lbl_Title.Location = new System.Drawing.Point(164, 3);
+            this.lbl_Title.Location = new System.Drawing.Point(276, 3);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(230, 48);
-            this.lbl_Title.Symbol = "";
+            this.lbl_Title.Size = new System.Drawing.Size(147, 48);
             this.lbl_Title.TabIndex = 0;
-            this.lbl_Title.Text = "تايين سطوح دسترسي";
+            this.lbl_Title.Text = "سطوح دسترسي";
             // 
             // pnl_AccessRights
             // 
@@ -153,6 +154,20 @@
             this.btn_Save.Text = "ثبت";
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
+            // val_UserFullName
+            // 
+            // 
+            // 
+            // 
+            this.val_UserFullName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.val_UserFullName.Font = new System.Drawing.Font("B Nazanin", 22.25F);
+            this.val_UserFullName.ForeColor = System.Drawing.Color.Red;
+            this.val_UserFullName.Location = new System.Drawing.Point(18, 3);
+            this.val_UserFullName.Name = "val_UserFullName";
+            this.val_UserFullName.Size = new System.Drawing.Size(252, 48);
+            this.val_UserFullName.TabIndex = 0;
+            this.val_UserFullName.Text = "...";
+            // 
             // frmAccessRights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -183,5 +198,6 @@
         private System.Windows.Forms.TreeView trv_AccessRights;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ButtonX btn_Save;
+        public DevComponents.DotNetBar.LabelX val_UserFullName;
     }
 }

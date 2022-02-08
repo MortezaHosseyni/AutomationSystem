@@ -51,12 +51,20 @@ namespace AutomationSystem.AdminPanel
             var query = (from SYSP in db.Vw_SystemParts where SYSP.SPartLevel == intTag select SYSP).ToList();
             if (query.Count > 0)
             {
+                int getSPartID;
                 for (int i = 0; i < query.Count; i++)
                 {
                     TreeNode M = new TreeNode();
                     M.Tag = query[i].SPartID;
                     M.Text = query[i].SPartName;
                     M.ToolTipText = M.Tag.ToString();
+
+                    getSPartID = Convert.ToInt32(M.Tag);
+                    var queryCheck = (from UA in db.UserAccesses where UA.UAccessUserID == this.getUserID where UA.UAccessSPartID == getSPartID select UA).ToList();
+                    if (queryCheck.Count > 0)
+                    {
+                        M.Checked = true;
+                    }
 
                     TN.Nodes.Add(M);
 

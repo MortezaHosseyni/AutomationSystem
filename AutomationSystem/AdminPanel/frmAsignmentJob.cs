@@ -84,7 +84,7 @@ namespace AutomationSystem.AdminPanel
         {
             if (dgv_UsersList.SelectedCells.Count > 0)
             {
-                if (this.formType == 1)
+                if (this.formType == 1) //Jobs
                 {
                     frmJobsHistory jobsHistoryForm = new frmJobsHistory();
 
@@ -92,11 +92,12 @@ namespace AutomationSystem.AdminPanel
                     jobsHistoryForm.lbl_UserFristAndLastName.Text = dgv_UsersList.CurrentRow.Cells["col_FristName"].Value + " " + dgv_UsersList.CurrentRow.Cells["col_LastName"].Value;
                     jobsHistoryForm.ShowDialog();
                 }
-                else if (this.formType == 2)
+                else if (this.formType == 2) //Accesses
                 {
                     frmAccessRights accessRightsForm = new frmAccessRights();
 
                     accessRightsForm.getUserID = Convert.ToInt32(dgv_UsersList.CurrentRow.Cells["col_UserID"].Value);
+                    accessRightsForm.val_UserFullName.Text = dgv_UsersList.CurrentRow.Cells["col_FristName"].Value + " " + dgv_UsersList.CurrentRow.Cells["col_LastName"].Value;
                     accessRightsForm.ShowDialog();
                 }
             }
