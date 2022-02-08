@@ -26,6 +26,34 @@ namespace AutomationSystem.UserPanel
             this.Top = 160;
 
             fillRequesterUnit();
+            ShowWorks();
+        }
+
+        private void ShowWorks()//string searchWorks)
+        {
+            var query = db.Database.SqlQuery<Vw_Works>($"SELECT * FROM Vw_Works WHERE WorkUserID = {PublicVariable.global_UserID}");
+            var result = query.ToList();
+
+            dgv_DailyFunctionsList.Rows.Clear();
+
+            if (result.Count != 0)
+            {
+                dgv_DailyFunctionsList.RowCount = result.Count;
+                for (int i = 0; i <= result.Count - 1; i++)
+                {
+                    dgv_DailyFunctionsList.Rows[i].Cells["col_WorkID"].Value = result[i].WorkID;
+
+                    dgv_DailyFunctionsList.Rows[i].Cells["col_WorkSubject"].Value = result[i].WorkSubject;
+                    dgv_DailyFunctionsList.Rows[i].Cells["col_WorkCaption"].Value = result[i].WorkCaption;
+                    dgv_DailyFunctionsList.Rows[i].Cells["col_WorkRequesterUnit"].Value = result[i].JobsName;
+                    dgv_DailyFunctionsList.Rows[i].Cells["col_WorkDoneDate"].Value = result[i].WorkDoneDate;
+                    dgv_DailyFunctionsList.Rows[i].Cells["col_WorkDoneTime"].Value = result[i].WorkDoneTime;
+                }
+            }
+            else
+            {
+                dgv_DailyFunctionsList.Rows.Clear();
+            }
         }
 
         private void fillRequesterUnit()
@@ -73,6 +101,8 @@ namespace AutomationSystem.UserPanel
                 MessageBox.Show("اطلاعات با موفقيت ثبت شد","ثبت فعاليت");
 
                 clearForm();
+
+                ShowWorks();
             }
             catch (Exception)
             {
