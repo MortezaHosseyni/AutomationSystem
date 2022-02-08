@@ -114,6 +114,9 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserAccess.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserLog.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>

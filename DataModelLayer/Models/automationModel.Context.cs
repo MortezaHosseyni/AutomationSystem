@@ -54,6 +54,7 @@ namespace DataModelLayer.Models
         public virtual DbSet<Vw_Users> Vw_Users { get; set; }
         public virtual DbSet<SystemPart> SystemParts { get; set; }
         public virtual DbSet<Vw_SystemParts> Vw_SystemParts { get; set; }
+        public virtual DbSet<UserAccess> UserAccesses { get; set; }
     
         public virtual int Sp_InsterUsers(string userFirstName, string userLastName, string userName, string userPassword, string userPersonalID, string userEmail, Nullable<byte> userGender, Nullable<byte> userActivity, string userTel, string userBrithDate, byte[] userImage, byte[] userSignature, string userRegisteredDate)
         {

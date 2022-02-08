@@ -14,9 +14,18 @@ namespace DataModelLayer.Models
     
     public partial class SystemPart
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SystemPart()
+        {
+            this.UserAccesses = new HashSet<UserAccess>();
+        }
+    
         public int SPartID { get; set; }
         public string SPartName { get; set; }
         public string SPartDetail { get; set; }
         public Nullable<int> SPartLevel { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserAccess> UserAccesses { get; set; }
     }
 }
