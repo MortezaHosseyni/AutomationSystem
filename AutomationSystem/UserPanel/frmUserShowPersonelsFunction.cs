@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
 using AutomationSystem.Moduls;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace AutomationSystem.UserPanel
 {
@@ -17,6 +18,10 @@ namespace AutomationSystem.UserPanel
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
         public string userJobName { get; set; }
         public int userJobID { get; set; }
+
+        List<int> UID = new List<int>();
+        List<string> family = new List<string>();
+        List<int> time = new List<int>();
         public frmUserShowPersonelsFunction()
         {
             InitializeComponent();
@@ -39,6 +44,8 @@ namespace AutomationSystem.UserPanel
             loadTreeViewNodes(tn);
 
             tn.Expand();
+
+            chartInfo();
         }
         private void loadTreeViewNodes(TreeNode tvn)
         {
@@ -59,6 +66,7 @@ namespace AutomationSystem.UserPanel
                     if (queryJobName.Count > 0)
                     {
                         M.Text = $"{M.Text} ({queryJobName[0].UserFullName})";
+                        UID.Add(queryJobName[0].AsignUserID);
                     }
 
                     tvn.Nodes.Add(M);
@@ -114,6 +122,37 @@ namespace AutomationSystem.UserPanel
                 {
                     dgv_UserWorks.Rows.Clear();
                 }
+            }
+        }
+
+        private void chartInfo()
+        {
+            string userID = "";
+            for (int counter = 0; counter < UID.Count; counter++)
+            {
+                userID += UID[counter].ToString() + ",";
+            }
+            userID = userID.Substring(0, userID.Length - 1);
+
+            string[] listFamily = { };
+            int[] listTime = { };
+
+            var query = db.Database.SqlQuery<Vw_ChartInfo>($"SELECT * FROM Vw_ChartInfo WHERE WorkUserID IN ({userID})").ToList();
+            for (int ii = 0; ii < query.Count; ii++)
+            {
+                family.Add(query[ii].FullName.ToString());
+                time.Add(Convert.ToInt32(query[ii].TotalTime));
+
+                listFamily = family.ToArray();
+                listTime = time.ToArray();
+            }
+            this.crt_UserWorkStatus.Series.Clear();
+            this.crt_UserWorkStatus.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.crt_UserWorkStatus.Titles.Add("نمودار كاركرد پرسنل");
+            for (int i = 0; i < listFamily.Length; i++)
+            {
+                Series series = this.crt_UserWorkStatus.Series.Add(listFamily[i] + "-" + query[i].TotalTime);
+                series.Points.Add(listTime[i]);
             }
         }
     }
