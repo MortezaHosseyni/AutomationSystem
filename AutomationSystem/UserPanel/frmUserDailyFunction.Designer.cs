@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserDailyFunction));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserDailyFunction));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_AddDailyFunction = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_FunctionDoTime = new DevComponents.DotNetBar.LabelX();
@@ -55,16 +57,30 @@
             this.col_WorkJobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_WorkDoneTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_WorkDoneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnl_Search = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.lbl_SearchSubject = new DevComponents.DotNetBar.LabelX();
+            this.txt_SearchSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbl_SearchCaption = new DevComponents.DotNetBar.LabelX();
+            this.txt_SearchCaption = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbl_SearchRequester = new DevComponents.DotNetBar.LabelX();
+            this.cmb_SearchRequester = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txt_DateTo = new FreeControls.PersianDateTimePicker();
+            this.txt_DateIn = new FreeControls.PersianDateTimePicker();
+            this.lbl_SearchDateOn = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SearchDateTo = new DevComponents.DotNetBar.LabelX();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.pnl_Main.SuspendLayout();
             this.pnl_AddDailyFunction.SuspendLayout();
             this.pnl_DailyFunctionsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DailyFunctionsList)).BeginInit();
+            this.pnl_Search.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
             // 
             this.pnl_Main.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Main.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnl_Main.Controls.Add(this.pnl_Search);
             this.pnl_Main.Controls.Add(this.pnl_DailyFunctionsList);
             this.pnl_Main.Controls.Add(this.pnl_AddDailyFunction);
             this.pnl_Main.Controls.Add(this.lbl_Title);
@@ -101,7 +117,7 @@
             this.pnl_AddDailyFunction.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_AddDailyFunction.Location = new System.Drawing.Point(12, 57);
             this.pnl_AddDailyFunction.Name = "pnl_AddDailyFunction";
-            this.pnl_AddDailyFunction.Size = new System.Drawing.Size(1026, 219);
+            this.pnl_AddDailyFunction.Size = new System.Drawing.Size(1026, 202);
             // 
             // 
             // 
@@ -239,7 +255,7 @@
             this.txt_FunctionCaption.Multiline = true;
             this.txt_FunctionCaption.Name = "txt_FunctionCaption";
             this.txt_FunctionCaption.PreventEnterBeep = true;
-            this.txt_FunctionCaption.Size = new System.Drawing.Size(281, 128);
+            this.txt_FunctionCaption.Size = new System.Drawing.Size(281, 112);
             this.txt_FunctionCaption.TabIndex = 2;
             this.txt_FunctionCaption.WatermarkText = "توضيحاتي درمورد فعاليت...";
             // 
@@ -303,7 +319,7 @@
             this.btn_Save.Location = new System.Drawing.Point(111, 127);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(20, 2, 2, 20);
-            this.btn_Save.Size = new System.Drawing.Size(420, 46);
+            this.btn_Save.Size = new System.Drawing.Size(420, 30);
             this.btn_Save.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Save.Symbol = "";
             this.btn_Save.TabIndex = 4;
@@ -316,9 +332,9 @@
             this.pnl_DailyFunctionsList.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.pnl_DailyFunctionsList.Controls.Add(this.dgv_DailyFunctionsList);
             this.pnl_DailyFunctionsList.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_DailyFunctionsList.Location = new System.Drawing.Point(12, 282);
+            this.pnl_DailyFunctionsList.Location = new System.Drawing.Point(12, 265);
             this.pnl_DailyFunctionsList.Name = "pnl_DailyFunctionsList";
-            this.pnl_DailyFunctionsList.Size = new System.Drawing.Size(1026, 316);
+            this.pnl_DailyFunctionsList.Size = new System.Drawing.Size(1026, 225);
             // 
             // 
             // 
@@ -356,6 +372,14 @@
             this.dgv_DailyFunctionsList.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgv_DailyFunctionsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DailyFunctionsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_DailyFunctionsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_DailyFunctionsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_WorkID,
@@ -365,18 +389,27 @@
             this.col_WorkJobID,
             this.col_WorkDoneTime,
             this.col_WorkDoneDate});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_DailyFunctionsList.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_DailyFunctionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_DailyFunctionsList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_DailyFunctionsList.EnableHeadersVisualStyles = false;
+            this.dgv_DailyFunctionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_DailyFunctionsList.Location = new System.Drawing.Point(3, 3);
             this.dgv_DailyFunctionsList.Name = "dgv_DailyFunctionsList";
-            this.dgv_DailyFunctionsList.Size = new System.Drawing.Size(1014, 273);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DailyFunctionsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_DailyFunctionsList.Size = new System.Drawing.Size(1014, 182);
             this.dgv_DailyFunctionsList.TabIndex = 0;
             // 
             // col_WorkID
@@ -423,6 +456,195 @@
             this.col_WorkDoneDate.Name = "col_WorkDoneDate";
             this.col_WorkDoneDate.Width = 120;
             // 
+            // pnl_Search
+            // 
+            this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Search.Controls.Add(this.btn_Search);
+            this.pnl_Search.Controls.Add(this.txt_DateTo);
+            this.pnl_Search.Controls.Add(this.txt_DateIn);
+            this.pnl_Search.Controls.Add(this.txt_SearchCaption);
+            this.pnl_Search.Controls.Add(this.cmb_SearchRequester);
+            this.pnl_Search.Controls.Add(this.lbl_SearchCaption);
+            this.pnl_Search.Controls.Add(this.txt_SearchSubject);
+            this.pnl_Search.Controls.Add(this.lbl_SearchSubject);
+            this.pnl_Search.Controls.Add(this.lbl_SearchDateTo);
+            this.pnl_Search.Controls.Add(this.lbl_SearchDateOn);
+            this.pnl_Search.Controls.Add(this.lbl_SearchRequester);
+            this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_Search.Location = new System.Drawing.Point(12, 496);
+            this.pnl_Search.Name = "pnl_Search";
+            this.pnl_Search.Size = new System.Drawing.Size(1026, 102);
+            // 
+            // 
+            // 
+            this.pnl_Search.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_Search.Style.BackColorGradientAngle = 90;
+            this.pnl_Search.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_Search.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderBottomWidth = 1;
+            this.pnl_Search.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_Search.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderLeftWidth = 1;
+            this.pnl_Search.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderRightWidth = 1;
+            this.pnl_Search.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_Search.Style.BorderTopWidth = 1;
+            this.pnl_Search.Style.CornerDiameter = 4;
+            this.pnl_Search.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_Search.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_Search.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_Search.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.pnl_Search.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_Search.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_Search.TabIndex = 3;
+            // 
+            // lbl_SearchSubject
+            // 
+            this.lbl_SearchSubject.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SearchSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchSubject.Location = new System.Drawing.Point(901, 7);
+            this.lbl_SearchSubject.Name = "lbl_SearchSubject";
+            this.lbl_SearchSubject.Size = new System.Drawing.Size(45, 33);
+            this.lbl_SearchSubject.TabIndex = 0;
+            this.lbl_SearchSubject.Text = "موضوع:";
+            // 
+            // txt_SearchSubject
+            // 
+            // 
+            // 
+            // 
+            this.txt_SearchSubject.Border.Class = "TextBoxBorder";
+            this.txt_SearchSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SearchSubject.Location = new System.Drawing.Point(645, 7);
+            this.txt_SearchSubject.Name = "txt_SearchSubject";
+            this.txt_SearchSubject.PreventEnterBeep = true;
+            this.txt_SearchSubject.Size = new System.Drawing.Size(250, 36);
+            this.txt_SearchSubject.TabIndex = 1;
+            this.txt_SearchSubject.WatermarkText = "جستجو در موضوع فعاليت...";
+            // 
+            // lbl_SearchCaption
+            // 
+            this.lbl_SearchCaption.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SearchCaption.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchCaption.Location = new System.Drawing.Point(539, 7);
+            this.lbl_SearchCaption.Name = "lbl_SearchCaption";
+            this.lbl_SearchCaption.Size = new System.Drawing.Size(32, 33);
+            this.lbl_SearchCaption.TabIndex = 0;
+            this.lbl_SearchCaption.Text = "شرح:";
+            // 
+            // txt_SearchCaption
+            // 
+            // 
+            // 
+            // 
+            this.txt_SearchCaption.Border.Class = "TextBoxBorder";
+            this.txt_SearchCaption.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SearchCaption.Location = new System.Drawing.Point(180, 7);
+            this.txt_SearchCaption.Name = "txt_SearchCaption";
+            this.txt_SearchCaption.PreventEnterBeep = true;
+            this.txt_SearchCaption.Size = new System.Drawing.Size(353, 36);
+            this.txt_SearchCaption.TabIndex = 1;
+            this.txt_SearchCaption.WatermarkText = "جستجو در شرح فعاليت...";
+            // 
+            // lbl_SearchRequester
+            // 
+            this.lbl_SearchRequester.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SearchRequester.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchRequester.Location = new System.Drawing.Point(901, 50);
+            this.lbl_SearchRequester.Name = "lbl_SearchRequester";
+            this.lbl_SearchRequester.Size = new System.Drawing.Size(100, 33);
+            this.lbl_SearchRequester.TabIndex = 0;
+            this.lbl_SearchRequester.Text = "درخواست كننده:";
+            // 
+            // cmb_SearchRequester
+            // 
+            this.cmb_SearchRequester.DisplayMember = "Text";
+            this.cmb_SearchRequester.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_SearchRequester.FormattingEnabled = true;
+            this.cmb_SearchRequester.ItemHeight = 31;
+            this.cmb_SearchRequester.Location = new System.Drawing.Point(645, 50);
+            this.cmb_SearchRequester.Name = "cmb_SearchRequester";
+            this.cmb_SearchRequester.Size = new System.Drawing.Size(250, 37);
+            this.cmb_SearchRequester.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmb_SearchRequester.TabIndex = 4;
+            // 
+            // txt_DateTo
+            // 
+            this.txt_DateTo.BackColor = System.Drawing.Color.White;
+            this.txt_DateTo.Font = new System.Drawing.Font("B Nazanin", 14F);
+            this.txt_DateTo.Location = new System.Drawing.Point(180, 50);
+            this.txt_DateTo.Name = "txt_DateTo";
+            this.txt_DateTo.ShowTime = false;
+            this.txt_DateTo.Size = new System.Drawing.Size(165, 33);
+            this.txt_DateTo.TabIndex = 13;
+            this.txt_DateTo.Text = "persianDateTimePicker2";
+            this.txt_DateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateTo.Value")));
+            // 
+            // txt_DateIn
+            // 
+            this.txt_DateIn.BackColor = System.Drawing.Color.White;
+            this.txt_DateIn.Font = new System.Drawing.Font("B Nazanin", 14F);
+            this.txt_DateIn.Location = new System.Drawing.Point(368, 50);
+            this.txt_DateIn.Name = "txt_DateIn";
+            this.txt_DateIn.ShowTime = false;
+            this.txt_DateIn.Size = new System.Drawing.Size(165, 33);
+            this.txt_DateIn.TabIndex = 12;
+            this.txt_DateIn.Text = "persianDateTimePicker1";
+            this.txt_DateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateIn.Value")));
+            // 
+            // lbl_SearchDateOn
+            // 
+            this.lbl_SearchDateOn.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SearchDateOn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchDateOn.Location = new System.Drawing.Point(539, 50);
+            this.lbl_SearchDateOn.Name = "lbl_SearchDateOn";
+            this.lbl_SearchDateOn.Size = new System.Drawing.Size(78, 33);
+            this.lbl_SearchDateOn.TabIndex = 0;
+            this.lbl_SearchDateOn.Text = "تاريخ انجام از";
+            // 
+            // lbl_SearchDateTo
+            // 
+            this.lbl_SearchDateTo.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SearchDateTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SearchDateTo.Location = new System.Drawing.Point(351, 50);
+            this.lbl_SearchDateTo.Name = "lbl_SearchDateTo";
+            this.lbl_SearchDateTo.Size = new System.Drawing.Size(11, 33);
+            this.lbl_SearchDateTo.TabIndex = 0;
+            this.lbl_SearchDateTo.Text = "تا";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(33, 7);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(97, 76);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 14;
+            // 
             // frmUserDailyFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -443,6 +665,8 @@
             this.pnl_AddDailyFunction.PerformLayout();
             this.pnl_DailyFunctionsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DailyFunctionsList)).EndInit();
+            this.pnl_Search.ResumeLayout(false);
+            this.pnl_Search.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -473,5 +697,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkJobID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkDoneTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkDoneDate;
+        private DevComponents.DotNetBar.Controls.GroupPanel pnl_Search;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SearchCaption;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cmb_SearchRequester;
+        private DevComponents.DotNetBar.LabelX lbl_SearchCaption;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SearchSubject;
+        private DevComponents.DotNetBar.LabelX lbl_SearchSubject;
+        private DevComponents.DotNetBar.LabelX lbl_SearchRequester;
+        private FreeControls.PersianDateTimePicker txt_DateTo;
+        private FreeControls.PersianDateTimePicker txt_DateIn;
+        private DevComponents.DotNetBar.LabelX lbl_SearchDateTo;
+        private DevComponents.DotNetBar.LabelX lbl_SearchDateOn;
+        private DevComponents.DotNetBar.ButtonX btn_Search;
     }
 }
