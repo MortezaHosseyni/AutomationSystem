@@ -174,6 +174,18 @@
           <Property Name="UserSignature" Type="image" />
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <EntityType Name="Works">
+          <Key>
+            <PropertyRef Name="WorkID" />
+          </Key>
+          <Property Name="WorkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorkSubject" Type="varchar" MaxLength="150" />
+          <Property Name="WorkCaption" Type="varchar" MaxLength="1000" />
+          <Property Name="WorkUserID" Type="int" Nullable="false" />
+          <Property Name="WorkJobID" Type="int" Nullable="false" />
+          <Property Name="WorkDoneDate" Type="varchar" MaxLength="30" />
+          <Property Name="WorkDoneTime" Type="int" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_AsignmentJobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_AsignmentJobs">
@@ -772,6 +784,30 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Works_Jobs">
+          <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="JobsID" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="WorkJobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="WorkUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="Sp_DeleteUserAccess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserID" Type="int" Mode="In" />
           <Parameter Name="SPartID" Type="int" Mode="In" />
@@ -849,6 +885,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySet Name="UserAccess" EntityType="Self.UserAccess" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Works" EntityType="Self.Works" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vw_AsignmentJobs" EntityType="Self.Vw_AsignmentJobs" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_AsignmentJobs].[AsignJobsID] AS [AsignJobsID], 
@@ -1183,6 +1220,14 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="Users" EntitySet="Users" />
             <End Role="UserLog" EntitySet="UserLog" />
           </AssociationSet>
+          <AssociationSet Name="FK_Works_Jobs" Association="Self.FK_Works_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Users" Association="Self.FK_Works_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -1217,6 +1262,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <NavigationProperty Name="ReferenceLetters" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Reciver" FromRole="User" ToRole="ReferenceLetter" />
           <NavigationProperty Name="ReferenceLetters1" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender" FromRole="User" ToRole="ReferenceLetter" />
           <NavigationProperty Name="UserAccesses" Relationship="Office_Automation_DatabaseModel.FK_UserAccess_Users" FromRole="User" ToRole="UserAccess" />
+          <NavigationProperty Name="Works" Relationship="Office_Automation_DatabaseModel.FK_Works_Users" FromRole="User" ToRole="Work" />
         </EntityType>
         <EntityContainer Name="Office_Automation_DatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -1377,6 +1423,15 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <Parameter Name="UserID" Mode="In" Type="Int32" />
             <Parameter Name="SPartID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Works" EntityType="Office_Automation_DatabaseModel.Work" />
+          <AssociationSet Name="FK_Works_Jobs" Association="Office_Automation_DatabaseModel.FK_Works_Jobs">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="Work" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Users" Association="Office_Automation_DatabaseModel.FK_Works_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Work" EntitySet="Works" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -1474,6 +1529,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="JobsLevel" Type="Int32" />
           <Property Name="JobsDetermineLevel" Type="Int32" />
           <NavigationProperty Name="AsignmentJobs" Relationship="Office_Automation_DatabaseModel.FK_AsignmentJobs_Jobs" FromRole="Job" ToRole="AsignmentJob" />
+          <NavigationProperty Name="Works" Relationship="Office_Automation_DatabaseModel.FK_Works_Jobs" FromRole="Job" ToRole="Work" />
         </EntityType>
         <EntityType Name="Vw_Jobs">
           <Key>
@@ -2174,6 +2230,44 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Work">
+          <Key>
+            <PropertyRef Name="WorkID" />
+          </Key>
+          <Property Name="WorkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="WorkCaption" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="WorkUserID" Type="Int32" Nullable="false" />
+          <Property Name="WorkJobID" Type="Int32" Nullable="false" />
+          <Property Name="WorkDoneDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="WorkDoneTime" Type="Int32" />
+          <NavigationProperty Name="Job" Relationship="Office_Automation_DatabaseModel.FK_Works_Jobs" FromRole="Work" ToRole="Job" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_Works_Users" FromRole="Work" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Works_Jobs">
+          <End Type="Office_Automation_DatabaseModel.Job" Role="Job" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.Work" Role="Work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobsID" />
+            </Principal>
+            <Dependent Role="Work">
+              <PropertyRef Name="WorkJobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.Work" Role="Work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Work">
+              <PropertyRef Name="WorkUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2733,6 +2827,19 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Sp_DeleteUserAccess" FunctionName="Office_Automation_DatabaseModel.Store.Sp_DeleteUserAccess" />
+          <EntitySetMapping Name="Works">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Work">
+              <MappingFragment StoreEntitySet="Works">
+                <ScalarProperty Name="WorkDoneTime" ColumnName="WorkDoneTime" />
+                <ScalarProperty Name="WorkDoneDate" ColumnName="WorkDoneDate" />
+                <ScalarProperty Name="WorkJobID" ColumnName="WorkJobID" />
+                <ScalarProperty Name="WorkUserID" ColumnName="WorkUserID" />
+                <ScalarProperty Name="WorkCaption" ColumnName="WorkCaption" />
+                <ScalarProperty Name="WorkSubject" ColumnName="WorkSubject" />
+                <ScalarProperty Name="WorkID" ColumnName="WorkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

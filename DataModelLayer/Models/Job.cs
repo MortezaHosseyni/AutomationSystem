@@ -18,6 +18,7 @@ namespace DataModelLayer.Models
         public Job()
         {
             this.AsignmentJobs = new HashSet<AsignmentJob>();
+            this.Works = new HashSet<Work>();
         }
     
         public int JobsID { get; set; }
@@ -28,5 +29,7 @@ namespace DataModelLayer.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AsignmentJob> AsignmentJobs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Work> Works { get; set; }
     }
 }

@@ -50,6 +50,9 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.UserAccess" Width="1.5" PointX="21.875" PointY="0.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_UserAccess_SystemParts" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_UserAccess_Users" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Work" Width="1.5" PointX="23.5" PointY="0.75" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Works_Jobs" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Works_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

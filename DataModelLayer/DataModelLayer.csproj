@@ -162,6 +162,9 @@
     <Compile Include="Models\Vw_Users.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Work.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
