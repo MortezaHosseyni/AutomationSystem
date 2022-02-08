@@ -20,6 +20,7 @@ namespace AutomationSystem.UserPanel
         PersianCalendar pCalender = new PersianCalendar();
 
         byte formNumber = 7;
+        int userMainJobID;
 
         //Forms
         frmUserAddReminder addReminderForm;
@@ -61,7 +62,7 @@ namespace AutomationSystem.UserPanel
 
         private void ShowUserInfo()
         {
-            var query = db.Sp_ShowAllUserInfo_UserForm_Up(PublicVariable.global_UserID).ToList();
+            var query = db.Sp_ShowAllUserInfo_UserForm_Up_2(PublicVariable.global_UserID).ToList();
 
             if (query.Count == 1)
             {
@@ -71,6 +72,7 @@ namespace AutomationSystem.UserPanel
                 val_BrithDate.Text = query[0].UserBrithDate;
                 val_Gender.Text = query[0].View_UserGender;
                 val_Job.Text = query[0].JobsName;
+                userMainJobID = query[0].AsignJobID;
 
                 var queryLetterCount = db.Sp_LetterCount(PublicVariable.global_UserID).ToList();
                 val_AllReciveMessages.Text = queryLetterCount[0].SentLettersCount.ToString();
@@ -561,6 +563,7 @@ namespace AutomationSystem.UserPanel
             userPersonelsFunctions = new frmUserShowPersonelsFunction();
             userPersonelsFunctions.MdiParent = this;
             userPersonelsFunctions.userJobName = val_Job.Text.Trim();
+            userPersonelsFunctions.userJobID = userMainJobID;
             userPersonelsFunctions.Show();
         }
     }
