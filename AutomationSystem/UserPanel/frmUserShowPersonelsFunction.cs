@@ -72,5 +72,38 @@ namespace AutomationSystem.UserPanel
                 }
             }
         }
+
+        private void trv_SubPersonels_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            int getJobID = Convert.ToInt32(trv_SubPersonels.SelectedNode.Tag);
+
+            var queryGetUser = (from UJ in db.Vw_AsignmentJobs where UJ.AsignJobID == getJobID where UJ.AsignStatus == 1 select UJ).ToList();
+            if (queryGetUser.Count > 0)
+            {
+                var query = db.Database.SqlQuery<Vw_Works>($"SELECT * FROM Vw_Works WHERE WorkUserID = {queryGetUser[0].AsignUserID}");
+                var result = query.ToList();
+
+                dgv_UserWorks.Rows.Clear();
+
+                if (result.Count != 0)
+                {
+                    dgv_UserWorks.RowCount = result.Count;
+                    for (int i = 0; i <= result.Count - 1; i++)
+                    {
+                        dgv_UserWorks.Rows[i].Cells["col_WorkID"].Value = result[i].WorkID;
+
+                        dgv_UserWorks.Rows[i].Cells["col_WorkSubject"].Value = result[i].WorkSubject;
+                        dgv_UserWorks.Rows[i].Cells["col_WorkCaption"].Value = result[i].WorkCaption;
+                        dgv_UserWorks.Rows[i].Cells["col_WorkRequesterUnit"].Value = result[i].JobsName;
+                        dgv_UserWorks.Rows[i].Cells["col_WorkDoneDate"].Value = result[i].WorkDoneDate;
+                        dgv_UserWorks.Rows[i].Cells["col_WorkDoneTime"].Value = result[i].WorkDoneTime;
+                    }
+                }
+                else
+                {
+                    dgv_UserWorks.Rows.Clear();
+                }
+            }
+        }
     }
 }
