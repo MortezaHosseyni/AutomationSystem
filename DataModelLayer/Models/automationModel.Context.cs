@@ -272,5 +272,14 @@ namespace DataModelLayer.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_DeleteUserAccess", userIDParameter, sPartIDParameter);
         }
+    
+        public virtual ObjectResult<Sp_ShowAllUserInfo_UserForm_Up_2_Result> Sp_ShowAllUserInfo_UserForm_Up_2(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_ShowAllUserInfo_UserForm_Up_2_Result>("Sp_ShowAllUserInfo_UserForm_Up_2", userIDParameter);
+        }
     }
 }

@@ -105,6 +105,9 @@
     <Compile Include="Models\Sp_ShowAllUserInfo_UserForm_Result.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sp_ShowAllUserInfo_UserForm_Up_2_Result.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Sp_ShowAllUserInfo_UserForm_Up_Result.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>

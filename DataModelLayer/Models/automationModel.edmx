@@ -857,6 +857,9 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
         <Function Name="Sp_ShowAllUserInfo_UserForm_Up" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserID" Type="int" Mode="In" />
         </Function>
+        <Function Name="Sp_ShowAllUserInfo_UserForm_Up_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+        </Function>
         <Function Name="Sp_Update_ExitDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="LogUserID" Type="int" Mode="In" />
           <Parameter Name="LogUserExitDate" Type="varchar" Mode="In" />
@@ -1463,6 +1466,9 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
             <End Role="Work" EntitySet="Works" />
           </AssociationSet>
           <EntitySet Name="Vw_Works" EntityType="Office_Automation_DatabaseModel.Vw_Works" />
+          <FunctionImport Name="Sp_ShowAllUserInfo_UserForm_Up_2" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_ShowAllUserInfo_UserForm_Up_2_Result)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -2315,6 +2321,25 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
           <Property Name="WorkDoneTime" Type="Int32" />
           <Property Name="JobsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="Sp_ShowAllUserInfo_UserForm_Up_2_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="UserFirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UserLastName" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UserPersonalID" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="UserEmail" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="View_UserGender" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="View_UserActivity" Nullable="true" MaxLength="7" />
+          <Property Type="String" Name="UserTel" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="UserBrithDate" Nullable="true" MaxLength="30" />
+          <Property Type="Binary" Name="UserImage" Nullable="true" MaxLength="Max" />
+          <Property Type="Binary" Name="UserSignature" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="JobsName" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="JobsDetermineLevel" Nullable="true" />
+          <Property Type="Byte" Name="UserGender" Nullable="false" />
+          <Property Type="Byte" Name="UserActivity" Nullable="false" />
+          <Property Type="Int32" Name="AsignJobID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2901,6 +2926,29 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_ShowAllUserInfo_UserForm_Up_2" FunctionName="Office_Automation_DatabaseModel.Store.Sp_ShowAllUserInfo_UserForm_Up_2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Office_Automation_DatabaseModel.Sp_ShowAllUserInfo_UserForm_Up_2_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPersonalID" ColumnName="UserPersonalID" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="View_UserGender" ColumnName="View_UserGender" />
+                <ScalarProperty Name="View_UserActivity" ColumnName="View_UserActivity" />
+                <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+                <ScalarProperty Name="UserBrithDate" ColumnName="UserBrithDate" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="UserSignature" ColumnName="UserSignature" />
+                <ScalarProperty Name="JobsName" ColumnName="JobsName" />
+                <ScalarProperty Name="JobsDetermineLevel" ColumnName="JobsDetermineLevel" />
+                <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+                <ScalarProperty Name="UserActivity" ColumnName="UserActivity" />
+                <ScalarProperty Name="AsignJobID" ColumnName="AsignJobID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
