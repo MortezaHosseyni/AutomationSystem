@@ -90,6 +90,8 @@ namespace AutomationSystem.UserPanel
             val_AllDoneWorks.Text = "0";
             val_AllWorksTime.Text = "0";
 
+            dgv_UserWorks.Rows.Clear();
+
             if (queryGetUser.Count > 0)
             {
                 var query = db.Database.SqlQuery<Vw_Works>($"SELECT * FROM Vw_Works WHERE WorkUserID = {queryGetUser[0].AsignUserID}");
