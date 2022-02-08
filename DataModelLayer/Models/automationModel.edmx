@@ -772,6 +772,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Sp_DeleteUserAccess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="SPartID" Type="int" Mode="In" />
+        </Function>
         <Function Name="Sp_InsterUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserFirstName" Type="varchar" Mode="In" />
           <Parameter Name="UserLastName" Type="varchar" Mode="In" />
@@ -1369,6 +1373,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="User" EntitySet="Users" />
             <End Role="UserAccess" EntitySet="UserAccesses" />
           </AssociationSet>
+          <FunctionImport Name="Sp_DeleteUserAccess">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="SPartID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -2724,6 +2732,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_DeleteUserAccess" FunctionName="Office_Automation_DatabaseModel.Store.Sp_DeleteUserAccess" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
