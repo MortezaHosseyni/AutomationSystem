@@ -117,6 +117,7 @@
             // 
             // trv_AccessRights
             // 
+            this.trv_AccessRights.CheckBoxes = true;
             this.trv_AccessRights.Location = new System.Drawing.Point(3, 3);
             this.trv_AccessRights.Name = "trv_AccessRights";
             this.trv_AccessRights.RightToLeftLayout = true;
