@@ -55,6 +55,7 @@
             this.lbl_DailyFunction = new DevComponents.DotNetBar.LabelItem();
             this.pnl_UpMenu = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.pic_UserPicture = new System.Windows.Forms.PictureBox();
             this.val_Job = new DevComponents.DotNetBar.LabelX();
             this.lbl_Job = new DevComponents.DotNetBar.LabelX();
             this.val_Gender = new DevComponents.DotNetBar.LabelX();
@@ -78,7 +79,7 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.pic_UserPicture = new System.Windows.Forms.PictureBox();
+            this.lbl_ShowPersonelsFunctions = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -476,7 +477,8 @@
             this.ebg_Assessment.Name = "ebg_Assessment";
             this.ebg_Assessment.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Assessment.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.lbl_DailyFunction});
+            this.lbl_DailyFunction,
+            this.lbl_ShowPersonelsFunctions});
             this.ebg_Assessment.Text = "ارزشيابي پرسنل";
             // 
             // 
@@ -583,6 +585,15 @@
             this.btn_Exit.TabIndex = 3;
             this.btn_Exit.Text = "خروج از سيستم";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // pic_UserPicture
+            // 
+            this.pic_UserPicture.Location = new System.Drawing.Point(3, 3);
+            this.pic_UserPicture.Name = "pic_UserPicture";
+            this.pic_UserPicture.Size = new System.Drawing.Size(128, 133);
+            this.pic_UserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_UserPicture.TabIndex = 2;
+            this.pic_UserPicture.TabStop = false;
             // 
             // val_Job
             // 
@@ -902,14 +913,14 @@
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // pic_UserPicture
+            // lbl_ShowPersonelsFunctions
             // 
-            this.pic_UserPicture.Location = new System.Drawing.Point(3, 3);
-            this.pic_UserPicture.Name = "pic_UserPicture";
-            this.pic_UserPicture.Size = new System.Drawing.Size(128, 133);
-            this.pic_UserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_UserPicture.TabIndex = 2;
-            this.pic_UserPicture.TabStop = false;
+            this.lbl_ShowPersonelsFunctions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ShowPersonelsFunctions.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_ShowPersonelsFunctions.Name = "lbl_ShowPersonelsFunctions";
+            this.lbl_ShowPersonelsFunctions.Symbol = "58057";
+            this.lbl_ShowPersonelsFunctions.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_ShowPersonelsFunctions.Text = "نمايش كاركرد پرسنل";
             // 
             // frmMainUser
             // 
@@ -987,5 +998,6 @@
         private DevComponents.DotNetBar.LabelX lbl_News;
         private DevComponents.DotNetBar.ExplorerBarGroupItem ebg_Assessment;
         private DevComponents.DotNetBar.LabelItem lbl_DailyFunction;
+        private DevComponents.DotNetBar.LabelItem lbl_ShowPersonelsFunctions;
     }
 }
