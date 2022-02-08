@@ -78,6 +78,10 @@ namespace AutomationSystem.UserPanel
             int getJobID = Convert.ToInt32(trv_SubPersonels.SelectedNode.Tag);
 
             var queryGetUser = (from UJ in db.Vw_AsignmentJobs where UJ.AsignJobID == getJobID where UJ.AsignStatus == 1 select UJ).ToList();
+
+            val_AllDoneWorks.Text = "0";
+            val_AllWorksTime.Text = "0";
+
             if (queryGetUser.Count > 0)
             {
                 var query = db.Database.SqlQuery<Vw_Works>($"SELECT * FROM Vw_Works WHERE WorkUserID = {queryGetUser[0].AsignUserID}");
@@ -88,6 +92,7 @@ namespace AutomationSystem.UserPanel
                 if (result.Count != 0)
                 {
                     dgv_UserWorks.RowCount = result.Count;
+                    int totalTime = 0;
                     for (int i = 0; i <= result.Count - 1; i++)
                     {
                         dgv_UserWorks.Rows[i].Cells["col_WorkID"].Value = result[i].WorkID;
@@ -97,7 +102,13 @@ namespace AutomationSystem.UserPanel
                         dgv_UserWorks.Rows[i].Cells["col_WorkRequesterUnit"].Value = result[i].JobsName;
                         dgv_UserWorks.Rows[i].Cells["col_WorkDoneDate"].Value = result[i].WorkDoneDate;
                         dgv_UserWorks.Rows[i].Cells["col_WorkDoneTime"].Value = result[i].WorkDoneTime;
+
+                        totalTime += Convert.ToInt32(result[i].WorkDoneTime);
                     }
+                    int totalHour = totalTime / 60;
+                    int totalMinu = totalTime % 60;
+                    val_AllWorksTime.Text = $"{totalHour} ساعت و {totalMinu} دقيقه";
+                    val_AllDoneWorks.Text = dgv_UserWorks.Rows.Count.ToString();
                 }
                 else
                 {
