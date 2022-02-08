@@ -44,8 +44,8 @@ namespace AutomationSystem.AdminPanel
                     dgv_UsersList.Rows[i].Cells["col_FristName"].Value = result[i].UserFirstName;
                     dgv_UsersList.Rows[i].Cells["col_LastName"].Value = result[i].UserLastName;
                     dgv_UsersList.Rows[i].Cells["col_PersonalCode"].Value = result[i].UserPersonalID;
-                    dgv_UsersList.Rows[i].Cells["col_Gender"].Value = result[i].UserGender;
-                    dgv_UsersList.Rows[i].Cells["col_Activity"].Value = result[i].UserActivity;
+                    dgv_UsersList.Rows[i].Cells["col_Gender"].Value = result[i].View_UserGender;
+                    dgv_UsersList.Rows[i].Cells["col_Activity"].Value = result[i].View_UserActivity;
                 }
             }
             else

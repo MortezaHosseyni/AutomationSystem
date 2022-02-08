@@ -35,6 +35,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             this.rbc_UpMenu = new DevComponents.DotNetBar.RibbonControl();
             this.rbp_UpMenu = new DevComponents.DotNetBar.RibbonPanel();
+            this.rib_AccessRight = new DevComponents.DotNetBar.RibbonBar();
+            this.rib_SystemComponents = new DevComponents.DotNetBar.RibbonBar();
             this.rib_Reminder = new DevComponents.DotNetBar.RibbonBar();
             this.rib_Messenger = new DevComponents.DotNetBar.RibbonBar();
             this.rib_AssignmentJob = new DevComponents.DotNetBar.RibbonBar();
@@ -83,8 +85,6 @@
             this.lbl_Dashboard = new DevComponents.DotNetBar.LabelX();
             this.superTooltip = new DevComponents.DotNetBar.SuperTooltip();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.rib_SystemComponents = new DevComponents.DotNetBar.RibbonBar();
-            this.rib_AccessRight = new DevComponents.DotNetBar.RibbonBar();
             this.btn_AccessRight = new DevComponents.DotNetBar.ButtonItem();
             this.btn_SystemComponents = new DevComponents.DotNetBar.ButtonItem();
             this.btn_Reminder = new DevComponents.DotNetBar.ButtonItem();
@@ -173,6 +173,72 @@
             // 
             this.rbp_UpMenu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rbp_UpMenu.TabIndex = 1;
+            // 
+            // rib_AccessRight
+            // 
+            this.rib_AccessRight.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.rib_AccessRight.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rib_AccessRight.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rib_AccessRight.ContainerControlProcessDialogKey = true;
+            this.rib_AccessRight.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rib_AccessRight.DragDropSupport = true;
+            this.rib_AccessRight.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
+            this.rib_AccessRight.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btn_AccessRight});
+            this.rib_AccessRight.Location = new System.Drawing.Point(703, 0);
+            this.rib_AccessRight.Name = "rib_AccessRight";
+            this.rib_AccessRight.Size = new System.Drawing.Size(100, 99);
+            this.rib_AccessRight.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.superTooltip.SetSuperTooltip(this.rib_AccessRight, new DevComponents.DotNetBar.SuperTooltipInfo("يادآور", "", "مي‌توانيد يك يادآور اضافه كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.rib_AccessRight.TabIndex = 8;
+            // 
+            // 
+            // 
+            this.rib_AccessRight.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rib_AccessRight.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rib_AccessRight.TitleVisible = false;
+            // 
+            // rib_SystemComponents
+            // 
+            this.rib_SystemComponents.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.rib_SystemComponents.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rib_SystemComponents.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rib_SystemComponents.ContainerControlProcessDialogKey = true;
+            this.rib_SystemComponents.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rib_SystemComponents.DragDropSupport = true;
+            this.rib_SystemComponents.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
+            this.rib_SystemComponents.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btn_SystemComponents});
+            this.rib_SystemComponents.Location = new System.Drawing.Point(603, 0);
+            this.rib_SystemComponents.Name = "rib_SystemComponents";
+            this.rib_SystemComponents.Size = new System.Drawing.Size(100, 99);
+            this.rib_SystemComponents.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.superTooltip.SetSuperTooltip(this.rib_SystemComponents, new DevComponents.DotNetBar.SuperTooltipInfo("يادآور", "", "مي‌توانيد يك يادآور اضافه كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.rib_SystemComponents.TabIndex = 7;
+            // 
+            // 
+            // 
+            this.rib_SystemComponents.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rib_SystemComponents.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rib_SystemComponents.TitleVisible = false;
             // 
             // rib_Reminder
             // 
@@ -958,72 +1024,6 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // rib_SystemComponents
-            // 
-            this.rib_SystemComponents.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.rib_SystemComponents.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rib_SystemComponents.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rib_SystemComponents.ContainerControlProcessDialogKey = true;
-            this.rib_SystemComponents.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rib_SystemComponents.DragDropSupport = true;
-            this.rib_SystemComponents.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
-            this.rib_SystemComponents.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btn_SystemComponents});
-            this.rib_SystemComponents.Location = new System.Drawing.Point(603, 0);
-            this.rib_SystemComponents.Name = "rib_SystemComponents";
-            this.rib_SystemComponents.Size = new System.Drawing.Size(100, 99);
-            this.rib_SystemComponents.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip.SetSuperTooltip(this.rib_SystemComponents, new DevComponents.DotNetBar.SuperTooltipInfo("يادآور", "", "مي‌توانيد يك يادآور اضافه كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.rib_SystemComponents.TabIndex = 7;
-            // 
-            // 
-            // 
-            this.rib_SystemComponents.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rib_SystemComponents.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rib_SystemComponents.TitleVisible = false;
-            // 
-            // rib_AccessRight
-            // 
-            this.rib_AccessRight.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.rib_AccessRight.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rib_AccessRight.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rib_AccessRight.ContainerControlProcessDialogKey = true;
-            this.rib_AccessRight.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rib_AccessRight.DragDropSupport = true;
-            this.rib_AccessRight.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
-            this.rib_AccessRight.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btn_AccessRight});
-            this.rib_AccessRight.Location = new System.Drawing.Point(703, 0);
-            this.rib_AccessRight.Name = "rib_AccessRight";
-            this.rib_AccessRight.Size = new System.Drawing.Size(100, 99);
-            this.rib_AccessRight.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip.SetSuperTooltip(this.rib_AccessRight, new DevComponents.DotNetBar.SuperTooltipInfo("يادآور", "", "مي‌توانيد يك يادآور اضافه كنيد", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
-            this.rib_AccessRight.TabIndex = 8;
-            // 
-            // 
-            // 
-            this.rib_AccessRight.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rib_AccessRight.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rib_AccessRight.TitleVisible = false;
-            // 
             // btn_AccessRight
             // 
             this.btn_AccessRight.Image = global::AutomationSystem.Properties.Resources._18_AccessRights;
@@ -1031,6 +1031,7 @@
             this.btn_AccessRight.Name = "btn_AccessRight";
             this.btn_AccessRight.SubItemsExpandWidth = 14;
             this.superTooltip.SetSuperTooltip(this.btn_AccessRight, new DevComponents.DotNetBar.SuperTooltipInfo("حقوق دسترسي", "", "دسترسي‌هاي كاركنان سيستم", null, null, DevComponents.DotNetBar.eTooltipColor.Gray));
+            this.btn_AccessRight.Click += new System.EventHandler(this.btn_AccessRight_Click);
             // 
             // btn_SystemComponents
             // 

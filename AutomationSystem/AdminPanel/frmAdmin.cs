@@ -189,5 +189,13 @@ namespace AutomationSystem.AdminPanel
             frmSystemComponents systemParts = new frmSystemComponents();
             systemParts.ShowDialog();
         }
+
+        private void btn_AccessRight_Click(object sender, EventArgs e)
+        {
+            frmAsignmentJob userAccessRights = new frmAsignmentJob();
+            userAccessRights.lbl_Title.Text = "سطوح دسترسي";
+            userAccessRights.btn_JobsHistory.Text = "تايين دسترسي";
+            userAccessRights.ShowDialog();
+        }
     }
 }
