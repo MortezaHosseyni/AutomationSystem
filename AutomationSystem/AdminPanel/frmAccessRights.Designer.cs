@@ -123,6 +123,7 @@
             this.trv_AccessRights.RightToLeftLayout = true;
             this.trv_AccessRights.Size = new System.Drawing.Size(510, 395);
             this.trv_AccessRights.TabIndex = 0;
+            this.trv_AccessRights.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trv_AccessRights_AfterCheck);
             // 
             // btn_Exit
             // 

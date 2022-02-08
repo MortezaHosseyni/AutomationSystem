@@ -70,5 +70,23 @@ namespace AutomationSystem.AdminPanel
                 }
             }
         }
+
+        private void trv_AccessRights_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            checkTreeViewChild(e.Node, e.Node.Checked);
+        }
+
+        private void checkTreeViewChild(TreeNode node, Boolean isChecked)
+        {
+            foreach (TreeNode item in node.Nodes)
+            {
+                item.Checked = isChecked;
+
+                if (item.Nodes.Count > 0)
+                {
+                    this.checkTreeViewChild(item, isChecked);
+                }
+            }
+        }
     }
 }
