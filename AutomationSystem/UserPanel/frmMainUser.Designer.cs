@@ -77,6 +77,8 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.ebg_Assessment = new DevComponents.DotNetBar.ExplorerBarGroupItem();
+            this.lbl_DailyFunction = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -93,13 +95,14 @@
             this.exb_RightMenu.BackStyle.BackColorGradientAngle = 90;
             this.exb_RightMenu.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ExplorerBarBackground;
             this.exb_RightMenu.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.exb_RightMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exb_RightMenu.Cursor = System.Windows.Forms.Cursors.Default;
             this.exb_RightMenu.GroupImages = null;
             this.exb_RightMenu.Groups.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.ebg_Dashboard,
             this.ebg_Recycling,
             this.ebg_Operation,
-            this.ebg_Newsletters});
+            this.ebg_Newsletters,
+            this.ebg_Assessment});
             this.exb_RightMenu.Images = null;
             this.exb_RightMenu.Location = new System.Drawing.Point(1074, 163);
             this.exb_RightMenu.Name = "exb_RightMenu";
@@ -122,7 +125,6 @@
             this.ebg_Dashboard.BackStyle.BorderRightWidth = 1;
             this.ebg_Dashboard.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ebg_Dashboard.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Dashboard.Expanded = true;
             this.ebg_Dashboard.Name = "ebg_Dashboard";
             this.ebg_Dashboard.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Dashboard.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -250,7 +252,6 @@
             this.ebg_Recycling.BackStyle.BorderRightWidth = 1;
             this.ebg_Recycling.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ebg_Recycling.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Recycling.Expanded = true;
             this.ebg_Recycling.Name = "ebg_Recycling";
             this.ebg_Recycling.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Recycling.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -335,7 +336,6 @@
             this.ebg_Operation.BackStyle.BorderRightWidth = 1;
             this.ebg_Operation.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ebg_Operation.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Operation.Expanded = true;
             this.ebg_Operation.Name = "ebg_Operation";
             this.ebg_Operation.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Operation.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -859,6 +859,63 @@
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // ebg_Assessment
+            // 
+            // 
+            // 
+            // 
+            this.ebg_Assessment.BackStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.ebg_Assessment.BackStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Assessment.BackStyle.BorderBottomColor = System.Drawing.SystemColors.Window;
+            this.ebg_Assessment.BackStyle.BorderBottomWidth = 1;
+            this.ebg_Assessment.BackStyle.BorderColor = System.Drawing.Color.White;
+            this.ebg_Assessment.BackStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Assessment.BackStyle.BorderLeftColor = System.Drawing.SystemColors.Window;
+            this.ebg_Assessment.BackStyle.BorderLeftWidth = 1;
+            this.ebg_Assessment.BackStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Assessment.BackStyle.BorderRightColor = System.Drawing.SystemColors.Window;
+            this.ebg_Assessment.BackStyle.BorderRightWidth = 1;
+            this.ebg_Assessment.BackStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ebg_Assessment.BackStyle.BorderTopColor = System.Drawing.SystemColors.Window;
+            this.ebg_Assessment.BackStyle.BorderTopWidth = 1;
+            this.ebg_Assessment.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Assessment.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Assessment.Expanded = true;
+            this.ebg_Assessment.Name = "ebg_Assessment";
+            this.ebg_Assessment.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
+            this.ebg_Assessment.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbl_DailyFunction});
+            this.ebg_Assessment.Text = "ارزشيابي پرسنل";
+            // 
+            // 
+            // 
+            this.ebg_Assessment.TitleHotStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.ebg_Assessment.TitleHotStyle.BackColor2 = System.Drawing.SystemColors.InactiveCaption;
+            this.ebg_Assessment.TitleHotStyle.CornerDiameter = 3;
+            this.ebg_Assessment.TitleHotStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Assessment.TitleHotStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Assessment.TitleHotStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Assessment.TitleHotStyle.TextColor = System.Drawing.SystemColors.ActiveCaption;
+            // 
+            // 
+            // 
+            this.ebg_Assessment.TitleStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.ebg_Assessment.TitleStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.ebg_Assessment.TitleStyle.CornerDiameter = 3;
+            this.ebg_Assessment.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ebg_Assessment.TitleStyle.CornerTypeTopLeft = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Assessment.TitleStyle.CornerTypeTopRight = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.ebg_Assessment.TitleStyle.TextColor = System.Drawing.SystemColors.ControlText;
+            // 
+            // lbl_DailyFunction
+            // 
+            this.lbl_DailyFunction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_DailyFunction.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_DailyFunction.Name = "lbl_DailyFunction";
+            this.lbl_DailyFunction.Symbol = "58902";
+            this.lbl_DailyFunction.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_DailyFunction.Text = "ثبت كاركرد روزانه";
+            // 
             // frmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -933,5 +990,7 @@
         private DevComponents.DotNetBar.LabelItem lbl_ShowGetReferenceLetters;
         private System.Windows.Forms.Timer timer;
         private DevComponents.DotNetBar.LabelX lbl_News;
+        private DevComponents.DotNetBar.ExplorerBarGroupItem ebg_Assessment;
+        private DevComponents.DotNetBar.LabelItem lbl_DailyFunction;
     }
 }
