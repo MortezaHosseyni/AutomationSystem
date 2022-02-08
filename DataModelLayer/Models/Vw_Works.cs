@@ -22,5 +22,6 @@ namespace DataModelLayer.Models
         public string WorkDoneDate { get; set; }
         public Nullable<int> WorkDoneTime { get; set; }
         public string JobsName { get; set; }
+        public string FullName { get; set; }
     }
 }
