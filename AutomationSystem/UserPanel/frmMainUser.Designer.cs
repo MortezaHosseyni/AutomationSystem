@@ -126,6 +126,7 @@
             this.ebg_Dashboard.BackStyle.BorderRightWidth = 1;
             this.ebg_Dashboard.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ebg_Dashboard.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Dashboard.Expanded = true;
             this.ebg_Dashboard.Name = "ebg_Dashboard";
             this.ebg_Dashboard.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Dashboard.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -253,6 +254,7 @@
             this.ebg_Recycling.BackStyle.BorderRightWidth = 1;
             this.ebg_Recycling.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ebg_Recycling.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Recycling.Expanded = true;
             this.ebg_Recycling.Name = "ebg_Recycling";
             this.ebg_Recycling.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Recycling.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -337,6 +339,7 @@
             this.ebg_Operation.BackStyle.BorderRightWidth = 1;
             this.ebg_Operation.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ebg_Operation.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ebg_Operation.Expanded = true;
             this.ebg_Operation.Name = "ebg_Operation";
             this.ebg_Operation.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Operation.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {

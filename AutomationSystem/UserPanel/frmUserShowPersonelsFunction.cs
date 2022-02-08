@@ -140,22 +140,25 @@ namespace AutomationSystem.UserPanel
             int[] listTime = { };
 
             var query = db.Database.SqlQuery<Vw_ChartInfo>($"SELECT * FROM Vw_ChartInfo WHERE WorkUserID IN ({userID}) ORDER BY TotalTime").ToList();
-            val_MaxWorkTime.Text = query[query.Count - 1].FullName;
-            for (int ii = 0; ii < query.Count; ii++)
+            if (query.Count > 0)
             {
-                family.Add(query[ii].FullName.ToString());
-                time.Add(Convert.ToInt32(query[ii].TotalTime));
+                val_MaxWorkTime.Text = query[query.Count - 1].FullName;
+                for (int ii = 0; ii < query.Count; ii++)
+                {
+                    family.Add(query[ii].FullName.ToString());
+                    time.Add(Convert.ToInt32(query[ii].TotalTime));
 
-                listFamily = family.ToArray();
-                listTime = time.ToArray();
-            }
-            this.crt_UserWorkStatus.Series.Clear();
-            this.crt_UserWorkStatus.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            this.crt_UserWorkStatus.Titles.Add("نمودار كاركرد پرسنل");
-            for (int i = 0; i < listFamily.Length; i++)
-            {
-                Series series = this.crt_UserWorkStatus.Series.Add(listFamily[i] + "-" + query[i].TotalTime);
-                series.Points.Add(listTime[i]);
+                    listFamily = family.ToArray();
+                    listTime = time.ToArray();
+                }
+                this.crt_UserWorkStatus.Series.Clear();
+                this.crt_UserWorkStatus.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+                this.crt_UserWorkStatus.Titles.Add("نمودار كاركرد پرسنل");
+                for (int i = 0; i < listFamily.Length; i++)
+                {
+                    Series series = this.crt_UserWorkStatus.Series.Add(listFamily[i] + "-" + query[i].TotalTime);
+                    series.Points.Add(listTime[i]);
+                }
             }
         }
     }
