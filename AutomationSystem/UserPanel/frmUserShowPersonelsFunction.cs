@@ -139,7 +139,8 @@ namespace AutomationSystem.UserPanel
             string[] listFamily = { };
             int[] listTime = { };
 
-            var query = db.Database.SqlQuery<Vw_ChartInfo>($"SELECT * FROM Vw_ChartInfo WHERE WorkUserID IN ({userID})").ToList();
+            var query = db.Database.SqlQuery<Vw_ChartInfo>($"SELECT * FROM Vw_ChartInfo WHERE WorkUserID IN ({userID}) ORDER BY TotalTime").ToList();
+            val_MaxWorkTime.Text = query[query.Count - 1].FullName;
             for (int ii = 0; ii < query.Count; ii++)
             {
                 family.Add(query[ii].FullName.ToString());
