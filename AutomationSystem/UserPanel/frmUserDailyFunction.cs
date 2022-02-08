@@ -25,13 +25,15 @@ namespace AutomationSystem.UserPanel
             this.Left = 10;
             this.Top = 160;
 
+            txt_DateIn.Value = DateTime.Now.AddDays(-10);
             fillRequesterUnit();
-            ShowWorks();
+            fillSearchRequesterUnit();
+            ShowWorks(searchCondition());
         }
 
-        private void ShowWorks()//string searchWorks)
+        private void ShowWorks(string searchWorks)
         {
-            var query = db.Database.SqlQuery<Vw_Works>($"SELECT * FROM Vw_Works WHERE WorkUserID = {PublicVariable.global_UserID}");
+            var query = db.Database.SqlQuery<Vw_Works>($"SELECT * FROM Vw_Works WHERE WorkUserID = {PublicVariable.global_UserID} {searchWorks}");
             var result = query.ToList();
 
             dgv_DailyFunctionsList.Rows.Clear();
@@ -56,6 +58,31 @@ namespace AutomationSystem.UserPanel
             }
         }
 
+        private string searchCondition()
+        {
+            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateIn.Value.Year.ToString()}/{txt_DateIn.Value.Month.ToString()}/{txt_DateIn.Value.Day.ToString()}"));
+            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateTo.Value.Year.ToString()}/{txt_DateTo.Value.Month.ToString()}/{txt_DateTo.Value.Day.ToString()}"));
+
+            string searchString = $" AND WorkDoneDate BETWEEN '{dateIn}' AND '{dateTo}'";
+            
+            if (txt_SearchSubject.Text != "")
+            {
+                searchString += $" AND WorkSubject LIKE '%{txt_SearchSubject.Text}%'";
+            }
+
+            if (txt_SearchCaption.Text != "")
+            {
+                searchString += $" AND WorkCaption LIKE '%{txt_SearchCaption.Text}%'";
+            }
+
+            if (cmb_SearchRequester.SelectedIndex != 0)
+            {
+                searchString += $" AND WorkJobID LIKE '%{cmb_SearchRequester.SelectedValue}%'";
+            }
+
+            return searchString;
+        }
+
         private void fillRequesterUnit()
         {
             var query = (from J in db.Jobs select J).ToList();
@@ -63,6 +90,19 @@ namespace AutomationSystem.UserPanel
             cmb_FunctionRequesterUnit.DataSource = query;
             cmb_FunctionRequesterUnit.ValueMember = "JobsID";
             cmb_FunctionRequesterUnit.DisplayMember = "JobsName";
+        }
+
+        private void fillSearchRequesterUnit()
+        {
+            var query = (from J in db.Jobs select J).ToList();
+
+            query.Insert(0, new Job { JobsID = 1, JobsName = "همه" });
+
+            cmb_SearchRequester.DataSource = query;
+            cmb_SearchRequester.ValueMember = "JobsID";
+            cmb_SearchRequester.DisplayMember = "JobsName";
+
+            cmb_SearchRequester.SelectedIndex = 0;
         }
 
         private void txt_FunctionDoTime_KeyPress(object sender, KeyPressEventArgs e)
@@ -102,7 +142,7 @@ namespace AutomationSystem.UserPanel
 
                 clearForm();
 
-                ShowWorks();
+                ShowWorks(searchCondition());
             }
             catch (Exception)
             {
@@ -118,6 +158,11 @@ namespace AutomationSystem.UserPanel
             txt_FunctionDoTime.Text = "";
             fillRequesterUnit();
             txt_FunctionDoDate.Value = DateTime.Now;
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            ShowWorks(searchCondition());
         }
     }
 }
