@@ -53,6 +53,7 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Work" Width="1.5" PointX="23.5" PointY="0.75" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Works_Jobs" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Works_Users" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Works" Width="1.5" PointX="23.5" PointY="7.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

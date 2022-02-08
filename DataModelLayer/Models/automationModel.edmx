@@ -580,6 +580,24 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <Property Name="UserRegisteredDate" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="FullName" Type="varchar" MaxLength="201" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Works">
+          <Key>
+            <PropertyRef Name="WorkID" />
+            <PropertyRef Name="WorkUserID" />
+            <PropertyRef Name="WorkJobID" />
+            <PropertyRef Name="JobsName" />
+          </Key>
+          <Property Name="WorkID" Type="int" Nullable="false" />
+          <Property Name="WorkSubject" Type="varchar" MaxLength="150" />
+          <Property Name="WorkCaption" Type="varchar" MaxLength="1000" />
+          <Property Name="WorkUserID" Type="int" Nullable="false" />
+          <Property Name="WorkJobID" Type="int" Nullable="false" />
+          <Property Name="WorkDoneDate" Type="varchar" MaxLength="30" />
+          <Property Name="WorkDoneTime" Type="int" />
+          <Property Name="JobsName" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
         <Association Name="FK_AsignmentJobs_Jobs">
           <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
           <End Role="AsignmentJobs" Type="Self.AsignmentJobs" Multiplicity="*" />
@@ -1152,6 +1170,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
     [Vw_Users].[FullName] AS [FullName]
     FROM [dbo].[Vw_Users] AS [Vw_Users]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Vw_Works" EntityType="Self.Vw_Works" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Works].[WorkID] AS [WorkID], 
+    [Vw_Works].[WorkSubject] AS [WorkSubject], 
+    [Vw_Works].[WorkCaption] AS [WorkCaption], 
+    [Vw_Works].[WorkUserID] AS [WorkUserID], 
+    [Vw_Works].[WorkJobID] AS [WorkJobID], 
+    [Vw_Works].[WorkDoneDate] AS [WorkDoneDate], 
+    [Vw_Works].[WorkDoneTime] AS [WorkDoneTime], 
+    [Vw_Works].[JobsName] AS [JobsName]
+    FROM [dbo].[Vw_Works] AS [Vw_Works]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_AsignmentJobs_Jobs" Association="Self.FK_AsignmentJobs_Jobs">
             <End Role="Jobs" EntitySet="Jobs" />
             <End Role="AsignmentJobs" EntitySet="AsignmentJobs" />
@@ -1432,6 +1462,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             <End Role="User" EntitySet="Users" />
             <End Role="Work" EntitySet="Works" />
           </AssociationSet>
+          <EntitySet Name="Vw_Works" EntityType="Office_Automation_DatabaseModel.Vw_Works" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -2268,6 +2299,22 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Vw_Works">
+          <Key>
+            <PropertyRef Name="WorkID" />
+            <PropertyRef Name="WorkUserID" />
+            <PropertyRef Name="WorkJobID" />
+            <PropertyRef Name="JobsName" />
+          </Key>
+          <Property Name="WorkID" Type="Int32" Nullable="false" />
+          <Property Name="WorkSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="WorkCaption" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="WorkUserID" Type="Int32" Nullable="false" />
+          <Property Name="WorkJobID" Type="Int32" Nullable="false" />
+          <Property Name="WorkDoneDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="WorkDoneTime" Type="Int32" />
+          <Property Name="JobsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2830,6 +2877,20 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Users' does not 
           <EntitySetMapping Name="Works">
             <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Work">
               <MappingFragment StoreEntitySet="Works">
+                <ScalarProperty Name="WorkDoneTime" ColumnName="WorkDoneTime" />
+                <ScalarProperty Name="WorkDoneDate" ColumnName="WorkDoneDate" />
+                <ScalarProperty Name="WorkJobID" ColumnName="WorkJobID" />
+                <ScalarProperty Name="WorkUserID" ColumnName="WorkUserID" />
+                <ScalarProperty Name="WorkCaption" ColumnName="WorkCaption" />
+                <ScalarProperty Name="WorkSubject" ColumnName="WorkSubject" />
+                <ScalarProperty Name="WorkID" ColumnName="WorkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Works">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Works">
+              <MappingFragment StoreEntitySet="Vw_Works">
+                <ScalarProperty Name="JobsName" ColumnName="JobsName" />
                 <ScalarProperty Name="WorkDoneTime" ColumnName="WorkDoneTime" />
                 <ScalarProperty Name="WorkDoneDate" ColumnName="WorkDoneDate" />
                 <ScalarProperty Name="WorkJobID" ColumnName="WorkJobID" />
