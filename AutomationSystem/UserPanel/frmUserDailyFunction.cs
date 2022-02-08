@@ -24,6 +24,29 @@ namespace AutomationSystem.UserPanel
         {
             this.Left = 10;
             this.Top = 160;
+
+            fillRequesterUnit();
+        }
+
+        private void fillRequesterUnit()
+        {
+            var query = (from J in db.Jobs select J).ToList();
+
+            cmb_FunctionRequesterUnit.DataSource = query;
+            cmb_FunctionRequesterUnit.ValueMember = "JobsID";
+            cmb_FunctionRequesterUnit.DisplayMember = "JobsName";
+        }
+
+        private void txt_FunctionDoTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

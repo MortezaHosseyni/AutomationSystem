@@ -39,6 +39,7 @@ namespace AutomationSystem.UserPanel
         frmUserRecivedReferenceLetters userRecivedReference;
         frmUserSentReferenceLetters userSentReference;
         frmUserFollowingLetters userFollowingLetters;
+        frmUserDailyFunction userDailyFunction;
         public frmMainUser()
         {
             InitializeComponent();
@@ -180,6 +181,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 17)
             {
                 userRecivedReference.Close();
+            }
+            if (formNumber == 50)
+            {
+                userDailyFunction.Close();
             }
         }
 
@@ -522,6 +527,17 @@ namespace AutomationSystem.UserPanel
             }
 
             timer.Start();
+        }
+
+        private void lbl_DailyFunction_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 50;
+
+            userDailyFunction = new frmUserDailyFunction();
+            userDailyFunction.MdiParent = this;
+            userDailyFunction.Show();
         }
     }
 }

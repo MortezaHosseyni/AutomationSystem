@@ -126,7 +126,7 @@
             // 
             // 
             this.lbl_FunctionDoTime.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FunctionDoTime.Location = new System.Drawing.Point(431, 114);
+            this.lbl_FunctionDoTime.Location = new System.Drawing.Point(399, 113);
             this.lbl_FunctionDoTime.Name = "lbl_FunctionDoTime";
             this.lbl_FunctionDoTime.Size = new System.Drawing.Size(98, 33);
             this.lbl_FunctionDoTime.TabIndex = 0;
@@ -139,7 +139,7 @@
             // 
             // 
             this.lbl_FunctionRequesterUnit.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FunctionRequesterUnit.Location = new System.Drawing.Point(431, 69);
+            this.lbl_FunctionRequesterUnit.Location = new System.Drawing.Point(399, 68);
             this.lbl_FunctionRequesterUnit.Name = "lbl_FunctionRequesterUnit";
             this.lbl_FunctionRequesterUnit.Size = new System.Drawing.Size(133, 33);
             this.lbl_FunctionRequesterUnit.TabIndex = 0;
@@ -152,7 +152,7 @@
             // 
             // 
             this.lbl_FunctionDoDate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FunctionDoDate.Location = new System.Drawing.Point(431, 29);
+            this.lbl_FunctionDoDate.Location = new System.Drawing.Point(399, 28);
             this.lbl_FunctionDoDate.Name = "lbl_FunctionDoDate";
             this.lbl_FunctionDoDate.Size = new System.Drawing.Size(68, 33);
             this.lbl_FunctionDoDate.TabIndex = 0;
@@ -165,7 +165,7 @@
             // 
             // 
             this.lbl_FunctionCaption.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FunctionCaption.Location = new System.Drawing.Point(899, 74);
+            this.lbl_FunctionCaption.Location = new System.Drawing.Point(867, 73);
             this.lbl_FunctionCaption.Name = "lbl_FunctionCaption";
             this.lbl_FunctionCaption.Size = new System.Drawing.Size(76, 33);
             this.lbl_FunctionCaption.TabIndex = 0;
@@ -178,7 +178,7 @@
             // 
             // 
             this.lbl_FunctionSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FunctionSubject.Location = new System.Drawing.Point(899, 29);
+            this.lbl_FunctionSubject.Location = new System.Drawing.Point(867, 28);
             this.lbl_FunctionSubject.Name = "lbl_FunctionSubject";
             this.lbl_FunctionSubject.Size = new System.Drawing.Size(45, 33);
             this.lbl_FunctionSubject.TabIndex = 0;
@@ -207,7 +207,7 @@
             // 
             this.txt_FunctionSubject.Border.Class = "TextBoxBorder";
             this.txt_FunctionSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_FunctionSubject.Location = new System.Drawing.Point(612, 29);
+            this.txt_FunctionSubject.Location = new System.Drawing.Point(580, 28);
             this.txt_FunctionSubject.Name = "txt_FunctionSubject";
             this.txt_FunctionSubject.PreventEnterBeep = true;
             this.txt_FunctionSubject.Size = new System.Drawing.Size(281, 36);
@@ -221,7 +221,7 @@
             // 
             this.txt_FunctionCaption.Border.Class = "TextBoxBorder";
             this.txt_FunctionCaption.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_FunctionCaption.Location = new System.Drawing.Point(612, 71);
+            this.txt_FunctionCaption.Location = new System.Drawing.Point(580, 70);
             this.txt_FunctionCaption.Multiline = true;
             this.txt_FunctionCaption.Name = "txt_FunctionCaption";
             this.txt_FunctionCaption.PreventEnterBeep = true;
@@ -236,19 +236,20 @@
             // 
             this.txt_FunctionDoTime.Border.Class = "TextBoxBorder";
             this.txt_FunctionDoTime.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_FunctionDoTime.Location = new System.Drawing.Point(185, 111);
+            this.txt_FunctionDoTime.Location = new System.Drawing.Point(153, 110);
             this.txt_FunctionDoTime.Name = "txt_FunctionDoTime";
             this.txt_FunctionDoTime.PreventEnterBeep = true;
             this.txt_FunctionDoTime.Size = new System.Drawing.Size(240, 36);
             this.txt_FunctionDoTime.TabIndex = 5;
             this.txt_FunctionDoTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_FunctionDoTime.WatermarkText = "زمان";
+            this.txt_FunctionDoTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_FunctionDoTime_KeyPress);
             // 
             // txt_FunctionDoDate
             // 
             this.txt_FunctionDoDate.BackColor = System.Drawing.Color.White;
             this.txt_FunctionDoDate.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txt_FunctionDoDate.Location = new System.Drawing.Point(144, 29);
+            this.txt_FunctionDoDate.Location = new System.Drawing.Point(112, 28);
             this.txt_FunctionDoDate.Name = "txt_FunctionDoDate";
             this.txt_FunctionDoDate.ShowTime = false;
             this.txt_FunctionDoDate.Size = new System.Drawing.Size(281, 34);
@@ -262,7 +263,7 @@
             this.cmb_FunctionRequesterUnit.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmb_FunctionRequesterUnit.FormattingEnabled = true;
             this.cmb_FunctionRequesterUnit.ItemHeight = 30;
-            this.cmb_FunctionRequesterUnit.Location = new System.Drawing.Point(144, 69);
+            this.cmb_FunctionRequesterUnit.Location = new System.Drawing.Point(112, 68);
             this.cmb_FunctionRequesterUnit.Name = "cmb_FunctionRequesterUnit";
             this.cmb_FunctionRequesterUnit.Size = new System.Drawing.Size(281, 36);
             this.cmb_FunctionRequesterUnit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -275,7 +276,7 @@
             // 
             // 
             this.lbl_FunctionTimeUnit.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_FunctionTimeUnit.Location = new System.Drawing.Point(144, 114);
+            this.lbl_FunctionTimeUnit.Location = new System.Drawing.Point(112, 113);
             this.lbl_FunctionTimeUnit.Name = "lbl_FunctionTimeUnit";
             this.lbl_FunctionTimeUnit.Size = new System.Drawing.Size(35, 33);
             this.lbl_FunctionTimeUnit.TabIndex = 0;
@@ -285,7 +286,7 @@
             // 
             this.btn_Save.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Save.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Save.Location = new System.Drawing.Point(144, 192);
+            this.btn_Save.Location = new System.Drawing.Point(112, 191);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(20, 2, 2, 20);
             this.btn_Save.Size = new System.Drawing.Size(420, 46);
