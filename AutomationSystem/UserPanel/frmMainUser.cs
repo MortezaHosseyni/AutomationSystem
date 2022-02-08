@@ -87,6 +87,11 @@ namespace AutomationSystem.UserPanel
                 val_Date.Text = PublicVariable.todayDate;
                 val_Time.Text = string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString()));
             }
+            else
+            {
+                MessageBox.Show("اين كاربر هيچ شغلي ندارد","ورود مجاز نيست");
+                Environment.Exit(0);
+            }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
