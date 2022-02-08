@@ -214,6 +214,17 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_AsignmentJobs' d
           <Property Name="AsignStatusView" Type="varchar" MaxLength="5" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_ChartInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_ChartInfo">
+          <Key>
+            <PropertyRef Name="WorkUserID" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="WorkUserID" Type="int" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="TotalTime" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Jobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_Jobs">
           <Key>
@@ -925,6 +936,13 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
     [Vw_AsignmentJobs].[AsignStatusView] AS [AsignStatusView]
     FROM [dbo].[Vw_AsignmentJobs] AS [Vw_AsignmentJobs]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Vw_ChartInfo" EntityType="Self.Vw_ChartInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_ChartInfo].[WorkUserID] AS [WorkUserID], 
+    [Vw_ChartInfo].[FullName] AS [FullName], 
+    [Vw_ChartInfo].[TotalTime] AS [TotalTime]
+    FROM [dbo].[Vw_ChartInfo] AS [Vw_ChartInfo]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_Jobs" EntityType="Self.Vw_Jobs" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_Jobs].[JobsID] AS [JobsID], 
@@ -1472,6 +1490,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
           <FunctionImport Name="Sp_ShowAllUserInfo_UserForm_Up_2" ReturnType="Collection(Office_Automation_DatabaseModel.Sp_ShowAllUserInfo_UserForm_Up_2_Result)">
           <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Vw_ChartInfo" EntityType="Office_Automation_DatabaseModel.Vw_ChartInfo" />
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -2345,6 +2364,15 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
           <Property Type="Byte" Name="UserActivity" Nullable="false" />
           <Property Type="Int32" Name="AsignJobID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Vw_ChartInfo">
+          <Key>
+            <PropertyRef Name="WorkUserID" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="WorkUserID" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="TotalTime" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2955,6 +2983,15 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Vw_ChartInfo">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_ChartInfo">
+              <MappingFragment StoreEntitySet="Vw_ChartInfo">
+                <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="WorkUserID" ColumnName="WorkUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -126,6 +126,9 @@
     <Compile Include="Models\Vw_AsignmentJobs.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Vw_ChartInfo.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vw_Jobs.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
