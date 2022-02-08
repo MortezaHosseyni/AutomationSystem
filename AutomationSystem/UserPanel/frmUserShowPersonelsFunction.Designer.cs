@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_SubPersonels = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -50,10 +53,13 @@
             this.col_WorkJobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_WorkDoneTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_WorkDoneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.crt_UserWorkStatus = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnl_Main.SuspendLayout();
             this.pnl_SubPersonels.SuspendLayout();
             this.pnl_UserWorks.SuspendLayout();
+            this.pnl_WorksChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UserWorks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_UserWorkStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -190,6 +196,7 @@
             // 
             this.pnl_WorksChart.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_WorksChart.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_WorksChart.Controls.Add(this.crt_UserWorkStatus);
             this.pnl_WorksChart.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_WorksChart.Location = new System.Drawing.Point(12, 295);
             this.pnl_WorksChart.Name = "pnl_WorksChart";
@@ -284,16 +291,16 @@
             // 
             this.dgv_UserWorks.AllowUserToAddRows = false;
             this.dgv_UserWorks.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgv_UserWorks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_UserWorks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgv_UserWorks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserWorks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_UserWorks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_UserWorks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_WorkID,
@@ -303,26 +310,26 @@
             this.col_WorkJobID,
             this.col_WorkDoneTime,
             this.col_WorkDoneDate});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_UserWorks.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UserWorks.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_UserWorks.EnableHeadersVisualStyles = false;
             this.dgv_UserWorks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_UserWorks.Location = new System.Drawing.Point(3, 3);
             this.dgv_UserWorks.Name = "dgv_UserWorks";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_UserWorks.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserWorks.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_UserWorks.Size = new System.Drawing.Size(559, 189);
             this.dgv_UserWorks.TabIndex = 1;
             // 
@@ -369,6 +376,23 @@
             this.col_WorkDoneDate.Name = "col_WorkDoneDate";
             this.col_WorkDoneDate.Width = 120;
             // 
+            // crt_UserWorkStatus
+            // 
+            this.crt_UserWorkStatus.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.crt_UserWorkStatus.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.crt_UserWorkStatus.Legends.Add(legend1);
+            this.crt_UserWorkStatus.Location = new System.Drawing.Point(3, 3);
+            this.crt_UserWorkStatus.Name = "crt_UserWorkStatus";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.crt_UserWorkStatus.Series.Add(series1);
+            this.crt_UserWorkStatus.Size = new System.Drawing.Size(559, 260);
+            this.crt_UserWorkStatus.TabIndex = 0;
+            this.crt_UserWorkStatus.Text = "chart1";
+            // 
             // frmUserShowPersonelsFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -388,7 +412,9 @@
             this.pnl_Main.PerformLayout();
             this.pnl_SubPersonels.ResumeLayout(false);
             this.pnl_UserWorks.ResumeLayout(false);
+            this.pnl_WorksChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UserWorks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_UserWorkStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,5 +439,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkJobID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkDoneTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_WorkDoneDate;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crt_UserWorkStatus;
     }
 }
