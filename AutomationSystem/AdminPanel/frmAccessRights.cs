@@ -91,7 +91,9 @@ namespace AutomationSystem.AdminPanel
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            getCheckNode(trv_AccessRights.Nodes);
 
+            MessageBox.Show("اطلاعات با موفقيت ثبت شد","تايين دسترسي");
         }
 
         private List<string> getCheckNode(TreeNodeCollection nodes)
@@ -122,14 +124,17 @@ namespace AutomationSystem.AdminPanel
                 {
                     try
                     {
-
+                        db.Sp_DeleteUserAccess(this.getUserID, Convert.ToInt32(childNode.Tag));
+                        db.SaveChanges();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("خطايي در خواندن اطلاعات رخ داد","پايگاه داده");
                     }
                 }
+                nodeList.AddRange(getCheckNode(childNode.Nodes));
             }
+            return nodeList;
         }
     }
 }
