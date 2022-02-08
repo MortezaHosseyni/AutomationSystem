@@ -88,5 +88,48 @@ namespace AutomationSystem.AdminPanel
                 }
             }
         }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private List<string> getCheckNode(TreeNodeCollection nodes)
+        {
+            List<string> nodeList = new List<string>();
+
+            if (nodes == null)
+            {
+                return nodeList;
+            }
+
+            foreach (TreeNode childNode in nodes)
+            {
+                if (childNode.Checked) //Add access
+                {
+                    UserAccess UA = new UserAccess();
+                    UA.UAccessUserID = this.getUserID;
+                    UA.UAccessSPartID = Convert.ToInt32(childNode.Tag);
+
+                    var query = (from UAccess in db.UserAccesses where UAccess.UAccessUserID == this.getUserID where UAccess.UAccessSPartID == UA.UAccessSPartID select UAccess).ToList();
+                    if (query.Count == 0)
+                    {
+                        db.UserAccesses.Add(UA);
+                        db.SaveChanges();
+                    }
+                }
+                else if (childNode.Checked == false && childNode.Tag != "1") //Remove access
+                {
+                    try
+                    {
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("خطايي در خواندن اطلاعات رخ داد","پايگاه داده");
+                    }
+                }
+            }
+        }
     }
 }
