@@ -14,6 +14,7 @@ namespace AutomationSystem.AdminPanel
     public partial class frmAccessRights : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        public int getUserID { get; set; }
         public frmAccessRights()
         {
             InitializeComponent();

@@ -175,6 +175,8 @@ namespace AutomationSystem.AdminPanel
         private void btn_AssignmentJob_Click(object sender, EventArgs e)
         {
             frmAsignmentJob asignmentJob = new frmAsignmentJob();
+
+            asignmentJob.formType = 1;
             asignmentJob.ShowDialog();
         }
 
@@ -193,6 +195,8 @@ namespace AutomationSystem.AdminPanel
         private void btn_AccessRight_Click(object sender, EventArgs e)
         {
             frmAsignmentJob userAccessRights = new frmAsignmentJob();
+
+            userAccessRights.formType = 2;
             userAccessRights.lbl_Title.Text = "سطوح دسترسي";
             userAccessRights.btn_JobsHistory.Text = "تايين دسترسي";
             userAccessRights.ShowDialog();

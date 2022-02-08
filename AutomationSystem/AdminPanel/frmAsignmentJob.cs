@@ -14,6 +14,7 @@ namespace AutomationSystem.AdminPanel
     public partial class frmAsignmentJob : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        public byte formType { get; set; } // 1 = AsignmentJob | 2 = AccessRights
         public frmAsignmentJob()
         {
             InitializeComponent();
