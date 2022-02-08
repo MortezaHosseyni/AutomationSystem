@@ -94,6 +94,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_AddReminder_Click_1(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 20 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 14;
@@ -178,6 +185,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_ShowNotes_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 12 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 7;
@@ -189,6 +203,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_Draft_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 21 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 15;
@@ -200,6 +221,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_CreateMessage_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 18 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 12;
@@ -212,6 +240,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_AllRecivedMessages_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 6 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد","دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 1;
@@ -223,6 +258,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_SendedMessages_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 14 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 8;
@@ -234,6 +276,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_CreateNote_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 19 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 13;
@@ -245,6 +294,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_SendedNotes_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 16 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 10;
@@ -256,6 +312,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_ArrivedNotes_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 11 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 6;
@@ -267,6 +330,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_ReadedMessages_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 7 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 2;
@@ -278,6 +348,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_UnReadedMessages_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 8 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 3;
@@ -289,6 +366,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_UrgentActionMessages_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 9 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 4;
@@ -300,6 +384,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_ConfidentialMessages_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 10 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 5;
@@ -311,6 +402,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_NewsAndAnnouncement_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 22 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 16;
@@ -322,6 +420,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_ShowGetReferenceLetters_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 13 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 17;
@@ -333,6 +438,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_ReferredMessages_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 17 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 11;
@@ -344,6 +456,13 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_Following_Click(object sender, EventArgs e)
         {
+            var queryAccess = (from UA in db.UserAccesses where UA.UAccessUserID == PublicVariable.global_UserID where UA.UAccessSPartID == 15 select UA).ToList();
+            if (queryAccess.Count == 0)
+            {
+                MessageBox.Show("شما به اين بخش دسترسي نداريد", "دسترسي ممنوع");
+                return;
+            }
+
             CloseForms();
 
             formNumber = 9;
