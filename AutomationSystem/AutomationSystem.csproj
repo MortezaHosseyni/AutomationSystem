@@ -133,6 +133,12 @@
     <Compile Include="AdminPanel\frmNewsList.Designer.cs">
       <DependentUpon>frmNewsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmReciveSupRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmReciveSupRequests.Designer.cs">
+      <DependentUpon>frmReciveSupRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmReminder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmNewsList.resx">
       <DependentUpon>frmNewsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmReciveSupRequests.resx">
+      <DependentUpon>frmReciveSupRequests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmReminder.resx">
       <DependentUpon>frmReminder.cs</DependentUpon>
