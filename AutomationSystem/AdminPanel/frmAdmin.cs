@@ -201,5 +201,11 @@ namespace AutomationSystem.AdminPanel
             userAccessRights.btn_JobsHistory.Text = "تايين دسترسي";
             userAccessRights.ShowDialog();
         }
+
+        private void lbl_ForSupportValue_Click(object sender, EventArgs e)
+        {
+            frmReciveSupRequests reciveRequestes = new frmReciveSupRequests();
+            reciveRequestes.ShowDialog();
+        }
     }
 }

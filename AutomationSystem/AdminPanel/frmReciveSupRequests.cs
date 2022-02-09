@@ -29,9 +29,9 @@ namespace AutomationSystem.AdminPanel
             recivedRequests(searchCondition());
         }
 
-        private void recivedRequests(string searchRemind)
+        private void recivedRequests(string searchSup)
         {
-            var query = db.Database.SqlQuery<Vw_Supports>("SELECT * FROM Vw_Supports WHERE 1=1 " + searchRemind);
+            var query = db.Database.SqlQuery<Vw_Supports>("SELECT * FROM Vw_Supports WHERE 1=1" + searchSup);
             var result = query.ToList();
 
             if (result.Count != 0)
@@ -59,14 +59,29 @@ namespace AutomationSystem.AdminPanel
             string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateTo.Value.Year.ToString()}/{txt_DateTo.Value.Month.ToString()}/{txt_DateTo.Value.Day.ToString()}"));
 
 
-            string searchString = $" AND RemindRememberDate BETWEEN '{dateIn}' AND '{dateTo}'";
+            string searchString = $" AND SupDate BETWEEN '{dateIn}' AND '{dateTo}'";
 
-            if (txt_RemindSubjectSearch.Text != "")
+            if (txt_SupSubject.Text != "")
             {
-                searchString += $" AND RemindSubject LIKE '%{txt_RemindSubjectSearch.Text}%'";
+                searchString += $" AND SupSubject LIKE '%{txt_SupSubject.Text}%'";
+            }
+
+            if (txt_SupCaption.Text != "")
+            {
+                searchString += $" AND SupCaption LIKE '%{txt_SupCaption.Text}%'";
+            }
+
+            if (txt_SupRequester.Text != "")
+            {
+                searchString += $" AND FullName LIKE '%{txt_SupRequester.Text}%'";
             }
 
             return searchString;
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            recivedRequests(searchCondition());
         }
     }
 }
