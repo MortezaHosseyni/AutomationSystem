@@ -55,6 +55,9 @@
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Works_Users" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Works" Width="1.5" PointX="23.5" PointY="7.25" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_ChartInfo" Width="1.5" PointX="25.125" PointY="7.25" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Support" Width="1.5" PointX="25.125" PointY="0.75" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Supports" Width="1.5" PointX="26.75" PointY="7.25" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Supports_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

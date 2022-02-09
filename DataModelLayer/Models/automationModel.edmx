@@ -127,6 +127,16 @@
           <Property Name="SentNoteSendedNoteID" Type="int" Nullable="false" />
           <Property Name="SentNoteUserID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Supports">
+          <Key>
+            <PropertyRef Name="SupID" />
+          </Key>
+          <Property Name="SupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupSubject" Type="varchar" MaxLength="150" />
+          <Property Name="SupCaption" Type="varchar" MaxLength="1200" />
+          <Property Name="SupUserID" Type="int" Nullable="false" />
+          <Property Name="SupDate" Type="varchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="SystemParts">
           <Key>
             <PropertyRef Name="SPartID" />
@@ -527,6 +537,21 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_SentNote' does n
           <Property Name="ReciverFullName" Type="varchar" MaxLength="201" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Supports' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Supports">
+          <Key>
+            <PropertyRef Name="SupID" />
+            <PropertyRef Name="SupUserID" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="SupID" Type="int" Nullable="false" />
+          <Property Name="SupSubject" Type="varchar" MaxLength="150" />
+          <Property Name="SupCaption" Type="varchar" MaxLength="1200" />
+          <Property Name="SupUserID" Type="int" Nullable="false" />
+          <Property Name="SupDate" Type="varchar" MaxLength="30" />
+          <Property Name="FullName" Type="varchar" MaxLength="201" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_SystemParts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_SystemParts">
           <Key>
@@ -779,6 +804,18 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Supports_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Supports" Type="Self.Supports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Supports">
+              <PropertyRef Name="SupUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserAccess_SystemParts">
           <End Role="SystemParts" Type="Self.SystemParts" Multiplicity="0..1" />
           <End Role="UserAccess" Type="Self.UserAccess" Multiplicity="*" />
@@ -915,6 +952,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
           <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentLetters" EntityType="Self.SentLetters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SentNotes" EntityType="Self.SentNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supports" EntityType="Self.Supports" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemParts" EntityType="Self.SystemParts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccess" EntityType="Self.UserAccess" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
@@ -1150,6 +1188,16 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
     [Vw_SentNote].[ReciverFullName] AS [ReciverFullName]
     FROM [dbo].[Vw_SentNote] AS [Vw_SentNote]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Vw_Supports" EntityType="Self.Vw_Supports" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Supports].[SupID] AS [SupID], 
+    [Vw_Supports].[SupSubject] AS [SupSubject], 
+    [Vw_Supports].[SupCaption] AS [SupCaption], 
+    [Vw_Supports].[SupUserID] AS [SupUserID], 
+    [Vw_Supports].[SupDate] AS [SupDate], 
+    [Vw_Supports].[FullName] AS [FullName]
+    FROM [dbo].[Vw_Supports] AS [Vw_Supports]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Vw_SystemParts" EntityType="Self.Vw_SystemParts" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Vw_SystemParts].[SPartID] AS [SPartID], 
@@ -1262,6 +1310,10 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
             <End Role="Users" EntitySet="Users" />
             <End Role="SentNotes" EntitySet="SentNotes" />
           </AssociationSet>
+          <AssociationSet Name="FK_Supports_Users" Association="Self.FK_Supports_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Supports" EntitySet="Supports" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserAccess_SystemParts" Association="Self.FK_UserAccess_SystemParts">
             <End Role="SystemParts" EntitySet="SystemParts" />
             <End Role="UserAccess" EntitySet="UserAccess" />
@@ -1317,6 +1369,7 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
           <NavigationProperty Name="ReferenceLetters1" Relationship="Office_Automation_DatabaseModel.FK_ReferenceLetters_Users_Sender" FromRole="User" ToRole="ReferenceLetter" />
           <NavigationProperty Name="UserAccesses" Relationship="Office_Automation_DatabaseModel.FK_UserAccess_Users" FromRole="User" ToRole="UserAccess" />
           <NavigationProperty Name="Works" Relationship="Office_Automation_DatabaseModel.FK_Works_Users" FromRole="User" ToRole="Work" />
+          <NavigationProperty Name="Supports" Relationship="Office_Automation_DatabaseModel.FK_Supports_Users" FromRole="User" ToRole="Support" />
         </EntityType>
         <EntityContainer Name="Office_Automation_DatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -1491,6 +1544,12 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
           <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="Vw_ChartInfo" EntityType="Office_Automation_DatabaseModel.Vw_ChartInfo" />
+          <EntitySet Name="Supports" EntityType="Office_Automation_DatabaseModel.Support" />
+          <EntitySet Name="Vw_Supports" EntityType="Office_Automation_DatabaseModel.Vw_Supports" />
+          <AssociationSet Name="FK_Supports_Users" Association="Office_Automation_DatabaseModel.FK_Supports_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Support" EntitySet="Supports" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reminder">
           <Key>
@@ -2373,6 +2432,42 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
           <Property Name="TotalTime" Type="Int32" />
         </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="SupID" />
+          </Key>
+          <Property Name="SupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SupCaption" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" />
+          <Property Name="SupUserID" Type="Int32" Nullable="false" />
+          <Property Name="SupDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Office_Automation_DatabaseModel.FK_Supports_Users" FromRole="Support" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Vw_Supports">
+          <Key>
+            <PropertyRef Name="SupID" />
+            <PropertyRef Name="SupUserID" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="SupID" Type="Int32" Nullable="false" />
+          <Property Name="SupSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SupCaption" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" />
+          <Property Name="SupUserID" Type="Int32" Nullable="false" />
+          <Property Name="SupDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Supports_Users">
+          <End Type="Office_Automation_DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="Office_Automation_DatabaseModel.Support" Role="Support" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Support">
+              <PropertyRef Name="SupUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2989,6 +3084,29 @@ warning 6002: The table/view 'Office_Automation_Database.dbo.Vw_Works' does not 
                 <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="WorkUserID" ColumnName="WorkUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supports">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Support">
+              <MappingFragment StoreEntitySet="Supports">
+                <ScalarProperty Name="SupDate" ColumnName="SupDate" />
+                <ScalarProperty Name="SupUserID" ColumnName="SupUserID" />
+                <ScalarProperty Name="SupCaption" ColumnName="SupCaption" />
+                <ScalarProperty Name="SupSubject" ColumnName="SupSubject" />
+                <ScalarProperty Name="SupID" ColumnName="SupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Supports">
+            <EntityTypeMapping TypeName="Office_Automation_DatabaseModel.Vw_Supports">
+              <MappingFragment StoreEntitySet="Vw_Supports">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="SupDate" ColumnName="SupDate" />
+                <ScalarProperty Name="SupUserID" ColumnName="SupUserID" />
+                <ScalarProperty Name="SupCaption" ColumnName="SupCaption" />
+                <ScalarProperty Name="SupSubject" ColumnName="SupSubject" />
+                <ScalarProperty Name="SupID" ColumnName="SupID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
