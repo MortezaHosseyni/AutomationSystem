@@ -62,6 +62,9 @@ namespace AutomationSystem.AdminPanel
             //RecivedRequests
             var queryRecivedSup = db.Database.SqlQuery<Vw_Supports>($"SELECT * FROM Vw_Supports WHERE SupDate = '{PublicVariable.todayDate}'").ToList();
             lbl_ForSupportValue.Text = queryRecivedSup.Count.ToString();
+
+            //RefreshDB
+            timer_RefreshDB.Enabled = true;
         }
         private void Reminder(string searchRemind)
         {
@@ -210,6 +213,18 @@ namespace AutomationSystem.AdminPanel
         {
             frmReciveSupRequests reciveRequestes = new frmReciveSupRequests();
             reciveRequestes.ShowDialog();
+        }
+
+        private void timer_RefreshDB_Tick(object sender, EventArgs e)
+        {
+            timer_RefreshDB.Stop();
+            frmAdmin_Load(sender, e);
+            timer_RefreshDB.Start();
+        }
+
+        private void frmAdmin_Activated(object sender, EventArgs e)
+        {
+            frmAdmin_Load(sender, e);
         }
     }
 }
