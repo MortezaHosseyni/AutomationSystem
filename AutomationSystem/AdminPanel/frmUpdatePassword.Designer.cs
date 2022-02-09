@@ -195,6 +195,7 @@
             this.txt_NewPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_NewPassword.Location = new System.Drawing.Point(68, 39);
             this.txt_NewPassword.Name = "txt_NewPassword";
+            this.txt_NewPassword.PasswordChar = '*';
             this.txt_NewPassword.PreventEnterBeep = true;
             this.txt_NewPassword.Size = new System.Drawing.Size(330, 36);
             this.txt_NewPassword.TabIndex = 1;
@@ -210,6 +211,7 @@
             this.txt_ConfirmNewPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_ConfirmNewPassword.Location = new System.Drawing.Point(68, 81);
             this.txt_ConfirmNewPassword.Name = "txt_ConfirmNewPassword";
+            this.txt_ConfirmNewPassword.PasswordChar = '*';
             this.txt_ConfirmNewPassword.PreventEnterBeep = true;
             this.txt_ConfirmNewPassword.Size = new System.Drawing.Size(330, 36);
             this.txt_ConfirmNewPassword.TabIndex = 2;
@@ -228,6 +230,7 @@
             this.btn_Save.Symbol = "";
             this.btn_Save.TabIndex = 0;
             this.btn_Save.Text = "ثبت اطلاعات";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Exit
             // 
