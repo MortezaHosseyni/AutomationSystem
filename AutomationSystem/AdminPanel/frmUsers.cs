@@ -195,5 +195,13 @@ namespace AutomationSystem.AdminPanel
             formUserInfo.Get_UserID = Convert.ToInt32(dgv_Users.CurrentRow.Cells["col_UserID"].Value);
             formUserInfo.ShowDialog();
         }
+
+        private void cms_UpdateUserPassword_Click(object sender, EventArgs e)
+        {
+            frmUpdatePassword userUpdatePass = new frmUpdatePassword();
+            userUpdatePass.lbl_Title.Text = $"تغيير گذرواژه كاربر {dgv_Users.CurrentRow.Cells["col_UserFristName"].Value.ToString()} {dgv_Users.CurrentRow.Cells["col_UserLastName"].Value.ToString()}";
+            userUpdatePass.getUserID = Convert.ToInt32(dgv_Users.CurrentRow.Cells["col_UserID"].Value);
+            userUpdatePass.ShowDialog();
+        }
     }
 }

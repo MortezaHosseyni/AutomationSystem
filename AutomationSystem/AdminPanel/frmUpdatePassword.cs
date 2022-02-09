@@ -14,6 +14,7 @@ namespace AutomationSystem.AdminPanel
     public partial class frmUpdatePassword : Form
     {
         Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        public int getUserID { get; set; }
         public frmUpdatePassword()
         {
             InitializeComponent();

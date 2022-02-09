@@ -71,6 +71,7 @@
             this.col_UserGenderCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cms_EnableCurrentUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_UpdateUserPassword = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Main.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.pnl_Search.SuspendLayout();
@@ -605,11 +606,13 @@
             // 
             // contextMenuStrip
             // 
+            this.contextMenuStrip.BackColor = System.Drawing.Color.White;
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cms_EnableCurrentUser});
+            this.cms_EnableCurrentUser,
+            this.cms_UpdateUserPassword});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip.Size = new System.Drawing.Size(152, 26);
+            this.contextMenuStrip.Size = new System.Drawing.Size(152, 48);
             // 
             // cms_EnableCurrentUser
             // 
@@ -618,6 +621,15 @@
             this.cms_EnableCurrentUser.Size = new System.Drawing.Size(151, 22);
             this.cms_EnableCurrentUser.Text = "فعال كردن كاربر";
             this.cms_EnableCurrentUser.Click += new System.EventHandler(this.cms_EnableCurrentUser_Click);
+            // 
+            // cms_UpdateUserPassword
+            // 
+            this.cms_UpdateUserPassword.BackColor = System.Drawing.Color.Maroon;
+            this.cms_UpdateUserPassword.ForeColor = System.Drawing.Color.White;
+            this.cms_UpdateUserPassword.Name = "cms_UpdateUserPassword";
+            this.cms_UpdateUserPassword.Size = new System.Drawing.Size(151, 22);
+            this.cms_UpdateUserPassword.Text = "تغيير گذرواژه";
+            this.cms_UpdateUserPassword.Click += new System.EventHandler(this.cms_UpdateUserPassword_Click);
             // 
             // frmUsers
             // 
@@ -688,5 +700,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_UserGenderCode;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem cms_EnableCurrentUser;
+        private System.Windows.Forms.ToolStripMenuItem cms_UpdateUserPassword;
     }
 }
