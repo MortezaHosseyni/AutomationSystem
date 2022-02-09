@@ -55,8 +55,8 @@ namespace AutomationSystem.AdminPanel
         }
         private string searchCondition()
         {
-            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_RemindDateIn.Value.Year.ToString()}/{txt_RemindDateIn.Value.Month.ToString()}/{txt_RemindDateIn.Value.Day.ToString()}"));
-            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_RemindDateTo.Value.Year.ToString()}/{txt_RemindDateTo.Value.Month.ToString()}/{txt_RemindDateTo.Value.Day.ToString()}"));
+            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateIn.Value.Year.ToString()}/{txt_DateIn.Value.Month.ToString()}/{txt_DateIn.Value.Day.ToString()}"));
+            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateTo.Value.Year.ToString()}/{txt_DateTo.Value.Month.ToString()}/{txt_DateTo.Value.Day.ToString()}"));
 
 
             string searchString = $" AND RemindRememberDate BETWEEN '{dateIn}' AND '{dateTo}'";

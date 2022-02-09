@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReciveSupRequests));
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.pnl_Requests = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -42,8 +43,20 @@
             this.col_SupDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_SupUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.txt_DateTo = new FreeControls.PersianDateTimePicker();
+            this.txt_DateIn = new FreeControls.PersianDateTimePicker();
+            this.lbl_DateTo = new DevComponents.DotNetBar.LabelX();
+            this.lbl_DateIn = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SupSubject = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SupCaption = new DevComponents.DotNetBar.LabelX();
+            this.lbl_SupRequester = new DevComponents.DotNetBar.LabelX();
+            this.txt_SupCaption = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_SupSubject = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_SupRequester = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btn_Search = new DevComponents.DotNetBar.ButtonX();
             this.pnl_Main.SuspendLayout();
             this.pnl_Requests.SuspendLayout();
+            this.pnl_Search.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Requests)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +106,7 @@
             this.pnl_Requests.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Requests.Location = new System.Drawing.Point(12, 57);
             this.pnl_Requests.Name = "pnl_Requests";
-            this.pnl_Requests.Size = new System.Drawing.Size(956, 323);
+            this.pnl_Requests.Size = new System.Drawing.Size(956, 364);
             // 
             // 
             // 
@@ -128,10 +141,21 @@
             // 
             this.pnl_Search.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Search.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_Search.Controls.Add(this.btn_Search);
+            this.pnl_Search.Controls.Add(this.txt_SupRequester);
+            this.pnl_Search.Controls.Add(this.txt_SupSubject);
+            this.pnl_Search.Controls.Add(this.txt_SupCaption);
+            this.pnl_Search.Controls.Add(this.txt_DateTo);
+            this.pnl_Search.Controls.Add(this.txt_DateIn);
+            this.pnl_Search.Controls.Add(this.lbl_DateTo);
+            this.pnl_Search.Controls.Add(this.lbl_SupRequester);
+            this.pnl_Search.Controls.Add(this.lbl_SupCaption);
+            this.pnl_Search.Controls.Add(this.lbl_SupSubject);
+            this.pnl_Search.Controls.Add(this.lbl_DateIn);
             this.pnl_Search.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnl_Search.Location = new System.Drawing.Point(12, 386);
+            this.pnl_Search.Location = new System.Drawing.Point(12, 427);
             this.pnl_Search.Name = "pnl_Search";
-            this.pnl_Search.Size = new System.Drawing.Size(956, 140);
+            this.pnl_Search.Size = new System.Drawing.Size(956, 99);
             // 
             // 
             // 
@@ -213,18 +237,18 @@
             this.col_SupRequester,
             this.col_SupDate,
             this.col_SupUserID});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Requests.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Requests.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Requests.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgv_Requests.Location = new System.Drawing.Point(3, 3);
             this.dgv_Requests.Name = "dgv_Requests";
-            this.dgv_Requests.Size = new System.Drawing.Size(944, 311);
+            this.dgv_Requests.Size = new System.Drawing.Size(944, 352);
             this.dgv_Requests.TabIndex = 0;
             // 
             // col_SupID
@@ -278,6 +302,148 @@
             this.btn_Exit.Text = "خروج";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // txt_DateTo
+            // 
+            this.txt_DateTo.BackColor = System.Drawing.Color.White;
+            this.txt_DateTo.Font = new System.Drawing.Font("B Nazanin", 14F);
+            this.txt_DateTo.Location = new System.Drawing.Point(471, 6);
+            this.txt_DateTo.Name = "txt_DateTo";
+            this.txt_DateTo.ShowTime = false;
+            this.txt_DateTo.Size = new System.Drawing.Size(165, 33);
+            this.txt_DateTo.TabIndex = 13;
+            this.txt_DateTo.Text = "persianDateTimePicker2";
+            this.txt_DateTo.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateTo.Value")));
+            // 
+            // txt_DateIn
+            // 
+            this.txt_DateIn.BackColor = System.Drawing.Color.White;
+            this.txt_DateIn.Font = new System.Drawing.Font("B Nazanin", 14F);
+            this.txt_DateIn.Location = new System.Drawing.Point(659, 6);
+            this.txt_DateIn.Name = "txt_DateIn";
+            this.txt_DateIn.ShowTime = false;
+            this.txt_DateIn.Size = new System.Drawing.Size(165, 33);
+            this.txt_DateIn.TabIndex = 12;
+            this.txt_DateIn.Text = "persianDateTimePicker1";
+            this.txt_DateIn.Value = ((FreeControls.PersianDate)(resources.GetObject("txt_DateIn.Value")));
+            // 
+            // lbl_DateTo
+            // 
+            this.lbl_DateTo.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_DateTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_DateTo.Location = new System.Drawing.Point(642, 6);
+            this.lbl_DateTo.Name = "lbl_DateTo";
+            this.lbl_DateTo.Size = new System.Drawing.Size(11, 33);
+            this.lbl_DateTo.TabIndex = 11;
+            this.lbl_DateTo.Text = "تا";
+            // 
+            // lbl_DateIn
+            // 
+            this.lbl_DateIn.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_DateIn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_DateIn.Location = new System.Drawing.Point(830, 3);
+            this.lbl_DateIn.Name = "lbl_DateIn";
+            this.lbl_DateIn.Size = new System.Drawing.Size(98, 33);
+            this.lbl_DateIn.TabIndex = 10;
+            this.lbl_DateIn.Text = "تاريخ يادآوري از:";
+            // 
+            // lbl_SupSubject
+            // 
+            this.lbl_SupSubject.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SupSubject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SupSubject.Location = new System.Drawing.Point(365, 6);
+            this.lbl_SupSubject.Name = "lbl_SupSubject";
+            this.lbl_SupSubject.Size = new System.Drawing.Size(45, 33);
+            this.lbl_SupSubject.TabIndex = 10;
+            this.lbl_SupSubject.Text = "موضوع:";
+            // 
+            // lbl_SupCaption
+            // 
+            this.lbl_SupCaption.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SupCaption.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SupCaption.Location = new System.Drawing.Point(830, 48);
+            this.lbl_SupCaption.Name = "lbl_SupCaption";
+            this.lbl_SupCaption.Size = new System.Drawing.Size(61, 33);
+            this.lbl_SupCaption.TabIndex = 10;
+            this.lbl_SupCaption.Text = "توضيحات:";
+            // 
+            // lbl_SupRequester
+            // 
+            this.lbl_SupRequester.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lbl_SupRequester.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_SupRequester.Location = new System.Drawing.Point(365, 48);
+            this.lbl_SupRequester.Name = "lbl_SupRequester";
+            this.lbl_SupRequester.Size = new System.Drawing.Size(100, 33);
+            this.lbl_SupRequester.TabIndex = 10;
+            this.lbl_SupRequester.Text = "درخواست كننده:";
+            // 
+            // txt_SupCaption
+            // 
+            // 
+            // 
+            // 
+            this.txt_SupCaption.Border.Class = "TextBoxBorder";
+            this.txt_SupCaption.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SupCaption.Location = new System.Drawing.Point(471, 45);
+            this.txt_SupCaption.Name = "txt_SupCaption";
+            this.txt_SupCaption.PreventEnterBeep = true;
+            this.txt_SupCaption.Size = new System.Drawing.Size(353, 36);
+            this.txt_SupCaption.TabIndex = 2;
+            this.txt_SupCaption.WatermarkText = "جستجو در توضيحات درخواست...";
+            // 
+            // txt_SupSubject
+            // 
+            // 
+            // 
+            // 
+            this.txt_SupSubject.Border.Class = "TextBoxBorder";
+            this.txt_SupSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SupSubject.Location = new System.Drawing.Point(128, 6);
+            this.txt_SupSubject.Name = "txt_SupSubject";
+            this.txt_SupSubject.PreventEnterBeep = true;
+            this.txt_SupSubject.Size = new System.Drawing.Size(231, 36);
+            this.txt_SupSubject.TabIndex = 1;
+            this.txt_SupSubject.WatermarkText = "جستجو در موضوع درخواست...";
+            // 
+            // txt_SupRequester
+            // 
+            // 
+            // 
+            // 
+            this.txt_SupRequester.Border.Class = "TextBoxBorder";
+            this.txt_SupRequester.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_SupRequester.Location = new System.Drawing.Point(128, 48);
+            this.txt_SupRequester.Name = "txt_SupRequester";
+            this.txt_SupRequester.PreventEnterBeep = true;
+            this.txt_SupRequester.Size = new System.Drawing.Size(231, 36);
+            this.txt_SupRequester.TabIndex = 3;
+            this.txt_SupRequester.WatermarkText = "جستجو در درخواست كننده‌ها...";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_Search.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Search.Location = new System.Drawing.Point(19, 6);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(99, 78);
+            this.btn_Search.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_Search.Symbol = "";
+            this.btn_Search.TabIndex = 15;
+            // 
             // frmReciveSupRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -295,6 +461,8 @@
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             this.pnl_Requests.ResumeLayout(false);
+            this.pnl_Search.ResumeLayout(false);
+            this.pnl_Search.PerformLayout();
             this.pnl_Buttons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Requests)).EndInit();
             this.ResumeLayout(false);
@@ -316,5 +484,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SupDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SupUserID;
         private DevComponents.DotNetBar.ButtonX btn_Exit;
+        private FreeControls.PersianDateTimePicker txt_DateTo;
+        private FreeControls.PersianDateTimePicker txt_DateIn;
+        private DevComponents.DotNetBar.LabelX lbl_DateTo;
+        private DevComponents.DotNetBar.LabelX lbl_DateIn;
+        private DevComponents.DotNetBar.LabelX lbl_SupRequester;
+        private DevComponents.DotNetBar.LabelX lbl_SupCaption;
+        private DevComponents.DotNetBar.LabelX lbl_SupSubject;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SupRequester;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SupSubject;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_SupCaption;
+        private DevComponents.DotNetBar.ButtonX btn_Search;
     }
 }
