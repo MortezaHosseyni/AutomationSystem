@@ -58,6 +58,10 @@ namespace AutomationSystem.AdminPanel
             {
                 lbl_OnlineUsersValue.Text = resultOnlineUsers.Count.ToString();
             }
+
+            //RecivedRequests
+            var queryRecivedSup = db.Database.SqlQuery<Vw_Supports>($"SELECT * FROM Vw_Supports WHERE SupDate = '{PublicVariable.todayDate}'").ToList();
+            lbl_ForSupportValue.Text = queryRecivedSup.Count.ToString();
         }
         private void Reminder(string searchRemind)
         {
