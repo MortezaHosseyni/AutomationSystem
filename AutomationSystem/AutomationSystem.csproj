@@ -145,6 +145,12 @@
     <Compile Include="AdminPanel\frmSystemComponents.Designer.cs">
       <DependentUpon>frmSystemComponents.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmUpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmUpdatePassword.Designer.cs">
+      <DependentUpon>frmUpdatePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmUserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmSystemComponents.resx">
       <DependentUpon>frmSystemComponents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmUpdatePassword.resx">
+      <DependentUpon>frmUpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmUserInfo.resx">
       <DependentUpon>frmUserInfo.cs</DependentUpon>
