@@ -55,7 +55,7 @@
             this.lbl_DailyFunction = new DevComponents.DotNetBar.LabelItem();
             this.lbl_ShowPersonelsFunctions = new DevComponents.DotNetBar.LabelItem();
             this.pnl_UpMenu = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.btn_Exit = new DevComponents.DotNetBar.ButtonX();
+            this.lbl_UpdatePassword = new System.Windows.Forms.LinkLabel();
             this.pic_UserPicture = new System.Windows.Forms.PictureBox();
             this.val_Job = new DevComponents.DotNetBar.LabelX();
             this.lbl_Job = new DevComponents.DotNetBar.LabelX();
@@ -80,7 +80,8 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbl_UpdatePassword = new System.Windows.Forms.LinkLabel();
+            this.lbl_Exit = new System.Windows.Forms.LinkLabel();
+            this.lbl_RequestSupport = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -529,8 +530,9 @@
             // 
             this.pnl_UpMenu.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_UpMenu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_UpMenu.Controls.Add(this.lbl_Exit);
+            this.pnl_UpMenu.Controls.Add(this.lbl_RequestSupport);
             this.pnl_UpMenu.Controls.Add(this.lbl_UpdatePassword);
-            this.pnl_UpMenu.Controls.Add(this.btn_Exit);
             this.pnl_UpMenu.Controls.Add(this.pic_UserPicture);
             this.pnl_UpMenu.Controls.Add(this.val_Job);
             this.pnl_UpMenu.Controls.Add(this.lbl_Job);
@@ -588,19 +590,18 @@
             this.pnl_UpMenu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pnl_UpMenu.TabIndex = 0;
             // 
-            // btn_Exit
+            // lbl_UpdatePassword
             // 
-            this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Font = new System.Drawing.Font("B Nazanin", 14.25F);
-            this.btn_Exit.Location = new System.Drawing.Point(137, 92);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(124, 32);
-            this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_Exit.Symbol = "";
-            this.btn_Exit.TabIndex = 3;
-            this.btn_Exit.Text = "خروج از سيستم";
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            this.lbl_UpdatePassword.AutoSize = true;
+            this.lbl_UpdatePassword.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_UpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_UpdatePassword.Location = new System.Drawing.Point(265, 98);
+            this.lbl_UpdatePassword.Name = "lbl_UpdatePassword";
+            this.lbl_UpdatePassword.Size = new System.Drawing.Size(90, 28);
+            this.lbl_UpdatePassword.TabIndex = 4;
+            this.lbl_UpdatePassword.TabStop = true;
+            this.lbl_UpdatePassword.Text = "تغيير گذرواژه";
+            this.lbl_UpdatePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_UpdatePassword_LinkClicked);
             // 
             // pic_UserPicture
             // 
@@ -703,8 +704,8 @@
             // 
             this.lbl_News.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_News.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lbl_News.ForeColor = System.Drawing.Color.Red;
-            this.lbl_News.Location = new System.Drawing.Point(162, 12);
+            this.lbl_News.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lbl_News.Location = new System.Drawing.Point(265, 10);
             this.lbl_News.Name = "lbl_News";
             this.lbl_News.Size = new System.Drawing.Size(80, 28);
             this.lbl_News.Symbol = "";
@@ -722,9 +723,9 @@
             this.val_AllSendedMessages.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_AllSendedMessages.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.val_AllSendedMessages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.val_AllSendedMessages.Location = new System.Drawing.Point(366, 95);
+            this.val_AllSendedMessages.Location = new System.Drawing.Point(367, 95);
             this.val_AllSendedMessages.Name = "val_AllSendedMessages";
-            this.val_AllSendedMessages.Size = new System.Drawing.Size(171, 28);
+            this.val_AllSendedMessages.Size = new System.Drawing.Size(170, 28);
             this.val_AllSendedMessages.TabIndex = 1;
             this.val_AllSendedMessages.Text = "...";
             // 
@@ -929,18 +930,32 @@
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // lbl_UpdatePassword
+            // lbl_Exit
             // 
-            this.lbl_UpdatePassword.AutoSize = true;
-            this.lbl_UpdatePassword.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_UpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_UpdatePassword.Location = new System.Drawing.Point(271, 95);
-            this.lbl_UpdatePassword.Name = "lbl_UpdatePassword";
-            this.lbl_UpdatePassword.Size = new System.Drawing.Size(90, 28);
-            this.lbl_UpdatePassword.TabIndex = 4;
-            this.lbl_UpdatePassword.TabStop = true;
-            this.lbl_UpdatePassword.Text = "تغيير گذرواژه";
-            this.lbl_UpdatePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_UpdatePassword_LinkClicked);
+            this.lbl_Exit.AutoSize = true;
+            this.lbl_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Exit.LinkColor = System.Drawing.Color.Red;
+            this.lbl_Exit.Location = new System.Drawing.Point(137, 12);
+            this.lbl_Exit.Name = "lbl_Exit";
+            this.lbl_Exit.Size = new System.Drawing.Size(107, 28);
+            this.lbl_Exit.TabIndex = 4;
+            this.lbl_Exit.TabStop = true;
+            this.lbl_Exit.Text = "خروج از سيستم";
+            this.lbl_Exit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_Exit_LinkClicked);
+            // 
+            // lbl_RequestSupport
+            // 
+            this.lbl_RequestSupport.AutoSize = true;
+            this.lbl_RequestSupport.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RequestSupport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_RequestSupport.LinkColor = System.Drawing.Color.Indigo;
+            this.lbl_RequestSupport.Location = new System.Drawing.Point(137, 98);
+            this.lbl_RequestSupport.Name = "lbl_RequestSupport";
+            this.lbl_RequestSupport.Size = new System.Drawing.Size(126, 28);
+            this.lbl_RequestSupport.TabIndex = 4;
+            this.lbl_RequestSupport.TabStop = true;
+            this.lbl_RequestSupport.Text = "درخواست پشتيباني";
             // 
             // frmMainUser
             // 
@@ -992,7 +1007,6 @@
         private DevComponents.DotNetBar.LabelX lbl_AllReciveMessages;
         private DevComponents.DotNetBar.LabelX val_AllSendedMessages;
         private DevComponents.DotNetBar.LabelX lbl_AllSendedMessage;
-        private DevComponents.DotNetBar.ButtonX btn_Exit;
         private DevComponents.DotNetBar.ExplorerBar exb_RightMenu;
         private DevComponents.DotNetBar.ExplorerBarGroupItem ebg_Dashboard;
         private DevComponents.DotNetBar.ExplorerBarGroupItem ebg_Recycling;
@@ -1021,5 +1035,7 @@
         private DevComponents.DotNetBar.LabelItem lbl_DailyFunction;
         private DevComponents.DotNetBar.LabelItem lbl_ShowPersonelsFunctions;
         private System.Windows.Forms.LinkLabel lbl_UpdatePassword;
+        private System.Windows.Forms.LinkLabel lbl_Exit;
+        private System.Windows.Forms.LinkLabel lbl_RequestSupport;
     }
 }

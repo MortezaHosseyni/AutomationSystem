@@ -584,5 +584,10 @@ namespace AutomationSystem.UserPanel
             frmUserUpdatePassword userUpdatePass = new frmUserUpdatePassword();
             userUpdatePass.ShowDialog();
         }
+
+        private void lbl_Exit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
