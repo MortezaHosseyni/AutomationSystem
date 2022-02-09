@@ -349,6 +349,12 @@
     <Compile Include="UserPanel\frmUserShowAllNews.Designer.cs">
       <DependentUpon>frmUserShowAllNews.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserUpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserUpdatePassword.Designer.cs">
+      <DependentUpon>frmUserUpdatePassword.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel\frmAccessRights.resx">
       <DependentUpon>frmAccessRights.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserShowAllNews.resx">
       <DependentUpon>frmUserShowAllNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserUpdatePassword.resx">
+      <DependentUpon>frmUserUpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Editor\Resources\Thumbs.db" />
     <None Include="Properties\Settings.settings">
