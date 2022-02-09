@@ -55,6 +55,8 @@
             this.lbl_DailyFunction = new DevComponents.DotNetBar.LabelItem();
             this.lbl_ShowPersonelsFunctions = new DevComponents.DotNetBar.LabelItem();
             this.pnl_UpMenu = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.lbl_Exit = new System.Windows.Forms.LinkLabel();
+            this.lbl_RequestSupport = new System.Windows.Forms.LinkLabel();
             this.lbl_UpdatePassword = new System.Windows.Forms.LinkLabel();
             this.pic_UserPicture = new System.Windows.Forms.PictureBox();
             this.val_Job = new DevComponents.DotNetBar.LabelX();
@@ -80,8 +82,6 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbl_Exit = new System.Windows.Forms.LinkLabel();
-            this.lbl_RequestSupport = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -590,6 +590,34 @@
             this.pnl_UpMenu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pnl_UpMenu.TabIndex = 0;
             // 
+            // lbl_Exit
+            // 
+            this.lbl_Exit.AutoSize = true;
+            this.lbl_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Exit.LinkColor = System.Drawing.Color.Red;
+            this.lbl_Exit.Location = new System.Drawing.Point(137, 12);
+            this.lbl_Exit.Name = "lbl_Exit";
+            this.lbl_Exit.Size = new System.Drawing.Size(107, 28);
+            this.lbl_Exit.TabIndex = 4;
+            this.lbl_Exit.TabStop = true;
+            this.lbl_Exit.Text = "خروج از سيستم";
+            this.lbl_Exit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_Exit_LinkClicked);
+            // 
+            // lbl_RequestSupport
+            // 
+            this.lbl_RequestSupport.AutoSize = true;
+            this.lbl_RequestSupport.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RequestSupport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_RequestSupport.LinkColor = System.Drawing.Color.Indigo;
+            this.lbl_RequestSupport.Location = new System.Drawing.Point(137, 98);
+            this.lbl_RequestSupport.Name = "lbl_RequestSupport";
+            this.lbl_RequestSupport.Size = new System.Drawing.Size(126, 28);
+            this.lbl_RequestSupport.TabIndex = 4;
+            this.lbl_RequestSupport.TabStop = true;
+            this.lbl_RequestSupport.Text = "درخواست پشتيباني";
+            this.lbl_RequestSupport.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_RequestSupport_LinkClicked);
+            // 
             // lbl_UpdatePassword
             // 
             this.lbl_UpdatePassword.AutoSize = true;
@@ -929,33 +957,6 @@
             // 
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // lbl_Exit
-            // 
-            this.lbl_Exit.AutoSize = true;
-            this.lbl_Exit.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_Exit.LinkColor = System.Drawing.Color.Red;
-            this.lbl_Exit.Location = new System.Drawing.Point(137, 12);
-            this.lbl_Exit.Name = "lbl_Exit";
-            this.lbl_Exit.Size = new System.Drawing.Size(107, 28);
-            this.lbl_Exit.TabIndex = 4;
-            this.lbl_Exit.TabStop = true;
-            this.lbl_Exit.Text = "خروج از سيستم";
-            this.lbl_Exit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_Exit_LinkClicked);
-            // 
-            // lbl_RequestSupport
-            // 
-            this.lbl_RequestSupport.AutoSize = true;
-            this.lbl_RequestSupport.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RequestSupport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_RequestSupport.LinkColor = System.Drawing.Color.Indigo;
-            this.lbl_RequestSupport.Location = new System.Drawing.Point(137, 98);
-            this.lbl_RequestSupport.Name = "lbl_RequestSupport";
-            this.lbl_RequestSupport.Size = new System.Drawing.Size(126, 28);
-            this.lbl_RequestSupport.TabIndex = 4;
-            this.lbl_RequestSupport.TabStop = true;
-            this.lbl_RequestSupport.Text = "درخواست پشتيباني";
             // 
             // frmMainUser
             // 

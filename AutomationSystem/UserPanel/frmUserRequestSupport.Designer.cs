@@ -259,7 +259,7 @@
             this.txt_SupCaption.Name = "txt_SupCaption";
             this.txt_SupCaption.PreventEnterBeep = true;
             this.txt_SupCaption.Size = new System.Drawing.Size(385, 98);
-            this.txt_SupCaption.TabIndex = 1;
+            this.txt_SupCaption.TabIndex = 2;
             this.txt_SupCaption.WatermarkText = "توضيحات درخواست...";
             // 
             // val_SupDate
@@ -290,6 +290,7 @@
             this.Name = "frmUserRequestSupport";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmUserRequestSupport_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             this.pnl_RequestDetail.ResumeLayout(false);

@@ -589,5 +589,11 @@ namespace AutomationSystem.UserPanel
         {
             Environment.Exit(0);
         }
+
+        private void lbl_RequestSupport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmUserRequestSupport requestSupport = new frmUserRequestSupport();
+            requestSupport.ShowDialog();
+        }
     }
 }
