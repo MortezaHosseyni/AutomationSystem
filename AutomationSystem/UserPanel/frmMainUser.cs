@@ -587,6 +587,8 @@ namespace AutomationSystem.UserPanel
 
         private void lbl_Exit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            db.Sp_Update_ExitDate(PublicVariable.global_UserID, PublicVariable.todayDate + "-" + string.Format("{0:HH:mm:ss}", Convert.ToDateTime(pCalender.GetHour(DateTime.Now).ToString() + ":" + pCalender.GetMinute(DateTime.Now).ToString() + ":" + pCalender.GetSecond(DateTime.Now).ToString())));
+            db.SaveChanges();
             Environment.Exit(0);
         }
 
