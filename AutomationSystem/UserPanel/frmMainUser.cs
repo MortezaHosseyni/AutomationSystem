@@ -578,5 +578,11 @@ namespace AutomationSystem.UserPanel
             userPersonelsFunctions.userJobID = userMainJobID;
             userPersonelsFunctions.Show();
         }
+
+        private void lbl_UpdatePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmUserUpdatePassword userUpdatePass = new frmUserUpdatePassword();
+            userUpdatePass.ShowDialog();
+        }
     }
 }

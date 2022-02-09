@@ -80,6 +80,7 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbl_UpdatePassword = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -528,6 +529,7 @@
             // 
             this.pnl_UpMenu.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_UpMenu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_UpMenu.Controls.Add(this.lbl_UpdatePassword);
             this.pnl_UpMenu.Controls.Add(this.btn_Exit);
             this.pnl_UpMenu.Controls.Add(this.pic_UserPicture);
             this.pnl_UpMenu.Controls.Add(this.val_Job);
@@ -590,9 +592,10 @@
             // 
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(162, 90);
+            this.btn_Exit.Font = new System.Drawing.Font("B Nazanin", 14.25F);
+            this.btn_Exit.Location = new System.Drawing.Point(137, 92);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(124, 34);
+            this.btn_Exit.Size = new System.Drawing.Size(124, 32);
             this.btn_Exit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Exit.Symbol = "";
             this.btn_Exit.TabIndex = 3;
@@ -719,7 +722,7 @@
             this.val_AllSendedMessages.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_AllSendedMessages.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.val_AllSendedMessages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.val_AllSendedMessages.Location = new System.Drawing.Point(297, 95);
+            this.val_AllSendedMessages.Location = new System.Drawing.Point(366, 95);
             this.val_AllSendedMessages.Name = "val_AllSendedMessages";
             this.val_AllSendedMessages.Size = new System.Drawing.Size(171, 28);
             this.val_AllSendedMessages.TabIndex = 1;
@@ -734,9 +737,9 @@
             this.val_AllReciveMessages.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_AllReciveMessages.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.val_AllReciveMessages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.val_AllReciveMessages.Location = new System.Drawing.Point(602, 94);
+            this.val_AllReciveMessages.Location = new System.Drawing.Point(671, 94);
             this.val_AllReciveMessages.Name = "val_AllReciveMessages";
-            this.val_AllReciveMessages.Size = new System.Drawing.Size(146, 28);
+            this.val_AllReciveMessages.Size = new System.Drawing.Size(123, 28);
             this.val_AllReciveMessages.TabIndex = 1;
             this.val_AllReciveMessages.Text = "...";
             // 
@@ -762,7 +765,7 @@
             // 
             // 
             this.lbl_AllSendedMessage.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_AllSendedMessage.Location = new System.Drawing.Point(474, 95);
+            this.lbl_AllSendedMessage.Location = new System.Drawing.Point(543, 95);
             this.lbl_AllSendedMessage.Name = "lbl_AllSendedMessage";
             this.lbl_AllSendedMessage.Size = new System.Drawing.Size(122, 28);
             this.lbl_AllSendedMessage.TabIndex = 1;
@@ -775,7 +778,7 @@
             // 
             // 
             this.lbl_AllReciveMessages.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_AllReciveMessages.Location = new System.Drawing.Point(754, 96);
+            this.lbl_AllReciveMessages.Location = new System.Drawing.Point(800, 96);
             this.lbl_AllReciveMessages.Name = "lbl_AllReciveMessages";
             this.lbl_AllReciveMessages.Size = new System.Drawing.Size(127, 28);
             this.lbl_AllReciveMessages.TabIndex = 1;
@@ -803,9 +806,9 @@
             this.val_Date.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_Date.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.val_Date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.val_Date.Location = new System.Drawing.Point(887, 95);
+            this.val_Date.Location = new System.Drawing.Point(921, 95);
             this.val_Date.Name = "val_Date";
-            this.val_Date.Size = new System.Drawing.Size(137, 28);
+            this.val_Date.Size = new System.Drawing.Size(124, 28);
             this.val_Date.TabIndex = 1;
             this.val_Date.Text = "...";
             // 
@@ -831,7 +834,7 @@
             // 
             // 
             this.lbl_Date.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Date.Location = new System.Drawing.Point(1030, 95);
+            this.lbl_Date.Location = new System.Drawing.Point(1051, 95);
             this.lbl_Date.Name = "lbl_Date";
             this.lbl_Date.Size = new System.Drawing.Size(64, 28);
             this.lbl_Date.TabIndex = 1;
@@ -859,9 +862,9 @@
             this.val_Time.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_Time.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.val_Time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.val_Time.Location = new System.Drawing.Point(1111, 95);
+            this.val_Time.Location = new System.Drawing.Point(1130, 95);
             this.val_Time.Name = "val_Time";
-            this.val_Time.Size = new System.Drawing.Size(138, 28);
+            this.val_Time.Size = new System.Drawing.Size(119, 28);
             this.val_Time.TabIndex = 1;
             this.val_Time.Text = "...";
             // 
@@ -926,6 +929,19 @@
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lbl_UpdatePassword
+            // 
+            this.lbl_UpdatePassword.AutoSize = true;
+            this.lbl_UpdatePassword.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_UpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_UpdatePassword.Location = new System.Drawing.Point(271, 95);
+            this.lbl_UpdatePassword.Name = "lbl_UpdatePassword";
+            this.lbl_UpdatePassword.Size = new System.Drawing.Size(90, 28);
+            this.lbl_UpdatePassword.TabIndex = 4;
+            this.lbl_UpdatePassword.TabStop = true;
+            this.lbl_UpdatePassword.Text = "تغيير گذرواژه";
+            this.lbl_UpdatePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_UpdatePassword_LinkClicked);
+            // 
             // frmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -946,6 +962,7 @@
             this.Load += new System.EventHandler(this.frmMainUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).EndInit();
             this.pnl_UpMenu.ResumeLayout(false);
+            this.pnl_UpMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).EndInit();
             this.ResumeLayout(false);
 
@@ -1003,5 +1020,6 @@
         private DevComponents.DotNetBar.ExplorerBarGroupItem ebg_Assessment;
         private DevComponents.DotNetBar.LabelItem lbl_DailyFunction;
         private DevComponents.DotNetBar.LabelItem lbl_ShowPersonelsFunctions;
+        private System.Windows.Forms.LinkLabel lbl_UpdatePassword;
     }
 }

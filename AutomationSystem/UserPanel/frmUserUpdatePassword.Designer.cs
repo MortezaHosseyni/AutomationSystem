@@ -56,7 +56,7 @@
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(579, 39);
             this.lbl_Title.TabIndex = 0;
-            this.lbl_Title.Text = "...";
+            this.lbl_Title.Text = "تغيير گذرواژه كاربر";
             this.lbl_Title.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // pnl_Main
@@ -146,6 +146,7 @@
             this.btn_Save.Symbol = "";
             this.btn_Save.TabIndex = 0;
             this.btn_Save.Text = "ثبت اطلاعات";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // pnl_ChangePassword
             // 
