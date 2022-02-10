@@ -112,5 +112,11 @@ namespace AutomationSystem.AdminPanel
             frmNewsList newsListForm = new frmNewsList();
             newsListForm.ShowDialog();
         }
+
+        private void btn_SendSMS_Click(object sender, EventArgs e)
+        {
+            frmSendSMS sendSMS = new frmSendSMS();
+            sendSMS.ShowDialog();
+        }
     }
 }
