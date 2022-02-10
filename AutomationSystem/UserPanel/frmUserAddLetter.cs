@@ -481,5 +481,11 @@ namespace AutomationSystem.UserPanel
                 }
             }
         }
+
+        private void btn_SendEmail_Click(object sender, EventArgs e)
+        {
+            frmUserSendEmail sendEmail = new frmUserSendEmail();
+            sendEmail.ShowDialog();
+        }
     }
 }
