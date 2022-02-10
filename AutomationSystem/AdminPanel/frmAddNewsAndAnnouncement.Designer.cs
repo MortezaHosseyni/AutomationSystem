@@ -372,7 +372,6 @@
             this.btn_SendSMS.Symbol = "";
             this.btn_SendSMS.TabIndex = 4;
             this.btn_SendSMS.Text = "ارسال پيامك";
-            this.btn_SendSMS.Click += new System.EventHandler(this.btn_NewsList_Click);
             // 
             // frmAddNewsAndAnnouncement
             // 

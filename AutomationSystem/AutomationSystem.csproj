@@ -146,6 +146,12 @@
     <Compile Include="AdminPanel\frmReminder.Designer.cs">
       <DependentUpon>frmReminder.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmSendSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmSendSMS.Designer.cs">
+      <DependentUpon>frmSendSMS.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\frmSystemComponents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmReminder.resx">
       <DependentUpon>frmReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmSendSMS.resx">
+      <DependentUpon>frmSendSMS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel\frmSystemComponents.resx">
       <DependentUpon>frmSystemComponents.cs</DependentUpon>
