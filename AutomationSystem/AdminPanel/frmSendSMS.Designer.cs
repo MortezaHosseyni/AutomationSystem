@@ -188,6 +188,7 @@
             this.dgv_GetLineInfo.Name = "dgv_GetLineInfo";
             this.dgv_GetLineInfo.Size = new System.Drawing.Size(290, 170);
             this.dgv_GetLineInfo.TabIndex = 1;
+            this.dgv_GetLineInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_GetLineInfo_CellContentClick);
             // 
             // lbl_LineNumber
             // 
