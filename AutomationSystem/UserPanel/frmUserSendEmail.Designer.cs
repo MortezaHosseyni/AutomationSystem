@@ -103,6 +103,7 @@
             this.btn_SendEMail.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btn_SendEMail.TabIndex = 3;
             this.btn_SendEMail.Text = "ارسال ايميل";
+            this.btn_SendEMail.Click += new System.EventHandler(this.btn_SendEMail_Click);
             // 
             // pnl_Setting
             // 
