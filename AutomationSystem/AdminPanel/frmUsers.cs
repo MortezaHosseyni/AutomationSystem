@@ -44,13 +44,12 @@ namespace AutomationSystem.AdminPanel
                     dgv_Users.Rows[i].Cells["col_UserName"].Value = result[i].UserName;
                     dgv_Users.Rows[i].Cells["col_UserPersonalCode"].Value = result[i].UserPersonalID;
                     dgv_Users.Rows[i].Cells["col_UserEmail"].Value = result[i].UserEmail;
-                    dgv_Users.Rows[i].Cells["col_UserGender"].Value = result[i].UserGender;
+                    dgv_Users.Rows[i].Cells["col_UserGender"].Value = result[i].View_UserGender;
                     dgv_Users.Rows[i].Cells["col_UserGenderCode"].Value = result[i].UserGender;
-                    dgv_Users.Rows[i].Cells["col_UserStatus"].Value = result[i].UserActivity;
+                    dgv_Users.Rows[i].Cells["col_UserStatus"].Value = result[i].View_UserActivity;
                     dgv_Users.Rows[i].Cells["col_UserTel"].Value = result[i].UserTel;
                     dgv_Users.Rows[i].Cells["col_UserBrithDay"].Value = result[i].UserBrithDate;
                     dgv_Users.Rows[i].Cells["col_UserRegisteredDate"].Value = result[i].UserRegisteredDate;
-                    
                 }
             }
             else
@@ -73,20 +72,20 @@ namespace AutomationSystem.AdminPanel
 
             if (rbt_ActiveStatus.Checked)
             {
-                searchString += " AND UserActivity = 'فعال'";
+                searchString += " AND UserActivity = 1";
             }
             if (rbt_DeActiveStatus.Checked)
             {
-                searchString += " AND UserActivity = 'غيرفعال'";
+                searchString += " AND UserActivity = 2";
             }
 
             if (rbt_ManGender.Checked)
             {
-                searchString += " AND UserGender = 'مرد'";
+                searchString += " AND UserGender = 1";
             }
             if (rbt_WomanGender.Checked)
             {
-                searchString += " AND UserGender = 'زن'";
+                searchString += " AND UserGender = 2";
             }
 
             return searchString;
