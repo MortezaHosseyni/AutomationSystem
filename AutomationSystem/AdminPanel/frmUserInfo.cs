@@ -27,7 +27,7 @@ namespace AutomationSystem.AdminPanel
         {
             try
             {
-                var infoQuery = db.Sp_ShowAllUserInfo(this.Get_UserID).ToList();
+                var infoQuery = db.Sp_ShowAllUserInfo_UserForm_Up_2(this.Get_UserID).ToList();
 
                 if (infoQuery.Count == 1)
                 {
@@ -35,9 +35,9 @@ namespace AutomationSystem.AdminPanel
                     val_LastName.Text = infoQuery[0].UserLastName;
                     val_Tel.Text = infoQuery[0].UserTel;
                     val_BrithDate.Text = infoQuery[0].UserBrithDate;
-                    val_Gender.Text = infoQuery[0].UserGender;
+                    val_Gender.Text = infoQuery[0].View_UserGender;
                     val_PersonalCode.Text = infoQuery[0].UserPersonalID;
-                    val_Status.Text = infoQuery[0].UserActivity;
+                    val_Status.Text = infoQuery[0].View_UserActivity;
                     val_UserName.Text = infoQuery[0].UserName;
                     val_Email.Text = infoQuery[0].UserEmail;
                     val_Job.Text = infoQuery[0].JobsName;
