@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataModelLayer.Models;
 using AutomationSystem.Moduls;
 using System.Globalization;
+using Stimulsoft.Report;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -205,6 +206,16 @@ namespace AutomationSystem.AdminPanel
                 userUpdatePass.getUserID = Convert.ToInt32(dgv_Users.CurrentRow.Cells["col_UserID"].Value);
                 userUpdatePass.ShowDialog();
             }
+        }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            StiReport report = new StiReport();
+            report.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Reports\\UserInfo.mrt");
+
+            report.Compile();
+            report.Render();
+            report.Show();
         }
     }
 }
