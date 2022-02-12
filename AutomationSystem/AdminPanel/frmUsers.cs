@@ -212,6 +212,15 @@ namespace AutomationSystem.AdminPanel
         {
             StiReport report = new StiReport();
             report.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Reports\\UserInfo.mrt");
+            report.Dictionary.Variables["reportDate"].Value = PublicVariable.todayDate;
+            if (rbt_ManGender.Checked)
+            {
+                report["userGender"] = 1;
+            }
+            else if (rbt_WomanGender.Checked)
+            {
+                report["userGender"] = 2;
+            }
 
             report.Compile();
             report.Render();
