@@ -85,5 +85,51 @@ namespace AutomationSystem.AdminPanel
         {
             val_CharNumber.Text = txt_SMSContext.Text.Length.ToString();
         }
+
+        private void btn_SendSMS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int smsLineID = 0;
+                List<WebServiceSmsSend> sendDetail = new List<WebServiceSmsSend>();
+                {
+                    string messageBody = string.Empty;
+                    long phoneNumber = 0;
+                    bool isFlash = false;
+
+                    foreach (DataGridViewRow dr in dgv_Users.Rows)
+                    {
+                        DataGridViewCheckBoxCell checking = dr.Cells["col_SelectUser"] as DataGridViewCheckBoxCell;
+                        if (Convert.ToBoolean(checking.Value) == true)
+                        {
+                            messageBody = $"كارمند گرامي {dr.Cells[1].Value.ToString()} {dr.Cells[2].Value.ToString()} \n {txt_SMSContext.Text}";
+                            phoneNumber = Convert.ToInt32(dr.Cells[4].Value);
+
+                            sendDetail.Add(new WebServiceSmsSend()
+                            {
+                                MessageBody = messageBody,
+                                MobileNo = phoneNumber,
+                                IsFlash = isFlash
+                            });
+                        }
+                    }
+                }
+                //Check LineID
+                if (!int.TryParse(txt_LineSerial.Text, out smsLineID)) throw new Exception("شماره آي‌دي خط معتبر نيست");
+
+                //Send List to WebService
+                SendReceive ws = new SendReceive();
+                string message = "";
+                long[] result = ws.SendMessage(txt_Username.Text.Trim(), txt_Password.Text.Trim(),sendDetail.ToArray(), smsLineID, null, ref message);
+                if (!string.IsNullOrWhiteSpace(message)) throw new Exception(message);
+
+                MessageBox.Show("پيام شما با موفقيت ارسال شد","ارسال پيامك");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("خطايي در ارتباط با سرور رخ داد","سرور");
+                return;
+            }
+        }
     }
 }
