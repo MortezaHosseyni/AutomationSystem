@@ -60,7 +60,7 @@ namespace AutomationSystem.AdminPanel
                     dgv_Users.Rows[i].Cells["col_UserLastName"].Value = result[i].UserLastName;
                     dgv_Users.Rows[i].Cells["col_UserName"].Value = result[i].UserName;
                     dgv_Users.Rows[i].Cells["col_UserGenderCode"].Value = result[i].UserGender;
-                    dgv_Users.Rows[i].Cells["col_UserStatus"].Value = result[i].UserActivity;
+                    dgv_Users.Rows[i].Cells["col_UserStatus"].Value = result[i].View_UserActivity;
                     dgv_Users.Rows[i].Cells["col_UserTel"].Value = result[i].UserTel;
                     dgv_Users.Rows[i].Cells["col_UserRegisteredDate"].Value = result[i].UserRegisteredDate;
                 }
@@ -79,6 +79,11 @@ namespace AutomationSystem.AdminPanel
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_SMSContext_TextChanged(object sender, EventArgs e)
+        {
+            val_CharNumber.Text = txt_SMSContext.Text.Length.ToString();
         }
     }
 }

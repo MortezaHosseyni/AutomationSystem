@@ -56,7 +56,7 @@
             this.lbl_Password = new DevComponents.DotNetBar.LabelX();
             this.lbl_Username = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pnl_SMSContext = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_SMSContext = new DevComponents.DotNetBar.LabelX();
             this.txt_SMSContext = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_CharNumber = new DevComponents.DotNetBar.LabelX();
@@ -68,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Users)).BeginInit();
             this.pnl_PanelInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GetLineInfo)).BeginInit();
-            this.groupPanel1.SuspendLayout();
+            this.pnl_SMSContext.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -76,7 +76,7 @@
             this.pnl_Main.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Main.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.pnl_Main.Controls.Add(this.btn_Exit);
-            this.pnl_Main.Controls.Add(this.groupPanel1);
+            this.pnl_Main.Controls.Add(this.pnl_SMSContext);
             this.pnl_Main.Controls.Add(this.pnl_Users);
             this.pnl_Main.Controls.Add(this.pnl_PanelInformation);
             this.pnl_Main.Controls.Add(this.lbl_Title);
@@ -439,48 +439,48 @@
             this.lbl_Title.TabIndex = 0;
             this.lbl_Title.Text = "ارسال پيامك";
             // 
-            // groupPanel1
+            // pnl_SMSContext
             // 
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.btn_SendSMS);
-            this.groupPanel1.Controls.Add(this.lbl_CharNumber);
-            this.groupPanel1.Controls.Add(this.lbl_SMSContext);
-            this.groupPanel1.Controls.Add(this.txt_SMSContext);
-            this.groupPanel1.Controls.Add(this.val_CharNumber);
-            this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel1.Location = new System.Drawing.Point(12, 470);
-            this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(830, 168);
-            // 
-            // 
-            // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderLeftWidth = 1;
-            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderRightWidth = 1;
-            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.pnl_SMSContext.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_SMSContext.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_SMSContext.Controls.Add(this.btn_SendSMS);
+            this.pnl_SMSContext.Controls.Add(this.lbl_CharNumber);
+            this.pnl_SMSContext.Controls.Add(this.lbl_SMSContext);
+            this.pnl_SMSContext.Controls.Add(this.txt_SMSContext);
+            this.pnl_SMSContext.Controls.Add(this.val_CharNumber);
+            this.pnl_SMSContext.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_SMSContext.Location = new System.Drawing.Point(12, 470);
+            this.pnl_SMSContext.Name = "pnl_SMSContext";
+            this.pnl_SMSContext.Size = new System.Drawing.Size(830, 168);
             // 
             // 
             // 
-            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_SMSContext.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_SMSContext.Style.BackColorGradientAngle = 90;
+            this.pnl_SMSContext.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_SMSContext.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SMSContext.Style.BorderBottomWidth = 1;
+            this.pnl_SMSContext.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_SMSContext.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SMSContext.Style.BorderLeftWidth = 1;
+            this.pnl_SMSContext.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SMSContext.Style.BorderRightWidth = 1;
+            this.pnl_SMSContext.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SMSContext.Style.BorderTopWidth = 1;
+            this.pnl_SMSContext.Style.CornerDiameter = 4;
+            this.pnl_SMSContext.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_SMSContext.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_SMSContext.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_SMSContext.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 4;
+            this.pnl_SMSContext.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_SMSContext.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_SMSContext.TabIndex = 4;
             // 
             // lbl_SMSContext
             // 
@@ -509,6 +509,7 @@
             this.txt_SMSContext.Size = new System.Drawing.Size(499, 146);
             this.txt_SMSContext.TabIndex = 4;
             this.txt_SMSContext.WatermarkText = "متن پيامك ارسالي...";
+            this.txt_SMSContext.TextChanged += new System.EventHandler(this.txt_SMSContext_TextChanged);
             // 
             // lbl_CharNumber
             // 
@@ -582,8 +583,8 @@
             this.pnl_PanelInformation.ResumeLayout(false);
             this.pnl_PanelInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GetLineInfo)).EndInit();
-            this.groupPanel1.ResumeLayout(false);
-            this.groupPanel1.PerformLayout();
+            this.pnl_SMSContext.ResumeLayout(false);
+            this.pnl_SMSContext.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -614,7 +615,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_UserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_UserGenderCode;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        private DevComponents.DotNetBar.Controls.GroupPanel pnl_SMSContext;
         private DevComponents.DotNetBar.LabelX lbl_SMSContext;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_SMSContext;
         private DevComponents.DotNetBar.LabelX lbl_CharNumber;
