@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
 using System.IO;
+using Stimulsoft.Report;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -61,6 +63,18 @@ namespace AutomationSystem.AdminPanel
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            StiReport report = new StiReport();
+            report.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Reports\\PersonalInfo.mrt");
+            report["userID"] = this.Get_UserID;
+            report.Dictionary.Variables["reportDate"].Value = PublicVariable.todayDate;
+
+            report.Compile();
+            report.Render();
+            report.Show();
         }
     }
 }
