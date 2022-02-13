@@ -72,6 +72,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>automationModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Document.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Job.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
@@ -136,6 +139,9 @@
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vw_Letters.cs">
+      <DependentUpon>automationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vw_LettersSign.cs">
       <DependentUpon>automationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vw_News.cs">
