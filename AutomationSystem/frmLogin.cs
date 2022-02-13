@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Net;
 using System.Security.Cryptography;
 using AutomationSystem.AdminPanel;
+using Microsoft.Win32;
 
 namespace AutomationSystem
 {
@@ -101,6 +102,31 @@ namespace AutomationSystem
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            //Read ConnectionString
+            string registryConnectionString = "";
+            RegistryKey connectionString = Registry.CurrentUser.CreateSubKey("SOFTWARE\\AutomationConnection");
+
+            registryConnectionString = connectionString.GetValue("ConnectionForAutomation").ToString();
+
+            try
+            {
+                if (registryConnectionString == "")
+                {
+                    MessageBox.Show("ارتباط با سرور برقرار نشد \n پارامترهاي ارتباط با سرور را بررسي كنيد", "سرور");
+                    btn_Login.Enabled = false;
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception)
+            {
+                btn_Login.Enabled = false;
+                MessageBox.Show("خطايي در خواندن اطلاعات رخ داد", "سرور");
+            }
+            
+
             //Date&Time
             string pDate = String.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime(pCalender.GetYear(DateTime.Now).ToString() + "/" + pCalender.GetMonth(DateTime.Now).ToString() + "/" + pCalender.GetDayOfMonth(DateTime.Now).ToString()));
             PublicVariable.todayDate = pDate;
