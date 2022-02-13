@@ -26,6 +26,7 @@ namespace AutomationSystem.UserPanel
             this.Left = 10;
             this.Top = 160;
 
+            txt_DateIn.Value = DateTime.Now.AddDays(-10);
             ShowSavedDocuments(searchCondition());
             val_DocSaveDate.Text = PublicVariable.todayDate;
         }
@@ -95,6 +96,8 @@ namespace AutomationSystem.UserPanel
                 db.SaveChanges();
 
                 MessageBox.Show("سند جديد با موفقيت ثبت شد", "ثبت سند");
+
+                ShowSavedDocuments(searchCondition());
 
                 clearFill();
             }
