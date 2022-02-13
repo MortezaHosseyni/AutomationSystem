@@ -44,7 +44,7 @@ namespace AutomationSystem.AdminPanel
         private void btn_Save_Click(object sender, EventArgs e)
         {
             //Set parameters for client to connect server
-            if (txt_DatabaseName.Text == "" || txt_ServerIP.Text == "" || txt_DatabasePassword.Text == "")
+            if (txt_DatabaseName.Text == "" || txt_ServerIP.Text == "")
             {
                 MessageBox.Show("فيلدهاي خالي را پر كنيد","تنظيم سرور");
                 return;
