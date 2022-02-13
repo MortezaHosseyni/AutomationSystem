@@ -42,6 +42,7 @@ namespace AutomationSystem.UserPanel
         frmUserFollowingLetters userFollowingLetters;
         frmUserDailyFunction userDailyFunction;
         frmUserShowPersonelsFunction userPersonelsFunctions;
+        frmUserDocuments userDocuments;
         public frmMainUser()
         {
             InitializeComponent();
@@ -197,6 +198,10 @@ namespace AutomationSystem.UserPanel
             if (formNumber == 60)
             {
                 userPersonelsFunctions.Close();
+            }
+            if (formNumber == 70)
+            {
+                userDocuments.Close();
             }
         }
 
@@ -596,6 +601,17 @@ namespace AutomationSystem.UserPanel
         {
             frmUserRequestSupport requestSupport = new frmUserRequestSupport();
             requestSupport.ShowDialog();
+        }
+
+        private void lbl_AddDocument_Click(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            formNumber = 70;
+
+            userDocuments = new frmUserDocuments();
+            userDocuments.MdiParent = this;
+            userDocuments.Show();
         }
     }
 }

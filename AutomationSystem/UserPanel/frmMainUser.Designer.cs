@@ -82,6 +82,7 @@
             this.lbl_Name = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbl_AddDocument = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.exb_RightMenu)).BeginInit();
             this.pnl_UpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UserPicture)).BeginInit();
@@ -256,7 +257,6 @@
             this.ebg_Recycling.BackStyle.BorderRightWidth = 1;
             this.ebg_Recycling.BackStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ebg_Recycling.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ebg_Recycling.Expanded = true;
             this.ebg_Recycling.Name = "ebg_Recycling";
             this.ebg_Recycling.StockStyle = DevComponents.DotNetBar.eExplorerBarStockStyle.SystemColors;
             this.ebg_Recycling.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -348,7 +348,8 @@
             this.lbl_CreateMessage,
             this.lbl_CreateNote,
             this.lbl_AddReminder,
-            this.lbl_Draft});
+            this.lbl_Draft,
+            this.lbl_AddDocument});
             this.ebg_Operation.Text = "عمليات";
             // 
             // 
@@ -958,6 +959,16 @@
             this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lbl_AddDocument
+            // 
+            this.lbl_AddDocument.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_AddDocument.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_AddDocument.Name = "lbl_AddDocument";
+            this.lbl_AddDocument.Symbol = "58417";
+            this.lbl_AddDocument.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.lbl_AddDocument.Text = "ثبت اسناد";
+            this.lbl_AddDocument.Click += new System.EventHandler(this.lbl_AddDocument_Click);
+            // 
             // frmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -1038,5 +1049,6 @@
         private System.Windows.Forms.LinkLabel lbl_UpdatePassword;
         private System.Windows.Forms.LinkLabel lbl_Exit;
         private System.Windows.Forms.LinkLabel lbl_RequestSupport;
+        private DevComponents.DotNetBar.LabelItem lbl_AddDocument;
     }
 }
