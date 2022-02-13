@@ -17,8 +17,8 @@ namespace DataModelLayer.Models
     
     public partial class Office_Automation_DatabaseEntities : DbContext
     {
-        public Office_Automation_DatabaseEntities()
-            : base("name=Office_Automation_DatabaseEntities")
+        public Office_Automation_DatabaseEntities(string connectionString)
+            : base(connectionString)
         {
         }
     
