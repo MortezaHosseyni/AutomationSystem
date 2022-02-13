@@ -186,6 +186,7 @@
             this.txt_DatabaseName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_DatabaseName.Location = new System.Drawing.Point(20, 74);
             this.txt_DatabaseName.Name = "txt_DatabaseName";
+            this.txt_DatabaseName.PasswordChar = '#';
             this.txt_DatabaseName.PreventEnterBeep = true;
             this.txt_DatabaseName.Size = new System.Drawing.Size(308, 36);
             this.txt_DatabaseName.TabIndex = 2;
@@ -200,6 +201,7 @@
             this.txt_DatabasePassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_DatabasePassword.Location = new System.Drawing.Point(20, 116);
             this.txt_DatabasePassword.Name = "txt_DatabasePassword";
+            this.txt_DatabasePassword.PasswordChar = '*';
             this.txt_DatabasePassword.PreventEnterBeep = true;
             this.txt_DatabasePassword.Size = new System.Drawing.Size(308, 36);
             this.txt_DatabasePassword.TabIndex = 3;
