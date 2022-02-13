@@ -54,6 +54,7 @@
             this.lbl_YourIP = new DevComponents.DotNetBar.LabelItem();
             this.lbl_YourIPValue = new DevComponents.DotNetBar.LabelItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbl_ServerSettings = new System.Windows.Forms.LinkLabel();
             this.pnl_MainPanel.SuspendLayout();
             this.pnl_Info.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             // 
             // 
             this.lbl_Username.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Username.Location = new System.Drawing.Point(650, 142);
+            this.lbl_Username.Location = new System.Drawing.Point(649, 112);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(65, 37);
             this.lbl_Username.TabIndex = 1;
@@ -88,6 +89,7 @@
             // 
             this.pnl_MainPanel.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_MainPanel.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnl_MainPanel.Controls.Add(this.lbl_ServerSettings);
             this.pnl_MainPanel.Controls.Add(this.pnl_Info);
             this.pnl_MainPanel.Controls.Add(this.btn_About);
             this.pnl_MainPanel.Controls.Add(this.btn_Exit);
@@ -122,9 +124,9 @@
             this.pnl_Info.Controls.Add(this.lbl_InfoOne);
             this.pnl_Info.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_Info.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.pnl_Info.Location = new System.Drawing.Point(24, 121);
+            this.pnl_Info.Location = new System.Drawing.Point(23, 91);
             this.pnl_Info.Name = "pnl_Info";
-            this.pnl_Info.Size = new System.Drawing.Size(264, 279);
+            this.pnl_Info.Size = new System.Drawing.Size(264, 241);
             // 
             // 
             // 
@@ -162,7 +164,7 @@
             // 
             // 
             this.lbl_InfoTwo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_InfoTwo.Location = new System.Drawing.Point(3, 135);
+            this.lbl_InfoTwo.Location = new System.Drawing.Point(3, 116);
             this.lbl_InfoTwo.Name = "lbl_InfoTwo";
             this.lbl_InfoTwo.Size = new System.Drawing.Size(252, 89);
             this.lbl_InfoTwo.Symbol = "";
@@ -190,7 +192,7 @@
             // 
             this.btn_About.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_About.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_About.Location = new System.Drawing.Point(294, 330);
+            this.btn_About.Location = new System.Drawing.Point(293, 300);
             this.btn_About.Name = "btn_About";
             this.btn_About.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 10, 10, 2);
             this.btn_About.Size = new System.Drawing.Size(423, 32);
@@ -203,7 +205,7 @@
             // 
             this.btn_Exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Exit.Location = new System.Drawing.Point(294, 368);
+            this.btn_Exit.Location = new System.Drawing.Point(293, 338);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10, 2, 2, 10);
             this.btn_Exit.Size = new System.Drawing.Size(423, 32);
@@ -216,7 +218,7 @@
             // 
             this.btn_Login.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Login.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Login.Location = new System.Drawing.Point(294, 292);
+            this.btn_Login.Location = new System.Drawing.Point(293, 262);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10, 2, 2, 10);
             this.btn_Login.Size = new System.Drawing.Size(423, 32);
@@ -229,7 +231,7 @@
             // 
             this.rdb_Admin.AutoSize = true;
             this.rdb_Admin.Checked = true;
-            this.rdb_Admin.Location = new System.Drawing.Point(470, 235);
+            this.rdb_Admin.Location = new System.Drawing.Point(469, 205);
             this.rdb_Admin.Name = "rdb_Admin";
             this.rdb_Admin.Size = new System.Drawing.Size(104, 32);
             this.rdb_Admin.TabIndex = 6;
@@ -240,7 +242,7 @@
             // rdb_User
             // 
             this.rdb_User.AutoSize = true;
-            this.rdb_User.Location = new System.Drawing.Point(377, 235);
+            this.rdb_User.Location = new System.Drawing.Point(376, 205);
             this.rdb_User.Name = "rdb_User";
             this.rdb_User.Size = new System.Drawing.Size(57, 32);
             this.rdb_User.TabIndex = 5;
@@ -254,7 +256,7 @@
             // 
             this.txt_Password.Border.Class = "TextBoxBorder";
             this.txt_Password.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Password.Location = new System.Drawing.Point(294, 184);
+            this.txt_Password.Location = new System.Drawing.Point(293, 154);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.PasswordChar = '*';
             this.txt_Password.PreventEnterBeep = true;
@@ -269,7 +271,7 @@
             // 
             this.txt_Username.Border.Class = "TextBoxBorder";
             this.txt_Username.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Username.Location = new System.Drawing.Point(294, 142);
+            this.txt_Username.Location = new System.Drawing.Point(293, 112);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.PreventEnterBeep = true;
             this.txt_Username.Size = new System.Drawing.Size(352, 36);
@@ -282,7 +284,7 @@
             // 
             // 
             this.lbl_Password.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Password.Location = new System.Drawing.Point(650, 184);
+            this.lbl_Password.Location = new System.Drawing.Point(649, 154);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(53, 37);
             this.lbl_Password.TabIndex = 2;
@@ -315,9 +317,9 @@
             this.lbl_DoubleLine2,
             this.lbl_YourIP,
             this.lbl_YourIPValue});
-            this.stb_StatusBar.Location = new System.Drawing.Point(0, 409);
+            this.stb_StatusBar.Location = new System.Drawing.Point(0, 404);
             this.stb_StatusBar.Name = "stb_StatusBar";
-            this.stb_StatusBar.Size = new System.Drawing.Size(742, 22);
+            this.stb_StatusBar.Size = new System.Drawing.Size(742, 27);
             this.stb_StatusBar.TabIndex = 6;
             this.stb_StatusBar.Text = "--";
             // 
@@ -371,6 +373,17 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lbl_ServerSettings
+            // 
+            this.lbl_ServerSettings.AutoSize = true;
+            this.lbl_ServerSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ServerSettings.Location = new System.Drawing.Point(49, 342);
+            this.lbl_ServerSettings.Name = "lbl_ServerSettings";
+            this.lbl_ServerSettings.Size = new System.Drawing.Size(199, 28);
+            this.lbl_ServerSettings.TabIndex = 11;
+            this.lbl_ServerSettings.TabStop = true;
+            this.lbl_ServerSettings.Text = "تنظيم پارامترهاي ارتباط با سرور";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -420,5 +433,6 @@
         private DevComponents.DotNetBar.LabelItem lbl_YourIP;
         private DevComponents.DotNetBar.LabelItem lbl_YourIPValue;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.LinkLabel lbl_ServerSettings;
     }
 }
