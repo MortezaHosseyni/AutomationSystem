@@ -26,7 +26,7 @@ namespace AutomationSystem.UserPanel
             {
                 Reminder R = new Reminder();
 
-                R.RemindUserID = 1;
+                R.RemindUserID = PublicVariable.global_UserID;
                 R.RemindSubject = txt_Subject.Text.Trim();
                 R.RemindCaption = txt_Caption.Text.Trim();
                 R.RemindIsRead = 1;

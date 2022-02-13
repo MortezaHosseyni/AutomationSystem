@@ -31,7 +31,7 @@ namespace AutomationSystem.UserPanel
 
         private void Reminder(string searchRemind)
         {
-            var query = db.Database.SqlQuery<Vw_Reminder>("SELECT * FROM Vw_Reminder WHERE 1=1" + searchRemind);
+            var query = db.Database.SqlQuery<Vw_Reminder>($"SELECT * FROM Vw_Reminder WHERE RemindUserID = {PublicVariable.global_UserID} {searchRemind}");
             var result = query.ToList();
 
             if (result.Count != 0)
