@@ -246,6 +246,12 @@
     <Compile Include="UserPanel\frmMainUser.Designer.cs">
       <DependentUpon>frmMainUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\frmUserDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserDocuments.Designer.cs">
+      <DependentUpon>frmUserDocuments.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\frmUserRequestSupport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -485,6 +491,9 @@
     </Compile>
     <EmbeddedResource Include="UserPanel\frmMainUser.resx">
       <DependentUpon>frmMainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserDocuments.resx">
+      <DependentUpon>frmUserDocuments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel\frmUserRequestSupport.resx">
       <DependentUpon>frmUserRequestSupport.cs</DependentUpon>
