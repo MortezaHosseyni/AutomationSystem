@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Automation.Modula;
 
 namespace AutomationSystem.AdminPanel
 {
@@ -55,7 +56,7 @@ namespace AutomationSystem.AdminPanel
                 RegistryKey connectionKey = Registry.CurrentUser.CreateSubKey("SOFTWARE\\AutomationConnection");
                 try
                 {
-                    connectionKey.SetValue("ConnectionForAutomation", entityConnectionString);
+                    connectionKey.SetValue("ConnectionForAutomation", CryptionAlgorithm.EncryptTextUsingUTF8(entityConnectionString));
                 }
                 catch (Exception)
                 {
