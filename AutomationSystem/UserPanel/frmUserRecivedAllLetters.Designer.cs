@@ -1047,6 +1047,7 @@
             this.tsm_ReadLetter.Name = "tsm_ReadLetter";
             this.tsm_ReadLetter.Size = new System.Drawing.Size(152, 30);
             this.tsm_ReadLetter.Text = "خواندن نامه";
+            this.tsm_ReadLetter.Click += new System.EventHandler(this.tsm_ReadLetter_Click);
             // 
             // tsm_ReferenceLetter
             // 

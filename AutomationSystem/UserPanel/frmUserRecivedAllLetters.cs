@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataModelLayer.Models;
 using AutomationSystem.Moduls;
 using System.IO;
+using Stimulsoft.Report;
 
 namespace AutomationSystem.UserPanel
 {
@@ -342,6 +343,32 @@ namespace AutomationSystem.UserPanel
             userChooseLetterReference.getLetterReplyID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterSenderUserID"].Value);
 
             userChooseLetterReference.ShowDialog();
+        }
+
+        private void tsm_ReadLetter_Click(object sender, EventArgs e)
+        {
+            StiReport report = new StiReport();
+            report.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Reports\\Letters.mrt");
+
+            report["letterID"] = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterID"].Value);
+            report.Dictionary.Variables["reciverFullName"].Value = $"{PublicVariable.global_UserFristName} {PublicVariable.global_UserLastName}";
+            report.Dictionary.Variables["reportDate"].Value = PublicVariable.todayDate;
+
+            report.Compile();
+            report.Render();
+            report.Show();
+
+            int sentLetterID = Convert.ToInt32(dgv_RecivedLetters.CurrentRow.Cells["col_LetterID"].Value);
+            var queryUpdate = (from SL in db.SentLetters where SL.SentUserID == PublicVariable.global_UserID where SL.SentSendedLetterID == sentLetterID where SL.SentReadType == 1 select SL).ToList();
+            if (queryUpdate.Count > 0)
+            {
+                var querySetReadType = (from SL in db.SentLetters where SL.SentUserID == PublicVariable.global_UserID where SL.SentSendedLetterID == sentLetterID where SL.SentReadType == 1 select SL).SingleOrDefault();
+                querySetReadType.SentReadType = 2;
+
+                db.SaveChanges();
+
+                ShowRecivedLetters(searchCondition());
+            }
         }
     }
 }
