@@ -30,6 +30,7 @@ namespace DataModelLayer.Models
             this.UserAccesses = new HashSet<UserAccess>();
             this.Works = new HashSet<Work>();
             this.Supports = new HashSet<Support>();
+            this.Documents = new HashSet<Document>();
         }
     
         public int UserID { get; set; }
@@ -73,5 +74,7 @@ namespace DataModelLayer.Models
         public virtual ICollection<Work> Works { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Support> Supports { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Document> Documents { get; set; }
     }
 }

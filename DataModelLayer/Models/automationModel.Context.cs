@@ -60,6 +60,8 @@ namespace DataModelLayer.Models
         public virtual DbSet<Vw_ChartInfo> Vw_ChartInfo { get; set; }
         public virtual DbSet<Support> Supports { get; set; }
         public virtual DbSet<Vw_Supports> Vw_Supports { get; set; }
+        public virtual DbSet<Document> Documents { get; set; }
+        public virtual DbSet<Vw_LettersSign> Vw_LettersSign { get; set; }
     
         public virtual int Sp_InsterUsers(string userFirstName, string userLastName, string userName, string userPassword, string userPersonalID, string userEmail, Nullable<byte> userGender, Nullable<byte> userActivity, string userTel, string userBrithDate, byte[] userImage, byte[] userSignature, string userRegisteredDate)
         {

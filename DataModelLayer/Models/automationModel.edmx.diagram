@@ -58,6 +58,9 @@
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Support" Width="1.5" PointX="25.125" PointY="0.75" />
         <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_Supports" Width="1.5" PointX="26.75" PointY="7.25" />
         <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Supports_Users" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Document" Width="1.5" PointX="26.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Office_Automation_DatabaseModel.Vw_LettersSign" Width="1.5" PointX="28.375" PointY="7.25" />
+        <AssociationConnector Association="Office_Automation_DatabaseModel.FK_Documents_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
