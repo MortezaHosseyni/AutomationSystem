@@ -218,6 +218,7 @@
             this.btn_Save.Symbol = "";
             this.btn_Save.TabIndex = 2;
             this.btn_Save.Text = "ذخيره";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Exit
             // 
