@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutomationSystem.Moduls;
+using AutomationSystem.AdminPanel;
+using AutomationSystem.UserPanel;
 
 namespace AutomationSystem
 {
@@ -16,7 +19,18 @@ namespace AutomationSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmLogin());
+
+            if (PublicVariable.global_UserType == 1)
+            {
+                frmAdmin adminForm = new frmAdmin();
+                adminForm.ShowDialog();
+            }
+            else
+            {
+                frmMainUser userForm = new frmMainUser();
+                userForm.ShowDialog();
+            }
         }
     }
 }

@@ -31,9 +31,63 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>00-Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BPersianCalender">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\SadraComputer\SadraComputer\bin\Debug\BPersianCalender.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=14.1.0.37, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Downloads\Learn\01 - Programing\C#\Automatıon\automation_part8\EF_Dll\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Downloads\Learn\01 - Programing\C#\Automatıon\automation_part8\EF_Dll\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Barcode, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.Chart, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.Diagram, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.Grid, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.Host.WinForm, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.Presentation, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.Schedule, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.Text, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="Nevron.Nov.WinFormControls, Version=21.5.25.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
+    <Reference Include="PersianDate">
+      <HintPath>D:\Downloads\Refrences\PDate\1\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Downloads\Learn\01 - Programing\C#\Automatıon\automation_part108\Stimulsoft.Reports.NET.v2015\DLL\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Downloads\Learn\01 - Programing\C#\Automatıon\automation_part108\Stimulsoft.Reports.NET.v2015\DLL\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Downloads\Learn\01 - Programing\C#\Automatıon\automation_part108\Stimulsoft.Reports.NET.v2015\DLL\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Downloads\Learn\01 - Programing\C#\Automatıon\automation_part108\Stimulsoft.Reports.NET.v2015\DLL\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Downloads\Learn\01 - Programing\C#\Automatıon\automation_part108\Stimulsoft.Reports.NET.v2015\DLL\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,14 +99,399 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AdminPanel\frmAccessRights.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AdminPanel\frmAccessRights.Designer.cs">
+      <DependentUpon>frmAccessRights.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\frmAddNewsAndAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAddNewsAndAnnouncement.Designer.cs">
+      <DependentUpon>frmAddNewsAndAnnouncement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmAddSystemPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAddSystemPart.Designer.cs">
+      <DependentUpon>frmAddSystemPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmAsignJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAsignJob.Designer.cs">
+      <DependentUpon>frmAsignJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmAsignmentJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmAsignmentJob.Designer.cs">
+      <DependentUpon>frmAsignmentJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmJobs.Designer.cs">
+      <DependentUpon>frmJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmJobsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmJobsHistory.Designer.cs">
+      <DependentUpon>frmJobsHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmManageJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmManageJobs.Designer.cs">
+      <DependentUpon>frmManageJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmNewsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmNewsList.Designer.cs">
+      <DependentUpon>frmNewsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmReciveSupRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmReciveSupRequests.Designer.cs">
+      <DependentUpon>frmReciveSupRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmReminder.Designer.cs">
+      <DependentUpon>frmReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmSendSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmSendSMS.Designer.cs">
+      <DependentUpon>frmSendSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmServerParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmServerParameters.Designer.cs">
+      <DependentUpon>frmServerParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmSystemComponents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmSystemComponents.Designer.cs">
+      <DependentUpon>frmSystemComponents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmUpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmUpdatePassword.Designer.cs">
+      <DependentUpon>frmUpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmUserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmUserManager.Designer.cs">
+      <DependentUpon>frmUserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\frmUsersLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\frmUsersLog.Designer.cs">
+      <DependentUpon>frmUsersLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\AdvancedTextEditorControl\AdvancedTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\AdvancedTextEditorControl\AdvancedTextEditor.Designer.cs">
+      <DependentUpon>AdvancedTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\AdvancedTextEditorControl\FontComboBoxControl\FontComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\Dialogs\dlgFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Dialogs\dlgFind.Designer.cs">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ExtendedRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\TextRulerControl\TextRuler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Moduls\CryptionAlgorithm.cs" />
+    <Compile Include="Moduls\PublicVariable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserPanel\frmMainUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmMainUser.Designer.cs">
+      <DependentUpon>frmMainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserDocuments.Designer.cs">
+      <DependentUpon>frmUserDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserRequestSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserRequestSupport.Designer.cs">
+      <DependentUpon>frmUserRequestSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserSendEmail.Designer.cs">
+      <DependentUpon>frmUserSendEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowPersonelsFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowPersonelsFunction.Designer.cs">
+      <DependentUpon>frmUserShowPersonelsFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserAddLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserAddLetter.Designer.cs">
+      <DependentUpon>frmUserAddLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserAddReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserAddReminder.Designer.cs">
+      <DependentUpon>frmUserAddReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserChooseLetterSend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserChooseLetterSend.Designer.cs">
+      <DependentUpon>frmUserChooseLetterSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserCirculationLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserCirculationLetter.Designer.cs">
+      <DependentUpon>frmUserCirculationLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserConfidentialLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserConfidentialLetters.Designer.cs">
+      <DependentUpon>frmUserConfidentialLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserCreateNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserCreateNote.Designer.cs">
+      <DependentUpon>frmUserCreateNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserDailyFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserDailyFunction.Designer.cs">
+      <DependentUpon>frmUserDailyFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserDraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserDraft.Designer.cs">
+      <DependentUpon>frmUserDraft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserFollowingLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserFollowingLetters.Designer.cs">
+      <DependentUpon>frmUserFollowingLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserImmediateLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserImmediateLetters.Designer.cs">
+      <DependentUpon>frmUserImmediateLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserNewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserNewMessage.Designer.cs">
+      <DependentUpon>frmUserNewMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserRecivedAllLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserRecivedAllLetters.Designer.cs">
+      <DependentUpon>frmUserRecivedAllLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserRecivedReferenceLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserRecivedReferenceLetters.Designer.cs">
+      <DependentUpon>frmUserRecivedReferenceLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserReminder.Designer.cs">
+      <DependentUpon>frmUserReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserSendedLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserSendedLetters.Designer.cs">
+      <DependentUpon>frmUserSendedLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserSentReferenceLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserSentReferenceLetters.Designer.cs">
+      <DependentUpon>frmUserSentReferenceLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowNewsContext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowNewsContext.Designer.cs">
+      <DependentUpon>frmUserShowNewsContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowReadedLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowReadedLetters.Designer.cs">
+      <DependentUpon>frmUserShowReadedLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowReciveNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowReciveNotes.Designer.cs">
+      <DependentUpon>frmUserShowReciveNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowSentNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowSentNotes.Designer.cs">
+      <DependentUpon>frmUserShowSentNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserUnReadLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserUnReadLetters.Designer.cs">
+      <DependentUpon>frmUserUnReadLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowAllNews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserShowAllNews.Designer.cs">
+      <DependentUpon>frmUserShowAllNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\frmUserUpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel\frmUserUpdatePassword.Designer.cs">
+      <DependentUpon>frmUserUpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SendMessageWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminPanel\frmAccessRights.resx">
+      <DependentUpon>frmAccessRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmAddNewsAndAnnouncement.resx">
+      <DependentUpon>frmAddNewsAndAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmAddSystemPart.resx">
+      <DependentUpon>frmAddSystemPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmAsignJob.resx">
+      <DependentUpon>frmAsignJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmAsignmentJob.resx">
+      <DependentUpon>frmAsignmentJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmJobs.resx">
+      <DependentUpon>frmJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmJobsHistory.resx">
+      <DependentUpon>frmJobsHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmManageJobs.resx">
+      <DependentUpon>frmManageJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmNewsList.resx">
+      <DependentUpon>frmNewsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmReciveSupRequests.resx">
+      <DependentUpon>frmReciveSupRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmReminder.resx">
+      <DependentUpon>frmReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmSendSMS.resx">
+      <DependentUpon>frmSendSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmServerParameters.resx">
+      <DependentUpon>frmServerParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmSystemComponents.resx">
+      <DependentUpon>frmSystemComponents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmUpdatePassword.resx">
+      <DependentUpon>frmUpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmUserManager.resx">
+      <DependentUpon>frmUserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\frmUsersLog.resx">
+      <DependentUpon>frmUsersLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\AdvancedTextEditorControl\AdvancedTextEditor.resx">
+      <DependentUpon>AdvancedTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Dialogs\dlgFind.resx">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,7 +500,93 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserPanel\frmMainUser.resx">
+      <DependentUpon>frmMainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserDocuments.resx">
+      <DependentUpon>frmUserDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserRequestSupport.resx">
+      <DependentUpon>frmUserRequestSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserSendEmail.resx">
+      <DependentUpon>frmUserSendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowPersonelsFunction.resx">
+      <DependentUpon>frmUserShowPersonelsFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserAddLetter.resx">
+      <DependentUpon>frmUserAddLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserAddReminder.resx">
+      <DependentUpon>frmUserAddReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserChooseLetterSend.resx">
+      <DependentUpon>frmUserChooseLetterSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserCirculationLetter.resx">
+      <DependentUpon>frmUserCirculationLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserConfidentialLetters.resx">
+      <DependentUpon>frmUserConfidentialLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserCreateNote.resx">
+      <DependentUpon>frmUserCreateNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserDailyFunction.resx">
+      <DependentUpon>frmUserDailyFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserDraft.resx">
+      <DependentUpon>frmUserDraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserFollowingLetters.resx">
+      <DependentUpon>frmUserFollowingLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserImmediateLetters.resx">
+      <DependentUpon>frmUserImmediateLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserNewMessage.resx">
+      <DependentUpon>frmUserNewMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserRecivedAllLetters.resx">
+      <DependentUpon>frmUserRecivedAllLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserRecivedReferenceLetters.resx">
+      <DependentUpon>frmUserRecivedReferenceLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserReminder.resx">
+      <DependentUpon>frmUserReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserSendedLetters.resx">
+      <DependentUpon>frmUserSendedLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserSentReferenceLetters.resx">
+      <DependentUpon>frmUserSentReferenceLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowNewsContext.resx">
+      <DependentUpon>frmUserShowNewsContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowReadedLetters.resx">
+      <DependentUpon>frmUserShowReadedLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowReciveNotes.resx">
+      <DependentUpon>frmUserShowReciveNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowSentNotes.resx">
+      <DependentUpon>frmUserShowSentNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserUnReadLetters.resx">
+      <DependentUpon>frmUserUnReadLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserShowAllNews.resx">
+      <DependentUpon>frmUserShowAllNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel\frmUserUpdatePassword.resx">
+      <DependentUpon>frmUserUpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Editor\Resources\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -71,9 +596,95 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\SendMessageWebService\AllMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\Branch.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\ReceivedMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SendMessageWebService\ScheduleSend.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SendReceive.wsdl" />
+    <None Include="Web References\SendMessageWebService\SendToBranchFilterConditions.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SendToBranchSendMethod.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SentMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SentSmsDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SMSLineNumber.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\TrashedMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="00-Icon.ico" />
+    <Content Include="Editor\Resources\l_indent_pos_lower.png" />
+    <Content Include="Editor\Resources\l_indet_pos_upper.png" />
+    <Content Include="Editor\Resources\r_indent_pos.png" />
+    <Content Include="Editor\Resources\tab_pos.png" />
+    <Content Include="Images\01-Users.png" />
+    <Content Include="Images\02-Jobs.png" />
+    <Content Include="Images\03-JobsManager.png" />
+    <Content Include="Images\04-AssignmentJob.png" />
+    <Content Include="Images\05-SendMessage.png" />
+    <Content Include="Images\06-AddReminder.png" />
+    <Content Include="Images\07-UserPicture.png" />
+    <Content Include="Images\08-UserSignature.png" />
+    <Content Include="Images\09-EditIcon.png" />
+    <Content Include="Images\10-ArchiveLetter.png" />
+    <Content Include="Images\11-ReadLetter.png" />
+    <Content Include="Images\12-ReffrenceLetter.png" />
+    <Content Include="Images\13-ReplyLetter.png" />
+    <Content Include="Images\14-Circulation.png" />
+    <Content Include="Images\15-Announcement.png" />
+    <Content Include="Images\16-Announce.png" />
+    <Content Include="Images\17-SystemComponents.png" />
+    <Content Include="Images\18-AccessRights.png" />
+    <None Include="Web References\SendMessageWebService\SendReceive.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataModelLayer\DataModelLayer.csproj">
+      <Project>{65f02d72-ddaf-479e-adfd-2ad31371ebf8}</Project>
+      <Name>DataModelLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://ip.sms.ir/ws/SendReceive.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SendMessageWebService\</RelPath>
+      <UpdateFromURL>https://ip.sms.ir/ws/SendReceive.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AutomationSystem_SendMessageWebService_SendReceive</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

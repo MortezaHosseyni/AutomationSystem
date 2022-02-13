@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutomationSystem
+namespace AutomationSystem.UserPanel
 {
-    public partial class Form1 : Form
+    public partial class frmUserShowNewsContext : Form
     {
-        public Form1()
+        public frmUserShowNewsContext()
         {
             InitializeComponent();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
