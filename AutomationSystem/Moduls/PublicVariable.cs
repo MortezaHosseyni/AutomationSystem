@@ -16,5 +16,7 @@ namespace AutomationSystem.Moduls
         public static byte global_UserType;
 
         public static int global_JobsDetermineLevel;
+
+        public static string mainConnectionString = "";
     }
 }

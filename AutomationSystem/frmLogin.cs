@@ -14,6 +14,7 @@ using System.Net;
 using System.Security.Cryptography;
 using AutomationSystem.AdminPanel;
 using Microsoft.Win32;
+using Automation.Modula;
 
 namespace AutomationSystem
 {
@@ -117,7 +118,7 @@ namespace AutomationSystem
                 }
                 else
                 {
-
+                    PublicVariable.mainConnectionString = CryptionAlgorithm.DecryptTextUsingUTF8(registryConnectionString);
                 }
             }
             catch (Exception)
