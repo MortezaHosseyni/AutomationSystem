@@ -32,6 +32,7 @@
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.lbl_Username = new DevComponents.DotNetBar.LabelX();
             this.pnl_MainPanel = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_ServerSettings = new System.Windows.Forms.LinkLabel();
             this.pnl_Info = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lbl_InfoTwo = new DevComponents.DotNetBar.LabelX();
             this.lbl_InfoOne = new DevComponents.DotNetBar.LabelX();
@@ -54,7 +55,6 @@
             this.lbl_YourIP = new DevComponents.DotNetBar.LabelItem();
             this.lbl_YourIPValue = new DevComponents.DotNetBar.LabelItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbl_ServerSettings = new System.Windows.Forms.LinkLabel();
             this.pnl_MainPanel.SuspendLayout();
             this.pnl_Info.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,18 @@
             this.pnl_MainPanel.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnl_MainPanel.Style.GradientAngle = 90;
             this.pnl_MainPanel.TabIndex = 2;
+            // 
+            // lbl_ServerSettings
+            // 
+            this.lbl_ServerSettings.AutoSize = true;
+            this.lbl_ServerSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ServerSettings.Location = new System.Drawing.Point(49, 342);
+            this.lbl_ServerSettings.Name = "lbl_ServerSettings";
+            this.lbl_ServerSettings.Size = new System.Drawing.Size(199, 28);
+            this.lbl_ServerSettings.TabIndex = 11;
+            this.lbl_ServerSettings.TabStop = true;
+            this.lbl_ServerSettings.Text = "تنظيم پارامترهاي ارتباط با سرور";
+            this.lbl_ServerSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_ServerSettings_LinkClicked);
             // 
             // pnl_Info
             // 
@@ -373,18 +385,6 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // lbl_ServerSettings
-            // 
-            this.lbl_ServerSettings.AutoSize = true;
-            this.lbl_ServerSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_ServerSettings.Location = new System.Drawing.Point(49, 342);
-            this.lbl_ServerSettings.Name = "lbl_ServerSettings";
-            this.lbl_ServerSettings.Size = new System.Drawing.Size(199, 28);
-            this.lbl_ServerSettings.TabIndex = 11;
-            this.lbl_ServerSettings.TabStop = true;
-            this.lbl_ServerSettings.Text = "تنظيم پارامترهاي ارتباط با سرور";
-            this.lbl_ServerSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_ServerSettings_LinkClicked);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -398,7 +398,6 @@
             this.Name = "frmLogin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnl_MainPanel.ResumeLayout(false);
             this.pnl_MainPanel.PerformLayout();

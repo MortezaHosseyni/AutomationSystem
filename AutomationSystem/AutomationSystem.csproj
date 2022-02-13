@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>00-Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BPersianCalender">
       <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\SadraComputer\SadraComputer\bin\Debug\BPersianCalender.dll</HintPath>
@@ -633,6 +636,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="00-Icon.ico" />
     <Content Include="Editor\Resources\l_indent_pos_lower.png" />
     <Content Include="Editor\Resources\l_indet_pos_upper.png" />
     <Content Include="Editor\Resources\r_indent_pos.png" />
