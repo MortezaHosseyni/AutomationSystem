@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Main = new DevComponents.DotNetBar.PanelEx();
             this.pnl_NewDocument = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.val_DocFilePath = new DevComponents.DotNetBar.LabelX();
@@ -46,14 +48,26 @@
             this.lbl_Subject = new DevComponents.DotNetBar.LabelX();
             this.lbl_Title = new DevComponents.DotNetBar.LabelX();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.pnl_SavedDocuments = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dgv_SavedDocuments = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.col_DocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_DocSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_DocCaption = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_DocExporter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_DocDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_DocDeliveryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_DocAttachFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_NewDocument.SuspendLayout();
+            this.pnl_SavedDocuments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SavedDocuments)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main
             // 
             this.pnl_Main.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnl_Main.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnl_Main.Controls.Add(this.pnl_SavedDocuments);
             this.pnl_Main.Controls.Add(this.pnl_NewDocument);
             this.pnl_Main.Controls.Add(this.lbl_Title);
             this.pnl_Main.DisabledBackColor = System.Drawing.Color.Empty;
@@ -91,7 +105,7 @@
             this.pnl_NewDocument.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnl_NewDocument.Location = new System.Drawing.Point(12, 57);
             this.pnl_NewDocument.Name = "pnl_NewDocument";
-            this.pnl_NewDocument.Size = new System.Drawing.Size(1026, 323);
+            this.pnl_NewDocument.Size = new System.Drawing.Size(1026, 290);
             // 
             // 
             // 
@@ -131,7 +145,7 @@
             // 
             this.val_DocFilePath.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.val_DocFilePath.Font = new System.Drawing.Font("B Nazanin", 9.25F);
-            this.val_DocFilePath.Location = new System.Drawing.Point(3, 165);
+            this.val_DocFilePath.Location = new System.Drawing.Point(3, 146);
             this.val_DocFilePath.Name = "val_DocFilePath";
             this.val_DocFilePath.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.val_DocFilePath.Size = new System.Drawing.Size(468, 49);
@@ -143,7 +157,7 @@
             this.btn_SaveDoc.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_SaveDoc.BackColor = System.Drawing.Color.Transparent;
             this.btn_SaveDoc.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_SaveDoc.Location = new System.Drawing.Point(3, 220);
+            this.btn_SaveDoc.Location = new System.Drawing.Point(3, 201);
             this.btn_SaveDoc.Name = "btn_SaveDoc";
             this.btn_SaveDoc.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10, 2, 2, 10);
             this.btn_SaveDoc.Size = new System.Drawing.Size(337, 49);
@@ -158,7 +172,7 @@
             this.btn_DocAttachFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_DocAttachFile.BackColor = System.Drawing.Color.Transparent;
             this.btn_DocAttachFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_DocAttachFile.Location = new System.Drawing.Point(3, 106);
+            this.btn_DocAttachFile.Location = new System.Drawing.Point(3, 87);
             this.btn_DocAttachFile.Name = "btn_DocAttachFile";
             this.btn_DocAttachFile.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10, 2, 2, 10);
             this.btn_DocAttachFile.Size = new System.Drawing.Size(337, 49);
@@ -175,7 +189,7 @@
             // 
             // 
             this.lbl_AttachFile.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_AttachFile.Location = new System.Drawing.Point(346, 111);
+            this.lbl_AttachFile.Location = new System.Drawing.Point(346, 92);
             this.lbl_AttachFile.Name = "lbl_AttachFile";
             this.lbl_AttachFile.Size = new System.Drawing.Size(67, 32);
             this.lbl_AttachFile.TabIndex = 5;
@@ -188,7 +202,7 @@
             // 
             this.txt_DocCaption.Border.Class = "TextBoxBorder";
             this.txt_DocCaption.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_DocCaption.Location = new System.Drawing.Point(477, 106);
+            this.txt_DocCaption.Location = new System.Drawing.Point(477, 87);
             this.txt_DocCaption.Multiline = true;
             this.txt_DocCaption.Name = "txt_DocCaption";
             this.txt_DocCaption.PreventEnterBeep = true;
@@ -203,7 +217,7 @@
             // 
             this.txt_DocExporter.Border.Class = "TextBoxBorder";
             this.txt_DocExporter.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_DocExporter.Location = new System.Drawing.Point(477, 64);
+            this.txt_DocExporter.Location = new System.Drawing.Point(477, 45);
             this.txt_DocExporter.Name = "txt_DocExporter";
             this.txt_DocExporter.PreventEnterBeep = true;
             this.txt_DocExporter.Size = new System.Drawing.Size(448, 36);
@@ -217,7 +231,7 @@
             // 
             this.txt_DocDeliver.Border.Class = "TextBoxBorder";
             this.txt_DocDeliver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_DocDeliver.Location = new System.Drawing.Point(3, 25);
+            this.txt_DocDeliver.Location = new System.Drawing.Point(3, 6);
             this.txt_DocDeliver.Name = "txt_DocDeliver";
             this.txt_DocDeliver.PreventEnterBeep = true;
             this.txt_DocDeliver.Size = new System.Drawing.Size(337, 36);
@@ -231,7 +245,7 @@
             // 
             this.txt_DocSubject.Border.Class = "TextBoxBorder";
             this.txt_DocSubject.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_DocSubject.Location = new System.Drawing.Point(477, 22);
+            this.txt_DocSubject.Location = new System.Drawing.Point(477, 3);
             this.txt_DocSubject.Name = "txt_DocSubject";
             this.txt_DocSubject.PreventEnterBeep = true;
             this.txt_DocSubject.Size = new System.Drawing.Size(448, 36);
@@ -245,7 +259,7 @@
             // 
             // 
             this.lbl_Caption.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Caption.Location = new System.Drawing.Point(931, 110);
+            this.lbl_Caption.Location = new System.Drawing.Point(931, 91);
             this.lbl_Caption.Name = "lbl_Caption";
             this.lbl_Caption.Size = new System.Drawing.Size(61, 33);
             this.lbl_Caption.TabIndex = 0;
@@ -258,7 +272,7 @@
             // 
             // 
             this.lbl_Exporter.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Exporter.Location = new System.Drawing.Point(931, 67);
+            this.lbl_Exporter.Location = new System.Drawing.Point(931, 48);
             this.lbl_Exporter.Name = "lbl_Exporter";
             this.lbl_Exporter.Size = new System.Drawing.Size(66, 33);
             this.lbl_Exporter.TabIndex = 0;
@@ -271,7 +285,7 @@
             // 
             // 
             this.val_DocSaveDate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.val_DocSaveDate.Location = new System.Drawing.Point(3, 67);
+            this.val_DocSaveDate.Location = new System.Drawing.Point(3, 48);
             this.val_DocSaveDate.Name = "val_DocSaveDate";
             this.val_DocSaveDate.Size = new System.Drawing.Size(337, 33);
             this.val_DocSaveDate.TabIndex = 5;
@@ -285,7 +299,7 @@
             // 
             // 
             this.lbl_AddDate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_AddDate.Location = new System.Drawing.Point(346, 71);
+            this.lbl_AddDate.Location = new System.Drawing.Point(346, 52);
             this.lbl_AddDate.Name = "lbl_AddDate";
             this.lbl_AddDate.Size = new System.Drawing.Size(63, 33);
             this.lbl_AddDate.TabIndex = 0;
@@ -298,7 +312,7 @@
             // 
             // 
             this.lbl_Deliver.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Deliver.Location = new System.Drawing.Point(346, 25);
+            this.lbl_Deliver.Location = new System.Drawing.Point(346, 6);
             this.lbl_Deliver.Name = "lbl_Deliver";
             this.lbl_Deliver.Size = new System.Drawing.Size(83, 33);
             this.lbl_Deliver.TabIndex = 0;
@@ -311,7 +325,7 @@
             // 
             // 
             this.lbl_Subject.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Subject.Location = new System.Drawing.Point(931, 25);
+            this.lbl_Subject.Location = new System.Drawing.Point(931, 6);
             this.lbl_Subject.Name = "lbl_Subject";
             this.lbl_Subject.Size = new System.Drawing.Size(45, 33);
             this.lbl_Subject.TabIndex = 0;
@@ -336,6 +350,118 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // pnl_SavedDocuments
+            // 
+            this.pnl_SavedDocuments.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnl_SavedDocuments.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnl_SavedDocuments.Controls.Add(this.dgv_SavedDocuments);
+            this.pnl_SavedDocuments.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnl_SavedDocuments.Location = new System.Drawing.Point(12, 353);
+            this.pnl_SavedDocuments.Name = "pnl_SavedDocuments";
+            this.pnl_SavedDocuments.Size = new System.Drawing.Size(1026, 245);
+            // 
+            // 
+            // 
+            this.pnl_SavedDocuments.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pnl_SavedDocuments.Style.BackColorGradientAngle = 90;
+            this.pnl_SavedDocuments.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pnl_SavedDocuments.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SavedDocuments.Style.BorderBottomWidth = 1;
+            this.pnl_SavedDocuments.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pnl_SavedDocuments.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SavedDocuments.Style.BorderLeftWidth = 1;
+            this.pnl_SavedDocuments.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SavedDocuments.Style.BorderRightWidth = 1;
+            this.pnl_SavedDocuments.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.pnl_SavedDocuments.Style.BorderTopWidth = 1;
+            this.pnl_SavedDocuments.Style.CornerDiameter = 4;
+            this.pnl_SavedDocuments.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.pnl_SavedDocuments.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.pnl_SavedDocuments.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pnl_SavedDocuments.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.pnl_SavedDocuments.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pnl_SavedDocuments.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pnl_SavedDocuments.TabIndex = 2;
+            // 
+            // dgv_SavedDocuments
+            // 
+            this.dgv_SavedDocuments.AllowUserToAddRows = false;
+            this.dgv_SavedDocuments.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgv_SavedDocuments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_SavedDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_SavedDocuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_DocID,
+            this.col_DocSubject,
+            this.col_DocCaption,
+            this.col_DocExporter,
+            this.col_DocDate,
+            this.col_DocDeliveryName,
+            this.col_DocAttachFile});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Nazanin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_SavedDocuments.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_SavedDocuments.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgv_SavedDocuments.Location = new System.Drawing.Point(3, 3);
+            this.dgv_SavedDocuments.Name = "dgv_SavedDocuments";
+            this.dgv_SavedDocuments.Size = new System.Drawing.Size(1014, 233);
+            this.dgv_SavedDocuments.TabIndex = 0;
+            // 
+            // col_DocID
+            // 
+            this.col_DocID.HeaderText = "DocID";
+            this.col_DocID.Name = "col_DocID";
+            this.col_DocID.Visible = false;
+            // 
+            // col_DocSubject
+            // 
+            this.col_DocSubject.HeaderText = "موضوع";
+            this.col_DocSubject.Name = "col_DocSubject";
+            this.col_DocSubject.Width = 200;
+            // 
+            // col_DocCaption
+            // 
+            this.col_DocCaption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_DocCaption.HeaderText = "توضيحات";
+            this.col_DocCaption.Name = "col_DocCaption";
+            // 
+            // col_DocExporter
+            // 
+            this.col_DocExporter.HeaderText = "صادر كننده";
+            this.col_DocExporter.Name = "col_DocExporter";
+            this.col_DocExporter.Width = 130;
+            // 
+            // col_DocDate
+            // 
+            this.col_DocDate.HeaderText = "تاريخ ثبت";
+            this.col_DocDate.Name = "col_DocDate";
+            this.col_DocDate.Width = 120;
+            // 
+            // col_DocDeliveryName
+            // 
+            this.col_DocDeliveryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_DocDeliveryName.HeaderText = "تحويل دهنده";
+            this.col_DocDeliveryName.Name = "col_DocDeliveryName";
+            this.col_DocDeliveryName.Width = 114;
+            // 
+            // col_DocAttachFile
+            // 
+            this.col_DocAttachFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_DocAttachFile.HeaderText = "فايل الصاقي";
+            this.col_DocAttachFile.Name = "col_DocAttachFile";
+            this.col_DocAttachFile.Width = 104;
+            // 
             // frmUserDocuments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -354,6 +480,8 @@
             this.pnl_Main.PerformLayout();
             this.pnl_NewDocument.ResumeLayout(false);
             this.pnl_NewDocument.PerformLayout();
+            this.pnl_SavedDocuments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SavedDocuments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,5 +506,14 @@
         private DevComponents.DotNetBar.LabelX lbl_AttachFile;
         private DevComponents.DotNetBar.ButtonX btn_SaveDoc;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private DevComponents.DotNetBar.Controls.GroupPanel pnl_SavedDocuments;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgv_SavedDocuments;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocCaption;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocExporter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocDeliveryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocAttachFile;
     }
 }
