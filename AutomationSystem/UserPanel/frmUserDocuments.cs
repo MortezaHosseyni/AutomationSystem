@@ -26,7 +26,7 @@ namespace AutomationSystem.UserPanel
             this.Left = 10;
             this.Top = 160;
 
-            ShowSavedDocuments();
+            ShowSavedDocuments(searchCondition());
             val_DocSaveDate.Text = PublicVariable.todayDate;
         }
 
@@ -104,9 +104,9 @@ namespace AutomationSystem.UserPanel
                 return;
             }
         }
-        private void ShowSavedDocuments()//string searchRecivedLetters)
+        private void ShowSavedDocuments(string searchSavedDocs)
         {
-            var query = db.Database.SqlQuery<Document>($"SELECT * FROM Documents WHERE DocUserID = {PublicVariable.global_UserID}");
+            var query = db.Database.SqlQuery<Document>($"SELECT * FROM Documents WHERE DocUserID = {PublicVariable.global_UserID} {searchSavedDocs}");
             var result = query.ToList();
 
             dgv_SavedDocuments.Rows.Clear();
@@ -135,6 +135,29 @@ namespace AutomationSystem.UserPanel
             {
                 dgv_SavedDocuments.Rows.Clear();
             }
+        }
+        private string searchCondition()
+        {
+            string dateIn = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateIn.Value.Year.ToString()}/{txt_DateIn.Value.Month.ToString()}/{txt_DateIn.Value.Day.ToString()}"));
+            string dateTo = string.Format("{0:yyyy'/'MM'/'dd}", Convert.ToDateTime($"{txt_DateTo.Value.Year.ToString()}/{txt_DateTo.Value.Month.ToString()}/{txt_DateTo.Value.Day.ToString()}"));
+
+
+            string searchString = $" AND DocDate BETWEEN '{dateIn}' AND '{dateTo}'";
+
+            if (txt_SearchDocSubject.Text != "")
+            {
+                searchString += $" AND DocSubject LIKE '%{txt_SearchDocSubject.Text}%'";
+            }
+            if (txt_SearchDocExporter.Text != "")
+            {
+                searchString += $" AND DocExporter LIKE '%{txt_SearchDocExporter.Text}%'";
+            }
+            if (txt_SearchDocDeliver.Text != "")
+            {
+                searchString += $" AND DocDeliveryName LIKE '%{txt_SearchDocDeliver.Text}%'";
+            }
+
+            return searchString;
         }
 
         private bool checkNullable()
@@ -213,6 +236,11 @@ namespace AutomationSystem.UserPanel
                 MessageBox.Show("در خواندن اطلاعات خطايي رخ داد", "پايگاه داده");
                 return;
             }
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            ShowSavedDocuments(searchCondition());
         }
     }
 }
