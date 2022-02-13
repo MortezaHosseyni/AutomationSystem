@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.UserPanel
 {
     public partial class frmUserReminder : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public frmUserReminder()
         {
             InitializeComponent();

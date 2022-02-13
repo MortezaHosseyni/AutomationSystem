@@ -15,7 +15,7 @@ namespace AutomationSystem.UserPanel
 {
     public partial class frmUserDocuments : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public frmUserDocuments()
         {
             InitializeComponent();

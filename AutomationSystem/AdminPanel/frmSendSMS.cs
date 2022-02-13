@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutomationSystem.SendMessageWebService;
 using DataModelLayer.Models;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.AdminPanel
 {
     public partial class frmSendSMS : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public frmSendSMS()
         {
             InitializeComponent();

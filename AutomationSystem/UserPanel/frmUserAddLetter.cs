@@ -16,7 +16,7 @@ namespace AutomationSystem.UserPanel
 {
     public partial class frmUserAddLetter : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public byte formType { get; set; } // newLetter = 1 | editLetter = 2
         public int getLetterID { get; set; }
         public string getLetterNo { get; set; }

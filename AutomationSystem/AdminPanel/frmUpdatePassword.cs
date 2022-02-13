@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataModelLayer.Models;
 using System.Security.Cryptography;
+using AutomationSystem.Moduls;
 
 namespace AutomationSystem.AdminPanel
 {
     public partial class frmUpdatePassword : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public int getUserID { get; set; }
         public frmUpdatePassword()
         {

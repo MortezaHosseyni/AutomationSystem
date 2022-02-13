@@ -15,7 +15,7 @@ namespace AutomationSystem.UserPanel
 {
     public partial class frmUserSentReferenceLetters : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public frmUserSentReferenceLetters()
         {
             InitializeComponent();

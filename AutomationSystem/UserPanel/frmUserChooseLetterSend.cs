@@ -15,7 +15,7 @@ namespace AutomationSystem.UserPanel
 {
     public partial class frmUserChooseLetterSend : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public int GetLetterID { get; set; }
         public int getLetterReplyID { get; set; }
         public byte isReply { get; set; } // 1 = Reply Letter

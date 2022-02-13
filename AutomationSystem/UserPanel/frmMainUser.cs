@@ -16,7 +16,7 @@ namespace AutomationSystem.UserPanel
 {
     public partial class frmMainUser : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         PersianCalendar pCalender = new PersianCalendar();
 
         byte formNumber = 7;

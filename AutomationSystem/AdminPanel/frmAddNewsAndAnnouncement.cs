@@ -15,7 +15,7 @@ namespace AutomationSystem.AdminPanel
 {
     public partial class frmAddNewsAndAnnouncement : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public frmAddNewsAndAnnouncement()
         {
             InitializeComponent();

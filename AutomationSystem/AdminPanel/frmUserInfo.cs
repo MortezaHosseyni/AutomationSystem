@@ -17,7 +17,7 @@ namespace AutomationSystem.AdminPanel
     public partial class frmUserInfo : Form
     {
         public int Get_UserID { get; set; }
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public frmUserInfo()
         {
             InitializeComponent();

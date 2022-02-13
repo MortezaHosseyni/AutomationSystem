@@ -20,7 +20,6 @@ namespace AutomationSystem
 {
     public partial class frmLogin : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
         PersianCalendar pCalender = new PersianCalendar();
         public frmLogin()
         {
@@ -29,10 +28,10 @@ namespace AutomationSystem
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
+
             try
             {
-                
-
                 if (txt_Username.Text.Trim() != "" && txt_Password.Text.Trim() != "")
                 {
                     //Hashing Password

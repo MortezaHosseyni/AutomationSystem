@@ -14,7 +14,7 @@ namespace AutomationSystem.UserPanel
 {
     public partial class frmUserNewMessage : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         public byte letType { get; set; }
         public frmUserNewMessage()
         {

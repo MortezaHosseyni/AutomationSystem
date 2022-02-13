@@ -14,7 +14,7 @@ namespace AutomationSystem.AdminPanel
 {
     public partial class frmAsignJob : Form
     {
-        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities();
+        Office_Automation_DatabaseEntities db = new Office_Automation_DatabaseEntities(PublicVariable.mainConnectionString);
         
         public int Get_UserIDToAsignJob { get; set; }
         public frmAsignJob()
