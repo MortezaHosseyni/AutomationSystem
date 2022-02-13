@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Net;
 using System.Security.Cryptography;
+using AutomationSystem.AdminPanel;
 
 namespace AutomationSystem
 {
@@ -122,6 +123,12 @@ namespace AutomationSystem
         private void btn_About_Click(object sender, EventArgs e)
         {
             MessageBox.Show("طراح و برنامه‌نويس: مرتضي‌حسيني \nراه ارتباطي: morteza_hoseyni81@yahoo.com \n دانشگاه فني‌حرفه‌اي تبريز","درباره ما");
+        }
+
+        private void lbl_ServerSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmServerParameters serverSetting = new frmServerParameters();
+            serverSetting.ShowDialog();
         }
     }
 }

@@ -383,6 +383,7 @@
             this.lbl_ServerSettings.TabIndex = 11;
             this.lbl_ServerSettings.TabStop = true;
             this.lbl_ServerSettings.Text = "تنظيم پارامترهاي ارتباط با سرور";
+            this.lbl_ServerSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_ServerSettings_LinkClicked);
             // 
             // frmLogin
             // 
