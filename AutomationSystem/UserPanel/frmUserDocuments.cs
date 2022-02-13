@@ -26,6 +26,7 @@ namespace AutomationSystem.UserPanel
             this.Left = 10;
             this.Top = 160;
 
+            ShowSavedDocuments();
             val_DocSaveDate.Text = PublicVariable.todayDate;
         }
 
@@ -103,6 +104,38 @@ namespace AutomationSystem.UserPanel
                 return;
             }
         }
+        private void ShowSavedDocuments()//string searchRecivedLetters)
+        {
+            var query = db.Database.SqlQuery<Document>($"SELECT * FROM Documents WHERE DocUserID = {PublicVariable.global_UserID}");
+            var result = query.ToList();
+
+            dgv_SavedDocuments.Rows.Clear();
+
+            if (result.Count != 0)
+            {
+                dgv_SavedDocuments.RowCount = result.Count;
+                for (int i = 0; i <= result.Count - 1; i++)
+                {
+                    dgv_SavedDocuments.Rows[i].Cells["col_DocID"].Value = result[i].DocID;
+
+                    dgv_SavedDocuments.Rows[i].Cells["col_DocSubject"].Value = result[i].DocSubject;
+                    dgv_SavedDocuments.Rows[i].Cells["col_DocCaption"].Value = result[i].DocCaption;
+                    dgv_SavedDocuments.Rows[i].Cells["col_DocExporter"].Value = result[i].DocExporter;
+                    dgv_SavedDocuments.Rows[i].Cells["col_DocDeliveryName"].Value = result[i].DocDeliveryName;
+                    dgv_SavedDocuments.Rows[i].Cells["col_DocDate"].Value = result[i].DocDate;
+                    dgv_SavedDocuments.Rows[i].Cells["col_DocAttachFile"].Value = result[i].DocFileName;
+                }
+                dgv_SavedDocuments.TopLeftHeaderCell.Value = "رديف";
+                for (int counter = 0; counter <= dgv_SavedDocuments.Rows.Count - 1; counter++)
+                {
+                    dgv_SavedDocuments.Rows[counter].HeaderCell.Value = (counter + 1).ToString();
+                }
+            }
+            else
+            {
+                dgv_SavedDocuments.Rows.Clear();
+            }
+        }
 
         private bool checkNullable()
         {
@@ -136,6 +169,50 @@ namespace AutomationSystem.UserPanel
             txt_DocExporter.Text = "";
             txt_DocDeliver.Text = "";
             val_DocFilePath.Text = "";
+        }
+
+        private void dgv_SavedDocuments_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_SavedDocuments.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1)
+            {
+                if (dgv_SavedDocuments.CurrentCell != null && dgv_SavedDocuments.CurrentCell.Value != null)
+                {
+                    int get_DocID = Convert.ToInt32(dgv_SavedDocuments.CurrentRow.Cells["col_DocID"].Value);
+                    var queryFileName = (from DA in db.Documents where DA.DocID == get_DocID select DA).ToList();
+                    saveAttachmentFile(saveAttachFileDialog, dgv_SavedDocuments, get_DocID);
+                }
+            }
+        }
+        private void saveAttachmentFile(SaveFileDialog objSFD, DataGridView objGrid, int getLetterID)
+        {
+            try
+            {
+                string strID = objGrid.CurrentRow.Cells["col_DocAttachFile"].Value.ToString();
+                if (strID != null)
+                {
+                    var queryAttachment = (from DA in db.Documents where DA.DocID == getLetterID select DA).ToList();
+
+                    byte[] objData = (byte[])queryAttachment[0].DocFileData;
+
+                    objSFD.FileName = queryAttachment[0].DocFileName;
+                    objSFD.Title = "دريافت فايل الصاقي";
+
+                    if (objSFD.ShowDialog() != DialogResult.Cancel)
+                    {
+                        string strFileToSave = objSFD.FileName;
+                        FileStream objFileStream = new FileStream(strFileToSave, FileMode.Create, FileAccess.Write);
+                        objFileStream.Write(objData, 0, objData.Length);
+                        objFileStream.Close();
+
+                        MessageBox.Show("فايل الصاقي باموفقيت دانلود شد", "دريافت فايل الصاق");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("در خواندن اطلاعات خطايي رخ داد", "پايگاه داده");
+                return;
+            }
         }
     }
 }

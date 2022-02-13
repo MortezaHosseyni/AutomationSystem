@@ -50,13 +50,14 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pnl_SavedDocuments = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgv_SavedDocuments = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.saveAttachFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.col_DocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_DocSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_DocCaption = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_DocExporter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_DocDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_DocDeliveryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_DocAttachFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_DocAttachFile = new System.Windows.Forms.DataGridViewLinkColumn();
             this.pnl_Main.SuspendLayout();
             this.pnl_NewDocument.SuspendLayout();
             this.pnl_SavedDocuments.SuspendLayout();
@@ -417,6 +418,7 @@
             this.dgv_SavedDocuments.Name = "dgv_SavedDocuments";
             this.dgv_SavedDocuments.Size = new System.Drawing.Size(1014, 233);
             this.dgv_SavedDocuments.TabIndex = 0;
+            this.dgv_SavedDocuments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SavedDocuments_CellClick);
             // 
             // col_DocID
             // 
@@ -450,17 +452,17 @@
             // 
             // col_DocDeliveryName
             // 
-            this.col_DocDeliveryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_DocDeliveryName.HeaderText = "تحويل دهنده";
             this.col_DocDeliveryName.Name = "col_DocDeliveryName";
-            this.col_DocDeliveryName.Width = 114;
+            this.col_DocDeliveryName.Width = 120;
             // 
             // col_DocAttachFile
             // 
-            this.col_DocAttachFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_DocAttachFile.HeaderText = "فايل الصاقي";
             this.col_DocAttachFile.Name = "col_DocAttachFile";
-            this.col_DocAttachFile.Width = 104;
+            this.col_DocAttachFile.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_DocAttachFile.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_DocAttachFile.Width = 115;
             // 
             // frmUserDocuments
             // 
@@ -508,12 +510,13 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private DevComponents.DotNetBar.Controls.GroupPanel pnl_SavedDocuments;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_SavedDocuments;
+        private System.Windows.Forms.SaveFileDialog saveAttachFileDialog;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DocID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DocSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DocCaption;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DocExporter;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DocDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DocDeliveryName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_DocAttachFile;
+        private System.Windows.Forms.DataGridViewLinkColumn col_DocAttachFile;
     }
 }
